@@ -4,3 +4,4 @@ gem "jekyll"
 gem "jekyll-sitemap"
 gem "jekyll-gist"
 gem "jekyll-feed"
+gem 'jekyll-seo-tag'

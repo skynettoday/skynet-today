@@ -2,7 +2,7 @@
 
 title: Skynet Today
 locale: en_US
-description: Informed critiques of the latest 'scary AI' media stories, for everyone. 
+description: Sane, informed criticism of the latest AI hype and doomsaying 
 logo: site-logo.png
 search: true
 url: http://localhost:4000
@@ -19,6 +19,7 @@ gems:
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
+  - jekyll-seo-tag
 
 kramdown:
   input: GFM
@@ -30,15 +31,15 @@ kramdown:
 
 mathjax: true
 
-include: [".htaccess"]
-exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", ".less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md", "vendor"]
+include: [".htaccess","_pages"]
+exclude: ["CNAME", "_deploy.yml", "lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", ".less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md", "vendor"]
 
 
 # Site owner
 owner:
   name: Andrey Kurenkov
-  avatar: bio-photo.jpg
-  email: you@email.com
+  avatar: andrey.jpg
+  email: andreyk@stanford.com
   disqus-shortname:
   twitter: #username
   facebook: #username
