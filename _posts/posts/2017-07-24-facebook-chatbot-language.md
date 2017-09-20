@@ -2,16 +2,17 @@
 layout: post
 title: "The Scary Story of How Facebook's Researchers Pressed Cntrl C"
 excerpt: "Sometimes the narratives media conjures up just serve to make real life seem boring"
-categories: doom
+categories: [doom,news]
 tags: [facebook,chatbot,nlp,doom]
 comments: true
 share: true
 ---
-asd
+This, more than anything, inspired this whole initiative. 
+
 ## The Research
 
-## The Coverage
+## The Media
 
-## The Reactions
+## The Perspective
 
 ## The Gist

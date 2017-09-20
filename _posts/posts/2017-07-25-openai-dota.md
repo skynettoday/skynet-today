@@ -8,10 +8,10 @@ comments: true
 share: true
 ---
 asd
-## The Story
+## The Research
 
-## The Reality
+## The Media
 
-## The Reactions
+## The Perspective
 
 ## The Gist
