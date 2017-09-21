@@ -12,6 +12,6 @@ asd
 
 ## The Media
 
-## The Perspective
+## The Criticism
 
 ## The Gist
