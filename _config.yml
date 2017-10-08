@@ -5,7 +5,7 @@ locale: en_US
 description: Sane, informed criticism of the latest AI hype and doomsaying 
 logo: site-logo.png
 search: true
-url:  
+url: 
 
 # Jekyll configuration
 
@@ -46,14 +46,3 @@ owner:
   twitter: skynet_today
   facebook: #username
   github: #username
-  linkedin: #username
-  instagram: #username
-  flickr: #username
-  tumblr: #username
-  pinterest: #username
-  google:
-    plus: #username
-    analytics:
-    verify:
-    ad-client:
-    ad-slot:
