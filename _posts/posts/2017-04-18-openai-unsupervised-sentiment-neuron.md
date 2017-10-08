@@ -6,6 +6,7 @@ categories: [news,hype]
 tags: [openai,nlp,hype]
 comments: true
 share: true
+published: true
 ---
 Not a particularly big story, but one that nicely exemplifies how media coverage of AI research goes wrong.
 
@@ -18,5 +19,5 @@ Most egregiously, there was coverage that claimed that ["An AI backed by Elon Mu
 ## The Criticism
 Though all the news stories that covered this got the substrance of the research largely right, misleading headlines and agent-ification of computer programs is rampant in AI coverage. It should also be noted that the emergence of not-explicitly-trained for knowledge has been documented in papers before (["Object Detectors Emerge in Deep Scene CNNs"](https://arxiv.org/abs/1412.6856) , ["Emergence of Object-Selective Features in Unsupervised Feature Learning"](http://cs.stanford.edu/people/karpathy/nips2012.pdf)). Plus, the data the unsupervised learning was done on was Amazon reviews, so it makes a whole lot of sense that sentiment was captured as part of the training. This is not to say the research is bad or not interesting, but rather that this sort of awareness of prior work and significance of results is sorely needed in AI coverage. 
 
-## The TLDR
+## The Gist
 OpenAI's unsupervised learning result is cool, but the coverage of it exemplifies the common egregious faults with AI coverage as a whole.

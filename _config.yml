@@ -5,7 +5,7 @@ locale: en_US
 description: Sane, informed criticism of the latest AI hype and doomsaying 
 logo: site-logo.png
 search: true
-url: http://localhost:4000
+url:  
 
 # Jekyll configuration
 
@@ -15,7 +15,8 @@ highlighter: rouge
 sass:
   sass_dir: _sass
   style: compressed
-gems:
+
+plugins:
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
@@ -42,7 +43,7 @@ owner:
   email: andreyk@stanford.com
   web: https://www.andreykurenkov.com
   disqus-shortname:
-  twitter: #username
+  twitter: skynet_today
   facebook: #username
   github: #username
   linkedin: #username
