@@ -2,7 +2,7 @@
 	<nav role="navigation" id="site-nav" class="animated drop">
 	    <ul>
       {% for link in site.data.navigation %}
-		    {% if link.url contains 'http' %}
+		    {% if link.url contains 'http' or link.url contains 'mailto' %}
 		        {% assign domain = '' %}
 		        {% else %}
 		        {% assign domain = site.url %}
