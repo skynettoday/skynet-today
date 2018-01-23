@@ -1,14 +1,14 @@
 # Authors
 
-billy_rick:
-  name: Billy Rick
-  web: http://thewhip.com
-  email: billy@rick.com
-  bio: "What do you want, jewels? I am a very extravagant man."
-  avatar: bio-photo-2.jpg
-  twitter: extravagantman
-  google:
-    plus: BillyRick
+andrey_kurenkov:
+  name: Andrey Kurenkov
+  avatar: andrey.jpg
+  email: andreyk@stanford.com
+  web: https://www.andreykurenkov.com
+  disqus-shortname:
+  twitter: skynet_today
+  facebook: #username
+  github: #username
 
 cornelius_fiddlebone:
   name: Cornelius Fiddlebone

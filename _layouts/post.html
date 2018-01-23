@@ -26,12 +26,20 @@
         {% if page.author %}
           {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.owner %}
         {% endif %}
+        {% if page.editor %}
+          {% assign editor = site.data.authors[page.editor] %}{% else %}{% assign editor = blank %}
+        {% endif %}
         {% if author.avatar contains 'http' %}
           <img src="{{ author.avatar }}" class="bio-photo" alt="{{ author.name }} bio photo"/>
         {% elsif author.avatar %}
           <img src="{{ site.url }}/images/{{ author.avatar }}" class="bio-photo" alt="{{ author.name }} bio photo"/>
         {% endif %}
-        <span class="author vcard">By <a href={{author.web}}><span class="fn">{{ author.name }}</span></a></span>
+        <span class="author vcard">Author: <a href={{author.web}}><span class="fn">{{ author.name }}</span></a></span>
+
+        {% if editor != blank %}
+        <span class="author vcard">Editor: <a href={{editor.web}}><span class="fn">{{ editor.name }}</span></a></span>
+        {% endif %}
+
         <span class="entry-date date published"><time datetime="{{ page.date | date_to_xmlschema }}"><i class="fa fa-calendar-o"></i> {{ page.date | date: "%B %d, %Y" }}</time></span>
         {% if page.modified %}<span class="entry-date date modified"><time datetime="{{ page.modified }}"><i class="fa fa-pencil"></i> {{ page.modified | date: "%B %d, %Y" }}</time></span>{% endif %}
         {% if site.owner.disqus-shortname and page.comments or site.comments %}<span class="entry-comments"><i class="fa fa-comment-o"></i> <a href="#disqus_thread">Comment</a></span>{% endif %}
