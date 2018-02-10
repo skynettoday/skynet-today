@@ -4,6 +4,7 @@ title: "OpenAI's Not So Open DotA AI"
 excerpt: "An impressive demo by OpenAI leaves many questions unanswered."
 categories: news
 author: joshua_morton
+editor: andrey_kurenkov
 tags: [OpenAI,game,hype]
 comments: true
 share: true
@@ -29,7 +30,7 @@ first, they only released a video that purported to show some of the mechanics
 the bot was able to learn, a short blog post summary, and an offer to apply to
 work at OpenAI. Highly unusual. 
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">AI
+<blockquote class="twitter-tweet" data-lang="en" align="center"><p lang="en" dir="ltr">AI
 research community spent many hours investigating the extent of the achievement.
 OpenAI could have been, well, open about what they did.</p>&mdash; Mark O. Riedl
 (@mark_riedl) <a
@@ -68,21 +69,19 @@ OpenAI themselves claim that the bot
 
 OpenAI co-founder Elon Musk was quick to chime in
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">If
+<blockquote class="twitter-tweet" data-lang="en" align="center"><p lang="en" dir="ltr">If
 you&#39;re not concerned about AI safety, you should be. Vastly more risk than
 North Korea. <a
 href="https://t.co/2z0tiid0lc">pic.twitter.com/2z0tiid0lc</a></p>&mdash; Elon
 Musk (@elonmusk) <a
 href="https://twitter.com/elonmusk/status/896166762361704450?ref_src=twsrc%5Etfw">August
 12, 2017</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Nobody
+<blockquote class="twitter-tweet" data-lang="en" align="center"><p lang="en" dir="ltr">Nobody
 likes being regulated, but everything (cars, planes, food, drugs, etc)
 that&#39;s a danger to the public is regulated. AI should be too.</p>&mdash;
 Elon Musk (@elonmusk) <a
 href="https://twitter.com/elonmusk/status/896169801277517824?ref_src=twsrc%5Etfw">August
 12, 2017</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 And his alarming statements were soon picked up by tech media, exemplified by
 this frightening headline from The Verge:
@@ -137,7 +136,7 @@ This is not to say that *nothing* novel was accomplished. The bot did appear to
 learn at least one unique skill: the ability to deny resources by casting a
 spell from just outside the enemy's vision range.
 
-<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="en" align="center"><p
 lang="en" dir="ltr">Most impressive was re: partial observability. Much of 1v1
 is observable/predictable but avoiding enemy&#39;s vision due to game mechanic
 is ++. <a
@@ -145,20 +144,18 @@ href="https://t.co/8lqmhKSEyP">pic.twitter.com/8lqmhKSEyP</a></p>&mdash; Smerity
 (@Smerity) <a
 href="https://twitter.com/Smerity/status/897959521661759488?ref_src=twsrc%5Etfw">August
 16, 2017</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Unfortunately, without a full paper it is difficult to fairly judge how
 impressive that is. The questionable novelty of their achievement, lack of
 transparency, and exaggerated PR all tarnished what was otherwise a new
 impressive milestone for AI.
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">To
+<blockquote class="twitter-tweet" data-lang="en" align="center"><p lang="en" dir="ltr">To
 clarify: what OpenAI did was cool. Then Musk stepped in and made unjustified
 hyperbolic claims, spoiling the achievement &amp; casting doubt.</p>&mdash; Mark
 O. Riedl (@mark_riedl) <a
 href="https://twitter.com/mark_riedl/status/897190444957913088?ref_src=twsrc%5Etfw">August
 14, 2017</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ### The Gist
 
