@@ -2,7 +2,7 @@
 
 andrey_kurenkov:
   name: Andrey Kurenkov
-  avatar: andrey.jpg
+  avatar: andrey_face.jpg
   email: andreyk@stanford.com
   web: https://www.andreykurenkov.com
   disqus-shortname:
@@ -18,3 +18,9 @@ cornelius_fiddlebone:
   twitter: rhymeswithsackit
   google:
     plus: CorneliusFiddlebone
+
+joshua_morton:
+  name: Joshua Morton
+  avatar: josh_face.jpg
+  email: joshua.morton13@gmail.com
+  web: https://joshuamorton.github.io
