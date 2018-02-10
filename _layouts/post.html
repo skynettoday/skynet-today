@@ -36,7 +36,7 @@
         {% endif %}
         <span class="author vcard">Author: <a href={{author.web}}><span class="fn">{{ author.name }}</span></a></span>
 
-        {% if editor != blank %}
+        {% if page.editor %}
         <span class="author vcard">Editor: <a href={{editor.web}}><span class="fn">{{ editor.name }}</span></a></span>
         {% endif %}
 
