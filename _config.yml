@@ -39,7 +39,7 @@ exclude: ["CNAME", "_deploy.yml", "lib", "config.rb", "Capfile", "config", "log"
 # Site owner
 owner:
   name: Andrey Kurenkov
-  avatar: andrey.jpg
+  avatar: andrey_face.jpg
   email: andreyk@stanford.com
   web: https://www.andreykurenkov.com
   disqus-shortname:
