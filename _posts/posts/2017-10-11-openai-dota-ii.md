@@ -30,7 +30,7 @@ first, they only released a video that purported to show some of the mechanics
 the bot was able to learn, a short blog post summary, and an offer to apply to
 work at OpenAI. Highly unusual. 
 
-<blockquote class="twitter-tweet" data-lang="en" align="center"><p lang="en" dir="ltr">AI
+<blockquote class="twitter-tweet" data-lang="en" align="center" data-conversation="none"><p lang="en" dir="ltr">AI
 research community spent many hours investigating the extent of the achievement.
 OpenAI could have been, well, open about what they did.</p>&mdash; Mark O. Riedl
 (@mark_riedl) <a
