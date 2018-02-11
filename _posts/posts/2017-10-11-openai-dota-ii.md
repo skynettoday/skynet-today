@@ -42,19 +42,19 @@ charset="utf-8"></script>
 The most the broader AI community ever got was [a longer blog
 post](https://blog.openai.com/more-on-dota-2/). This blog post did contain some
 important information: a clarification that the bot was primarily trained via [competetive self-play](https://blog.openai.com/competitive-self-play/),
-a timeline of the model's skill, as well as some discussion of the limitations of the agent 
+a timeline of the model's skill, and some discussion of the limitations of the agent 
 (that the bot had to be explicitly taught certain necessary strategies, and that it was 
 weak against certain
 uncommon tactics).
 
 However, even this post fell short of the discussion of methodology one would
-normally expect from a paper, instead focusing mostly on perceived shortcomings
+normally expect from a paper. It instead focused mostly on perceived shortcomings
 and the (still quite interesting!) challenges of getting DotA to run in an
 environment suitable for repeated self-play.
 
-A paper with significant findings in the area of real-time strategy or online
-battle area games would be groundbreaking. Thus far, successful self-learning
-agents in such games have proven elusive. The comparative freedom that players
+A paper with significant results in the area of real-time strategy or popular online
+multiplayer games would be groundbreaking. Thus far, successful self-learning
+agents in such games have proven elusive. The freedom that players
 have in games like Starcraft and DotA compared to ones like Chess and Go makes
 the former much more difficult to "solve" with conventional machine learning and
 game AI. So it is a significant letdown that OpenAI did not choose to publish
@@ -111,7 +111,7 @@ The days we live in...
 
 ### The Criticism
 
-To begin, it's difficult to understate how important it is that there is no
+To begin, it's difficult to understate how unusual it is that there is no
 paper here. The only information that has released is a press release and a
 follow up blog post.
 
@@ -121,8 +121,7 @@ creep blocking, [was not learned through self
 play](https://news.ycombinator.com/item?id=15001521), but was taught via some
 other method. The longer blog post by OpenAI also brings up another issue: 5v5
 and 1v1 DotA are very different games. The OpenAI bot has trouble handling
-unusual situations, but as [OpenAI
-says](https://blog.openai.com/more-on-dota-2/):
+unusual situations, but as [OpenAI says](https://blog.openai.com/more-on-dota-2/):
 
 >for 5v5, [unusual situations] aren’t exploits at all, and we’ll need a system
 >which can handle totally weird and wacky situations it’s never seen.
@@ -161,7 +160,7 @@ href="https://twitter.com/mark_riedl/status/897190444957913088?ref_src=twsrc%5Et
 ### The Gist
 
 While OpenAI undoubtedly created an impressive demo, it seems unlikely that
-their research (if it is even ever published) will have been much more than an
+their research, if it is ever published, will have been much more than an
 application of existing methods to a new game under a very specifically
 controlled set of circumstances. In no way does it represent a "Killer AI" or
 some sort of existential threat.
