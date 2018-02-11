@@ -102,9 +102,9 @@ Almost every article though, cited Musk's tweets.
 
 Luckily, more level-headed coverage quickly followed:
 
->[Did Elon Musk’s AI champ destroy humans at video games? It’s complicated
+> * [Did Elon Musk’s AI champ destroy humans at video games? It’s complicated
 ](https://www.theverge.com/2017/8/14/16143392/dota-ai-openai-bot-win-elon-musk)
->[Hype or Not? Some Perspective on OpenAI’s DotA 2
+> * [Hype or Not? Some Perspective on OpenAI’s DotA 2
 >Bot](http://www.wildml.com/2017/08/hype-or-not-some-perspective-on-openais-dota-2-bot/)
 
 The days we live in...
