@@ -41,10 +41,11 @@ charset="utf-8"></script>
 
 The most the broader AI community ever got was [a longer blog
 post](https://blog.openai.com/more-on-dota-2/). This blog post did contain some
-important information: a timeline of the model's skill, as well as some
-discussion of the limitations of the agent: that the bot had to be explicitly
-taught certain necessary strategies, and that it was weak against certain
-uncommon tactics.
+important information: a clarification that the bot was primarily trained via [competetive self-play](https://blog.openai.com/competitive-self-play/),
+a timeline of the model's skill, as well as some discussion of the limitations of the agent 
+(that the bot had to be explicitly taught certain necessary strategies, and that it was 
+weak against certain
+uncommon tactics).
 
 However, even this post fell short of the discussion of methodology one would
 normally expect from a paper, instead focusing mostly on perceived shortcomings
