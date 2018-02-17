@@ -8,7 +8,7 @@ permalink: /about
 
 ## What is this
 
-As it says up there, this is a site dedicated to providing sane, informed written criticism of the latest AI hype and doomsaying. To expand on that a bit, the idea is to post a concise but comprehensive overview of each major AI story that bubbles up in popular media. This has happened more and more as the AI hype wave has gone on, to the point where it seems something like this needs to exist.
+As it says up there, this is a site dedicated to providing sane, informed written criticism of the latest AI hype and doomsaying. To expand on that a bit, the idea is to post a concise but comprehensive overview of each major AI story that bubbles up in popular media. Such stories have happened more and more as the AI hype wave has gone on, to the point where it seems something like this needs to exist. The hope is to get a range of people in CS/AI with a bit more domain knowledge to cover the coverage of new research/events and so provide that sane and informed perspective so promised.
 
 ## Who are you
 I am [Andrey Kurenkov](http://www.andreykurenkov.com/), currently a graduate student at Stanford who has studied and is doing research in AI. I also [blog](http://www.andreykurenkov.com/writing/) (or used to, when I had time) about miscallenous topics and have [written](http://www.andreykurenkov.com/writing/ai/a-brief-history-of-neural-nets-and-deep-learning/) [several](http://www.andreykurenkov.com/writing/ai/a-brief-history-of-game-ai/) long-form explainer-thingies about AI for my own education and for fun. I started this whole effort, and will hopefully write posts on here along with some other great sort-of-AI-insiders.
