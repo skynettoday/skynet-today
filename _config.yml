@@ -14,13 +14,10 @@ google_fonts:
   - name: "Lora"
     weights: "400,400i,700,700i"
 
-# Liquid
-liquid:
-  error_mode: strict
-
 # Build settings
 permalink: /:categories/:title/
 markdown: kramdown
+highlighter: pygments
 feed:
   path: atom.xml
 
