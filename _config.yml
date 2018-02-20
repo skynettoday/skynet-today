@@ -7,17 +7,12 @@ logo: site-logo.png
 date_format: "%B %-d, %Y"
 read_time: true # reading time estimates, e.g. true
 words_per_minute: # 200
-mathjax: # MathJax equations, e.g. true
+mathjax: true# MathJax equations, e.g. true
 google_fonts:
   - name: "Source Sans Pro"
     weights: "400,400i,700,700i"
   - name: "Lora"
     weights: "400,400i,700,700i"
-google_analytics: # Google Analytics id, e.g. "UA-NNNNNNNN-N"
-disqus:
-  shortname: # Disqus shortname, e.g. "my_disqus_shortname"
-twitter:
-  username: skynet_today
 
 # Liquid
 liquid:
@@ -30,13 +25,14 @@ feed:
   path: atom.xml
 
 # Search
-search_full_content: true # can have performance implications for large sites
+search_full_content: false # can have performance implications for large sites
+comments: true
 
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-feed
-  - jekyll-paginate
+  - jekyll-gist
 
 kramdown:
   input: GFM
@@ -51,24 +47,6 @@ mathjax: true
 include: [".htaccess","_pages"]
 exclude: ["CNAME", "_deploy.yml", "lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", ".less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md", "vendor"]
 
-
-# Front Matter Defaults
-defaults:
-  # Posts defaults
-  - scope:
-      path: "news/_posts"
-      type: posts
-    values:
-      layout: post
-      comments: true
-      share: true
-  - scope:
-      path: "editorial/_posts"
-      type: posts
-    values:
-      layout: post
-      comments: true
-      share: true
 
 owner:
   name: Andrey Kurenkov
