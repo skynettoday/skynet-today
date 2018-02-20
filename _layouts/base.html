@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.0.0
+    Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="{{ page.lang | default: site.lang | default: 'en-US' }}" class="no-js">
+  {% include head.html %}
+
+  <body id={{ page.layout | default: layout.layout }}>
+    {% include navigation.html %}
+
+    {{ content }}
+
+    {% include footer.html %}
+    {% include scripts.html %}
+  </body>
+
+</html>
+
+

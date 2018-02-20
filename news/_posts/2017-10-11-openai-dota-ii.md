@@ -11,8 +11,6 @@ share: true
 published: true
 ---
 
-## A Great Achievement Sadly Stained By Notable Doomsayer Elon Musk
-
 Among the biggest AI stories of 2017, and one of the most opaque in terms of
 actual significance. 
 

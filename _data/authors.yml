@@ -1,5 +1,3 @@
-# Authors
-
 andrey_kurenkov:
   name: Andrey Kurenkov
   avatar: andrey_face.jpg
@@ -10,17 +8,10 @@ andrey_kurenkov:
   facebook: #username
   github: #username
 
-cornelius_fiddlebone:
-  name: Cornelius Fiddlebone
-  email: cornelius@thewhip.com
-  bio: "I ordered what?"
-  avatar: bio-photo.jpg
-  twitter: rhymeswithsackit
-  google:
-    plus: CorneliusFiddlebone
-
 joshua_morton:
   name: Joshua Morton
   avatar: josh_face.jpg
   email: joshua.morton13@gmail.com
   web: https://joshuamorton.github.io
+  picture: /images/bio-photo.jpg
+  twitter: corneliusfiddlebone

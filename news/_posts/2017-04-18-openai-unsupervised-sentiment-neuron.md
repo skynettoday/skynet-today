@@ -1,8 +1,9 @@
 ---
 layout: post
+date: 2017-04-18 12:00:00 -0800
 title: "The Curious Case of OpenAI's Unsupervised Sentiment Neuron"
 excerpt: "A nifty thing happened unintentionally, and some people overreacted"
-categories: [news,hype]
+author: andrey_kurenkov
 tags: [openai,nlp,hype]
 comments: true
 share: true

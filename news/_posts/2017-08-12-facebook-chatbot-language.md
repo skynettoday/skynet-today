@@ -1,8 +1,9 @@
 ---
 layout: post
+date: 2017-08-12 12:00:00 -0800
 title: "The Scary Story of Facebook's Unremarkable 'AI Invented Language'"
 excerpt: "Sometimes the narratives media conjures up just serve to make real life seem boring"
-categories: [doom,news]
+author: andrey_kurenkov
 tags: [facebook,chatbot,nlp,doom]
 comments: true
 share: true
