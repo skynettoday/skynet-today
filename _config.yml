@@ -43,7 +43,7 @@ mathjax: true
 include: [".htaccess","_pages"]
 exclude: ["CNAME", "_deploy.yml", "lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", ".less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md", "vendor"]
 
-google_analytics: UA-54402578-2
+google_analytics: UA-114440651-1
 
 owner:
   name: Andrey Kurenkov
