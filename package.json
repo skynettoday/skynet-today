@@ -1,21 +1,15 @@
 {
-  "name": "jekyll-theme-so-simple",
-  "description": "A simple Jekyll theme for words and pictures.",
-  "version": "3.0.1",
-  "author": "Michael Rose",
-  "homepage": "http://mmistakes.github.io/so-simple-theme/",
+  "name": "skynet-today",
+  "description": "Sane, informed criticism of the latest AI hype and doomsaying",
+  "version": "1.0.0",
+  "author": "Andrey Kurenkov",
+  "homepage": "http://www.skynettoday.com",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mmistakes/so-simple-theme.git"
-  },
-  "bugs": {
-    "url": "https://github.com/mmistakes/so-simple-theme/issues"
+    "url": "git://github.com/andreykurenkov/skynet-today.git"
   },
   "keywords": [
-    "jekyll",
-    "theme",
-    "minimal",
-    "responsive"
+    "jekyll"
   ],
   "license": "MIT",
   "engines": {
@@ -32,7 +26,7 @@
     "IE 9"
   ],
   "scripts": {
-    "uglify": "uglifyjs assets/js/plugins/lity.js assets/js/plugins/jquery.smooth-scroll.js assets/js/plugins/table-of-contents.js assets/js/main.js -c -m -o assets/js/main.min.js",
+    "uglify": "uglifyjs assets/js/plugins/* assets/js/main.js -c -m -o assets/js/main.min.js",
     "add-banner": "node banner.js",
     "watch:js": "onchange \"assets/js/**/*.js\" -e \"assets/js/main.min.js\" -- npm run build:js",
     "build:js": "npm run uglify && npm run add-banner"

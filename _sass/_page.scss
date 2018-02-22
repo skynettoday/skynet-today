@@ -19,7 +19,7 @@
 
 /* feature image */
 
-.entry-feature-image {
+.page-feature-image {
 	margin: 20px 0 0;
 	width: 100%;
 
@@ -34,13 +34,13 @@
 
 /* page header */
 
-.entry-header {
+.page-header {
 	@include fill-parent;
 }
 
 /* tag listing in page header */
 
-.entry-tags {
+.page-tags {
 	margin: 2em 0 0;
   padding: 0;
 	text-transform: uppercase;
@@ -75,11 +75,11 @@
 
 /* page title */
 
-span + .entry-title {
+span + .page-title {
 	margin-top: 0;
 }
 
-.entry-title {
+.page-title {
 	font-family: $alt-font;
 	font-style: italic;
 	@include font-size(36,yes,36);
@@ -103,7 +103,7 @@ span + .entry-title {
 
 /* page/post wrapper */
 
-.entry-wrapper {
+.page-wrapper {
 	@include outer-container;
 	margin-top: 0;
 	margin-bottom: 3em;
@@ -113,7 +113,7 @@ span + .entry-title {
 
 /* page/post meta content (date, author, etc) */
 
-.entry-meta {
+.page-meta {
 	@include span-columns(12);
 	text-transform: uppercase;
 	@include font-size(14);
@@ -184,7 +184,7 @@ span + .entry-title {
 
 /* main content block */
 
-.entry-content {
+.page-content {
 	@include span-columns(12);
 
 	p:first-child {
@@ -232,16 +232,16 @@ span + .entry-title {
 #home,
 #page {
 
-	.entry-wrapper {
+	.page-wrapper {
 		max-width: em(760);
 	}
 
-	.entry-title {
+	.page-title {
 		text-align: center;
 		max-width: 100%;
 	}
 
-	.entry-content {
+	.page-content {
 		@include span-columns(12);
 	}
 }

@@ -23,6 +23,9 @@ feed:
 # Search
 search_full_content: false # can have performance implications for large sites
 comments: true
+show_drafts: false
+future:      true
+unpublished: false
 
 plugins:
   - jekyll-seo-tag

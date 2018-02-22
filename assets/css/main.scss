@@ -17,11 +17,13 @@ sitemap: false
    Vendor
    ========================================================================== */
 
+
 @import "vendor/bourbon/bourbon"; /* Bourbon mixins (bourbon.io) */
 @import "grid-settings"; /* Bourbon Neat settings */
 @import "vendor/neat/neat"; /* Bourbon Neat grid mixins (neat.bourbon.io) */
 @import "vendor/font-awesome/font-awesome"; /* Font Awesome icons */
 @import "vendor/magnific-popup/magnific-popup"; /* Magnific Popup lightbox */
+@import "vendor/bigfoot/bigfoot-number"; /* Bigfoot footnotes */
 
 /*
    Global
