@@ -1,14 +1,10 @@
 ---
-layout: post
 title: "OpenAI's Not So Open DotA AI"
 excerpt: "An impressive demo by OpenAI leaves many questions unanswered."
 categories: news
 author: joshua_morton
 editor: andrey_kurenkov
 tags: [OpenAI,game,hype]
-comments: true
-share: true
-published: true
 ---
 
 Among the biggest AI stories of 2017, and one of the most opaque in terms of

@@ -1,9 +1,9 @@
-var displayingCategorical = true;
+var displayingNews = true;
 $(function() {
     var form = document.querySelector("#writingToggleForm");
     form.addEventListener("change", function(event) {
         console.log("Toggling writing display!");
-        if(displayingCategorical){
+        if(displayingNews){
           $('#news').fadeToggle(function() {
               $('#editorials').fadeToggle(function() {
               });
@@ -14,7 +14,7 @@ $(function() {
               });
           });
         }
-        displayingCategorical = !displayingCategorical;
+        displayingNews = !displayingNews;
     });
     $("#editorials").fadeOut();
 
