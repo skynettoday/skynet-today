@@ -1,22 +1,23 @@
-# Contributing
+Taken from OneNote doc: https://1drv.ms/f/s!AsxrNnHEt8dcj2OKTPdyHA6PVRnq
 
-Found a typo in the documentation? Requesting a feature or
-[bug fix][issues]? Search through the open and closed issues before [submitting an issue][new-issue] to avoid duplication. 
+## Big Picture 
+SkyNet Today is what it says it is - " Sane, informed criticism of the latest AI hype and doomsaying"
 
-[Pull requests][using-pull-requests] are also appreciated. If this is your first time, it may be helpful to read up on the [GitHub Flow][github-flow].
+The idea is to get people with know-how in AI to write short, accessible pieces that give perspective about both AI hype and fear.  
 
-If your contribution adds or changes the theme's behavior, make sure to update the documentation and/or sample content. Documentation lives in README.md while sample posts, pages, and collections are in the [`docs`](docs) and [`example`](example) folders.
+ 
+## Format  
+The format (right now) is to focus on a particular news story with each post. Each post have five parts: 
 
-[issues]: https://github.com/mmistakes/so-simple-theme/issues
-[new-issue]: https://github.com/mmistakes/so-simple-theme/issues/new
-[using-pull-requests]: https://help.github.com/articles/using-pull-requests/
-[github-flow]: https://guides.github.com/introduction/flow/
+* The intro - a brief 1-2 sentence summary sort of deal. Eg " A truly astounding exemplar of how coverage of AI goes horribly wrong, in both outcome and process." 
+* 'The Research' - a high level summary the actual thing that happened 
+* 'The Coverage' - a summary of how the research was portrayed in media 
+* 'The Criticism' - a summary of how coverage was good/bad, as well as links to others' criticism 
+* 'The Gist' - basically restating the intro but with more specificity 
 
-### Pull Requests
+## Workflow 
+Because we are all busy people, the hope is to have multiple collaborators writing posts in their free time. Because each post is short but accurate/includes links to outside sources/requires research, they will typically take 5-15 hours to write. The hope is to have each collaborator write a post every 2-4 weeks. I (Andrey) will serve as editor and occasional writer, as well as the owner of the repo. Initial drafts should be shared via draftin.com , where I and others can help with editing. Then, the story can be added to the main site via a pull request to the main repo (https://github.com/andreykurenkov/skynet-today). Each collaborator will be credited as the author of whatever they wrote. 
 
-When submitting a pull request:
-
-1. Clone the repo.
-2. Create a branch off of `master` and give it a meaningful name (e.g.
-   `my-awesome-new-feature`).
-3. Open a pull request on GitHub and describe what problem it solves.
+ 
+## General Notes 
+Generally go with a *very* light touch when criticizing research / research orgs. They are part of the target audience. Dump the negativity on media (and Elon Musk) 
