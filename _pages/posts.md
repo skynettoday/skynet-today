@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Posts
-excerpt: "An archive of articles sorted by date."
+excerpt: "Sane, informed criticism of the latest AI hype and doomsaying"
 search_omit: true
 permalink: /posts
 ---
