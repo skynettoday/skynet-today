@@ -1,7 +1,6 @@
 ---
 layout: base
 ---
-
 <div id="main" role="main">
   <article class="entry">
     {% if page.image.feature %}<img src="{{ site.url }}/images/{{ page.image.feature }}" class="page-feature-image" alt="{{ page.title }}" {% if site.logo == null %}style="margin-top:0;"{% endif %}>{% if page.image.credit %}<p class="image-credit">Photo Credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></p>{% endif %}{% endif %}
