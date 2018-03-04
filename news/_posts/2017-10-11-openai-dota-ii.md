@@ -14,7 +14,7 @@ published: true
 Among the biggest AI stories of 2017, and one of the most opaque in terms of
 actual significance. 
 
-## The Event
+## What Happened
 Just months after [AlphaGo's historic
 triumph](https://en.wikipedia.org/wiki/Future_of_Go_Summit) against humanity's
 greatest Go Player, OpenAI released an [incredible
@@ -59,7 +59,7 @@ game AI. So it is a significant letdown that OpenAI did not choose to publish
 their approach with the justification that "We’re not ready to talk about agent
 internals — the team is focused on solving 5v5 first."
 
-## The Reaction
+## The Reactions
 OpenAI themselves claim that the bot
 
 > has learned — entirely via self-play — to predict where other players will
@@ -107,7 +107,7 @@ Luckily, more level-headed coverage quickly followed:
 
 The days we live in...
 
-## The Perspective
+## Our Perspective
 
 To begin, it's difficult to understate how unusual it is that there is no
 paper here. The only information that has released is a press release and a
@@ -155,7 +155,7 @@ O. Riedl (@mark_riedl) <a
 href="https://twitter.com/mark_riedl/status/897190444957913088?ref_src=twsrc%5Etfw">August
 14, 2017</a></blockquote>
 
-## The Gist
+## TLDR
 
 While OpenAI undoubtedly created an impressive demo, it seems unlikely that
 their research, if it is ever published, will have been much more than an
