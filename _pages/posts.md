@@ -5,7 +5,7 @@ excerpt: "Sane, informed criticism of the latest AI hype and doomsaying"
 search_omit: true
 permalink: /posts
 ---
-{% include mailchimp-sign-up.html %}
+
 <ul class="post-list"> 
   {% for post in site.posts %} 
     {% if post.published %} 

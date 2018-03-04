@@ -39,7 +39,6 @@ layout: base
       </footer>
       <div class="entry-content">
         {{ content }}
-        {% include mailchimp-sign-up.html %}
         {% if site.owner.disqus-shortname and page.comments or site.comments %}
           <div id="disqus_thread"></div><!-- /#disqus_thread -->
           {% include disqus-comments.html %}
