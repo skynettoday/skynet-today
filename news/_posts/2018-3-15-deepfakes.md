@@ -70,8 +70,10 @@ much to the discussion although rehashing the potentials for abuse like revenge
 porn. Then, on February 7, Reddit updated its rules about involuntary
 pornography [10], outlawing " any person in a state of nudity [...] posted without
 their permission, including depictions that have been faked" [11]. This caused
-discussion on both Reddit [12] and Hacker News [13], about questions of ethics,
-speech, and intellectual property law.
+discussion on both Reddit [12] and Hacker News [13] about questions of ethics,
+speech, and intellectual property law. 
+
+(-add a last closing sentence; perhaps 'though this story has subsided for now, it is unlikely this is the last we have heard of it'-)
 
 ## Our Perspective
 
