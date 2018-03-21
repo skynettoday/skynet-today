@@ -14,7 +14,7 @@ published: false
 # Deepfakes
 
 The first high-profile example of state of the art AI techniques causing large scale harm, 
-and likely far from the last. 
+and likely far from the last. But it may not be as bad as it seems...
 
 ## What Happened
 
