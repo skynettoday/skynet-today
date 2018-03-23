@@ -6,4 +6,10 @@ search_omit: true
 extra_css: ["assets/css/toggle.css"]
 extra_js: ["assets/js/toggle.js"]
 ---
-
+<ul class="post-list"> 
+  {% for post in site.posts %} 
+    {% if post.published %} 
+      {% include entry.html %}
+    {% endif %} 
+  {% endfor %}
+</ul>
