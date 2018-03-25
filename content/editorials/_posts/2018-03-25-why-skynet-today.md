@@ -5,7 +5,7 @@ comments: true
 image:
   feature: content/editorials/images/2018-2-28-why-skynet-today/propaganda.png
 author: andrey_kurenkov
-excerpt: "We Are Working on the Snopes for AI. Here is why. "
+excerpt: "We are working on the Snopes for AI. Here is why. "
 ---
 
 ## The Story
