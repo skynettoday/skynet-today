@@ -13,7 +13,7 @@ google_fonts:
   - name: "Lora"
     weights: "400,400i,700,700i"
 feed:
-  path: atom.xml
+  path: feed.xml
 
 permalink: /:categories/:title/
 markdown: kramdown
@@ -73,7 +73,7 @@ defaults:
 # Footer Links
 footer_links:
   - title: Feed
-    url: atom.xml
+    url: feed.xml
     icon: fa fa-rss-square fa-2x
   - title: Twitter
     url: https://twitter.com/skynet_today
