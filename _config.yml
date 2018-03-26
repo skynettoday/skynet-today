@@ -1,28 +1,29 @@
 locale: en-US
 title: Skynet Today
-description: Sane, informed criticism of the latest AI hype and doomsaying 
+description: Accessible and informed coverage of the latest AI hype and panic 
 baseurl: # the subpath of your site, e.g. "/blog"
 url: 
 logo: site-logo.png
 date_format: "%B %-d, %Y"
 read_time: true # reading time estimates, e.g. true
 words_per_minute: # 200
-mathjax: true# MathJax equations, e.g. true
 google_fonts:
   - name: "Source Sans Pro"
     weights: "400,400i,700,700i"
   - name: "Lora"
     weights: "400,400i,700,700i"
-
-# Build settings
-permalink: /:categories/:title/
-markdown: kramdown
 feed:
   path: atom.xml
 
-# Search
+permalink: /:categories/:title/
+markdown: kramdown
 search_full_content: false # can have performance implications for large sites
 comments: true
+show_drafts: false
+future:      true
+unpublished: false
+mathjax: true
+google_analytics: UA-54402578-2
 
 plugins:
   - jekyll-seo-tag
@@ -38,8 +39,6 @@ kramdown:
   toc_levels: 1..2
   enable_coderay: false
 
-mathjax: true
-
 include: [".htaccess","_pages"]
 exclude: ["CNAME", "_deploy.yml", "lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", ".less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md", "vendor"]
 
@@ -53,6 +52,23 @@ owner:
   disqus-shortname: skynet-today
   twitter: andrey_kurenkov
   github: andreykurenkov
+
+defaults:
+  # Posts defaults
+  - scope:
+      path: "news/_posts"
+      type: posts
+    values:
+      layout: post
+      comments: true
+      share: true
+  - scope:
+      path: "editorials/_posts"
+      type: posts
+    values:
+      layout: post
+      comments: true
+      share: true
 
 # Footer Links
 footer_links:
