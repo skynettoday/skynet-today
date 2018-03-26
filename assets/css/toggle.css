@@ -1,7 +1,5 @@
 .form {
   margin: auto;
-  width: 150%;
-  margin-left:-20%;
 }
 
 #categorical {
@@ -18,8 +16,8 @@
   width: inherit;
   margin: auto;
   width: 25%;
+  min-width: 200px;
   padding: 1px;
-  margin-right: 41%;
 }
 
 .switch-title {
