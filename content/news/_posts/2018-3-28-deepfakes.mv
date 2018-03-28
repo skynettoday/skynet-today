@@ -42,7 +42,10 @@ from NVIDIA](https://arxiv.org/abs/1703.00848). It however doesn't use
 (GANs)](http://theai.wiki/Generative%20Adversarial%20Network%20%28GAN%29),
 instead just taking advantage of a dual
 [autoencoder](http://theai.wiki/Autoencoder) approach.[^autoencoder] More recent
-versions of the Deepfakes code do take advantage of GANs[^GAN].
+versions of the Deepfakes code do take advantage of GANs[^GAN]. Of course, the 
+research was meant to be used in utterly different ways, but nevertheless the
+availability of papers and code that describe the algorithm made it possible for 
+deepfakes to do what they did.
 
 ## The Reactions
 
@@ -54,11 +57,11 @@ DC's Wonder Woman, was superimposed onto the body of a pornstar.
 
 It took another month for the coverage to really explode, though. Motherboard
 again broke the story that deepfakes had been made into an accessible app by a
-tool called "FakeApp", this time the headline read ["We are Truly Fucked,
+tool called "FakeApp"; this time the headline read ["We are Truly Fucked,
 Everyone Is Making AI-Generated Fake Porn
 Now"](https://motherboard.vice.com/en_us/article/bjye8a/reddit-fake-porn-app-daisy-ridley).
-While previously deepfake creation was limited to programmers and experts,
-FakeApp heavily automates the deepfake creation process, and allows laypeople to
+While previously creation of deepfakes content was limited to programmers and experts,
+FakeApp heavily automates the process and so allows laypeople to
 create the faceswapped videos with relative ease.  
 
 In that second article, Vice says:
@@ -138,28 +141,28 @@ is not as easy as claimed. Deepfakes, like most machine learning models,
 requires a lot of data. Making a fake requires a significant number of good
 quality images of a person. For celebrities and politicians, this is easy to
 come by. But for a use case like personal blackmail, it's less likely that
-there will be a lot of good images or video availible. 
+there will be a lot of good images or videos availible. 
 
-As a few examples, it took thousands of professional-quality headshots for a
+A few examples: it took thousands of professional-quality headshots for a
 [NYT reporter to get decent results with
 FaceApp](https://www.nytimes.com/2018/03/04/technology/fake-videos-deepfakes.html)
 , and nearly one thousand for [Sven
 Charlier](http://svencharleer.com/blog/2018/02/02/family-fun-with-deepfakes-or-how-i-got-my-wife-onto-the-tonight-show/),
 an HCI researcher, to get reasonable results at a relatively low resolution.
-That implies that at least for forseeable future, most deepfaked blackmail will
+That implies that at least for the forseeable future, most deepfaked blackmail will
 be low resolution and grainy. Perhaps more importantly, because of these
-limitations, [right now it is possible to detect many celebrity deepfakes,
-because they use existing video and celebrity
+limitations, [right now it is possible to detect many celebrity deepfakes 
+since they use existing video and celebrity
 photos](https://www.wired.com/story/gfycat-artificial-intelligence-deepfakes/).
 
 Another important thing to note about how deepfakes may affect fake news is that
 there are already many ways to create convincing fake videos. One exceptionally
 silly example from lawfare was that deepfakes could be used to "falsely depict a
 white police officer shooting an unarmed black man while shouting racial
-epithets". However creating such a video is already possible, no machine
+epithets". Creating such a video is already possible, no machine
 learning necessary.
 
-These corrections aside though, it's important to note though that for the most
+These corrections aside though, for the most
 part the coverage has been correct and this is indeed a worrying turn in the
 [Deep Learning](http://theai.wiki/Deep%20Learning)-initiated AI boom we are
 still in the middle of.
@@ -169,10 +172,6 @@ still in the middle of.
 Pornography with the use of AI techniques is certainly an ethical concern and
 bringing it to light is important. However, media outlets probably overreach
 when they suggest that you might be next.
-
-There are potentially concerns about deepfakes being used to create fake videos
-for political goals, but for now suitably convincing fakes are technically
-infeasable.
 
 
 *Josh is currently employed by Google, but these opinions are his own.*
