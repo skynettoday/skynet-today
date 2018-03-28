@@ -1,0 +1,26 @@
+---
+layout: page
+---
+<form class="form" id="writingToggleForm">
+  <div class="switch-field">
+    <!--   <div class="switch-title">Display Type</div> -->
+    <input type="radio" id="switch_left" name="switch" value="yes" checked/>
+    <label for="switch_left">News</label>
+    <input type="radio" id="switch_right" name="switch" value="no" />
+    <label for="switch_right">Editorials</label>
+  </div>
+</form>
+<div id='news'>
+  <ul class="post-list"> 
+    {% for post in site.categories.news %} 
+      {% include entry.html %}
+    {% endfor %}
+  </ul>
+</div>
+<div id='editorials'>
+  <ul class="post-list"> 
+    {% for post in site.categories.editorials %} 
+      {% include entry.html %}
+    {% endfor %}
+  </ul>
+</div>

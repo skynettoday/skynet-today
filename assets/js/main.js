@@ -33,6 +33,14 @@ $(function() {
 // Add lightbox class to all image links
 $("a[href$='.jpg'],a[href$='.jpeg'],a[href$='.JPG'],a[href$='.png'],a[href$='.gif']").addClass("image-popup");
 
+var bigfoot = $.bigfoot(
+	{
+	actionOriginalFN: "ignore",
+	positionContent: "false",
+	useFootnoteOnlyOnce: "false"
+	}
+);
+
 // Magnific-Popup options
 $(document).ready(function() {
   $('.image-popup').magnificPopup({

@@ -2,7 +2,7 @@
   <footer role="contentinfo" class="entry-wrapper">
 
     {% if site.owner.google.ad-client and site.owner.google.ad-slot %}{% include ad-footer.html %}{% endif %}
-   
+   {% include mailchimp-sign-up.html %}
   {%- if site.footer_links -%}
     <div class="social-icons">
       {%- for footer_link in site.footer_links -%}

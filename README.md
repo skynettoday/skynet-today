@@ -1,3 +1,3 @@
 # Skynet Today
-Sane, informed criticism of the latest AI hype and doomsaying
+Accessible and informed coverage of the latest AI hype and panic
 

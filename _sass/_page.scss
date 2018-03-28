@@ -19,28 +19,21 @@
 
 /* feature image */
 
-.entry-feature-image {
+.page-feature-image {
 	margin: 20px 0 0;
 	width: 100%;
 
-	@include media($medium) {
-		margin-top: -75px; /* move up to be overlapped by site logo */
-	}
-
-	@include media($large) {
-		margin-top: -145px; /* move up further to be overlapped by site logo */
-	}
 }
 
 /* page header */
 
-.entry-header {
+.page-header {
 	@include fill-parent;
 }
 
 /* tag listing in page header */
 
-.entry-tags {
+.page-tags {
 	margin: 2em 0 0;
   padding: 0;
 	text-transform: uppercase;
@@ -75,11 +68,11 @@
 
 /* page title */
 
-span + .entry-title {
+span + .page-title {
 	margin-top: 0;
 }
 
-.entry-title {
+.page-title {
 	font-family: $alt-font;
 	font-style: italic;
 	@include font-size(36,yes,36);
@@ -103,7 +96,7 @@ span + .entry-title {
 
 /* page/post wrapper */
 
-.entry-wrapper {
+.page-wrapper {
 	@include outer-container;
 	margin-top: 0;
 	margin-bottom: 3em;
@@ -113,7 +106,7 @@ span + .entry-title {
 
 /* page/post meta content (date, author, etc) */
 
-.entry-meta {
+.page-meta {
 	@include span-columns(12);
 	text-transform: uppercase;
 	@include font-size(14);
@@ -184,7 +177,7 @@ span + .entry-title {
 
 /* main content block */
 
-.entry-content {
+.page-content {
 	@include span-columns(12);
 
 	p:first-child {
@@ -232,16 +225,16 @@ span + .entry-title {
 #home,
 #page {
 
-	.entry-wrapper {
+	.page-wrapper {
 		max-width: em(760);
 	}
 
-	.entry-title {
+	.page-title {
 		text-align: center;
 		max-width: 100%;
 	}
 
-	.entry-content {
+	.page-content {
 		@include span-columns(12);
 	}
 }
@@ -343,4 +336,66 @@ span + .entry-title {
 	tr, td, th {
 		vertical-align: middle;
 	}
+}
+
+/*
+   Entries Grid Layout
+   ========================================================================== */
+
+.entries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 2em;
+
+  .entry {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-bottom: 2rem;
+  }
+
+  .entry-title {
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+
+  .entry-excerpt,
+  .entry-content {
+    -webkit-box-ordinal-group: 4;
+    -ms-flex-order: 3;
+    order: 3;
+
+    /* remove space after last child element */
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .entry-excerpt {
+    /* normalize font sizes */
+    > * {
+      font-size: 1em;
+    }
+  }
+
+  .entry-meta {
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+    margin-bottom: 1em;
+    font-size: 0.75em;
+  }
+
+  .more-link {
+    margin-top: -1em;
+
+    a {
+      text-decoration: none;
+    }
+  }
 }
