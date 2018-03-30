@@ -13,8 +13,9 @@ published: true
 
 # Deepfakes
 
-The first high-profile example of state of the art AI techniques causing large scale harm, 
-and likely far from the last. But it may not be as bad as it seems...
+The first high-profile example of state of the art AI techniques causing large
+scale harm, and likely far from the last. But it may not be as bad as it
+seems.
 
 ## What Happened
 
@@ -42,10 +43,9 @@ from NVIDIA](https://arxiv.org/abs/1703.00848). It however doesn't use
 (GANs)](http://theai.wiki/Generative%20Adversarial%20Network%20%28GAN%29),
 instead just taking advantage of a dual
 [autoencoder](http://theai.wiki/Autoencoder) approach.[^autoencoder] More recent
-versions of the Deepfakes code do take advantage of GANs[^GAN]. Of course, the 
-research was meant to be used in utterly different ways, but nevertheless the
-availability of papers and code that describe the algorithm made it possible for 
-deepfakes to do what they did.
+versions of the Deepfakes code do take advantage of GANs[^GAN]. Of course, the
+methods outlined in these papers were not developed with these uses in mind, but
+the availibility of papers and code does enable such misuses.
 
 ## The Reactions
 
@@ -159,13 +159,13 @@ Another important thing to note about how deepfakes may affect fake news is that
 there are already many ways to create convincing fake videos. One exceptionally
 silly example from lawfare was that deepfakes could be used to "falsely depict a
 white police officer shooting an unarmed black man while shouting racial
-epithets". Creating such a video is already possible, no machine
-learning necessary.
+epithets". Creating such a video is already possible, no machine learning
+necessary.
 
-These corrections aside though, for the most
-part the coverage has been correct and this is indeed a worrying turn in the
-[Deep Learning](http://theai.wiki/Deep%20Learning)-initiated AI boom we are
-still in the middle of.
+These corrections aside though, for the most part the coverage has been correct
+and this is indeed a worrying turn in the [Deep
+Learning](http://theai.wiki/Deep%20Learning)-initiated AI boom we are still in
+the middle of.
 
 ## TLDR
 
