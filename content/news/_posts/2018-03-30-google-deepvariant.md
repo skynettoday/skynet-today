@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Can a \"Google AI\" Build Your Genome Sequence?"
-excerpt: "A new AI-powered tool from Google promises more accurate genome sequences, but its impact on genomics research remains to be seen"
+excerpt: "A new AI-powered tool from Google promises more-accurate genome sequences, but its impact on genomics research remains to be seen"
 categories: news
 author: alex_constantino
 editor: andrey_kurenkov
@@ -30,11 +30,11 @@ Examples of the "pile-up" pictures that DeepVariant interprets. The different co
 	</figcaption>
 </figure>
 
-DeepVariant performs only the last step — determining which variants the aligned pieces represent. It’s powered by [Deep Learning](http://theai.wiki/Deep%20Learning), the technique behind most recent advances in AI and machine learning. As the authors demonstrate, it is significantly more accurate than existing tools, [making 10x fewer errors](https://blog.dnanexus.com/2017-12-05-evaluating-deepvariant-googles-machine-learning-variant-caller/). Interestingly, DeepVariant is based one [a deep neural network architecture](https://research.googleblog.com/2016/08/improving-inception-and-image.html) that was initially applied to classifying whether a picture contains a dog or a cat; this impressively showcases the applicability of Deep Learning to wildly different problems.
+DeepVariant performs only the last step — determining which variants the aligned pieces represent. It’s powered by [Deep Learning](http://theai.wiki/Deep%20Learning), the technique behind most recent advances in AI and machine learning. As the authors demonstrate, it is significantly more accurate than existing tools, [making 10x fewer errors](https://blog.dnanexus.com/2017-12-05-evaluating-deepvariant-googles-machine-learning-variant-caller/). Interestingly, DeepVariant is based on [a deep neural network architecture](https://research.googleblog.com/2016/08/improving-inception-and-image.html) that was initially applied to classifying whether a picture contains a dog or a cat, showcasing the applicability of Deep Learning to wildly different problems.
 
 ## The Reactions
 
-The media coverage about DeepVariant was generally accurate in its portrayal of both the technical and non-technical aspects of the story:
+The media coverage about DeepVariant was generally accurate in its portrayal of both the technical and non-technical aspects of the research:
 
 * Wired reported that "[Google Is Giving Away AI That Can Build Your Genome Sequence](https://www.wired.com/story/google-is-giving-away-ai-that-can-build-your-genome-sequence/)". The article does a great job of providing context for the research and the problem it solves, as well as telling the human story about how the project started at Google.
 
@@ -44,7 +44,7 @@ The media coverage about DeepVariant was generally accurate in its portrayal of 
 
 * A Forbes blog post titled "[No, Google's AI Program Can't Build Your Genome Sequence](https://www.forbes.com/sites/stevensalzberg/2017/12/11/no-googles-new-ai-cant-build-your-genome-sequence/#6a944cf05774)" called out Wired for their use of the phrase “assembling genomes” (genome assembly is a different problem in genomics, and not the one DeepVariant solves). But this is really a nitpick — to a general audience, it’s a reasonable description of what DeepVariant does, although a technical audience may interpret the word “assembling” differently. Wired nonetheless clarified this in a correction. 
 
-Many headlines made the mistake of calling DeepVariant an "AI" (artificial intelligence), when it is really a computer program that uses AI techniques to determine genetic variants. It is not an “intelligence” in itself. Besides this common wording mistake however, the coverage was on the whole well done.
+Many headlines made the mistake of calling DeepVariant an "AI" (artificial intelligence), when it is really a computer program that uses AI techniques to determine genetic variants. It is not an “intelligence” in itself. Besides this common wording mistake, the coverage was on the whole well done.
 
 ## Our Perspective
 
@@ -56,7 +56,7 @@ In some ways, DeepVariant perfectly illustrates the strengths and weaknesses of 
 
 ## TL;DR
 
-Google’s DeepVariant is a more accurate method for doing **one** part of the genome sequencing process. It has seen little adoption by researchers in its first three months, likely due to the extra computational cost for marginal improved accuracy. Media coverage correctly describes the research, but its impact on the broader scientific field remains to be seen and it should be understood to be a fairly marginal improvement over existing methods.
+Google’s DeepVariant is a more accurate method for doing **one** part of the genome sequencing process. It has seen little adoption by researchers in its first three months, likely due to the extra computational cost for marginal improved accuracy. Media coverage correctly describes the research, but its impact on the broader scientific field remains to be seen.
 
 Disclosure: I worked for Google and still have some equity.
 
