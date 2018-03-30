@@ -4,8 +4,8 @@ title: "Deepfakes"
 excerpt: "Has widespread misuse of AI arrived?"
 categories: news
 author: joshua_morton
-editor: 
-tags: []
+editor: andrey_kurenkov
+tags: [society,doom,fake]
 comments: true
 share: true
 published: true
