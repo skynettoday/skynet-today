@@ -12,8 +12,8 @@ actual significance.
 
 ## What Happened
 Just months after [AlphaGo's historic
-triumph](https://en.wikipedia.org/wiki/Future_of_Go_Summit) against humanity's
-greatest Go Player, OpenAI released an [incredible
+triumph](https://en.wikipedia.org/wiki/Future_of_Go_Summit) against the world's
+best human Go player, OpenAI released an [incredible
 video](https://openai.com/the-international/) and [associated press
 release](https://blog.openai.com/dota-2/) showing that for the first time ever,
 a team was able to develop a self-learning bot capable of beating professionals
@@ -22,7 +22,7 @@ at [DotA II](https://en.wikipedia.org/wiki/Dota_2) (an online multiplayer game).
 Unfortunately, OpenAI didn't accompany their press with an academic paper. At
 first, they only released a video that purported to show some of the mechanics
 the bot was able to learn, a short blog post summary, and an offer to apply to
-work at OpenAI. Highly unusual. 
+work at OpenAI. Highly unusual.
 
 <blockquote class="twitter-tweet" data-lang="en" align="center" data-conversation="none"><p lang="en" dir="ltr">AI
 research community spent many hours investigating the extent of the achievement.
@@ -38,13 +38,12 @@ post](https://blog.openai.com/more-on-dota-2/). This blog post did contain some
 important information: a clarification that the bot was primarily trained via [competetive self-play](https://blog.openai.com/competitive-self-play/),
 a timeline of the model's skill, and some discussion of the limitations of the agent 
 (that the bot had to be explicitly taught certain necessary strategies, and that it was 
-weak against certain
-uncommon tactics).
+weak against certain uncommon tactics).
 
 However, even this post fell short of the discussion of methodology one would
 normally expect from a paper. It instead focused mostly on perceived shortcomings
-and the (still quite interesting!) challenges of getting DotA to run in an
-environment suitable for repeated self-play.
+and the (still quite interesting!) infrastructural challenges of getting DotA to
+run in an environment suitable for repeated self-play.
 
 A paper with significant results in the area of real-time strategy or popular online
 multiplayer games would be groundbreaking. Thus far, successful self-learning
@@ -81,9 +80,9 @@ href="https://twitter.com/elonmusk/status/896169801277517824?ref_src=twsrc%5Etfw
 And his alarming statements were soon picked up by tech media, exemplified by
 this frightening headline from The Verge:
 
->[The world’s best Dota 2 players just got destroyed by a killer AI from Elon
->Musk’s
->startup](https://www.theverge.com/2017/8/11/16137388/dota-2-dendi-open-ai-elon-musk)
+> [The world’s best Dota 2 players just got destroyed by a killer AI from Elon
+> Musk’s
+> startup](https://www.theverge.com/2017/8/11/16137388/dota-2-dendi-open-ai-elon-musk)
 
 Yikes!
 
@@ -96,12 +95,15 @@ Almost every article though, cited Musk's tweets.
 
 Luckily, more level-headed coverage quickly followed:
 
-> * [Did Elon Musk’s AI champ destroy humans at video games? It’s complicated
+> [Did Elon Musk’s AI champ destroy humans at video games? It’s complicated
 ](https://www.theverge.com/2017/8/14/16143392/dota-ai-openai-bot-win-elon-musk)
-> * [Hype or Not? Some Perspective on OpenAI’s DotA 2
->Bot](http://www.wildml.com/2017/08/hype-or-not-some-perspective-on-openais-dota-2-bot/)
 
-The days we live in...
+> [Hype or Not? Some Perspective on OpenAI’s DotA 2
+> Bot](http://www.wildml.com/2017/08/hype-or-not-some-perspective-on-openais-dota-2-bot/)
+
+These articles are able to bring a level of expertise and analysis that some of
+the earlier publications lacked, but unfortunately come somewhat delayed when
+compared to the more exciting headlines.
 
 ## Our Perspective
 
@@ -127,7 +129,7 @@ level](https://arxiv.org/pdf/1702.06230.pdf). They too encountered similar
 issues with "degenerate" strategies. 
 
 This is not to say that *nothing* novel was accomplished. The bot did appear to
-learn at least one unique skill: the ability to deny resources by casting a
+learn at least one unique skill: the ability to deny information by casting a
 spell from just outside the enemy's vision range.
 
 <blockquote class="twitter-tweet" data-conversation="none" data-lang="en" align="center"><p
@@ -158,4 +160,7 @@ their research, if it is ever published, will have been much more than an
 application of existing methods to a new game under a very specifically
 controlled set of circumstances. In no way does it represent a "Killer AI" or
 some sort of existential threat.
+
+
+*Josh is currently employed by Google, but these opinions are his own.*
 
