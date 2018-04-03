@@ -21,8 +21,8 @@ BBC, the NYT, and a multitude of tech news sources.
 
 The cause of this coverage? Deepfakes, as the name implies, used
 [deep](http://theai.wiki/Deep%20Learning) [neural
-networks](http://theai.wiki/Neural%20Network) to generate fake (but convincing,
-if you squint) images and videos of porn in which the faces of the pornstars was
+networks](http://theai.wiki/Neural%20Network) to generate fake (but at a glance,
+convincing) images and videos of porn in which the faces of the pornstars was
 swapped with the faces of various celebrities.  
 
 The images and videos look highly realistic. Other people, like one named
@@ -30,7 +30,14 @@ The images and videos look highly realistic. Other people, like one named
 Angela Merkel's face onto Donald Trump, or sticking Nicholas Cage into every
 film role ever:
 
-![Nicholas Cage Deepfake]({{site_url}}/content/news/images/deepfakes/cage.jpg)
+<figure>
+	<img src="{{site_url}}/content/news/images/deepfakes/cage.jpg" alt="Derpfakes Example">
+	<figcaption>
+A deepfake, created by a user named "derpfakes", which superimposes Nicholas
+Cage's face onto Star Trek: The Next Generation's Captain Picard
+	</figcaption>
+</figure>
+
 
 It's important to discuss the research vs. the application in this case. The
 original deepfakes appears to be based on a simplified version of [this paper
@@ -109,7 +116,8 @@ away and overestimate what the tools are capable of now.
 
 While the ability of generative tools to create realistic fakes has vastly
 improved over the past 5 or so years, they aren't yet all the way there,
-and upon close investigation these images videos are easy to spot as fake.
+and currently, are either relatively easy to spot as fake, or not able to
+produce the kinds of images deepfakes demands.
 
 <center>
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">4 years
@@ -137,7 +145,7 @@ is not as easy as claimed. Deepfakes, like most machine learning models,
 requires a lot of data. Making a fake requires a significant number of good
 quality images of a person. For celebrities and politicians, this is easy to
 come by. But for a use case like personal blackmail, it's less likely that
-there will be a lot of good images or videos availible. 
+there will be a lot of good images or videos availible. [^oneshot]
 
 A few examples: it took thousands of professional-quality headshots for a
 [NYT reporter to get decent results with
@@ -175,4 +183,4 @@ when they suggest that you might be next.
 [^autoencoder]: In short, this approach works by taking two autoencoders and forcing them to share the same "latent space". In other words, you train an autoencoder to compress and then decompress your face, and train an autoencoder to compress and then decompress a celebrity face. By being clever and sharing the encoder between both models, you make sure that the compressed representations are similar, so then you can attach the decoder from the celebrity face to the shared encoder, and then pass in your face and get out a celebrity face.
 [^GAN]: [CycleGAN](https://github.com/junyanz/CycleGAN), and [pix2pix](https://github.com/phillipi/pix2pix) are two examples of GAN models modified for [faceswapping](https://github.com/shaoanlu/faceswap-GAN). In general, GANs work by training a pair of models, a discriminator and a generator. The Generator tries to trick the discriminator, and the discriminator in turn tries to detect the fakes produced by the generator.
 [^GAN2]: Since the GAN works by pairing a discriminator and a generator, the existence of a good generator is only possible due to an equally good discriminator. The problem with this is in practice is that there is no reason for a deepfake creator to publish the discriminator used as part of training.
-
+[^oneshot]: Machine learning with a small amount of training data is an active area of research known as "one-shot learning". Current one-shot learning techniques can't generate the types of images that are required for convincing deepfakes.
