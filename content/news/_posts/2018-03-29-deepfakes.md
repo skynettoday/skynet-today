@@ -115,7 +115,8 @@ away and overestimate what the tools are capable of now.
 
 While the ability of generative tools to create realistic fakes has vastly
 improved over the past 5 or so years, they aren't yet all the way there,
-and upon close investigation these images videos are easy to spot as fake.
+and currently, are either relatively easy to spot as fake, or not able to
+produce the kinds of images deepfakes demands.
 
 <center>
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">4 years
