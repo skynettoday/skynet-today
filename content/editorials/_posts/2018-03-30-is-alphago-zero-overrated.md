@@ -1,8 +1,10 @@
 ---
 title: AlphaGo Zero Is Not A Sign of Imminent Human-Level AI
 tags: [hype,bigbiz]
-comments: true
+image:
+  feature: /content/editorials/images/is-alphago-zero-overrated/history.png
 author: andrey_kurenkov
+editor: joshua_morton
 excerpt: "Why DeepMind's Go playing program is not about to solve all of AI"
 ---
 
@@ -29,7 +31,7 @@ Point being: AlphaGo Zero (which we'll go ahead and shorten to AG0) is arguably 
 So, surely DeepMind's demonstration that an AI algorithm can achieve superhuman Go and Chess play purely through self-play is a testament to the usefulness of such techniques for solving the hard problems of AI? Well, to some extent yes — it has taken the field decades to get here, since the [branching factor](http://theai.wiki/Branching%20Factor) of Go does indeed make it a challenging board game. This is also the first a time the same Deep Learning algorithm was used to crack both Chess and Go[^general], and was not specifically tailored for it such as was the case with [Deep Blue](https://en.wikipedia.org/wiki/Deep_Blue_(chess_computer)) (the much heralded machine of IBM that was the first to beat humanity's best at Chess) and the original AlphaGo. Therefore, AG0 is certainly monumental and exciting work (and great PR). 
 
 <figure>
-      <img src="https://draftin.com:443/images/56473?token=3G6YQX_K8LNCSvkf-fxVAxQMIhG2_8ZOd3uGpjtGKF-myi9JaeEyNf4-cb_r3pynXoHYJr8_n2TPZvaY4OedIjA" alt="Game History"/>
+      <img src="/content/editorials/images/is-alphago-zero-overrated/history.png" alt="Game History"/>
      <figcaption>AlphaGo is the culmination of research into Game AI that stretches all the way back to the birth of AI as a research field. So, it is an inarguably great and historic achievement.<b><a href="http://www.andreykurenkov.com/writing/ai/a-brief-history-of-game-ai/">(source)</a></b></figcaption>
 </figure>
 
@@ -37,7 +39,7 @@ So, surely DeepMind's demonstration that an AI algorithm can achieve superhuman 
 With those positive things having been said, some perspective: AG0 is not really a testament to the usefulness of such techniques for solving the hard problems of AI. You see, Go is only hard within the context of the simplest category of AI problems. That is, it is in the category of problems with every property that makes a learning task easy: it is [deterministic, discrete, static, fully observable, fully-known, single-agent, episodic](https://en.wikibooks.org/wiki/Artificial_Intelligence/AI_Agents_and_their_Environments), cheap and easy to simulate, easy to score... Literally the only challenging aspect of Go is its huge branching factor. Predictions that [AGI (Artificial General Intelligence)](http://theai.wiki/AGI) is imminent based only on AlphaGo's success can be safely dismissed — [the real world is vastly more complex than a simple game like Go](https://medium.com/@karpathy/alphago-in-context-c47718cb95a5). Even fairly similar problems that have most but not all of the properties that make a learning task easy, [such as the strategic video game DotA II](/content/news/openai-dota-ii/), are far beyond our grasp right now. 
 
 <figure>
-     <img src="https://draftin.com:443/images/56318?token=MjHXMguA3ItT0gpWGe7oTsXUaCiQD6zqiltIdZ898zov75aC1sUXDxqwb4DdG5ERU8USDWQSP-r_X57wSHGb1G0" alt="Venn"/>
+     <img src="/content/editorials/images/is-alphago-zero-overrated/venn.svg" alt="Venn"/>
      <figcaption>A (rough) diagram of AI problem complexity. Note that Go and (most) Atari games are in the same league as chess; just about the only distinction is branching factor. The techniques that power AG0 may solve games like Go, but as <a href="http://www.skynettoday.com/news/alphago/">I've written elsewhere in more detail</a> most AI problems are vastly more difficult — categorically different.
     </figcaption>
 </figure>
@@ -62,7 +64,7 @@ So, while AG0 works and its achievement is impressive, it is fundamentally simil
 Probably, yes; the algorithms behind AG0 (Deep Learning and self-play) are inherently more general than human-defined heuristics and brute computation[^likely]. Still, it is important to understand and remember the parallels between Deep Blue and AG0: **at the end of the day, both Deep Blue and AG0 are narrow AI programs that were built (at least in part) as PR boons for large companies by huge teams at the costs of millions of dollars; they deal with problems which are difficult for humans, but which are also relatively simple for computers.**
 
 <figure>
-     <img src="https://draftin.com:443/images/56472?token=PT3XzKUl83mv1Ugo4meVAuSbd2yZt4O7yC0w8taldm0ESr3XQv9it5dvEk71YqQ4zAXgL9RCyOJIgiy-q9IsRvU" alt="PR"/>
+     <img src="/content/editorials/images/is-alphago-zero-overrated/ibm.png" alt="PR"/>
      <figcaption>"One day after its chess computer defeated Garry Kasparov, the world chess champion, I.B.M. stock surged to a 10-year high and was only a bit shy of its record." <b><a href="http://www.nytimes.com/1997/05/13/business/ibm-s-stock-surges-by-3.6.html">(source)</a></b>
     </figcaption>
 </figure>
@@ -70,14 +72,14 @@ Probably, yes; the algorithms behind AG0 (Deep Learning and self-play) are inher
 I write this not to be controversial or take away from DeepMind's fantastic work, but rather to fight against all the unwarranted hype AG0's success has generated and encourage more conversation about the limitations of deep learning and self-play. More people need to [step up](https://arxiv.org/abs/1801.05667) and [say this kind of stuff](https://www.alexirpan.com/2018/02/14/rl-hard.html) for the general public as well as the AI research community to not be led astray by hype and PR.
 
 <figure>
-      <img src="https://draftin.com:443/images/56455?token=xs160v42e5csuixlGRF-SwhlyE7aF7ygrZv06ItqOOVIXydzZ-_kUF8p_bb3ivSJxpZ9tT33MZrQ2nH3uYJ-UG8" alt="AI Hype"/>
+      <img src="/content/editorials/images/is-alphago-zero-overrated/hype.png" alt="AI Hype"/>
      <figcaption>AGI Doomsayers overhype the significance of things like AG0 while people like me try to counter them and bring about disillusionment; meanwhile there are plenty of ethical concerns and potential misuses of AI to worry about already. Let's hope we reach the plateau of productivity soon... <a href="https://en.wikipedia.org/wiki/Hype_cycle"><b>(source)</b></a></figcaption>
 </figure>
 
 And all that aside, it should still be asked:  might there be a better for AI agents to learn to play Go? The very name AlphaGo Zero is in reference to the idea that the model learns to play Go ["from scratch"](https://deepmind.com/blog/alphago-zero-learning-scratch/), without any further human input or explanation. But is learning 'from scratch' really such a good thing? Imagine you knew nothing about Go and decided to start learning it. You would definitely read the rules, some high level strategies, recall how you played similar games in the past, get some advice... right? And it indeed at least partially because of the learning 'from scratch' **limitation** of AlphaGo Zero that it is not truly impressive compared to human learning: like Deep Blue, it still relies on seeing orders of magnitude more Go games and planning for orders of magnitude more scenarios in any given game than any human ever does.
 
 <figure>
-     <img src="https://draftin.com:443/images/56301?token=pVbCvo4eZCulh3YQIgOjTGJKbwpF2BfMCUCWkytrr5-hsHVx-DJPE_uZcieYvsfJ5C07opZpqHb7-azGziKT-1k" alt="Paper img"/>
+     <img src="/content/editorials/images/is-alphago-zero-overrated/go_gif.gif" alt="Go GIF"/>
      <figcaption>The progression of AG0's skill. It is certainly impressive that it takes 'just' 3 days of non-stop computation to get to best-human-in-the-world skill. But perhaps we should also note it takes a whole day and orders of magnitude more games than humans get to experience in their lifetimes to get to an ELO score of 0 (which even the weakest human can do easily)? From <a href="https://deepmind.com/blog/alphago-zero-learning-scratch/"><b>"DeepMind's AlphaGo Zero Blog Post"</b></a>
      </figcaption>
 </figure>
