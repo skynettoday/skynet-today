@@ -54,7 +54,7 @@ A [search](https://scholar.google.com/scholar?cites=17906459847542072356&as_sdt=
 
 In some ways, DeepVariant perfectly illustrates the strengths and weaknesses of Deep Learning. Unlike previous tools, it doesn’t require a team of experts to spend years teaching it to deal with different kinds of errors — it simply learns patterns by being shown lots of pictures. However, it requires much more computer power and only incrementally improves accuracy.
 
-## TL;DR
+## TLDR
 
 Google’s DeepVariant is a more accurate method for doing **one** part of the genome sequencing process. It has seen little adoption by researchers in its first three months, likely due to the extra computational cost for marginal improved accuracy. Media coverage correctly describes the research, but its impact on the broader scientific field remains to be seen.
 

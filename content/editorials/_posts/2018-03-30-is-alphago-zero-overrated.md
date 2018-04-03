@@ -3,7 +3,7 @@ title: AlphaGo Zero Is Not A Sign of Imminent Human-Level AI
 tags: [hype,bigbiz]
 comments: true
 author: andrey_kurenkov
-excerpt: "Why DeepMind's Go playing program is not about to solve all of AI."
+excerpt: "Why DeepMind's Go playing program is not about to solve all of AI"
 ---
 
 ## Why AlphaGo Zero Is Great
@@ -82,6 +82,7 @@ And all that aside, it should still be asked:  might there be a better for AI ag
      </figcaption>
 </figure>
 
+## TLDR
 So, let's sum up: though AlphaGo and AG0's achievements are historic and impressive, they also represent little if any progress in tackling the truly hard problems of AI (not to mention AGI). Still, as with any field all AI researchers stand on the shoulders of their predecessors; though these techniques may not foreshadow the coming of AGI, they are definitely part of the Deep Learning Revolution the field is still in the midst of and the ideas that they are based on will doubtlessly enable future progress. As with Deep Learning as a whole, it is important to appreciate these fantastic accomplishments for the field of AI without losing perspective about their limitations.
 
 [^AlphaGo]: AlphaGo is the program that famously beat humanity's best Go player Lee Sidol.
