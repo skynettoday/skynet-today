@@ -86,11 +86,11 @@ span + .page-title {
 	}
 
 	@include media($medium) {
-		@include font-size(52,yes,54);
+		@include font-size(52,yes,18);
 	}
 
 	@include media($large) {
-		@include font-size(68,yes,72);
+		@include font-size(68,yes,18);
 	}
 }
 
@@ -398,4 +398,19 @@ span + .page-title {
       text-decoration: none;
     }
   }
+}
+
+figure {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  vertical-align: top;
+  width: 75%;
+}
+
+
+figcaption {
+  margin-left: -12.5%;
+  width: 125%;
 }
