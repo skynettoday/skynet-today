@@ -1,11 +1,10 @@
 ---
 title: Why Skynet Today
 tags: [meta,retrospective]
-comments: true
 image:
-  feature: content/editorials/images/2018-2-28-why-skynet-today/propaganda.png
+  feature: content/editorials/images/why-skynet-today/propaganda.png
 author: andrey_kurenkov
-excerpt: "We are working on the Snopes for AI. Here is why. "
+excerpt: "We are working on the Snopes for AI — here is why "
 ---
 
 ## The Story
@@ -26,7 +25,7 @@ Why do I get so annoyed by these headlines? After all, this happens all the time
 
 Still, I thought I was powerless to do much about it, and so sat by and waited for things to improve. A year passed, nothing changed; actually, things got worse. I started seeing ever more absurd headlines such as ["An AI backed by Elon Musk just ‘evolved’ to learn by itself"](http://www.globalfuturist.org/2017/04/an-ai-backed-by-elon-musk-just-evolved-to-learn-by-itself/) and ["Facebook AI Invents Language That Humans Can't Understand: System Shut Down Before It Evolves Into Skynet"](http://www.techtimes.com/articles/212124/20170730/facebook-ai-invents-language-that-humans-cant-understand-system-shut-down-before-it-evolves-into-skynet.html). And then, that latter headline was so annoying and the story was so pervasive it gave me a sudden idea:
 
-![fb1.png](/content/editorials/images/2018-2-28-why-skynet-today/fb1.png)
+![fb1.png](/content/editorials/images/why-skynet-today/fb1.png)
 
 And here we are! 
 
@@ -43,5 +42,5 @@ So, if you agree with this site's mission and are such a qualified person, get i
 ## TLDR
 We believe understanding of AI and its ramifications should be more accessible, that some of those with the technical knowledge to seperate fact from fiction should help make it accessible, and that those unsure of its ramifications should seek to become more informed. Plus, we won't be shy about poking fun at the sheer absurdity of the stories we will criticize, so we can all have some fun in the process :) .
 
-![propaganda.png](/content/editorials/images/2018-2-28-why-skynet-today/propaganda.png) 
+![propaganda.png](/content/editorials/images/why-skynet-today/propaganda.png) 
 

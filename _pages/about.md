@@ -2,7 +2,7 @@
 layout: page
 title: About Skynet Today
 excerpt: "What is this whole thing."
-modified: 2017-08-08T19:44:38.564948-04:00
+modified: 2018-04-02
 permalink: /about
 ---
 
@@ -10,7 +10,6 @@ permalink: /about
 
 ## What is this
 As it says up there, Skynet Today is a site dedicated to providing accessible and informed written criticism of the latest AI hype and panic. In other words, the idea is to post a concise but comprehensive overview of each major AI story that bubbles up in popular media. Such stories have happened more and more often in the past several years. The hope is to get a variety of people knowledgeable about AI to cover the coverage of new events related to AI and so make it clear what is misinformation and what is actually worth paying attention to. 
-
 
 ## Who are you
 We are a group of researchers and engineers with domain knowledge in AI who collaborate toward this site's goal in our spare time. People actively contributing to the site include:
@@ -23,3 +22,6 @@ We believe this needs to be done, that no one is really doing it, and that we ha
 
 ## But surely you are aware AI is an existential threat
 Yes, we are quite aware of the [existential threat](https://waitbutwhy.com/2015/01/artificial-intelligence-revolution-1.html) possibilities of AI. The counterpoint to all that is wonderfully conveyed by [Rodney Brooks](https://rodneybrooks.com/the-seven-deadly-sins-of-predicting-the-future-of-ai/); an AGI or even scary doom AI is certainly possible, but we still seem far from it. In any case, this site's focus will be on providing perspective on stories in the here and now, not hypotheticals about the future.
+
+## How You Can Help
+Subscribe! Spread the word! And if you want to contribute writing, see our [call for collaborators and submissions](/content/editorials/call-for-collaborators).
