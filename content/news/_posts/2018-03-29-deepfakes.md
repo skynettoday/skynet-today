@@ -30,7 +30,7 @@ The images and videos look highly realistic. Other people, like one named
 Angela Merkel's face onto Donald Trump, or sticking Nicholas Cage into every
 film role ever:
 
-![Nicholas Cage Deepfake]({{site_url}}/content/news/images/2018-3-15-deepfakes/cage.jpg)
+![Nicholas Cage Deepfake]({{site_url}}/content/news/images/deepfakes/cage.jpg)
 
 It's important to discuss the research vs. the application in this case. The
 original deepfakes appears to be based on a simplified version of [this paper

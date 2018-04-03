@@ -20,7 +20,7 @@ First, let’s talk about DNA. DNA is the molecule that determines your genetic 
 Here’s how high-throughput sequencing typically works: DNA molecules are isolated from blood or spit and broken into millions of pieces with a couple hundred letters each. To read each letter, a machine adds a chemical dye to each piece, lights up the dye with a laser, and takes a picture. The rest of the process happens on computers — a program processes each picture to determine the most likely letter sequence for each piece, aligns each piece to a complete reference sequence, and lists "variants" (a variant is any difference between the sample and reference sequence e.g. “three letters deleted” or “A instead of T”).
 
 <figure>
-	<img src="{{site.url}}/content/news/images/2018-03-30-google-deepvariant/image_0.png" alt="Pileup Examples">
+	<img src="{{site.url}}/content/news/images/google-deepvariant/image_0.png" alt="Pileup Examples">
 	<figcaption>
 Examples of the "pile-up" pictures that DeepVariant interprets. The different colors correspond to the A’s, T’s, G’s, and C’s of DNA. See those gaps in sections B and C? Those indicate that part of the genome was deleted.
 	</figcaption>
