@@ -6,6 +6,8 @@ modified: 2017-08-08T19:44:38.564948-04:00
 permalink: /about
 ---
 
+<h3 class="page-title">About </h3>
+
 ## What is this
 As it says up there, Skynet Today is a site dedicated to providing accessible and informed written criticism of the latest AI hype and panic. In other words, the idea is to post a concise but comprehensive overview of each major AI story that bubbles up in popular media. Such stories have happened more and more often in the past several years. The hope is to get a variety of people knowledgeable about AI to cover the coverage of new events related to AI and so make it clear what is misinformation and what is actually worth paying attention to. 
 
