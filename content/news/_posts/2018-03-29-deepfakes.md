@@ -2,13 +2,9 @@
 layout: post
 title: "Deepfakes"
 excerpt: "Has widespread misuse of AI arrived?"
-categories: news
 author: joshua_morton
 editor: andrey_kurenkov
 tags: [society,doom,fake]
-comments: true
-share: true
-published: true
 ---
 
 # Deepfakes
@@ -34,9 +30,14 @@ The images and videos look highly realistic. Other people, like one named
 Angela Merkel's face onto Donald Trump, or sticking Nicholas Cage into every
 film role ever:
 
-![A deepfake, created by a user named "derpfakes", which superimposes Nicholas
-Cage's face onto Star Trek: The Next Generation's Captain
-Picard]({{site_url}}/content/news/images/2018-3-15-deepfakes/cage.jpg)
+<figure>
+	<img src="{{site_url}}/content/news/images/deepfakes/cage.jpg" alt="Derpfakes Example">
+	<figcaption>
+A deepfake, created by a user named "derpfakes", which superimposes Nicholas
+Cage's face onto Star Trek: The Next Generation's Captain Picard
+	</figcaption>
+</figure>
+
 
 It's important to discuss the research vs. the application in this case. The
 original deepfakes appears to be based on a simplified version of [this paper

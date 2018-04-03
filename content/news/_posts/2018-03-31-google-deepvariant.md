@@ -2,13 +2,9 @@
 layout: post
 title: "Can a \"Google AI\" Build Your Genome Sequence?"
 excerpt: "A new AI-powered tool from Google promises more-accurate genome sequences, but its impact on genomics research remains to be seen"
-categories: news
 author: alex_constantino
 editor: andrey_kurenkov
 tags: [biology,google,genomics]
-comments: true
-share: true
-published: true
 ---
 
 ## What Happened
@@ -24,7 +20,7 @@ First, let’s talk about DNA. DNA is the molecule that determines your genetic 
 Here’s how high-throughput sequencing typically works: DNA molecules are isolated from blood or spit and broken into millions of pieces with a couple hundred letters each. To read each letter, a machine adds a chemical dye to each piece, lights up the dye with a laser, and takes a picture. The rest of the process happens on computers — a program processes each picture to determine the most likely letter sequence for each piece, aligns each piece to a complete reference sequence, and lists "variants" (a variant is any difference between the sample and reference sequence e.g. “three letters deleted” or “A instead of T”).
 
 <figure>
-	<img src="{{site.url}}/content/news/images/2018-03-30-google-deepvariant/image_0.png" alt="Pileup Examples">
+	<img src="{{site.url}}/content/news/images/google-deepvariant/image_0.png" alt="Pileup Examples">
 	<figcaption>
 Examples of the "pile-up" pictures that DeepVariant interprets. The different colors correspond to the A’s, T’s, G’s, and C’s of DNA. See those gaps in sections B and C? Those indicate that part of the genome was deleted.
 	</figcaption>
@@ -54,7 +50,7 @@ A [search](https://scholar.google.com/scholar?cites=17906459847542072356&as_sdt=
 
 In some ways, DeepVariant perfectly illustrates the strengths and weaknesses of Deep Learning. Unlike previous tools, it doesn’t require a team of experts to spend years teaching it to deal with different kinds of errors — it simply learns patterns by being shown lots of pictures. However, it requires much more computer power and only incrementally improves accuracy.
 
-## TL;DR
+## TLDR
 
 Google’s DeepVariant is a more accurate method for doing **one** part of the genome sequencing process. It has seen little adoption by researchers in its first three months, likely due to the extra computational cost for marginal improved accuracy. Media coverage correctly describes the research, but its impact on the broader scientific field remains to be seen.
 

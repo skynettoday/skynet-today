@@ -56,14 +56,14 @@ owner:
 defaults:
   # Posts defaults
   - scope:
-      path: "news/_posts"
+      path: "content/news/_posts"
       type: posts
     values:
       layout: post
       comments: true
       share: true
   - scope:
-      path: "editorials/_posts"
+      path: "content/editorials/_posts"
       type: posts
     values:
       layout: post
