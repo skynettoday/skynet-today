@@ -3,7 +3,7 @@ title: Skynet Today
 description: Accessible and informed coverage of the latest AI hype and panic 
 baseurl: # the subpath of your site, e.g. "/blog"
 url: 
-logo: site-logo.png
+logo: site-logo-white.png
 date_format: "%B %-d, %Y"
 read_time: true # reading time estimates, e.g. true
 words_per_minute: # 200
@@ -50,8 +50,7 @@ owner:
   email: andreyk@stanford.com
   web: //www.andreykurenkov.com
   disqus-shortname: skynet-today
-  twitter: andrey_kurenkov
-  github: andreykurenkov
+  twitter: skynet_today
 
 defaults:
   # Posts defaults

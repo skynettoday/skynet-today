@@ -2,7 +2,7 @@
 title: AlphaGo Zero Is Not A Sign of Imminent Human-Level AI
 tags: [hype,bigbiz]
 image:
-  feature: /content/editorials/images/is-alphago-zero-overrated/history.png
+  feature: content/editorials/images/is-alphago-zero-overrated/history.png
 author: andrey_kurenkov
 editor: joshua_morton
 excerpt: "Why DeepMind's Go playing program is not about to solve all of AI"
