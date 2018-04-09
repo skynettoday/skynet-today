@@ -87,7 +87,7 @@ And all that aside, it should still be asked:  might there be a better for AI ag
 ## TLDR
 So, let's sum up: though AlphaGo and AG0's achievements are historic and impressive, they also represent little if any progress in tackling the truly hard problems of AI (not to mention AGI). Still, as with any field all AI researchers stand on the shoulders of their predecessors; though these techniques may not foreshadow the coming of AGI, they are definitely part of the Deep Learning Revolution the field is still in the midst of and the ideas that they are based on will doubtlessly enable future progress. As with Deep Learning as a whole, it is important to appreciate these fantastic accomplishments for the field of AI without losing perspective about their limitations.
 
-[^AlphaGo]: AlphaGo is the program that famously beat humanity's best Go player Lee Sidol.
+[^AlphaGo]: AlphaGo is the program that famously beat humanity's best Go player Lee Sedol.
 [^unaware]: For those unaware, AlphaGo Zero is the name of an algorithm discussed in a paper late last year.
 [^praised]: At least, praised by non-technical news coverage
 [^simpler]: In contrast to AG0, AlphaGo involved several neural nets and features specific to Go.
