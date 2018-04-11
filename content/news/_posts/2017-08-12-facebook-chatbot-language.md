@@ -3,7 +3,7 @@ layout: post
 title: "The Scary Story of Facebook's Unremarkable 'AI Invented Language'"
 excerpt: "Sometimes the narratives media conjures up just serve to make real life seem boring"
 author: andrey_kurenkov
-tags: [facebook,chatbot,nlp,doom]
+tags: [Facebook,BigBiz,chatbot,NLP,panic]
 ---
 A truly astounding exemplar of how coverage of AI goes horribly wrong, in both outcome and process.
 

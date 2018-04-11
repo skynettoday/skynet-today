@@ -4,7 +4,7 @@ title: "Can a \"Google AI\" Build Your Genome Sequence?"
 excerpt: "A new AI-powered tool from Google promises more-accurate genome sequences, but its impact on genomics research remains to be seen"
 author: alex_constantino
 editor: andrey_kurenkov
-tags: [biology,google,genomics]
+tags: [biology,Google,BigBiz,hype]
 ---
 
 ## What Happened

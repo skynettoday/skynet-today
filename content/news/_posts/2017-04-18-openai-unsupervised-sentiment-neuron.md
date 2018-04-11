@@ -2,7 +2,7 @@
 title: "The Curious Case of OpenAI's Unsupervised Sentiment Neuron"
 excerpt: "A nifty thing happened unintentionally, and some people overreacted"
 author: andrey_kurenkov
-tags: [openai,nlp,hype]
+tags: [OpenAI,NLP,hype]
 ---
 Not a particularly big story, but one that nicely exemplifies how media coverage of AI research goes wrong.
 

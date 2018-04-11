@@ -4,7 +4,7 @@ title: "Deepfakes - Is Seeing Still Believing?"
 excerpt: "Has widespread misuse of AI arrived?"
 author: joshua_morton
 editor: andrey_kurenkov
-tags: [society,doom,fake]
+tags: [society,panic,fake]
 ---
 
 # Deepfakes

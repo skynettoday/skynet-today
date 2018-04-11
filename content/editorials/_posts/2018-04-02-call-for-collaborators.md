@@ -1,10 +1,10 @@
 ---
 title: Call for Collaborators and Submissions
-tags: [meta]
 comments: false
 image:
   feature: content/editorials/images/call-for-collaborators/propaganda.png
 author: andrey_kurenkov
+tags: [meta]
 excerpt: "Know about AI and agree with this site's mission? Contribute!"
 ---
 Skynet Today is seeking collaborators and editorial submissions! 
