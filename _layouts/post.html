@@ -11,7 +11,7 @@ layout: base
 		  {% if page.image.feature %}<img src="{{ site.url }}/{{ page.image.feature }}" class="page-feature-image" alt="{{ page.title }}" {% if site.logo == null %}style="margin-top:0;"{% endif %}>{% if page.image.credit %}<p class="image-credit">Image credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></p>{% endif %}{% endif %}
       
         <ul class="page-tags">
-          {% for tag in page.tags %}<li><a href="{{ site.url }}/tags/#{{ tag }}" title="Pages tagged {{ tag }}">{{ tag }}</a></li>{% endfor %}
+          {% for tag in page.tags %}<li><a href="{{ site.url }}/tags#{{ tag }}" title="Pages tagged {{ tag }}">{{ tag }}</a></li>{% endfor %}
         </ul>
       </header>
       <footer class="page-meta">
