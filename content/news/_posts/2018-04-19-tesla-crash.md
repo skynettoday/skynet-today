@@ -60,9 +60,9 @@ At the same time, Tesla drivers around the country were able to reproduce
 autopilot actions similar to the ones that caused the accident, [at other
 interchanges](https://www.youtube.com/watch?v=6QCF8tVqM3I), and [at the original
 crash site](https://www.youtube.com/watch?v=VVJSjeHDvfY). Among many reports was
-th idea that [this was a recent change, and that a recent over the air update
-changed autopilot behavior in this
-situation](https://www.reddit.com/r/teslamotors/comments/8a0jfh/autopilot_barrier_lust_201812/)
+th idea that [autopilot hadn't always done this, and that a recent over the air
+update changed the vehicle behavior in similar
+cirucmstances.](https://www.reddit.com/r/teslamotors/comments/8a0jfh/autopilot_barrier_lust_201812/)
 
 ## Our Perspective
 
@@ -75,7 +75,7 @@ suite and appears to rely almost entirely on a camera for lane finding and car
 following.
 
 That's similar to the adaptive cruise control that many other car manufacturers
-offer. Tesla, however, markets Autopilot as something more advanced, 
+offer. Tesla, however, markets autopilot as something more advanced, 
 
 <center>
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en"
