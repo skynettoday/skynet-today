@@ -1,18 +1,24 @@
 ---
 layout: post
-title: "A Perspective on the Recent Tesla Autopilot Crash"
-excerpt: "AI gone haywire, or something else?"
+title: "Tesla's Lethal Autopilot Crash - a problem of UI as much as AI"
+excerpt: "The tragedy could have been avoided with clearer communication and understanding of current systems' limitations"
 author: joshua_morton
 editor: andrey_kurenkov
-tags: [tesla,autonomy,ethics,BigBiz]
+tags: [Tesla,autonomy,ethics,BigBiz]
 ---
+
+-add summary sentence at start-
 
 ## What Happened
 
 On March 23, 2018, a Tesla Model X crashed into a median on Highway 101 in
 Mountain View California, killing its occupant. Like a similar crash in May 2016
-the vehicle’s “Autopilot” was enabled at the time of the crash. Soon after the
-NTSB and Tesla opened an investigation into the cause of the accident. This
+the vehicle’s “Autopilot” was enabled at the time of the crash. 
+
+-expand a good deal on details here; what was driver doing, overhead shot, etc. 
+-take inspiraiton from other reporting, link to other reports-
+
+Soon after the NTSB and Tesla opened an investigation into the cause of the accident. This
 investigation is still ongoing.
 
 Current theory is that the autopilot incorrectly followed road markings as a
@@ -20,25 +26,27 @@ lane split in an left-lane exit/interchange.
 
 ## The Reactions
 
-Tesla initially [released a
+The story around the crash developed gradually over weeks:
+
+* Tesla initially [released a
 statement](https://www.tesla.com/blog/what-we-know-about-last-weeks-accident)
 outlining a few quick points about the accident, noting that the crash was
 likely made more severe due to the lack of a crash attenuator, a safety device
 built into the highway.
 
-A few days later, Tesla released a followup
+* A few days later, Tesla released a followup
 [statement](https://www.tesla.com/blog/update-last-week%E2%80%99s-accident) that
 contained a few important details: autopilot was engaged during the accident
 and, according to the vehicle's logs, the driver's hands were not on the
 steering wheel at the time of the accident.
 
-A few weeks later [the dead driver's wife took to TV to discuss the
+* Weeks later, [the dead driver's wife took to TV to discuss the
 crash](http://abcnews.go.com/US/wife-tesla-crash-victim-speaks-tragedy-happen-family/story?id=54392855),
 saying that her husband had always been "a really careful driver".
 
 This interview caused a flurry of activity:
 
-Tesla released statements saying that 
+* Tesla released statements -link to statement- saying that
 
 > [The driver] was well aware that autopilot was not perfect and, specifically,
 > he told them it was not reliable in that exact location, yet he nonetheless
@@ -47,8 +55,8 @@ Tesla released statements saying that
 > this accident to have occurred is if Mr. Huang was not paying attention to the
 > road, despite the car providing multiple warnings to do so.
 
-And also noted that Autopilot could not avoid all accidents. This statement
-appears to have led to Tesla being r[emoved from the NTSB
+They also noted that Autopilot could not avoid all accidents. This statement
+appears to have led to Tesla being [removed from the NTSB
 investigation](https://www.bloomberg.com/news/articles/2018-04-12/tesla-withdraws-from-ntsb-crash-probe-over-autopilot-data-flap).
 
 The family's lawyer released a statement as well, stating that
@@ -69,9 +77,9 @@ cirucmstances.](https://www.reddit.com/r/teslamotors/comments/8a0jfh/autopilot_b
 Tesla is unique among companies taking on the challenge of autonomous vehicles
 in that it [doens't use
 LIDAR](https://www.tesla.com/blog/all-tesla-cars-being-produced-now-have-full-self-driving-hardware)
-in its approach to autonomy. Magnifying this, car that crashed appears to
-predate Tesla's fully self driving hardware release, it has a limited sensor
-suite and appears to rely almost entirely on a camera for lane finding and car
+in its approach to autonomy. Magnifying this, the car that crashed appears to
+predate Tesla's fully self driving hardware release and so has a limited sensor
+suite; it appears to rely almost entirely on a camera for lane finding and car
 following.
 
 That's similar to the adaptive cruise control that many other car manufacturers
@@ -97,8 +105,8 @@ location also included the following
 > driver to be alert and have hands on the wheel.
 
 Was there an explicit promise? Maybe not. But the hype around Tesla's autonomous
-capabilities, led in no small part by Musk, does imply that you should trust the
-system. Musk originally said that [Tesla would have level 4 autonomy by the
+capabilities, led in no small part by the company's CEO Elon Musk, does imply that you should trust the
+system. Musk originally said that [Tesla would have level 4 autonomy -footnote a definition of level 4 autonomy - by the 
 beginning of
 2018](https://electrek.co/2017/12/08/elon-musk-tesla-self-driving-timeline/),
 but now says that its still a ways off, and Tesla also missed the deadline for a
@@ -106,9 +114,9 @@ coast-to-coast autonomous Tesla trip.
 
 People, for whatever reason, are [all too
 trusting](https://www.forbes.com/sites/kalevleetaru/2016/04/30/why-do-we-trust-gps-more-than-we-trust-ourselves/#656566b82c42)
-of autonomous systems. In the age of AI and ML, there's a responsibility for
+of autonomous systems. In the age of ever advancing AI, there's a responsibility for
 experts to make sure that users understand the limits of the systems they are
-using. This is especially true when, as is the case with Tesla's vehicles, those
+marketing. This is especially true when, as is the case with Tesla's vehicles, those
 exact capabilities may change over time.
 
 In User Experience design, there's a term, "friction", for things which require
