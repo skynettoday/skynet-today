@@ -13,7 +13,6 @@ joshua_morton:
   avatar: josh_face.jpg
   email: joshua.morton13@gmail.com
   web: https://joshuamorton.github.io
-  picture: /images/bio-photo.jpg
   twitter: joshthejuggles
   github: joshuamorton
 
@@ -21,7 +20,14 @@ alex_constantino:
   name: Alex Constantino
   avatar: alex_face.jpg
   email: me@alexconstantino.com
-  picture: /images/bio-photo.jpg
   web: https://www.linkedin.com/in/alexconstantino/
   twitter: acconsta
   github: acconsta
+  
+limor_gultchin:
+  name: Limor Gultchin
+  avatar: limor_face.jpg
+  email: limor.gultchin@gmail.com
+  web: https://institute.global/contributors/limor-gultchin
+  twitter: gultchin
+  github: limorigu

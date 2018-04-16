@@ -1,7 +1,8 @@
 ---
-title: "Is AI brainwashing us all, or a useless moderator?"
-excerpt: "The many claims made as part of the Cambridge Analytica/Facebook scandal, reviewed"
+title: "Is Data-Driven AI Brainwashing us all, or is it Just the Same as Good ol' Marketing?"
+excerpt: "The many claims made as part of the recent Cambridge Analytica/Facebook scandal, reviewed"
 author: limor_gultchin
+editor: andrey_kurenkov
 tags: [Facebook, privacy, BigBiz]
 ---
 This past month’s Cambridge Analytica scandal triggered some important conversations regarding privacy and the current uses of AI in social platforms. It is also another great example of how flawed reporting can create wide-reaching but inaccurate narratives about AI. 
@@ -10,7 +11,8 @@ This past month’s Cambridge Analytica scandal triggered some important convers
 This story started on March 16, with a seemingly naive blog post by Facebook’s VP & Deputy General Counsel Paul Grewal. The post announced that Cambridge Analytica is now suspended from Facebook and gave the first outline of the story from Facebook’s perspective: 
 * Alexander Kogan, a researcher at Cambridge University, built an app called ‘yourdigitallife’ back in 2013
 * Kogan passed facebook profile data of anyone who downloaded it to Cambridge Analytica, which violated Facebook’s terms and conditions
-* Facebook found this out in 2015, discontinued the app and asked for certification from all parties involved that the data was deleted. * Recently, Facebook found out the data was not deleted in its entirety, and thus the suspension of Cambridge Analytica and blog post.  
+* Facebook found this out in 2015, discontinued the app and asked for certification from all parties involved that the data was deleted. 
+* Recently, Facebook found out the data was not deleted in its entirety, and thus the suspension of Cambridge Analytica and blog post.  
 
 So far so good.
 
