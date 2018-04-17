@@ -7,8 +7,6 @@ editor: andrey_kurenkov
 tags: [society,panic,fake]
 ---
 
-# Deepfakes
-
 The first high-profile example of state of the art AI techniques causing large
 scale harm, and likely far from the last. But it may not be as bad as it
 seems.
