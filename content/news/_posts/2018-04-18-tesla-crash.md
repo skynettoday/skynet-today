@@ -7,7 +7,8 @@ editor: andrey_kurenkov
 tags: [Tesla,autonomy,ethics,BigBiz]
 ---
 
-A "self-driving" car crashes. Coverage centers on who is to blame, but seems to
+A "self-driving" car crashes, tragically killing its driver. 
+Coverage centers on who is to blame, but seems to
 miss one key insight.
 
 ## What Happened
@@ -15,14 +16,14 @@ miss one key insight.
 On March 23, 2018, a Tesla Model X crashed into a median on Highway 101 in
 Mountain View California, killing its occupant. Like a similar crash in May 2016
 the vehicle’s “Autopilot” was enabled at the time of the crash, and as far as we
-know, the driver's hand were not on the wheel.
+know, the driver's hands were not on the wheel.
 
-Soon after the NTSB and Tesla opened an investigation into the cause of the
-accident. This investigation is still ongoing. [TechCrunch has a pretty great
+Soon after the [National Transportation Safety Board
+ (NTSB)](https://www.ntsb.gov/Pages/default.aspx) and Tesla opened an investigation into the cause of the
+accident. This investigation is still ongoing. [TechCrunch has a great
 writeup on the facts of the situation if you want to learn
-more](https://techcrunch.com/story/tesla-model-x-fatal-crash-investigation/).
-
-Current theory is that the autopilot incorrectly followed road markings as a
+more](https://techcrunch.com/story/tesla-model-x-fatal-crash-investigation/). 
+The current predominant theory is that the autopilot incorrectly followed road markings as a
 lane split in an left-lane exit/interchange.
 
 ## The Reactions
@@ -32,16 +33,16 @@ The story around the crash developed gradually over weeks:
 * Tesla initially [released a
   statement](https://www.tesla.com/blog/what-we-know-about-last-weeks-accident)
   outlining a few quick points about the accident, noting that the crash was
-  likely made more severe due to the lack of a crash attenuator, a safety device
-  built into the highway.
+  likely made more severe due to the lack of a crash attenuator (a safety device
+  built into the highway).
 
 * A few days later, Tesla released a followup
   [statement](https://www.tesla.com/blog/update-last-week%E2%80%99s-accident)
-  that contained a few important details: autopilot was engaged during the
+  that contained a few important details: Autopilot was engaged during the
   accident and, according to the vehicle's logs, the driver's hands were not on
   the steering wheel at the time of the accident.
 
-* Weeks later, [the dead driver's wife took to TV to discuss the
+* Weeks later, [the driver's wife took to TV to discuss the
   crash](http://abcnews.go.com/US/wife-tesla-crash-victim-speaks-tragedy-happen-family/story?id=54392855),
   saying that her husband had always been "a really careful driver".
 
@@ -49,15 +50,14 @@ This interview caused a flurry of activity:
 
 * Tesla released a response[^statement] saying that
 
-> [The driver] was well aware that autopilot was not perfect and, specifically,
+> [The driver] was well aware that Autopilot was not perfect and, specifically,
 > he told them it was not reliable in that exact location, yet he nonetheless
 > engaged autopilot at that location, the crash happened on a clear day with
 > several hundred feet of visibility ahead, which means that the only way for
 > this accident to have occurred is if Mr. Huang was not paying attention to the
 > road, despite the car providing multiple warnings to do so.
 
-They also noted that Autopilot could not avoid all accidents. This statement
-appears to have led to Tesla being [removed from the NTSB
+They also noted that Autopilot could not avoid all accidents. Tesla was then [removed from the NTSB
 investigation](https://www.bloomberg.com/news/articles/2018-04-12/tesla-withdraws-from-ntsb-crash-probe-over-autopilot-data-flap).
 
 * The family's lawyer released a statement as well, stating that
@@ -68,8 +68,8 @@ investigation](https://www.bloomberg.com/news/articles/2018-04-12/tesla-withdraw
 At the same time, Tesla drivers around the country were able to reproduce
 autopilot actions similar to the ones that caused the accident, [at other
 interchanges](https://www.youtube.com/watch?v=6QCF8tVqM3I), and [at the original
-crash site](https://www.youtube.com/watch?v=VVJSjeHDvfY). Among many reports was
-th idea that [autopilot hadn't always done this, and that a recent over the air update changed the vehicle behavior in similar
+crash site](https://www.youtube.com/watch?v=VVJSjeHDvfY). Many noted
+the idea that [Autopilot hadn't always done this, and that a recent over the air update changed the vehicle behavior in similar
 cirucmstances.](https://www.reddit.com/r/teslamotors/comments/8a0jfh/autopilot_barrier_lust_201812/)
 
 ## Our Perspective
@@ -77,13 +77,13 @@ cirucmstances.](https://www.reddit.com/r/teslamotors/comments/8a0jfh/autopilot_b
 Tesla is unique among companies taking on the challenge of autonomous vehicles
 in that it [doens't use
 LIDAR](https://www.tesla.com/blog/all-tesla-cars-being-produced-now-have-full-self-driving-hardware)
-in its approach to autonomy. Magnifying this, the car that crashed appears to
+in its technology. Magnifying this, the car that crashed appears to
 predate Tesla's fully self driving hardware release and so has a limited sensor
-suite; it appears to rely almost entirely on a camera for lane finding and car
+suite; it appears to have relied almost entirely on a camera for lane finding and car
 following.
 
 That's similar to the adaptive cruise control that many other car manufacturers
-offer. Tesla, however, markets autopilot as something more advanced, 
+offer. Tesla, however, markets Autopilot as something more advanced, 
 
 <center>
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en"
@@ -106,11 +106,10 @@ location also included the following
 
 Was there an explicit promise? Maybe not. But the hype around Tesla's autonomous
 capabilities, led in no small part by the company's CEO Elon Musk, does imply
-that you should trust the system. Musk originally said that [Tesla would have
-level 4 autonomy[^l4] by the beginning of
+that you should trust the system. Musk originally said that Tesla would have
+level 4 autonomy[^l4] [by the beginning of
 2018](https://electrek.co/2017/12/08/elon-musk-tesla-self-driving-timeline/),
-but now says that its still a ways off, and Tesla also missed a self-imposed
-deadline for a coast-to-coast autonomous Tesla trip.
+but now says that it's still a ways off. 
 
 People, for whatever reason, are [all too
 trusting](https://www.forbes.com/sites/kalevleetaru/2016/04/30/why-do-we-trust-gps-more-than-we-trust-ourselves/#656566b82c42)
@@ -121,7 +120,7 @@ Tesla's vehicles, those exact capabilities may change over time.
 
 In User Experience design, there's a term, "friction", for things which require
 the user to engage or think. Often, you want an interface to be "frictionless",
-allowing users to do thinkgs without really thinking, as if by instinct. But
+allowing users to do thinks without really thinking, as if by instinct. But
 sometimes you need friction to force users to engage with the system. For
 example, when confirming an irreversible action.
 
@@ -139,5 +138,5 @@ its product less.
 *Josh works at Google, whose sibling company, Waymo, is a competitor to Tesla in
 the autonomous vehicle space, but the opinions expressed here are his own.*
 
-[^statement]: Tesla doesn't appear to have made an official press release with their statement, but its reproduced in full at the end of [this](http://abc7.com/automotive/tesla-issues-strongest-statement-yet-blaming-driver-for-deadly-crash/3332186/) article.
-[l4]: "Level 4" autonomy is autonomy where the vehicle can drive every part of the trip, from driveway to driveway, without human intervention. It should be capable of doing this in common environments and conditions (whereas Level 5 autonomy extends the definiton to more extreme environments and conditions).
+[^statement]: Tesla doesn't appear to have made an official press release with their statement, but it's reproduced in full at the end of [this](http://abc7.com/automotive/tesla-issues-strongest-statement-yet-blaming-driver-for-deadly-crash/3332186/) article.
+[^l4]: "Level 4" autonomy is autonomy where the vehicle can drive every part of the trip, from driveway to driveway, without human intervention. It should be capable of doing this in common environments and conditions (whereas Level 5 autonomy extends the definiton to more extreme environments and conditions).
