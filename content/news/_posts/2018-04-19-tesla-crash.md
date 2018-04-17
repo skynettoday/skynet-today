@@ -1,13 +1,14 @@
 ---
 layout: post
-title: "Tesla's Lethal Autopilot Crash - a problem of UI as much as AI"
-excerpt: "The tragedy might not have happened given clearer communication and understanding of current systems' limitations"
+title: "Tesla's Lethal Autopilot Crash - A Failing of UI as Much as AI"
+excerpt: "The tragedy might have been avoided with better communication by both Tesla and its cars"
 author: joshua_morton
 editor: andrey_kurenkov
 tags: [Tesla,autonomy,ethics,BigBiz]
 ---
 
--add summary sentence at start-
+A "self-driving" car crashes. Coverage centers on who is to blame, but seems to
+miss one key insight.
 
 ## What Happened
 
@@ -106,8 +107,7 @@ location also included the following
 Was there an explicit promise? Maybe not. But the hype around Tesla's autonomous
 capabilities, led in no small part by the company's CEO Elon Musk, does imply
 that you should trust the system. Musk originally said that [Tesla would have
-level 4 autonomy -footnote a definition of level 4 autonomy - by the 
-beginning of
+level 4 autonomy[^l4] by the beginning of
 2018](https://electrek.co/2017/12/08/elon-musk-tesla-self-driving-timeline/),
 but now says that its still a ways off, and Tesla also missed a self-imposed
 deadline for a coast-to-coast autonomous Tesla trip.
@@ -140,3 +140,4 @@ its product less.
 the autonomous vehicle space, but the opinions expressed here are his own.*
 
 [^statement]: Tesla doesn't appear to have made an official press release with their statement, but its reproduced in full at the end of [this](http://abc7.com/automotive/tesla-issues-strongest-statement-yet-blaming-driver-for-deadly-crash/3332186/) article.
+[l4]: "Level 4" autonomy is autonomy where the vehicle can drive every part of the trip, from driveway to driveway, without human intervention. It should be capable of doing this in common environments and conditions (whereas Level 5 autonomy extends the definiton to more extreme environments and conditions).
