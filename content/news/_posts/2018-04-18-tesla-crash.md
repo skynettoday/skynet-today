@@ -69,7 +69,8 @@ At the same time, Tesla drivers around the country were able to reproduce
 autopilot actions similar to the ones that caused the accident, [at other
 interchanges](https://www.youtube.com/watch?v=6QCF8tVqM3I), and [at the original
 crash site](https://www.youtube.com/watch?v=VVJSjeHDvfY). Many noted
-the idea that [Autopilot hadn't always done this, and that a recent over the air update changed the vehicle behavior in similar
+[that this behavior was new, and that a recent over the air update changed the
+way autopilot reacted in similar
 cirucmstances.](https://www.reddit.com/r/teslamotors/comments/8a0jfh/autopilot_barrier_lust_201812/)
 
 ## Our Perspective
