@@ -121,7 +121,7 @@ Tesla's vehicles, those exact capabilities may change over time.
 
 In User Experience design, there's a term, "friction", for things which require
 the user to engage or think. Often, you want an interface to be "frictionless",
-allowing users to do thinks without really thinking, as if by instinct. But
+allowing users to do things without really thinking, as if by instinct. But
 sometimes you need friction to force users to engage with the system. For
 example, when confirming an irreversible action.
 
