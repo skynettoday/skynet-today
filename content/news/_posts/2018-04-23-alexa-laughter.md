@@ -2,7 +2,7 @@
 layout: post
 title: "So What Was Up With Alexa's Creepy Laughter Anyway?"
 excerpt: "A funny viral event talks to our ever increasing anxiety about AI and pervasive technology"
-author: benjamin_shih
+author: ben_shih
 editor: andrey_kurenkov
 tags: [Amazon, BigBiz, speech]
 ---
