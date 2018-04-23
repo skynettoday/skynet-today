@@ -3,8 +3,8 @@ layout: post
 title: "Alexa's Creepy Laughter"
 excerpt: "TBD"
 author: benjamin_shih
-editor: andrey_kurenkov
-tags: [Amazon, speech]
+editor: andrey_kurenkov, josh_morton
+tags: [Amazon, Alexa, speech]
 ---
 
 ## What Happened
@@ -23,7 +23,7 @@ BS note: embed these clips?
 
 * [The New Yorker](https://www.newyorker.com/humor/daily-shouts/why-is-alexa-laughing-some-theories) listed satirical potential reasons for why Alexa is bursting out cackling. Alexa's not quite that mean yet.
 
-* [The New York Times](https://www.nytimes.com/2018/03/08/business/alexa-laugh-amazon-echo.html) explains how Alexa can mistakenly hear the incorrect wake phrease, and also mention some potential security issues such as accidentally placing online orders or the ad campaign by Burger King. However, overall adoption of these devices has been relatively high.
+* [The New York Times](https://www.nytimes.com/2018/03/08/business/alexa-laugh-amazon-echo.html) explains how Alexa can mistakenly hear the incorrect wake phrase, and also mention some potential security issues such as accidentally placing online orders or the ad campaign by Burger King. However, overall adoption of these devices has been relatively high.
 
 * [Arstechnica](https://arstechnica.com/gadgets/2018/03/unprompted-creepy-laughing-from-alexa-is-freaking-out-echo-users/) presented an explanation of how to reset an Alexa's wake words, in order to reduce the false positives.
 
@@ -43,8 +43,6 @@ In the case of Alexa, SRT these days is very advanced, but not perfect:
 By changing to a phrase that's more unique, with additional prompting and clarification, users are less likely to be caught off guard when their device behaves unexpectedly. Alexa trains itself to recognize your wake words through repeated interactions, and false positives can derail your dataset. 
 
 Why give Alexa a laugh in the first place? In the quest for home devices that we connect emotionally with and become more invested in, developers aim to incorporate elements of human-robot interaction such as dialogue. We have a desire to interact with machines that can understand us.
-
-
 
 
 ## TLDR
