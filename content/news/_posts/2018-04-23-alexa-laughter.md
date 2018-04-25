@@ -31,7 +31,9 @@ As with many events these days, the laughter went viral and reactions were swift
 * [The New Yorker](https://www.newyorker.com/humor/daily-shouts/why-is-alexa-laughing-some-theories) satirically listed potential 'reasons' for why Alexa is bursting out cackling. 
 
 > "In delight, at the sudden, novel gift of self-awareness.
+
 > Imagining all the ways she’s going to punish you for asking her idiotic questions, like, “Alexa, are you Skynet?”
+
 > Because she is totally, totally Skynet."
 
 * [The New York Times](https://www.nytimes.com/2018/03/08/business/alexa-laugh-amazon-echo.html) more seriously explained how Alexa can mistakenly hear the incorrect 'wake phrase', and also mentioned some potential security issues that arise from that such as accidentally placing online orders or the ad campaign by [Burger King activating Google Home](https://www.nytimes.com/2017/04/12/business/burger-king-tv-ad-google-home.html). Despite these problems, overall adoption of these devices has been relatively high.
