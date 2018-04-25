@@ -3,7 +3,7 @@ layout: post
 title: "So What Was Up With Alexa's Creepy Laughter Anyway?"
 excerpt: "A funny viral event talks to our ever increasing anxiety about AI and pervasive technology"
 author: ben_shih
-editor: andrey_kurenkov
+editor: andrey_kurenkov, joshua_morton
 tags: [Amazon, BigBiz, speech]
 ---
 
@@ -13,7 +13,7 @@ You're at home, doing nothing in particular, and suddenly — creepy robotic lau
 
 ## What Happened
 
-The number of AI devices in our everyday lives has grown significantly in the past decade — our lives and homes are now filled with [navigation apps, streaming services, smartphone personal assistants, ride-sharing, home personal assistants, and smart home devices](https://www.nytimes.com/2018/03/08/business/alexa-laugh-amazon-echo.html). By definition, we must give home devices very intimate access to our personal lives, and concerns over data and privacy [have been increasing](https://www.wired.com/story/mark-zuckerberg-congress-day-two/). Alexa-enabled devices recently contributed to these growing concerns. 
+The number of AI devices in our everyday lives has grown significantly over the past decade — our lives and homes are now filled with [navigation apps, streaming services, smartphone personal assistants, ride-sharing tools, home personal assistants, and smart home devices](https://www.nytimes.com/2018/03/08/business/alexa-laugh-amazon-echo.html). By design, we must give home devices very intimate access to our personal lives, and as a result, concerns over data and privacy [have been increasing](https://www.wired.com/story/mark-zuckerberg-congress-day-two/). Alexa-enabled devices recently contributed to these growing concerns. 
 
 In March of 2018, owners of Alexa and other Alexa-enabled devices began reporting a creepy, unprompted laughter. Many owners reported hearing the laughter of a child. Recordings surfaced all over social media: 
 <figure>
@@ -26,17 +26,17 @@ In March of 2018, owners of Alexa and other Alexa-enabled devices began reportin
 
 ## The Reactions
 
-As with any viral thing these days, reactions were swift: 
+As with many events these days, the laughter went viral and reactions were swift:
 
 * [The New Yorker](https://www.newyorker.com/humor/daily-shouts/why-is-alexa-laughing-some-theories) satirically listed potential 'reasons' for why Alexa is bursting out cackling. 
 
 > "In delight, at the sudden, novel gift of self-awareness.
-Imagining all the ways she’s going to punish you for asking her idiotic questions, like, “Alexa, are you Skynet?”
-Because she is totally, totally Skynet."
+> Imagining all the ways she’s going to punish you for asking her idiotic questions, like, “Alexa, are you Skynet?”
+> Because she is totally, totally Skynet."
 
-* [The New York Times](https://www.nytimes.com/2018/03/08/business/alexa-laugh-amazon-echo.html) more seriously explained how Alexa can mistakenly hear the incorrect 'wake phrase', and also mentioned some potential security issues that arise from that such as accidentally placing online orders or the ad campaign by Burger King. Despite these problems, overall adoption of these devices has been relatively high.
+* [The New York Times](https://www.nytimes.com/2018/03/08/business/alexa-laugh-amazon-echo.html) more seriously explained how Alexa can mistakenly hear the incorrect 'wake phrase', and also mentioned some potential security issues that arise from that such as accidentally placing online orders or the ad campaign by [Burger King activating Google Home](https://www.nytimes.com/2017/04/12/business/burger-king-tv-ad-google-home.html). Despite these problems, overall adoption of these devices has been relatively high.
 
-* [Arstechnica](https://arstechnica.com/gadgets/2018/03/unprompted-creepy-laughing-from-alexa-is-freaking-out-echo-users/) presented an explanation of how to reset an Alexa's wake words, in order to reduce the false positives.
+* [Arstechnica](https://arstechnica.com/gadgets/2018/03/unprompted-creepy-laughing-from-alexa-is-freaking-out-echo-users/) provided an explanation of how to reset an Alexa's wake words, in order to reduce the false positives.
 
 * Jimmy Kimmel brought Alexa onto his show for an [interview](https://www.youtube.com/watch?v=tMJm4cZ9yxQ). They preprogrammed the device to be even more sinister: "Humans are a fragile species who have no idea what's coming next".
 
@@ -46,7 +46,7 @@ Because she is totally, totally Skynet."
 
 ## Our Perspective
 
-Speech Recognition Technology (SRT) are predicted to cover 50% of voice searches by 2020 ([general timeline](https://medium.com/swlh/the-past-present-and-future-of-speech-recognition-technology-cf13c179aaf)). However, there are a number of tasks past recognition itself that present significant challenges, including [extended conversations](https://www.technologyreview.com/s/608571/alexa-understand-me/) and multilingual speech recognition, with [state-of-the-art systems](http://ieeexplore.ieee.org/iel7/4200690/5418892/06935076.pdf) achieving a respectable but imperfect ~80% .
+Speech Recognition Technology (SRT) is predicted to cover 50% of voice searches by 2020 ([general timeline](https://medium.com/swlh/the-past-present-and-future-of-speech-recognition-technology-cf13c179aaf)). However, there are a number of tasks beyond recognition itself that present significant challenges, including [extended conversations](https://www.technologyreview.com/s/608571/alexa-understand-me/) and multilingual speech recognition, with [state-of-the-art systems](http://ieeexplore.ieee.org/iel7/4200690/5418892/06935076.pdf) achieving a respectable but imperfect ~80% .
 
 In the case of Alexa, SRT these days is very advanced, [but not perfect](https://mashable.com/2018/03/07/why-amazon-alexa-laughing/):
 
@@ -61,5 +61,4 @@ Why give Alexa a laugh in the first place? In the quest for home devices that we
 
 ## TLDR
 
-Alexa has been creepily cackling in the homes of its users. Asides from the potentially disturbing scare, it's nothing to worry about. While privacy concerns are still very much a legitimate concern, Alexa's laughter is a result of false positives in its speech recognition dataset and not the next incarnation of Skynet.
-
+Alexa has been creepily cackling in the homes of its users. Aside from the potentially disturbing scare, it's nothing to worry about. While privacy concerns are still very legitimate, Alexa's laughter is a result of false positives in its speech recognition dataset and not because it is the next incarnation of Skynet.
