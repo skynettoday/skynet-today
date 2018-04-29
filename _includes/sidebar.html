@@ -1,26 +1,48 @@
 <footer class="page-meta">
     {% if page.author %}
-        {% assign author = site.data.authors[page.author] %}
+        {% if page.author.first %}
+            {% comment %}
+                This is a check to see if its an array or not, to maintain
+                backwards compatibility.
+            {% endcomment %}
+            {% assign first_author = site.data.authors[page.author[0]] %}
+        {% else %}
+            {% assign first_author = site.data.authors[page.author] %}
+        {% endif %}
     {% else %}
-        {% assign author = site.owner %}
+        {% assign first_author = site.owner %}
     {% endif %}
+
     {% if page.editor %}
-        {% assign editor = site.data.authors[page.editor] %}
+        {% if page.editor.first %}
+            {% assign editors = "Editors: " %}
+            {% for e in page.editor %}
+                {% assign curr = site.data.authors[e] %}
+                {% capture editors %}
+                    {{ editors }} <a href={{curr.web}}><span class="fn">{{ curr.name }}</span></a>
+                    {% unless e == page.editor.last %}, {% endunless %}
+                {% endcapture %}
+            {% endfor %}
+        {% else %}
+            {% assign editor = site.data.authors[page.editor] %}
+            {% capture editors %}
+                Editor: <a href={{editor.web}}><span class="fn">{{ editor.name }}</span></a>
+            {% endcapture %}
+        {% endif %}
     {% else %}
         {% assign editor = blank %}
     {% endif %}
-    {% if author.avatar contains 'http' %}
-        <img src="{{ author.avatar }}" class="bio-photo" alt="{{ author.name }} bio photo"/>
-    {% elsif author.avatar %}
-        <img src="{{ site.url }}/images/authors/{{ author.avatar }}"
-         class="bio-photo" alt="{{ author.name }} bio photo"/>
+    {% if first_author.avatar contains 'http' %}
+        <img src="{{ first_author.avatar }}" class="bio-photo" alt="{{ first_author.name }} bio photo"/>
+    {% elsif first_author.avatar %}
+        <img src="{{ site.url }}/images/authors/{{ first_author.avatar }}"
+         class="bio-photo" alt="{{ first_author.name }} bio photo"/>
     {% endif %}
-    <span class="author vcard">Author: <a href={{author.web}}>
-            <span class="fn">{{ author.name }}</span></a></span>
+    <span class="author vcard">Author: <a href={{first_author.web}}>
+            <span class="fn">{{ first_author.name }}</span></a></span>
 
     {% if page.editor %}
-        <span class="author vcard">Editor: <a href={{editor.web}}>
-                <span class="fn">{{ editor.name }}</span></a></span>
+    <span class="author vcard">{{ editors }}</span>
     {% endif %}
 
     <span class="page-date date published">
