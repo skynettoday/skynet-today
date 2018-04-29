@@ -19,8 +19,7 @@
             {% for e in page.editor %}
                 {% assign curr = site.data.authors[e] %}
                 {% capture editors %}
-                    {{ editors }} <a href={{curr.web}}><span class="fn">{{ curr.name }}</span></a>
-                    {% unless e == page.editor.last %}, {% endunless %}
+                    {{ editors }} <br><a href={{curr.web}}><span class="fn">{{ curr.name }}</span></a>
                 {% endcapture %}
             {% endfor %}
         {% else %}
