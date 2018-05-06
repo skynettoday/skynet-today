@@ -15,8 +15,8 @@
   overflow: hidden;
   width: inherit;
   margin: auto;
-  width: 25%;
-  min-width: 200px;
+  width: 50%;
+  min-width: 275px;
   padding: 1px;
 }
 
@@ -35,7 +35,7 @@
 
 .switch-field label {
   display: inline-block;
-  width: 60px;
+  width: 33%;
   background-color: #e4e4e4;
   color: rgba(0, 0, 0, 0.6);
   font-size: 14px;
@@ -68,7 +68,6 @@
 }
 
 .switch-field label:first-of-type {
-  width: 50%;
   text-align: center;
   margin: auto;
   border: : 5px solid grey;
@@ -77,7 +76,6 @@
 }
 
 .switch-field label:last-of-type {
-  width: 50%;
   text-align: center;
   margin: auto;
   border: : 5px solid grey;
