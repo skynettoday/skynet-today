@@ -88,6 +88,7 @@ So what of the media coverage of this problem? While the content of the news art
 
 Contrary to what some headlines said, the algorithms in question are not the issue. None inclusive datasets produced skewed results, but the same models showed remarkable accuracy when trained on a more racially diverse and balanced dataset. However, this is still a warning sign pointing at an underlying problem: lack of diversity in the AI community. In the short-term, researchers and engineers need to be aware of **all** their users and the fact that the systems they build may contain possible biases. While fast growing research in the fields of fairness, accountability and transparency provides hope for a technical solution, the AI community needs to also make significant efforts to become more inclusive and diverse. 
 
+<hr>
 
 [^frexplainer]: A facial recognition system is a technology capable of identifying or verifying a person from a digital image or a video frame from a video source.
 [^datasetexplainer]: A dataset is a collection of data. All Machine Learning systems are “trained” on a dataset. If you’re confused or intimidated by the term machine learning - watch [this video](https://www.youtube.com/watch?v=f_uwKZIAeM0)
