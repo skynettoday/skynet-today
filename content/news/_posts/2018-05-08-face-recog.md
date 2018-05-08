@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Biased AI systems - a Problem of Data and Diversity"
+title: "Biased AI systems - a Problem of Diversity as well as Data"
 excerpt: "Flashy headlines often hijack meaningful and important conversations on this topic, even when the articles are solid. Here is our summary."
 author: viraat_aryabumi
 editor: [andrey_kurenkov, limor_gultchin]
