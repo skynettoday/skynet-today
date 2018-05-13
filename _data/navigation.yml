@@ -3,8 +3,14 @@
 - title: About
   url: /about
 
-- title: Posts
-  url: /
+- title: Digests
+  url: /digests
+
+- title: Briefs
+  url: /briefs
+
+- title: Editorials
+  url: /editorials
 
 - title: Contact
   url: /contact

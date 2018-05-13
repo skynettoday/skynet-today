@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About Skynet Today
+title: About
 excerpt: "What is this whole thing."
 modified: 2018-04-02
 permalink: /about
