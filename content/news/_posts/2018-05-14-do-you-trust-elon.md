@@ -3,7 +3,7 @@ layout: post
 title: "'Do you trust this computer’ gets a whole lot wrong on AI risks"
 excerpt: "A Chris Paine documentary on AI promoted by Elon Musk conflates real AI risks with imaginary ones"
 author: aidan_rocke
-editor: andrey_kurenkov
+editor: [andrey_kurenkov,limor_gultchin]
 tags: [Elon Musk,super-intelligence]
 ---
 
