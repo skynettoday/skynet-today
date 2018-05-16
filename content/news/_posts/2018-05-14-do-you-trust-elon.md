@@ -26,7 +26,7 @@ Prior to its release, it gained a large amount of attention when the space entre
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </figure>
 
-Besides sponsoring free online viewing of the documentary for several days and promoting the film on Twitter, Musk features in the documentary alongside Stuart Russell (co-author of Artificial Intelligence: A Modern Approach), Eric Horvitz (Director at Microsoft Research Labs), Andrew Ng (co-founder of Google Brain), Shivon Zilis (Director of OpenAI), and a variety of AI entrepreneurs. Although the documentary covers a combination of both positive and negative possible impacts of AI, on the whole its message is very pessimistic; the main thesis is that the technology is quickly getting beyond our control and we should be very worried. The film actually opens with a quote from Mary Shelley’s Frankenstein:
+Besides sponsoring free online viewing of the documentary for several days and promoting the film on Twitter, Musk features in the documentary alongside Stuart Russell (co-author of Artificial Intelligence: A Modern Approach), Eric Horvitz (Director at Microsoft Research Labs), Andrew Ng (co-founder of Google Brain), Shivon Zilis (a Director of OpenAI), and a variety of AI entrepreneurs. Although the documentary covers a combination of both positive and negative possible impacts of AI, on the whole its message is very pessimistic; the main thesis is that the technology is quickly getting beyond our control and we should be very worried. The film actually opens with a quote from Mary Shelley’s Frankenstein:
 
 > You are my creator, but I am your master…
 
