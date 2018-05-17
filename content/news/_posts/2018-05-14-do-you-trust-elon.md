@@ -9,7 +9,7 @@ tags: [Elon Musk,Singularity]
 
 ## What Happened
 
-Chris Paine, who previously directed ["Revenge of the Electric Car"](https://en.wikipedia.org/wiki/Revenge_of_the_Electric_Car), recently produced a documentary on AI risks[^risks] titled ‘Do You Trust This Computer’. 
+Chris Paine, who previously directed ["Revenge of the Electric Car"](https://en.wikipedia.org/wiki/Revenge_of_the_Electric_Car), recently produced a documentary on AI risks[^risks] titled ‘Do You Trust This Computer’.
 
 <figure>
 <iframe src="https://player.vimeo.com/video/262916153" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
@@ -18,7 +18,7 @@ Chris Paine, who previously directed ["Revenge of the Electric Car"](https://en.
 
 Prior to its release, it gained a large amount of attention when the space entrepreneur Elon Musk shared it with his 20+ million Twitter followers:
 
-[^risks]: Present day real AI risks include technological unemployment, biased algorithms, unethical use of user data, algorithmic promotion of fake news, and military robots. 
+[^risks]: Present day real AI risks include technological unemployment, biased algorithms, unethical use of user data, algorithmic promotion of fake news, and military robots.
 
 <figure>
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">tweet.</p>&mdash; Elon Musk (@elonmusk) <a href="https://twitter.com/elonmusk/status/982119546420002817
@@ -30,13 +30,13 @@ Besides sponsoring free online viewing of the documentary for several days and p
 
 > You are my creator, but I am your master…
 
-In order to address these concerns, the documentary proposes the following solutions: 
-1. In the short term, AI must be regulated in order to manage its potential impact on the economy and autonomous weapons. 
-2. In the long term, humans must ‘merge with AI’ using a brain-computer interface of some kind in order to address the problem of controlling the next phase of development: super-intelligent AI. 
+In order to address these concerns, the documentary proposes the following solutions:
+1. In the short term, AI must be regulated in order to manage its potential impact on the economy and autonomous weapons.
+2. In the long term, humans must ‘merge with AI’ using a brain-computer interface of some kind in order to address the problem of controlling the next phase of development: super-intelligent AI.
 
 Elon Musk, who co-founded Neuralink, a brain-computer interface company, explains further in the movie:
 
-> I think it’s incredibly important that AI not be other, it must be us. And I could be wrong about what I’m saying, I’m certainly open to ideas if anybody can suggest a path that’s better. But I think we’re either going to have to either merge with AI or be left behind. 
+> I think it’s incredibly important that AI not be other, it must be us. And I could be wrong about what I’m saying, I’m certainly open to ideas if anybody can suggest a path that’s better. But I think we’re either going to have to either merge with AI or be left behind.
 
 The current fascination with the topic of AI, as well as Elon Musk’s involvement in and promotion of the documentary, helped it gain much attention from both AI experts and non-experts, and reactions were decidedly different between the two groups.
 
@@ -83,7 +83,7 @@ In contrast, the coverage by journalists without expertise in AI was also critic
 
 * [James Vincent, journalist at The Verge](https://www.theverge.com/2018/4/12/17229824/ai-documentary-superintelligence-elon-musk-do-you-trust-this-computer):
 
->It’s also notable that while much of this important work(on AI ethics and safety) is being done by women — people like Kate Crawford of the AI Now institute and Joy Buolamwini of the Algorithmic Justice League — the cast of talking heads in Do You Trust This Computer? is overwhelmingly male. Of the 26 experts featured in the film, 23 are men.
+>It’s also notable that while much of this important work (on AI ethics and safety) is being done by women — people like Kate Crawford of the AI Now institute and Joy Buolamwini of the Algorithmic Justice League — the cast of talking heads in Do You Trust This Computer? is overwhelmingly male. Of the 26 experts featured in the film, 23 are men.
 
 * [Noel Murray, of The Los Angeles Times](http://www.latimes.com/entertainment/movies/la-et-mn-capsule-do-you-trust-this-computer-review-20180405-story.html):
 
@@ -97,14 +97,14 @@ Although Chris Paine may have intended to inform people about the genuinely impo
 
 The documentary misleads and creates panic primarily in three distinct ways:
 
-1. **Omission and implication**: the documentary creates a sense of panic by introducing present-day AI risks without acknowledging the immense efforts to address them [^examples]. Granted, it is true that a lot more has to be done, but many have already stepped up to the challenge. Furthermore, key dialogues with Elon Musk, Stuart Russell and others imply drastic ideas that are not remotely true[^drastic] and easily debunked. 
+1. **Omission and implication**: the documentary creates a sense of panic by introducing present-day AI risks without acknowledging the immense efforts to address them [^examples]. Granted, it is true that a lot more has to be done, but many have already stepped up to the challenge. Furthermore, key dialogues with Elon Musk, Stuart Russell and others imply drastic ideas that are not remotely true[^drastic] and easily debunked.
 
-2. **Mixing fact with fiction**: worse yet, the documentary conflates real and fictional AI risks. Throughout the film, we are offered dystopian scenes from the Matrix, Terminator and Ex Machina, which are nowhere near real present day AI risks. The solutions it presents to these risks are also often very far from practical in the present day. The idea of ‘merging with AI’ is especially far from practical today and almost out of science fiction [^criticism]. 
+2. **Mixing fact with fiction**: worse yet, the documentary conflates real and fictional AI risks. Throughout the film, we are offered dystopian scenes from the Matrix, Terminator and Ex Machina, which are nowhere near real present day AI risks. The solutions it presents to these risks are also often very far from practical in the present day. The idea of ‘merging with AI’ is especially far from practical today and almost out of science fiction [^criticism].
 
-3. **Manipulative emotional appeals**: the first 5 minutes, after opening with a quote from Frankenstein, feature a fast paced montage made up of foreboding music and short sound-bites which is clearly meant to evoke a sense of distrust and fear about AI. Similar cinematic 
+3. **Manipulative emotional appeals**: the first 5 minutes, after opening with a quote from Frankenstein, feature a fast paced montage made up of foreboding music and short sound-bites which is clearly meant to evoke a sense of distrust and fear about AI. Similar cinematic
 techniques are used all throughout the film to maintain this emotional influence [^cinematic].
 
-[^drastic]: To list just a few: Elon Musk states that that “A neural network is very close to how a simulation of the brain works”, another interviewee stating that “Deep Learning is totally different [from older AI techniques] - more like a toddler” (which is utterly false), a statement that “[Baxter](https://www.rethinkrobotics.com/baxter/) can do anything we can do with our hands" (again, utterly wrong), and even a direct implication that algorithms that Google is developing for very specific applications could take control of its data centers and do anything with all its data. 
+[^drastic]: To list just a few: Elon Musk states that “A neural network is very close to how a simulation of the brain works”, another interviewee stating that “Deep Learning is totally different [from older AI techniques] - more like a toddler” (which is utterly false), a statement that “[Baxter](https://www.rethinkrobotics.com/baxter/) can do anything we can do with our hands" (again, utterly wrong), and even a direct implication that algorithms that Google is developing for very specific applications could take control of its data centers and do anything with all its data.
 
 [^examples]: There are numerous unmentioned initiatives coming together to tackle many of the issues presented in the documentary, in fact too many to name them all, but here is a very partial attempt to acknowledge but a few: fake news is being addressed by various organisations and individuals, e.g.Factmata; the [General Data Protection Regulation (GDPR)](https://www.eugdpr.org/) is designed to protect European citizens from unfettered Capitalism in the age of Big Data and is an example of how responsible regulation can mitigate technological implications; there is also no mention of the work of [Kate Crawford](https://twitter.com/katecrawford), [Timnit Gebru](https://twitter.com/timnitGebru),[Arvind Narayan](https://twitter.com/random_walker) and many others on AI ethics and algorithmic bias.
 
@@ -117,7 +117,6 @@ It is because of the usage of these techniques that François Chollet was spot o
 
 ## TLDR
 
-Chris Paine and his collaborators (Elon Musk notably among them) produced a documentary on AI which conflates real risks with imaginary ones. Considering that AI technology, like any technology, may be used for both good and evil it is essential to focus on the real issues of today and not be distracted by little understood science-fiction inspired ideas about the future. 
+Chris Paine and his collaborators (Elon Musk notably among them) produced a documentary on AI which conflates real risks with imaginary ones. Considering that AI technology, like any technology, may be used for both good and evil it is essential to focus on the real issues of today and not be distracted by little understood science-fiction inspired ideas about the future.
 
 <hr>
-
