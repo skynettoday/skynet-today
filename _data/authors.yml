@@ -44,6 +44,14 @@ viraat_aryabumi:
   name: Viraat Aryabumi
   avatar: viraat_face.jpg
   email: viraat94@gmail.com
-  web: viraataryabumi.info
+  web: http://viraataryabumi.info
   twitter: viraataryabumi
   github: viraat
+
+aidan_rocke:
+  name: Aidan Rocke
+  avatar: rocke_face.jpg
+  email: aidanrocke@gmail.com
+  web: http://paulispace.com
+  twitter: AidanRocke
+  github: AidanRocke
