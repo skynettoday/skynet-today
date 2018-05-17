@@ -14,8 +14,8 @@ In other words, the idea is to offer a concise but comprehensive overview of eac
 ## Why are you doing this
 Our core beliefs are that:
 
-* There exist many real and important dangers as well as prospects for present day AI, and it is important to distinguish between fact and fiction
-* Therefore, AI researchers and experts have a responsibility to promote understanding of their field within the general public with accessible writing
+* There exist many real and important dangers as well as prospects for present day AI, and it is important to distinguish between fact and fiction.
+* Therefore, AI researchers and experts have a responsibility to promote understanding of their field within the general public with accessible writing.
 * There are not sufficient efforts by AI researchers and experts to do this sort of writing, and that we have enough relevant knowledge to do it well.
 
 The conversation about AI is becoming increasingly relevant to many domains of society. To make sure it will be a productive one we need reliable and sensible sources of information and education about the topic. We believe such sources are necessary, yet currently few and far between, and that we have enough relevant knowledge to create one.
