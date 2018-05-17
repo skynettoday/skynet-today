@@ -1,7 +1,6 @@
 locale: en-US
 title: Skynet Today
-description: Accessible and informed coverage of the latest AI hype and panic 
-baseurl: # the subpath of your site, e.g. "/blog"
+description: Putting AI News Into Perspective
 url: 
 logo: site-logo-white.png
 date_format: "%B %-d, %Y"

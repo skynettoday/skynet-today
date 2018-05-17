@@ -6,6 +6,8 @@ image:
 author: andrey_kurenkov
 tags: [meta]
 excerpt: "Know about AI and agree with this site's mission? Contribute!"
+redirect_from: /content/editorials/call-for-collaborators
+permalink: /editorials/call-for-collaborators
 ---
 Skynet Today is seeking collaborators and editorial submissions!
 AI misinformation, overhyping, and doomsaying are more rampant than ever 

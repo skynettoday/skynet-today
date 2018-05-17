@@ -6,6 +6,8 @@ author: andrey_kurenkov
 editor: joshua_morton
 tags: [hype,BigBiz,game,Google]
 excerpt: "Why DeepMind's Go playing program is not about to solve all of AI"
+redirect_from: /content/editorials/is-alphago-zero-overrated
+permalink: /editorials/is-alphago-zero-overrated
 ---
 
 ## Why AlphaGo Zero Is Great
