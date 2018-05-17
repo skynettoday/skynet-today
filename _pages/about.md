@@ -21,10 +21,11 @@ Our core beliefs are that:
 The conversation about AI is becoming increasingly relevant to many domains of society. To make sure it will be a productive one we need reliable and sensible sources of information and education about the topic. We believe such sources are necessary, yet currently few and far between, and that we have enough relevant knowledge to create one.
 
 ## How are you doing this
+To achieve our mission and live up to our standards of quality, clarity, and speed, we have 3 types of coverage which differ in their levels of depth, frequency, and degree of objectivity:
 
-* Digests
-* Briefs
-* Editorials
+* **Digests**: A bi-weekly newsletter with quick takes on the most important recent media stories about AI. Our most frequent and concise coverage.
+* **Briefs**: Concise yet thorough articles that summarize and comment on an important recent AI story. Literally meant to be 'brief', around 1000 words, so you can get a quick impression of the key points of important stories. 
+* **Editorials**: Longer and more in-depth pieces that are more opinionated and less news-specific. These are by far the least frequent and most in depth, and also the most ambitious and insightful.
 
 ## Who are you
 We are a group of researchers, engineers, and working professionals with domain knowledge in AI and investment in this site's mission. People actively contributing to the site include:

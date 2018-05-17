@@ -419,11 +419,12 @@ figcaption {
   width: 125%;
 }
 
-.pagination {
+.pagination-list {
+	text-align: center;
   list-style-type: none;
 }
 
-.pagination a, .light-theme span {
+.pagination-list a, .light-theme span {
     float: none;
     display: inline block;
 	text-align: center;
@@ -447,17 +448,17 @@ figcaption {
 	background: linear-gradient(top, #ffffff 0%,#efefef 100%); /* W3C */
 }
 
-.pagination li {
+.pagination-list li {
   display:inline-block;
   padding:5px;
 }
 
-.pagination a:hover {
+.pagination-list a:hover {
 	text-decoration: none;
 	background: #FCFCFC;
 }
 
-.pagination li.active {
+.pagination-list li.active {
   a {
 	  background: #666;
 	  color: #FFF;

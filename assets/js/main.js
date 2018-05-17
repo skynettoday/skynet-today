@@ -68,7 +68,7 @@ $(document).ready(function() {
       valueNames: ['entry-card'],
       listClass: 'post-list',
       page: 5,
-      pagination: true
+      pagination: {paginationClass: 'pagination-list'}
     });
   }
   catch(error) {
@@ -80,7 +80,7 @@ $(document).ready(function() {
       valueNames: ['entry-card'],
       listClass: 'post-list',
       page: 5,
-      pagination: true
+      pagination: {paginationClass: 'pagination-list'}
     });
   }
   catch(error) {
@@ -91,9 +91,8 @@ $(document).ready(function() {
     var editorialsList = new List('editorials', {
       valueNames: ['entry-card'],
       listClass: 'post-list',
-      searchClass: 'article',
       page: 5,
-      pagination: true
+      pagination: {paginationClass: 'pagination-list'}
     });
   }
   catch(error) {

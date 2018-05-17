@@ -10,9 +10,7 @@ redirect_from: /content/editorials/call-for-collaborators
 permalink: /editorials/call-for-collaborators
 ---
 Skynet Today is seeking collaborators and editorial submissions!
-AI misinformation, overhyping, and doomsaying are more rampant than ever 
-and our small team could sure benefit from a few more excited and knowledgeable collaborators and contributors.
-
+AI misinformation, overhyping, and doomsaying are more rampant than ever and our small team could sure benefit from a few more excited and knowledgeable collaborators and contributors.
 
 ## Collaborators
 First, let's explain that 'collaborators' bit. It is typical for publications to have a
