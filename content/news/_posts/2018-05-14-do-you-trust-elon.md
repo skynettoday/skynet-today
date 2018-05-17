@@ -83,7 +83,7 @@ In contrast, the coverage by journalists without expertise in AI was also critic
 
 * [James Vincent, journalist at The Verge](https://www.theverge.com/2018/4/12/17229824/ai-documentary-superintelligence-elon-musk-do-you-trust-this-computer):
 
->It’s also notable that while much of this important work(on AI ethics and safety) is being done by women — people like Kate Crawford of the AI Now institute and Joy Buolamwini of the Algorithmic Justice League — the cast of talking heads in Do You Trust This Computer? is overwhelmingly male. Of the 26 experts featured in the film, 23 are men.
+>It’s also notable that while much of this important work (on AI ethics and safety) is being done by women — people like Kate Crawford of the AI Now institute and Joy Buolamwini of the Algorithmic Justice League — the cast of talking heads in Do You Trust This Computer? is overwhelmingly male. Of the 26 experts featured in the film, 23 are men.
 
 * [Noel Murray, of The Los Angeles Times](http://www.latimes.com/entertainment/movies/la-et-mn-capsule-do-you-trust-this-computer-review-20180405-story.html):
 
