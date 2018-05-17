@@ -30,6 +30,8 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-gist
+  - jekyll-redirect-from
+
 
 kramdown:
   input: GFM

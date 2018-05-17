@@ -63,6 +63,7 @@ $(document).ready(function() {
   try {
     var briefsList = new List('briefs', {
       valueNames: ['entry-card'],
+      listClass: 'post-list',
       page: 5,
       pagination: true
     });
@@ -74,6 +75,7 @@ $(document).ready(function() {
   try {
     var digestsList = new List('digests', {
       valueNames: ['entry-card'],
+      listClass: 'post-list',
       page: 5,
       pagination: true
     });
@@ -85,6 +87,8 @@ $(document).ready(function() {
   try {
     var editorialsList = new List('editorials', {
       valueNames: ['entry-card'],
+      listClass: 'post-list',
+      searchClass: 'article',
       page: 5,
       pagination: true
     });

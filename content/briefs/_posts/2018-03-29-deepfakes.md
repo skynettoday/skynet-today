@@ -5,6 +5,8 @@ excerpt: "Has widespread misuse of AI arrived?"
 author: joshua_morton
 editor: andrey_kurenkov
 tags: [society,panic,fake]
+redirect_from: /content/news/deepfakes/
+permalink: /briefs/deepfakes/
 ---
 
 The first high-profile example of state of the art AI techniques causing large

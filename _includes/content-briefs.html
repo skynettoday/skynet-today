@@ -1,8 +1,7 @@
 <div id='briefs' class='content-div'>
-    <input type="text" class="search" />
   <p>Concise yet thorough articles that summarize and comment on a recent important AI story.</p>
   <ul class="post-list" id="briefs-list"> 
-    {% for post in site.categories.news %} 
+    {% for post in site.categories.briefs %} 
       {% include entry.html %}
     {% endfor %}
   </ul>

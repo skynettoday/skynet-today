@@ -5,6 +5,8 @@ excerpt: "Flashy headlines often hijack meaningful and important conversations o
 author: viraat_aryabumi
 editor: [andrey_kurenkov, limor_gultchin]
 tags: [facial recognition,bias,ethics,fairness]
+redirect_from: /content/news/face-recog/
+permalink: /briefs/face-recog/
 ---
 
 A great example of how misleading and click-baity article titles can cause hype and often diminish well-researched articles. 
