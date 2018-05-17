@@ -16,7 +16,7 @@ feed:
 
 permalink: /:categories/:title/
 markdown: kramdown
-search_full_content: false # can have performance implications for large sites
+search_full_content: true # can have performance implications for large sites
 comments: true
 show_drafts: false
 future:      true

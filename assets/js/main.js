@@ -60,6 +60,9 @@ $(document).ready(function() {
     mainClass: 'mfp-fade'
   });
   
+  // initialize smooth scroll
+  $("a").smoothScroll({ offset: -20 });
+  
   try {
     var briefsList = new List('briefs', {
       valueNames: ['entry-card'],

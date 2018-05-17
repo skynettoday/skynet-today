@@ -37,7 +37,7 @@
   img {
     width: 100px;
     height: 100px;
-    @include animation-duration(1s);
+    @include animation-duration(0.5s);
     @include animation-delay(.05s);
     border: 4px solid $white;
     @include rounded(100px); /* crops in a circle */
@@ -62,8 +62,8 @@
 
 .site-title {
   margin-bottom: 0;
-  @include animation-duration(1s);
-  @include animation-delay(.75s);
+  @include animation-duration(0.5s);
+  @include animation-delay(.5s);
 
   a {
     color: $black;
@@ -79,24 +79,10 @@
   font-family: $alt-font;
   @include font-size(16);
   font-weight: 400;
-  font-style: italic;
-  @include animation-duration(1s);
-  @include animation-delay(1s);
+  @include animation-duration(0.5s);
+  @include animation-delay(0.75s);
 
   @include media($medium) {
     @include font-size(24);
-  }
-}
-
-.site-page-title {
-  margin-top: 0;
-  font-family: $alt-font;
-  @include font-size(16);
-  font-weight: 400;
-  @include animation-duration(1s);
-  @include animation-delay(1.25s);
-
-  @include media($medium) {
-    @include font-size(20);
   }
 }

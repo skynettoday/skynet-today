@@ -40,3 +40,7 @@ twq('track','PageView');
     <script src="{{extraJS}}"></script>
     {% endfor %}
 {% endif %}
+
+{%- if page.layout == "search" -%}
+  {% include lunr-search-scripts.html %}
+{%- endif -%}
