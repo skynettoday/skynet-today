@@ -86,3 +86,17 @@
     @include font-size(24);
   }
 }
+
+.site-page-title {
+  margin-top: 0;
+  font-family: $alt-font;
+	font-style: italic;
+  @include font-size(16);
+  font-weight: 400;
+  @include animation-duration(0.5s);
+  @include animation-delay(1s);
+
+  @include media($medium) {
+    @include font-size(24);
+  }
+}

@@ -1,11 +1,10 @@
 ---
 layout: page
 title: About
+display_title: true
 excerpt: "About Skynet Today"
 permalink: /about
 ---
-
-<h3 class="page-title animated fadeIn">About</h3>
 
 ## What is this
 Skynet Today is a site dedicated to providing accessible and informed written critique of the AI news and trends. 

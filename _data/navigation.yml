@@ -1,19 +1,16 @@
 # Site navigation links
-
-- title: About
-  url: /about
-
-- title: Digests
-  url: /digests
-
-- title: Briefs
-  url: /briefs
-
-- title: Editorials
-  url: /editorials
   
-- title: Search
-  url: /search
+- title: Articles
+  url: /
+  
+- title: Subscribe
+  url: /subscribe
+  
+- title: About
+  url: /about 
 
 - title: Contact
   url: /contact
+  
+- title: Search
+  url: /search

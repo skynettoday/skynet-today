@@ -1,8 +1,7 @@
 ---
-title: Search
 layout: search
+title: Search
+display_title: true
 permalink: /search/
 sitemap: false
 ---
-
-<h3 class="page-title animated fadeIn">Search</h3>
