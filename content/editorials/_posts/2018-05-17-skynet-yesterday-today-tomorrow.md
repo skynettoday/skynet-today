@@ -41,7 +41,9 @@ This is part of a broader set of updates made all over the site to convey what w
 
 And since we are geeks after all, we made some changes to the site to make it more organizationally and technically accessible as well:
 
-* We are excited you are reading this, and would like to hear any thoughts you have to offer! So we added a few survery links to the site - feel free to [provide general feedback](https://goo.gl/forms/XVMpnbggACmHWfxW2), [suggest things to cover](https://goo.gl/forms/6e34w1B6vImi9wkZ2), or [express interest in helping](https://goo.gl/forms/XVMpnbggACmHWfxW2).
+* We are excited you are reading this, and would like to hear any thoughts you have to offer! So we added a few survey links to the site - feel free to [provide general feedback](https://goo.gl/forms/XVMpnbggACmHWfxW2), [suggest things to cover](https://goo.gl/forms/6e34w1B6vImi9wkZ2), or [express interest in helping](https://goo.gl/forms/XVMpnbggACmHWfxW2).
+
+Feel free to [provide feedback](https://goo.gl/forms/6e34w1B6vImi9wkZ2), [suggest coverage](https://goo.gl/forms/BUN03yZmpS0L2uMY2), or [express interest in helping](https://goo.gl/forms/XVMpnbggACmHWfxW2).
 
 * We support https now. Woo safety!
 
