@@ -28,7 +28,7 @@ But, we did not write this piece just to pat ourselves on the back for all the p
 Most significantly, we updated our mission statement to clarify our overall vision and attitude towards what we are doing. Although it is easy to get exasperated by the often wildly innacurate portrayals of AI progress, our aim is not to bellitle the work of professional reports or merely to debunk erroneous portrayals; rather our aim is to serve as an overall source of informed perspective on AI news, whether this news contains wildly flawed reporting or not. In other words, in addition to to debunking needless ‘hype’ or ‘panic’ we more broadly intend to provide meaningful, insightful and clear coverage about important events and developments related to AI. Plus, our previous tagline "Accessible and informed coverage of the latest AI hype and panic" was just a tag long... and so, the new tagline! 
 
 <figure>
-<h2 class="site-description">Putting AI News Into Perspective</h2> 
+<h2 class="site-description">Putting AI News In Perspective</h2> 
 </figure>
 
 This is part of a broader set of updates made all over the site to convey what we are about more clearly. An important one is to formally name our non-editorial news coverage 'briefs', to convey their intent to briefly summarize the important points of a story and convey our take on it. Another major update is the that our [About us](/about) page now lists the core beliefs that motivate our mission statement: 
@@ -37,7 +37,7 @@ This is part of a broader set of updates made all over the site to convey what w
 
 * Therefore, AI researchers and experts have a responsibility to promote understanding of their field within the general public with accessible writing.
 
-* There are not sufficient efforts by AI researchers and experts to do this sort of writing, and that we have enough relevant knowledge to do it well.
+* There are not sufficient efforts by AI researchers and experts to do this sort of writing, and we are qualified and positioned to do it well. 
 
 And since we are geeks after all, we made some changes to the site to make it more organizationally and technically accessible as well:
 

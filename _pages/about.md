@@ -17,7 +17,7 @@ Our core beliefs are that:
 
 * There exist many real and important dangers as well as prospects for present day AI, and it is important to distinguish between fact and fiction[^agi].
 * Therefore, AI researchers and experts have a responsibility to promote understanding of their field within the general public with accessible writing.
-* There are not sufficient efforts by AI researchers and experts to do this sort of writing, and that we have enough relevant knowledge to do it well.
+* There are not sufficient efforts by AI researchers and experts to do this sort of writing, and we are qualified and positioned to do it well. 
 
 [^agi]: Yes, we are quite aware of the [existential threat](https://waitbutwhy.com/2015/01/artificial-intelligence-revolution-1.html) possibilities of AI. The counterpoint to all that is wonderfully conveyed by [Rodney Brooks](https://rodneybrooks.com/the-seven-deadly-sins-of-predicting-the-future-of-ai/); an AGI or even scary doom AI is certainly possible, but we still seem far from it. In any case, this site's focus will be on providing perspective on stories in the here and now, not hypotheticals about the future.
 

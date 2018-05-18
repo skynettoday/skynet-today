@@ -90,14 +90,16 @@
 
 .site-page-title {
   margin-top: 0;
+  margin-bottom: 0;
   font-family: $alt-font;
-	font-style: italic;
+  text-decoration: underline;
   @include font-size(16);
   font-weight: 400;
   @include animation-duration(0.5s);
   @include animation-delay(1s);
 
   @include media($medium) {
-    @include font-size(24);
+    @include font-size(26);
+    margin-bottom: 0;
   }
 }
