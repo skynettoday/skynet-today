@@ -1,5 +1,5 @@
 ---
-title: Skynet yesterday, today and tomorrow
+title: Skynet Yesterday, Today and Tomorrow
 image:
   feature: content/editorials/images/why-skynet-today/propaganda.png
 no_subscribe: true
