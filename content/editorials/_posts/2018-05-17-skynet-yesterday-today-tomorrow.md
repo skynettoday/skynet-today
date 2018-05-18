@@ -6,7 +6,7 @@ no_subscribe: true
 author: [andrey_kurenkov, limor_gultchin]
 tags: [meta]
 no_article_mailchimp: true
-excerpt: "The progress and change in AI discussion has never been as fast paced, and so we too have been up to a lot lately."
+excerpt: "The evolution of discussions about AI has never been as fast paced as it is now, and so we too have been up to a lot lately."
 permalink: /editorials/yesterday-today-tomorrow
 ---
 
