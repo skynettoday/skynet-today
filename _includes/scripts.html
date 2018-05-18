@@ -41,6 +41,6 @@ twq('track','PageView');
     {% endfor %}
 {% endif %}
 
-{%- if page.layout == "search" -%}
+{%- if page.title == "Search" -%}
   {% include lunr-search-scripts.html %}
 {%- endif -%}
