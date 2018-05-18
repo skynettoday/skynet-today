@@ -1,0 +1,9 @@
+<div id='briefs' class='content-div'>
+  <p>Concise yet thorough articles that summarize and comment on an important recent AI story.</p>
+  <ul class="post-list" id="briefs-list"> 
+    {% for post in site.categories.briefs %} 
+      {% include entry.html %}
+    {% endfor %}
+  </ul>
+  <ul class="pagination-list"></ul>
+</div>

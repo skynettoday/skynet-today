@@ -1,10 +1,12 @@
 ---
 layout: post
 title: "Biased Facial Recognition - a Problem of Data and Diversity"
-excerpt: "Flashy headlines often hijack meaningful and important conversations on this topic, even when the articles are solid. Here is our summary."
+excerpt: "Flashy headlines often hijack meaningful and important conversations on this topic, even when the articles are solid - as was the case here"
 author: viraat_aryabumi
 editor: [andrey_kurenkov, limor_gultchin]
 tags: [facial recognition,bias,ethics,fairness]
+redirect_from: /content/news/face-recog/
+permalink: /briefs/face-recog/
 ---
 
 A great example of how misleading and click-baity article titles can cause hype and often diminish well-researched articles. 

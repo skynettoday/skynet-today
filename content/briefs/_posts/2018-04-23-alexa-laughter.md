@@ -5,6 +5,8 @@ excerpt: "A funny viral event talks to our ever increasing anxiety about AI and 
 author: ben_shih
 editor: [andrey_kurenkov, joshua_morton]
 tags: [Amazon, BigBiz, speech]
+redirect_from: /content/news/alexa-laughter/
+permalink: /briefs/alexa-laughter/
 ---
 
 You're at home, doing nothing in particular, and suddenly — creepy robotic laughter. Sound unpleasant? Well, for many it really happened:

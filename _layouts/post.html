@@ -17,7 +17,11 @@ layout: base
       {% include sidebar.html %}
       <div class="page-content">
         {{ content }}
-        {% include mailchimp-sign-up.html %}
+        
+        {% unless page.no_article_mailchimp %}
+          {% include mailchimp-sign-up.html %}
+        {% endunless %}
+        
         <nav class="pagination" role="navigation">
           {% if page.previous %}
             <a href="{{ site.url }}{{ page.previous.url }}" class="btn" title="{{ page.previous.title }}">Previous</a>
@@ -26,6 +30,9 @@ layout: base
             <a href="{{ site.url }}{{ page.next.url }}" class="btn" title="{{ page.next.title }}">Next</a>
           {% endif %}
         </nav><!-- /.pagination -->
+        
+        {% include survey-links.html %} Or, comment below!
+        
         {% if site.owner.disqus-shortname and page.comments or site.comments %}
           <div id="disqus_thread"></div><!-- /#disqus_thread -->
           {% include disqus-comments.html %}

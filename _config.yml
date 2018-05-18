@@ -1,7 +1,6 @@
 locale: en-US
 title: Skynet Today
-description: Accessible and informed coverage of the latest AI hype and panic 
-baseurl: # the subpath of your site, e.g. "/blog"
+description: Putting AI News Into Perspective
 url: 
 logo: site-logo-white.png
 date_format: "%B %-d, %Y"
@@ -17,7 +16,7 @@ feed:
 
 permalink: /:categories/:title/
 markdown: kramdown
-search_full_content: false # can have performance implications for large sites
+search_full_content: true # can have performance implications for large sites
 comments: true
 show_drafts: false
 future:      true
@@ -30,17 +29,19 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-gist
+  - jekyll-redirect-from  
+
+
 
 kramdown:
   input: GFM
   auto_ids: true
   footnote_nr: 1
   entity_output: as_char
-  toc_levels: 1..2
   enable_coderay: false
 
 include: [".htaccess","_pages"]
-exclude: ["CNAME", "_deploy.yml", "lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", ".less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md", "vendor"]
+exclude: ["CNAME", "_deploy.yml", "lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", ".less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md", "vendor", "scripts"]
 
 google_analytics: UA-114440651-1
 

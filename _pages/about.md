@@ -1,18 +1,34 @@
 ---
 layout: page
-title: About Skynet Today
-excerpt: "What is this whole thing?"
-modified: 2018-04-02
+title: About
+display_title: true
+excerpt: "About Skynet Today"
 permalink: /about
+toc: true
 ---
 
-<h3 class="page-title">About </h3>
-
 ## What is this
-As it says above, Skynet Today is a site dedicated to providing accessible and informed written critique of the latest AI hype and panic. In other words, the idea is to offer a concise but comprehensive overview of each major AI story that bubbles up in popular media. Such stories attract the public attention more and more often in the past several years and receive a coverage that is sometimes inspired by emotionally resonant but unrealistic science fiction concepts such as Skynet, HAL 9000 or the Three Laws of Robotics. The hope is to get a variety of people with a knowledge of the field to cover the coverage of new events related to AI, and thus offer a more nuanced outlook which helpfully distinguishes the fiction from the factual. 
+Skynet Today is a site dedicated to providing accessible and informed written critique of the AI news and trends. 
+
+In other words, the idea is to offer a concise but comprehensive overview of each major AI story that bubbles up in popular media. Such stories attract the public attention more and more often in the past several years and receive a coverage that is sometimes inspired by emotionally resonant but unrealistic science fiction concepts such as Skynet, HAL 9000 or the Three Laws of Robotics. The hope is to get a variety of people with a knowledge of the field to cover the coverage of new events related to AI, and thus offer a more nuanced outlook which helpfully distinguishes the fiction from the factual. 
 
 ## Why are you doing this
-We believe this needs to be done, that no one is really doing it, and that we have enough relevant knowledge to do it well. The conversation about AI is becoming increasingly relevant to many domains of society. To make sure it will be a productive one we need reliable and sensible sources of information and education about the topic. We believe such sources are necessary, yet currently few and far between, and that we have enough relevant knowledge to create one.
+Our core beliefs are that:
+
+* There exist many real and important dangers as well as prospects for present day AI, and it is important to distinguish between fact and fiction[^agi].
+* Therefore, AI researchers and experts have a responsibility to promote understanding of their field within the general public with accessible writing.
+* There are not sufficient efforts by AI researchers and experts to do this sort of writing, and that we have enough relevant knowledge to do it well.
+
+[^agi]: Yes, we are quite aware of the [existential threat](https://waitbutwhy.com/2015/01/artificial-intelligence-revolution-1.html) possibilities of AI. The counterpoint to all that is wonderfully conveyed by [Rodney Brooks](https://rodneybrooks.com/the-seven-deadly-sins-of-predicting-the-future-of-ai/); an AGI or even scary doom AI is certainly possible, but we still seem far from it. In any case, this site's focus will be on providing perspective on stories in the here and now, not hypotheticals about the future.
+
+The conversation about AI is becoming increasingly relevant to many domains of society. To make sure it will be a productive one we need reliable and sensible sources of information and education about the topic. We believe such sources are necessary, yet currently few and far between, and that we have enough relevant knowledge to create one.
+
+## How are you doing this
+To achieve our mission and live up to our standards of quality, clarity, and speed, we have 3 types of coverage which differ in their levels of depth, frequency, and degree of objectivity:
+
+* **Digests**: A bi-weekly newsletter with quick takes on the most important recent media stories about AI. Our most frequent and concise coverage.
+* **Briefs**: Concise yet thorough articles that summarize and comment on an important recent AI story. Literally meant to be 'brief', around 1000 words, so you can get a quick impression of the key points of important stories. 
+* **Editorials**: Longer and more in-depth pieces that are more opinionated and less news-specific. These are by far the least frequent and most in depth, and also the most ambitious and insightful.
 
 ## Who are you
 We are a group of researchers, engineers, and working professionals with domain knowledge in AI and investment in this site's mission. People actively contributing to the site include:
@@ -27,8 +43,11 @@ We are a group of researchers, engineers, and working professionals with domain 
 * [Charlie Kilpatrick](https://www.linkedin.com/in/charliekilpatrick/): a contributing author of news coverage and editorials. Software engineer at Microsoft. Squalid culture critic. Exhausted with tech journalism. Conscious of Artificial Intelligence, but primary skillset consists of telling others why they are wrong about Artificial Intelligence.
 * [Anna Kurenkova](https://www.linkedin.com/in/annakurenkova/): the lead of digital marketing for Skynet Today. She has a B.A. in Applied Linguistics from Georgia State University and is a recent graduate of Udacity's Digital Marketing Nanodegree program. She is a fan of learning to speak new languages, and can speak many.
 
-## Yes, we are aware AI is an existential threat
-Yes, we are quite aware of the [existential threat](https://waitbutwhy.com/2015/01/artificial-intelligence-revolution-1.html) possibilities of AI. The counterpoint to all that is wonderfully conveyed by [Rodney Brooks](https://rodneybrooks.com/the-seven-deadly-sins-of-predicting-the-future-of-ai/); an AGI or even scary doom AI is certainly possible, but we still seem far from it. In any case, this site's focus will be on providing perspective on stories in the here and now, not hypotheticals about the future.
-
 ## How Can I Help
-Subscribe! Spread the word! And if you want to contribute writing, see our [call for collaborators and submissions](/content/editorials/call-for-collaborators).
+Subscribe! Spread the word! And if you have any ideas for improving the site, definitely let us know:
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfSHTjBIrr7QVL3k1g51FCYYOwX5Nxnbr080-0rlUpeW7fLtA/viewform?embedded=true" width="700" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+
+And if you want to contribute more actively, see our [call for collaborators and submissions](/content/editorials/call-for-collaborators) or just fill out the form below:
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScDRqeP_jaI10g-AMy_CvqVhjgyi0xF783QKT0O10f3R-sw_g/viewform?embedded=true" width="700" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>

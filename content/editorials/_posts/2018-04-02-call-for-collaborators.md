@@ -6,11 +6,11 @@ image:
 author: andrey_kurenkov
 tags: [meta]
 excerpt: "Know about AI and agree with this site's mission? Contribute!"
+redirect_from: /content/editorials/call-for-collaborators
+permalink: /editorials/call-for-collaborators
 ---
 Skynet Today is seeking collaborators and editorial submissions!
-AI misinformation, overhyping, and doomsaying are more rampant than ever 
-and our small team could sure benefit from a few more excited and knowledgeable collaborators and contributors.
-
+AI misinformation, overhyping, and doomsaying are more rampant than ever and our small team could sure benefit from a few more excited and knowledgeable collaborators and contributors.
 
 ## Collaborators
 First, let's explain that 'collaborators' bit. It is typical for publications to have a
@@ -30,5 +30,7 @@ tailored to making this a reasonable task for people to do in their free time, b
 Now, the ‘submissions’ bit. In addition to news coverage, Skynet Today also does more varied long-form coverage. Rather than just providing an informed and accessible perspective on a particular recent AI-related news story, these editorials can cover larger trends, summarize the current state of something related to AI, or be any longer form writing on the subject. The unifying theme will still be “accessible and informed coverage of AI hype and panic”, though with less emphasis on just hype and panic.
 
 ## How To Get In Touch
-If you want to contribute to this site as either a collaborator or with a submission, reach out via our email. Tell us a bit about your background and how you would like to contribute to Skynet Today, and we’ll take it from there!
+If you want to contribute to this site as either a collaborator or with a submission, reach out via our email. Tell us a bit about your background and how you would like to contribute to Skynet Today, and we’ll take it from there! Or, simply fill out this form:
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScDRqeP_jaI10g-AMy_CvqVhjgyi0xF783QKT0O10f3R-sw_g/viewform?embedded=true" width="700" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 

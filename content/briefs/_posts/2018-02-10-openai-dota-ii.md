@@ -4,6 +4,8 @@ excerpt: "An impressive demo by OpenAI leaves many questions unanswered"
 author: joshua_morton
 editor: andrey_kurenkov
 tags: [OpenAI,game,hype]
+redirect_from: /content/news/openai-dota-ii/
+permalink: /briefs/openai-dota-ii/
 ---
 
 Among the biggest AI stories of 2017, and one of the most opaque in terms of

@@ -59,4 +59,43 @@ $(document).ready(function() {
     // make it unique to apply your CSS animations just to this exact popup
     mainClass: 'mfp-fade'
   });
+  
+  // initialize smooth scroll
+  $("a").smoothScroll({ offset: -20 });
+  
+  try {
+    var briefsList = new List('briefs', {
+      valueNames: ['entry-card'],
+      listClass: 'post-list',
+      page: 5,
+      pagination: {paginationClass: 'pagination-list'}
+    });
+  }
+  catch(error) {
+    console.error(error);
+  }
+ 
+  try {
+    var digestsList = new List('digests', {
+      valueNames: ['entry-card'],
+      listClass: 'post-list',
+      page: 5,
+      pagination: {paginationClass: 'pagination-list'}
+    });
+  }
+  catch(error) {
+    console.error(error);
+  }
+
+  try {
+    var editorialsList = new List('editorials', {
+      valueNames: ['entry-card'],
+      listClass: 'post-list',
+      page: 5,
+      pagination: {paginationClass: 'pagination-list'}
+    });
+  }
+  catch(error) {
+    console.error(error);
+  }
 });

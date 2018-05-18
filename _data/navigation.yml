@@ -1,10 +1,16 @@
 # Site navigation links
-
-- title: About
-  url: /about
-
-- title: Posts
+  
+- title: Articles
   url: /
+  
+- title: Subscribe
+  url: /subscribe
+  
+- title: About
+  url: /about 
 
 - title: Contact
   url: /contact
+  
+- title: Search
+  url: /search
