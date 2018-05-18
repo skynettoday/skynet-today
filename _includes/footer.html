@@ -6,19 +6,11 @@
   {% if page.no_subscribe==Nil %}
     {% include mailchimp-sign-up.html %}
   {% endif %}
-  
   {%- if site.footer_links -%}
-    <div class="social-icons">
-      {%- for footer_link in site.footer_links -%}
-        {%- if footer_link.url contains "://" -%}
-          {%- assign url = footer_link.url -%}
-        {%- else -%}
-          {%- assign url = footer_link.url | relative_url -%}
-        {%- endif -%}
-        <a class="social-icon" href="{{ url }}"><i class="{{ footer_link.icon | default: 'fas fa-link' }} fa-2x" title="{{ footer_link.title }}"></i></a>
-      {%- endfor -%}
-    </div>
+    {% include social-icons.html %}
   {%- endif -%}
+  
+  <div id='survey-links'>{% include survey-links.html %}</div>
 
  <span> &copy; {{ site.time | date: '%Y' }} {{ site.owner.name }} | Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/so-simple-jekyll-theme/" rel="nofollow">So Simple Theme</a> | <a href="/privacy">Privacy Policy</a></span>
 

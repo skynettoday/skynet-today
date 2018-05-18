@@ -29,7 +29,8 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-gist
-  - jekyll-redirect-from
+  - jekyll-redirect-from  
+
 
 
 kramdown:
@@ -37,7 +38,6 @@ kramdown:
   auto_ids: true
   footnote_nr: 1
   entity_output: as_char
-  toc_levels: 1..2
   enable_coderay: false
 
 include: [".htaccess","_pages"]

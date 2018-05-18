@@ -5,6 +5,7 @@ image:
 no_subscribe: true
 author: [andrey_kurenkov, limor_gultchin]
 tags: [meta]
+no_article_mailchimp: true
 excerpt: "The progress and change in AI discussion has never been as fast paced, and so we too have been up to a lot lately."
 permalink: /editorials/yesterday-today-tomorrow
 ---
@@ -39,6 +40,8 @@ This is part of a broader set of updates made all over the site to convey what w
 * There are not sufficient efforts by AI researchers and experts to do this sort of writing, and that we have enough relevant knowledge to do it well.
 
 And since we are geeks after all, we made some changes to the site to make it more organizationally and technically accessible as well:
+
+* We are excited you are reading this, and would like to hear any thoughts you have to offer! So we added a few survery links to the site - feel free to [provide general feedback](https://goo.gl/forms/XVMpnbggACmHWfxW2), [suggest things to cover](https://goo.gl/forms/6e34w1B6vImi9wkZ2), or [express interest in helping](https://goo.gl/forms/XVMpnbggACmHWfxW2).
 
 * We support https now. Woo safety!
 

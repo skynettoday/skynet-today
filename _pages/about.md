@@ -4,6 +4,7 @@ title: About
 display_title: true
 excerpt: "About Skynet Today"
 permalink: /about
+toc: true
 ---
 
 ## What is this
@@ -14,9 +15,11 @@ In other words, the idea is to offer a concise but comprehensive overview of eac
 ## Why are you doing this
 Our core beliefs are that:
 
-* There exist many real and important dangers as well as prospects for present day AI, and it is important to distinguish between fact and fiction.
+* There exist many real and important dangers as well as prospects for present day AI, and it is important to distinguish between fact and fiction[^agi].
 * Therefore, AI researchers and experts have a responsibility to promote understanding of their field within the general public with accessible writing.
 * There are not sufficient efforts by AI researchers and experts to do this sort of writing, and that we have enough relevant knowledge to do it well.
+
+[^agi]: Yes, we are quite aware of the [existential threat](https://waitbutwhy.com/2015/01/artificial-intelligence-revolution-1.html) possibilities of AI. The counterpoint to all that is wonderfully conveyed by [Rodney Brooks](https://rodneybrooks.com/the-seven-deadly-sins-of-predicting-the-future-of-ai/); an AGI or even scary doom AI is certainly possible, but we still seem far from it. In any case, this site's focus will be on providing perspective on stories in the here and now, not hypotheticals about the future.
 
 The conversation about AI is becoming increasingly relevant to many domains of society. To make sure it will be a productive one we need reliable and sensible sources of information and education about the topic. We believe such sources are necessary, yet currently few and far between, and that we have enough relevant knowledge to create one.
 
@@ -40,8 +43,11 @@ We are a group of researchers, engineers, and working professionals with domain 
 * [Charlie Kilpatrick](https://www.linkedin.com/in/charliekilpatrick/): a contributing author of news coverage and editorials. Software engineer at Microsoft. Squalid culture critic. Exhausted with tech journalism. Conscious of Artificial Intelligence, but primary skillset consists of telling others why they are wrong about Artificial Intelligence.
 * [Anna Kurenkova](https://www.linkedin.com/in/annakurenkova/): the lead of digital marketing for Skynet Today. She has a B.A. in Applied Linguistics from Georgia State University and is a recent graduate of Udacity's Digital Marketing Nanodegree program. She is a fan of learning to speak new languages, and can speak many.
 
-## Yes, we are aware AI is an existential threat
-Yes, we are quite aware of the [existential threat](https://waitbutwhy.com/2015/01/artificial-intelligence-revolution-1.html) possibilities of AI. The counterpoint to all that is wonderfully conveyed by [Rodney Brooks](https://rodneybrooks.com/the-seven-deadly-sins-of-predicting-the-future-of-ai/); an AGI or even scary doom AI is certainly possible, but we still seem far from it. In any case, this site's focus will be on providing perspective on stories in the here and now, not hypotheticals about the future.
-
 ## How Can I Help
-Subscribe! Spread the word! And if you want to contribute writing, see our [call for collaborators and submissions](/content/editorials/call-for-collaborators).
+Subscribe! Spread the word! And if you have any ideas for improving the site, definitely let us know:
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfSHTjBIrr7QVL3k1g51FCYYOwX5Nxnbr080-0rlUpeW7fLtA/viewform?embedded=true" width="700" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+
+And if you want to contribute more actively, see our [call for collaborators and submissions](/content/editorials/call-for-collaborators) or just fill out the form below:
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScDRqeP_jaI10g-AMy_CvqVhjgyi0xF783QKT0O10f3R-sw_g/viewform?embedded=true" width="700" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
