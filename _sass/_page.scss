@@ -144,6 +144,7 @@ span + .page-title {
 	width: 150px;
 	height: 150px;
 	margin-bottom: 10px;
+	margin-top: 10px;
 	@include rounded(150px);
 	@include clearfix;
 }

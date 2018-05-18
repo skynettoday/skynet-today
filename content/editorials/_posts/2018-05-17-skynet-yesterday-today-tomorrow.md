@@ -2,8 +2,8 @@
 title: Skynet yesterday, today and tomorrow
 image:
   feature: content/editorials/images/why-skynet-today/propaganda.png
-author: limor_gultchin
-editor: andrey_kurenkov
+no_subscribe: true
+author: [andrey_kurenkov, limor_gultchin]
 tags: [meta]
 excerpt: "The progress and change in AI discussion has never been as fast paced, and so we too have been up to a lot lately."
 permalink: /editorials/yesterday-today-tomorrow
