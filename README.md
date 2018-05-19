@@ -1,5 +1,5 @@
 # Skynet Today
-Accessible and informed coverage of the latest AI hype and panic
+Skynet Today is a site dedicated to providing accessible and informed written critique of the AI news and trends.
 
 See [our call for collaborators](http://www.skynettoday.com/content/editorials/call-for-collaborators/) to get involved!
 
