@@ -65,7 +65,7 @@ investigation](https://www.bloomberg.com/news/articles/2018-04-12/tesla-withdraw
 * The family's lawyer released a statement as well, stating that
 
 > [The car] took [the Driver] out of the lane that he was driving in, then it
-> failed to break, then it drove him into this fixed concrete barrier
+> failed to brake, then it drove him into this fixed concrete barrier
 
 At the same time, Tesla drivers around the country were able to reproduce
 autopilot actions similar to the ones that caused the accident, [at other
