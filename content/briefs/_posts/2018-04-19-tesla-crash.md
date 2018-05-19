@@ -62,10 +62,10 @@ This interview caused a flurry of activity:
 They also noted that Autopilot could not avoid all accidents. Tesla was then [removed from the NTSB
 investigation](https://www.bloomberg.com/news/articles/2018-04-12/tesla-withdraws-from-ntsb-crash-probe-over-autopilot-data-flap).
 
-* The family's lawyer released a statement as well, stating that
+* The family's lawyer released a statement as well, stating that[^transcription]
 
 > [The car] took [the Driver] out of the lane that he was driving in, then it
-> failed to brake, then it drove him into this fixed concrete barrier
+> failed to break [sic], then it drove him into this fixed concrete barrier
 
 At the same time, Tesla drivers around the country were able to reproduce
 autopilot actions similar to the ones that caused the accident, [at other
@@ -143,3 +143,4 @@ the autonomous vehicle space, but the opinions expressed here are his own.*
 
 [^statement]: Tesla doesn't appear to have made an official press release with their statement, but it's reproduced in full at the end of [this](http://abc7.com/automotive/tesla-issues-strongest-statement-yet-blaming-driver-for-deadly-crash/3332186/) article.
 [^l4]: "Level 4" autonomy is autonomy where the vehicle can drive every part of the trip, from driveway to driveway, without human intervention. It should be capable of doing this in common environments and conditions (whereas Level 5 autonomy extends the definiton to more extreme environments and conditions).
+[^transcription]: Sourced from [this](http://abcnews.go.com/US/wife-tesla-crash-victim-speaks-tragedy-happen-family/story?id=54392855) article on the crash.
