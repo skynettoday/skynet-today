@@ -139,9 +139,7 @@ security. Tesla may have a responsibility to, ironically, make its users trust
 its product less.
 
 *Josh works at Google, whose sibling company, Waymo, is a competitor to Tesla in
-the autonomous vehicle space, but the opinions expressed here are his own. 
-The lead editor, Andrey, is a grad student at Stanford and has no affiliation with
-Tesla or Google. *
+the autonomous vehicle space, but the opinions expressed here are his own. The lead editor, Andrey, is a grad student at Stanford and has no affiliation with Tesla or Google. *
 
 [^statement]: Tesla doesn't appear to have made an official press release with their statement, but it's reproduced in full at the end of [this](http://abc7.com/automotive/tesla-issues-strongest-statement-yet-blaming-driver-for-deadly-crash/3332186/) article.
 [^l4]: "Level 4" autonomy is autonomy where the vehicle can drive every part of the trip, from driveway to driveway, without human intervention. It should be capable of doing this in common environments and conditions (whereas Level 5 autonomy extends the definiton to more extreme environments and conditions).
