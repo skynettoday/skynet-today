@@ -60,7 +60,7 @@ And of course, 35 years later, most Americans own a pocket-sized device that can
 
 So, when compared to simply watching recorded videos, how might this method enable novel, enhanced surveillance?
 
-### Understanding Speech
+#### Understanding Speech
 
 One way bad actors may have gained new tools to surveil others is if this method is better than humans at understanding speech in a recorded video.
 
@@ -72,11 +72,14 @@ The authors of [the paper](https://arxiv.org/pdf/1804.03619.pdf) suggest in the 
 Crucially, the authors then suggest that humans are *considerably better* at recognizing speech when they can see the speaker's face.
 The bottom line emerges: this new technology is an effort to make machines able to do something humans can do by recreating the conditions that humans require to do it the most effectively. And though the results are impressive, the tech is nowhere near humans’ prowess at this task. 
 
-### How Novel Is this, Really?
+#### How Novel Is this, Really?
 
 Even if the technology isn't a drastic improvement over humans' ability to understand speech from video, we may still be concerned about automation. Could  this technology be used to automatically parse large volumes of recorded video for sensitive information?
 
 While it's true that automation enables that kind of processing, this is far from the first-ever automatic speech processing method.
+
+<iframe width="854" height="480" src="https://www.youtube.com/embed/JJ_zlj4pFV0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 Early automatic speech *recognition* has existed [since the 1960's](http://www.ece.ucsb.edu/Faculty/Rabiner/ece259/Reprints/354_LALI-ASRHistory-final-10-8.pdf), and speech *separation* approaches have been proposed and implemented with varying degrees of success over the past two decades ([2004](http://c4dm.eecs.qmul.ac.uk/papers/2004/Mitianoudis04-phdthesis.pdf), [2007](http://www.kecl.ntt.co.jp/icl/signal/sawada/mypaper/icassp2007Tutorial11.pdf), [2011](https://www.ruhr-uni-bochum.de/ika/forschung/forschungsbereich_kolossa/Daten/Buchkapitel_ICA.pdf), [2014](https://arxiv.org/pdf/1408.0193)).
 And in 2016, researchers at The University of Oxford achieved ["sentence-level" lipreading](https://arxiv.org/pdf/1611.01599.pdf): lip reading that can contextualize and predict whole sentences just from video, far surpassing prior work that could only recognize individual words.
 
@@ -92,7 +95,7 @@ But now we’re just describing the computer scene from *Minority Report*.
 <iframe src="https://giphy.com/embed/7JdlCH4Yomhin050R6" width="560" height="315" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 </figure>
 
-### And What About Alexa?
+#### And What About Alexa?
 It is also important to note that all the above is not ready to be used as an off-the-shelf spying tool; it’s research, and so only really usable by AI experts. Meanwhile, high-quality speech recognition products that could be used to spy on all of us are being bought by the millions every year: Alexa and Google Home, to name a couple. As these commercial products demonstrate, precise speech recognition is achievable with audio signals alone; video is just the ‘cherry on top.’ In fact, the authors’ own paper shows this as well:
 
 <figure>
@@ -107,7 +110,7 @@ And as if that’s not enough, there is [free open source software](https://cmus
 
 So… if one were to spy on people with AI, this latest development from Google hardly seems like the tool they would go with first. After all, it’s just research - why use it when there is already commercialized, production-quality technology available?
 
-### But What If...?
+#### But What If...?
 
 *Android Police* and *Tech Times* additionally specify a hypothetical surveillance use-case that is contingent on further improvements to the tech: if significantly improved, could this tech pick out the speech of unwary targets from a distance?
 
