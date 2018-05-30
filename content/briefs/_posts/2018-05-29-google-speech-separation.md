@@ -82,6 +82,11 @@ While it's true that automation enables that kind of processing, this is far fro
 Early automatic speech *recognition* has existed [since the 1960's](http://www.ece.ucsb.edu/Faculty/Rabiner/ece259/Reprints/354_LALI-ASRHistory-final-10-8.pdf), and speech *separation* approaches have been proposed and implemented with varying degrees of success over the past two decades ([2004](http://c4dm.eecs.qmul.ac.uk/papers/2004/Mitianoudis04-phdthesis.pdf), [2007](http://www.kecl.ntt.co.jp/icl/signal/sawada/mypaper/icassp2007Tutorial11.pdf), [2011](https://www.ruhr-uni-bochum.de/ika/forschung/forschungsbereich_kolossa/Daten/Buchkapitel_ICA.pdf), [2014](https://arxiv.org/pdf/1408.0193)).
 And in 2016, researchers at The University of Oxford achieved ["sentence-level" lipreading](https://arxiv.org/pdf/1611.01599.pdf): lip reading that can contextualize and predict whole sentences just from video, far surpassing prior work that could only recognize individual words.
 
+<figure>
+	<img src="https://i.imgur.com/KPC3jYL.png" >
+    <figcaption><a href="https://arxiv.org/pdf/1611.01599.pdf">Source: arxiv.org</a></figcaption>
+</figure>
+
 This isn’t even the first method for automatic speech recognition using combined video and audio inputs, either. In 2007, IEEE published [a study](https://ieeexplore.ieee.org/document/4317572/) whose authors purported to achieve significantly better speech recognition than with audio alone by adding video signals to their processing. They make no promise of separating overlapping speech signals, but the work shows that similar systems, with similar use-cases, existed before Google's.
 
 The authors do note their algorithm is quantitatively superior to this prior work, but how significant is that improvement? It’s hard to say, but a likely guess is that the transcripts produced by prior methods would not be significantly less clear than those produced by this method.
