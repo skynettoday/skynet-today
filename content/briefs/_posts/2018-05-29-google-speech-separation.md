@@ -122,7 +122,7 @@ So… if one were to spy on people with AI, this latest development from Google 
 Well, without a strictly defined limitation on time or resources, the answer is probably yes.
 At that point, however, the discussion has shifted from an analysis of the threats posed by *this* technology to a rejection of all developments in speech processing.
 
-## A Note On Media Accountability
+#### A Note On Media Accountability
 
 As each article hedged on the fear that this technology could be used for surveillance, the lasting impression of the coverage was that the technology is a privacy threat.
 
