@@ -76,6 +76,9 @@ The bottom line emerges: this new technology is an effort to make machines able 
 Even if the technology isn't a drastic improvement over humans' ability to understand speech from video, we may still be concerned about automation. Could  this technology be used to automatically parse large volumes of recorded video for sensitive information?
 
 While it's true that automation enables that kind of processing, this is far from the first-ever automatic speech processing method.
+
+<iframe width="854" height="480" src="https://www.youtube.com/embed/JJ_zlj4pFV0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 Early automatic speech *recognition* has existed [since the 1960's](http://www.ece.ucsb.edu/Faculty/Rabiner/ece259/Reprints/354_LALI-ASRHistory-final-10-8.pdf), and speech *separation* approaches have been proposed and implemented with varying degrees of success over the past two decades ([2004](http://c4dm.eecs.qmul.ac.uk/papers/2004/Mitianoudis04-phdthesis.pdf), [2007](http://www.kecl.ntt.co.jp/icl/signal/sawada/mypaper/icassp2007Tutorial11.pdf), [2011](https://www.ruhr-uni-bochum.de/ika/forschung/forschungsbereich_kolossa/Daten/Buchkapitel_ICA.pdf), [2014](https://arxiv.org/pdf/1408.0193)).
 And in 2016, researchers at The University of Oxford achieved ["sentence-level" lipreading](https://arxiv.org/pdf/1611.01599.pdf): lip reading that can contextualize and predict whole sentences just from video, far surpassing prior work that could only recognize individual words.
 
