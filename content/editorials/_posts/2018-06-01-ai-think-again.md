@@ -2,7 +2,7 @@
 title: "Artificial Intelligence: Think Again"
 author: jerry_kaplan
 tags: [trends,hype,opinion]
-excerpt: "AI has a public relations - what should we do about it?"
+excerpt: "AI has a public relations problem, and AI researchers should do something about it"
 permalink: /editorials/ai-think-again
 ---
 _The following opinion piece originally appeared in the Communications of the ACM, Vol. 60, No. 1, Pages 36-38 (https://dl.acm.org/citation.cfm?doid=3028256.2950039)._<br>
