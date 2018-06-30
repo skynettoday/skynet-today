@@ -1,18 +1,18 @@
 ---
 title: "Autonomous Driving, Both Close and Far from Ubiquity"
-author: apoorva_dornadula and henry_mei
+author: [apoorva_dornadula, henry_mei]
+editor: andrey_kurenkov
 tags: [autonomous vehicles,self-driving cars,computer vision, policy]
-excerpt: "Autonomous vehicle technology has made huge advances in the last couple of years, however it is far from being widely deployed."
+excerpt: "Autonomous vehicle technology has made huge advances in the last couple of years — what's left to solve? A whole lot."
 permalink: /editorials/autonomous_vehicles
 ---
-
 <figure>
       <img src="/content/editorials/images/autonomous_vehicles/self_driving_simulator.gif" alt="Self Driving Car Environment"/>
-     <figcaption><a href="https://www.bloomberg.com/news/articles/2016-12-20/the-tesla-advantage-1-3-billion-miles-of-data">(source)</a></figcaption>
+     <figcaption>Footage of a Tesla car autonomously driving around along with the sensing and perception involved. <a href="https://www.bloomberg.com/news/articles/2016-12-20/the-tesla-advantage-1-3-billion-miles-of-data">(source)</a></figcaption>
 </figure>
 
 
-Videos like this one from Tesla make it obvious that self driving technology has come a long ways in the last couple of years. Waymo, Tesla, Lyft, and many others are actively testing self driving cars with promising results, and there is an un-ending stream of news about the tech’s advances and commercial interest in it.
+Videos like the one above make it obvious that self driving technology has come a long ways in the last couple of years. Waymo, Tesla, Lyft, and many others are actively testing self driving cars with promising results, and there is an un-ending stream of news about the tech’s advances and commercial interest in it.
 
 So, where are all the self driving taxis? The truth is this: impressive though it may seem, self driving car technology is still far from ready to take over driving. Demos of cars driving autonomously for long stretches are routinely released by companies spending billions of dollars on it, but, these demos hide the fact multiple enormous challenges remain before our cars can drive us around sans human help. In particular, there are three major largely unsolved challenges:
 
@@ -26,7 +26,7 @@ Though they may seem unassuming, these are huge hurdles that are beyond today’
 
 <figure>
       <img src="/content/editorials/images/autonomous_vehicles/history.jpg" alt="AV History"/>
-     <figcaption><a href="http://www.hybridcars.com/ford-leverages-its-past-and-present-toward-a-mobility-solutions-future/history-of-autonomy-timeline/">(source)</a></figcaption>
+     <figcaption>Ford's timeline of the past decade of autonomous car development. <a href="http://www.hybridcars.com/ford-leverages-its-past-and-present-toward-a-mobility-solutions-future/history-of-autonomy-timeline/">(source)</a></figcaption>
 </figure>
 
 One of the first conceptions of autonomous driving came from da Vinci’s self-propelled cart: a system of compressed springs and preset steering that allows a cart to move on its own without human assistance. This device wasn’t practical though, and required human or animal labor for locomotion. This meant that serious attempts at automation only emerged much later. The advent of today’s autonomous vehicle systems required the development of a set of largely complementary technologies.
@@ -41,13 +41,17 @@ As is often the case, the military proved to be an excellent catalyst, starting 
 Around the same time, the miniaturization of electronics and the commercialization of radio control from the military led to the notion of remote control. While a human was always nearby to intervene should the machine fail to act or make a mistake, the physical separation provided by remote control allowed for more risk, be it running an RC car into a wall or delivering an explosive warhead via missile. The biggest motivation for autonomy finally arrived when humans decided to reach for the final frontier - working in space. How could humans control a rover on another planet when every radio instruction took multiple seconds to register?
 Enter the first practical self-driving vehicle (1961): the Stanford cart, a scrappy wagon on wheels that used a monochrome camera and could only follow a white line for about 50 feet before losing its way. The politics and optics of sending humans to space took precedence in the 20th century, and the cart was abandoned. But AI was then still in its infancy (the term [having only been coined in 1956](https://en.wikipedia.org/wiki/Dartmouth_workshop)), and researchers rapidly made progress and soon moved on to [more sophisticated robotics research](https://en.wikipedia.org/wiki/Shakey_the_robot).
 
-<a href="https://www.youtube.com/embed/7bsEN8mwUB8"><img src="http://img.youtube.com/vi/7bsEN8mwUB8/0.jpg" width="560" height="315" border="10" /></a>
+<figure>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7bsEN8mwUB8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</figure>
 
-In the eyes of the average driver, the first modern autonomous vehicle didn’t materialize until 1987. Ernst Dickmanns, often compared to the Wright brothers, and his research group at University Bundeewehr Munich (UniBW) built a robot car that could discern other cars and even pass them. At about the same time, Dean Pomerleau led a project at Carnegie Mellon University called ALVINN (__A__utonomous __L__and __V__ehicle __I__n a __N__eural __N__etwork which aimed to use modern AI to drive a car). As recently covered by [The Verge](https://www.theverge.com/2016/11/27/13752344/alvinn-self-driving-car-1989-cmu-navlab), the team’s use of a [neural network](https://en.wikipedia.org/wiki/Artificial_neural_network) was impressively prescient:
+In the eyes of the average driver, the first modern autonomous vehicle didn’t materialize until 1987. Ernst Dickmanns, often compared to the Wright brothers, and his research group at University Bundeewehr Munich (UniBW) built a robot car that could discern other cars and even pass them. At about the same time, Dean Pomerleau led a project at Carnegie Mellon University called ALVINN (**A**utonomous **L**and **V**ehicle **I**n a **N**eural **N**etwork which aimed to use modern AI to drive a car). As recently covered by [The Verge](https://www.theverge.com/2016/11/27/13752344/alvinn-self-driving-car-1989-cmu-navlab), the team’s use of a [neural network](https://en.wikipedia.org/wiki/Artificial_neural_network) was impressively prescient:
 
 > “The result of eight years of [military-funded research at CMU’s robotics institute](http://repository.cmu.edu/cgi/viewcontent.cgi?article=2874&context=compsci), ALVINN could be considered the forefather of today’s self-driving cars, Cameron told me in an email. “Why? The approach ALVINN took was using a neural network to drive the car, which was absolutely novel for the time and is quickly becoming an increasingly popular approach with self-driving car efforts,” Cameron said.”
 
-<a href="https://www.youtube.com/embed/ilP4aPDTBPE"><img src="http://img.youtube.com/vi/ilP4aPDTBPE/0.jpg" width="560" height="315" border="10" /></a>
+<figure>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ilP4aPDTBPE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</figure>
 
 These advances led to a renaissance of funding for self-driving technology, starting with the 1987-1995 near billion-dollar PROMETHEUS Project in Europe and culminating in the 2005 DARPA autonomous vehicle challenge, an ambitious program that spawned the many self-driving initiatives we see today. Many of the key researchers that participated in the DARPA race, such as the winning team’s [Sebastian Thrun](https://en.wikipedia.org/wiki/Sebastian_Thrun), were soon scooped up by companies like Google eager to get an early start in the race.
 
@@ -55,7 +59,7 @@ These advances led to a renaissance of funding for self-driving technology, star
 
 <figure>
       <img src="/content/editorials/images/autonomous_vehicles/av_levels.jpg" alt="AV Levels"/>
-     <figcaption><a href="https://towardsdatascience.com/self-driving-cars-the-most-hyped-thing-since-the-segway-b49e09c69fc7">(source)</a></figcaption>
+     <figcaption>Levels of self driving autonomy. <a href="https://towardsdatascience.com/self-driving-cars-the-most-hyped-thing-since-the-segway-b49e09c69fc7">(source)</a></figcaption>
 </figure>
 
 Only a decade ago, the thought of never having to drive again seemed like a page from a science fiction novel. Now, autonomous vehicles are very much part of the Zeitgeist. At automotive trade shows and gadget conventions alike, self-driving cars steal the spotlight through a frenzy of live demos, partnerships, and product announcements. There’s a lot of hype, but what does autonomy actually mean when it comes to driving? Industry experts have broadly defined the [following categories](https://web.archive.org/web/20161120142825/http://www.sae.org/misc/pdfs/automated_driving.pdf):
@@ -73,13 +77,16 @@ So, how good is modern self driving tech? What results do we already have?  Here
 * Many of these technologies are approaching conditional autonomy (level 3) by supporting specific scenarios, such as lane changes, but are unable to broadly take the place of a human driver.
 * Other teams have more ambitious goals. Waymo, the self-driving division of Google’s parent company Alphabet, is holding out on immediate commercialization in favor of rolling out [a fleet of highly autonomous (level 4) minivans](https://techcrunch.com/2018/01/29/waymo-orders-thousands-of-pacificas-for-2018-self-driving-fleet-rollout/).
 
-<a href="https://www.youtube.com/embed/B8R148hFxPw"><img src="http://img.youtube.com/vi/B8R148hFxPw/0.jpg" width="560" height="315" border="10" /></a>
+<figure>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/B8R148hFxPw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</figure>
 
 Each of these major self-driving car initiatives have announced that their prototypes have driven millions of miles. Some of them are public (e.g. Tesla) while others are rolling out as this piece is being written (e.g. Drive.AI). The progress is obvious. However, there are many more millions of miles to go before truly autonomous driving truly crosses into the mainstream. Major automakers predict turning the proverbial self-driving corner [no sooner than 2020](https://www.techemergence.com/self-driving-car-timeline-themselves-top-11-automakers/), and AI experts like Rodney Brooks (a Professor of Robotics (emeritus) from MIT) [consistently predict](https://rodneybrooks.com/my-dated-predictions/) that we are still decades away. What is holding back the self-driving revolution?
 
 ## Basically Everything That Happens is a Challenge
 
 Autonomous vehicles seem to be just around the corner, but the truth is that currently __even the most commonplace situations__ are still hard for these technologies to get right. Michael Benisch, Director of Autonomy at Lyft’s self-driving car project [Level 5](https://www.lyft.com/self-driving-vehicles), recently gave a fascinating talk at Stanford about the challenges ahead for deploying autonomous vehicles (AVs). He talked about how everyday occurrences on the road still pose a big challenge, and in particular highlighted three categories of challenges: environment conditions, spontaneous external inputs, and situations requiring inference. However, he also mentioned that many mitigation strategies are being developed and implemented to address these challenges, including redundant systems, simulation-based integration tests, and real-world tests on private roads.
+
 Environmental conditions such as heavy rain, snow, or sleet are common in many non-California locations. Driving in these conditions are difficult for humans, let alone computers, and require self driving cars to be more robust to changes in temperature and visibility.
 Things get a bit more interesting with “spontaneous external inputs”. Examples include simple events like car doors being opened, children running into the road after a ball, or bikers swerving into the car lane. Self driving cars are still largely unable to process and react to these situations in an appropriate manner. Rodney Brooks expertly discusses this topic in his essay “[Edge Cases for Self Driving Cars](https://rodneybrooks.com/edge-cases-for-self-driving-cars/)”:
 
@@ -90,15 +97,13 @@ Why would it be stopped? It could be a Lyft or an Uber waiting for a person to c
 Lastly, many situations require a level of inference when driving. For example, if a ball rolls into the road, human drivers may look out for children coming into the road to retrieve the ball. Another example is when a neighboring car “disappears” behind a large truck. The car has obviously not disappeared, but will come back into view when the truck passes. Us fleshy humans manage to handle these situations with relative ease because we are able to predict how our environment will change and adapt as needed. Autonomous vehicles lack this level of reasoning. A New York times article, [5 Things That Give Self-Driving Cars Headaches](https://www.nytimes.com/interactive/2016/06/06/automobiles/autonomous-cars-problems.html), discusses other everyday situations that AVs struggle with such as unpredictable humans, bad roads, and detours.
 
 >Fully automated cars don’t drink and drive, fall asleep at the wheel, text, talk on the phone or put on makeup while driving...But there is something self-driving cars do not yet deal with very well – the unexpected.
->
->	-5 Things That Give Self-Driving Cars Headaches
 
 ## Solutions
 Modern autonomous vehicles are fundamentally enabled by Computer Vision, but the technology is far from perfect. Being able to understand and analyze the environment through sight is no trivial task.
 
 <figure>
       <img src="/content/editorials/images/autonomous_vehicles/bounding_box.PNG" alt="Object Detection"/>
-     <figcaption>The boxes around objects in these images show how the object detection model, Faster R-CNN, performs object detection.<a href="https://ieeexplore.ieee.org/abstract/document/7485869/">(source)</a></figcaption>
+     <figcaption>The boxes around objects in these images show how Faster R-CNN performs object detection. <a href="https://ieeexplore.ieee.org/abstract/document/7485869/">(source)</a></figcaption>
 </figure>
 
 People may be able to identify and name different objects in an image ([Source](https://ieeexplore.ieee.org/abstract/document/7485869/) [Source](https://arxiv.org/abs/1506.02640)), but understanding global relationships between objects and being robust to malicious sites are just a few tasks that need huge improvements before autonomous vehicles can be deployed. Approaches to tackling these issues include redundancy, simulators, and driving practice in the real world.
@@ -113,15 +118,14 @@ But of course, testing in simulation alone is not enough - at some point, we nee
 
 ## Bad Guys are a Problem Too
 
-So far, these scenarios occur naturally and without anyone trying to intentionally confuse the AV. However, there are many situations where __a malicious actor could intentionally tamper with the car__. Car hacking is more real that you may expect. At DEFCON, the world’s largest hacker conference, there is a [Car Hacking Village](https://www.carhackingvillage.com/) where hackers find and exploit vulnerabilities in vehicles. In 2015, Charlie Miller & Chris Valasek walked through how a [remote code execution exploit can be done on a vehicle](https://www.youtube.com/watch?v=OobLb1McxnI). As sophisticated as this exploit may seem, simpler and equally frightening attacks can be done. For example, an attacker can physically tamper with the car’s sensors by blocking them from picking up signals. Furthermore, attacks are not limited to physically altering the sensors. Simply shining a light into the sensor from afar can significantly throw off the computer vision used by the AV. More sophisticated attacks on the machine learning models can also be performed; Google researchers have devised a method of generating maliciously designed stickers, or [adversarial patches](https://arxiv.org/abs/1712.09665), that can trick the vision system into incorrectly interpreting what it sees.
+So far, these scenarios occur naturally and without anyone trying to intentionally confuse the AV. However, there are many situations where **a malicious actor could intentionally tamper with the car**. Car hacking is more real that you may expect. At DEFCON, the world’s largest hacker conference, there is a [Car Hacking Village](https://www.carhackingvillage.com/) where hackers find and exploit vulnerabilities in vehicles. In 2015, Charlie Miller & Chris Valasek walked through how a [remote code execution exploit can be done on a vehicle](https://www.youtube.com/watch?v=OobLb1McxnI). As sophisticated as this exploit may seem, simpler and equally frightening attacks can be done. For example, an attacker can physically tamper with the car’s sensors by blocking them from picking up signals. Furthermore, attacks are not limited to physically altering the sensors. Simply shining a light into the sensor from afar can significantly throw off the computer vision used by the AV. More sophisticated attacks on the machine learning models can also be performed; Google researchers have devised a method of generating maliciously designed stickers, or [adversarial patches](https://arxiv.org/abs/1712.09665), that can trick the vision system into incorrectly interpreting what it sees.
 
 <figure>
       <img src="/content/editorials/images/autonomous_vehicles/stopsign.PNG" alt="Stop Sign"/>
-     <figcaption>Simple alterations to a stop sign can cause computer vision systems to misinterpret the
-sign and potentially ignore it completely.<a href="https://medium.com/self-driving-cars/adversarial-traffic-signs-fd16b7171906) [Source](https://arxiv.org/abs/1707.08945">(source)</a></figcaption>
+     <figcaption>Simple alterations to a stop sign can cause vision systems to misinterpret and even ignore it completely. <a href="https://arxiv.org/abs/1707.08945">(source)</a></figcaption>
 </figure>
 
-Autonomous vehicles that leverage cutting edge computer vision technology can reliably misinterpret road signs if these stickers are placed on them. Such methods for fooling machine learning models are called adversarial examples. Although the idea of such attacks only came around 4 years ago,  there is now an entire line of research that focuses on developing new ways to create them ([Source](https://arxiv.org/abs/1412.6572) [Source](https://arxiv.org/abs/1801.02610) [Source](https://arxiv.org/abs/1706.06083)).
+Autonomous vehicles that leverage cutting edge computer vision technology can reliably misinterpret road signs if these stickers are placed on them. Such methods for fooling machine learning models are called adversarial examples. Although the idea of such attacks only came around 4 years ago,  there is now an [entire](https://arxiv.org/abs/1412.6572) [line](https://arxiv.org/abs/1801.02610) of [research](https://arxiv.org/abs/1706.06083) that focuses on developing new ways to create them.
 
 ## Ethical & Policy Considerations
 
@@ -147,4 +151,10 @@ In addition to state laws, the National Highway Traffic Safety Administration (N
 
 The transition from human-driven cars to fully autonomous self driving cars will not happen quickly. As with the transition from horse-drawn carriages to cars in the early nineteen hundreds, there are many changes such as the current transportation infrastructure, vehicle ownership model, and fueling procedure among other factors that need to be dealt with before self driving cars become common place. Many other small changes will be put into place incrementally. Road structure may change to accomodate self driving cars in a separate lane. Buildings may have special locations for self driving cars to pick up and drop off their riders. It is likely that the first step, which is already starting to happen, will be to deploy fully autonomous vehicles in geofenced areas under certain weather conditions and time of day.
 
-Even with these incremental changes, there are a couple roadblocks that are preventing AVs from becoming widespread. For one, the cost of the sensors used to build the car are  expensive and the ethical and policy questions mentioned previously need to be answered. Rodney Brooks has [predicted some major milestones](https://rodneybrooks.com/my-dated-predictions/) in the wide deployment of AVs. He predicts that the first driverless taxi service in a major city will be in effect by 2022 and the first driverless car packaging delivery service in restricted geographies will be in effect by 2023. A publication by EY, Deploying autonomous vehicles (AVs): The case for autonomous vehicles, predicts that connected AV networks, on-demand mobility, and customizable AVs will be available more than 20 years from now.
+Rodney Brooks has [predicted some major milestones](https://rodneybrooks.com/my-dated-predictions/) in the wide deployment of AVs. He predicts that the first driverless taxi service in a major city will be in effect by 2022 and the first driverless car packaging delivery service in restricted geographies will be in effect by 2023. A publication by EY, Deploying autonomous vehicles (AVs): The case for autonomous vehicles, predicts that connected AV networks, on-demand mobility, and customizable AVs will be available more than 20 years from now.
+
+So, let's summarize: AV tech has come a long way, but still has a long way to go -- we shall soon see limited uses of self driving in major cities, but you should not expect to throw your drivers license away for a few decades yet. Still, cars are already autonomously driving around our streets, and that we have achieved that much is already amazing.
+
+<figure>
+      <img src="/content/editorials/images/autonomous_vehicles/self_driving_simulator.gif" alt="Self Driving Car Environment"/>
+</figure>
