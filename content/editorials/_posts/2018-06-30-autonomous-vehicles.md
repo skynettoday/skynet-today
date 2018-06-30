@@ -6,8 +6,11 @@ excerpt: "Autonomous vehicle technology has made huge advances in the last coupl
 permalink: /editorials/autonomous_vehicles
 ---
 
-![Alt Text](self_driving_simulator.gif)
-[source](https://www.bloomberg.com/news/articles/2016-12-20/the-tesla-advantage-1-3-billion-miles-of-data)
+<figure>
+      <img src="/content/editorials/images/autonomous_vehicles/self_driving_simulator.gif" alt="Self Driving Car Environment"/>
+     <figcaption><a href="https://www.bloomberg.com/news/articles/2016-12-20/the-tesla-advantage-1-3-billion-miles-of-data">(source)</a></figcaption>
+</figure>
+
 
 Videos like this one from Tesla make it obvious that self driving technology has come a long ways in the last couple of years. Waymo, Tesla, Lyft, and many others are actively testing self driving cars with promising results, and there is an un-ending stream of news about the tech’s advances and commercial interest in it.
 
@@ -21,16 +24,19 @@ Though they may seem unassuming, these are huge hurdles that are beyond today’
 
 ## A (Very) Brief History of Autonomous Driving
 
-![alt text](history.jpg)
-[Source](http://www.hybridcars.com/ford-leverages-its-past-and-present-toward-a-mobility-solutions-future/history-of-autonomy-timeline/)
+<figure>
+      <img src="/content/editorials/images/autonomous_vehicles/history.jpg" alt="AV History"/>
+     <figcaption><a href="http://www.hybridcars.com/ford-leverages-its-past-and-present-toward-a-mobility-solutions-future/history-of-autonomy-timeline/">(source)</a></figcaption>
+</figure>
 
 One of the first conceptions of autonomous driving came from da Vinci’s self-propelled cart: a system of compressed springs and preset steering that allows a cart to move on its own without human assistance. This device wasn’t practical though, and required human or animal labor for locomotion. This meant that serious attempts at automation only emerged much later. The advent of today’s autonomous vehicle systems required the development of a set of largely complementary technologies.
 
 As is often the case, the military proved to be an excellent catalyst, starting with simple un-guided weapons in the late 1800s like the torpedo. However, it was not until the development of sensors such as radar and sonar in the early 20th century that true self-steering or “homing” was achieved. But it was not all about military R&D - rapid industrialization and innovation in the U.S. heralded the prevalence of private automobiles and the pervasiveness of air travel. Such rapid progress in transportation created nuisances that were solved by automated control - cruise control and the autopilot. These are two technologies that allowed mechanical devices to maintain a steady state without human input. Drivers no longer needed to keep their foot on the gas pedal for hours on end, and pilots could finally stretch while checking the weather or monitoring other flight systems.
 
-![alt text](drive_auto_pilot.PNG)
-
-Cruise control may seem quaint now, but such advances were revolutionary not long ago… [Source](http://www.imperialclub.com/Articles/58AutoPilot/index.htm)
+<figure>
+      <img src="/content/editorials/images/autonomous_vehicles/drive_auto_pilot.PNG" alt="Drive Auto Pilot"/>
+     <figcaption>Cruise control may seem quaint now, but such advances were revolutionary not long ago… <a href="http://www.imperialclub.com/Articles/58AutoPilot/index.htm">(source)</a></figcaption>
+</figure>
 
 Around the same time, the miniaturization of electronics and the commercialization of radio control from the military led to the notion of remote control. While a human was always nearby to intervene should the machine fail to act or make a mistake, the physical separation provided by remote control allowed for more risk, be it running an RC car into a wall or delivering an explosive warhead via missile. The biggest motivation for autonomy finally arrived when humans decided to reach for the final frontier - working in space. How could humans control a rover on another planet when every radio instruction took multiple seconds to register?
 Enter the first practical self-driving vehicle (1961): the Stanford cart, a scrappy wagon on wheels that used a monochrome camera and could only follow a white line for about 50 feet before losing its way. The politics and optics of sending humans to space took precedence in the 20th century, and the cart was abandoned. But AI was then still in its infancy (the term [having only been coined in 1956](https://en.wikipedia.org/wiki/Dartmouth_workshop)), and researchers rapidly made progress and soon moved on to [more sophisticated robotics research](https://en.wikipedia.org/wiki/Shakey_the_robot).
@@ -47,8 +53,10 @@ These advances led to a renaissance of funding for self-driving technology, star
 
 ## So, Where Are We Today, Exactly?
 
-![alt text](av_levels.jpg)
-[Source](https://towardsdatascience.com/self-driving-cars-the-most-hyped-thing-since-the-segway-b49e09c69fc7)
+<figure>
+      <img src="/content/editorials/images/autonomous_vehicles/av_levels.jpg" alt="AV Levels"/>
+     <figcaption><a href="https://towardsdatascience.com/self-driving-cars-the-most-hyped-thing-since-the-segway-b49e09c69fc7">(source)</a></figcaption>
+</figure>
 
 Only a decade ago, the thought of never having to drive again seemed like a page from a science fiction novel. Now, autonomous vehicles are very much part of the Zeitgeist. At automotive trade shows and gadget conventions alike, self-driving cars steal the spotlight through a frenzy of live demos, partnerships, and product announcements. There’s a lot of hype, but what does autonomy actually mean when it comes to driving? Industry experts have broadly defined the [following categories](https://web.archive.org/web/20161120142825/http://www.sae.org/misc/pdfs/automated_driving.pdf):
 
@@ -88,24 +96,30 @@ Lastly, many situations require a level of inference when driving. For example, 
 ## Solutions
 Modern autonomous vehicles are fundamentally enabled by Computer Vision, but the technology is far from perfect. Being able to understand and analyze the environment through sight is no trivial task.
 
-![alt text](bounding_box.png)
-The boxes around objects in these images show how the object detection model, Faster R-CNN, performs object detection. [Source](https://ieeexplore.ieee.org/abstract/document/7485869/)
+<figure>
+      <img src="/content/editorials/images/autonomous_vehicles/bounding_box.PNG" alt="Object Detection"/>
+     <figcaption>The boxes around objects in these images show how the object detection model, Faster R-CNN, performs object detection.<a href="https://ieeexplore.ieee.org/abstract/document/7485869/">(source)</a></figcaption>
+</figure>
 
 People may be able to identify and name different objects in an image ([Source](https://ieeexplore.ieee.org/abstract/document/7485869/) [Source](https://arxiv.org/abs/1506.02640)), but understanding global relationships between objects and being robust to malicious sites are just a few tasks that need huge improvements before autonomous vehicles can be deployed. Approaches to tackling these issues include redundancy, simulators, and driving practice in the real world.
 An important technique for ensuring safety is using simulators. Prototyping multiple car designs becomes expensive and makes it difficult to manufacture and test multiple designs and algorithms. This has given rise to startups that create self-driving car simulators, such as [CARLA](https://arxiv.org/pdf/1711.03938.pdf) and [Nomoko](https://blog.cometlabs.io/263-self-driving-car-startups-to-watch-8a9976dc62b0), that are used to design and test cars before spending millions of dollars to even manufacture a prototype. Simulators are also used to generate data to train the car. Millions of crash scenarios and weather conditions are generated and tested digitally without any need to drive through Minnesota in February.
 
-![alt text](simulator.png)
-An example of weather conditions being simulated using CARLA. [Source](https://arxiv.org/pdf/1711.03938.pdf)
+<figure>
+      <img src="/content/editorials/images/autonomous_vehicles/simulator.PNG" alt="Simulator"/>
+     <figcaption>An example of weather conditions being simulated using CARLA.<a href="https://arxiv.org/pdf/1711.03938.pdf">(source)</a></figcaption>
+</figure>
 
- But of course, testing in simulation alone is not enough - at some point, we need to verify that the technology works in the real world. Private road testing facilities provide spaces dedicated for AV testing. Lyft uses [GoMentum](http://gomentumstation.net/about/) to test their self driving cars. A technique called geofencing is used to blacklist certain areas and routes where AVs are not able to drive. This includes areas with traffic circles and unprotected left turns, for example. The mitigation strategies mentioned so far are being used in an industry setting. Creating defenses to the adversarial examples mentioned previously is an active research problem in academia ([Source](https://arxiv.org/pdf/1712.02976.pdf) [Source](https://arxiv.org/pdf/1711.01991.pdf) [Source](https://arxiv.org/abs/1803.06373)). Even with these defenses, performance of the machine learning model on these malicious images is poor.
+But of course, testing in simulation alone is not enough - at some point, we need to verify that the technology works in the real world. Private road testing facilities provide spaces dedicated for AV testing. Lyft uses [GoMentum](http://gomentumstation.net/about/) to test their self driving cars. A technique called geofencing is used to blacklist certain areas and routes where AVs are not able to drive. This includes areas with traffic circles and unprotected left turns, for example. The mitigation strategies mentioned so far are being used in an industry setting. Creating defenses to the adversarial examples mentioned previously is an active research problem in academia ([Source](https://arxiv.org/pdf/1712.02976.pdf) [Source](https://arxiv.org/pdf/1711.01991.pdf) [Source](https://arxiv.org/abs/1803.06373)). Even with these defenses, performance of the machine learning model on these malicious images is poor.
 
 ## Bad Guys are a Problem Too
 
 So far, these scenarios occur naturally and without anyone trying to intentionally confuse the AV. However, there are many situations where __a malicious actor could intentionally tamper with the car__. Car hacking is more real that you may expect. At DEFCON, the world’s largest hacker conference, there is a [Car Hacking Village](https://www.carhackingvillage.com/) where hackers find and exploit vulnerabilities in vehicles. In 2015, Charlie Miller & Chris Valasek walked through how a [remote code execution exploit can be done on a vehicle](https://www.youtube.com/watch?v=OobLb1McxnI). As sophisticated as this exploit may seem, simpler and equally frightening attacks can be done. For example, an attacker can physically tamper with the car’s sensors by blocking them from picking up signals. Furthermore, attacks are not limited to physically altering the sensors. Simply shining a light into the sensor from afar can significantly throw off the computer vision used by the AV. More sophisticated attacks on the machine learning models can also be performed; Google researchers have devised a method of generating maliciously designed stickers, or [adversarial patches](https://arxiv.org/abs/1712.09665), that can trick the vision system into incorrectly interpreting what it sees.
 
-![alt text](stopsign.png)
-Simple alterations to a stop sign can cause computer vision systems to misinterpret the
-sign and potentially ignore it completely. [Source](https://medium.com/self-driving-cars/adversarial-traffic-signs-fd16b7171906) [Source](https://arxiv.org/abs/1707.08945)
+<figure>
+      <img src="/content/editorials/images/autonomous_vehicles/stopsign.PNG" alt="Stop Sign"/>
+     <figcaption>Simple alterations to a stop sign can cause computer vision systems to misinterpret the
+sign and potentially ignore it completely.<a href="https://medium.com/self-driving-cars/adversarial-traffic-signs-fd16b7171906) [Source](https://arxiv.org/abs/1707.08945">(source)</a></figcaption>
+</figure>
 
 Autonomous vehicles that leverage cutting edge computer vision technology can reliably misinterpret road signs if these stickers are placed on them. Such methods for fooling machine learning models are called adversarial examples. Although the idea of such attacks only came around 4 years ago,  there is now an entire line of research that focuses on developing new ways to create them ([Source](https://arxiv.org/abs/1412.6572) [Source](https://arxiv.org/abs/1801.02610) [Source](https://arxiv.org/abs/1706.06083)).
 
