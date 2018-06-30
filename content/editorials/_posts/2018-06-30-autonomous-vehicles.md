@@ -1,7 +1,7 @@
 ---
 title: "Autonomous Driving, Both Close and Far from Ubiquity"
 author: [apoorva_dornadula, henry_mei]
-editor: andrey_kurenkov
+editor: [andrey_kurenkov,alex_grant,will_scales]
 tags: [autonomous vehicles,self-driving cars,computer vision, policy]
 excerpt: "Autonomous vehicle technology has made huge advances in the last couple of years — what's left to solve? A whole lot."
 permalink: /editorials/autonomous_vehicles
