@@ -411,6 +411,7 @@ figure {
   margin-right: auto;
   text-align: center;
   vertical-align: top;
+  padding: 0;
   width: 75%;
 }
 
@@ -418,6 +419,7 @@ figure {
 figcaption {
   margin-left: -12.5%;
   width: 125%;
+  margin-bottom: 0;
 }
 
 .pagination-list {
