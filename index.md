@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Skynet Today
+title: Putting AI News In Perspective
 display_title: false
 search_omit: true
 excerpt: "Accessible and informed coverage of the latest AI hype and panic"
