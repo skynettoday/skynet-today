@@ -1,5 +1,5 @@
 ---
-title: "Has AI surpassed humans at translation?"
+title: "Has AI surpassed humans at translation? Not even close!"
 author: [sharon_zhou]
 editor: [andrey_kurenkov,abi_see]
 tags: [NLP,translation,overview]
