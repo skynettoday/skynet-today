@@ -3,7 +3,7 @@ title: "Has AI surpassed humans at translation? Not even close!"
 author: [sharon_zhou]
 editor: [andrey_kurenkov,abi_see]
 tags: [NLP,translation,overview]
-excerpt: "Neural network translation still has nothing on human translators"
+excerpt: "Neural network translation systems still have many significant issues which make them far from superior to human translators"
 permalink: /editorials/state_of_nmt
 ---
 <figure>
