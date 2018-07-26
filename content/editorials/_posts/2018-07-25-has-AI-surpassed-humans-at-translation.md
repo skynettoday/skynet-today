@@ -7,7 +7,7 @@ excerpt: "Neural network translation still has nothing on human translators"
 permalink: /editorials/state_of_nmt
 ---
 <figure>
-  <img src="/content/editorials/images/AI-humans-translation/opener.gif" alt="GIF of AI translation"/>
+  <img src="/content/editorials/images/AI-humans-translation/opener.gif" style="width:60%" alt="GIF of AI translation"/>
   <figcaption>
     Google Translate is used in a text conversation (<a href="https://www.theverge.com/2016/5/11/11656900/tap-to-translate-google-translate-inside-any-android-app">source</a>).
   </figcaption>
@@ -67,8 +67,8 @@ Neural networks have recently met success because of the rise and availability o
 
 Neural networks also provide the advantage of _end-to-end_ learning. This means that we don't need to do a lot of work processing data between a French sentence and its English translation. By contrast, prior methods such as [Phrase-Based Machine Translation](https://en.wikipedia.org/wiki/Statistical_machine_translation#Phrase-based_translation) rely on multiple intermediary steps to translate a single sentence. Systems like these are extremely complex, comprising of many separate sub-components that must be dealt with separately, requiring a lot of work from large teams of engineers. NMT systems are comparatively simple to build, requiring less work and less decision-making from human engineers.
 
-<figure>
-  <img src="/content/editorials/images/AI-humans-translation/pipeline.png" alt="MT pipeline vs end to end"/>
+<figure> 
+  <img src="/content/editorials/images/AI-humans-translation/pipeline.png" style="width:120%;max-width:120%;margin-left:-10%;" alt="MT pipeline vs end to end"/>
   <figcaption>
   Neural Machine Translation is end-to-end, whereas previous approaches are a pipeline of subcomponents (inspired by similar diagrams by <a href="https://blog.easysol.net/building-ai-applications/">easysol.net</a>).
   </figcaption>
