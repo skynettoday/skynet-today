@@ -4,9 +4,7 @@ andrey_kurenkov:
   email: andreyk@stanford.com
   web: //www.andreykurenkov.com
   disqus-shortname:
-  twitter: skynet_today
-  facebook: #username
-  github: #username
+  twitter: andrey_kurenkov
 
 joshua_morton:
   name: Joshua Morton
@@ -59,6 +57,7 @@ aidan_rocke:
 sharon_zhou:
   name: Sharon Zhou
   avatar: sharon_face.jpg
+  twitter: realsharonzhou
   email: sharonz@cs.stanford.edu
   web: http://sharonzhou.me/
 
