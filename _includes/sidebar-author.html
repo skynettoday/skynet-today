@@ -7,8 +7,8 @@
     <span class="author vcard">Author: <a href={{author.web}}>
             <span class="fn">{{ author.name }}</span></a>
             
+    {% if author.twitter %}
             <a href=https://twitter.com/{{ author.twitter }}>
             <span class="fn">@{{ author.twitter }}</span></a>
-            </span>
-    {% if author.twitter %}
     {% endif %}
+    </span>
