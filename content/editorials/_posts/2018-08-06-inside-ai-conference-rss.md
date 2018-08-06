@@ -5,7 +5,7 @@ image:
 author: [andrey_kurenkov]
 tags: [conference,overview]
 excerpt: "What do AI researchers do at conferences? Check this out to find out!"
-permalink: /editorials/an-phds-life-rss
+permalink: /editorials/inside-ai-conference-rss
 ---
 
 Our mission here at Skynet Today is broadly to make understanding of AI more accessible. This involves more than just understanding the technical concepts of AI, but also means understanding how AI techniques get developed. The process of AI research is far more incremental and slow than the big milestones of the last several years may indicate. The basic unit of research is the **paper**, which is a summary of a single or a couple of new ideas and results, as [Wikipedia](https://en.wikipedia.org/wiki/Academic_publishing#Scholarly_paper) nicely summarizes:
