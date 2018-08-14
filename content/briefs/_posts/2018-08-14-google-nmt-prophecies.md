@@ -1,34 +1,45 @@
+---
+layout: post
+image:
+  feature: /content/briefs/images/google-nmt-prophecies/translations.png
+  credit: Modified from Motherboard's Article
+title: "Google Translate's \"Sinister Religious Prophecies\", Demystified"
+excerpt: "Yet again, an unremarkble and well understood aspect of an AI system has been made out to be creepy and hard to explain"
+author: julia_gong
+editor: [andrey_kurenkov]
+tags: [panic,translation,Google]
+redirect_from: /content/briefs/do-you-trust-elon
+permalink: /briefs/do-you-trust
+---
+
 # What Happened
 
-<img src="{{site_url}}/content/news/images/googlenmt/translations.PNG" alt="Translations">
+Google Translate has been known to output rather strange translations, such as that above, for quite some time. The topic has amassed a niche community on [Reddit](https://www.reddit.com/r/TranslateGate/), but the phenomenon was only recently pulled into the spotlight by MotherBoard’s “[Why Is Google Translate Spitting Out Sinister Religious Prophecies?](https://motherboard.vice.com/en_us/article/j5npeg/why-is-google-translate-spitting-out-sinister-religious-prophecies)”. The author observed that, when translating the word “dog” or the syllable “ag” repeated several times in succession from languages such as Somali, Maori, or Hawaiian into English, the translator declared sinister Biblical prophecies. The return of Christ, AI turning religious, or perhaps an internal prankster at Google--what could be responsible for all of this?
 
-Google Translate has been known to output rather strange translations, such as that above, for quite some time. The topic has amassed a niche community on [Reddit](https://www.reddit.com/r/TranslateGate/), and the phenomenon was recently pulled into the spotlight by MotherBoard’s “[Why Is Google Translate Spitting Out Sinister Religious Prophecies?](https://motherboard.vice.com/en_us/article/j5npeg/why-is-google-translate-spitting-out-sinister-religious-prophecies)”. The author observed that, when translating the word “dog” or the syllable “ag” repeated several times in succession from languages such as Somali, Maori, or Hawaiian into English, the translator declared sinister Biblical prophecies. The return of Christ, the arrival of doomsday, the sons of Gershon contriving apocalyptic declarations, or an internal prankster at Google--what could be responsible for all of this?
+Experts agree that this is caused by the weaknesses of a technique that Google has been using to power translation software since 2016: neural machine translation, or NMT. NMT is based on “training” neural networks with large amounts of textual data to generate translations (you can find a more detailed explanation [here](https://www.skynettoday.com/editorials/state_of_nmt)). Compared to prior methods for software translation, this technique produces translations that sound more natural and human but also have some quirks due to their data-driven fashion. 
 
-Experts agree that this is likely caused by the weaknesses of a technique that Google has been using to power translation software since 2016: neural machine translation, or NMT.
+MotherBoard author Jon Christian interviewed experts Alexander Rush from Harvard and Sean Colbath at BBN Technologies, who conjectured that because of the nature of NMT, the “strange outputs are probably due to Google Translate’s algorithm looking for order in chaos”, or finding coherent translations that aren’t really there. Colbath further posited that “it’s possible that Google used religious texts like the Bible, which has been translated into many languages, to train its model in those languages, resulting in the religious content”. Both experts agree that this is a likely explanation because “the languages that generate the strangest results—Somali, Hawaiian and Maori—have smaller bodies of translated text than more widely spoken languages like English or Chinese”, the classic hallmark of a data deficiency. Many other researchers on Twitter concurred that this can safely be understood to be the reason for the strange translations, even if Google would not confirm that was the case. 
 
-NMT is based on “training” neural networks with large amounts of textual data to generate translations (you can find a more detailed explanation [here](https://www.skynettoday.com/editorials/state_of_nmt)). Compared to prior methods for software translation, this technique produces translations that sound more natural and human. 
-
-MotherBoard author Jon Christian interviewed experts Alexander Rush from Harvard and Sean Colbath at BBN Technologies, who conjectured that because of the nature of NMT, the “strange outputs are probably due to Google Translate’s algorithm looking for order in chaos”, or finding coherent translations that aren’t really there. Colbath further posited that “it’s possible that Google used religious texts like the Bible, which has been translated into many languages, to train its model in those languages, resulting in the religious content”. Both experts agree that this is a likely explanation because “the languages that generate the strangest results—Somali, Hawaiian and Maori—have smaller bodies of translated text than more widely spoken languages like English or Chinese”, the classic hallmark of a data deficiency.
-
-Given that this finding called one of the most popular and trusted online translators into question, the article received a good deal of views and reactions on popular social media sites, including Twitter. The constant discovery of new odd examples and continuous online discussion naturally led to a lot of reactions.
-
-# The Reactions
-As with many news stories that have potential for sensational and apocalyptic virality, this story took off. Numerous news outlets broadcasted the conundrum as a complete mystery. Despite many rational explanations from the scientific community, including those offered in the original piece, many media bodies over-marketed the curiosity of the finding in exchange for flashy headlines.
-
-In a now-deleted tweet, Editor-in-Chief of MotherBoard Jason Koebler shared the article and stated that “no one is sure why” Google Translate was behaving in this way, despite the bulk of the latter portion of the article presenting likely reasons for the phenomenon. Multiple AI researchers expressed the strong sentiment that, although it is technically true that no one can be “sure” of any explanation, the title and promotion of the piece made it seem like far more of a spooky mystery than it really was, especially since experts could be virtually certain their explanations were correct. 
-
+<figure>
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I just mean to say that the phenomenon is well understood in LSTMs and other types of gated RNNs. Translation systems require parallel text corpora and the Bible is one of the most available sources of parallel corpora, especially for low-resource languages.</p>&mdash; Mark O. Riedl (@mark_riedl) <a href="https://twitter.com/mark_riedl/status/1020366905641787392?ref_src=twsrc%5Etfw">July 20, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</figure>
+
+Given how strange this quirk seems at first sight, the article received a good deal of views and reactions on popular social media sites. The constant discovery of new odd examples, continuous online discussion, and many other media outlets reporting on the same story naturally led to a lot of reactions.
+
+# The Reactions
+As with many news stories that have potential for sensational and apocalyptic virality, this story took off. Numerous news outlets broadcasted the conundrum as a complete mystery. Despite the rational explanations offered by the AI research community, including those offered in the original piece, many media bodies over-marketed the curiosity of the finding in exchange for flashy headlines.
+
+In a now-deleted tweet, Editor-in-Chief of MotherBoard Jason Koebler shared the article and stated that “no one is sure why” Google Translate was behaving in this way, despite the bulk of the latter portion of the article presenting likely reasons for the phenomenon. Multiple AI researchers expressed the strong sentiment that, although it is technically true that no one can be “sure” of any explanation (since Google did not verify that use the Bible in their NMT training), the title and promotion of the piece made it seem like far more of a spooky mystery than it really was given that experts could be virtually certain their explanations were correct. 
 
 Many media organizations soon also reported the story, and by and large focused on the spooky angle with headlines such as [Google Translate warns of apocalypse in bizarre 'end times' message](https://www.thesun.co.uk/tech/6842131/google-translate-doomsday-clock-end-times-antichrist-apocalypse-dog/), [Google Translate is generating ominous religious prophecies for some reason](https://mashable.com/2018/07/23/google-translate-glitch-ominous-religious-prophecies/#eVcCwNgyykqn), [Google Translate's AI Is Rendering Gibberish Into Spooky Religious Prophecies](http://fortune.com/2018/07/21/google-translate-religious-translations/), and [Google Translate Is Doing Something Incredibly Sinister And It Looks Like We're All Doomed](http://www.iflscience.com/technology/google-translate-is-doing-something-incredibly-sinister-and-it-looks-like-were-all-doomed/). In the words of a news story on IFLScience, “The bad news: the world is ending. Sorry about that. The worse news: we had to find out from Google Translate.” The public soon also joined in further sensationalizing the story. A quick search for ‘Google Translate’ on Twitter yields many tweets showcasing (often humorous) examples of chance translations from other languages to English.
+
+<figure>
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Google Translate Conspiracy  THREAD 🤔 TUPAC <a href="https://t.co/4pgOQTOB44">pic.twitter.com/4pgOQTOB44</a></p>&mdash; angelic (@angelesangelic_) <a href="https://twitter.com/angelesangelic_/status/1025682939193962496?ref_src=twsrc%5Etfw">August 4, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</figure>
 
-Some Twitter users instead took to dissecting the phenomenon from a technical and linguistic perspective:
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">The intermediate forms of this one are fascinating.  I should demonstrate if I can get a decent screencap.  These are the linguistic analogues of the deliciously disturbing image artifacts produced by deep learning systems on spurious inputs to visual problems.</p>&mdash; ice9 (@__ice9) <a href="https://twitter.com/__ice9/status/1023566412172931073?ref_src=twsrc%5Etfw">July 29, 2018</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-Much to the agony of experts, clear explanatory coverage of the phenomenon from a technical standpoint was rare. This is particularly disheartening, as the original article did properly explain the reasons behind these oddities, but these factual statements were rarely presented as a centerpiece in subsequent news coverage. It’s also noteworthy that no major reputable news sources went for this story. Purely going off the headlines, one might think that Google Translate had become conscious and adopted a religion.
+Much to the agony of experts, clear explanatory coverage of the phenomenon from a technical standpoint was rare. So much so, that AI startup founder Delip Rao penned a blog post titled ["The Real Problems with Neural Machine Translation"](http://deliprao.com/archives/301) which once again retiterated the experts' explanation that "one can safely assume Google’s parallel corpus collection contains all religious texts, and for many low-resource languages, they are not an insignificant portion of the training corpus." Despite this post and the fact that original article did also properly explain the reasons behind these oddities, these reasons were rarely presented as a centerpiece in subsequent media coverage. Purely going off the headlines, one might think that Google Translate had become conscious and adopted a religion.
 
 # Our Perspective
 The bottom line: as the original Motherboard article itself explained, AI researchers are not surprised by Google Translate's behavior. They can easily explain it.

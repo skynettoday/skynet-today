@@ -5,7 +5,7 @@ excerpt: "A funny viral event talks to our ever increasing anxiety about AI and 
 author: ben_shih
 editor: [andrey_kurenkov, joshua_morton]
 tags: [Amazon, BigBiz, speech]
-redirect_from: /content/news/alexa-laughter/
+redirect_from: /content/briefs/alexa-laughter/
 permalink: /briefs/alexa-laughter/
 ---
 

@@ -5,7 +5,7 @@ excerpt: "A new AI-powered tool from Google promises more-accurate genome sequen
 author: alex_constantino
 editor: andrey_kurenkov
 tags: [biology,Google,BigBiz,hype]
-redirect_from: /content/news/google-deepvariant/
+redirect_from: /content/briefs/google-deepvariant/
 permalink: /briefs/google-deepvariant/
 ---
 

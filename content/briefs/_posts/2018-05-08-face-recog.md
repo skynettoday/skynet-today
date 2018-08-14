@@ -5,7 +5,7 @@ excerpt: "Flashy headlines often hijack meaningful and important conversations o
 author: viraat_aryabumi
 editor: [andrey_kurenkov, limor_gultchin]
 tags: [facial recognition,bias,ethics,fairness]
-redirect_from: /content/news/face-recog/
+redirect_from: /content/briefs/face-recog/
 permalink: /briefs/face-recog/
 ---
 

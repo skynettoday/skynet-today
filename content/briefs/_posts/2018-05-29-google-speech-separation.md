@@ -4,6 +4,8 @@ excerpt: "Recent privacy concerns over work from Google showcased how easy it is
 author: charlie_kilpatrick
 editor: [andrey_kurenkov, abi_see]
 tags: [Google,speech,vision,BigBiz]
+redirect_from: /content/briefs/google-speech-separation
+permalink: /briefs/google-speech-separation
 ---
 
 
