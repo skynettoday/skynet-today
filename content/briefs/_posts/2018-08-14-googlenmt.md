@@ -1,6 +1,6 @@
 # What Happened
 
-<img src="{{https://video-images.vice.com/_uncategorized/1532096440143-image1.png?resize=741:* }}/content/news/images/googlenmt/translations.png" alt="Translations">
+<img src="{{https://video-images.vice.com/_uncategorized/1532096440143-image1.png?resize=741:* }}/content/news/images/googlenmt/translations.PNG" alt="Translations">
 
 Google Translate has been known to output rather strange translations, such as that above, for quite some time. The topic has amassed a niche community on [Reddit](https://www.reddit.com/r/TranslateGate/), and the phenomenon was recently pulled into the spotlight by MotherBoard’s “[Why Is Google Translate Spitting Out Sinister Religious Prophecies?](https://motherboard.vice.com/en_us/article/j5npeg/why-is-google-translate-spitting-out-sinister-religious-prophecies)”. The author observed that, when translating the word “dog” or the syllable “ag” repeated several times in succession from languages such as Somali, Maori, or Hawaiian into English, the translator declared sinister Biblical prophecies. The return of Christ, the arrival of doomsday, the sons of Gershon contriving apocalyptic declarations, or an internal prankster at Google--what could be responsible for all of this?
 
