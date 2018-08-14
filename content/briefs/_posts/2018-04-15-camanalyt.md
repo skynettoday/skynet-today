@@ -4,7 +4,7 @@ excerpt: "The many claims made as part of the recent Cambridge Analytica & Faceb
 author: limor_gultchin
 editor: andrey_kurenkov
 tags: [Facebook, privacy, BigBiz]
-redirect_from: /content/news/camanalyt/
+redirect_from: /content/briefs/camanalyt/
 permalink: /briefs/fb-cambridge-analytica/
 ---
 This past month’s Cambridge Analytica scandal triggered some important conversations regarding privacy and the current uses of AI in social platforms. It is also another great example of how flawed reporting can create wide-reaching but inaccurate narratives about AI. 

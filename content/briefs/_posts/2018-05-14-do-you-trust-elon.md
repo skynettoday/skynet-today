@@ -5,7 +5,7 @@ excerpt: "A Chris Paine documentary about AI promoted by Elon Musk conflates rea
 author: aidan_rocke
 editor: [andrey_kurenkov,limor_gultchin]
 tags: [Elon Musk,Singularity]
-redirect_from: /content/news/do-you-trust-elon
+redirect_from: /content/briefs/do-you-trust-elon
 permalink: /briefs/do-you-trust
 ---
 

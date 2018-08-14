@@ -5,7 +5,7 @@ excerpt: "Has widespread misuse of AI arrived?"
 author: joshua_morton
 editor: andrey_kurenkov
 tags: [society,panic,fake]
-redirect_from: /content/news/deepfakes/
+redirect_from: /content/briefs/deepfakes/
 permalink: /briefs/deepfakes/
 ---
 
