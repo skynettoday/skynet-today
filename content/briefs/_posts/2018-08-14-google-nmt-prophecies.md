@@ -8,8 +8,7 @@ excerpt: "Yet again, an unremarkble and well understood aspect of an AI system h
 author: julia_gong
 editor: [andrey_kurenkov]
 tags: [panic,translation,Google]
-redirect_from: /content/briefs/do-you-trust-elon
-permalink: /briefs/do-you-trust
+permalink: /briefs/google-nmt-prophecies
 ---
 
 # What Happened
