@@ -4,7 +4,7 @@ image:
   feature: /content/briefs/images/google-nmt-prophecies/translations.png
   credit: Modified from Motherboard's Article
 title: "Google Translate's \"Sinister Religious Prophecies\", Demystified"
-excerpt: "Yet again, an unremarkble and well understood aspect of an AI system has been made out to be creepy and hard to explain"
+excerpt: "Yet again, an unremarkable and well understood aspect of an AI system has been made out to be creepy and hard to explain"
 author: julia_gong
 editor: [andrey_kurenkov]
 tags: [panic,translation,Google]
