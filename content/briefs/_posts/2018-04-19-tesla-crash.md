@@ -5,7 +5,7 @@ excerpt: "The tragedy might have been avoided if the limitations of the Autopilo
 author: joshua_morton
 editor: andrey_kurenkov
 tags: [Tesla,autonomy,ethics,BigBiz]
-redirect_from: /content/briefs/tesla-crash/
+redirect_from: /content/news/tesla-crash/
 permalink: /briefs/tesla-crash/
 ---
 
