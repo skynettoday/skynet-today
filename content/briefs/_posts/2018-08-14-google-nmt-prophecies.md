@@ -19,7 +19,7 @@ Experts agree that this is caused by the weaknesses of a technique that Google h
 
 MotherBoard author Jon Christian interviewed experts Alexander Rush from Harvard and Sean Colbath at BBN Technologies, who conjectured that because of the nature of NMT, the “strange outputs are probably due to Google Translate’s algorithm looking for order in chaos”, or finding coherent translations that aren’t really there. They further explain that: 
 
-> “the languages that generate the strangest results—Somali, Hawaiian and Maori—have smaller bodies of translated text than more widely spoken languages like English or Chinese. As a result, he said, it’s possible that Google used religious texts like the Bible, which has been translated into many languages, to train its model in those languages, resulting in the religious content."
+> “the languages that generate the strangest results—Somali, Hawaiian and Maori—have smaller bodies of translated text than more widely spoken languages like English or Chinese. As a result, it’s possible that Google used religious texts like the Bible, which has been translated into many languages, to train its model in those languages, resulting in the religious content."
 
 Many other researchers on Twitter concurred that this can safely be understood to be the reason for the strange translations, even if Google would not confirm that was the case.
 
