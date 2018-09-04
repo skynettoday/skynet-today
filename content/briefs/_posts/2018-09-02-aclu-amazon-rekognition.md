@@ -1,8 +1,8 @@
 ---
 layout: post
 image:
-  feature: content/briefs/images/aclu-amazon-rekognition/anim.gif
-  credit: Modified from <a href="https://twitter.com/ACLU/status/1022935153146978304">ACLU's Tweet</a>
+  feature: /content/briefs/images/aclu-amazon-rekognition/header.png
+  credit: Modified from <a href="https://www.aclu.org/blog/privacy-technology/surveillance-technologies/amazons-face-recognition-falsely-matched-28">ACLU's article</a>
 title: "Amazon Rekognition Mistook Congressmen for Criminals? A Closer Look"
 excerpt: "Examining ACLU’s claims of racial bias in face recognition technology as surveillance risk"
 author: sneha_jha
@@ -10,6 +10,15 @@ editor: [andrey_kurenkov]
 tags: [surveillance,BigBiz,ethics]
 permalink: /briefs/aclu-amazon-rekognition
 ---
+
+
+<figure>
+  <img src="/content/briefs/images/aclu-amazon-rekognition/anim.gif" alt="Overview of Amazon's Rekognition product"/>
+  <figcaption>
+    Modified from <a href="https://twitter.com/ACLU/status/1022935153146978304">ACLU's Tweet</a>
+  </figcaption>
+</figure>
+
 
 # What Happened
 
