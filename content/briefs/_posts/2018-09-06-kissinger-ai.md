@@ -1,13 +1,13 @@
 ---
 layout: post
 image:
-  feature: content/briefs/images/kissinger-ai/kissinger.jpg
-  credit: Modified from BoingBoing article
-title: "Henry Kissinger Comments on AI. Alas, he gets it wrong."
-excerpt: "Another AI skeptic issues sweeping, unfounded statements about AI threatening humanity"
+  feature: content/briefs/images/kissinger-ai/isthis.jpg
+  credit: Photo from <a href="https://www.upi.com/Top_News/World-News/2015/08/21/Henry-Kissinger-warns-West-to-not-alienate-Russia/3311440167383/">UPI</a>, AlphaGo logo owned by DeepMind
+title: "Examining Henry Kissinger's Uninformed Comments on AI"
+excerpt: "Another public figure with no expertise on AI issues sweeping, unfounded statements about it threatening humanity"
 author: julia_gong
 editor: [andrey_kurenkov]
-tags: []
+tags: [panic, misinformation]
 permalink: /briefs/kissinger-ai
 ---
 
@@ -55,56 +55,68 @@ LeCun also responded to a comment on his post about the “old and overblown nar
 2- non scientists, who are used to holding the levers of power in society, trying to maintain their diminishing control over things by telling scientists that they know nothing about the "real world". They are the ones worrying about "robots taking over" because it's their job to "take over". But as we all know, this desire to take over is somewhat inversely correlated with intelligence.”
 
 LeCun was far from the only AI expert to call out Kissinger for overstepping the boundaries of his area of expertise. On Twitter, AI researcher Oren Etzioni took a clear jab at Kissinger’s statement:
+<figure>
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">You know that the dialog about AI has &quot;jumped the shark&quot; when no other than Henry Kissinger pontificates about it with statements like &quot;AI, by contrast, deals with ends&quot; <a href="https://t.co/BvcX1VayGB">https://t.co/BvcX1VayGB</a>  Hey, Dr. Kissinger--do you want to hear my thoughts about the Vietnam War?</p>&mdash; Oren Etzioni (@etzioni) <a href="https://twitter.com/etzioni/status/996623076711264256?ref_src=twsrc%5Etfw">May 16, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</figure>
 
 People from every discipline made some comments on Kissinger’s fear-mongering article, from social neuroscientists:
+<figure>
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I think Henry Kissinger just found out about AI and this essay is just adorable <a href="https://t.co/W4B8EIjlpA">https://t.co/W4B8EIjlpA</a> <a href="https://t.co/czRuuT74gt">pic.twitter.com/czRuuT74gt</a></p>&mdash; Adam J Calhoun (@neuroecology) <a href="https://twitter.com/neuroecology/status/997833100272029696?ref_src=twsrc%5Etfw">May 19, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-To technology theorists:
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">An amazing journey into ignorance. I’m not buying it Henry Kissinger. <a href="https://twitter.com/KissingerCenter?ref_src=twsrc%5Etfw">@KissingerCenter</a>  <a href="https://twitter.com/hashtag/AI?src=hash&amp;ref_src=twsrc%5Etfw">#AI</a> <a href="https://twitter.com/hashtag/digitalhealth?src=hash&amp;ref_src=twsrc%5Etfw">#digitalhealth</a> <a href="https://t.co/N5hGv0KknN">https://t.co/N5hGv0KknN</a></p>&mdash; JOHN NOSTA (@JohnNosta) <a href="https://twitter.com/JohnNosta/status/1000784433773936640?ref_src=twsrc%5Etfw">May 27, 2018</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
+</figure>
 
 To writers:
+<figure>
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">The Atlantic let Henry Kissinger write about the ethics of AI. Henry Kissinger has comprehensively failed at the ethics of being a human. AI is a long way from being so dangerous that it plans secret bombing campaigns against Cambodia, murdering more than 4,000 people.</p>&mdash; Mic Wright (@brokenbottleboy) <a href="https://twitter.com/brokenbottleboy/status/1016304647475290112?ref_src=twsrc%5Etfw">July 9, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</figure>
 
 To foreign ambassadors:
+<figure>
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Henry Kissinger on AI makes as much sense as Graham Allison on China. Oversimplification sparkled with uninformed cliches (e.g. “ Yet driverless cars are likely to be prevalent on roads within a decade“. Unlikely). <a href="https://t.co/XDhMgmgT5L">https://t.co/XDhMgmgT5L</a></p>&mdash; Jorge Guajardo (@jorge_guajardo) <a href="https://twitter.com/jorge_guajardo/status/997995649110020096?ref_src=twsrc%5Etfw">May 20, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</figure>
 
 Some responses took a more humorous spin:
+<figure>
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">How about an article by an AI on the threat of Henry Kissinger? Should be easy to generate.  <a href="https://t.co/aSP5iuUM2X">https://t.co/aSP5iuUM2X</a></p>&mdash; Suresh Venkatasubramanian (@geomblog) <a href="https://twitter.com/geomblog/status/996606174983217155?ref_src=twsrc%5Etfw">May 16, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</figure>
 
 Alarmingly, however, a search on Twitter for Kissinger’s message had a high proportion of international engagement, with messages sharing it in French, Spanish, and German among others. The message was indeed broadcast and shared worldwide. In fact, the First Minister of Scotland, Nicola Sturgeon, even shared the article as something to “get your intellectual juices flowing”:
+<figure>
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">If you want something non party political to get your intellectual juices flowing this Monday morning, I recommend this by Henry Kissinger on the philosophical questions that Artificial Intelligence poses for the human race.  <a href="https://t.co/5COtL1vlY7">https://t.co/5COtL1vlY7</a></p>&mdash; Nicola Sturgeon (@NicolaSturgeon) <a href="https://twitter.com/NicolaSturgeon/status/1016200694611750913?ref_src=twsrc%5Etfw">July 9, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</figure>
 
 And she wasn’t the only one to commend Kissinger for his writing. Defense Secretary Jim Mattis actually quoted the article in an embellished [memo](https://www.nytimes.com/2018/08/26/technology/pentagon-artificial-intelligence.html) to our current President this May, urging him to create a national strategy for artificial intelligence:
 
 > “Mr. Mattis argued that the United States was not keeping pace with the ambitious plans of China and other countries. With a final flourish, he quoted a recent magazine article by Henry A. Kissinger, the former secretary of state, and called for a presidential commission capable of “inspiring a whole of country effort that will ensure the U.S. is a leader not just in matters of defense but in the broader ‘transformation of the human condition.’” Mr. Mattis included a copy of Mr. Kissinger’s article with his four-paragraph note.""
-And a few other concerning accolades continued:
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">A <a href="https://twitter.com/hashtag/mustread?src=hash&amp;ref_src=twsrc%5Etfw">#mustread</a> for <a href="https://twitter.com/hashtag/AI?src=hash&amp;ref_src=twsrc%5Etfw">#AI</a> <a href="https://twitter.com/hashtag/Tech?src=hash&amp;ref_src=twsrc%5Etfw">#Tech</a> developers, policy makers and social sciences: Henry Kissinger on A.I. <a href="https://t.co/i1XW3vEqe3">https://t.co/i1XW3vEqe3</a></p>&mdash; Paul Nemitz (@PaulNemitz) <a href="https://twitter.com/PaulNemitz/status/996617339276808192?ref_src=twsrc%5Etfw">May 16, 2018</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+Other notable persons to commend include magazine editors and professors (with large follower counts):
+
+<figure>
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">If you read one thing today, it should be Henry Kissinger&#39;s article about <a href="https://twitter.com/hashtag/AI?src=hash&amp;ref_src=twsrc%5Etfw">#AI</a>. Dude is 94, but I dare say he understands the implications of artificial intelligence better than most 25-year-olds I&#39;ve met. <a href="https://t.co/REarPSLDmw">https://t.co/REarPSLDmw</a></p>&mdash; Drew Prindle (@GonzoTorpedo) <a href="https://twitter.com/GonzoTorpedo/status/996419324452614145?ref_src=twsrc%5Etfw">May 15, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</figure>
 
+<figure>
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">How the Enlightenment--and possibly human history--ends. Sobering piece by Henry Kissinger about the dangers of AI run amok. <a href="https://t.co/ABnPT6W4Ji">https://t.co/ABnPT6W4Ji</a></p>&mdash; Scott Stossel (@SStossel) <a href="https://twitter.com/SStossel/status/996396131377696769?ref_src=twsrc%5Etfw">May 15, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</figure>
 
+<figure>
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Henry Kissinger (!!!)in fine form, reflecting on AI. I found it insightful and quite novel. A must read <a href="https://t.co/MUdEPMqzmc">https://t.co/MUdEPMqzmc</a></p>&mdash; Luis Garicano (@lugaricano) <a href="https://twitter.com/lugaricano/status/1016012157367083009?ref_src=twsrc%5Etfw">July 8, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</figure>
 
 It’s clear that, much to the exasperation of AI researchers, Kissinger sparked a lot of debate and controversy online.
 
 # Our Perspective
 AI isn’t going to overthrow humanity anytime soon. In fact, it’s still far from undertaking many complex tasks that we are building them to do. Just because AI techniques were used to to defeat humanity’s best at Go does not mean it we are even close to a “‘generally intelligent’ AI”, as Kissinger implied.
 
-Kissinger’s article is based on the classic ‘slippery slope’ mistake that leads to the overestimation of AI technology. As usual, the slippery slope argument doesn’t provide enough research or factual evidence, and is rather speculation informed only by his own opinion and “informal gatherings”. However, despite being clearly speculative in nature, the article nevertheless fanned the flames of AI fears likely already present in many readers of the article.
+Kissinger’s article is based on the classic ‘slippery slope’ mistake that leads to the overestimation of AI technology. As usual in such cases, it is mostly based on speculation informed only by Kissinger’s own opinion and the limited education that “informal gatherings” could provide. However, despite being clearly speculative in nature, the article nevertheless fanned the flames of AI fears likely already present in many of its readers.
 
 Not only were his claims unbacked, but they were also wrong: the central argument of the article suggests that AI techniques are evolving more rapidly than we can control (among other overreaching claims), which simply isn’t true. To see why, let’s address Kissinger’s three concerns.
 
@@ -115,21 +127,26 @@ Not only were his claims unbacked, but they were also wrong: the central argumen
 In addition, Kissinger failed to recognize some nuances regarding the state of AI technology today. Here are a few key points:
 
 1. **AI algorithms today do not “[deal] with ends” and “[establish their] own objectives”; in fact, the exact opposite is true.** AI and machine learning algorithms complete assigned tasks by optimizing a particular objective that was chosen by a human. The algorithms themselves are not at all self-sustaining or autonomous and are very much under human control.
-2. **AI technology does not threaten human cognition and civilization.** According to the Financial Times, machine learning currently has already [stimulated U.S. economic and productivity growth](https://www.ft.com/content/133dc9c8-90ac-11e8-9609-3d3b945e78cf). It is currently built to streamline human tasks and may even create jobs. A Bloomberg [article](https://www.bloomberg.com/view/articles/2018-08-16/smart-machines-won-t-be-ready-to-do-complex-jobs-anytime-soon) further explains:
-> “machine learning will revolutionize white-collar jobs in much the same way that engines, electricity and machine tools revolutionized blue-collar jobs...machine learning tools will allow workers to skip some mental tasks and apply their brain power to only a select few things.”
-AI is also not even close to achieving general intelligence and the capacity to think and make decisions or judgments. It thus simply isn’t logical that it would revolutionize our way of thinking or moral philosophy the way Kissinger insists.
+2. **AI technology does not threaten human cognition and civilization.** According to the Financial Times, machine learning currently has already [stimulated U.S. economic and productivity growth](https://www.ft.com/content/133dc9c8-90ac-11e8-9609-3d3b945e78cf). AI is also not even close to achieving general intelligence capable of deep reasoning or moralizing, and is rather currently built to streamline human tasks and aid economic growth[^jobs]. It thus simply isn’t logical that it would revolutionize our way of thinking or moral philosophy the way Kissinger insists.
+
+[^jobs]: A Bloomberg [article](https://www.bloomberg.com/view/articles/2018-08-16/smart-machines-won-t-be-ready-to-do-complex-jobs-anytime-soon) further explains - “machine learning will revolutionize white-collar jobs in much the same way that engines, electricity and machine tools revolutionized blue-collar jobs...machine learning tools will allow workers to skip some mental tasks and apply their brain power to only a select few things.”
+
+
 3. **The AI community is in fact very concerned with ethics and constantly discusses and promotes it.** Scientists are not blind to society, and it is insulting and degrading to suggest so, as Kissinger did here. Universities doing research in the field actively educate students on the importance of being aware of the impact of the technology they create, and leaders in AI are indeed aware of the implications of new technologies (see Margaret Mitchell’s [TED Talk](https://www.ted.com/talks/margaret_mitchell_how_we_can_build_ai_to_help_humans_not_hurt_us) on this subject). In fact, researchers like [Miles Brundage](https://twitter.com/Miles_Brundage?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor) dedicate their entire lives to studying the societal implications of AI technology. It is true that thinkers in all disciplines, including the humanities, should be involved in establishing these crucial guidelines, and those in tech should be educated on ethics and privacy concerns. But it is wrong to assume that academics in AI are relentlessly optimizing AI in a vacuum, at all costs, without concerns about its impact. This notion is blatantly false.
 
 **Yann LeCun’s public criticism of this article is commendable.** Those not in the scientific community can’t be expected to know the state of the science and how much it has advanced, and sensational news headlines don’t help with that misperception. The scientific community must be transparent and vigilant in maintaining an accurate, factual account of AI progress to keep the public well-informed. And the public should listen to the experts, not the speculators.
 
-Of course, global leaders also have the duty to spread knowledge and keep the public properly informed. Kissinger’s article didn’t accomplish this. For instance, in comparison to Kissinger’s fear-inspiring verdicts, President Barack Obama’s [public](https://www.wired.com/2016/10/president-obama-mit-joi-ito-interview/) [comments](https://www.youtube.com/watch?v=DgL32wtgeXQ) on AI technologies were more reasonable.
+Of course, global leaders also have the duty to spread knowledge and keep the public properly informed. Kissinger’s article didn’t accomplish this. For instance, in comparison to Kissinger’s fear-inspiring verdicts, President Barack Obama’s [public](https://www.wired.com/2016/10/president-obama-mit-joi-ito-interview/) [comments](https://www.youtube.com/watch?v=DgL32wtgeXQ) on AI technologies [^obama] were more reasonable.
 
+[^obama]: In short, these comments correctly described generalized AI as being (as far as we can tell) a long way away and pointed out there are many issues to addressed with the narrow AI that we do already have
+
+<figure>
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">&quot;Generalized AI is worth thinking about because it stretches our imaginations and it gets us to think about our core values and issues of choice and free will that actually do have significant applications for specialized AI.&quot; - <a href="https://twitter.com/BarackObama?ref_src=twsrc%5Etfw">@BarackObama</a> <a href="https://t.co/VFhJsMXuIq">pic.twitter.com/VFhJsMXuIq</a></p>&mdash; Lex Fridman (@lexfridman) <a href="https://twitter.com/lexfridman/status/976461233443561477?ref_src=twsrc%5Etfw">March 21, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</figure>
 
-The bottom line: prominent leaders need to be particularly careful when issuing messages on topics that aren’t their expertise. AI is already highly misrepresented in mainstream media, and leaders should be helping to rectify, rather than exacerbate this issue. And if they don’t, it’s not good for anyone involved.
+The bottom line: prominent leaders need to be particularly careful when issuing messages on topics that aren’t their expertise. AI is already highly misrepresented in mainstream media, and leaders should be helping to rectify, rather than exacerbate this issue. 
 
 # TLDR
-Henry Kissinger issued an ominous message in The Atlantic regarding the consequences of rapidly advancing AI and its potential to overthrow humanity, take over the world, and nullify human knowledge. The article, with little evidence and overreaching generalizations, cites common misconceptions about the state of AI research and claims it to be much more powerful than it actually is. It therefore elicited indignant responses and backlash from the AI community, which attempted to correct his misinformed representation of AI.
+Henry Kissinger issued an ominous message in The Atlantic regarding the consequences of rapidly advancing AI and its potential to overthrow humanity, take over the world, and nullify human knowledge. The article, with little evidence and overreaching generalizations, cites common misconceptions about the state of AI research. It therefore elicited indignant responses and backlash from the AI community, which attempted to correct his misinformed representation of AI. We urge politicians, and people with the ability to influence public perception in general, to be more cautious with their public pontificating about AI to avoid exacerbating already widespread misunderstanding about the field.
 
-The concerns Kissinger raised were remarkably aligned with those of an uninformed public, succumbing to fears regarding the AI hype. It serves as a timely reminder to both researchers and the general public to promote and consume proper and representative coverage of technologies as they develop. The article also illustrates how important it is for prominent leaders to take great care before issuing messages on topics that aren't their expertise.
