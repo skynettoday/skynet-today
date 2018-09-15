@@ -8,7 +8,7 @@ toc: true
 ---
 
 ## What is this
-Skynet Today is a site dedicated to providing accessible and informed written critique of the AI news and trends. 
+Skynet Today is a site dedicated to providing accessible and informed coverage of the latest AI news and trends. 
 
 In other words, the idea is to offer a concise but comprehensive overview of each major AI story that bubbles up in popular media. Such stories attract the public attention more and more often in the past several years and receive a coverage that is sometimes inspired by emotionally resonant but unrealistic science fiction concepts such as Skynet, HAL 9000 or the Three Laws of Robotics. The hope is to get a variety of people with a knowledge of the field to cover the coverage of new events related to AI, and thus offer a more nuanced outlook which helpfully distinguishes the fiction from the factual. 
 
