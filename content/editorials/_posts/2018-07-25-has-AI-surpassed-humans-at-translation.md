@@ -217,7 +217,7 @@ Meanwhile, we can anticipate that the dissemination of new research will acceler
 <figure>
   <img src="/content/editorials/images/AI-humans-translation/state.png" alt="State of NMT"/>
   <figcaption>
-   Where are now... definitely close to human level translation, though by no means clearly as good or better (<a href="https://www.techemergence.com/wp-content/uploads/2017/12/machine-translation-14-current-applications-and-services-across-9-use-cases-2.png">source</a>).
+   Where NMT is at now - getting closer to human level translation, though by no means as good or better (<a href="https://www.techemergence.com/wp-content/uploads/2017/12/machine-translation-14-current-applications-and-services-across-9-use-cases-2.png">source</a>).
   </figcaption>
 </figure>
 
