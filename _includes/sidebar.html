@@ -1,36 +1,29 @@
 <footer class="page-meta">
       {% if page.author.first %}
+          <b>Authors:</b>
           {% for a in page.author %}
             {% assign author = site.data.authors[a] %}
             {% include sidebar-author.html %}
           {% endfor %}
       {% else %}
+          <b>Author:</b>
           {% assign author = site.data.authors[page.author] %}
           {% include sidebar-author.html %}
       {% endif %}
 
-    {% if page.editor %}
+      {% if page.editor %}
         {% if page.editor.first %}
-            {% assign editors = "Editors: " %}
-            {% for e in page.editor %}
-                {% assign curr = site.data.authors[e] %}
-                {% capture editors %}
-                    {{ editors }} <br><a href={{curr.web}}><span class="fn">{{ curr.name }}</span></a>
-                {% endcapture %}
+            <b>Editors:</b>
+            {% for a in page.editor %}
+              {% assign author = site.data.authors[a] %}
+              {% include sidebar-author.html %}
             {% endfor %}
         {% else %}
-            {% assign editor = site.data.authors[page.editor] %}
-            {% capture editors %}
-                Editor: <a href={{editor.web}}><span class="fn">{{ editor.name }}</span></a>
-            {% endcapture %}
+            <b>Editor:</b>
+            {% assign author = site.data.authors[page.editor] %}
+            {% include sidebar-author.html %}
         {% endif %}
-    {% else %}
-        {% assign editor = blank %}
-    {% endif %}
-
-    {% if page.editor %}
-    <span class="author vcard">{{ editors }}</span>
-    {% endif %}
+      {% endif %}
 
     <span class="page-date date published">
         <time datetime="{{ page.date | date_to_xmlschema }}">
