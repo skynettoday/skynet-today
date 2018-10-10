@@ -43,6 +43,7 @@ We are a group of researchers, engineers, and working professionals with domain 
 * [Charlie Kilpatrick](https://www.linkedin.com/in/charliekilpatrick/): a contributing author of news coverage and editorials. Software engineer at Microsoft. Squalid culture critic. Exhausted with tech journalism. Conscious of Artificial Intelligence, but primary skillset consists of telling others why they are wrong about Artificial Intelligence.
 * [Abigail See](https://cs.stanford.edu/people/abisee/): an editor of news coverage and editorials. Abi is a PhD student at Stanford University specializing in Natural Language Processing and Deep Learning, with a background in pure mathematics. Through her [writing](http://www.abigailsee.com/) and her [teaching](http://web.stanford.edu/class/cs224n/), she is passionate about communicating technical concepts in an accessible way.
 * [Anna Kurenkova](https://www.linkedin.com/in/annakurenkova/): the lead of digital marketing for Skynet Today. She has a B.A. in Applied Linguistics from Georgia State University and is a recent graduate of Udacity's Digital Marketing Nanodegree program. She is a fan of learning to speak new languages, and can speak many.
+* [Lana Sinapayen](https://twitter.com/@sina_lana): a contributing author of news coverage. Lana is an associate researcher at Sony CSL Tokyo. She specializes in Artificial Life and Artificial Intelligence, but is not a fan of Deep Learning.
 
 ## How Can I Help
 Subscribe! Spread the word! And if you have any ideas for improving the site, definitely let us know:
