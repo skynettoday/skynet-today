@@ -20,7 +20,7 @@ permalink: /briefs/aclu-amazon-rekognition
 </figure>
 
 
-# What Happened
+## What Happened
 
 <figure>
   <img src="/content/briefs/images/aclu-amazon-rekognition/rekognition_overview.jpg" alt="Overview of Amazon's Rekognition product"/>
@@ -69,7 +69,7 @@ More importantly, people of color were flagged a lot more often (39%) as compare
 
 It was not long before Amazon responded and refuted the claims.
 
-# The Reactions
+## The Reactions
 
 The reactions to this story were swift and from myriad quarters. 
 
@@ -101,7 +101,7 @@ Coverage also included Amazon’s defense of its tool in response to ACLU, as in
 
 On the whole, media coverage accurately portrayed the two sides of the story but rarely dug deeper into the claims of either side.
 
-# Our Perspective
+## Our Perspective
 
 This isn’t the first time facial recognition technology has come under the scanner (see [a previous story](https://www.skynettoday.com/briefs/face-recog/) on the topic). Nor is Amazon the only company under scrutiny. e.g. Axon AI recently instituted [an Ethics Board](https://www.scribd.com/document/377489475/Letter-to-Axon-AI-Ethics-Board) in response to concerns around its technology. 
 
@@ -120,7 +120,7 @@ On the other hand, by ACLU’s own admission Amazon does provide consulting serv
 
 Still, even if not ideally executed ACLU’s actions were definitely for a  good cause -- issues around fairness and bias in algorithms are well-known even if not well-studied at this point. Automated decision systems are not immune from biases. In fact, they often tend to carry over or even amplify the biases presented to them via data and design. Given the fact that law enforcement in this country has a documented history of racial discrimination, there is a very real cost to potential misuse of AI tools to exacerbate things. Thus, there is a valid cause for apprehension even presuming no mala fide intent on the part of either Amazon or its users.
 
-# TLDR
+## TLDR
 
 Are developers of technology responsible for its misuse? 
 

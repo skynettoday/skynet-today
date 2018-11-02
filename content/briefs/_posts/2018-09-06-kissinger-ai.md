@@ -11,7 +11,7 @@ tags: [panic, misinformation]
 permalink: /briefs/kissinger-ai
 ---
 
-# What Happened
+## What Happened
 With AI having become as influential as it is today, leaders from all disciplines have been commenting about its potential impacts on society. Most recently, former Secretary of State and National Security Advisor Henry Kissinger penned an [article](https://www.theatlantic.com/magazine/archive/2018/06/henry-kissinger-ai-could-mean-the-end-of-human-history/559124/) titled “How the Enlightenment Ends” in *The Atlantic*. In it, he issues grave warnings about the consequences of AI and the end of Enlightenment and human reasoning.
 
 He begins by describing his amazement at a conference speaker’s presentation about AlphaGo, an AI agent that managed to defeat the world’s best human players of the popular strategy board game Go (see our perspective on the significance of AlphaGo in [these](https://www.skynettoday.com/briefs/alphago) [two](https://www.skynettoday.com/editorials/is-alphago-zero-overrated) Skynet Today articles). Hearing of AlphaGo’s success, and of how it was achieved through an algorithm that relied on self-play rather than human guidance, leads him to ponder:
@@ -33,7 +33,7 @@ The recurring idea here is simple, and not new: AI cannot be kept in check. He c
 
 Nevertheless, with far-reaching claims and heavy rhetoric, his message elicited many responses.
 
-# The Reactions
+## The Reactions
 Media coverage of the piece was light, but a handful of media outlets and content creators on YouTube wrote [articles](https://www.rt.com/news/432425-henry-kissinger-artificial-intelligence/) and posted [videos](https://www.youtube.com/watch?v=rolmwFTgI2Y&feature=youtu.be) summarizing and adding onto Kissinger’s points.
 
 Few pieces were written in opposition to Kissinger’s, with the exception of Timothy Carone’s Scientific American [article](https://blogs.scientificamerican.com/observations/why-henry-kissinger-or-anyone-else-shouldnt-fear-ai/) that declares that Kissinger falls under the umbrella of 
@@ -113,7 +113,7 @@ Other notable persons to commend include magazine editors and professors (with l
 
 It’s clear that, much to the exasperation of AI researchers, Kissinger sparked a lot of debate and controversy online.
 
-# Our Perspective
+## Our Perspective
 AI isn’t going to overthrow humanity anytime soon. In fact, it’s still far from undertaking many complex tasks that we are building them to do. Just because AI techniques were used to to defeat humanity’s best at Go does not mean it we are even close to a “‘generally intelligent’ AI”, as Kissinger implied.
 
 Kissinger’s article is based on the classic ‘slippery slope’ mistake that leads to the overestimation of AI technology. As usual in such cases, it is mostly based on speculation informed only by Kissinger’s own opinion and the limited education that “informal gatherings” could provide. However, despite being clearly speculative in nature, the article nevertheless fanned the flames of AI fears likely already present in many of its readers.
@@ -143,7 +143,7 @@ Of course, global leaders also have the duty to spread knowledge and keep the pu
 
 The bottom line: prominent leaders need to be particularly careful when issuing messages on topics that aren’t their expertise. AI is already highly misrepresented in mainstream media, and leaders should be helping to rectify, rather than exacerbate this issue. 
 
-# TLDR
+## TLDR
 Henry Kissinger issued an ominous message in The Atlantic regarding the consequences of rapidly advancing AI and its potential to overthrow humanity, take over the world, and nullify human knowledge. The article, with little evidence and overreaching generalizations, cites common misconceptions about the state of AI research. It therefore elicited indignant responses and backlash from the AI community, which attempted to correct his misinformed representation of AI. We urge politicians, and people with the ability to influence public perception in general, to be more cautious with their public pontificating about AI to avoid exacerbating already widespread misunderstanding about the field.
 
 <hr>
