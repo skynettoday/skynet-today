@@ -482,3 +482,61 @@ figcaption {
 
   }
 }
+
+/*
+   Images
+   ========================================================================== */
+
+.image_unpadded {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  padding: 0;
+}
+
+.image_small {
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  height: auto;
+}
+
+.image_actual {
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  height: auto;
+}
+
+.image_75 {
+  width: 75%;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  height: auto;
+}
+
+.image_50 {
+  width: 50%;
+  display:block;
+  height: auto;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+
+.image_25 {
+  width: 25%;
+  display:block;
+  height: auto;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.image_half {
+  width: 49%;
+  height: auto;
+  margin-left:auto;
+  margin-right:auto;
+  padding: 1%;
+}

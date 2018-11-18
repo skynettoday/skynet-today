@@ -47,7 +47,6 @@ Using Rekognition, the ACLU created a face database and search tool of 25,000 pu
 
 [^note1]: More specifically, the way this works is by comparing the input face with all the target faces in the mugshot database. In response, it obtains a list of face matches ordered by similarity score in descending order. The similarity score indicates how closely the faces match. A similarity threshold can be set to specify the minimum level of confidence in the match that one wants returned in the response.)
 
-
 <figure>
   <img src="/content/briefs/images/aclu-amazon-rekognition/aclu_0.png" alt="Overview of ACLU's examination of Rekognition."/>
   <figcaption>
@@ -57,7 +56,6 @@ Using Rekognition, the ACLU created a face database and search tool of 25,000 pu
 
 
 More importantly, people of color were flagged a lot more often (39%) as compared to white people (5%). It is worth noting that only 20% of the Congress members are people of color.
-
 
 <figure>
   <img src="/content/briefs/images/aclu-amazon-rekognition/aclu_1.png" alt="The biased results found by ACLU."/>
@@ -112,7 +110,6 @@ The technical merits of Amazon’s position notwithstanding, its you-are-respons
 In reviewing Amazon’s own FAQ and  documentation for the Rekognition tool, we did not find any discussion of potential misuses of the tool or how the confidence threshold should be picked -- until it was added quietly in response to the ACLU story. In its response to the ACLU, Amazon makes it sounds like the scant documentation that is now there was always there (our own memory of looking for it as well as [github history](https://github.com/awsdocs/amazon-rekognition-developer-guide/blob/1266172b8812aeb1433cdf98124f070890c1da29/doc_source/collections.md) shows that is not the case). At the very least, Amazon should have acknowledged its responsibility for keeping its customers informed as to ethical considerations related to the use of its AI tools. 
 
 On the other hand, by ACLU’s own admission Amazon does provide consulting services to the customers of Rekognition[^note3]. So, there is some indication that consumers may have guidance in determining suitable values for deployment. And, it is true that the ACLU "has not published its data set, methodology, or results in detail" [^note4] which is not ideal since it is harder to be certain that the fault lies with Amazon. 
-
 
 [^note3]: According to documents  which the ACLU obtained through a Freedom of Information Act request.
 
