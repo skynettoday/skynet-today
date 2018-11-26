@@ -13,13 +13,13 @@
 
       {% if page.editor %}
         {% if page.editor.first %}
-            <b>Editors:</b>
+            <br><b>Editors:</b>
             {% for a in page.editor %}
               {% assign author = site.data.authors[a] %}
               {% include sidebar-author.html %}
             {% endfor %}
         {% else %}
-            <b>Editor:</b>
+            <br><b>Editor:</b>
             {% assign author = site.data.authors[page.editor] %}
             {% include sidebar-author.html %}
         {% endif %}
