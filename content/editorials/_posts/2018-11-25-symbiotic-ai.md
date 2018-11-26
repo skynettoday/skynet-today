@@ -7,7 +7,7 @@ author: olaf_witkowski
 editor: andrey_kurenkov
 tags: [agi]
 excerpt: "Human-level AI may well be possible — and we may not have to fear it"
-permalink: /editorials/biased-ai
+permalink: /editorials/symbiotic-ai
 ---
 *Olaf Witkowski is an [EON](http://eon.elsi.jp/) Research Scientist
 at the [Earth-Life Science Institute](http://elsi.jp/en/) in Tokyo, and a Visiting Scholar at the
