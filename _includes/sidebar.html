@@ -1,49 +1,51 @@
 <footer class="page-meta">
-      {% if page.author.first %}
-          <b>Authors:</b>
-          {% for a in page.author %}
-            {% assign author = site.data.authors[a] %}
-            {% include sidebar-author.html %}
-          {% endfor %}
-      {% else %}
-          <b>Author:</b>
-          {% assign author = site.data.authors[page.author] %}
+  {% if page.author %}
+    {% if page.author.first %}
+        <b>Authors:</b>
+        {% for a in page.author %}
+          {% assign author = site.data.authors[a] %}
           {% include sidebar-author.html %}
-      {% endif %}
-
-      {% if page.editor %}
-        {% if page.editor.first %}
-            <br><b>Editors:</b>
-            {% for a in page.editor %}
-              {% assign author = site.data.authors[a] %}
-              {% include sidebar-author.html %}
-            {% endfor %}
-        {% else %}
-            <br><b>Editor:</b>
-            {% assign author = site.data.authors[page.editor] %}
-            {% include sidebar-author.html %}
-        {% endif %}
-      {% endif %}
-
-    <span class="page-date date published">
-        <time datetime="{{ page.date | date_to_xmlschema }}">
-            <i class="fa fa-calendar-o"></i> {{ page.date | date: "%B %d, %Y" }}
-        </time>
-    </span>
-    {% if page.modified %}
-        <span class="page-date date modified">
-            <time datetime="{{ page.modified }}">
-                <i class="fa fa-pencil"></i> 
-                {{ page.modified | date: "%B %d, %Y" }}
-            </time>
-        </span>
+        {% endfor %}
+    {% else %}
+        <b>Author:</b>
+        {% assign author = site.data.authors[page.author] %}
+        {% include sidebar-author.html %}
     {% endif %}
-    {% if site.owner.disqus-shortname and page.comments or site.comments %}
-        <span class="page-comments">
-            <i class="fa fa-comment-o"></i> 
-            <a href="#disqus_thread">Comment</a>
-        </span>
+  {% endif %}
+
+  {% if page.editor %}
+    {% if page.editor.first %}
+        <br><b>Editors:</b>
+        {% for a in page.editor %}
+          {% assign author = site.data.authors[a] %}
+          {% include sidebar-author.html %}
+        {% endfor %}
+    {% else %}
+        <br><b>Editor:</b>
+        {% assign author = site.data.authors[page.editor] %}
+        {% include sidebar-author.html %}
     {% endif %}
-    {% if page.share %}{% include social-share.html %}{% endif %}
-    {% if page.ads == true %}{% include ad-sidebar.html %}<!-- /.google-ads -->{% endif %}
+  {% endif %}
+
+  <span class="page-date date published">
+      <time datetime="{{ page.date | date_to_xmlschema }}">
+          <i class="fa fa-calendar-o"></i> {{ page.date | date: "%B %d, %Y" }}
+      </time>
+  </span>
+  {% if page.modified %}
+      <span class="page-date date modified">
+          <time datetime="{{ page.modified }}">
+              <i class="fa fa-pencil"></i> 
+              {{ page.modified | date: "%B %d, %Y" }}
+          </time>
+      </span>
+  {% endif %}
+  {% if site.owner.disqus-shortname and page.comments or site.comments %}
+      <span class="page-comments">
+          <i class="fa fa-comment-o"></i> 
+          <a href="#disqus_thread">Comment</a>
+      </span>
+  {% endif %}
+  {% if page.share %}{% include social-share.html %}{% endif %}
+  {% if page.ads == true %}{% include ad-sidebar.html %}<!-- /.google-ads -->{% endif %}
 </footer>
