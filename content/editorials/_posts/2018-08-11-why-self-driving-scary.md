@@ -8,7 +8,7 @@ tags: [self-driving,perception,opinion]
 excerpt: "Even if autonomous cars are safer overall, the public will accept the new technology only when it fails in predictable and reasonable ways"
 permalink: /editorials/why-self-driving-scary
 ---
-_The following opinion piece originally originally appeared in The Wall Street Journal on [May 31, 2018](https://www.wsj.com/articles/why-we-find-self-driving-cars-so-scary-1527784724), and has been replicated with permission here._ 
+_The following opinion piece originally appeared in The Wall Street Journal on [May 31, 2018](https://www.wsj.com/articles/why-we-find-self-driving-cars-so-scary-1527784724), and has been replicated with permission here._ 
 
 
 Tesla CEO Elon Musk recently [took the press to task](https://twitter.com/elonmusk/status/999355619390865408?lang=en&mod=article_inline), decrying the “holier-than-thou hypocrisy of big media companies who lay claim to the truth, but publish only enough to sugarcoat the lie.” That, he said, is “why the public no longer respects them.”
