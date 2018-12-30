@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Deepfakes - Is Seeing Still Believing?"
-excerpt: "Has widespread misuse of AI arrived?"
+excerpt: "Has widespread misuse of AI arrived? Not quite yet..."
 author: joshua_morton
 editor: andrey_kurenkov
 tags: [society,panic,DeepFakes]

@@ -32,7 +32,6 @@ plugins:
   - jekyll-redirect-from  
 
 
-
 kramdown:
   input: GFM
   auto_ids: true

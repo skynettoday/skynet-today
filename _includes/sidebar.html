@@ -46,6 +46,10 @@
           <a href="#disqus_thread">Comment</a>
       </span>
   {% endif %}
+  <ul class="page-tags">
+          <b>Tags: </b>{% for tag in page.tags %}<li><a href="{{ site.url }}/tags#{{ tag }}" title="Pages tagged {{ tag }}">{{ tag }}</a></li>{% endfor %}
+  </ul>
+        
   {% if page.share %}{% include social-share.html %}{% endif %}
   {% if page.ads == true %}{% include ad-sidebar.html %}<!-- /.google-ads -->{% endif %}
 </footer>

@@ -29,12 +29,12 @@
 
 .page-header {
 	@include fill-parent;
+	margin-bottom: 1em;
 }
 
 /* tag listing in page header */
 
 .page-tags {
-	margin: 2em 0 0;
   padding: 0;
 	text-transform: uppercase;
 	@include font-size(16);
@@ -264,19 +264,21 @@ span + .page-title {
 	font-family: $alt-font;
 	margin-top: $gutter;
 	margin-bottom: $gutter;
-	padding-left: 0;
 	border: 1px solid $border-color;
 	border-radius: $border-radius;
+  padding-left: 0;
 
   ul {
   	list-style-type: none;
-  	padding-left: 0;
+    border-bottom: solid $border-color;
+    padding-left: 0;
   }
 
   li {
     @include font-size(16,no,18);
-    border-bottom: 1px solid $border-color;
     list-style-type: none;
+    padding-left: 2%;
+    padding-right: 2%;
   }
 
   h6 {

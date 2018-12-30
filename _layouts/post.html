@@ -9,12 +9,10 @@ layout: base
         <h3 class="page-title">{% if page.headline %}{{ page.headline }}{% else %}{{ page.title }}{% endif %}</h3>
 		{% if page.excerpt %} <h4>{{ page.excerpt | remove: '\[ ... \]' | remove: '\( ... \)' | markdownify | strip_html | strip_newlines | escape_once }}</h4>{% endif %}
 		  {% if page.image.feature %}<img src="{{ site.url }}/{{ page.image.feature }}" class="page-feature-image" alt="{{ page.title }}" {% if site.logo == null %}style="margin-top:0;"{% endif %}>{% if page.image.credit %}<p class="image-credit">Image credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></p>{% endif %}{% endif %}
-      
-        <ul class="page-tags">
-          <b>Tags:</b>{% for tag in page.tags %}<li><a href="{{ site.url }}/tags#{{ tag }}" title="Pages tagged {{ tag }}">{{ tag }}</a></li>{% endfor %}
-        </ul>
+        
       </header>
       {% include sidebar.html %}
+      
       <div class="page-content">
         {{ content }}
         
