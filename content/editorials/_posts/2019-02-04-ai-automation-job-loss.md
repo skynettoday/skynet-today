@@ -299,11 +299,11 @@ pattern recognition and generation ([classifying images](https://medium.com/come
 [drawing human faces](https://medium.com/syncedreview/gan-2-0-nvidias-hyperrealistic-face-generator-e3439d33ebaf),
 [reviewing legal documents](https://www.forbes.com/sites/bernardmarr/2018/05/23/how-ai-and-machine-learning-are-transforming-law-firms-and-the-legal-sector/#43deff2232c3),
 [making phone appointments](https://www.cnbc.com/2018/12/19/google-duplex-restaurant-reservation-review.html)).
-Just see how machine-generated faces have improved over a span of 4 years:
+Just see how machine-generated faces have improved over a span of 5 years:
 
 
 <figure>
-  <img src="/content/editorials/images/ai-automation-job-loss/face_generation_progress.png" alt="face_generation_progress"/>
+  <img src="/content/editorials/images/ai-automation-job-loss/face_generation_progress.jpg" alt="face_generation_progress"/>
   <figcaption>
 Progress of face-generation algorithms
 via Generative Adversarial Networks (GANs). Figure by <a href="https://twitter.com/goodfellow_ian/status/1084973596236144640?s=19">Ian Goodfellow</a>.
