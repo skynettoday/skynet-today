@@ -501,7 +501,7 @@ statistics: about 14% of jobs across OECD countries will be highly
 automatable, while 50-70% of jobs will have a third of the tasks
 susceptible to automation[^oecd1]. Another study by the University of
 Mannheim gives an even lower estimate - only 9% of jobs in the U.S. are
-at high risk of automation. [^manheim]
+at high risk of automation[^manheim]. These studies arrived at lower numbers than the Oxford one by taking a more granular approach, accounting for the variations in tasks across jobs within the same type of occupation. 
 
 <figure>
   <img src="/content/editorials/images/ai-automation-job-loss/mckinsey_jobs_displaced.png" alt="mckinsey_jobs_displaced"/>
@@ -623,35 +623,11 @@ and important challenge.
 
 ### Job Creation
 
-Jobs displaced by automation form only one part of the net employment
-equation. To see how the total number of jobs will change in the near
-future, we should also look at jobs created by automation as well.
+Jobs displaced by automation form only one part of the net employment equation. To see how the total number of jobs will change in the near future, we should also look at jobs created by automation as well.
 
-Automation can create new jobs directly through the production,
-maintenance, and sales of its products and services. But, it creates
-even more jobs indirectly by improving the productivity of other
-industries. McKinsey estimates that since the 1980s, personal computers
-(PCs) have created 15.8 million **net** new jobs in the U.S., making up
-about 10% of workforce[^mks11]. While PCs displaced jobs in
-bookkeeping and secretarial work, it created many new jobs that didn’t
-exist before, such as those in manufacturing high-tech components and
-those that use PCs, like IT support services, call centers, and
-e-commerce. In recent years, 0.56% of all jobs created in the U.S. are
-ones that didn't exist before[^mks1], while the demand for these new
-jobs will rise to ~9% by 2030[^mks10].
+Automation can create new jobs directly through the production, maintenance, and sales of its products and services. But, it creates even more jobs indirectly by improving the productivity of other industries. McKinsey estimates that since the 1980s, personal computers (PCs) have created 15.8 million net new jobs in the U.S., making up about 10% of workforce[^mks11]. While PCs displaced jobs in bookkeeping and secretarial work, it created many new jobs that didn’t exist before, such as those in manufacturing high-tech components and those that use PCs, like IT support services, call centers, and e-commerce. About 18% of jobs in the U.S. today did not exist in 1980[^mks1], while the demand for these new jobs will rise to 8~9% by 2030[^mks10].
 
-Contrary to what some might’ve expected, PCs and the Internet increased
-the demand for information analysts, even as data collection and
-analysis became highly automated[^mks12]. The number of analysts grew
-from 400,000 in 1980 to 2 million in 2015, as more analysts are needed
-to make sense of the ever increasing amount of data collected. Similar
-scaling effects can be observed in other jobs, especially
-technology-related jobs, that benefit from automation, and it is
-projected that by 2030 tech jobs will grow from 20 to 50
-million[^mks13]. Gartner also estimates that by 2020, AI will create
-2.3 million jobs and displace 1.8 million, yielding a net positive,
-albeit the jobs lost and gained will not be in the same
-industries[^gartner].
+Contrary to what some might’ve expected, PCs and the Internet increased the demand for information analysts, even as data collection and analysis became highly automated[^mks12]. The number of analysts grew from 400,000 in 1980 to 2 million in 2015, as more analysts are needed to make sense of the ever increasing amount of data collected. Similar scaling effects can be observed in other jobs, especially technology-related jobs, that benefit from automation, and it is projected that by 2030 tech jobs will grow from 20 to 50 million[^mks13]. Gartner also estimates that by 2020, AI will create 2.3 million jobs and displace 1.8 million, yielding a net positive, albeit the jobs lost and gained will not be in the same industries[^gartner]. 
 
 <figure>
   <img src="/content/editorials/images/ai-automation-job-loss/mckinsey_create_more_jobs.png" alt="mckinsey_create_more_jobs"/>
