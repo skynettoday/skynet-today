@@ -7,10 +7,11 @@
   {% endif %}
   <span class="author vcard"><a href={{author.web}}>
           <span class="fn">{{ author.name }}</span></a>
-          
+       
   {% if author.twitter %}
-          <a href=https://twitter.com/{{ author.twitter }}>
-          <span class="fn">@{{ author.twitter }}</span></a>
+          <br>
+          <small><a href=https://twitter.com/{{ author.twitter }}>
+          <span class="fn">@{{ author.twitter }}</span></a></small>
   {% endif %}
   </span>
 </div>

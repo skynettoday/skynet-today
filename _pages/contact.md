@@ -7,7 +7,7 @@ permalink: /contact
 ---
 <h3 class="page-title">Contact</h3>
 Ways to contact the team of Skynet Today include:
- * Email: [contact@skynettoday.com](mailto:editorial@skynettoday.com)
+ * Email: [editorial@skynettoday.com](mailto:editorial@skynettoday.com)
  * Twitter: [@skynet_today](https://twitter.com/skynet_today)
  * Facebook: [Skynet Today](https://www.facebook.com/Skynet-Today-548433905531042/)
  * GitHub: Submit a PR/issue on the [Github repo](https://github.com/andreykurenkov/skynet-today)
