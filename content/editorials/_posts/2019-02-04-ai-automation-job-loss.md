@@ -1,5 +1,5 @@
 ---
-title: "Job loss due to AI - How bad is it going to be?"
+title: "Job loss due to AI — How bad is it going to be?"
 image:
   feature: content/editorials/images/ai-automation-job-loss/main.png
 author: [jacky_liang,ben_ramanauskas,andrey_kurenkov]
@@ -239,10 +239,8 @@ in [many jobs becoming obsolete](https://www.jstor.org/stable/j.ctt5hhgdm). Howe
 to new, safer, and better jobs being created an also resulted in the
 [economy growing and living standards increasing](https://www.questia.com/library/84018/the-industrial-revolution-1760-1830).
 
-Joseph Schumpeter calls this “[creative destruction](https://eet.pixel-online.org/files/etranslation/original/Schumpeter,%20Capitalism,%20Socialism%20and%20Democracy.pdf)”,
-the process of technology disrupting industries and destroying jobs, but
-ultimately creating new, better ones and growing the economy. The Oxford
-study notes:
+Political Economist Joseph Schumpeter called this -- the process of technology disrupting industries and destroying jobs, but
+ultimately creating new, better ones and growing the economy -- ["creative destruction"](https://eet.pixel-online.org/files/etranslation/original/Schumpeter,%20Capitalism,%20Socialism%20and%20Democracy.pdf). The Oxford study notes:
 
 > Throughout history, technological progress has vastly shifted the
 composition of employment, from agriculture and the artisan shop, to
@@ -352,7 +350,7 @@ lot of human input, and it’s very difficult to apply advances in games
 and pattern recognition to fully perform human jobs. Unbeknownst to many
 viewers, Boston Dynamics’ [door-opening robots](https://youtu.be/fUyU3lKzoio) are [remote controlled](https://www.wired.co.uk/article/boston-dynamics-robotics-roboticist-how-to-watch),
 and while IBM Watson won Jeopardy, it is struggling at its real goals in
-[bringing AI to healthcare](https://spectrum.ieee.org/the-human-os/robotics/artificial-intelligence/layoffs-at-watson-health-reveal-ibms-problem-with-ai).Finally, as we already established that AI is most likely staying in the
+[bringing AI to healthcare](https://spectrum.ieee.org/the-human-os/robotics/artificial-intelligence/layoffs-at-watson-health-reveal-ibms-problem-with-ai). Finally, as we already established that AI is most likely staying in the
 ‘narrow’ domain for the foreseeable future, this “humans becoming
 obsolete” scenario is unlikely to happen anytime soon. Instead, AI is
 much more likely to augment workers of many jobs, not replace them.
@@ -419,10 +417,8 @@ have a huge impact on the way music sounds today.
 
 These examples show how AI-powered augmentation can make workers more
 efficient and enable them to perform more complex jobs at higher levels.
-Importantly, humans are still needed for these roles. Professor Ken Goldberg calls
-this
-“[Multiplicity](https://docs.google.com/document/d/1UzPdp51v8K1uut7-OWj8j5i3Kii3CFhh2mxYwX1cTlQ/edit)”,
-where diverse combinations of people and machines work together to solve
+Importantly, humans are still needed for these roles. Professor [Ken Goldberg](https://goldberg.berkeley.edu/bio.html),
+a leading robotics researcher, calls this “[Multiplicity](https://docs.google.com/document/d/1UzPdp51v8K1uut7-OWj8j5i3Kii3CFhh2mxYwX1cTlQ/edit)”, where diverse combinations of people and machines work together to solve
 problems and innovate. He notes:
 
 > A combination of collective intelligence with AI enables many of
