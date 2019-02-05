@@ -886,7 +886,7 @@ labor demand due to the increasing population of elders: worldwide by
 For secured economic growth and avoiding lowering wages, it is important
 for displaced workers to retrain and find new jobs within a year. This
 is unlikely to happen without government intervention, as workers whose
-jobs are most automatable receive the least job training, The bright
+jobs are most automatable receive the least job training. The bright
 side is we know facilitating large shifts in employment composition is
 possible - U.S. made big investments in the G.I. Bill and mandatory
 secondary education last century, helping American workers move out of
