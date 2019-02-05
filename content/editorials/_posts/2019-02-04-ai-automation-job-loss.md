@@ -179,7 +179,7 @@ those who lived through it it was also a turbulent transition [that caused harm 
 Fears aside, it is true that automation of existing jobs has been a fact
 of life for centuries. In the twentieth century, the proportion of the
 workforce in agriculture decreased from 40% in 1900 to just 10% in 1950.
-Now, that figure is now even lower - 2%[^ncci1]. With more efficient
+Now, that figure is even lower - 2%[^ncci1]. With more efficient
 tools, machines, and better understanding of science, agriculture’s
 productivity has soared in the last century - fewer people were needed
 to do the same amount of work, and many agriculture jobs were lost. Even
@@ -578,8 +578,8 @@ The sectors at the most risk for automation tend to be middle-income
 jobs requiring only secondary or associate level education. Demand for
 these middle-income jobs and employment opportunities for those with low
 educational attainment will decline as demand for high-wage,
-high-educational attainment workers improve (see figure below). **This
-plus other ways that automation concentrates wealth will**
+high-educational attainment workers improve (see figure below). This
+plus other ways that automation concentrates wealth will
 [exacerbate the income and wealth inequality problem in advanced economies](https://www.weforum.org/agenda/2017/06/the-future-is-automated-but-what-does-that-really-mean-for-jobs),
 especially the U.S., where the benefits of automation increasingly flow
 to a smaller number of people who can afford good education and own the
