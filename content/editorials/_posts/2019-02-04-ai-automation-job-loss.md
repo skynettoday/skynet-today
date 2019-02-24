@@ -899,6 +899,151 @@ reveals that this trend of automation has been around for a long time.
 And just as we have with technologies in the past, with smart policies,
 AI can improve everyone’s quality of life in the long run.
 
+Links and Additional Readings
+-----------------------------
+
+In order of appearance:
+
+[The AI Revolution Is Coming—And It Will Take Your Job Sooner Than You Think. Kevin Drum. Mother Jones.](https://www.motherjones.com/kevin-drum/2017/10/you-will-lose-your-job-to-a-robot-and-sooner-than-you-think-2/)
+
+[New Study: Artificial Intelligence Is Coming For Your Job, Millennials. Vanessa McGrady. Forbes.](https://www.forbes.com/sites/vanessamcgrady/2017/06/09/millennial-jobs/#58d5d5f9530c)
+
+[AI Effect. Wikipedia](https://en.wikipedia.org/wiki/AI_effect)
+
+[This is when AI’s top researchers think artificial general intelligence will be achieved. James Vincent. The Verge.](https://www.theverge.com/2018/11/27/18114362/ai-artificial-general-intelligence-when-achieved-martin-ford-book)
+
+[When Will AI Exceed Human Performance? Evidence from AI Experts. Grace et al. Oxford, AI Impacts, and Yale.](https://arxiv.org/pdf/1705.08807.pdf)
+
+[CEOs: The Revolution Is Coming. Alan Murray. Fortune.](http://fortune.com/2016/03/08/davos-new-industrial-revolution/)
+
+[Politics. Aristotle. Batoche Books.](https://socialsciences.mcmaster.ca/econ/ugcm/3ll3/aristotle/Politics.pdf)
+
+[Luddites, the industrial revolution, and the demographic transition. O’Rourke et al. Journal of Economic Growth.](https://link.springer.com/article/10.1007/s10887-013-9096-y)
+
+[Ulysses. James Joyce. Project Gutenberg.](http://www.gutenberg.org/ebooks/4300?msg=welcome_stranger)
+
+[Economic Possibilities for Our Grandchildren. John Maynard Keynes. Essays in Persuasion.](https://link.springer.com/chapter/10.1007/978-1-349-59072-8_25)
+
+[Technology in Postwar America. Carroll Pursell. Columbia University Press.](https://cup.columbia.edu/book/technology-in-postwar-america/9780231123044)
+
+[The Race Between Man and Machine: Implications of Technology for Growth, Factor Shares and Employment. Acemoglu and Restrpo. MIT and Boston University.](https://economics.mit.edu/files/14458)
+
+[Most Notorious Victory Man in an Age of Automation. Ben B. Seligman. The Free Press, New York.](https://archive.org/details/MostNotoriousVictoryManInAnAgeOfAutomationBenSeligman)
+
+[When People Feared Computers. Adrienne Lafrance. The Atlantic.](https://www.theatlantic.com/technology/archive/2015/03/when-people-feared-computers/388919/)
+
+[“It’s Going to Kill Us!” and Other Myths About the Future of Artificial Intelligence. Robert D. Atkinson. Information Technology & Innovation Foundation.](http://www2.itif.org/2016-myths-machine-learning.pdf)
+
+[Did living standards improve during the Industrial Revolution? The Economist.](https://www.economist.com/free-exchange/2013/09/13/did-living-standards-improve-during-the-industrial-revolution)
+
+[Reconceptualizing the Industrial Revolution. Horn et al. MIT Press.](https://www.jstor.org/stable/j.ctt5hhgdm)
+
+[The Industrial Revolution, 1760-1830. T. S. Ashton.](https://www.questia.com/library/84018/the-industrial-revolution-1760-1830)
+
+[Capitalism, Socialism & Democracy. Joseph A. Schumpeter. Routledge.](https://eet.pixel-online.org/files/etranslation/original/Schumpeter,%20Capitalism,%20Socialism%20and%20Democracy.pdf)
+
+[From brawn to brains. The impact of technology on jobs in the UK. Deloitte.](https://www2.deloitte.com/uk/en/pages/growth/articles/from-brawn-to-brains--the-impact-of-technology-on-jobs-in-the-u.html)
+
+[AlphaGo. Deepmind. ](https://deepmind.com/research/alphago/)
+
+[OpenAI Five. OpenAI.](https://openai.com/five/)
+
+[DeepStack. Moravcik et al. University of Alberta, Charles University, and Czech Technical University.](https://static1.squarespace.com/static/58a75073e6f2e1c1d5b36630/t/58b7a3dce3df28761dd25e54/1488430045412/DeepStack.pdf)
+
+[Computer Wins on ‘Jeopardy!’: Trivial, It’s Not. John Markoff. The New York Times.](https://www.nytimes.com/2011/02/17/science/17jeopardy-watson.html)
+
+[Knightscope.](https://www.knightscope.com/)
+
+[Miso Robotics.](https://misorobotics.com/)
+
+[What’s new, Atlas? Boston Dynamics.](https://www.youtube.com/watch?v=fRj34o4hN4I&feature=youtu.be)
+
+[Review of Deep Learning Algorithms for Image Classification. Arthur Ouaknine.](https://medium.com/zylapp/review-of-deep-learning-algorithms-for-image-classification-5fdbca4a05e2)
+
+[Guide to Automated Journalism. Andreas Graefe. Columbia Journalism Review.](https://www.cjr.org/tow-center)
+
+[11 Startups Using AI to Compose Music. Nanalyze.](https://www.nanalyze.com/2018/05/11-startups-ai-compose-music/)
+
+[GAN 2.0: NVIDIA’s Hyperrealistic Face Generator. Synced.](https://medium.com/syncedreview/gan-2-0-nvidias-hyperrealistic-face-generator-e3439d33ebaf)
+
+[How AI And Machine Learning Are Transforming Law Firms And The Legal Sector. Bernard Marr. Forbes.](https://www.forbes.com/sites/bernardmarr/2018/05/23/how-ai-and-machine-learning-are-transforming-law-firms-and-the-legal-sector/#24ff163332c3)
+
+[Google's human-sounding A.I. called a restaurant and made a reservation for me, and I'm completely amazed. Todd Haselton. CNBC. ](https://www.cnbc.com/2018/12/19/google-duplex-restaurant-reservation-review.html)
+
+[Humans Need Not Apply. CGP Grey.](https://www.youtube.com/watch?v=7Pq-S557XQU&feature=youtu.be)
+
+[Hey Buddy, Can You Give Me a Hand? Boston Dynamics.](https://www.youtube.com/watch?v=fUyU3lKzoio&feature=youtu.be)
+
+[What’s really going on in those Boston Dynamics robot videos? Richard Priday. Wired.](https://www.wired.co.uk/article/boston-dynamics-robotics-roboticist-how-to-watch)
+
+[Layoffs at Watson Health Reveal IBM’s Problem With AI. Eliza Strickland. IEEE Spectrum.](https://spectrum.ieee.org/the-human-os/robotics/artificial-intelligence/layoffs-at-watson-health-reveal-ibms-problem-with-ai)
+
+[These 6 companies are making the self-driving truck a reality. Alistair Charlton. Salon.](https://www.salon.com/2018/07/22/these-6-companies-are-making-the-self-driving-truck-a-reality_partner/)
+
+[Waymo launches self-driving car service Waymo One. Kirsten Korosec. TechCrunch.](https://techcrunch.com/2018/12/05/waymo-launches-self-driving-car-service-waymo-one/)
+
+[Waymo CEO: Autonomous cars won't ever be able to drive in all conditions. Shara Tibken. CNET.](https://www.cnet.com/news/alphabet-google-waymo-ceo-john-krafcik-autonomous-cars-wont-ever-be-able-to-drive-in-all-conditions/)
+
+[Uber CEO Travis Kalanick says his company’s self-driving cars will create more jobs, not destroy them. Biz Carson. Business Insider.](https://www.businessinsider.com/uber-ceo-travis-kalanick-self-driving-cars-wont-destroy-driver-jobs-2016-8)
+
+[Walmart Raises Truck Drivers' Salaries, Anxious to Fill Routes Amid Driver Shortage. Brittany Shoot. Fortune.](http://fortune.com/2019/01/23/walmart-truck-driver-trucking-shortage/)
+
+[Automation is inevitable but will not displace driver jobs: IRU's global innovation head. Vishnu Rajamanickam. Freight Waves.](https://www.freightwaves.com/news/technology/automation-is-inevitable-but-will-not-displace-driver-jobs-iru)
+
+[AI VS. LAWYERS: THE ULTIMATE SHOWDOWN. LawGeex.](https://www.lawgeex.com/resources/aivslawyer/)
+
+[Make Music and Art Using Machine Learning. Project Magenta. Google.](https://magenta.tensorflow.org/)
+
+[Multiplicity: Are AI and Robots a Threat...or an Opportunity? Ken Goldberg.](https://docs.google.com/document/d/1UzPdp51v8K1uut7-OWj8j5i3Kii3CFhh2mxYwX1cTlQ/edit)
+
+[The Robot-Human Alliance. Ken Goldberg.](https://goldberg.berkeley.edu/WSJ-Op-Ed-Call-it-Multiplicity-by-Ken-Goldberg.pdf)
+
+[What Can Machines Learn, and What Does It Mean for Occupations and the Economy? Brynjolfsson et al. American Economic Association.](https://www.aeaweb.org/articles?id=10.1257/pandp.20181019)
+
+[ASIAN DEVELOPMENT OUTLOOK 2018 HOW TECHNOLOGY AFFECTS JOBS. Asian Development Bank.](https://www.adb.org/sites/default/files/publication/411666/ado2018.pdf)
+
+[Automation and anxiety. The Economist.](https://www.economist.com/special-report/2016/06/25/automation-and-anxiety)
+
+[Automation and Artificial Intelligence: How machines are affecting people and places. Muro et al. Brookings Institute.](https://www.brookings.edu/research/automation-and-artificial-intelligence-how-machines-affect-people-and-places/)
+
+[The future is automated, but what does that really mean for jobs?. Laura D’Andrea Tyson. World Economic Forum.](https://www.weforum.org/agenda/2017/06/the-future-is-automated-but-what-does-that-really-mean-for-jobs)
+
+[A New Chart Conclusively Proves That Automation is a Serious Threat. Scott Santens. Futurism.](https://futurism.com/new-chart-proves-automation-serious-threat)
+
+[Are Robots Going to Steal Our Jobs?. Ronald Bailey. Reason.](http://reason.com/archives/2017/06/06/are-robots-going-to-steal-our)
+
+[Robots Seem to Be Improving Productivity, Not Costing Jobs. Mark Muro and Scott Andes. Harvard Business Review.](https://hbr.org/2015/06/robots-seem-to-be-improving-productivity-not-costing-jobs)
+
+[The Impact of Robots on Productivity, Employment and Jobs. International Federation of Robotics.](https://ifr.org/img/office/IFR_The_Impact_of_Robots_on_Employment.pdf)
+
+[Every study we could find on what automation will do to jobs, in one chart. Erin Winick. MIT Technology Review.](https://www.technologyreview.com/s/610005/every-study-we-could-find-on-what-automation-will-do-to-jobs-in-one-chart/)
+
+[Averting the old age crisis : policies to protect the old and promote growth. The World Bank.](http://documents.worldbank.org/curated/en/973571468174557899/Averting-the-old-age-crisis-policies-to-protect-the-old-and-promote-growth)
+
+[Robots are coming for your job: We must fix income inequality, volatile job markets now -- or face sustained turmoil. Jerry Kaplan. Salon.](https://www.salon.com/2015/08/23/robots_are_coming_for_your_job_we_must_fix_income_inequality_volatile_job_markets_now_or_face_sustained_turmoil/)
+
+[The Second Machine Age. Erik Brynjolfsson and Andrew McAfee.](http://secondmachineage.com/)
+
+[Education and the Fourth Industrial Revolution. Graham Brown-Martin. Groupe Media TFO.](https://www.groupemediatfo.org/wp-content/uploads/2017/12/FINAL-Education-and-the-Fourth-Industrial-Revolution-1-1-1.pdf)
+
+[The robot that takes your job should pay taxes, says Bill Gates. Kevin Delaney. Quartz.](https://qz.com/911968/bill-gates-the-robot-that-takes-your-job-should-pay-taxes/)
+
+[Nixon’s Basic Income Plan. Rutger Bregman. Jacobin.](https://www.jacobinmag.com/2016/05/richard-nixon-ubi-basic-income-welfare/)
+
+[Current UBI Experiments: An update for July 2018. Karl Widerquist. Basic Income Earth Network.](https://basicincome.org/news/2018/07/current-ubi-experiments-an-update-for-july-2018/)
+
+[Automation and the future of work – understanding the numbers. Frey and Osborne. Oxford Martin School.](https://www.oxfordmartin.ox.ac.uk/opinion/view/404)
+
+[AI may not be bad news for workers. The Economist.](https://www.economist.com/business/2018/09/13/ai-may-not-be-bad-news-for-workers)
+
+[The Workforce Needs AI -- But AI Needs Human Workers, Too. Amir Konigsberg. Forbes.](https://www.forbes.com/sites/forbestechcouncil/2018/11/07/the-workforce-needs-ai-but-ai-needs-human-workers-too/#6fbf15f87653)
+
+[How AI will make us think harder. Kaveh Waddell. Axios.](https://www.axios.com/ai-will-make-us-think-harder-4c915724-7cab-4ca2-8f0a-eb2260e005c5.html)
+
+[How AI Can Amplify Human Competencies. Ken Goldberg. MIT Sloan.](https://sloanreview.mit.edu/article/how-ai-can-amplify-human-competencies/?social_token=91029ba9013b8718bdc71f4576c73a77&utm_source=twitter&utm_medium=social&utm_campaign=sm-direct)
+
+[Cognitive Diversity: AI & The Future of Work. Tata Communications.](https://drive.google.com/file/d/1AjsiNoDIUr9IYcGN3qdJk3H5TF21Jz-2/view)
+
 References
 ----------
 
