@@ -4,7 +4,7 @@ image:
   feature: content/editorials/images/ai-automation-job-loss/main.png
 author: [jacky_liang,ben_ramanauskas,andrey_kurenkov]
 tags: [economy,jobs,overview]
-excerpt: "Recent studies suggest the impact of AI on jobs in the near future will not be significantly more disruptive than the impact of automation in the past"
+excerpt: "Studies suggest the impact of AI on jobs in the near future will not be significantly more disruptive than the impact of automation in the past"
 permalink: /editorials/ai-automation-job-loss
 ---
 The concern of Artificial Intelligence (AI) taking over everyone’s jobs
@@ -300,7 +300,6 @@ pattern recognition and generation ([classifying images](https://medium.com/come
 [reviewing legal documents](https://www.forbes.com/sites/bernardmarr/2018/05/23/how-ai-and-machine-learning-are-transforming-law-firms-and-the-legal-sector/#43deff2232c3),
 [making phone appointments](https://www.cnbc.com/2018/12/19/google-duplex-restaurant-reservation-review.html)).
 Just see how machine-generated faces have improved over a span of 5 years:
-
 
 <figure>
   <img src="/content/editorials/images/ai-automation-job-loss/face_generation_progress.jpg" alt="face_generation_progress"/>
