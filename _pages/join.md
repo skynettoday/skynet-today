@@ -2,6 +2,8 @@
 layout: page
 title: Call for Collaborators and Submissions
 excerpt: "Skynet Today call for collaborators and submissions"
+image:
+  feature: "propaganda/propaganda robots.png"
 search_omit: true
 permalink: /join
 ---
