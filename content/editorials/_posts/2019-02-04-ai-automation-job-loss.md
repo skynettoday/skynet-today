@@ -20,57 +20,9 @@ and “[New Study: Artificial Intelligence Is Coming For Your Job, Millennials](
 
 But, just how warranted are these concerns? What do history and the most
 recent studies tell us about how AI based automation will impact our
-jobs and the future of society?
+jobs and the future of society? An in particular, will the impact of AI-based automation be any more significant than that of non-AI based automation enabled by computers and robotics in the past? 
 
-To answer these questions we first have to establish what “AI” means.
-The first computer program to beat a human world champion in chess is
-IBM’s Deep Blue, and it was seen as a historic milestone for AI by the
-public in 1996. Today however, few would consider iPhone chess apps
-examples of powerful AI, yet these apps are typically much better at
-chess than Deep Blue ever was[^deepblue]. This “moving of the goal
-post” for AI is often explained by the saying “[AI is whatever hasn’t been done yet.](https://en.wikipedia.org/wiki/AI_effect)” Clearly, it
-is not possible to characterize the economic impact of such an
-all-encompassing idea.
-
-Instead, for the purposes of this article we will define “AI” in very
-high level terms as the following: software that is optimized for a
-particular task by “learning” from data, as opposed to traditional
-software that is completely hand-coded by people. Today, we have “weak”
-or “narrow” AI - that is, algorithms that can only be taught to tackle
-single specific tasks. For example, Deep Blue was better than any human
-at chess but incapable of playing checkers, and the more recent AlphaGo
-was masterful at Go but could not also beat you at tic-tac-toe (in both
-cases the methods could be adapted to play other games, but not without
-some engineering and effort). Beyond games, this type of ‘narrowness’
-applies to just about any application of AI today; an AI program
-optimized to recognize faces cannot also output the color of a person’s
-hair or classify them as female or male, unless specifically engineered
-to do so.
-
-All references to AI below will mean this “weak” or “narrow” variety. In
-this article we do not consider “strong” or “generalized” AI, a type of
-AI that is theoretically capable of (super)human-level intelligence
-across a broad range of skills. Most AI researchers believe that
-[strong AI is unlikely to materialize in the near future,](https://www.theverge.com/2018/11/27/18114362/ai-artificial-general-intelligence-when-achieved-martin-ford-book)
-and even weak AI is likely to have outsized impacts on jobs and the
-economy.
-
-<figure>
-  <img src="/content/editorials/images/ai-automation-job-loss/hlmi.png" alt="Human-level machine intelligence graph."/>
-  <figcaption>
-    Probability of Human-Level Machine Intelligence (HLMI) over
-time. HLMI is defined as when “unaided machines can accomplish every
-task better and cheaper than human workers.” Little can be predicted
-with high confidence, but the consensus appears to be that HMLI will not
-be developed over the next few decades. Figure by <a href="https://arxiv.org/abs/1705.08807">(Grace et
-al)</a>.
-  </figcaption>
-</figure>
-
-Concerns over job losses due to AI often focus on this impact and ignore
-an incredibly relevant question: will the impact of AI-based automation
-be any more significant than that of non-AI based automation enabled by
-computers and robotics in the past? After all, recent advances in more
+After all, recent advances in more
 intelligent robotics to perform physical labor and AI software to
 perform mental labor follow a long line of technological developments
 via automation starting from the first industrial revolution. While many
@@ -281,6 +233,53 @@ them? In other words...
 
 Is it going to be the same story with AI?
 -----------------------------------------
+
+### Defining AI
+
+To answer the above question we first have to establish what “AI” means.
+The first computer program to beat a human world champion in chess is
+IBM’s Deep Blue, and it was seen as a historic milestone for AI by the
+public in 1996. Today however, few would consider iPhone chess apps
+examples of powerful AI, yet these apps are typically much better at
+chess than Deep Blue ever was[^deepblue]. This “moving of the goal
+post” for AI is often explained by the saying “[AI is whatever hasn’t been done yet.](https://en.wikipedia.org/wiki/AI_effect)” Clearly, it
+is not possible to characterize the economic impact of such an
+all-encompassing idea.
+
+Instead, for the purposes of this article we will define “AI” in very
+high level terms as the following: software that is optimized for a
+particular task by “learning” from data, as opposed to traditional
+software that is completely hand-coded by people. Today, we have “weak”
+or “narrow” AI - that is, algorithms that can only be taught to tackle
+single specific tasks. For example, Deep Blue was better than any human
+at chess but incapable of playing checkers, and the more recent AlphaGo
+was masterful at Go but could not also beat you at tic-tac-toe (in both
+cases the methods could be adapted to play other games, but not without
+some engineering and effort). Beyond games, this type of ‘narrowness’
+applies to just about any application of AI today; an AI program
+optimized to recognize faces cannot also output the color of a person’s
+hair or classify them as female or male, unless specifically engineered
+to do so.
+
+All references to AI below will mean this “weak” or “narrow” variety. In
+this article we do not consider “strong” or “generalized” AI, a type of
+AI that is theoretically capable of (super)human-level intelligence
+across a broad range of skills. Most AI researchers believe that
+[strong AI is unlikely to materialize in the near future,](https://www.theverge.com/2018/11/27/18114362/ai-artificial-general-intelligence-when-achieved-martin-ford-book)
+and even weak AI is likely to have outsized impacts on jobs and the
+economy.
+
+<figure>
+  <img src="/content/editorials/images/ai-automation-job-loss/hlmi.png" alt="Human-level machine intelligence graph."/>
+  <figcaption>
+    Probability of Human-Level Machine Intelligence (HLMI) over
+time. HLMI is defined as when “unaided machines can accomplish every
+task better and cheaper than human workers.” Little can be predicted
+with high confidence, but the consensus appears to be that HMLI will not
+be developed over the next few decades. Figure by <a href="https://arxiv.org/abs/1705.08807">(Grace et
+al)</a>.
+  </figcaption>
+</figure>
 
 ### Job Augmentation
 
