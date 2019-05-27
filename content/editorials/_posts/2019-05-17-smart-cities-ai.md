@@ -42,6 +42,7 @@ While smart traffic lights trials have been at the forefront of smarter transpor
 
 Where do we draw the line?
 --------------------------
-TO-DO: add additional statement about use of personal data in smart cities applications
+TO-DO: add additional statement about avoiding use of personal data in smart cities applications
+
 The utupian dwelling that smart cities promise us is far in the future, but there are incremental positive changes that smart cities applications offer in the present. Optimizations to traffic, public transport, and improvements to infrastructure, with a forward look to integrating with connected vehicles in the near future, are all necessary changes for cities looking to keep up with growing populations and changing technological demands. 
 
