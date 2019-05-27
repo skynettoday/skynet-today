@@ -15,7 +15,7 @@ Smart cities [^definition] has been a frequent term in the media recently, with 
 
 China's Smart Cities Surveilance
 --------------------------------
-
+TO-DO: add coverage of Chinas use of facial recognition in smart cities apps
 
 Anti-terror Applications
 ------------------------
@@ -37,11 +37,11 @@ However, the decentralized approach is criticized by some as being "too local in
 
 Smarter Public Transport
 ------------------------
-While smart traffic lights trials have been at the forefront of smarter transportation, smart public transportation deserves some more attention. In 2018, [Citymapper launched its "smarter" bus service](https://citymapper.com/news/1800/introducing-the-citymapper-smartbus), running in central London, with plans to make it more adaptive to realtime demand. Citymapper's solution to city congestion is to evaluate and improve existing public transportation routes, and identify more efficient routes, with data of routes and realtime demand.
+While smart traffic lights trials have been at the forefront of smarter transportation, smart public transportation deserves more attention. In 2018, [Citymapper launched its "smarter" bus service](https://citymapper.com/news/1800/introducing-the-citymapper-smartbus), running in central London, with plans to make it more adaptive to realtime demand. Citymapper's solution to city congestion is to evaluate and improve existing public transportation routes, and identify more efficient routes, with data of routes and realtime demand.
 
 
 Where do we draw the line?
 --------------------------
-Collecting personal data, for marketing or 
+TO-DO: add additional statement about use of personal data in smart cities applications
 The utupian dwelling that smart cities promise us is far in the future, but there are incremental positive changes that smart cities applications offer in the present. Optimizations to traffic, public transport, and improvements to infrastructure, with a forward look to integrating with connected vehicles in the near future, are all necessary changes for cities looking to keep up with growing populations and changing technological demands. 
 
