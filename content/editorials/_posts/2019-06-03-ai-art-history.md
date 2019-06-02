@@ -2,8 +2,10 @@
 title: "The Past, Present, and Future of AI Art"
 image:
   feature: content/editorials/images/ai-art-history/offert_2019.jpg
-author: [fabian_offert,andrey_kurenkov]
-tags: [art,history,]
+  credit: GAN trained on 60,000 images from the MoMA (Museum of Modern Art), New York collection
+author: [fabian_offert]
+editor: [andrey_kurenkov]
+tags: [art,history,GAN]
 excerpt: "AI art has a long history that is often overlooked."
 permalink: /editorials/ai-art-history
 ---
@@ -177,5 +179,3 @@ In other words, AI art will be a driver of innovation but, exactly as proposed b
 ### Conclusion
 
 These are exciting times, for science and art alike. We are not, however, in the middle of an artistic revolution, and even less so are artists in danger of being replaced by machines any time soon. It is often overlooked that (non-trivial) art progresses much like science does - by building on a history of invention and discovery, sometimes taking incremental steps, sometimes questioning and overthrowing paradigms. Time will tell if AI art ever becomes a revolution that will question the very way we produce art -- but from the history of contemporary art in general, and from the history of computer art in particular, this seems unlikely to happen. Much more likely is the continuation of a process we already see today: the slow and steady recuperation of explicit "AI art" by contemporary art. Machine learning, in other words, will become just another set of tools. And with this, the philosophical speculations will vanish as well.
-
-*Cover image: GAN trained on 60,000 images from the MoMA (Museum of Modern Art), New York collection*
