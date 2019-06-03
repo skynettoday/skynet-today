@@ -131,3 +131,10 @@ thomas_lux:
   email: tchlux@vt.edu
   web: //linkedin.com/in/thomas-ch-lux
   twitter: tchlux
+
+fabian_offert:
+  name: Fabian Offert
+  avatar: fabian_face.jpg
+  email: fabian@theorize.ai
+  web: https://theorize.ai
+  twitter: haltingproblem
