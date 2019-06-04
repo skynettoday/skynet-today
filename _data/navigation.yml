@@ -12,9 +12,12 @@
 - title: Contact
   url: /contact
   
-  
 - title: Join
   url: /join
   
+- title: Topics
+  url: /tags
+  
 - title: Search
   url: /search
+  
