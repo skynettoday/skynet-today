@@ -1,7 +1,8 @@
 ---
-title: 1,000,000 Robotaxis by 2020? Just about everyone agrees: not happening 
+layout: post
 image:
   feature: content/briefs/images/robotaxis/musk.png
+title: 1,000,000 Robotaxis by 2020? Just about everyone agrees: not happening 
 author: [scott_clark]
 editor: [andrey_kurenkov]
 tags: [self-driving cars, computer vision, elon musk]
