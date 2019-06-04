@@ -13,8 +13,6 @@ permalink: /briefs/elon-musk-1mil-robotaxis
 
 On April 22nd, two days prior to Tesla’s April earnings report, Elon Musk and several senior executives and directors of Tesla hosted a live event dubbed “Tesla Autonomy Day,” which was intended to bridge the gap between Tesla’s internal perception of their progress on self-driving vehicles and the external perception of it. To kick things off Pete Bannon, VP of Silicon Engineering, showcased a chip designed specifically to speed up the execution of the self driving algorithms used by Tesla’s cars.  
   
-  
-[IMG HERE]
 
 
 Next, Senior Director of AI Andrej Karpathy  gave a substantive overview of the deep learning based computer vision solutions used by Tesla in pursuit of fully autonomous vehicles. Karpathy covered a lot of ground, from an introduction to neural networks all the way to the specific means by which Tesla leverages “the fleet” to mine footage to improve upon their existing algorithms. Stuart Bowers, the VP of Engineering, also spoke on some of the less technical aspects of computer vision and the engineering challenges associated with building the infrastructure to handle self driving, continuously learning vehicles.  
