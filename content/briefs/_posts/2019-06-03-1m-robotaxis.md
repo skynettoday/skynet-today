@@ -2,11 +2,12 @@
 layout: post
 image:
   feature: content/briefs/images/robotaxis/musk.png
-title: 1,000,000 Robotaxis by 2020? Just about everyone agrees: not happening 
+  credit: Screencap via Tesla Autonomy Day
+title: "1,000,000 Robotaxis by 2020? Just about everyone agrees: not happening"
+excerpt: "Elon Musk’s stated goals for Tesla are as unrealistic as they are ambitious"
 author: [scott_clark]
 editor: [andrey_kurenkov]
 tags: [self-driving cars, computer vision, elon musk]
-excerpt: "Elon Musk’s stated goals for Tesla are as unrealistic as they are ambitious"
 permalink: /briefs/elon-musk-1mil-robotaxis
 ---
 
