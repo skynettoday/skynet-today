@@ -6,7 +6,7 @@ image:
 author: [fabian_offert]
 editor: [andrey_kurenkov]
 tags: [art,history,GAN]
-excerpt: "AI art has a long history that is often overlooked."
+excerpt: "AI art has a long history that is often overlooked"
 permalink: /editorials/ai-art-history
 ---
 

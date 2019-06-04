@@ -5,7 +5,7 @@ image:
   credit: <a href="https://techcrunch.com/2016/10/12/the-combination-of-human-and-artificial-intelligence-will-define-humanitys-future/">Techcrunch</a>
 author: olaf_witkowski
 editor: andrey_kurenkov
-tags: [agi]
+tags: [AGI]
 excerpt: "Human-level AI may well be possible — and we may not have to fear it"
 permalink: /editorials/symbiotic-ai
 ---

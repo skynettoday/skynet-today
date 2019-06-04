@@ -4,7 +4,7 @@ image:
   feature: content/briefs/images/boston-dynamics/main.jpg
   credit: From Bosyon Dynamics
 title: "Boston Dynamics' robots — impressive, but far from the Terminator"
-excerpt: "For these robots, there remains a discrepancy between staged demonstrations and real world performance."
+excerpt: "For these robots, there remains a discrepancy between staged demonstrations and real world performance"
 author: [ben_shih, lana_sinapayen, andrey_kurenkov]
 tags: [hype,robotics]
 permalink: /briefs/boston-dynamics
