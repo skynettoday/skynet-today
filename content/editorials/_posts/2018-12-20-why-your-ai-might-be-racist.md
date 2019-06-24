@@ -5,7 +5,7 @@ image:
   credit: A screen shows a demonstration of SenseTime Group's SenseVideo pedestrian and vehicle recognition system at the company's showroom in Beijing in June. (Gilles Sabrie/Bloomberg)
 author: [jerry_kaplan]
 tags: [perception,opinion]
-excerpt: "On the risks of enshrining all sorts of injustices into computer programs, where they could fester undetected in perpetuity."
+excerpt: "On the risks of enshrining all sorts of injustices into computer programs, where they could fester undetected in perpetuity"
 permalink: /editorials/why-your-ai-might-be-racist
 ---
 _The following opinion piece originally appeared in [The Washington Post on December 17th, 2018](https://www.washingtonpost.com/opinions/2018/12/17/why-your-ai-might-be-racist/), and has been replicated with permission here._
