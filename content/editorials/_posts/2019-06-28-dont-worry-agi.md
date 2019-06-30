@@ -5,7 +5,7 @@ image:
 author: [ellen_konig]
 tags: [agi]
 excerpt: "The whole debate about existential risks AI poses to humanity in the far off future is a huge distraction."
-permalink: /editorials/agi-usefuless
+permalink: /editorials/dont-worry-agi
 ---
 _The following opinion piece originally appeared [on the author's blog ](https://www.ellenkoenig.de/blog/dont-worry-about-ai-taking-over-the-world-one-day-worry-about-how-it-is-used-today), and has been replicated here with permission._
 
