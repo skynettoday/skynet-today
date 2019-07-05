@@ -5,7 +5,7 @@ tags: [agi]
 excerpt: "On why the potential or threat of 'artificial general intelligence' is most often overstated"
 permalink: /editorials/agi-usefuless
 ---
-_The following opinion piece originally appeared [on the author's blog ](https://blog.cerebralab.com/#!/a/Artificial%20general%20intelligence%20is%20here,%20and%20it's%20useless), and has been replicated here with permission._
+_The following opinion piece originally appeared [on the author's blog](https://blog.cerebralab.com/#!/a/Artificial%20general%20intelligence%20is%20here,%20and%20it's%20useless), and has been replicated here with permission._
 
 One of the most misunderstood ideas that's polluting the minds of popular \"intellectuals\", many of them seemingly accustomed with statistics and machine learning, is the potential or threat that developing an [artificial general intelligence](https://en.wikipedia.org/wiki/Artificial_general_intelligence) (AGI) would present to our civilization.
 

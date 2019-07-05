@@ -158,3 +158,10 @@ ellen_konig:
   email: website@ellenkoenig.de
   web: https://www.ellenkoenig.de/
   twitter: ellen_koenig
+  
+michael_jordan:
+  name: Michael I. Jordan
+  avatar: michael_j_face.jpeg
+  email:  jordan@cs.berkeley.edu 
+  web: https://people.eecs.berkeley.edu/~jordan/
+
