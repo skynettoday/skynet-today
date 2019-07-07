@@ -164,4 +164,10 @@ michael_jordan:
   avatar: michael_j_face.jpeg
   email:  jordan@cs.berkeley.edu 
   web: https://people.eecs.berkeley.edu/~jordan/
-
+  
+matteo_pasquinelli:
+  name: Matteo Pasquinelli
+  avatar: matteo_face.jpg
+  email:  mail@matteopasquinelli.org
+  web: http://matteopasquinelli.com/
+  twitter: mattpasquinelli

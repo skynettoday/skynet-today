@@ -7,7 +7,7 @@ tags: [agi]
 excerpt: "On artificial intelligence as a phrase, a fast moving research field, and an emerging new discipline of engineering"
 permalink: /editorials/dont-worry-agi
 ---
-_The following opinion piece originally appeared [on the Data Science Harvard Review](https://hdsr.mitpress.mit.edu/pub/wot7mkc1), and has been replicated here with permission._
+_The following opinion piece originally appeared [on the Data Science Harvard Review](https://www.e-flux.com/journal/101/273221/three-thousand-years-of-algorithmic-rituals-the-emergence-of-ai-from-the-computation-of-space/), and has been replicated here with the author's permission._
 
 Artificial Intelligence (AI) is the mantra of the current era. The phrase is intoned by technologists, academicians, journalists, and venture capitalists alike. As with many phrases that cross over from technical academic fields into general circulation, there is significant misunderstanding accompanying use of the phrase. However, this is not the classical case of the public not understanding the scientists—here the scientists are often as befuddled as the public. The idea that our era is somehow seeing the emergence of an intelligence in silicon that rivals our own entertains all of us, enthralling us and frightening us in equal measure. And, unfortunately, it distracts us.
 
