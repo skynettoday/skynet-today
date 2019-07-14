@@ -157,7 +157,7 @@ are forced to compete in making their AI-powered products high-performance and c
 
 <figure>
       <img src="/content/editorials/images/evaluating-national-ai-strategies/top-ai-papers-share.png" alt="National share of top AI papers"/>
-      <figcaption>Historical and projected share of top 10% of AI papers by U.S. and China | Figure by [Allen Institute for Artificial Intelligence](https://medium.com/ai2-blog/china-to-overtake-us-in-ai-research-8b6b1fe30595).</figcaption>
+      <figcaption>Historical and projected share of top 10% of AI papers by U.S. and China | Figure by <a href="https://medium.com/ai2-blog/china-to-overtake-us-in-ai-research-8b6b1fe30595">Allen Institute for Artificial Intelligence</a>.</figcaption>
 </figure>
 
 While China’s plans and statements boast an interest in taking leadership on global governance for AI, they lack specificity and 
@@ -182,7 +182,7 @@ the [OECD](http://www.oecd.org/going-digital/ai/principles/)).
 
 <figure>
       <img src="/content/editorials/images/evaluating-national-ai-strategies/china-papers-sector.png" alt="Papers by sector affiliation in China"/>
-      <figcaption>AI Publications in China are largely affiliated with the government. | Figure by [Artificial Intelligence Index(http://cdn.aiindex.org/2018/AI%20Index%202018%20Annual%20Report.pdf).</figcaption>
+      <figcaption>AI Publications in China are largely affiliated with the government. | Figure by <a href="http://cdn.aiindex.org/2018/AI%20Index%202018%20Annual%20Report.pdf">Artificial Intelligence Index</a>.</figcaption>
 </figure>
 
 While the BAIP makes the point that addressing AI bias and fairness is important, China does not have much in the way of concrete 
