@@ -166,7 +166,7 @@ strong interest in concentrating top AI talent and research in China, using the 
 other countries. However, its sentiment and current implementation involve aggressive expansion of military use of AI. This has indeed 
 been practiced in “collaborations between defense and academic institutions in China,” and in particular a lab launched by Tsinghua 
 University aims to create “a platform for the dual-use of emerging technologies, particularly artificial intelligence” 
-(https://futureoflife.org/2019/05/09/state-of-ai/). The recent [Beijing AI Principles](https://baip.baai.ac.cn/en?fbclid=IwAR2HtIRKJxxy9Q1Y953H-2pMHl_bIr8pcsIxho93BtZY-FPH39vV9v9B2eY) 
+([Future of Life](https://futureoflife.org/2019/05/09/state-of-ai/)). The recent [Beijing AI Principles](https://baip.baai.ac.cn/en?fbclid=IwAR2HtIRKJxxy9Q1Y953H-2pMHl_bIr8pcsIxho93BtZY-FPH39vV9v9B2eY) 
 (BAIP) published by prominent Chinese AI researchers (not the government) do appear to represent a step in the right direction, 
 discussing guidelines for proper, safe, and equitable AI development in regard to R&D, use, and governance. While many of the principles 
 are agreeable with taglines such as “Do Good”, “Be Responsible”, and “Be Ethical”, the BAIP has received [criticism](https://technode.com/2019/06/13/insights-beijing-ai-principles-a-step-in-the-right-direction-but-still-not-enough/) 
@@ -200,19 +200,19 @@ AI safety and security issues indeed appear to be on Beijing’s radar, but thei
 pose some issues as a result of an aggressively inserting their voice and only taking input from a homogeneous set of actors on national 
 AI policy. While there don’t appear to be detailed policy guidelines on AI safety and security from the Chinese government, a major 
 government-affiliated think tank released an expansive white paper on AI and security last year that “offers a multidimensional 
-assessment of security and safety risks and potential ways to respond to them related to AI” (https://www.newamerica.org/cybersecurity-initiative/digichina/blog/online-symposium-chinese-thinking-ai-security-comparative-context/). 
+assessment of security and safety risks and potential ways to respond to them related to AI” ([New America](https://www.newamerica.org/cybersecurity-initiative/digichina/blog/online-symposium-chinese-thinking-ai-security-comparative-context/)). 
 The AIDP and the BAIP show how issues about AI safety, security, and ethics have gained traction in the Chinese AI research community. 
 One article notes that given the potential for Chinese-developed AI algorithms to “have effects on users outside of China, China’s 
 government aims to advance global efforts to set standards around ethical and social issues related to AI algorithm development” 
-(https://www.newamerica.org/cybersecurity-initiative/digichina/blog/chinese-interests-take-big-seat-ai-governance-table/). It also points 
+([New America](https://www.newamerica.org/cybersecurity-initiative/digichina/blog/chinese-interests-take-big-seat-ai-governance-table/)). It also points 
 out how China’s drive to help set AI standards has some motivation in economic gains, commercial competitiveness, and the international 
 prestige of “having a seat at the table” in settings such as global governance and the creation of international AI standards. While this 
 attention is indeed a positive step for China, major civil society groups of the kind that are well-represented in discussions in the US 
-and Canada (such as ordinances that allow for civic oversight when AI-based systems are deployed (https://www.openglobalrights.org/how-can-AI-amplify-civic-freedoms/)) 
+and Canada (such as ordinances that allow for civic oversight when AI-based systems are deployed ([Open Global Rights](https://www.openglobalrights.org/how-can-AI-amplify-civic-freedoms/))) 
 are unfortunately absent from the table in leadership and participation in discussions around AI safety and standards in China. Rather, 
 private sector actors appear to be dominating the conversation. While China is indeed recognizing the need for standards and safety, 
 there is some worry that “China’s assertive approach to standards-setting will result in technological lock-in and stifle competition” 
-(https://www.newamerica.org/cybersecurity-initiative/digichina/blog/chinese-interests-take-big-seat-ai-governance-table/). 
+([New America](https://www.newamerica.org/cybersecurity-initiative/digichina/blog/chinese-interests-take-big-seat-ai-governance-table/)). 
 
 
 ### Canada
@@ -238,7 +238,7 @@ Separately from its general strategy focused on Canada’s leadership in AI R&D,
 systems which have the potential to make society-influencing decisions and greatly impact the lives of many people. Canada’s University 
 of Montreal has put forth a [document](https://www.montrealdeclaration-responsibleai.com/the-declaration) detailing principles for the 
 responsible use of AI called the Montreal Declaration, “forged on the basis of vast consensus” of public opinions and jointly created by 
-philosophers, sociologists, jurists, and AI researchers (http://theconversation.com/the-montreal-declaration-why-we-must-develop-ai-responsibly-108154). 
+philosophers, sociologists, jurists, and AI researchers ([The Conversation](http://theconversation.com/the-montreal-declaration-why-we-must-develop-ai-responsibly-108154)). 
 Of the ten principles laid out, those of note in our evaluation are the principles of well-being, respect for autonomy, protection of 
 privacy and intimacy, democratic participation, equity, diversity and inclusion, and prudence. The Declaration represents a commitment 
 by Canada to proactively manage the societal impact of AI, and Canada’s new [Advisory Council on Artificial Intelligence](https://www.newswire.ca/news-releases/government-of-canada-creates-advisory-council-on-artificial-intelligence-838598005.html), 
