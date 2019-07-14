@@ -182,7 +182,7 @@ the [OECD](http://www.oecd.org/going-digital/ai/principles/)).
 
 <figure>
       <img src="/content/editorials/images/evaluating-national-ai-strategies/china-papers-sector.png" alt="Papers by sector affiliation in China"/>
-      <figcaption>AI Publications in China are largely affiliated with the government. | Figure by [Artificial Intelligence Index](http://cdn.aiindex.org/2018/AI%20Index%202018%20Annual%20Report.pdf).</figcaption>
+      <figcaption>AI Publications in China are largely affiliated with the government. | Figure by [Artificial Intelligence Index(http://cdn.aiindex.org/2018/AI%20Index%202018%20Annual%20Report.pdf).</figcaption>
 </figure>
 
 While the BAIP makes the point that addressing AI bias and fairness is important, China does not have much in the way of concrete 
