@@ -6,6 +6,7 @@ tags: [fairness, bias, policy]
 excerpt: "Constructing a set of three evaluative criteria for national AI strategy, and using them to consider US, Chinese, and Canadain policy."
 permalink: /editorials/evaluating-national-ai-strategies
 ---
+
 With a number of developed countries prioritizing research and development in AI, both these nations and AI research institutes are 
 focusing on whether these policies are indeed well-considered. There is plenty of information both covering and generally evaluating 
 the AI policies of different nations, such as the US and China. In this editorial, we add to this conversation by evaluating national AI 
@@ -23,7 +24,7 @@ needs to be specific and concrete enough to have actionable recommendations, so 
 1. Given the potential for AI to have transformative effects on many sectors of society, it is vitally important to ensure that research
 and development of AI technology is both safe and regulated enough to avoid catastrophic consequences. 
 2. Further, the potential for AI systems to amplify already existing assumptions and biases that have proven to be problematic should 
-also be taken into account--we should do our best to make sure that the use of these systems respects fairness, ethics, and human rights. In particular, the FHI points out that “AI has the potential to have profound social justice implications if it enables divergent access, disparate systemic impacts, or the exasperation of discrimination and inequalities” (https://futureoflife.org/ai-policy-challenges-and-recommendations#Fairness). 
+also be taken into account--we should do our best to make sure that the use of these systems respects fairness, ethics, and human rights. In particular, the FHI points out that “AI has the potential to have profound social justice implications if it enables divergent access, disparate systemic impacts, or the exasperation of discrimination and inequalities” (FHI). 
 3. Lastly, the potential for AI development to create competitiveness and race conditions also needs to be considered in national 
 strategies. That is to say, while healthy competitiveness can indeed aid the development of AI, countries should be careful to avoid 
 allowing this to run the risk of arms races and speedy development that pays no attention to the impacts of developing AI. 
@@ -72,7 +73,7 @@ controllability of AI systems.
 ### United States
 
 <figure>
-      <img src="/content/editorials/images/evaluating-national-ai-strategy/us-ai-map.png" alt="US AI Policy Map"/>
+      <img src="/content/editorials/images/evaluating-national-ai-strategies/us-ai-map.png" alt="US AI Policy Map"/>
       <figcaption>US AI policy graph from CLTC: shaded squares indicate areas of focus <a href="https://cltc.berkeley.edu/wp-content/uploads/2019/02/CLTC_Cussins_Toward_AI_Security.pdf">(source)</a></figcaption>
 </figure>
 
@@ -90,7 +91,7 @@ research, the bill calls for the development of standards to evaluate AI algorit
 on both the technical and societal aspects of AI. 
 
 <figure>
-      <img src="/content/editorials/images/evaluating-national-ai-strategy/ai-congress-mentions.png" alt="AI/ML Mentions in US Congress"/>
+      <img src="/content/editorials/images/evaluating-national-ai-strategies/ai-congress-mentions.png" alt="AI/ML Mentions in US Congress"/>
       <figcaption>Discussions about Artificial Intelligence and Machine Learning in U.S. Congress have drastically increased in recent years. | Figure by McKinsey.</figcaption>
 </figure>
 
@@ -130,7 +131,7 @@ of AI and other related topics.
 ### China
 
 <figure>
-      <img src="/content/editorials/images/evaluating-national-ai-strategy/china-ai-map.png" alt="China AI Policy Map"/>
+      <img src="/content/editorials/images/evaluating-national-ai-strategies/china-ai-map.png" alt="China AI Policy Map"/>
       <figcaption>China AI policy graph from CLTC: shaded squares indicate areas of focus <a href="https://cltc.berkeley.edu/wp-content/uploads/2019/02/CLTC_Cussins_Toward_AI_Security.pdf">(source)</a></figcaption>
 </figure>
 
@@ -155,7 +156,7 @@ When it comes to finding ways to apply AI for purposes like consumer goods, this
 are forced to compete in making their AI-powered products high-performance and competitively priced.
 
 <figure>
-      <img src="/content/editorials/images/evaluating-national-ai-strategy/top-ai-papers-share.png" alt="National share of top AI papers"/>
+      <img src="/content/editorials/images/evaluating-national-ai-strategies/top-ai-papers-share.png" alt="National share of top AI papers"/>
       <figcaption>Historical and projected share of top 10% of AI papers by U.S. and China | Figure by Allen Institute for Artificial Intelligence](https://medium.com/ai2-blog/china-to-overtake-us-in-ai-research-8b6b1fe30595).</figcaption>
 </figure>
 
@@ -180,7 +181,7 @@ the UK’s [House of Lords](https://social.shorthand.com/LordsAICom/32KXpihQLj/a
 the [OECD](http://www.oecd.org/going-digital/ai/principles/)).
 
 <figure>
-      <img src="/content/editorials/images/evaluating-national-ai-strategy/china-papers-sector.png" alt="Papers by sector affiliation in China"/>
+      <img src="/content/editorials/images/evaluating-national-ai-strategies/china-papers-sector.png" alt="Papers by sector affiliation in China"/>
       <figcaption>AI Publications in China are largely affiliated with the government. | Figure by [Artificial Intelligence Index](http://cdn.aiindex.org/2018/AI%20Index%202018%20Annual%20Report.pdf).</figcaption>
 </figure>
 
@@ -217,7 +218,7 @@ there is some worry that “China’s assertive approach to standards-setting wi
 ### Canada
 
 <figure>
-      <img src="/content/editorials/images/evaluating-national-ai-strategy/canada-ai-map.png" alt="Canada AI Policy Map"/>
+      <img src="/content/editorials/images/evaluating-national-ai-strategies/canada-ai-map.png" alt="Canada AI Policy Map"/>
       <figcaption>Canada AI policy graph from CLTC: shaded squares indicate areas of focus <a href="https://cltc.berkeley.edu/wp-content/uploads/2019/02/CLTC_Cussins_Toward_AI_Security.pdf">(source)</a></figcaption>
 </figure>
 
