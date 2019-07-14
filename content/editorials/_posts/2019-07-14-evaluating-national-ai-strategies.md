@@ -157,7 +157,7 @@ are forced to compete in making their AI-powered products high-performance and c
 
 <figure>
       <img src="/content/editorials/images/evaluating-national-ai-strategies/top-ai-papers-share.png" alt="National share of top AI papers"/>
-      <figcaption>Historical and projected share of top 10% of AI papers by U.S. and China | Figure by Allen Institute for Artificial Intelligence](https://medium.com/ai2-blog/china-to-overtake-us-in-ai-research-8b6b1fe30595).</figcaption>
+      <figcaption>Historical and projected share of top 10% of AI papers by U.S. and China | Figure by [Allen Institute for Artificial Intelligence](https://medium.com/ai2-blog/china-to-overtake-us-in-ai-research-8b6b1fe30595).</figcaption>
 </figure>
 
 While China’s plans and statements boast an interest in taking leadership on global governance for AI, they lack specificity and 
