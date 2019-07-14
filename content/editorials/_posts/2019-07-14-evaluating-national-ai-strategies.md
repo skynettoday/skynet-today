@@ -1,10 +1,10 @@
 ---
-title: "Evaluating National AI Strategies: Three Criteria and their Role in American, Chinese, and Canadian Policies"
-author: [daniel_bashir](db7894.github.io)
-editor: jacky_liang, andrey_kurenkov
-tags: [fairness, bias, policy]
-excerpt: "Constructing a set of three evaluative criteria for national AI strategy, and using them to consider US, Chinese, and Canadain policy."
-permalink: /editorials/evaluating-national-ai-strategies
+title: "Has AI surpassed humans at translation? Not even close!"
+author: [sharon_zhou]
+editor: [andrey_kurenkov,abi_see]
+tags: [NLP,translation,overview]
+excerpt: "Neural network translation systems still have many significant issues which make them far from superior to human translators"
+permalink: /editorials/state_of_nmt
 ---
 
 With a number of developed countries prioritizing research and development in AI, both these nations and AI research institutes are 
