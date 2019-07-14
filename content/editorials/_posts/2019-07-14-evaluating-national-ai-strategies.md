@@ -1,6 +1,6 @@
 ---
 title: "Evaluating National AI Strategies: Three Criteria and their Role in American, Chinese, and Canadian Policies"
-author: [daniel_bashir](db7894.github.io)
+author: [daniel_bashir]
 editor: [jacky_liang, andrey_kurenkov]
 tags: [policy, bias, fairness]
 excerpt: "Constructing a set of three evaluative criteria for national AI strategy, and using them to consider US, Chinese, and Canadain policy"
