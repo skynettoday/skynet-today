@@ -61,7 +61,7 @@ Finally, strong accountability and oversight mechanisms should be put into place
 <span>3.</span> [Safety](https://futureoflife.org/ai-policy-challenges-and-recommendations#Safety) - AI systems should only be used if they have well-understood and accepted risks and safety guarantees.
 
 The final criterion centers on questions of AI safety--in particular, we find it important to evaluate how much priority and research 
-national strategies allot to making sure that problems like misaligned values between AI and humans that can cause AI to pose a threat 
+national strategies allot to problems like misaligned values between AI and humans that can cause AI to pose a threat 
 to individuals and institutions. Important questions to be considered include whether AI systems are given enough time to be tested for 
 safety and unintended consequences, whether value alignment is considered, and how much priority national strategies give to safety and 
 controllability of AI systems.
