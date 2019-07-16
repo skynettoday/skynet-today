@@ -1,7 +1,7 @@
 ---
-title: "Evaluating National AI Strategies: Three Criteria and their Role in American, Chinese, and Canadian Policies"
+title: "AI Strategies of U.S., China, and Canada in Global Governance, Fairness, and Safety"
 author: [daniel_bashir]
-editor: [jacky_liang, andrey_kurenkov]
+editor: [jacky_liang]
 tags: [policy, bias, fairness]
 excerpt: "Constructing a set of three evaluative criteria for national AI strategy, and using them to consider US, Chinese, and Canadain policy"
 permalink: /editorials/evaluating-national-ai-strategies
@@ -40,7 +40,7 @@ for countries hoping to develop both safe and effective AI.
 
 ### Criteria
 
-1. [Global Governance](https://futureoflife.org/ai-policy-challenges-and-recommendations#Governance) - Nations should cooperate on the 
+<div>1.</div> [Global Governance](https://futureoflife.org/ai-policy-challenges-and-recommendations#Governance) - Nations should cooperate on the 
 development and the standardization of AI.
 
 The first criterion, and arguably the most important because it will likely have the potential to impact all the others, states that 
@@ -49,9 +49,7 @@ international cooperation is vital to guide the safe and beneficial development 
 conditions and security threats. Dangerous race conditions indicate situations where otherwise healthy competition to develop systems 
 like AI may result in unforeseen and unwanted goals, such as the development of AI-powered weapons in both military and cyber contexts.
 
-
-
-2. [Fairness](https://futureoflife.org/ai-policy-challenges-and-recommendations#Fairness) - AI should be developed and deployed in a 
+<div>2.</div> [Fairness](https://futureoflife.org/ai-policy-challenges-and-recommendations#Fairness) - AI should be developed and deployed in a 
 way that minimizes bias and benefits everyone.
 
 The second criterion recommends that groups engaged in the development of AI pay attention to how AI applications can amplify existing 
@@ -60,8 +58,7 @@ and draw upon different disciplines, such as philosophy and psychology. Further,
 especially marginalized ones, within AI R&D should be made open, and genuinely inclusive workplaces should become a sought-after goal. 
 Finally, strong accountability and oversight mechanisms should be put into place along with ethical codes for steering the AI field. 
 
-3. [Safety](https://futureoflife.org/ai-policy-challenges-and-recommendations#Safety) - AI systems should only be used if they have 
-well-understood and accepted risks and safety guarantees.
+<div>3.</div> [Safety](https://futureoflife.org/ai-policy-challenges-and-recommendations#Safety) - AI systems should only be used if they have well-understood and accepted risks and safety guarantees.
 
 The final criterion centers on questions of AI safety--in particular, we find it important to evaluate how much priority and research 
 national strategies allot to making sure that problems like misaligned values between AI and humans that can cause AI to pose a threat 
@@ -77,8 +74,7 @@ controllability of AI systems.
       <figcaption>US AI policy graph from CLTC: shaded squares indicate areas of focus <a href="https://cltc.berkeley.edu/wp-content/uploads/2019/02/CLTC_Cussins_Toward_AI_Security.pdf">(source)</a></figcaption>
 </figure>
 
-While the Obama administration produced a [document](https://obamawhitehouse.archives.gov/sites/whitehouse.gov/files/documents/Artificial-Intelligence-Automation-Economy.PDF) 
-on AI policy towards the end of his tenure, the Trump administration released its own [Executive Order](https://www.whitehouse.gov/presidential-actions/executive-order-maintaining-american-leadership-artificial-intelligence/) 
+While the Obama administration produced a [document](https://obamawhitehouse.archives.gov/sites/whitehouse.gov/files/documents/Artificial-Intelligence-Automation-Economy.PDF) on AI policy towards the end of his tenure, the Trump administration released its own [Executive Order](https://www.whitehouse.gov/presidential-actions/executive-order-maintaining-american-leadership-artificial-intelligence/) 
 on maintaining American leadership in Artificial Intelligence. Trump’s order does seem to take these three criteria into 
 account, but as we will see, some subtle issues do remain. The Executive Order calls on officials in charge of management, budget, 
 economics, and domestic policy, to issue a memorandum that will inform regulatory and non-regulatory approaches, i.e. policies more 
@@ -126,8 +122,6 @@ Bill also specifies that meetings of US officials on the topic of AI should incl
 explainability, and trustworthiness--these are listed as educational priorities along with societal and ethical implications for the use 
 of AI and other related topics. 
 
-
-
 ### China
 
 <figure>
@@ -144,8 +138,8 @@ funding and increasing manpower by attracting talent (i.e. Baidu’s hiring of Q
 shifting existing industry forces in tech towards AI. Further, intentional lack of regulation on data use allows apps like WeChat, 
 China’s “everything” app used for everything from texting to payments, [to collect far more data on consumers and citizens than apps from many other countries are able to](https://www.theepochtimes.com/wechat-confirms-it-gives-just-about-all-private-user-data-to-the-chinese-regime_2296960.html) -- 
 any and all of this information is then shared with the government in Beijing. There has been a recent push towards consumer data 
-protection, but the massive amount of data and increased surveillance have already done their job in helping provide plenty of data for 
-AI to be integrated into daily consumer life (https://slate.com/technology/2019/02/china-consumer-data-protection-privacy-surveillance.html). 
+protection, but the massive amount of data and increased surveillance [have already done their job](https://slate.com/technology/2019/02/china-consumer-data-protection-privacy-surveillance.html) in helping provide plenty of data for 
+AI to be integrated into daily consumer life . 
 Further, even a data protection regime in China will not “undermine the government’s ability to maintain control” even in its quest to 
 gain consumer trust (Slate). This government-supported push towards AI R&D, coupled with China’s lack of data regulations and unique 
 startup culture that cares less for Intellectual Property, has allowed it to make great strides in finding ways to apply AI to daily 
