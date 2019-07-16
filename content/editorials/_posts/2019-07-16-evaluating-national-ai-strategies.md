@@ -40,7 +40,7 @@ for countries hoping to develop both safe and effective AI.
 
 ### Criteria
 
-<div>1.</div> [Global Governance](https://futureoflife.org/ai-policy-challenges-and-recommendations#Governance) - Nations should cooperate on the 
+<span>1.</span> [Global Governance](https://futureoflife.org/ai-policy-challenges-and-recommendations#Governance) - Nations should cooperate on the 
 development and the standardization of AI.
 
 The first criterion, and arguably the most important because it will likely have the potential to impact all the others, states that 
@@ -49,7 +49,7 @@ international cooperation is vital to guide the safe and beneficial development 
 conditions and security threats. Dangerous race conditions indicate situations where otherwise healthy competition to develop systems 
 like AI may result in unforeseen and unwanted goals, such as the development of AI-powered weapons in both military and cyber contexts.
 
-<div>2.</div> [Fairness](https://futureoflife.org/ai-policy-challenges-and-recommendations#Fairness) - AI should be developed and deployed in a 
+<span>2.</span> [Fairness](https://futureoflife.org/ai-policy-challenges-and-recommendations#Fairness) - AI should be developed and deployed in a 
 way that minimizes bias and benefits everyone.
 
 The second criterion recommends that groups engaged in the development of AI pay attention to how AI applications can amplify existing 
@@ -58,7 +58,7 @@ and draw upon different disciplines, such as philosophy and psychology. Further,
 especially marginalized ones, within AI R&D should be made open, and genuinely inclusive workplaces should become a sought-after goal. 
 Finally, strong accountability and oversight mechanisms should be put into place along with ethical codes for steering the AI field. 
 
-<div>3.</div> [Safety](https://futureoflife.org/ai-policy-challenges-and-recommendations#Safety) - AI systems should only be used if they have well-understood and accepted risks and safety guarantees.
+<span>3.</span> [Safety](https://futureoflife.org/ai-policy-challenges-and-recommendations#Safety) - AI systems should only be used if they have well-understood and accepted risks and safety guarantees.
 
 The final criterion centers on questions of AI safety--in particular, we find it important to evaluate how much priority and research 
 national strategies allot to making sure that problems like misaligned values between AI and humans that can cause AI to pose a threat 
