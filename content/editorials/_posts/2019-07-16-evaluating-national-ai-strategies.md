@@ -3,7 +3,7 @@ title: "AI Strategies of U.S., China, and Canada in Global Governance, Fairness,
 author: [daniel_bashir]
 editor: [jacky_liang]
 tags: [policy, bias, fairness]
-excerpt: "Constructing a set of three evaluative criteria for national AI strategy, and using them to consider US, Chinese, and Canadain policy"
+excerpt: "Constructing a set of three evaluative criteria for national AI strategy, and using them to consider US, Chinese, and Canadian policy"
 permalink: /editorials/evaluating-national-ai-strategies
 ---
 
