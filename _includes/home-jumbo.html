@@ -1,0 +1,39 @@
+{% assign posts=site.posts | where:"highlight", true %}
+{% for post in posts %}
+    <div class="jumbotron jumbotron-fluid jumbotron-home pt-0 pr-0 pt-0 pb-0 bg-black position-relative border-0">        
+            <div class="row justify-content-between">
+                <div class="col-md-6 p-5 align-self-center">
+                <div class="pl-2 pr-2">
+                    <a href="{{ site.baseurl }}{{ post.url }}">
+                    <h1 class="mb-4 text-white" 
+                    data-aos="fade-up"
+                    data-aos-easing="ease"
+                    data-aos-delay="0"
+                    data-aos-offset="0"
+                    data-aos-duration="700">{{post.title}}</h1>
+
+                    <p class="lead text-gray font-weight-normal"  data-aos="fade-up"
+                    data-aos-easing="ease"
+                    data-aos-delay="400"
+                    data-aos-offset="0"
+                    data-aos-duration="800">
+                        {{ post.excerpt | strip_html | strip_newlines | truncate: 136 }}
+                    </p>
+                    </a>
+
+                    <div class="link-with-line" data-aos="fade-left"
+                    data-aos-easing="ease"
+                    data-aos-delay="900"
+                    data-aos-offset="0"
+                    data-aos-duration="800">
+                    <span class="line"></span>
+                    <a href="{{ site.baseurl }}{{ post.url }}" class="text-white text-uppercase readmore">Read More</a>
+                    </div>
+                </div>
+                </div>
+                <div class="col-md-6 d-none d-md-block" style="min-height:450px;">	
+                    <img alt="post.title" class="fitimage" src="{{site.baseurl}}/{{ post.image.feature }}">
+                </div>
+            </div>
+        </div>  
+{% endfor %}

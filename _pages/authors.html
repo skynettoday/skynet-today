@@ -1,0 +1,62 @@
+---
+title: "Authors"
+description: "Our amazing contributors at Skynet Today"
+layout: page
+permalink: "/authors.html"
+share: true
+---
+
+<div class="row">
+    <div class="col-md-8">
+        <h6 class="font1 fancy-title text-uppercase">
+            <span>Posts by</span>
+        </h6>
+    <div class="gap-y listrecent listrecent listauthor">
+    {% for author in site.data.authors %}
+        <div class="authorbox p-5 border-left border-right border-top" id="{{author[1].name | downcase | replace: ' ', '_' | replace: '.', '_'| replace: 'ö', 'o'}}">           
+            <div class="row">
+            <div class="col-12 col-md-2 mb-4 mb-md-0"><img width="120" alt="{{ author[1].name }}" src="{{site.baseurl}}/assets/img/authors/{{ author[1].avatar }}" class="rounded-circle"></div>
+            <div class="col">
+           
+            <h5 class="text-black mb-2 d-block"> {{ author[1].name }} </h5> 
+
+            {% if author[1].web %}
+            <a class="text-muted d-block small" target="_blank" href="{{ author[1].web }}">★ {{ author[1].web | replace: 'https://', '' | replace: 'http://', '' | replace: 'www.', '' }}</a>
+            {% endif %}
+
+            {% if  author[1].twitter %}
+            <a class="text-muted d-block" target="_blank" href="https://twitter.com/{{ author[1].twitter }}">
+            <small class="d-inline-block mt-1 font-weight-normal">@{{ author[1].twitter }}</small>                            
+            </a>
+            {% endif %}
+            {% if  author[1].description %}
+            <div class="d-block mt-3 font500">{{ author[1].description }}</div>
+            {% endif %}
+            {% assign posts = site.posts | where: "author", author[0] %}
+            <ul class="mt-4 post-list">
+            {% for post in posts %}
+            <li><a class="text-black" href="{{site.baseurl}}{{post.url}}">{{ post.title }}</a></li>
+            {% endfor %}
+            </ul>
+            </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+
+    </div>
+
+    <div class="col-md-4">
+        <div class="sticky-top">            
+        <h6 class="font1 fancy-title text-uppercase"><span>Contribute</span></h6>
+        <h5>Skynet Today is seeking collaborators and editorial submissions!</h5>
+        <p>AI misinformation, overhyping, and doomsaying are more rampant than ever and our small team could sure benefit from a few more excited and knowledgeable collaborators and contributors.</p>
+        <p> If you want to contribute to this site as either a collaborator or with a submission, reach out via our email (<b>editorial @ skynettoday.com</b>) or use the button below.</p>        
+        <p>Tell us a bit about your background and how you would like to contribute to Skynet Today, and we’ll take it from there!</p>
+        <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLScDRqeP_jaI10g-AMy_CvqVhjgyi0xF783QKT0O10f3R-sw_g/viewform" class="mb-2 btn btn-dark bg-black text-white border-0 rounded-0">Contribute to Skynet Today</a>
+        </div>
+    </div>
+
+</div>
+
+

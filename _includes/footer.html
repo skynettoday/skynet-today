@@ -1,20 +1,53 @@
-<div class="footer-wrapper">
-  <footer role="contentinfo" class="entry-wrapper">
+<footer class="mt-5">
 
-  {% if site.owner.google.ad-client and site.owner.google.ad-slot %}{% include ad-footer.html %}{% endif %}
-  
-  {% if page.no_subscribe==Nil %}
-    {% include mailchimp-sign-up.html %}
-  {% endif %}
-  {%- if site.footer_links -%}
-    {% include social-icons.html %}
-  {%- endif -%}
-  
-  <div id='survey-links'>{% include survey-links.html %}</div>
+    {% unless page.footer_minimal %}
 
- <span> &copy; {{ site.time | date: '%Y' }} {{ site.owner.name }} | Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/so-simple-jekyll-theme/" rel="nofollow">So Simple Theme</a> | <a href="/privacy">Privacy Policy</a></span>
+        <div class="row">
+           
+            <div class="col-md-8">
+                <div class="subscribe-footer">
+                    <div class="row align-items-center">
+                        <div class="col-md-3 text-center">
+                            <img class="newsletter-logo" width="120" alt="{{site.name}}" src="{{ site.baseurl }}/assets/img/graphics/site-logo.png">
+                        </div>
+                        <div class="col-md-8">  
+                            <h4 class="mb-3 text-left text-black">Subscribe & follow Skynet Today for the latest AI news and trends</h4>                 
+                            {% include mailchimp-sign-up.html %}
+                            <div class="mt-4 text-center">
+                            {% if site.footer_links %}
+                                {% include social-icons.html %}
+                            {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-  </footer>
-</div><!-- /.footer-wrapper -->
+            <div class="col-md-4">
+                <div class="h-100 footer-about">
+                   <h5 class="mb-3" style="margin-top: -30px;">We'd love to hear from you!</h5>
+                        <ul>
+                            <li><a target="_blank" href="https://goo.gl/forms/6e34w1B6vImi9wkZ2"><b>Provide feedback</b></a></li>
+                            <li> <a target="_blank" href="https://goo.gl/forms/BUN03yZmpS0L2uMY2"><b>Suggest coverage</b></a></li>
+                            <li><a target="_blank" href="https://goo.gl/forms/XVMpnbggACmHWfxW2"><b>Express interest in helping</b></a></li>
+                            <li><a target="_blank" href="{{site.baseurl}}/join"><b>Submit an article</b></a></li>
+                        </ul>
+            <br><hr><br>
+            <p>We would like to thank <a href="https://hai.stanford.edu/">Stanford HAI</a> for its support.</p>
+            <a href="https://hai.stanford.edu/"><img alt="{{site.name}}" src="{{ site.baseurl }}/assets/img/graphics/hai.png"></a>
+            </div>
+            </div>
+        </div>
+    
+    {% endunless %}    
+</footer>
+</div>
 
-
+<div class="bg-black pt-4 pb-4 footer-credits mt-4rem">
+    <div class="container">
+    <div class="d-block text-center text-md-left d-md-flex justify-content-between">
+    <span class="d-block d-md-inline-block mt-3 mt-md-0"> &copy; {{ site.time | date: '%Y' }} {{ site.owner.name }} </span>
+    <span><a href="{{ site.baseurl }}/privacy">Privacy Policy</a> / <a href="{{ site.baseurl }}/contact">Contact</a></span>
+    </div>
+    </div>
+</div>

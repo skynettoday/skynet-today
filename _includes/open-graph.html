@@ -3,13 +3,13 @@
 {% if page.excerpt %}<meta name="twitter:description" content="{{ page.excerpt | strip_html }}">{% endif %}
 {% if site.owner.twitter %}<meta name="twitter:site" content="@{{ site.owner.twitter }}">{% endif %}
 {% if author.twitter %}<meta name="twitter:creator" content="@{{ author.twitter }}">{% endif %}
-{% if page.image.feature %}
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="{{ site.url }}/{{ page.image.feature }}">
+{% if page.image.external %}
+<meta name="twitter:image" content="{{ page.image.external }}">
 {% else %}
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="{{ site.url }}/images/{{ site.logo }}">
+<meta name="twitter:image" content="{{ site.url }}/{{ page.image.feature }}">
 {% endif %}
+
 <!-- Open Graph -->
 <meta property="og:locale" content="{{ site.locale }}">
 <meta property="og:type" content="article">
