@@ -1,0 +1,59 @@
+<div class="card themecard border h-100 rounded-0">
+<a href="{{ site.baseurl }}{{ post.url }}">
+   {% if post.image.external %}
+      <img src="{{ post.image.external }}" class="cardthumb" alt="{{ post.title }}">
+   {% else %}
+      <img src="{{ site.baseurl }}/{{ post.image.feature }}" class="cardthumb" alt="{{ post.title }}">
+   {% endif %}
+</a>
+<div class="card-body">
+<div class="list-categories">
+   {% unless page.url contains "categories" %}
+   {% for category in post.categories %}
+   <style>.{{category}}-color {color: #{{ site.[category] }};}</style>
+   <a class="text-uppercase {{category}}-color catstyle" href="{{site.baseurl}}/categories/{{ category | replace: " ","-" }}">{{ category }}</a>  <span class="sepcat">/</span> 
+   {% endfor %}
+   {% endunless %}  
+   {% for tag in post.tags %}
+   <a class="text-capitalize text-muted" href="{{site.baseurl}}/tags#{{ tag | replace: " ","-" }}">{{ tag }}</a><span class="sep">, </span>
+   {% endfor %}
+</div>
+<a href="{{ site.baseurl }}{{ post.url }}">
+<h1 class="mt-1 mb-2"><span class="effect-underline">{{ post.title }}</span></h1>        
+<span class="text-muted d-block">{{ post.excerpt }}</span>
+</a>
+</div>
+<div class="card-footer border-0 pt-0 bg-white small">
+<div class="d-flex justify-content-between align-items-center">
+
+
+{{ post.date | date: "%B %-d, %Y" }}
+
+
+<div>
+
+<div class="card-authors">
+{% if post.author %}
+
+{% for a in post.author %}
+
+   {% assign author = site.data.authors[a] %}  
+
+   <a href="{{site.baseurl}}/authors#{{author.name | downcase | replace: ' ', '_' | replace: '.', '_'| replace: 'ö', 'o'}}">
+   <img style="height:30px;width:30px;" src="{{ site.baseurl }}/assets/img/authors/{{ author.avatar }}"
+   class="bio-photo mr-1" alt="{{ author.name }} bio photo" title="{{ author.name }}"/>  
+   </a>
+  
+   <a class="text-muted" href="{{site.baseurl}}/authors#{{author.name | downcase | replace: ' ', '_' | replace: '.', '_'| replace: 'ö', 'o'}}">
+   {% if post.author.first == post.author.last %} {{ author.name }} {% endif %}
+   </a>
+  
+{% endfor %}
+
+{% endif %}
+</div>
+
+</div>
+</div>
+</div>
+</div>

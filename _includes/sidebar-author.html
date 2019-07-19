@@ -1,17 +1,28 @@
-<div class="author-credit">
-  {% if author.avatar contains 'http' %}
-      <img src="{{ author.avatar }}" class="bio-photo" alt="{{ author.name }} bio photo"/>
-  {% elsif author.avatar %}
-      <img src="{{ site.url }}/images/authors/{{ author.avatar }}"
-       class="bio-photo" alt="{{ author.name }} bio photo"/>
-  {% endif %}
-  <span class="author vcard"><a href={{author.web}}>
-          <span class="fn">{{ author.name }}</span></a>
-       
-  {% if author.twitter %}
-          <br>
-          <small><a href=https://twitter.com/{{ author.twitter }}>
-          <span class="fn">@{{ author.twitter }}</span></a></small>
-  {% endif %}
-  </span>
+<div class="author-credit d-flex align-items-center mt-4">
+
+    <a href="{{site.baseurl}}/authors#{{author.name | downcase | replace: ' ', '_' | replace: '.', '_'| replace: 'ö', 'o'}}"title="View more posts by {{author.name}}">
+        {% if author.avatar contains 'http' %}
+        <img src="{{ author.avatar }}" class="bio-photo mr-2" alt="{{ author.name }} bio photo"/>
+        {% elsif author.avatar %}
+        <img src="{{ site.baseurl }}/assets/img/authors/{{ author.avatar }}"
+        class="bio-photo mr-3" alt="{{ author.name }} bio photo"/>
+        {% endif %}
+    </a>
+
+    <span class="author vcard">
+
+        <a href="{{site.baseurl}}/authors#{{author.name | downcase | replace: ' ', '_' | replace: '.', '_'| replace: 'ö', 'o'}}" title="View more posts by {{author.name}}">
+            <span class="fn text-black font-weight-bold d-block">
+            {{ author.name }}
+            </span>
+        </a>
+
+        {% if author.twitter %}           
+            <a class="text-dark" href=https://twitter.com/{{ author.twitter }}>
+            <span class="fn">@{{ author.twitter }}</span>
+            </a>            
+        {% endif %}
+
+    </span>
+
 </div>

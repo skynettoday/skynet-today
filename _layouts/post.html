@@ -1,41 +1,113 @@
 ---
-layout: base
+layout: default
 ---
+<div class="row">
 
-<div id="main" role="main">
-  <article class="entry">
-    <div class="page-wrapper">
-      <header class="page-header">
-        <h3 class="page-title">{% if page.headline %}{{ page.headline }}{% else %}{{ page.title }}{% endif %}</h3>
-		{% if page.excerpt %} <h4>{{ page.excerpt | remove: '\[ ... \]' | remove: '\( ... \)' | markdownify | strip_html | strip_newlines | escape_once }}</h4>{% endif %}
-		  {% if page.image.feature %}<img src="{{ site.url }}/{{ page.image.feature }}" class="page-feature-image" alt="{{ page.title }}" {% if site.logo == null %}style="margin-top:0;"{% endif %}>{% if page.image.credit %}<p class="image-credit">Image credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></p>{% endif %}{% endif %}
-        
-      </header>
-      {% include sidebar.html %}
+  <div class="col-md-3 order-last order-md-first">
+      <div class="sticky-top sticky-156">
+      {% include post-sidebar.html %}
+      </div>
+  </div>
+  <div class="col-md-8">
       
-      <div class="page-content">
-        {{ content }}
-        
-        {% unless page.no_article_mailchimp %}
-          {% include mailchimp-sign-up.html %}
-        {% endunless %}
-        
-        <nav class="pagination" role="navigation">
-          {% if page.previous %}
-            <a href="{{ site.url }}{{ page.previous.url }}" class="btn" title="{{ page.previous.title }}">Previous</a>
-          {% endif %}
-          {% if page.next %}
-            <a href="{{ site.url }}{{ page.next.url }}" class="btn" title="{{ page.next.title }}">Next</a>
-          {% endif %}
-        </nav><!-- /.pagination -->
-        
-        {% include survey-links.html %} Or, comment below!
-        
-        {% if site.owner.disqus-shortname and page.comments or site.comments %}
-          <div id="disqus_thread"></div><!-- /#disqus_thread -->
-          {% include disqus-comments.html %}
+      <div class="mb-2rem post-head">        
+      <div class="page-tags">
+      <style>.{{category}}-color {color: #{{ site.[category] }};}</style>
+     {% for category in page.categories %}<span><a class="{{category}}-color text-uppercase  font-weight-bold ls05" href="{{ site.baseurl }}/categories/{{ category | replace: " ","-"  }}" title="More posts in {{ category }}">{{ category }}</a></span>{% endfor %} / {% for tag in page.tags %}<span><a class="text-dark text-capitalize" href="{{ site.baseurl }}/tags#{{ tag | replace: " ","-" }}" title="Pages tagged {{ tag }}">{{ tag }}</a></span><span class="sep">, </span>{% endfor %}
+      </div>
+      <h1 class="display-5 font-weight-bold mb-3 mt-3 text-black">{{ page.title }}</h1>
+      <h4 class="lh14 font-weight-light mb-3">{{ page.excerpt }}</h4>
+      {% if site.read_time %}
+      <img class="clockicon" src="{{site.baseurl}}/assets/img/icons/clock.svg"> {% include read-time.html %}
+      {% endif %}
+      </div>
+
+      {% if page.image.external %}
+      <img src="{{ page.image.external }}" class="page-feature-image" alt="{{ page.title }}">
+      {% else %}
+      {% unless page.image.feature contains "placeholder.png" %}
+      <img src="{{ site.baseurl }}/{{ page.image.feature }}" class="page-feature-image" alt="{{ page.title }}">
+      {% endunless %}
+      {% endif %}
+
+      {% if page.image.credit %}
+      <p class="image-credit">Image credit: {{ page.image.credit }}</p>
+      {% endif %}
+
+    
+    <div class="post-article">
+      {{ content }}
+    </div>
+  </div>
+</div>
+
+
+{% if site.owner.disqus-shortname and page.comments or site.comments %}
+<div class="row">
+<div class="col-md-3"></div>
+<div class="col-md-8">
+<div class="wrapcomments mt-5">
+<h4 class="mb-3">Leave a comment</h4>
+<div id="disqus_thread"></div><!-- /#disqus_thread -->
+{% include disqus-comments.html %}
+</div>
+</div>
+</div>
+{% endif %}
+
+
+<div class="navposts">
+    {% if page.previous.url %}<a class="prevtheme" title="Previous - {{page.previous.title}}" href="{{site.baseurl}}{{page.previous.url}}"> < </a> {% endif %}
+    {% if page.next.url %} <a class="nexttheme" title="Next - {{page.next.title}}" href="{{site.baseurl}}{{page.next.url}}"> > </a> {% endif %} 
+</div>    
+
+<div class="pt-4 pb-2 mt-5"> 
+<h6 class="text-uppercase text-center mb-3">More like this</h6>
+</div>
+<div class="row justify-content-center">
+    
+{% assign maxRelated = 3 %}
+{% assign minCommonTags =  1 %}
+{% assign maxRelatedCounter = 0 %}
+
+{% for post in site.posts %}
+
+    {% assign sameTagCount = 0 %}
+    {% assign commonTags = '' %}
+
+    {% for category in post.categories %}
+      {% if post.url != page.url %}
+        {% if page.categories contains category %}
+          {% assign sameTagCount = sameTagCount | plus: 1 %}
+          {% capture tagmarkup %} <span class="label label-default">{{ category }}</span> {% endcapture %}
+          {% assign commonTags = commonTags | append: tagmarkup %}
         {% endif %}
-      </div><!-- /.page-content -->
-    </div><!-- /.page-wrapper -->
-  </article>
-</div><!-- /#main -->
+      {% endif %}
+    {% endfor %}
+
+    {% if sameTagCount >= minCommonTags %}
+    <div class="col-md-4 mb-4">
+        {% include themecard.html %}
+    </div>
+      {% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
+      {% if maxRelatedCounter >= maxRelated %}
+        {% break %}
+      {% endif %}
+    {% endif %}
+
+  {% endfor %}
+
+</div>
+
+
+
+<div id="alertbar" class="alertbar active small">
+  <div class="container">
+    <div class="row justify-content-between align-items-center">
+      <div class="d-flex align-items-center"><strong>Follow us</strong> {% include social-icons.html %}</div>
+  
+      <div class="d-flex align-items-center text-center"><span class="mr-2">Get more <strong>AI news</strong> in your inbox:</span> {% include mailchimp-sign-up.html %}</div>
+      <span class="closealert">x</span>
+    </div>
+    </div>
+</div>
