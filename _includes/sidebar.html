@@ -12,11 +12,11 @@
     <img src="{{ site.baseurl }}/{{ post.image.feature }}" class="featuredthumb" alt="{{ post.title }}">
 {% endif %}
 
-          
+         
 <div class="wrap-feat-content ml-4">
 <div class="list-categories">
 {% for category in post.categories %}
-<style>.{{category}}-color {color: #{{ site.[category] }};}</style>
+<style>.{{category}}-color {color: #{{ site[category] }};}</style>
 <a class="text-uppercase {{category}}-color catstyle" href="{{site.baseurl}}/categories/{{ category | replace: " ","-" }}">{{ category }}</a>  <span class="sepcat">/</span>
 {% endfor %}
 {% for tag in post.tags %}
