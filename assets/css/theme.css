@@ -938,14 +938,14 @@ a.social-icon img {
 	color: #000;
 }
 /*Share*/
+#st-2 .st-btn {
+	background:#222 !Important;
+}
 #st-2 .st-btn>svg {
 	fill:#111 !Important;
 }
 #st-2 .st-total {
 	color:#555 !Important;
-}
-#st-2 .st-btn>span {
-	color:#333 !Important;
 }
 .bmc-button {
 	line-height:32px !important;
