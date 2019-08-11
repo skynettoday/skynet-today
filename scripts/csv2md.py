@@ -7,6 +7,10 @@ import pandas as pd
 import inflect
 
 
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
 _CATEGRORIES = [
     'Mini Briefs',
     'Advances & Business',
@@ -20,7 +24,7 @@ _CATEGRORIES = [
 if __name__ == "__main__":
     logging.getLogger().setLevel(logging.INFO)
     parser = argparse.ArgumentParser()
-    parser.add_argument('--template_file', '-tf', type=str, default='scripts/digest_template.md')
+    parser.add_argument('--template_file', '-tf', type=str, default='digest_template.md')
     parser.add_argument('--digest_number', '-n', type=int, required=True)
     parser.add_argument('--input_csv', '-i', type=str, required=True)
     parser.add_argument('--output_md', '-o', type=str, required=True)
@@ -45,29 +49,33 @@ if __name__ == "__main__":
     articles_map = {c : [] for c in _CATEGRORIES}
     csv = pd.read_csv(args.input_csv)
     for row_num, row in csv.iterrows():
-        print()
-        print('To which category does this article belong?')
-        print()
-        print(row['Name'])
-        print()
-        
-        for i, c in enumerate(_CATEGRORIES):
-            print('{}) {}'.format(i, c))
-        while True:
-            try:
-                print()
-                c_idx = int(input('Category Number: '))
-                c = _CATEGRORIES[c_idx]
-                break
-            except:
-                print('Please enter a valid category!')
-        print()
+        if not row['Type']:
+            print()
+            print('To which category does this article belong?')
+            print()
+            print(row['Name'])
+            print()
+            
+            for i, c in enumerate(_CATEGRORIES):
+                print('{}) {}'.format(i, c))
+            while True:
+                try:
+                    print()
+                    c_idx = int(input('Category Number: '))
+                    c = _CATEGRORIES[c_idx]
+                    break
+                except:
+                    print('Please enter a valid category!')
+            print()
+        else:
+            c = row['Type']
 
         articles_map[c].append(row)
 
     logging.info('Populating content...')
     content = ''
-    for c, items in articles_map.items():
+    for c in _CATEGRORIES:
+        items = articles_map[c]
         if len(items) > 0:
             content += '### {}\n'.format(c)
             content += '\n'
@@ -76,7 +84,6 @@ if __name__ == "__main__":
                 if c == 'Mini Briefs':
                     content += '#### [{}]({})\n'.format(item['Name'], item['URL'])
                     content += '\n'
-                    content += '{}\n'.format(item['Excerpt'])
                     content += '<one-two paragraph brief>\n'
                 else:
                     content += '* [{}]({}) - {}\n'.format(item['Name'], item['URL'], item['Excerpt'])

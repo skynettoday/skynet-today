@@ -1,9 +1,10 @@
 ---
-layout: page
-title: Privacy Policy of Skynet Today
-permalink: /privacy
+layout: page-narrow
+title: Privacy Policy
+excerpt: Privacy Policy of Skynet Today
+permalink: /privacy.html
 ---
-<h1>Privacy Policy of Skynet Today</h1>
+
 
 <p>Skynet Today operates the www.skynettoday.com website, which provides the SERVICE.</p>
 

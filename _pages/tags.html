@@ -1,0 +1,42 @@
+---
+title: "Topics"
+layout: page
+permalink: "/tags.html"
+---
+<div class="row">
+
+  <div class="col-md-8">
+
+  {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+  {% assign tags_list = site_tags | split:',' | sort %}
+
+  <ul class="tag-box inline">
+  {% for item in (0..site.tags.size) %}
+  {% unless forloop.last %}
+  {% capture this_word %}{{ tags_list[item] | strip_newlines }}{% endcapture %}
+  <li><a href="#{{ this_word  | replace: " ","-"}}">{{ this_word }} <span>{{ site.tags[this_word].size }}</span></a></li>
+  {% endunless %}
+  {% endfor %}
+  </ul>
+
+  {% for item in (0..site.tags.size) %}
+  {% unless forloop.last %}
+  {% capture this_word %}{{ tags_list[item] | strip_newlines }}{% endcapture %}
+  <h5 class="mt-5 mb-2" id="{{ this_word  | replace: " ","-"}}">{{ this_word }}</h5>
+  <ul class="post-list">
+  {% for post in site.tags[this_word] %}{% if post.title != null %}
+  <li><a class="text-black row justify-content-between border-0" href="{{site.baseurl}}{{ post.url }}"><div class="col-md-9">{{ post.title }}</div><span class="entry-date small col-md-3 text-right small text-muted"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></span></a></li>
+  {% endif %}{% endfor %}
+  </ul>
+  {% endunless %}  
+  {% endfor %}
+
+  </div>
+
+  <div class="col-md-4">
+  {% include sidebar.html %}
+  </div>
+
+</div>
+
+

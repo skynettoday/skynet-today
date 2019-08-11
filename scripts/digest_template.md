@@ -5,6 +5,7 @@ image:
   feature: content/digests/images/$digest_number$/main.png
   credit:
 tags: [digest]
+categories: [digests]
 permalink: /digests/the-$digest_number_english$
 ---
 
