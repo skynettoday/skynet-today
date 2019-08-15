@@ -2,9 +2,10 @@ andrey_kurenkov:
   name: Andrey Kurenkov
   avatar: andrey_face.jpg
   email: andreyk@stanford.com
-  web: //www.andreykurenkov.com
+  web: https://www.andreykurenkov.com
   disqus-shortname:
   twitter: andrey_kurenkov
+  description: 
 
 joshua_morton:
   name: Joshua Morton
@@ -158,7 +159,7 @@ ellen_konig:
   email: website@ellenkoenig.de
   web: https://www.ellenkoenig.de/
   twitter: ellen_koenig
-  
+
 michael_jordan:
   name: Michael I. Jordan
   avatar: michael_j_face.jpeg
@@ -171,3 +172,9 @@ matteo_pasquinelli:
   email:  mail@matteopasquinelli.org
   web: http://matteopasquinelli.com/
   twitter: mattpasquinelli
+  
+daniel_bashir:
+  name: Daniel Bashir
+  avatar: daniel_face.jpg
+  email:  dbashir@hmc.edu
+  web: https://db7894.github.io/

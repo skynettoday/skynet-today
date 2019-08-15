@@ -35,11 +35,11 @@
     {%- else -%}
       {%- assign lang = "en" -%}
   {%- endcase -%}
-  <script src="{{ '/assets/js/lunr/lunr.min.js' | absolute_url }}"></script>
-  <script src="{{ '/assets/js/search-data.json' | absolute_url }}"></script>
+  <script src="{{site.baseurl}}/assets/js/lunr/lunr.min.js"></script>
+  <script src="{{site.baseurl}}/assets/js/search-data.json"></script>
   {%- unless lang == "en" -%}
-    <script src="{{ '/assets/js/lunr/lunr.stemmer.support.min.js' | absolute_url }}"></script>
-    <script src="{{ '/assets/js/lunr/lunr.' | append: lang | append: '.min.js' | absolute_url }}"></script>
+    <script src="{{site.baseurl}}/assets/js/lunr/lunr.stemmer.support.min.js"></script>
+    <script src="{{site.baseurl}}/assets/js/lunr/lunr.' | append: lang | append: '.min.js'"></script>
   {%- endunless %}
   <script>
     var idx = lunr(function () {
@@ -87,18 +87,18 @@
             })
           });
         resultdiv.empty();
-        resultdiv.prepend('<p class="results__found">' + result.length + ' {{ site.data.text[site.locale].results_found | default: "Result(s) found" }}</p>');
+        resultdiv.prepend('<h4 class="results__found mt-5 mb-4  text-black">' + result.length + ' {{ site.data.text[site.locale].results_found | default: "Result(s) found" }}</h4>');
         for (var item in result) {
           var ref = result[item].ref;
           var searchitem =
-            '<article class="entry">' +
-              '<h3 class="entry-title">' +
-                '<a href="' + store[ref].url + '">' + store[ref].title + '</a>' +
-              '</h3>' +
-              '<div class="entry-excerpt">' +
+            '<div class="entry mb-4">' +
+              '<h5 class="entry-title">&raquo; ' +
+                '<a class="text-black" href="' + store[ref].url + '">' + store[ref].title + '</a>' +
+              '</h5>' +
+              '<div class="entry-excerpt text-muted">' +
                 '<p>' + store[ref].excerpt.split(" ").splice(0, 20).join(" ") + '...</p>' +
               '</div>' +
-            '</article>';
+            '</div>';
           resultdiv.append(searchitem);
         }
       });

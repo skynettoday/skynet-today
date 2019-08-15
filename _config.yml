@@ -1,36 +1,49 @@
-locale: en-US
+url: https://www.skynettoday.com
+baseurl: 
+
+name: Skynet Today
 title: Skynet Today
 description: Putting AI News In Perspective
-url: 
-logo: site-logo-white.png
-date_format: "%B %-d, %Y"
-read_time: true # reading time estimates, e.g. true
-words_per_minute: # 200
-google_fonts:
-  - name: "Source Sans Pro"
-    weights: "400,400i,700,700i"
-  - name: "Lora"
-    weights: "400,400i,700,700i"
+logo: /assets/img/logo.png
+imgpath: /assets/img
+locale: en_us
+lang: en
+google_analytics: UA-114440651-1
+
 feed:
   path: feed.xml
 
+  # Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      image:
+        feature: assets/img/placeholder.png
+      comments: true
+      share: true
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+  - scope:
+      path: "_pages"
+    values:
+      layout: page
+
 permalink: /:categories/:title/
+
+plugins: 
+    - jekyll-paginate
+    - jekyll-sitemap
+    - jekyll-last-modified-at
+    - jekyll-gist
+    - jekyll-redirect-from 
+    - jekyll-feed 
+
 markdown: kramdown
-search_full_content: true # can have performance implications for large sites
-comments: true
-show_drafts: false
-future:      true
-unpublished: false
-mathjax: true
-google_analytics: UA-54402578-2
-
-plugins:
-  - jekyll-seo-tag
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-gist
-  - jekyll-redirect-from  
-
 
 kramdown:
   input: GFM
@@ -42,8 +55,28 @@ kramdown:
 include: [".htaccess","_pages"]
 exclude: ["CNAME", "_deploy.yml", "lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", ".less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md", "vendor", "scripts"]
 
-google_analytics: UA-114440651-1
+# Read Time
+read_time: false # set true if you want read time under headline
+words_per_minute: 250
 
+# Category Colors
+briefs: 0c776d
+editorials: 940b52
+digests: 103558
+
+# Social
+footer_links:
+  - title: Feed
+    url: feed.xml
+    icon: assets/img/icons/rss.svg
+  - title: Twitter
+    url: https://twitter.com/skynet_today
+    icon: assets/img/icons/twitter.svg
+  - title: Facebook
+    url: https://www.facebook.com/pg/TheSkynetToday/
+    icon: assets/img/icons/facebook.svg
+
+# Owner
 owner:
   name: Andrey Kurenkov
   avatar: andrey_face.jpg
@@ -52,31 +85,5 @@ owner:
   disqus-shortname: skynet-today
   twitter: skynet_today
 
-defaults:
-  # Posts defaults
-  - scope:
-      path: "content/news/_posts"
-      type: posts
-    values:
-      layout: post
-      comments: true
-      share: true
-  - scope:
-      path: "content/editorials/_posts"
-      type: posts
-    values:
-      layout: post
-      comments: true
-      share: true
-
-# Footer Links
-footer_links:
-  - title: Feed
-    url: feed.xml
-    icon: fa fa-rss-square fa-2x
-  - title: Twitter
-    url: https://twitter.com/skynet_today
-    icon: fa fa-twitter-square fa-2x
-  - title: Facebook
-    url: https://www.facebook.com/pg/TheSkynetToday/
-    icon: fa fa-facebook-square fa-2x
+# Paginate
+paginate: 20

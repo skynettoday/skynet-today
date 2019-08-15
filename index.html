@@ -1,0 +1,47 @@
+---
+layout: default
+---
+
+
+{% if page.url == "/" %}
+{% include home-jumbo.html %}
+{% endif %}
+
+<div class="row">
+
+    <div class="col-md-8" id="allposts">
+
+        <h6 class="font1 fancy-title text-uppercase">
+            <span>Latest</span>
+        </h6>
+
+        <div class="row mt-3 cardrecent">    
+
+            {% if page.url == "/" %}
+            {% for post in site.categories.digests limit: 1 %}
+            <div class="col-md-6 mb-30">                    
+                {% include themecard.html %}                    
+            </div>  
+            {% endfor %}  
+            {% endif %}
+           
+            {% for post in paginator.posts %}
+                {% unless post.highlight == true %}
+                    {% unless post.categories contains "digests" %}
+                    <div class="col-md-6 {% if value == 0 %} evencol {% endif %} mb-30">                    
+                    {% include themecard.html %}                    
+                    </div>     
+                    {% endunless %} 
+                {% endunless %}
+            {% endfor %}     
+                
+        </div>
+        
+        {% include pagination.html %}
+       
+    </div>
+    
+    <div class="col-md-4">
+        {% include sidebar.html %}
+    </div>
+</div>

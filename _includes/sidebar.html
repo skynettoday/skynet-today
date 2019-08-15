@@ -1,55 +1,45 @@
-<footer class="page-meta">
-  {% if page.author %}
-    {% if page.author.first %}
-        <b>Authors:</b>
-        {% for a in page.author %}
-          {% assign author = site.data.authors[a] %}
-          {% include sidebar-author.html %}
-        {% endfor %}
-    {% else %}
-        <b>Author:</b>
-        {% assign author = site.data.authors[page.author] %}
-        {% include sidebar-author.html %}
-    {% endif %}
-  {% endif %}
+<div class="thesidebar sticky-top">
 
-  {% if page.editor %}
-    {% if page.editor.first %}
-        <br><b>Editors:</b>
-        {% for a in page.editor %}
-          {% assign author = site.data.authors[a] %}
-          {% include sidebar-author.html %}
-        {% endfor %}
-    {% else %}
-        <br><b>Editor:</b>
-        {% assign author = site.data.authors[page.editor] %}
-        {% include sidebar-author.html %}
-    {% endif %}
-  {% endif %}
+<h6 class="font1 fancy-title text-uppercase"><span>Featured</span></h6>
 
-  <span class="page-date date published">
-      <time datetime="{{ page.date | date_to_xmlschema }}">
-          <i class="fa fa-calendar-o"></i> {{ page.date | date: "%B %d, %Y" }}
-      </time>
-  </span>
-  {% if page.modified %}
-      <span class="page-date date modified">
-          <time datetime="{{ page.modified }}">
-              <i class="fa fa-pencil"></i> 
-              {{ page.modified | date: "%B %d, %Y" }}
-          </time>
-      </span>
-  {% endif %}
-  {% if site.owner.disqus-shortname and page.comments or site.comments %}
-      <span class="page-comments">
-          <i class="fa fa-comment-o"></i> 
-          <a href="#disqus_thread">Comment</a>
-      </span>
-  {% endif %}
-  <ul class="page-tags">
-          <b>Tags: </b>{% for tag in page.tags %}<li><a href="{{ site.url }}/tags#{{ tag }}" title="Pages tagged {{ tag }}">{{ tag }}</a></li>{% endfor %}
-  </ul>
-        
-  {% if page.share %}{% include social-share.html %}{% endif %}
-  {% if page.ads == true %}{% include ad-sidebar.html %}<!-- /.google-ads -->{% endif %}
-</footer>
+{% assign posts=site.posts | where:"featured", true %}
+{% for post in posts %}
+<div class="d-flex featured">           
+
+{% if post.image.external %}
+    <img src="{{ post.image.external }}" class="featuredthumb" alt="{{ post.title }}">
+{% else %}
+    <img src="{{ site.baseurl }}/{{ post.image.feature }}" class="featuredthumb" alt="{{ post.title }}">
+{% endif %}
+
+         
+<div class="wrap-feat-content ml-4">
+<div class="list-categories">
+{% for category in post.categories %}
+<style>.{{category}}-color {color: #{{ site[category] }};}</style>
+<a class="text-uppercase {{category}}-color catstyle" href="{{site.baseurl}}/categories/{{ category | replace: " ","-" }}">{{ category }}</a>  <span class="sepcat">/</span>
+{% endfor %}
+{% for tag in post.tags %}
+    <a class="text-capitalize text-muted" href="{{site.baseurl}}/tags#{{ tag | replace: " ","-" }}">{{ tag }}</a><span class="sep">, </span>
+{% endfor %}
+</div>
+<a href="{{ site.baseurl }}{{ post.url }}">
+<h5 class="text-black">
+<span class="effect-underline">
+{{ post.title }}
+</span>
+</h5>
+</a>
+</div>
+</div>
+{% endfor %}
+
+{% unless page.url contains "tags" %}
+<h6 class="font1 fancy-title text-uppercase mt-4" style="margin-bottom:1.2rem;"><span>Explore</span></h6>
+<div class="d-block">
+{% include tagcloud.html %}
+</div>
+<a class="d-inline-block text-black small rounded-0 font500" href="{{site.baseurl}}/tags">&rarr; view all topics</a>
+{% endunless %}
+
+</div>

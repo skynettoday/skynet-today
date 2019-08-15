@@ -1,13 +1,14 @@
 ---
-layout: page
+layout: page-narrow
 title: Thanks
 search_omit: true
-permalink: /thanks
+permalink: /thanks.html
 extra_css: ["assets/css/toggle.css"]
 extra_js: ["assets/js/toggle.js"]
+footer_minimal: true
 ---
 
-<h3 class="page-title">Thanks for subscribing! </h3>
+<h4>Thanks for subscribing to Skynet Today! </h4>
 
 [While you're here how about checking out some more posts?](/)
 
