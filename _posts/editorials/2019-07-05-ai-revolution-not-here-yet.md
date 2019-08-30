@@ -4,7 +4,7 @@ image:
   feature: assets/img/editorials/ai-revolution-not-here-yet/feature.jpg
 author: [michael_jordan]
 categories: [editorials]
-tags: [agi]
+tags: [AGI]
 excerpt: "On artificial intelligence as a phrase, a fast moving research field, and an emerging new discipline of engineering"
 permalink: /editorials/ai-revolution-not-here-yet
 featured: true

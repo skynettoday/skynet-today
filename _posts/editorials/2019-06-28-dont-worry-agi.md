@@ -3,7 +3,7 @@ title: "Worry about present-day AI first, and far off AGI hypotheticals second"
 image:
   feature: assets/img/editorials/dont-worry-agi/feature.png
 author: [ellen_konig]
-tags: [agi]
+tags: [AGI]
 categories: [editorials]
 excerpt: "The whole debate about existential risks AI poses to humanity in the far off future is a huge distraction."
 ---
