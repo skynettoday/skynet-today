@@ -40,7 +40,8 @@ plugins:
     - jekyll-sitemap
     - jekyll-last-modified-at
     - jekyll-gist
-    - jekyll-redirect-from  
+    - jekyll-redirect-from 
+    - jekyll-feed 
 
 markdown: kramdown
 
