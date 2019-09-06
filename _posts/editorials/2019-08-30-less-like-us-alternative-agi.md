@@ -8,7 +8,7 @@ image:
   feature: assets/img/editorials/2019-08-30-less-like-us-alternative-agi/feature.jpg
   credit: <a href="https://www.shutterstock.com/image-vector/network-connection-vector-isolated-on-blue-1350379352?src=YhhQp2m3YkU8ApdXikr-3w-1-1">MF Production/Shutterstock.com</a>, via Singularity Hub
 permalink: /editorials/less-like-us-alternative-agi
-highlight: true
+feature: true
 ---
 _The following piece originally appeared [Singularity Hub](https://singularityhub.com/2019/06/02/less-like-us-an-alternate-theory-of-artificial-general-intelligence/), and has been replicated here with permission._
 
