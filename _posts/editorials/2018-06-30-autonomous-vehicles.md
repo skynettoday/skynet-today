@@ -1,8 +1,11 @@
 ---
 title: "Autonomous Driving, Both Close and Far from Ubiquity"
+image:
+  feature: assets/img//editorials/autonomous_vehicles/history.jpg
+  credit: <a href="http://www.hybridcars.com/ford-leverages-its-past-and-present-toward-a-mobility-solutions-future/history-of-autonomy-timeline/">(source)</a>
 author: [apoorva_dornadula, henry_mei]
 editor: [andrey_kurenkov,alex_grant,will_scales]
-tags: [self-driving cars,computer vision,policy,overview]
+tags: [self-driving cars,computer vision,policy]
 categories: [editorials]
 excerpt: "Autonomous vehicle technology has made huge advances in the last couple of years — what's left to solve? A whole lot."
 permalink: /editorials/autonomous_vehicles
@@ -11,7 +14,6 @@ permalink: /editorials/autonomous_vehicles
      <img src="{{ site.imgpath }}/editorials/autonomous_vehicles/self_driving_simulator.gif" alt="Self Driving Car Environment"/>
      <figcaption>Footage of a Tesla car autonomously driving around along with the sensing and perception involved. <a href="https://www.bloomberg.com/news/articles/2016-12-20/the-tesla-advantage-1-3-billion-miles-of-data">(source)</a></figcaption>
 </figure>
-
 
 Videos like the one above make it obvious that self driving technology has come a long ways in the last couple of years. Waymo, Tesla, Lyft, and many others are actively testing self driving cars with promising results, and there is an un-ending stream of news about the tech’s advances and commercial interest in it.
 
