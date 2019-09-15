@@ -13,7 +13,7 @@ Skynet Today's mission is to make the state of AI -- as well how it got here and
 
 [^name]: In fact, our name is a reference to the incorrect fear of something like Skynet being possible in the present day or near future, and of misleading press coverage that sometimes makes it seem like that is the case.
 
-To make joining out effort, we decided to put out this set of suggestions on topics we think merit new articles. If you're interested in helping us with our mission by writing an article on any of these prompts or other topics relevant to AI, feel free to reach out to us at [editorials@skynettoday.com](mailto:editorials@skynettoday.com) or just fill out our survey at the bottom of this article!
+To make contributing to our effort easier, we are putting this set of suggestions on topics we think merit new articles. If you're interested in helping us with our mission by writing an article on any of these prompts or other topics relevant to AI, please reach out to us at [editorials@skynettoday.com](mailto:editorials@skynettoday.com) or just fill out our survey at the bottom of this article.
 
 # Briefs
 Concise yet thorough articles that summarize and comment on an important recent news story or new topic in AI.
