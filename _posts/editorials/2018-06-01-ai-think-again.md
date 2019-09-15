@@ -1,5 +1,8 @@
 ---
 title: "Artificial Intelligence: Think Again"
+image:
+  feature: assets/img/editorials/2018-06-01-ai-think-again/search_and_grasp.png
+  credit: Aliekor at English Wikipedia
 author: jerry_kaplan
 tags: [trends,hype,opinion]
 categories: [editorials]
