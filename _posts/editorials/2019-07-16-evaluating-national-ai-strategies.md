@@ -8,7 +8,6 @@ excerpt: "Constructing a set of three evaluative criteria for national AI strate
 image: 
   feature: assets/img/editorials/evaluating-national-ai-strategies/feature.jpg
 permalink: /editorials/evaluating-national-ai-strategies
-highlight: true
 ---
 
 With a number of developed countries prioritizing research and development in AI, both these nations and AI research institutes are 
