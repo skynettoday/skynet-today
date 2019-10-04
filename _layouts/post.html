@@ -21,15 +21,16 @@ layout: default
       <img class="clockicon" src="{{site.baseurl}}/assets/img/icons/clock.svg"> {% include read-time.html %}
       {% endif %}
       </div>
-
-      {% if page.image.external %}
-      <img src="{{ page.image.external }}" class="page-feature-image" alt="{{ page.title }}">
-      {% else %}
-      {% unless page.image.feature contains "placeholder.png" %}
-      <img src="{{ site.baseurl }}/{{ page.image.feature }}" class="page-feature-image" alt="{{ page.title }}">
+      {% unless page.notopimage %}
+        {% if page.image.external %}
+          <img src="{{ page.image.external }}" class="page-feature-image" alt="{{ page.title }}">
+        {% else %}
+          {% unless page.image.feature contains "placeholder.png" %}
+            <img src="{{ site.baseurl }}/{{ page.image.feature }}" class="page-feature-image" alt="{{ page.title }}">
+          {% endunless %}
+        {% endif %}
       {% endunless %}
-      {% endif %}
-
+      
       {% if page.image.credit %}
       <p class="image-credit">Image credit: {{ page.image.credit }}</p>
       {% endif %}

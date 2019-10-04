@@ -2,6 +2,7 @@
 title: "Has AI surpassed humans at translation? Not even close!"
 image:
   feature: assets/img/editorials/AI-humans-translation/metal.png
+notopimage: true
 author: [sharon_zhou]
 editor: [andrey_kurenkov,abi_see]
 tags: [NLP,translation,overview]
