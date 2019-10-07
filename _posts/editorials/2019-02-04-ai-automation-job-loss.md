@@ -816,7 +816,7 @@ are less likely to undertake job training. Figure by <a href="https://www.oecd-i
 
 In the U.S., one option to facilitate scalable job training is letting community colleges offer occupational classes or connect students with apprenticeship-like positions.
 Community colleges are especially poised to do this "given their scale, their ability to adapt offerings to local market needs, and their ongoing engagement with non-baccalaureate adults at all career states"[^wotf_cc].
-Other non-degree credential job-oriented education models like such as bootcamps, which avoids the student debt and over-educatation issues with four-year degrees, are also seeing some successes[^wotf_exp].
+Other non-degree credential job-oriented education models like bootcamps, which avoids the student debt and over-education issues with four-year degrees, are also seeing some successes[^wotf_exp].
 
 Another way to increase the fluidity of the labor market, especially for
 young workers, is through the gig economy, but this approach is not
@@ -829,7 +829,7 @@ permanent jobs with higher wages.
 The McKinsey study lists many other potential ideas that can strengthen
 support for workers during job transitions, such as unemployment
 insurance, universal basic income (UBI), and tying gains in wage to
-those in productivity[^mks17]. Fiscal policies that incentive human over physical capital, such as Bill Gates' proposed "robot tax" [proposed by Bill Gates](https://qz.com/911968/bill-gates-the-robot-that-takes-your-job-should-pay-taxes/) and tax credits for providing worker training[^wotf_tax], can also be considered.
+those in productivity[^mks17]. Fiscal policies that incentive human over physical capital, such as Bill Gates' proposed [robot tax](https://qz.com/911968/bill-gates-the-robot-that-takes-your-job-should-pay-taxes/) and tax credits for providing worker training[^wotf_tax], can also be considered.
 
 UBI, which gives everyone a set amount of money per month regardless of
 employment status, has particularly captured the public attention in
@@ -1101,7 +1101,7 @@ Uses within text:
 
 [^ncci1]: [NCCI](https://www.ncci.com/Articles/Pages/II_Insights_QEB_Impact-Automation-Employment-Q3-2017-Part2.aspx)
 
-[^ineq]: As emphasized in this [report](https://workofthefuture.mit.edu/sites/default/files/2019-09/WorkoftheFuture_Report_Shaping_Technology_and_Institutions.pdf), inequality is less acute in other industrialized nations with similar levels of rising productivity and automation levels as the U.S. Income distribution is shaped by many factors including but not limited to educational systems, labor and financial market regulations, and fiscal policies. In other words, inequality is not wholly caused by automation, and nor will it be fixed with less automation.
+[^ineq]: As emphasized in this [report](https://workofthefuture.mit.edu/sites/default/files/2019-09/WorkoftheFuture_Report_Shaping_Technology_and_Institutions.pdf), inequality is less acute in other industrialized nations with similar levels of rising productivity and automation as the U.S. Income distribution is shaped by many factors including but not limited to educational systems, labor and financial market regulations, and fiscal policies. In other words, inequality is not wholly caused by automation, and nor will it be fixed with less automation.
 
 [^mks1]: [McKinsey](https://www.mckinsey.com/~/media/mckinsey/featured%20insights/future%20of%20organizations/what%20the%20future%20of%20work%20will%20mean%20for%20jobs%20skills%20and%20wages/mgi-jobs-lost-jobs-gained-report-december-6-2017.ashx). Page 4, Box E1.
 
