@@ -381,6 +381,9 @@ demand for trucking and the need for skilled human drivers in many road
 conditions, the Global Innovation Lead of the World Road Transportation
 Organization claims [“autonomous vehicles are not going to take away jobs.”](https://www.freightwaves.com/news/technology/automation-is-inevitable-but-will-not-displace-driver-jobs-iru)
 
+Lastly, like other jobs mentioned in this article, truck driving consists of many tasks, some of which have high automation potential, and some don't.
+Even if truck driving can be fully automated, other tasks that truck drivers routinely perform such as customer service, loading and unloading cargo, and vehicle maintenace have much lower automation potential, so [it is unlikely that self-driving trucks will replace truck drivers alone](https://hbr.org/2019/09/automation-isnt-about-to-make-truckers-obsolete).
+
 <figure>
  <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/ata_truck_driver_shortage.png" alt="ata_truck_driver_shortage"/>
   <figcaption>
@@ -531,8 +534,7 @@ just not worth the cost. For example, electricity-powered factories are
 much more cost-efficient than steam-powered ones, but electrification is
 a costly process, and it took more than 4 decades for half of U.S.
 factories to be electrified after the idea became
-realizable[^electricity]. In addition, marginally increasing the cost
-of cheap labor may not incentivize automation as much as perceived;
+realizable[^electricity]. Even replacing humans with robots in repetitive jobs such as those in manufacturing and warehouse fulfillment requires "breakthroughs in work design that often take years or even decades to achieve."[^wotf_robots] In addition, marginally increasing the cost of cheap labor may not incentivize automation as much as perceived;
 studies have found that increasing the minimum wage in Seattle to
 \$15/hr had no perceptible effect on the city’s jobs being
 automated[^seattle].
@@ -617,7 +619,7 @@ nontrivial costs. Historically, shifts this large or larger have already
 happened and ultimately led to growing prosperity for people on average
 in the long term. However, automation can exacerbate the problems of
 income and wealth inequality, and its uneven impact means some
-communities will be affected much more than others. Helping displaced
+communities will be affected much more than others[^ineq]. Helping displaced
 workers to quickly transition to and succeed in new jobs will be a tough
 and important challenge.
 
@@ -791,6 +793,8 @@ to adjust to technical change, then it becomes apparent that
 accelerating technical change can lead to widening gaps and increasing
 possibilities for technological unemployment.
 
+A recent report observes this effect in the last three decades, noting that the acceleration of automation-induced job displacement, especially in manufacturing, combined with slower productivity growth during the same time period, has led to slower employment growth[^ace3].
+
 Thus, as concluded in Graham Brown-Martin’s “[Education and the Fourth Industrial Revolution](https://www.groupemediatfo.org/wp-content/uploads/2017/12/FINAL-Education-and-the-Fourth-Industrial-Revolution-1-1-1.pdf)”:
 
 > Workers, for their part and supported by government, have to be
@@ -810,6 +814,10 @@ are less likely to undertake job training. Figure by <a href="https://www.oecd-i
   </figcaption>
 </figure>
 
+In the U.S., one option to facilitate scalable job training is letting community colleges offer occupational classes or connect students with apprenticeship-like positions.
+Community colleges are especially poised to do this "given their scale, their ability to adapt offerings to local market needs, and their ongoing engagement with non-baccalaureate adults at all career states"[^wotf_cc].
+Other non-degree credential job-oriented education models like bootcamps, which avoids the student debt and over-education issues with four-year degrees, are also seeing some successes[^wotf_exp].
+
 Another way to increase the fluidity of the labor market, especially for
 young workers, is through the gig economy, but this approach is not
 without its drawbacks. While the likes of Uber and Taskrabbit can help
@@ -821,9 +829,7 @@ permanent jobs with higher wages.
 The McKinsey study lists many other potential ideas that can strengthen
 support for workers during job transitions, such as unemployment
 insurance, universal basic income (UBI), and tying gains in wage to
-those in productivity[^mks17]. Taxing companies that replace humans
-with robots, as [proposed by Bill Gates](https://qz.com/911968/bill-gates-the-robot-that-takes-your-job-should-pay-taxes/),
-can also be considered.
+those in productivity[^mks17]. Fiscal policies that incentive human over physical capital, such as Bill Gates' proposed [robot tax](https://qz.com/911968/bill-gates-the-robot-that-takes-your-job-should-pay-taxes/) and tax credits for providing worker training[^wotf_tax], can also be considered.
 
 UBI, which gives everyone a set amount of money per month regardless of
 employment status, has particularly captured the public attention in
@@ -847,7 +853,7 @@ these policies will need to be proactive, and significant.
 Conclusion
 ----------
 
-[In an article last year](https://www.oxfordmartin.ox.ac.uk/opinion/view/404), the authors
+[In a 2018 article](https://www.oxfordmartin.ox.ac.uk/opinion/view/404), the authors
 of the Oxford study notes that in comparison to recent estimates on jobs
 at risk of displacement by automation:
 
@@ -855,6 +861,10 @@ at risk of displacement by automation:
 47% of jobs are exposed to future automation, does not seem
 extraordinarily high. On the contrary, the University of Mannheim and
 the OECD estimates seem extremely low.
+
+For developed countries, increased automation is also happening against a backdrop of a shrinking working population. From [MIT's Work of the Future Report](https://workofthefuture.mit.edu/sites/default/files/2019-09/WorkoftheFuture_Report_Shaping_Technology_and_Institutions.pdf):
+
+> Contrary to the conventional narrative in which automation renders jobs increasingly scarce, we anticipate that, due to slowing labor force growth rates, rising ratios of retirees to workers, and increasingly restrictive immigration policies, over the next two decades industrialized countries will be grappling with more job openings than able-bodied adults to fill them.
 
 To the best of current projections, by 2030, around 15% of jobs will be
 at high risk of displacement by automation, and less than 5% of jobs
@@ -1026,6 +1036,8 @@ In order of appearance:
 
 [Education and the Fourth Industrial Revolution. Graham Brown-Martin. Groupe Media TFO.](https://www.groupemediatfo.org/wp-content/uploads/2017/12/FINAL-Education-and-the-Fourth-Industrial-Revolution-1-1-1.pdf)
 
+[Acemoglu, D., Restrepo, P. Automation and New Tasks: How Technology Displaces and Reinstates Labor.](https://ideas.repec.org/p/nbr/nberwo/25684.html)
+
 [The robot that takes your job should pay taxes, says Bill Gates. Kevin Delaney. Quartz.](https://qz.com/911968/bill-gates-the-robot-that-takes-your-job-should-pay-taxes/)
 
 [Nixon’s Basic Income Plan. Rutger Bregman. Jacobin.](https://www.jacobinmag.com/2016/05/richard-nixon-ubi-basic-income-welfare/)
@@ -1044,6 +1056,8 @@ In order of appearance:
 
 [Cognitive Diversity: AI & The Future of Work. Tata Communications.](https://drive.google.com/file/d/1AjsiNoDIUr9IYcGN3qdJk3H5TF21Jz-2/view)
 
+[The loom and the thresher: Lessons in technological worker displacement](https://medium.com/@larissafschiavo/industrial-revolution-66aee1b2cc2d)
+
 References
 ----------
 
@@ -1061,6 +1075,8 @@ In order of appearance:
 
 [American Trucking Association (ATA). Truck Driver Shortage Analysis. 2015](https://www.trucking.org/ATA%20Docs/News%20and%20Information/Reports%20Trends%20and%20Statistics/10%206%2015%20ATAs%20Driver%20Shortage%20Report%202015.pdf)
 
+[Gittleman, M. Monaco, K. Automation Isn’t About to Make Truckers Obsolete. 2019](https://hbr.org/2019/09/automation-isnt-about-to-make-truckers-obsolete)
+
 [Gartner. Gartner Says By 2020, Artificial Intelligence Will Create More Jobs Than It Eliminates. December 13, 2017.](https://www.gartner.com/en/newsroom/press-releases/2017-12-13-gartner-says-by-2020-artificial-intelligence-will-create-more-jobs-than-it-eliminates)
 
 [Nedelkosk, L., Quintini, G. Automation, skills use and training. OECD. March 8, 2018.](https://www.oecd-ilibrary.org/employment/automation-skills-use-and-training_2e2f4eea-en)
@@ -1070,6 +1086,8 @@ In order of appearance:
 [Acemoglu, D., Restrepo, P. Robots and Jobs: Evidence from US Labor Markets. July 16, 2018.](https://economics.mit.edu/files/15254)
 
 [David, P.A. The Dynamo and the Computer: An Historical Perspective on the Modern Productivity Paradox. 1990](https://www.jstor.org/stable/2006600?seq=1#metadata_info_tab_contents)
+
+[MIT. The Work of the Future: Shaping Technology and Institutions Fall 2019 Report. 2019](https://workofthefuture.mit.edu/sites/default/files/2019-09/WorkoftheFuture_Report_Shaping_Technology_and_Institutions.pdf)
 
 [Allen, R.C. Engels’ pause: Technical change, capital accumulation, and inequality in the british industrial revolution. February 8, 2008.](https://www.nuff.ox.ac.uk/Users/Allen/engelspause.pdf)
 
@@ -1082,6 +1100,8 @@ Uses within text:
 [^oxford2]: [Frey and Osborne](https://www.oxfordmartin.ox.ac.uk/downloads/academic/The_Future_of_Employment.pdf). Page 6.
 
 [^ncci1]: [NCCI](https://www.ncci.com/Articles/Pages/II_Insights_QEB_Impact-Automation-Employment-Q3-2017-Part2.aspx)
+
+[^ineq]: As emphasized in this [report](https://workofthefuture.mit.edu/sites/default/files/2019-09/WorkoftheFuture_Report_Shaping_Technology_and_Institutions.pdf), inequality is less acute in other industrialized nations with similar levels of rising productivity and automation as the U.S. Income distribution is shaped by many factors including but not limited to educational systems, labor and financial market regulations, and fiscal policies. In other words, inequality is not wholly caused by automation, and nor will it be fixed with less automation.
 
 [^mks1]: [McKinsey](https://www.mckinsey.com/~/media/mckinsey/featured%20insights/future%20of%20organizations/what%20the%20future%20of%20work%20will%20mean%20for%20jobs%20skills%20and%20wages/mgi-jobs-lost-jobs-gained-report-december-6-2017.ashx). Page 4, Box E1.
 
@@ -1121,6 +1141,8 @@ Uses within text:
 
 [^electricity]: [David](https://www.jstor.org/stable/2006600?seq=1#metadata_info_tab_contents). Page 2.
 
+[^wotf_robots]: [MIT](https://workofthefuture.mit.edu/sites/default/files/2019-09/WorkoftheFuture_Report_Shaping_Technology_and_Institutions.pdf). Page 29.
+
 [^seattle]: [NCCI](https://www.ncci.com/Articles/Pages/II_Insights_QEB_Impact-Automation-Employment-Q3-2017-Part2.aspx). This is a [complex topic with ongoing studies](https://www.nytimes.com/2018/10/22/business/economy/seattle-minimum-wage-study.html); our claim here is that the automation incentive due to higher minimum wage (not wages in general) may not be as high as perceived.
 
 [^mks9]: [McKinsey](https://www.mckinsey.com/~/media/mckinsey/featured%20insights/future%20of%20organizations/what%20the%20future%20of%20work%20will%20mean%20for%20jobs%20skills%20and%20wages/mgi-jobs-lost-jobs-gained-report-december-6-2017.ashx). In Brief.
@@ -1149,6 +1171,14 @@ Uses within text:
 
 [^oecd3]: [Nedelkosk and Quintini](https://www.oecd-ilibrary.org/employment/automation-skills-use-and-training_2e2f4eea-en). Page 9.
 
+[^wotf_cc]: [MIT](https://workofthefuture.mit.edu/sites/default/files/2019-09/WorkoftheFuture_Report_Shaping_Technology_and_Institutions.pdf). Page 37.
+
+[^wotf_exp]: [MIT](https://workofthefuture.mit.edu/sites/default/files/2019-09/WorkoftheFuture_Report_Shaping_Technology_and_Institutions.pdf). Page 40.
+
+[^wotf_tax]: [MIT](https://workofthefuture.mit.edu/sites/default/files/2019-09/WorkoftheFuture_Report_Shaping_Technology_and_Institutions.pdf). Page 41.
+
 [^mks17]: [McKinsey](https://www.mckinsey.com/~/media/mckinsey/featured%20insights/future%20of%20organizations/what%20the%20future%20of%20work%20will%20mean%20for%20jobs%20skills%20and%20wages/mgi-jobs-lost-jobs-gained-report-december-6-2017.ashx). Page 19.
 
 [^mks18]: [McKinsey](https://www.mckinsey.com/~/media/mckinsey/featured%20insights/future%20of%20organizations/what%20the%20future%20of%20work%20will%20mean%20for%20jobs%20skills%20and%20wages/mgi-jobs-lost-jobs-gained-report-december-6-2017.ashx). Page 15.
+
+[^ace3]: [Acemoglu and Restrepo](https://ideas.repec.org/p/nbr/nberwo/25684.html).
