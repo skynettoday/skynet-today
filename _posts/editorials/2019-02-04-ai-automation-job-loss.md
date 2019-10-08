@@ -744,7 +744,7 @@ Slow reemployment generally leads to lower wages as workers are more
 likely to settle for lower paying jobs the longer they’re unemployed.
 During the British Industrial Revolution, real wages stagnated for about
 50 years as productivity rose, a phenomenon called “Engels’ Pause”[^engels]. As it took decades for productivity gained by
-automation to benefit the masses, life for for workers during that
+automation to benefit the masses, life for workers during that
 transition period was tough, as [described in one article](https://niskanencenter.org/blog/21st-century-automation-time-truly-different/):
 
 > The gains from the early 19th century didn’t materialize
@@ -1090,8 +1090,6 @@ In order of appearance:
 [MIT. The Work of the Future: Shaping Technology and Institutions Fall 2019 Report. 2019](https://workofthefuture.mit.edu/sites/default/files/2019-09/WorkoftheFuture_Report_Shaping_Technology_and_Institutions.pdf)
 
 [Allen, R.C. Engels’ pause: Technical change, capital accumulation, and inequality in the british industrial revolution. February 8, 2008.](https://www.nuff.ox.ac.uk/Users/Allen/engelspause.pdf)
-
-Uses within text: 
 
 [^oxford1]: [Frey and Osborne](https://www.oxfordmartin.ox.ac.uk/downloads/academic/The_Future_of_Employment.pdf). Page 1.
 
