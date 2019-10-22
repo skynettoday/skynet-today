@@ -7,7 +7,6 @@ excerpt: "On why human level intelligence is not needed to create algorithmicall
 image: 
   feature: assets/img/editorials/2019-09-06-humans-not-concentrating/main.jpg
 permalink: /editorials/humans-not-concentrating
-highlight: true
 ---
 _The following piece originally appeared on [Sarah Constantin's blog](https://srconstantin.wordpress.com/2019/02/25/humans-who-are-not-concentrating-are-not-general-intelligences/), and has been replicated here with permission. Although it focuses on the release of the original GPT-2 model, it equally holds for the larger versions of the model that have recently led to more [fearful](https://thenextweb.com/artificial-intelligence/2019/08/21/this-ai-powered-text-generator-is-the-scariest-thing-ive-ever-seen-and-you-can-try-it/) [coverage](https://www.bbc.com/news/technology-49446729)._
 
