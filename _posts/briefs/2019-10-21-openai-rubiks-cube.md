@@ -177,7 +177,7 @@ OpenAI’s latest research demonstrates that it is possible, through carefully d
 
 [^preprint]: Meaning this paper may not have gone through peer-review by fellow researchers yet, and it has not been “printed” in an academic journal or conference proceedings.
 
-[^RL]: Basically, this is a form of learning by trial-and-error that OpenAI and other researchers are focusing on as an avenue to developing AI algorithms that can learn to solve various problems without much human guidance. It is not a topic you need to understand to finish this article, though if you wish to learn more this [article](https://skymind.ai/wiki/deep-reinforcement-learning) provided a good summary.
+[^RL]: Basically, this is a form of learning by trial-and-error that OpenAI and other researchers are focusing on as an avenue to developing AI algorithms that can learn to solve various problems without much human guidance. It is not a topic you need to understand to finish this article, though if you wish to learn more this [overview](https://skymind.ai/wiki/deep-reinforcement-learning) provided a good summary.
 
 [^new]: This characterization of what’s new in this project is also stated by the team in their blog post: “The neural networks are trained entirely in simulation, using the same reinforcement learning code as [OpenAI Five](https://openai.com/blog/openai-five/) paired with a new technique called Automatic Domain Randomization (ADR).”
 
