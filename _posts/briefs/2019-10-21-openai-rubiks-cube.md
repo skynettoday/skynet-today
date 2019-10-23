@@ -41,7 +41,7 @@ As stated in the blog post and paper, the project is not about solving a Rubik�
   </figcaption>
 </figure>
 
-The approach OpenAI takes is largely identical to [one used last year to enable the same hand to reorient a cube](https://openai.com/blog/learning-dexterity/), except for a technique called “Automatic Domain Randomization,” or ADR [^new]. ADR is a new approach to domain randomization (DR), which is the technique of varying many visual and physical parameters of a simulation, with the idea that an algorithm trained to work in all of these different simulation has a better chance of working in the real world.
+The approach OpenAI takes is largely identical to [one used last year to enable the same hand to reorient a cube](https://openai.com/blog/learning-dexterity/), except for a technique called “Automatic Domain Randomization,” or ADR [^new]. ADR is a new approach to domain randomization (DR), which is the technique of varying many visual and physical parameters of a simulation, with the idea that an algorithm trained to work in all of these varied simulations has a better chance of working in the real world.
 
 Normal DR requires manually setting the range of the randomized parameters. By contrast, with ADR these ranges are “defined automatically and allowed to change” in ways that progressively increase the variety of environments the algorithm needs to work in. Thus, ADR removes “significant amount of manual tuning” the team had to do for their previous cube reorientation project, while making learning more efficient. This idea is “strongly related”[^quote] to prior work such as [POET](https://twitter.com/welcomeai/status/1089305829516431361) and other recent works that suggest improvements upon DR.
 
