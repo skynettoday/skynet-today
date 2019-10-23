@@ -146,7 +146,7 @@ However, the publicity that the project generated tend to overtly focus on how t
 
    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Robot hand that can learn with model-based RL, in the real world, in just a few hours of training. And it turns out model-based RL can solve tasks that are very hard for model-free RL.<a href="https://t.co/b56dnqZRTa">https://t.co/b56dnqZRTa</a><a href="https://t.co/YqP48svpiB">https://t.co/YqP48svpiB</a><br>w/ A. Nagabandi, K. Konolige, <a href="https://twitter.com/Vikashplus?ref_src=twsrc%5Etfw">@Vikashplus</a> <a href="https://t.co/Yr6kAsE6vQ">pic.twitter.com/Yr6kAsE6vQ</a></p>&mdash; Sergey Levine (@svlevine) <a href="https://twitter.com/svlevine/status/1177434279795515392?ref_src=twsrc%5Etfw">September 27, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 
-   The specific tasks of this work may not be as challenging as manipulating a Rubik’s cube, but works like this do bring into question the value of such long training times that and huge computational resources as the best route to general-purpose robots.
+   The specific tasks of this work may not be as challenging as manipulating a Rubik’s cube, but works like this do bring into question the value of months-long training times that require huge computational resources as the best route to general-purpose robots.
 
 5. Large team
 
@@ -169,7 +169,7 @@ The video has another problematic aspect: it includes are many non-subtle clips 
 
 This isn’t a critique on RL - these limitations are well-known within the research community, and RL is a tool in a box of many tools that roboticists use. However, given the above caveats it is not yet clear that this is a more general approach than designing or coding task-specific robots. Past attempts on applying robots to Rubik’s cubes, such as [this](https://www.youtube.com/watch?v=by1yz7Toick) or [this](https://www.youtube.com/watch?v=KVGn8tP9klI), did not require months of training and expensive GPUs, and they often achieved close to 100% success rates (when no external perturbations were present). 
 
-Of course, the goal of general-purpose robots is not to solve Rubik’s cubes, but rather to perform a wide variety of tasks. Yet, at this moment, by looking through this particular project, it is arguable that the *marginal* cost (time, money, human resources) of using the proposed, RL-based, “general” approach in robotics for each new task is still higher than coding a specific robot program to execute that task. While this is true of most of AI research, which after all usually tackles self-contained problems meant to demonstrate the promise of a new algorithm, OpenAI’s PR-heavy approach could do a lot to make this clearer to non-AI researchers in its messaging.
+Of course, the goal of general-purpose robots is not to solve Rubik’s cubes, but rather to perform a wide variety of tasks. Yet, at this moment, by looking through this particular project, it is arguable that the *marginal* cost (time, money, human resources) of using the proposed, RL-based, “general” approach in robotics for each new task is still higher than coding a specific robot program to execute that task. While this is true of much of AI research, which after all usually tackles self-contained problems meant to demonstrate the promise of a new algorithm, OpenAI’s PR-heavy approach could do a lot to make this clearer to non-AI researchers in its messaging.
 
 ## TLDR
 
