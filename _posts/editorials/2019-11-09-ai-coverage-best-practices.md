@@ -39,6 +39,10 @@ online and at the [*Stanford AI Lab*](http://ai.stanford.edu/). We hope
 it will be useful to journalists, researchers, and anyone who reads or
 writes about AI.
 
+* TOC
+{:toc}
+
+
 Be careful with what “AI” is
 ----------------------------
 
@@ -307,6 +311,7 @@ Elon Musk, etc.) have expressed concern about the threat to of superhuman AI to 
 completely disconnected from anything factual about present day AI. Per [Rodney Brooks](https://techcrunch.com/2017/07/19/this-famous-roboticist-doesnt-think-elon-musk-understands-ai/):
 
 > "TC: You’re writing a book on AI, so I have to ask you: Elon Musk expressed again this past weekend that AI is an existential threat. Agree? Disagree?"
+
 > "RB: There are quite a few people out there who’ve said that AI is an existential threat: Stephen Hawking, astronomer Royal Martin Rees, who has written a book about it, and they share a common thread, in that: they don’t work in AI themselves. For those who do work in AI, we know how hard it is to get anything to actually work through product level."
 
 Nevertheless, these speculations have drawn much coverage in articles such as [Stephen Hawking Fears A.I. May Replace Humans, and He’s Not Alone](https://www.inverse.com/article/38054-stephen-hawking-ai-fears). Although it may seem like such coverage does not harm, it may mislead people to thinking such an AI apocalypse is an actual possibility, and lead them to misunderstand the real concerns about present day AI. This was [recently expressed by neuroscientist Anthony Zador and AI expert Yann LeCun](https://blogs.scientificamerican.com/observations/dont-fear-the-terminator/): "they distract from the more mundane but far more likely risks posed by the technology in the near future, as well as from its most exciting benefits."
