@@ -3,7 +3,7 @@ title: "AI Coverage Best Practices, According to AI Researchers"
 author: [andrey_kurenkov]
 categories: [editorials]
 tags: [hype]
-excerpt: "AI researchers often bemoan low quality coverage of their work. Here are their recommendations."
+excerpt: "AI researchers often bemoan low quality coverage of their field. Here are their recommendations."
 image: 
   feature: assets/img/editorials/2019-11-09-ai-coverage-best-practices/feature.jpg
 permalink: /editorials/ai-coverage-best-practices
