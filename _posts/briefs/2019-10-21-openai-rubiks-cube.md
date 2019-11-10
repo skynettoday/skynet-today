@@ -9,7 +9,6 @@ author: [jacky_liang,andrey_kurenkov]
 tags: [OpenAI,robotics,hype]
 categories: [briefs]
 permalink: /briefs/openai-rubiks-cube
-highlight: true
 ---
 
 ## What Happened
