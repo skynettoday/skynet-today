@@ -133,13 +133,13 @@ those who lived through it it was also a turbulent transition [that caused harm 
 Fears aside, it is true that automation of existing jobs has been a fact
 of life for centuries. In the twentieth century, the proportion of the
 workforce in agriculture decreased from 40% in 1900 to just 10% in 1950.
-Now, that figure is even lower - 2%[^ncci1]. With more efficient
+Now, that figure is even lower - 2%[^ncci1_0]. With more efficient
 tools, machines, and better understanding of science, agriculture’s
 productivity has soared in the last century - fewer people were needed
 to do the same amount of work, and many agriculture jobs were lost. Even
 more drastic trends can be observed in other countries, like China,
 where one-third of the country’s workforce shifted out of agriculture
-from 1990 to 2015[^mks1].
+from 1990 to 2015[^mks1_0].
 
 <figure>
  <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/US_labor_sector.png" alt="US labor sector."/>
@@ -225,7 +225,7 @@ like this:
 
 3.  Increased productivity raises incomes, lowers work hours (average
     work time in the U.S. has fallen more than 50% since the early
-    1900s[^mks1]), and lowers prices, creating more demand for
+    1900s[^mks1_1]), and lowers prices, creating more demand for
     goods and services, leading to more jobs and broader
     economic growth.
 
@@ -485,7 +485,7 @@ example however, it is likely that the workers of many of these
 automatable jobs will be augmented by new technology instead. Gartner
 estimates that by 2022, 20% of workers who perform nonroutine tasks will
 rely on AI to do the job (e.g. automatically generating reports, picking
-top emails to read)[^gartner].
+top emails to read)[^gartner_0].
 
 <figure>
  <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/economist_type_of_work.png" alt="economist_type_of_work"/>
@@ -574,7 +574,7 @@ Developed countries will see a higher proportion of jobs automated than
 developing ones due to higher wages and aging populations[^mks9].
 Differences also exist within developed countries - Japan will likely
 see more of its jobs automated than the U.S. because its share of labor
-in highly automatable sectors is higher[^mks10].
+in highly automatable sectors is higher[^mks10_0].
 
 The sectors at the most risk for automation tend to be middle-income
 jobs requiring only secondary or associate level education. Demand for
@@ -598,7 +598,7 @@ education level by 2030 in the U.S. Figure by <a href="https://www.mckinsey.com/
 Automation-induced job loss will also affect men more than women, as men
 make up between 70 to 80% of jobs in manufacturing, agriculture,
 transportation, and warehousing, sectors with the highest risks of
-automation[^ncci1]. And, automation will impact young and old workers
+automation[^ncci1_1]. And, automation will impact young and old workers
 more than middle-aged ones. Although the youth side of this U-curve is
 much worse than the other as entry-level jobs tend to have higher risks
 of automation, young workers tend to be better at finding and adapting
@@ -609,7 +609,7 @@ automatable industries. To quickly supplant lost income, workers
 displaced by automation often [settle for jobs that pay less than the job they had before](https://futurism.com/new-chart-proves-automation-serious-threat). One study finds that one more robot per a thousand workers decreases
 wages by 0.37%[^ace1]. While automation has the potential to reduce
 the risk of injury for dangerous jobs, doing so may also lead to reduced
-wages for workers in those jobs[^ncci1].
+wages for workers in those jobs[^ncci1_2].
 
 **In short, the concern that AI and other forms of automation will take over everyone’s jobs is unwarranted**. Automation will probably displace
 less than 15% of jobs in the near future, and not nearly as many as 47%.
@@ -627,9 +627,9 @@ and important challenge.
 
 Jobs displaced by automation form only one part of the net employment equation. To see how the total number of jobs will change in the near future, we should also look at jobs created by automation as well.
 
-Automation can create new jobs directly through the production, maintenance, and sales of its products and services. But, it creates even more jobs indirectly by improving the productivity of other industries. McKinsey estimates that since the 1980s, personal computers (PCs) have created 15.8 million net new jobs in the U.S., making up about 10% of workforce[^mks11]. While PCs displaced jobs in bookkeeping and secretarial work, it created many new jobs that didn’t exist before, such as those in manufacturing high-tech components and those that use PCs, like IT support services, call centers, and e-commerce. About 18% of jobs in the U.S. today did not exist in 1980[^mks1], while the demand for these new jobs will rise to 8~9% by 2030[^mks10].
+Automation can create new jobs directly through the production, maintenance, and sales of its products and services. But, it creates even more jobs indirectly by improving the productivity of other industries. McKinsey estimates that since the 1980s, personal computers (PCs) have created 15.8 million net new jobs in the U.S., making up about 10% of workforce[^mks11]. While PCs displaced jobs in bookkeeping and secretarial work, it created many new jobs that didn’t exist before, such as those in manufacturing high-tech components and those that use PCs, like IT support services, call centers, and e-commerce. About 18% of jobs in the U.S. today did not exist in 1980[^mks1_2], while the demand for these new jobs will rise to 8~9% by 2030[^mks10_1].
 
-Contrary to what some might’ve expected, PCs and the Internet increased the demand for information analysts, even as data collection and analysis became highly automated[^mks12]. The number of analysts grew from 400,000 in 1980 to 2 million in 2015, as more analysts are needed to make sense of the ever increasing amount of data collected. Similar scaling effects can be observed in other jobs, especially technology-related jobs, that benefit from automation, and it is projected that by 2030 tech jobs will grow from 20 to 50 million[^mks13]. Gartner also estimates that by 2020, AI will create 2.3 million jobs and displace 1.8 million, yielding a net positive, albeit the jobs lost and gained will not be in the same industries[^gartner]. 
+Contrary to what some might’ve expected, PCs and the Internet increased the demand for information analysts, even as data collection and analysis became highly automated[^mks12]. The number of analysts grew from 400,000 in 1980 to 2 million in 2015, as more analysts are needed to make sense of the ever increasing amount of data collected. Similar scaling effects can be observed in other jobs, especially technology-related jobs, that benefit from automation, and it is projected that by 2030 tech jobs will grow from 20 to 50 million[^mks13_1]. Gartner also estimates that by 2020, AI will create 2.3 million jobs and displace 1.8 million, yielding a net positive, albeit the jobs lost and gained will not be in the same industries[^gartner_1]. 
 
 <figure>
  <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/mckinsey_create_more_jobs.png" alt="mckinsey_create_more_jobs"/>
@@ -692,7 +692,7 @@ Preparing for what is to come
 Rising income and consumption, especially as large middle classes emerge
 in developing countries, will push global consumption to grow by \$23
 trillion from 2015 to 2030, leading to overall job and economic
-growth[^mks15]. Job growth is also expected in newly developed
+growth[^mks15_0]. Job growth is also expected in newly developed
 industries, such as in renewable energies (which is expected to add 20
 million new jobs by 2030)[^mks16].
 
@@ -707,21 +707,21 @@ The [aging population](http://documents.worldbank.org/curated/en/973571468174557
 of many developed nations will induce drastic changes in labor demand
 for some sectors, and healthcare is one prime example. By 2030 worldwide
 there will be at least 300 million more people over the age of 65 than
-there were in 2014[^mks15], and in the U.S. Americans over 65 will
-grow from 45 to 65 million in the same time frame[^ncci1]. Healthcare
+there were in 2014[^mks15_1], and in the U.S. Americans over 65 will
+grow from 45 to 65 million in the same time frame[^ncci1_3]. Healthcare
 jobs are also very difficult to automate, owing to the necessity of
 human-to-human interactions. Together this means we will see significant
 increases in the demand for healthcare related jobs, as they are
-projected to grow by 80 to 130 million by 2030 worldwide[^mks13].
+projected to grow by 80 to 130 million by 2030 worldwide[^mks13_0].
 
 Similar to how jobs displaced by automation varies across different
 communities, so are the jobs gained. Countries with a growing workforce
 (like India) will face more challenges keeping all the available, young
 workers employed than countries with a shrinking workforce (like
-Japan)[^mks10]. Sectors that are expected to grow and are less likely
+Japan)[^mks10_2]. Sectors that are expected to grow and are less likely
 to be automated, like education and healthcare, currently employ more
 women than men, with women making up 79% of the workforce in healthcare
-and social assistance and 68% in education[^ncci1].
+and social assistance and 68% in education[^ncci1_4].
 
 <figure>
  <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/ncci_jobs_by_gender.png" alt="ncci_jobs_by_gender"/>
@@ -1097,11 +1097,23 @@ In order of appearance:
 
 [^oxford2]: [Frey and Osborne](https://www.oxfordmartin.ox.ac.uk/downloads/academic/The_Future_of_Employment.pdf). Page 6.
 
-[^ncci1]: [NCCI](https://www.ncci.com/Articles/Pages/II_Insights_QEB_Impact-Automation-Employment-Q3-2017-Part2.aspx)
+[^ncci1_0]: [NCCI](https://www.ncci.com/Articles/Pages/II_Insights_QEB_Impact-Automation-Employment-Q3-2017-Part2.aspx)
+
+[^ncci1_1]: [NCCI](https://www.ncci.com/Articles/Pages/II_Insights_QEB_Impact-Automation-Employment-Q3-2017-Part2.aspx)
+
+[^ncci1_2]: [NCCI](https://www.ncci.com/Articles/Pages/II_Insights_QEB_Impact-Automation-Employment-Q3-2017-Part2.aspx)
+
+[^ncci1_3]: [NCCI](https://www.ncci.com/Articles/Pages/II_Insights_QEB_Impact-Automation-Employment-Q3-2017-Part2.aspx)
+
+[^ncci1_4]: [NCCI](https://www.ncci.com/Articles/Pages/II_Insights_QEB_Impact-Automation-Employment-Q3-2017-Part2.aspx)
 
 [^ineq]: As emphasized in this [report](https://workofthefuture.mit.edu/sites/default/files/2019-09/WorkoftheFuture_Report_Shaping_Technology_and_Institutions.pdf), inequality is less acute in other industrialized nations with similar levels of rising productivity and automation as the U.S. Income distribution is shaped by many factors including but not limited to educational systems, labor and financial market regulations, and fiscal policies. In other words, inequality is not wholly caused by automation, and nor will it be fixed with less automation.
 
-[^mks1]: [McKinsey](https://www.mckinsey.com/~/media/mckinsey/featured%20insights/future%20of%20organizations/what%20the%20future%20of%20work%20will%20mean%20for%20jobs%20skills%20and%20wages/mgi-jobs-lost-jobs-gained-report-december-6-2017.ashx). Page 4, Box E1.
+[^mks1_0]: [McKinsey](https://www.mckinsey.com/~/media/mckinsey/featured%20insights/future%20of%20organizations/what%20the%20future%20of%20work%20will%20mean%20for%20jobs%20skills%20and%20wages/mgi-jobs-lost-jobs-gained-report-december-6-2017.ashx). Page 4, Box E1.
+
+[^mks1_1]: [McKinsey](https://www.mckinsey.com/~/media/mckinsey/featured%20insights/future%20of%20organizations/what%20the%20future%20of%20work%20will%20mean%20for%20jobs%20skills%20and%20wages/mgi-jobs-lost-jobs-gained-report-december-6-2017.ashx). Page 4, Box E1.
+
+[^mks1_2]: [McKinsey](https://www.mckinsey.com/~/media/mckinsey/featured%20insights/future%20of%20organizations/what%20the%20future%20of%20work%20will%20mean%20for%20jobs%20skills%20and%20wages/mgi-jobs-lost-jobs-gained-report-december-6-2017.ashx). Page 4, Box E1.
 
 [^highschool]: [Goldin and Katz](https://scholar.harvard.edu/lkatz/publications/why-united-states-led-education-lessons-secondary-school-expansion-1910-1940). Page 1.
 
@@ -1115,8 +1127,6 @@ In order of appearance:
 
 [^ata]: [ATA](https://www.trucking.org/ATA%20Docs/News%20and%20Information/Reports%20Trends%20and%20Statistics/10%206%2015%20ATAs%20Driver%20Shortage%20Report%202015.pdf). Page 3
 
-[^acm]: [American Center for Mobility: Automated vehicles will create a shift in workforce demands](https://www.acmwillowrun.org/automated-vehicles-will-create-a-shift-in-workforce-demands/)
-
 [^studies]: Frey and Osborne, McKinsey, NCCI, Gartner
 
 [^mks3]: [McKinsey](https://www.mckinsey.com/~/media/mckinsey/featured%20insights/future%20of%20organizations/what%20the%20future%20of%20work%20will%20mean%20for%20jobs%20skills%20and%20wages/mgi-jobs-lost-jobs-gained-report-december-6-2017.ashx). Page 25.
@@ -1125,7 +1135,9 @@ In order of appearance:
 
 [^mks5]: [McKinsey](https://www.mckinsey.com/~/media/mckinsey/featured%20insights/future%20of%20organizations/what%20the%20future%20of%20work%20will%20mean%20for%20jobs%20skills%20and%20wages/mgi-jobs-lost-jobs-gained-report-december-6-2017.ashx). Page 9.
 
-[^gartner]: [Gartner](https://www.gartner.com/en/newsroom/press-releases/2017-12-13-gartner-says-by-2020-artificial-intelligence-will-create-more-jobs-than-it-eliminates)
+[^gartner_0]: [Gartner](https://www.gartner.com/en/newsroom/press-releases/2017-12-13-gartner-says-by-2020-artificial-intelligence-will-create-more-jobs-than-it-eliminates)
+
+[^gartner_1]: [Gartner](https://www.gartner.com/en/newsroom/press-releases/2017-12-13-gartner-says-by-2020-artificial-intelligence-will-create-more-jobs-than-it-eliminates)
 
 [^mks6]: [McKinsey](https://www.mckinsey.com/~/media/mckinsey/featured%20insights/future%20of%20organizations/what%20the%20future%20of%20work%20will%20mean%20for%20jobs%20skills%20and%20wages/mgi-jobs-lost-jobs-gained-report-december-6-2017.ashx). Page 2. Exhibit E1. 15% is the midpoint estimate by McKinsey, which gives an upper bound of 30% in the most extreme scenario.
 
@@ -1145,7 +1157,11 @@ In order of appearance:
 
 [^mks9]: [McKinsey](https://www.mckinsey.com/~/media/mckinsey/featured%20insights/future%20of%20organizations/what%20the%20future%20of%20work%20will%20mean%20for%20jobs%20skills%20and%20wages/mgi-jobs-lost-jobs-gained-report-december-6-2017.ashx). In Brief.
 
-[^mks10]: [McKinsey](https://www.mckinsey.com/~/media/mckinsey/featured%20insights/future%20of%20organizations/what%20the%20future%20of%20work%20will%20mean%20for%20jobs%20skills%20and%20wages/mgi-jobs-lost-jobs-gained-report-december-6-2017.ashx). Page 12.
+[^mks10_0]: [McKinsey](https://www.mckinsey.com/~/media/mckinsey/featured%20insights/future%20of%20organizations/what%20the%20future%20of%20work%20will%20mean%20for%20jobs%20skills%20and%20wages/mgi-jobs-lost-jobs-gained-report-december-6-2017.ashx). Page 12.
+
+[^mks10_1]: [McKinsey](https://www.mckinsey.com/~/media/mckinsey/featured%20insights/future%20of%20organizations/what%20the%20future%20of%20work%20will%20mean%20for%20jobs%20skills%20and%20wages/mgi-jobs-lost-jobs-gained-report-december-6-2017.ashx). Page 12.
+
+[^mks10_2]: [McKinsey](https://www.mckinsey.com/~/media/mckinsey/featured%20insights/future%20of%20organizations/what%20the%20future%20of%20work%20will%20mean%20for%20jobs%20skills%20and%20wages/mgi-jobs-lost-jobs-gained-report-december-6-2017.ashx). Page 12.
 
 [^oecd2]: [Nedelkosk and Quintini](https://www.oecd-ilibrary.org/employment/automation-skills-use-and-training_2e2f4eea-en). Page 8.
 
@@ -1155,13 +1171,17 @@ In order of appearance:
 
 [^mks12]: [McKinsey](https://www.mckinsey.com/~/media/mckinsey/featured%20insights/future%20of%20organizations/what%20the%20future%20of%20work%20will%20mean%20for%20jobs%20skills%20and%20wages/mgi-jobs-lost-jobs-gained-report-december-6-2017.ashx). Page 42. Box 2.
 
-[^mks13]: [McKinsey](https://www.mckinsey.com/~/media/mckinsey/featured%20insights/future%20of%20organizations/what%20the%20future%20of%20work%20will%20mean%20for%20jobs%20skills%20and%20wages/mgi-jobs-lost-jobs-gained-report-december-6-2017.ashx). Page 7.
+[^mks13_0]: [McKinsey](https://www.mckinsey.com/~/media/mckinsey/featured%20insights/future%20of%20organizations/what%20the%20future%20of%20work%20will%20mean%20for%20jobs%20skills%20and%20wages/mgi-jobs-lost-jobs-gained-report-december-6-2017.ashx). Page 7.
+
+[^mks13_1]: [McKinsey](https://www.mckinsey.com/~/media/mckinsey/featured%20insights/future%20of%20organizations/what%20the%20future%20of%20work%20will%20mean%20for%20jobs%20skills%20and%20wages/mgi-jobs-lost-jobs-gained-report-december-6-2017.ashx). Page 7.
 
 [^mks14]: [McKinsey](https://www.mckinsey.com/~/media/mckinsey/featured%20insights/future%20of%20organizations/what%20the%20future%20of%20work%20will%20mean%20for%20jobs%20skills%20and%20wages/mgi-jobs-lost-jobs-gained-report-december-6-2017.ashx). Page 8.
 
 [^ace2]: [Acemoglu and Restrepo](https://economics.mit.edu/files/15254). Page 3.
 
-[^mks15]: [McKinsey](https://www.mckinsey.com/~/media/mckinsey/featured%20insights/future%20of%20organizations/what%20the%20future%20of%20work%20will%20mean%20for%20jobs%20skills%20and%20wages/mgi-jobs-lost-jobs-gained-report-december-6-2017.ashx). Page 6.
+[^mks15_0]: [McKinsey](https://www.mckinsey.com/~/media/mckinsey/featured%20insights/future%20of%20organizations/what%20the%20future%20of%20work%20will%20mean%20for%20jobs%20skills%20and%20wages/mgi-jobs-lost-jobs-gained-report-december-6-2017.ashx). Page 6.
+
+[^mks15_1]: [McKinsey](https://www.mckinsey.com/~/media/mckinsey/featured%20insights/future%20of%20organizations/what%20the%20future%20of%20work%20will%20mean%20for%20jobs%20skills%20and%20wages/mgi-jobs-lost-jobs-gained-report-december-6-2017.ashx). Page 6.
 
 [^mks16]: [McKinsey](https://www.mckinsey.com/~/media/mckinsey/featured%20insights/future%20of%20organizations/what%20the%20future%20of%20work%20will%20mean%20for%20jobs%20skills%20and%20wages/mgi-jobs-lost-jobs-gained-report-december-6-2017.ashx). Page 8.
 
