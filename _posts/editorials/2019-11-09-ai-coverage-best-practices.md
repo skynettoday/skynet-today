@@ -6,7 +6,7 @@ tags: [hype]
 excerpt: "AI researchers often bemoan low quality coverage of their work. Here are their recommendations."
 image: 
   feature: assets/img/editorials/2019-11-09-ai-coverage-best-practices/feature.jpg
-permalink: /editorials/humans-not-concentrating
+permalink: /editorials/ai-coverage-best-practices
 highlight: true
 ---
 
