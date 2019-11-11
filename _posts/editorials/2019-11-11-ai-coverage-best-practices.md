@@ -3,29 +3,25 @@ title: "AI Coverage Best Practices, According to AI Researchers"
 author: [andrey_kurenkov]
 categories: [editorials]
 tags: [hype]
-excerpt: "AI researchers often bemoan low quality coverage of their field. Here are their recommendations."
+excerpt: "AI researchers often bemoan low quality coverage of their field; here are their recommendations."
 image: 
-  feature: assets/img/editorials/2019-11-09-ai-coverage-best-practices/feature.jpg
+  feature: assets/img/editorials/2019-11-11-ai-coverage-best-practices/feature.jpg
 permalink: /editorials/ai-coverage-best-practices
 highlight: true
 ---
 
 Interest in Artificial Intelligence (AI) has skyrocketed in recent
-years, both among the media and the general public. Media coverage of AI
-encompasses a broad range of quality - at one end, the tabloid and
-clickbait media outlets are capable of offering [*outrageously
-inaccurate*](https://bgr.com/2017/07/31/facebook-ai-shutdown-language/)
-portrayals of AI that resemble science fiction more than reality. At the
+years, both among the media and the general public. At the same time, media coverage of AI
+has wildly varied in quality -- at one end, tabloid and
+clickbait media outlets have produced [outrageously
+inaccurate](https://bgr.com/2017/07/31/facebook-ai-shutdown-language/)
+portrayals of AI that reflect science fiction more than reality. At the
 other end, news outlets such as The New York Times or Wired have had
 specialized reporters such as Cade Metz and Tom Simonite who
 consistently write well-researched and accurate portrayals of AI.
-
-Today's AI technologies involve advanced scientific concepts and
-rapidly-changing techniques, which makes them difficult to accurately
-describe in a way that is easily understandable for a general audience.
-Consequently, even responsible media coverage can inadvertently (and
+But, even responsible media coverage can inadvertently (and
 often unintentionally) propagate subtle misconceptions of AI through
-choice of wording, imagery or analogy.
+choice of wording, imagery, or analogy.
 
 As AI researchers, we are both invested and sensitive to how AI is
 portrayed in the media. In this article, we present a list of best
@@ -34,8 +30,8 @@ people without a technical background in AI. In being a set of best practices, t
 representative of what even we as researchers always do, but rather
 principles to keep in mind and try to stick to. The list is inspired
 both by our own observations, and the observations of the AI researchers
-we [*surveyed*](https://twitter.com/skynet_today/status/1162814692676423680)
-online and at the [*Stanford AI Lab*](http://ai.stanford.edu/). We hope
+we [surveyed](https://twitter.com/skynet_today/status/1162814692676423680)
+online and at the [Stanford AI Lab](http://ai.stanford.edu/). We hope
 it will be useful to journalists, researchers, and anyone who reads or
 writes about AI.
 
@@ -43,19 +39,18 @@ writes about AI.
 {:toc}
 
 
-Be careful with what “AI” is
-----------------------------
+### Do: Be careful with what “AI” is
 
 First and foremost, we would like to emphasize being careful with what
 "AI" actually means. Let's get the obvious out of the way: present day
 AI systems have almost nothing to do with The Terminator or similar
-science fiction concepts, and AI researchers are [*almost universally
-annoyed*](https://medium.com/@ageitgey/the-real-scandal-of-ai-awful-stock-photos-456633b9b0fc)
+science fiction concepts, and AI researchers are [almost universally
+annoyed](https://medium.com/@ageitgey/the-real-scandal-of-ai-awful-stock-photos-456633b9b0fc)
 to see stories with badly chosen stock photos implying that is the case.
+
 So, what then is AI? AI researcher Julian Togelius addresses this
-question well in his blog post [*“Some advice for journalists writing
-about artificial
-intelligence”*](http://togelius.blogspot.com/2017/07/some-advice-for-journalists-writing.html):
+question well in his blog post [“Some advice for journalists writing
+about artificial intelligence”](http://togelius.blogspot.com/2017/07/some-advice-for-journalists-writing.html):
 
 > **Keep in mind**: There is no such thing as "an artificial
 > intelligence". AI is a collection of methods and ideas for building
@@ -65,18 +60,9 @@ intelligence”*](http://togelius.blogspot.com/2017/07/some-advice-for-journalis
 > that can do something impressive, such as playing a game or drawing
 > pictures of cats.
 
-Veteran roboticist and AI researcher Rodney Brooks similarly states in
-his “[*7 Deadly Sins of Predicting the Future of
-AI*](https://rodneybrooks.com/the-seven-deadly-sins-of-predicting-the-future-of-ai/)”:
-
-> Some people refer to “an AI”, as though all AI is about being an
-> autonomous agent. I think that is confusing, and just as the natives
-> of San Francisco do not refer to their city as “Frisco”, no serious
-> researchers in AI refer to “an AI”.
-
 Though this may seem like an uncontroversial point, much AI coverage
 gets this wrong in multiple ways, and so we will unpack each way
-independently.
+independently in the recommendations that follow.
 
 ### Don't: imply autonomy where there is none
 
@@ -97,12 +83,19 @@ src="https://platform.twitter.com/widgets.js"
 charset="utf-8"></script>
 
 One implication of the above definition is that it is misleading to say,
-for example, [*“An Artificial Intelligence Developed Its Own Non-Human
-Language”*](https://www.theatlantic.com/technology/archive/2017/06/artificial-intelligence-develops-its-own-non-human-language/530436/),
+for example, [“An Artificial Intelligence Developed Its Own Non-Human
+Language”](https://www.theatlantic.com/technology/archive/2017/06/artificial-intelligence-develops-its-own-non-human-language/530436/),
 since AI is not a single entity but rather a set of techniques and
-ideas. A correct usage is, for example, [*“Scientists develop a traffic
+ideas. A correct usage is, for example, [“Scientists develop a traffic
 monitoring system based on artificial
-intelligence”*](https://techxplore.com/news/2019-08-scientists-traffic-based-artificial-intelligence.html).
+intelligence”](https://techxplore.com/news/2019-08-scientists-traffic-based-artificial-intelligence.html). As Veteran roboticist and AI researcher Rodney Brooks similarly states in
+his “[7 Deadly Sins of Predicting the Future of
+AI](https://rodneybrooks.com/the-seven-deadly-sins-of-predicting-the-future-of-ai/)”:
+
+> Some people refer to “an AI”, as though all AI is about being an
+> autonomous agent. I think that is confusing, and just as the natives
+> of San Francisco do not refer to their city as “Frisco”, no serious
+> researchers in AI refer to “an AI”.
 
 This may seem like a nit-picky point, but it’s part of a broader truth
 that is important to understand: today’s AI systems have close to no
@@ -155,12 +148,12 @@ algorithm together and let it run; when in fact, a huge amount of human
 thinking and effort always goes into making progress on new challenging
 applications of AI. For example, the recent story about OpenAI getting a
 robot hand to solve a rubik’s cube (when given the steps to get it to a
-solved state) was covered with a headline such as “[*This robotic hand
+solved state) was covered with a headline such as “[This robotic hand
 learned to solve a Rubik’s Cube on its own — just like a
-human*](https://www.washingtonpost.com/technology/2019/10/18/this-robotic-hand-learned-solve-rubiks-cube-its-own-just-like-human/)”,
-despite the project involving a huge amount of human effort [*as we made
+human](https://www.washingtonpost.com/technology/2019/10/18/this-robotic-hand-learned-solve-rubiks-cube-its-own-just-like-human/)”,
+despite the project involving a huge amount of human effort [as we made
 clear in our
-coverage*](https://www.skynettoday.com/briefs/openai-rubiks-cube).
+coverage](https://www.skynettoday.com/briefs/openai-rubiks-cube).
 
 Julian Togelius once again has points relevant to this one in his blog
 post:
@@ -306,25 +299,24 @@ distinction between general and narrow).
 One especially complicated aspect of covering AI, as opposed to other technical
 subjects, is the long history of pondering about it in Science Fiction. While interesting,
 such speculations are also completely disconnected from the present day reality of AI, and say
-little about it. The same is true of the thoughts many famous smart people (Steven Hawking, Bill Gates,
-Elon Musk, etc.) have expressed concern about the threat to of superhuman AI to humanity: these perspectives are speculations that are
-completely disconnected from anything factual about present day AI. Per [Rodney Brooks](https://techcrunch.com/2017/07/19/this-famous-roboticist-doesnt-think-elon-musk-understands-ai/):
+little about it. The same is true of the concern many famous smart people (Steven Hawking, Bill Gates,
+Elon Musk, etc.) have expressed about the threat of superhuman AI to humanity: these perspectives are speculations that are
+completely disconnected from anything factual about present day AI. As [Rodney Brooks](https://techcrunch.com/2017/07/19/this-famous-roboticist-doesnt-think-elon-musk-understands-ai/) has said:
 
 > "TC: You’re writing a book on AI, so I have to ask you: Elon Musk expressed again this past weekend that AI is an existential threat. Agree? Disagree?"
 
 > "RB: There are quite a few people out there who’ve said that AI is an existential threat: Stephen Hawking, astronomer Royal Martin Rees, who has written a book about it, and they share a common thread, in that: they don’t work in AI themselves. For those who do work in AI, we know how hard it is to get anything to actually work through product level."
 
-Nevertheless, these speculations have drawn much coverage in articles such as [Stephen Hawking Fears A.I. May Replace Humans, and He’s Not Alone](https://www.inverse.com/article/38054-stephen-hawking-ai-fears). Although it may seem like such coverage does not harm, it may mislead people to thinking such an AI apocalypse is an actual possibility, and lead them to misunderstand the real concerns about present day AI. This was [recently expressed by neuroscientist Anthony Zador and AI expert Yann LeCun](https://blogs.scientificamerican.com/observations/dont-fear-the-terminator/): "they distract from the more mundane but far more likely risks posed by the technology in the near future, as well as from its most exciting benefits."
+Nevertheless, these speculations have drawn much coverage in articles such as [Stephen Hawking Fears A.I. May Replace Humans, and He’s Not Alone](https://www.inverse.com/article/38054-stephen-hawking-ai-fears). Although it may seem like such coverage does no harm, it may mislead people to thinking such an AI apocalypse is an actual possibility, and lead them to misunderstand or ignore the very real concerns about present day AI. This was [recently expressed by neuroscientist Anthony Zador and AI expert Yann LeCun](https://blogs.scientificamerican.com/observations/dont-fear-the-terminator/): 
 
-Details to be careful about
----------------------------
+> "they [speculations about supertintelligent malevolent AI] distract from the more mundane but far more likely risks posed by the technology in the near future, as well as from its most exciting benefits."
+
+### Do: Make Clear What the Task Is, Precisely
 
 The above set of recommendations have to do with one’s broad
 understanding of AI, and our next set of recommendations will discuss
 the more specific details that one needs to pay careful attention to and
 ideally let the reader know when covering AI.
-
-### Do: Make Clear What the Task Is, Precisely
 
 Many of the subfields of Machine Learning (the subfield of AI that leads
 to most media coverage these days), such as Computer Vision or Natural
@@ -332,14 +324,14 @@ Language Processing, involve attempting to replicate some aspect of
 human intelligence. Since it has turned out that replicating human-level
 intelligence is incredibly difficult, AI researchers have for decades
 been tackling these tasks in an incremental approach, by defining ever
-more ambitious tasks relating to visual or language intelligence to
+more ambitious tasks relating to human intelligence to
 address. For example, in the earliest days of computer vision one task
-was to be able to convert from 2D images of 3D shapes to a programmatic
+was converting 2D images of 3D shapes to a programmatic
 representation of these 3D shapes that could be rotated and manipulated
 with a computer:
 
 <figure>
- <img src="{{ site.imgpath }}/editorials/2019-11-09-ai-coverage-best-practices/image1.png"/>
+ <img style="width:45%" src="{{ site.imgpath }}/editorials/2019-11-11-ai-coverage-best-practices/image1.png"/>
   <figcaption>
     From Lawrence Gilman Robert's foundational thesis <a href="https://dspace.mit.edu/bitstream/handle/1721.1/11589/33959125-MIT.pdf?sequence=2&isAllowed=y">"Machine Perception of Three-Dimensional Solids"</a>.
   </figcaption>
@@ -373,10 +365,11 @@ an idea of the type of inputs the trained program can work for and its
 qualitative performance:
 
 <figure>
- <img src="{{ site.imgpath }}/editorials/2019-11-09-ai-coverage-best-practices/image3.png"/>
+ <img src="{{ site.imgpath }}/editorials/2019-11-11-ai-coverage-best-practices/image3.png"/>
   <figcaption>
     An example of qualitative demonstrations of performance, for an AI
     algorithm that is trained to output outlines around various kinds of objects in RGB images.
+    From the paper <a href="https://arxiv.org/abs/1506.06204">"Learning to Segment Object Candidates"</a>.
   </figcaption>
 </figure>
 
@@ -399,7 +392,7 @@ Science may not be apparent to those without experience with it, as
 conveyed well in this XKCD comic:
 
 <figure>
- <img style="width:50%" src="{{ site.imgpath }}/editorials/2019-11-09-ai-coverage-best-practices/image2.png"/>
+ <img style="width:35%" src="{{ site.imgpath }}/editorials/2019-11-11-ai-coverage-best-practices/image2.png"/>
 </figure>
 
 So, it may not be obvious to readers that a program that can play Go,
@@ -432,18 +425,14 @@ survey:
 > what you need for the task, and this is what causes a lot of
 > shortcomings”
 
-On the whole, don't make AI projects seem like they are entirely black
-boxes and mysterious; the public benefits when AI is demystified, and
-alienated when AI is mystified.
-
 ### Do: present advancements in context
 
 A worrying pattern we’ve seen with coverage of new AI results is
 presenting them and their implications as if they are the first of their
-kind. For instance, when Google [*presented new
-work*](https://arxiv.org/abs/1804.03619) on making out who is speaking
-in a crowded room, many articles [*pointed out that this was
-“spooky”*](https://www.skynettoday.com/briefs/google-speech-separation)
+kind. For instance, when Google [presented new
+work](https://arxiv.org/abs/1804.03619) on making out who is speaking
+in a crowded room, many articles [pointed out that this was
+“spooky”](https://www.skynettoday.com/briefs/google-speech-separation)
 while failing to mention the result was an incremental advance on
 decades of research on the problem. While it is useful to cover new
 ideas and their implications, presenting them like this may lead to more
@@ -458,17 +447,8 @@ concern than is warranted. Again, quoting Togelius:
 > before the researchers doing these advances were born.
 > Backpropagation, the algorithm powering most of today's deep learning,
 > is several decades old and was invented independently by multiple
-> individuals. When IBM's Deep Blue computer won over Garry Kasparov and
-> showed that computers could play Chess better than humans, the very
-> core of the software was the Minimax algorithm, first implemented by
-> Alan Turing in the 1940s. Turing, one of the fathers of both
-> artificial intelligence and the wider field of computer science, also
-> wrote the paper "[*On Computing Machinery and
-> Intelligence*](http://www.loebner.net/Prizef/TuringArticle.html)"
-> which was published in 1950. While that paper is most famous for
-> introducing what is now called the Turing Test, it also contains the
-> seeds of many of the key ideas in artificial intelligence.
->
+> individuals. 
+> ...
 > **Recommendations**: When writing stories about exciting new
 > developments, also consult an AI researcher that is old, or at least
 > middle aged. Someone who was doing AI research before it was cool, or
@@ -491,7 +471,7 @@ We hope this set of recommended best practices presents some non obvious
 pitfalls when it comes to reporting on AI. Of course, suggestions that
 apply to coverage of any topic (talking to a variety of sources, being
 skeptical of the perspectives of those with a financial stake in the
-topic, avoid clickbait, etc.) also apply to AI, and AI researchers often
+topic, avoid clickbait, etc.) also apply to AI, and AI researchers are often
 annoyed to find them not being followed:
 
 <figure>
@@ -510,8 +490,8 @@ charset="utf-8"></script>
 As AI researchers we are understandably very invested in the topic, and
 we wish it to be communicated to the public as accurately as possible.
 We hope this article can help with that, and we encourage any
-journalists with ideas on how we can further help to reach out to us.
+journalists with ideas on how we can further help to reach [out to us](https://www.skynettoday.com/contact).
 
 <hr>
 
-*Thank you to Abigail See and Jacky Liang for help editing this, and for many others for contributing their thoughts.*
+*Thank you to Abigail See and Jacky Liang for help editing this, and to many others for contributing their thoughts.*
