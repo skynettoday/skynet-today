@@ -5,7 +5,7 @@ categories: [editorials]
 tags: [hype]
 excerpt: "AI researchers often bemoan low quality coverage of their field; here are their recommendations."
 image: 
-  feature: assets/img/editorials/2019-11-11-ai-coverage-best-practices/feature.jpg
+  feature: assets/img/editorials/2019-11-11-ai-coverage-best-practices/main.png
 permalink: /editorials/ai-coverage-best-practices
 highlight: true
 ---
