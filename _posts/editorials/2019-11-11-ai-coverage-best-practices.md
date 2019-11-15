@@ -310,7 +310,7 @@ Nevertheless, these speculations have drawn much coverage in articles such as [S
 
 > "they [speculations about supertintelligent malevolent AI] distract from the more mundane but far more likely risks posed by the technology in the near future, as well as from its most exciting benefits."
 
-### Do: make clear what the task ss, precisely
+### Do: make clear what the task is, precisely
 
 The above set of recommendations have to do with one’s broad
 understanding of AI, and our next set of recommendations will discuss
