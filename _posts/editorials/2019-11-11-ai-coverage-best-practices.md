@@ -28,7 +28,7 @@ portrayed in the media. In this article, we present a list of best
 practices for media coverage of AI, some of which may not be obvious to
 people without a technical background in AI. In being a set of best practices, this list will not be
 representative of what even we as researchers always do, but rather
-principles to keep in mind and try to stick to. The list is inspired
+principles to keep in mind and try to stick to (and ignore as needbe according to good judgement). The list is inspired
 both by our own observations, and the observations of the AI researchers
 we [surveyed](https://twitter.com/skynet_today/status/1162814692676423680)
 online and at the [Stanford AI Lab](http://ai.stanford.edu/). We hope
@@ -306,9 +306,11 @@ completely disconnected from anything factual about present day AI. As [Rodney B
 
 > "RB: There are quite a few people out there who’ve said that AI is an existential threat: Stephen Hawking, astronomer Royal Martin Rees, who has written a book about it, and they share a common thread, in that: they don’t work in AI themselves. For those who do work in AI, we know how hard it is to get anything to actually work through product level."
 
-Nevertheless, these speculations have drawn much coverage in articles such as [Stephen Hawking Fears A.I. May Replace Humans, and He’s Not Alone](https://www.inverse.com/article/38054-stephen-hawking-ai-fears). Although it may seem like such coverage does no harm, it may lead people to think such an AI apocalypse is an actual possibility, and to misunderstand or ignore the very real concerns about present day AI. This was [recently expressed by neuroscientist Anthony Zador and AI expert Yann LeCun](https://blogs.scientificamerican.com/observations/dont-fear-the-terminator/): 
+Nevertheless, these speculations have drawn much coverage in articles such as [Stephen Hawking Fears A.I. May Replace Humans, and He’s Not Alone](https://www.inverse.com/article/38054-stephen-hawking-ai-fears) and [Henry Kissinger Warns That AI Will Fundamentally Alter Human Consciousness](https://gizmodo.com/henry-kissinger-warns-that-ai-will-fundamentally-alter-1839642809) (the latter of which we covered in ["Examining Henry Kissinger's Uninformed Comments on AI"](https://www.skynettoday.com/briefs/kissinger-ai)). Although it may seem like such coverage does no harm, it may lead people to think such an AI apocalypse is an actual possibility, and to misunderstand or ignore the very real concerns about present day AI. This was [recently expressed by neuroscientist Anthony Zador and AI expert Yann LeCun](https://blogs.scientificamerican.com/observations/dont-fear-the-terminator/): 
 
 > "they [speculations about supertintelligent malevolent AI] distract from the more mundane but far more likely risks posed by the technology in the near future, as well as from its most exciting benefits."
+
+Of course, this does not mean only AI researchers should only ever get to comment about the state of AI. Public figures such as [Barack Obama](https://youtu.be/ZdhyM5jHu0s) and [Gary Kasparov](https://youtu.be/NP8xt8o4_5Q) are good examples of 'famous smart people' whose comments on AI are grounded in fact and accurate. But, _as a general rule_ (which are all these best practices are, and all are subject to being overriden by good judgement) such comments have tended to confuse moreso than clarify the state of present day AI, and so we advise caution when citing the opinions of non AI researchers.
 
 ### Do: make clear what the task is, precisely
 
