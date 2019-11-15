@@ -310,7 +310,7 @@ Nevertheless, these speculations have drawn much coverage in articles such as [S
 
 > "they [speculations about supertintelligent malevolent AI] distract from the more mundane but far more likely risks posed by the technology in the near future, as well as from its most exciting benefits."
 
-Of course, this does not mean only AI researchers should only ever get to comment about the state of AI. Public figures such as [Barack Obama](https://youtu.be/ZdhyM5jHu0s) and [Gary Kasparov](https://youtu.be/NP8xt8o4_5Q) are good examples of 'famous smart people' whose comments on AI are grounded in fact and accurate. But, _as a general rule_ (which are all these best practices are, and all are subject to being overriden by good judgement) such comments have tended to confuse moreso than clarify the state of present day AI, and so we advise caution when citing the opinions of non AI researchers.
+Of course, this does not mean only AI researchers should only ever get to comment about the state of AI. Public figures such as [Barack Obama](https://youtu.be/ZdhyM5jHu0s) and [Gary Kasparov](https://youtu.be/NP8xt8o4_5Q) are good examples of 'famous smart people' whose comments on AI are grounded in fact and accurate. But, _as a general rule_ (which are all these best practices are, and all are subject to being overriden by good judgement) such comments have tended to confuse moreso than clarify about the state of present day AI, and so we advise caution when citing the opinions of non AI researchers.
 
 ### Do: make clear what the task is, precisely
 
