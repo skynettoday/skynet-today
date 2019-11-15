@@ -290,9 +290,8 @@ program executing it’s human-written instructions, and fun to consider
 the implications of computer programs that have human-level or greater
 intelligence. It’s certainly okay for artists to ponder the implications
 of general AI, but because of this discrepancy between pop culture AI
-and real world AI, we would recommend generally avoiding comparisons to
-pop culture depictions of AI (unless the comparison is to point out the
-distinction between general and narrow).
+and real world AI, we would recommend generally avoiding comparisons between the two
+ (unless the comparison is to point out how they strongly contrast).
 
 ### Don't: cite opinions of famous smart people who don't work on AI
 
@@ -311,7 +310,7 @@ Nevertheless, these speculations have drawn much coverage in articles such as [S
 
 > "they [speculations about supertintelligent malevolent AI] distract from the more mundane but far more likely risks posed by the technology in the near future, as well as from its most exciting benefits."
 
-### Do: Make Clear What the Task Is, Precisely
+### Do: make clear what the task ss, precisely
 
 The above set of recommendations have to do with one’s broad
 understanding of AI, and our next set of recommendations will discuss
