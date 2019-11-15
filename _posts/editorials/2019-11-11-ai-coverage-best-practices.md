@@ -24,7 +24,7 @@ often unintentionally) propagate subtle misconceptions of AI through
 choice of wording, imagery, or analogy.
 
 As AI researchers, we are both invested and sensitive to how AI is
-portrayed in the media. In this article, we present a list of best
+portrayed in the media. In this article, we suggest a list of best
 practices for media coverage of AI, some of which may not be obvious to
 people without a technical background in AI. In being a set of best practices, this list will not be
 representative of what even we as researchers always do, but rather
