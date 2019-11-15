@@ -294,7 +294,7 @@ and real world AI, we would recommend generally avoiding comparisons to
 pop culture depictions of AI (unless the comparison is to point out the
 distinction between general and narrow).
 
-### Don't: cite AI opinions of famous smart people
+### Don't: cite opinions of famous smart people who don't work on AI
 
 One especially complicated aspect of covering AI, as opposed to other technical
 subjects, is the long history of pondering about it in Science Fiction. While interesting,
