@@ -854,7 +854,7 @@ Conclusion
 ----------
 
 [In a 2018 article](https://www.oxfordmartin.ox.ac.uk/opinion/view/404), the authors
-of the Oxford study notes that in comparison to recent estimates on jobs
+of the Oxford study note that in comparison to recent estimates on jobs
 at risk of displacement by automation:
 
 > Seen through the lens of the twentieth century, our estimate, that
@@ -898,7 +898,7 @@ for displaced workers to retrain and find new jobs within a year. This
 is unlikely to happen without government intervention, as workers whose
 jobs are most automatable receive the least job training. The bright
 side is we know facilitating large shifts in employment composition is
-possible - U.S. made big investments in the G.I. Bill and mandatory
+possible - the U.S. made big investments in the G.I. Bill and mandatory
 secondary education last century, helping American workers move out of
 agriculture and into other sectors.
 
