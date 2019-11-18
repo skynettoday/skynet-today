@@ -19,6 +19,11 @@ Our core beliefs are that:
 * Therefore, AI researchers and experts have a responsibility to promote understanding of their field within the general public with accessible writing.
 * There are not sufficient efforts by AI researchers and experts to do this sort of writing, and having a platform such as ours is useful to make this happen more. 
 
+
+## Why 'Skynet Today'
+
+We think it's a fun name! Part of our mission is to point out the discrepancy between the perception and reality of AI today. Often, minor improvements are covered as if they are a portent of the mythical 'Skynet' AI takeover, despite them being nothing of the sort. So, we named ourselves 'Skynet Today' to reflect the idea of covering such fears, and of how (un)realistic Skynet really is Today. We admit it's a slightly unexpected name given our opposition to needless hype around AI, but trust readers to look beyond the name and see our work for what it is.
+
 ## Who are you
 The site is currently co-run by two people:
 * [Andrey Kurenkov](http://www.andreykurenkov.com/): the site's creator, lead editor, and occasional contributor of news coverage and editorials. Andrey has BS Computer Science and Electrical Engineering degrees from Georgia Tech, and is currently a graduate student at Stanford where he studies and is doing research in AI. He likes writing [blog posts](http://www.andreykurenkov.com/writing/) about miscellaneous topics and has [written](http://www.andreykurenkov.com/writing/ai/a-brief-history-of-neural-nets-and-deep-learning/) [several](http://www.andreykurenkov.com/writing/ai/a-brief-history-of-game-ai/) long-form educational posts about AI. 
