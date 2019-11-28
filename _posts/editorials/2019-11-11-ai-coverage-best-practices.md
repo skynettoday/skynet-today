@@ -357,6 +357,11 @@ responders to our survey said:
 > metric and what human? How narrow is the task? How much data/compute
 > did the model use?”
 
+AI researchers and authors [Gary Marcus](https://qz.com/author/gary-marcus/) and [Ernest Davis](https://qz.com/author/ernest-davis/) also emphasize this point in ["Six questions to ask yourself when reading about AI"](https://qz.com/1706248/six-questions-to-ask-yourself-when-reading-about-ai/):
+
+> "So whenever you hear about a supposed success in AI, here’s a list of six questions you should ask: <br>
+> "1. Stripping away the rhetoric, what did the AI system actually do here? (Does a “reading system” really read, or does it just highlight relevant bits of text?)"
+
 With regards to demonstrations of Machine Learning algorithms, one
 concrete action to take besides just correctly describing the precise
 details of the task is to also provide examples from the dataset the
@@ -385,6 +390,8 @@ href="https://twitter.com/Surreabral/status/1162874978745761792?ref_src=twsrc%5E
 src="https://platform.twitter.com/widgets.js"
 charset="utf-8"></script>
 
+
+
 ### Do: call out limitations
 
 A corollary to being clear about what the task is, is being clear about
@@ -405,6 +412,13 @@ conveyed by Julian Togelius in his blog post:
 > intelligence". Always ask what the limitations of a system is. Ask if
 > it really is the same neural network that can play both Space Invaders
 > and Montezuma's Revenge (hint: it isn't).
+
+
+["Six questions to ask yourself when reading about AI"](https://qz.com/1706248/six-questions-to-ask-yourself-when-reading-about-ai/) also suggests several relevant questions to this point:
+
+> "2. How general is the result? (For example, does an alleged reading task measure all aspects of reading, or just a tiny slice of it? If it was trained on fiction, can it read the news?)" <br>
+...<br>
+> "6. How robust is the system? Could it work just as well with other data sets, without massive amounts of retraining? (For example, would a driverless car system that was trained during the day be able to drive at night, or in the snow, or if there was a detour sign not listed on its map?)"
 
 ### Don’t: ignore the failures
 
