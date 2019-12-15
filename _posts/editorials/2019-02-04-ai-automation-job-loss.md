@@ -363,6 +363,12 @@ Automation-induced job loss will also affect men more than women, as men make up
 And, automation will impact young and old workers more than middle-aged ones. 
 Although the youth side of this U-curve is much worse than the other as entry-level jobs tend to have higher risks of automation, young workers tend to be better at finding and adapting to new jobs than senior workers [^oecd2].
 
+These trends are slightly more nuanced for the type of automation induced by recent AI advances.
+A Stanford study[^ai_labor] measuring how exposed a job is to AI-enabled automation by comparing job descriptions with AI patent descriptions found that:
+
+> While individuals with low levels of education are somewhat exposed to AI, it is those with college degrees, including Master’s degrees, who are most exposed. 
+Moreover, as might be expected from the fact that AI-exposed jobs are predominantly those involving high levels of education and accumulated experience, it is older workers who are most exposed to AI, with younger workers much less so.
+
 Lastly, automation may also decrease wages for workers in the more automatable industries. 
 To quickly supplant lost income, workers displaced by automation often [settle for jobs that pay less than the job they had before](https://futurism.com/new-chart-proves-automation-serious-threat). 
 One study finds that one more robot per a thousand workers decreases wages by 0.37%[^ace1]. 
@@ -725,6 +731,8 @@ In order of appearance:
 
 [Arntz, M. Gregory, T. Zierahn, Ulrich. Revisiting the risk of automation. University of Mannheim. October, 2017.](https://www.sciencedirect.com/science/article/pii/S0165176517302811)
 
+[Michael Webb. The Impact of Artificial Intelligence on the Labor Market. November, 2019.](https://web.stanford.edu/~mww/webb_jmp.pdf)
+
 [Acemoglu, D., Restrepo, P. Robots and Jobs: Evidence from US Labor Markets. July 16, 2018.](https://economics.mit.edu/files/15254)
 
 [David, P.A. The Dynamo and the Computer: An Historical Perspective on the Modern Productivity Paradox. 1990](https://www.jstor.org/stable/2006600?seq=1#metadata_info_tab_contents)
@@ -806,6 +814,8 @@ In order of appearance:
 [^mks10_2]: [McKinsey](https://www.mckinsey.com/~/media/mckinsey/featured%20insights/future%20of%20organizations/what%20the%20future%20of%20work%20will%20mean%20for%20jobs%20skills%20and%20wages/mgi-jobs-lost-jobs-gained-report-december-6-2017.ashx). Page 12.
 
 [^oecd2]: [Nedelkosk and Quintini](https://www.oecd-ilibrary.org/employment/automation-skills-use-and-training_2e2f4eea-en). Page 8.
+
+[^ai_labor]: [Webb](https://web.stanford.edu/~mww/webb_jmp.pdf). Page 4.
 
 [^ace1]: [Acemoglu and Restrepo](https://economics.mit.edu/files/15254)
 
