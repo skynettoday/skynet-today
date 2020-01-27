@@ -190,7 +190,8 @@ But the three authors went much further than just present this new learning algo
 [^part1_12]: Widrow, B., & Lehr, M. (1990). 30 years of adaptive neural networks: perceptron, madaline, and backpropagation. Proceedings of the IEEE, 78(9), 1415-1442.
 [^part1_13]: D. E. Rumelhart, G. E. Hinton, and R. J. Williams. 1986. Learning internal representations by error propagation. In Parallel distributed processing: explorations in the microstructure of cognition, vol. 1, David E. Rumelhart, James L. McClelland, and CORPORATE PDP Research Group (Eds.). MIT Press, Cambridge, MA, USA 318-362
 
-This is the second part of 'A Brief History of Neural Nets and Deep Learning'. Part 1 is [here](http://www.andreykurenkov.com/writing/ai/a-brief-history-of-neural-nets-and-deep-learning), and Parts 3 and 4 are [here](http://www.andreykurenkov.com/writing/ai/a-brief-history-of-neural-nets-and-deep-learning-part-3) and [here](http://www.andreykurenkov.com/writing/ai/a-brief-history-of-neural-nets-and-deep-learning-part-4). In this part, we will look into several strains of research that made rapid progress following the development of backpropagation and until the late 90s, which we shall see later are the essential foundations of Deep Learning.
+
+# Part 2: all sorts of neural nets
 
 ## Neural Nets Gain Vision
 
@@ -356,7 +357,6 @@ Finally, belief nets could be trained somewhat fast! Though not quite as influen
 [^part2_14]: Dayan, P., Hinton, G. E., Neal, R. M., & Zemel, R. S. (1995). The helmholtz machine. Neural computation, 7(5), 889-904.
 [^part2_15]: Anderson, C. W. (1989). Learning to control an inverted pendulum using neural networks. Control Systems Magazine, IEEE, 9(3), 31-37.
 
-In this part, we will continue to see the swift pace of research in the 90s, and see why neural nets ultimately lost favor much as they did in the late 60s.
 
 ## Neural Nets Make Decisions
 
@@ -471,6 +471,8 @@ Other new methods, notably Random Forests, also proved to be very effective and 
 and [here](http://www.andreykurenkov.com/writing/ai/a-brief-history-of-neural-nets-and-deep-learning-part-3). In this part, we will get to the end of our story and see how deep learning emerged from the slump neural nets found themselves in by the late 90s, and the amazing state of the art results it has achieved since.
 
 > "Ask anyone in machine learning what kept neural network research alive and they will probably mention one or all of these three names: Geoffrey Hinton, fellow Canadian Yoshua Bengio and Yann LeCun, of Facebook and New York University."[^part4_1]
+
+# Part 3: Deep Learning
 
 ## The Deep Learning Conspiracy
 

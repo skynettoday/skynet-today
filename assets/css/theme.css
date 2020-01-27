@@ -1169,3 +1169,129 @@ a.social-icon img {
 	}
 }
 
+
+iframe,
+img,
+embed,
+object,
+video {
+    max-width: 100%;
+    padding: 0 10%;
+}
+
+img[align=left] {
+    margin-right: 3%;
+}
+
+img[align=right] {
+    margin-left: 3%;
+}
+
+figure {
+    display:block;
+    margin: 20px; /* adjust as needed */
+    margin: 0;
+    text-align: center;
+    vertical-align: middle;
+}
+
+figure img {
+    vertical-align: middle;
+}
+
+figure video {
+    vertical-align: middle;
+}
+
+figure figcaption {
+    text-align: center;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.center {
+    text-align: center;
+}
+
+.postimage {
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+.postimage_unpadded {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  padding: 0;
+}
+
+.postimagesmall {
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  height: auto;
+}
+
+.postimageactual {
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  height: auto;
+}
+
+.postimagesmaller {
+  width: 75%;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  height: auto;
+}
+
+.postimage_75 {
+  width: 75%;
+  display:block;
+  height: auto;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.postimage_50 {
+  width: 50%;
+  display:block;
+  height: auto;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.postimage_25 {
+  width: 25%;
+  display:block;
+  height: auto;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.postimagehalf {
+  width: 49%;
+  height: auto;
+  margin-left:auto;
+  margin-right:auto;
+  padding: 1%;
+}
+
+.postimagethird {
+  width: 30%;
+  height: auto;
+  margin-left:auto;
+  margin-right:auto;
+  padding: 1%;
+}
+
+.postimagequarter {
+  width: 24%;
+  height: auto;
+  margin-left:auto;
+  margin-right:auto;
+}
+
