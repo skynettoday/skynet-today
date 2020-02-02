@@ -4,7 +4,7 @@ author: [daniel_bashir]
 editor: [jacky_liang]
 categories: [editorials]
 tags: [economy,jobs,upskilling]
-excerpt: "[TAGLINE WIP]"
+excerpt: "Effective worker upskilling requires a broad approach that puts more value on human capital."
 image: 
   feature: assets/img/editorials/2020-02-11-upskilling/main.jpg
   credit: <a href="https://www.youtube.com/watch?v=hhBSaVsMvgE">CNBC via YouTube</a>
@@ -37,7 +37,8 @@ In particular, we will discuss how the United States might develop an upskilling
 
 AI Automation will displace some jobs and create others, but the displacement will affect some sectors and communities much more than others. 
 We’ve previously [covered this topic in depth](https://www.skynettoday.com/editorials/ai-automation-job-loss), so we will only discuss the situation briefly here. 
-The [Brookings Institute suggests](https://www.brookings.edu/research/automation-and-artificial-intelligence-how-machines-affect-people-and-places/) that automation can replace labor in a number of ways, including substituting entire jobs, substituting particular tasks, and complementing labor. Overall, automation will affect occupations in "virtually all occupational groups in the future but the effects will be of varied intensity--and drastic for only some." 
+The [Brookings Institute suggests](https://www.brookings.edu/research/automation-and-artificial-intelligence-how-machines-affect-people-and-places/) that automation can replace labor in a number of ways, including substituting entire jobs, substituting particular tasks, and complementing labor. 
+Overall, automation will affect occupations in "virtually all occupational groups in the future but the effects will be of varied intensity--and drastic for only some." 
 To contextualize, McKinsey says _[only five percent](https://www.mckinsey.com/featured-insights/future-of-work/ai-automation-and-the-future-of-work-ten-things-to-solve-for)_ of occupations could be fully automated by current technologies, while about half of the _activities_ carried out by workers can be automated.
 Besides varying across occupation, effects are likely to vary across regions and demographics, and "men, youth, and under-represented groups will be the most impacted among demographic groups" [[Brookings](https://www.brookings.edu/research/automation-and-artificial-intelligence-how-machines-affect-people-and-places/)].
 In sum, changes to the workplace due to automation may not be as drastic or significant as many fear, but they will certainly occur. 
@@ -189,8 +190,8 @@ In general, improvements in existing upskilling programs can be effectively moti
 
 Upskilling indeed has promise as an effective countermeasure to automation-induced job insecurity and market changes. 
 A combination of public- and private-sector efforts such as have the potential to provide numerous means for workers to re-train and educate themselves in order to continue workforce participation.
- However, this comes with a number of caveats: if appropriate policies and programs are not adopted, the U.S. risks losing out on both helping its workers prepare for economic changes and reaping the benefits of continued technological progress. 
- The U.S. should prioritize policies with the following goals in mind:
+However, this comes with a number of caveats: if appropriate policies and programs are not adopted, the U.S. risks losing out on both helping its workers prepare for economic changes and reaping the benefits of continued technological progress. 
+The U.S. should prioritize policies with the following goals in mind:
 
 *   Providing incentives to invest in human capital
 *   Providing incentives to distribute benefits of retraining and education investment to workers of all skill levels
