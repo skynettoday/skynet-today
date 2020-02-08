@@ -1,5 +1,5 @@
 ---
-title: "The Efficacy of Retraining Workers in Response to Automation"
+title: "The Efficacy of Worker Upskilling in Response to Automation"
 author: [daniel_bashir]
 editor: [jacky_liang]
 categories: [editorials]
@@ -9,6 +9,7 @@ image:
   feature: assets/img/editorials/2020-02-11-upskilling/main.jpg
   credit: <a href="https://www.youtube.com/watch?v=hhBSaVsMvgE">CNBC via YouTube</a>
 permalink: /editorials/upskilling
+highlight: true
 ---
 
 ### Background
