@@ -1,5 +1,5 @@
 ---
-title: "The Efficacy of Worker Upskilling in Response to Automation"
+title: "Retraining as a Response to Automation -- Promising, but Only if Done Right"
 author: [daniel_bashir]
 editor: [jacky_liang]
 categories: [editorials]
