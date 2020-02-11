@@ -1,5 +1,5 @@
 ---
-title: "Retraining as a Response to Automation -- Promising, but Only if Done Right"
+title: "Retraining as a Response to Automation — Promising, but Only if Done Right"
 author: [daniel_bashir]
 editor: [jacky_liang]
 categories: [editorials]
