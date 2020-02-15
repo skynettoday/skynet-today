@@ -9,7 +9,7 @@ image:
   feature: assets/img/editorials/2020-02-11-upskilling/main.jpg
   credit: <a href="https://www.youtube.com/watch?v=hhBSaVsMvgE">CNBC via YouTube</a>
 permalink: /editorials/upskilling
-highlight: true
+featured: true
 ---
 
 ### Background
