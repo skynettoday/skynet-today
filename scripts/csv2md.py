@@ -6,10 +6,14 @@ from collections import Counter
 import pandas as pd
 import inflect
 
+try:
+    import sys
+    reload(sys)
+    sys.setdefaultencoding('utf-8')
+except:
+    print('Was not able to change sys encoding to utf-8, probably b/c you\'re on Python 3.')
+    pass
 
-import sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
 
 _CATEGRORIES = [
     'Mini Briefs',
