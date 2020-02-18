@@ -77,7 +77,6 @@ GEM
     sawyer (0.8.2)
       addressable (>= 2.3.5)
       faraday (> 0.8, < 2.0)
-    wdm (0.1.1)
 
 PLATFORMS
   ruby
@@ -91,10 +90,9 @@ DEPENDENCIES
   jekyll-redirect-from
   jekyll-seo-tag
   jekyll-sitemap
-  wdm (>= 0.1.0)
 
 RUBY VERSION
-   ruby 2.5.5p157
+   ruby 2.4.1p111
 
 BUNDLED WITH
    2.0.2
