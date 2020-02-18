@@ -17,3 +17,9 @@
 {% if page.excerpt %}<meta property="og:description" content="{{ page.excerpt | strip_html }}">{% endif %}
 <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.url }}">
 <meta property="og:site_name" content="{{ site.title }}">
+
+{% if page.image.external %}
+<meta property="og:image" content="{{ page.image.external }}">
+{% else %}
+<meta property="og:image" content="{{ site.url }}/{{ page.image.feature }}">
+{% endif %}
