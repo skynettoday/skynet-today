@@ -937,6 +937,9 @@ a.social-icon img {
 .text-black {
 	color: #000;
 }
+.author-credit {
+  margin-top: 0.5rem !important;
+}
 /*Share*/
 #st-2 .st-btn {
 	background:#222 !Important;

@@ -1,20 +1,5 @@
-<div class="page-meta mr-4 small">
+<div class="page-meta mr-4 small" id="sidebar">
 
-    {% if page.author %}
-    {% if page.author.first %}
-    {% for a in page.author %}
-    {% assign author = site.data.authors[a] %}
-    {% include sidebar-author.html %}
-    {% endfor %}
-    {% else %}
-    {% assign author = site.data.authors[page.author] %}
-    {% include sidebar-author.html %}
-    {% endif %}
-    {% endif %}
-
-    {% if site.owner.google.ad-client and site.owner.google.ad-slot %}
-    {% include ad-sidebar.html %}
-    {% endif %}
     
 <!--    {% if site.owner.disqus-shortname and page.comments or site.comments %}
     <span class="page-comments d-none d-md-block mt-2">
@@ -22,9 +7,14 @@
     </span>
     {% endif %}
     
--->       
-   <h6 class="d-none d-md-block mt-2 lh14">{{page.title}}</h6>
+-->  
+  <div id="sidebar-above-toc">
+    <h6 class="d-none d-md-block mt-2 lh14">{{page.title}}</h6>
    
+    {% if site.owner.google.ad-client and site.owner.google.ad-slot %}
+    {% include ad-sidebar.html %}
+    {% endif %}
+    
     <div class="text-muted">
     <span class="page-date date published">               
     <time datetime="{{ page.date | date_to_xmlschema }}">
@@ -40,10 +30,27 @@
     {% endif %}
     </div>
     
+    {% if page.author %}
+    {% if page.author.first %}
+    {% for a in page.author %}
+    {% assign author = site.data.authors[a] %}
+    {% include sidebar-author.html %}
+    {% endfor %}
+    {% else %}
+    {% assign author = site.data.authors[page.author] %}
+    {% include sidebar-author.html %}
+    {% endif %}
+    {% endif %}
+
     
     {% if page.sidebartoc %}
     <hr>
-    <nav id="mytoc" data-spy="affix" data-toggle="mytoc"></nav>
+    </div>
+
+    <nav id="mytoc" data-spy="affix" style="overflow-y: auto;" data-toggle="mytoc"></nav>
+    
+    {% else %}
+    </div>
     {% endif %}
 
 </div>

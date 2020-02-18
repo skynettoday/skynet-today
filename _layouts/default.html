@@ -151,11 +151,15 @@
           $scope: $('.post-article')
      	  });
 
-	    $('body').scrollspy({
-	      target: $myToc
-	    });
+	      $('body').scrollspy({
+	        target: $myToc
+	      });
+	      
+	      setTimeout(function(){ }, 100);
+	      
+	      $myToc.height( ($('#sidebar').height() - $("#sidebar-above-toc").height() + 20));
 
-	});
+	    });
   </script>
 
   </body>

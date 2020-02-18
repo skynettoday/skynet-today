@@ -12,6 +12,7 @@ nav[data-toggle="toc"] .nav > li > a {
   font-size: 13px;
   font-weight: 500;
   color: #767676;
+  margin-bottom: 1px;
 }
 nav[data-toggle="toc"] .nav > li > a:hover,
 nav[data-toggle="toc"] .nav > li > a:focus {
