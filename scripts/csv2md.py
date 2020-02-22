@@ -53,7 +53,7 @@ if __name__ == "__main__":
     articles_map = {c : [] for c in _CATEGRORIES}
     csv = pd.read_csv(args.input_csv)
     for row_num, row in csv.iterrows():
-        if not row['Type']:
+        if not row['Type'] or row['Type'] not in articles_map:
             print()
             print('To which category does this article belong?')
             print()
