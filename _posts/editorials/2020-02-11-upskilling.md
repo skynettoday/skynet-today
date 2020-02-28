@@ -12,7 +12,7 @@ permalink: /editorials/upskilling
 featured: true
 ---
 
-### Background
+## Background
 
 The recent rise of technology and AI-enabled automation (AI Automation) presents what many perceive as scary prospects for the job market.
 While increasingly powerful technology may revolutionize society in a number of positive ways, from personalized services to making products more affordable
@@ -44,7 +44,7 @@ To contextualize, McKinsey says _[only five percent](https://www.mckinsey.com/fe
 Besides varying across occupation, effects are likely to vary across regions and demographics, and "men, youth, and under-represented groups will be the most impacted among demographic groups" [[Brookings](https://www.brookings.edu/research/automation-and-artificial-intelligence-how-machines-affect-people-and-places/)].
 In sum, changes to the workplace due to automation may not be as drastic or significant as many fear, but they will certainly occur.
 
-#### Current Upskilling Efforts
+### Current Upskilling Efforts
 
 In response to automation’s impacts, upskilling workers appears to be the most popular course of action contended for today.
 Its premise is that because the skills needed by jobs of the future will be different, workers should develop new skills that will prepare them to find work in such a changing environment.
@@ -58,7 +58,7 @@ Problems include that re-training efforts aren’t seen by workers as effective,
 The benefits of these efforts skew towards savvier and more well-educated workers, and the structuring of programs to maximize benefit for companies instead of particular workers renders re-training efforts genuinely ineffective for many workers. Gizmodo concludes that in order for any upskilling program to be truly effective, it must give workers a seat at the table--otherwise it risks failing to serve those who need it most.
 This might look like the [OECD’s model](http://www.oecd.org/employment/emp/adult-learning-work-in-social-partnership-2019.pdf), which helps determine relevant priorities and the structure of retraining through a "strong working relationship between employer organisations and trade unions on issues of adult learning policy.".
 
-#### Main Questions
+### Main Questions
 
 The examples so far highlight a few important questions:
 
@@ -68,7 +68,7 @@ The examples so far highlight a few important questions:
     1. investments in retraining programs, and
     2. assurances that those programs are effective?
 
-#### Potential Strategies
+### Potential Strategies
 
 <figure>
     <img style="width:50%" src="{{ site.imgpath }}/editorials/2020-02-11-upskilling/im1.png"/>
@@ -95,6 +95,8 @@ Let’s recount the fundamental issues that affect workers in the face of automa
 
 Any potential solution to automation-induced challenges must address the issues above. That is, it must either stem job loss, create jobs that do not require advanced education and are not at risk due to automation, or address the skills gap.
 
+#### Evaluation of Alternative Responses
+
 Stemming job loss enough to counteract changes in the workplace due to AI will likely be difficult.
 While it may take time for AI systems to be fully integrated into the workplace, firms will likely follow incentives to reduce costs and increase productivity where they can. The impacts will not be small, either.
 Forrester vice president Huard Smith [predicts that](https://fortune.com/2019/11/19/artificial-intelligence-will-obliterate-these-jobs-by-2030/) "73% of all cubicle-related jobs… like data entry… will be automated by 2030, equating to over 20 million jobs eliminated" while "38% of location-based jobs", such as grocery store clerks, will also be eliminated, amounting to 29.9 million positions eliminated.
@@ -109,6 +111,8 @@ While AI will displace many jobs, ones involving more menial tasks, such as cash
 While self-checkout machines have become pervasive, [human workers are still required](https://fortune.com/2019/02/28/retail-workers-technology-automation-jobs/) to oversee the machines if they malfunction and to help confused shoppers, among other things. The nontrivial cost of adapting new technology means that it will take time to phase out certain jobs, if ever.
 Even though seventy-five percent of executives believe that their business will risk failure in a matter of years if they don’t scale AI, adopting AI is not a simple process and will [take some time](https://fortune.com/2019/11/14/executives-fear-accenture-a-i/).
 However, hoping that jobs that can be automated will stay around longer than necessary does not provide a viable long-term solution.
+
+#### A Case for Retraining
 
 As such, it seems that the most fruitful issue to tackle is that of workers’ training.
 The inevitable race towards AI adoption and its consequent impact on the workplace make retraining workers a natural option.
@@ -128,6 +132,8 @@ The Stanford study points out what doctors and nurses, whose works involve a sub
 More specialized medical occupations such as medical technicians will be highly exposed to AI-enabled automation, while lower-skill healthcare occupations such as home health care aides are less exposed because of the variable physical and interpersonal activities they perform.
 While this example shows that AI’s impacts on the labor market will likely differ considerably from those of prior automation, the relative safety of jobs such as health care aides does not imply that there will be job _growth_ to counteract the loss of jobs due to automated tasks.
 
+#### Our Recommendations
+
 So what is to be done?
 The above discussion and current research indicates that interestingly, those with bachelors and masters degrees will be at relatively high risk of displacement by AI.
 However, it is acknowledged that certain technical tasks (such as developing AI) and interpersonal tasks are currently at low-risk.
@@ -139,7 +145,7 @@ First, high specialization can lead to higher exposure to automation in some cas
 Second, interpersonal and managerial skills involving tasks that interact with other people are considerably more difficult for AI to automate (whether it’s the actual interaction or making people comfortable with the idea of interacting with AI as opposed to people).
 Retraining programs should give sufficient emphasis on interpersonal skills to more effectively protect workers’ future job prospects.
 
-#### Areas of Focus for Retraining Programs
+### Areas of Focus for Retraining Programs
 
 In response to our first point, it appears that the _right_ retraining programs could serve as a useful forward-looking investment.
 While increasing investment in human capital will certainly be a boon, the Task Force points out that alone, such programs will be inadequate.
@@ -170,7 +176,7 @@ In addition to focusing on policies and the roles of workers, private firms will
 Although workers might be well-equipped with useful skills and are active participants in the construction of retraining programs, AI will need to be integrated into the workplace and complement workers’ skills.
 This will enhance productivity far more than adopting AI without any experimentation or thought as to how it will interact with people in the workplace.
 
-### Takeaways and Conclusions
+## Takeaways and Conclusions
 
 <figure>
     <img style="width:50%" src="{{ site.imgpath }}/editorials/2020-02-11-upskilling/im2.png"/>
