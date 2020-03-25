@@ -151,6 +151,11 @@ h2.lead {
 .post-article p,.post-article figure,.post-article iframe,.page-feature-image,.image-credit,.content_vid {
 	margin-bottom:1.5rem;
 }
+
+.post-article .podcast_embed {
+	margin-bottom:0;
+}
+
 .post-article a,.footer-credits a,.footer-about a,.image-credit a {
 	border-bottom:1px solid rgba(34,34,34,.3);
 	color:inherit;
