@@ -6,13 +6,24 @@ image:
   credit: <a href="<Image Source Link>"> <Author> / <Source Name> </a>
 categories: [digests]
 permalink: /digests/the-$digest_number_english$
+sidebartoc: true
 ---
 
-Check out our weekly Podcast covering the below stories:
-<iframe title="Let's Talk AI" id="multi_iframe" src="https://www.podbean.com/media/player/multi?playlist=http%3A%2F%2Fplaylist.podbean.com%2F7703921%2Fplaylist_multi.xml&vjs=1&kdsowie31j4k1jlf913=4975ccdd28d39e38bf5a1ccaf0c6ca4337fa996b&size=430&skin=9&episode_list_bg=%23ffffff&bg_left=%23000000&bg_mid=%230c5056&bg_right=%232a1844&podcast_title_color=%23c4c4c4&episode_title_color=%23ffffff&auto=0&share=1&fonts=Helvetica&download=0&rtl=0&show_playlist_recent_number=10&pbad=1" scrolling="no" allowfullscreen="" width="100%" height="432" frameborder="0"></iframe>
+$mini_briefs$
 
-[Latest Episode](https://aitalk.podbean.com/e/2/) | [Podcast website](https://aitalk.podbean.com) |  [Podcast RSS](https://feed.podbean.com/aitalk/feed.xml) | [Podcast on iTunes](https://podcasts.apple.com/us/podcast/lets-talk-ai/id1502782720) | [Podcast on Spotify](https://open.spotify.com/show/17HiNdxcoKJLLNibIAyUch) | [Podcast on YouTube](https://www.youtube.com/channel/UCKARTq-t5SPMzwtft8FWwnA)
+### Podcast
 
+Check out our weekly podcast covering these stories!
+[Website](https://aitalk.podbean.com) \|
+[RSS](https://feed.podbean.com/aitalk/feed.xml) \| 
+[iTunes](https://podcasts.apple.com/us/podcast/lets-talk-ai/id1502782720) \|
+[Spotify](https://open.spotify.com/show/17HiNdxcoKJLLNibIAyUch) \| 
+[YouTube](https://www.youtube.com/channel/UCKARTq-t5SPMzwtft8FWwnA)
+<iframe title="Let's Talk AI" id="multi_iframe" class="podcast_embed"
+ src="https://www.podbean.com/media/player/multi?playlist=http%3A%2F%2Fplaylist.podbean.com%2F7703921%2Fplaylist_multi.xml&vjs=1&kdsowie31j4k1jlf913=4975ccdd28d39e38bf5a1ccaf0c6ca4337fa996b&size=430&skin=9&episode_list_bg=%23ffffff&bg_left=%23000000&bg_mid=%230c5056&bg_right=%232a1844&podcast_title_color=%23c4c4c4&episode_title_color=%23ffffff&auto=0&share=1&fonts=Helvetica&download=0&rtl=0&show_playlist_recent_number=10&pbad=1" 
+ scrolling="yes" allowfullscreen="" width="100%" height="330" frameborder="0"></iframe>
+
+### News
 $content$
 
 <hr>

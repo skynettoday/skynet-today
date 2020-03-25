@@ -77,28 +77,32 @@ if __name__ == "__main__":
         articles_map[c].append(row)
 
     logging.info('Populating content...')
+    mini_briefs = ''
     content = ''
     for c in _CATEGRORIES:
         items = articles_map[c]
         if len(items) > 0:
-            content += '### {}\n'.format(c)
-            content += '\n'
-
-            for item in items:
-                if c == 'Mini Briefs':
-                    content += '#### [{}]({})\n'.format(item['Name'], item['URL'])
-                    content += '\n'
-                    content += '<one-two paragraph brief>\n'
-                else:
-                    content += '* [{}]({}) - {}\n'.format(item['Name'], item['URL'], item['Excerpt'])
-
+            if c == 'Mini Briefs':
+                mini_briefs += '### {}\n'.format(c)
+                mini_briefs += '\n'
+                
+                for item in items:
+                    mini_briefs += '#### [{}]({})\n'.format(item['Name'], item['URL'])
+                    mini_briefs += '\n'
+                    mini_briefs += 'one-two paragraph brief\n'
+            else:
+                content += '#### {}\n'.format(c)
                 content += '\n'
+                for item in items:
+                    content += '* [{}]({}) - {}\n'.format(item['Name'], item['URL'], item['Excerpt'])
+                    content += '\n'
     
     # remove the last two empty lines
     content = content[:-2]
 
     md = md_template.replace('$digest_number$', str(n)) \
                     .replace('$digest_number_english$', n_english) \
+                    .replace('$mini_briefs$', mini_briefs) \
                     .replace('$content$', content)
 
     logging.info('Saving digest markdown...')
