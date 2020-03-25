@@ -91,7 +91,7 @@ if __name__ == "__main__":
                     mini_briefs += '\n'
                     mini_briefs += 'one-two paragraph brief\n'
             else:
-                content += '### {}\n'.format(c)
+                content += '#### {}\n'.format(c)
                 content += '\n'
                 for item in items:
                     content += '* [{}]({}) - {}\n'.format(item['Name'], item['URL'], item['Excerpt'])
