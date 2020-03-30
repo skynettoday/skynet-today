@@ -4,7 +4,6 @@ title: About
 excerpt: "Skynet Today is dedicated to providing accessible and informed coverage of the latest AI news and trends"
 permalink: /about.html
 toc: true
-sidebartoc: true
 ---
 
 * TOC
