@@ -20,11 +20,12 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
 
       <ul class="navbar-nav ml-auto">
-
+      
+      
       <li class="nav-item">
-      <a class="nav-link " href="{{site.baseurl}}/">Home</a>
+      <a class="nav-link" href="{{site.baseurl}}/about">About</a>
       </li>
-
+      
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Articles</a>
         <div class="dropdown-menu">
@@ -32,29 +33,34 @@
         {% assign categories_list = site.categories %}
         {% if categories_list.first[0] == null %}
         {% for category in categories_list %}
+        {% if category != "digests" %}
         <a class="dropdown-item" href="{{site.baseurl}}/categories/{{ category }}">{{ category | capitalize }} </a>
+        {% endif %}
         {% endfor %}
         {% else %}
         {% for category in categories_list %}
+        {% if category[0] != "digests" %}
         <a class="dropdown-item"  href="{{site.baseurl}}/categories/{{ category[0] | downcase }}">{{ category[0] | capitalize }} </a>
+        {% endif %}
         {% endfor %}
         {% endif %}
         {% assign categories_list = nil %} 
+        <br>
         <a class="dropdown-item" href="{{site.baseurl}}/tags">By Topics</a>       
         <a class="dropdown-item" href="{{site.baseurl}}/authors">By Authors</a> 
         </div>
       </li>
-
+      
       <li class="nav-item">
-      <a class="nav-link" href="{{site.baseurl}}/about">About</a>
+      <a class="nav-link" href="{{site.baseurl}}/categories/digests">Newsletter</a>
+      </li>
+      
+      <li class="nav-item">
+      <a class="nav-link" href="{{site.baseurl}}/podcast">Podcast</a>
       </li>
 
       <li class="nav-item">
       <a class="nav-link" href="{{site.baseurl}}/subscribe">Subscribe</a>
-      </li>
-
-      <li class="nav-item">
-      <a class="nav-link" href="{{site.baseurl}}/contact">Contact</a>
       </li>
 
       <li class="nav-item">
