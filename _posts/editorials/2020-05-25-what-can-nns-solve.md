@@ -161,7 +161,7 @@ As a recap, these are the takeaway principles we can use to determine when neura
 4.  [Reasonable probability] If the inputs and outputs are small enough to be comparable in size to those of other working ML models AND we have a high certainty about the deterministic nature of the problem (that is to say, about the inputs being sufficient to infer the outputs).
     
 
-Coming up with these kinds of rules doesn’t provide an exact degree of certainty, and these rules are also derived from empirical observations. However, I believe they can indeed be applied to real-world problems. In fact, these are to some extent the rules I do apply to real-world problems; for instance, when a customer or friend asks me whether a given problem is “doable”. These four rules are also pretty close to those I’ve noticed other people use when thinking about what problems can be tackled with neural networks. But keep in mind that they are just heuristics, guidelines, they aren’t set in stone.
+Coming up with these kinds of rules doesn’t provide an exact degree of certainty, and these rules are also derived from empirical observations. However, I believe they can indeed be applied to real-world problems. In fact, these are to some extent the rules I do apply to real-world problems; for instance, when a customer or friend asks me whether a given problem is “doable”. These four rules are also pretty close to those I’ve noticed other people use when thinking about what problems can be tackled with neural networks. But keep in mind that they are just heuristics, or guidelines, and so aren’t set in stone.
 
 
 
