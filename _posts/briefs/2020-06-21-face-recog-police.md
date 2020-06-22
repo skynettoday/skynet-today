@@ -3,10 +3,10 @@ layout: post
 image:
   feature: assets/img/briefs/face-recog-police/3500.jpg
   credit: <a href="https://www.theguardian.com/australia-news/2020/jun/19/victoria-police-distances-itself-from-controversial-facial-recognition-firm-clearview-ai/">David McNew/AFP/Getty Images via The Guardian</a>
-title: "Progress Towards Regulating Police Use of Facial Recognition in the US"
+title: "IBM, Microsoft, and Amazon Halt Sales of Facial Recognition to Police, Call for Regulations"
 excerpt: "Movements against unregulated police use of facial recognition, which compound its many ethical issues, are gaining speed"
-author: [daniel_bashir,jacky_liang]
-tags: [facial recognition,bias,ethics,fairness,surveillance]
+author: [daniel_bashir, jacky_liang]
+tags: [facial recognition,bias,ethics,fairness,surveillance,regulation]
 categories: [briefs]
 permalink: /briefs/face-recog-police
 sidebartoc: true
