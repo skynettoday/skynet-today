@@ -8,7 +8,7 @@ image:
   feature: assets/img/editorials/2020-05-25-what-can-nns-solve/feature.png
   credit: Fig 2 in "A Survey on an Emerging Area Deep Learning for Smart City Data" by Chen et al.
 sidebartoc: true
-highlight: true 
+highlight: false 
 ---
 
 *This is a revised version of a blog post originally shared by the author on their [blog](https://blog.cerebralab.com/When_to_assume_neural_networks_can_solve_a_problem)*
