@@ -13,7 +13,7 @@ sidebartoc: true
 highlight: true
 ---
 
-## TLDR
+## Summary
 
 *   Recent protests in racial discrimination and police brutality led to IBM, Microsoft, and Amazon to either stop or pause selling face recognition technology to law enforcement.
 *   While this is a good starting point, as companies are not only acknowledging but addressing known flaws and biases in face recognition systems, much work remains to be done.
@@ -105,7 +105,7 @@ In addition, as [John Oliver](https://www.youtube.com/watch?v=jZjmlJPJgug) point
 In particular, the following immediate issues remain:
 
 *   Amazon is still engaged with the police in surveillance applications - Ring allegedly [has partnered with over 1000 police departments in the US](https://www.cnet.com/features/rings-work-with-police-lacks-solid-evidence-of-reducing-crime/).
-*   Smaller companies (Clearview, etc.): Even if Microsoft and Amazon decide to go as far as IBM has in the moral sense, the fact remains that companies like Clearview AI and Banjo continue to offer facial recognition services. As long as there are people who want to continue to use facial recognition for any purpose, its development will go on.
+*   Even if Microsoft and Amazon decide to go as far as IBM has in the moral sense, the fact remains that companies like Clearview AI and Banjo continue to offer facial recognition services. As long as there are people who want to continue to use facial recognition for any purpose, its development will go on.
 *   Without substantive federal regulations on such technology, no one company (or three companies) will have much of an impact on the development and use of facial recognition technology and the associated risks.
 
 The current spotlight on the existing and potential abuses of face recognition technology is pressuring both industry leaders and governments to re-evaluate and re-imagine the future of face recognition. 
@@ -115,6 +115,6 @@ However, more pressure is needed to ensure fair and ethical uses of face recogni
 
 ## Conclusion
 
-The moves by IBM, Microsoft, and Amazon to stop (or pause) face development technology, especially for law enforcement, at least until adequate federal regulations are in place, are promising starting points to ensure ethical uses of this technology. 
+The moves by IBM, Microsoft, and Amazon to stop (or pause) development of face recognition technology, especially for law enforcement, at least until adequate federal regulations are in place, are promising starting points to ensure ethical uses of this technology. 
 Although studies have revealed flaws in commercial face recognition systems for years, companies are only now taking action as a result of recent protests and the national conversation on racial discrimination and police brutality. 
 This also suggests that continuous pressure from consumers, civil liberty groups, and the public at large is needed to ensure progress in the ethical development and regulation of face recognition technology.
