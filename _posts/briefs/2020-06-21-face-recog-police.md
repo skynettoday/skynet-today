@@ -15,7 +15,7 @@ highlight: true
 
 ## Summary
 
-*   Recent protests in racial discrimination and police brutality led to IBM, Microsoft, and Amazon to either stop or pause selling face recognition technology to law enforcement.
+*   Recent protests in racial discrimination and police brutality led IBM to cease developing facial recognition technology and Microsoft and Amazon to pause selling face recognition technology to law enforcement.
 *   While this is a good starting point, as companies are not only acknowledging but addressing known flaws and biases in face recognition systems, much work remains to be done.
 *   In particular, continued pressure from the public is needed to ensure ethical developments and regulations of face recognition technology in the future.
 
