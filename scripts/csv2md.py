@@ -59,7 +59,7 @@ if __name__ == "__main__":
             print()
             print(row['Name'])
             print()
-            
+
             for i, c in enumerate(_CATEGRORIES):
                 print('{}) {}'.format(i, c))
             while True:
@@ -85,7 +85,7 @@ if __name__ == "__main__":
             if c == 'Mini Briefs':
                 mini_briefs += '### {}\n'.format(c)
                 mini_briefs += '\n'
-                
+
                 for item in items:
                     mini_briefs += '#### [{}]({})\n'.format(item['Name'], item['URL'])
                     mini_briefs += '\n'
@@ -96,7 +96,7 @@ if __name__ == "__main__":
                 for item in items:
                     content += '* [{}]({}) - {}\n'.format(item['Name'], item['URL'], item['Excerpt'])
                     content += '\n'
-    
+
     # remove the last two empty lines
     content = content[:-2]
 
