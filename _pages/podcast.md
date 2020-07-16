@@ -5,7 +5,7 @@ excerpt: "The Let's Talk AI Podcast - weekly coverage of AI news and interviews.
 search_omit: true
 permalink: /podcast.html
 image:
-   feature: assets/img/podcast_logo.jpg
+   feature: assets/img/podcast_logo_wide.jpg
    small: true
 display_title: false
 ---
