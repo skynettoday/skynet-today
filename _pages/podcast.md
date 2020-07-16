@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Podcast
-excerpt: "Let's Talk AI Podcast"
+excerpt: "The Let's Talk AI Podcast - weekly coverage of AI news and interviews."
 search_omit: true
 permalink: /podcast.html
 image:
