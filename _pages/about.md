@@ -1,7 +1,7 @@
 ---
 layout: page-narrow
 title: About
-excerpt: "Skynet Today is dedicated to providing accessible and informed coverage of the latest AI news and trends"
+excerpt: "What Skynet Today is all about"
 permalink: /about.html
 toc: true
 ---
