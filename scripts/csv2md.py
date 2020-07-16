@@ -53,13 +53,13 @@ if __name__ == "__main__":
     articles_map = {c : [] for c in _CATEGRORIES}
     csv = pd.read_csv(args.input_csv)
     for row_num, row in csv.iterrows():
-        if not row['Type'] or row['Type'] not in articles_map:
+        if 'Type' not in row or not row['Type'] or row['Type'] not in articles_map:
             print()
             print('To which category does this article belong?')
             print()
             print(row['Name'])
             print()
-            
+
             for i, c in enumerate(_CATEGRORIES):
                 print('{}) {}'.format(i, c))
             while True:
@@ -85,7 +85,7 @@ if __name__ == "__main__":
             if c == 'Mini Briefs':
                 mini_briefs += '### {}\n'.format(c)
                 mini_briefs += '\n'
-                
+
                 for item in items:
                     mini_briefs += '#### [{}]({})\n'.format(item['Name'], item['URL'])
                     mini_briefs += '\n'
@@ -96,7 +96,7 @@ if __name__ == "__main__":
                 for item in items:
                     content += '* [{}]({}) - {}\n'.format(item['Name'], item['URL'], item['Excerpt'])
                     content += '\n'
-    
+
     # remove the last two empty lines
     content = content[:-2]
 
