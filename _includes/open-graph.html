@@ -3,7 +3,13 @@
 {% if page.excerpt %}<meta name="twitter:description" content="{{ page.excerpt | strip_html }}">{% endif %}
 {% if site.owner.twitter %}<meta name="twitter:site" content="@{{ site.owner.twitter }}">{% endif %}
 {% if author.twitter %}<meta name="twitter:creator" content="@{{ author.twitter }}">{% endif %}
-<meta name="twitter:card" content="summary_large_image">
+{% if page.image  %}
+    {% if page.image.small %}
+        <meta name="twitter:card" content="summary">
+    {% else %}
+        <meta name="twitter:card" content="summary_large_image">
+    {% endif %}
+{% endif %}
 {% if page.image.external %}
 <meta name="twitter:image" content="{{ page.image.external }}">
 {% else %}
