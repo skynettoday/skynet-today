@@ -5,7 +5,7 @@ excerpt: "Let's Talk AI Podcast"
 search_omit: true
 permalink: /podcast.html
 image:
-   feature: podcast_logo.jpg
+   feature: assets/img/podcast_logo.jpg
    small: true
 display_title: false
 ---
