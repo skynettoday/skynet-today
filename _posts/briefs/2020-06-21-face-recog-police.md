@@ -10,7 +10,6 @@ tags: [facial recognition,bias,ethics,fairness,surveillance,regulation]
 categories: [briefs]
 permalink: /briefs/face-recog-police
 sidebartoc: true
-highlight: true
 ---
 
 ## Summary
