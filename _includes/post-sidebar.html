@@ -1,5 +1,20 @@
 <div class="page-meta mr-4 small">
 
+    
+<!--    {% if site.owner.disqus-shortname and page.comments or site.comments %}
+    <span class="page-comments d-none d-md-block mt-2">
+    <img width="21px" class="mr-1" src="{{site.baseurl}}/assets/img/icons/comments.svg"> <a class="text-muted" href="#disqus_thread">Comment</a>
+    </span>
+    {% endif %}
+    
+-->  
+  <div id="sidebar-above-toc">
+    <h6 class="d-none d-md-block mt-2 lh14">{{page.title}}</h6>
+   
+    {% if site.owner.google.ad-client and site.owner.google.ad-slot %}
+    {% include ad-sidebar.html %}
+    {% endif %}
+    
     <div class="text-muted">
     <span class="page-date date published">               
     <time datetime="{{ page.date | date_to_xmlschema }}">
@@ -14,15 +29,8 @@
     </span>
     {% endif %}
     </div>
-    <h6 class="d-none d-md-block mt-2 lh14">{{page.title}}</h6>
-    {% if site.owner.disqus-shortname and page.comments or site.comments %}
-    <span class="page-comments d-none d-md-block mt-2">
-    <img width="21px" class="mr-1" src="{{site.baseurl}}/assets/img/icons/comments.svg"> <a class="text-muted" href="#disqus_thread">Comment</a>
-    </span>
-    {% endif %}   
-
+    
     {% if page.author %}
-    <hr>
     {% if page.author.first %}
     {% for a in page.author %}
     {% assign author = site.data.authors[a] %}
@@ -34,8 +42,15 @@
     {% endif %}
     {% endif %}
 
-    {% if site.owner.google.ad-client and site.owner.google.ad-slot %}
-    {% include ad-sidebar.html %}
+    
+    {% if page.sidebartoc %}
+    <hr>
+    </div>
+
+    <nav id="mytoc" data-spy="affix" style="overflow-y: auto;" data-toggle="mytoc"></nav>
+    
+    {% else %}
+    </div>
     {% endif %}
 
 </div>

@@ -1,7 +1,7 @@
 ---
 layout: page-narrow
 title: About
-excerpt: "Skynet Today is dedicated to providing accessible and informed coverage of the latest AI news and trends"
+excerpt: "What Skynet Today is all about"
 permalink: /about.html
 toc: true
 ---
@@ -32,8 +32,9 @@ The site is currently co-run by two people:
 We also have several regular contributors:
 * [Viraat Aryabumi](https://viraataryabumi.info/): a contributing author of news coverage and editorials. Currently a Machine Learning Scientist with Amazon Development Centre, Scotland. He was previously a Master's student in Artificial Intelligence at the School of Informatics, University of Edinburgh. His research interests are in reinforcement learning and algorithmic fairness.
 * [Daniel Bashir](https://db7894.github.io/): a contributing author of news coverage and editorials. A third year undergraduate at Harvey Mudd College majoring in Computer Science and Mathematics. Working in the AMISTAD lab on theoretical machine learning, and serving as Diversity Director on the ASHMC Executive Board. Interests include application of techniques from math, data science, and machine learning.
+* [Julia Gong](http://web.stanford.edu/~jxgong/): a contributing author of news coverage and editorials. A concurrent undergraduate in Mathematical and Computational Science and Master's student in Computer Science at Stanford University working in the Stanford MARVL Lab on medical image segmentation. Her research interests include biomedical computer vision, generative models for creative content generation, and machine learning. She moonlights as a pun comic artist for her series "[Once a Pun a Time](https://onceapunati.me)".
 
-We have been fortunate to have many contributing authors, which you can see on our [authors page](/authors). We would also like to thank the [Stanford Human Centered AI Institute](https://hai.stanford.edu/) for its support.
+We have been fortunate to have many contributing authors, which you can see on our [authors page](/authors). We would also like to thank the [Stanford Human-Centered AI Institute](https://hai.stanford.edu/) for its support.
 
 ## How Can I Help
 Subscribe! Spread the word! And if you have any ideas for improving the site, definitely let us know. If you want to contribute more actively, see our [call for collaborators and submissions](/join) or just click on the "Contribute" button below.

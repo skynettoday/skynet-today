@@ -1,6 +1,6 @@
 <div class="author-credit d-flex align-items-center mt-4">
 
-    <a href="{{site.baseurl}}/authors#{{author.name | downcase | replace: ' ', '_' | replace: '.', '_'| replace: 'ö', 'o'}}"title="View more posts by {{author.name}}">
+    <a href="{{site.baseurl}}/authors#{{author.name | downcase | replace: ' ', '_' | replace: '.', '_'| replace: 'ö', 'o'}}" title="View more posts by {{author.name}}">
         {% if author.avatar contains 'http' %}
         <img src="{{ author.avatar }}" class="bio-photo mr-2" alt="{{ author.name }} bio photo"/>
         {% elsif author.avatar %}

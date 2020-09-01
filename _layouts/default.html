@@ -37,6 +37,9 @@
 
     <!-- Bigfoot -->
     <link href="{{site.baseurl}}/assets/css/bigfoot-default.css" rel="stylesheet">
+    
+    <!-- Tocify -->
+    <link href="{{site.baseurl}}/assets/css/bootstrap-toc.css" rel="stylesheet">
 
     {% if page.url == "/" %}
     <!-- AOS -->
@@ -77,7 +80,7 @@
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#mytoc">
 
   {% include nav.html %}
 
@@ -94,6 +97,7 @@
   <script src="{{site.baseurl}}/assets/js/popper.min.js"></script>
   <script src="{{site.baseurl}}/assets/js/bootstrap.min.js"></script>  
   <script src="{{site.baseurl}}/assets/js/bigfoot.min.js"></script>
+  <script src="{{site.baseurl}}/assets/js/bootstrap-toc.min.js"></script>
   
   {% if page.share %}
   <script async type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5a80909f08e4bc00136bbf17&product=sticky-share-buttons"></script> 
@@ -103,6 +107,11 @@
   {% if site.owner.disqus-shortname and page.comments or site.comments %}
   <script id="dsq-count-scr" src="//{{site.owner.disqus-shortname}}.disqus.com/count.js" async></script>
   {% endif %}
+  
+  $(document).ready(function() {
+	  //Calls the tocify method on your HTML div.
+	  $("#toc").tocify();
+	});
   {% endif %}
 
   {%- if page.title == "Search" -%}
@@ -133,6 +142,24 @@
       if(rowcount % 2 == 1) {
         $( ".cardrecent" ).addClass( "oddloop" );
       }
+      
+      $(function() {
+	      var $myToc = $('#mytoc');
+        Toc.init({
+          $nav: $myToc,
+	        // The element where the search for headings will be limited to
+          $scope: $('.post-article')
+     	  });
+
+	      $('body').scrollspy({
+	        target: $myToc
+	      });
+	      
+	      setTimeout(function(){ }, 100);
+	      
+	      $myToc.height( ($(window).height() -  $("#main_nav").height() - $("#sidebar-above-toc").height() - 80));
+
+	    });
   </script>
 
   </body>
