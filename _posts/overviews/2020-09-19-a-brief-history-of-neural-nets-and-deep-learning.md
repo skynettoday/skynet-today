@@ -8,6 +8,7 @@ image:
   feature: assets/img/overviews/2019-2-22-a-brief-history-of-neural-nets-and-deep-learning/feature.png
 permalink: /overviews/ai-coverage-best-practices
 highlight: true
+sidebartoc: true
 ---
 
 ## Prologue: The Deep Learning Tsunami
