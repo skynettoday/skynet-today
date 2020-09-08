@@ -6,7 +6,7 @@ categories: [overviews]
 tags: [hype, robotics, regulation]
 excerpt: "Truly autonomous lethal weapons don't exist yet, but that may not be true for long unless regulations are passed"
 image: 
-  feature: assets/img/overviews/2020-09-07-killer-robots-overview/main.jpg
+  feature: assets/img/overviews/2020-09-07-killer-robots-overview/main_small.jpg
 permalink: /overviews/killer-robots
 sidebartoc: true
 highlight: true
