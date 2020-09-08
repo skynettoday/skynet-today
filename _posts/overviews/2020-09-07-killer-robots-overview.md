@@ -1,5 +1,5 @@
 ---
-title: 'The State of Efforts to Build, and Regulate, “Killer Robots”'
+title: 'The Rise of “Killer Robots” and the Race to Restrain Them'
 author: [bryan_mcmahon]
 editor: [andrey_kurenkov, jacky_liang]
 categories: [overviews]
