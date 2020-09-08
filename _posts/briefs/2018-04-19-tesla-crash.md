@@ -4,7 +4,7 @@ title: "Tesla's Lethal Autopilot Crash — A Failing of UI as Much as AI"
 excerpt: "The tragedy might have been avoided if the limitations of the Autopilot were communicated more clearly"
 author: joshua_morton
 editor: andrey_kurenkov
-tags: [Tesla,self-driving cars,ethics,BigBiz]
+tags: [Elon Musk,self-driving]
 categories: [briefs]
 redirect_from: /content/news/tesla-crash/
 permalink: /briefs/tesla-crash/

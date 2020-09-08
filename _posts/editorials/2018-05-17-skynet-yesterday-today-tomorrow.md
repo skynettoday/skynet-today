@@ -4,7 +4,6 @@ image:
   feature: assets/img/editorials/why-skynet-today/propaganda.png
 no_subscribe: true
 author: [andrey_kurenkov, limor_gultchin]
-tags: [meta]
 categories: [editorials]
 no_article_mailchimp: true
 excerpt: "The evolution of discussions about AI has never been as fast paced as it is now, and so we too have been up to a lot lately"

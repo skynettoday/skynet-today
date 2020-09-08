@@ -2,7 +2,7 @@
 title: "When to Assume Neural Networks Can Solve a Problem"
 author: [george_hosu]
 categories: [editorials]
-tags: [neural net, limits]
+tags: [overview]
 excerpt: "A pragmatic guide to the powers and limits of neural networks"
 image:
   feature: assets/img/editorials/2020-05-25-what-can-nns-solve/feature.png

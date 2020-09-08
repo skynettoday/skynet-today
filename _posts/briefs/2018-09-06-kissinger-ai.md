@@ -7,7 +7,7 @@ title: "Examining Henry Kissinger's Uninformed Comments on AI"
 excerpt: "Another public figure with no expertise on AI issues sweeping, unfounded statements about it threatening humanity"
 author: julia_gong
 editor: [andrey_kurenkov]
-tags: [panic, misinformation]
+tags: [panic, DeepMind, RL]
 categories: [briefs]
 permalink: /briefs/kissinger-ai
 ---

@@ -4,7 +4,7 @@ title: "Biased Facial Recognition - a Problem of Data and Diversity"
 excerpt: "Flashy headlines often hijack meaningful and important conversations on this topic, even when the articles are solid - as was the case here"
 author: viraat_aryabumi
 editor: [andrey_kurenkov, limor_gultchin]
-tags: [facial recognition,bias,ethics,fairness]
+tags: [computer vision,bias,ethics]
 categories: [briefs]
 redirect_from: /content/news/face-recog/
 permalink: /briefs/face-recog/

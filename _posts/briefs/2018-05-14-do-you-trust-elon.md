@@ -4,7 +4,7 @@ title: "'Do You Trust This Computer’ Gets a Whole Lot Wrong About AI Risks"
 excerpt: "A Chris Paine documentary about AI promoted by Elon Musk conflates real AI risks with imaginary ones"
 author: aidan_rocke
 editor: [andrey_kurenkov,limor_gultchin]
-tags: [Elon Musk,Singularity]
+tags: [Elon Musk,singularity,AGI]
 categories: [briefs]
 redirect_from: /content/news/do-you-trust-elon
 permalink: /briefs/do-you-trust

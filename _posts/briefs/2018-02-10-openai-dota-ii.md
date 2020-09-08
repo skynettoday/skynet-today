@@ -3,7 +3,7 @@ title: "OpenAI's Not So Open DotA AI"
 excerpt: "An impressive demo by OpenAI leaves many questions unanswered"
 author: joshua_morton
 editor: andrey_kurenkov
-tags: [OpenAI,game,hype]
+tags: [OpenAI,hype,RL]
 categories: [briefs]
 redirect_from: /content/news/openai-dota-ii/
 permalink: /briefs/openai-dota-ii/

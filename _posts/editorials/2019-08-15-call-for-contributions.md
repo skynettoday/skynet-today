@@ -3,7 +3,6 @@ title: "Requests for Articles: a Call on AI Experts and Communicators"
 image:
   feature: assets/img/editorials/call/feature.jpg
 author: [jacky_liang, andrey_kurenkov]
-tags: [meta]
 categories: [editorials]
 excerpt: "Skynet Today is seeking contributors for new briefs and editorials!"
 permalink: /editorials/requests-for-briefs-and-editorials

@@ -4,7 +4,7 @@ title: "So What Was Up With Alexa's Creepy Laughter Anyway?"
 excerpt: "A funny viral event talks to our ever increasing anxiety about AI and pervasive technology"
 author: ben_shih
 editor: [andrey_kurenkov, joshua_morton]
-tags: [Amazon, BigBiz, speech]
+tags: [Amazon, panic]
 categories: [briefs]
 redirect_from: /content/news/alexa-laughter/
 permalink: /briefs/alexa-laughter/

@@ -5,7 +5,7 @@ image:
   credit: Illustration from Frits Staal, "Greek and Vedic geometry" Journal of Indian Philosophy 27.1 (1999)
 author: [matteo_pasquinelli]
 categories: [editorials]
-tags: [history]
+tags: [overview]
 excerpt: "On AI as a long historical process of crystallizing collective behavior, personal data, and individual labor into privatized algorithms"
 permalink: /editorials/three-thousand-years-algorithmic-rituals
 ---

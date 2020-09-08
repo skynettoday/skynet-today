@@ -3,7 +3,7 @@ title: "Job Loss Due To AI — How Bad Is It Going To Be?"
 image:
   feature: assets/img/editorials/ai-automation-job-loss/main.png
 author: [jacky_liang,ben_ramanauskas,andrey_kurenkov]
-tags: [economy,jobs]
+tags: [risk,jobs,overview]
 categories: [editorials]
 excerpt: "Studies suggest the impact of AI on jobs in the near future will not be significantly more disruptive than the impact of automation in the past"
 permalink: /editorials/ai-automation-job-loss

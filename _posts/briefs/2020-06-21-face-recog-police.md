@@ -6,7 +6,7 @@ image:
 title: "IBM, Microsoft, and Amazon Halt Sales of Facial Recognition to Police, Call for Regulations"
 excerpt: "Movements against unregulated police use of facial recognition, which compound its many ethical issues, are gaining speed"
 author: [daniel_bashir, jacky_liang]
-tags: [facial recognition,bias,ethics,fairness,surveillance,regulation]
+tags: [computer vision,bias,ethics,surveillance,regulation]
 categories: [briefs]
 permalink: /briefs/face-recog-police
 sidebartoc: true
