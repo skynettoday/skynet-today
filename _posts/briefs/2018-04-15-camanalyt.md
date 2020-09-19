@@ -1,5 +1,7 @@
 ---
 title: "Is Data-Driven AI Brainwashing us all, or is it Just the Same as Good ol' Marketing?"
+image:
+  feature: assets/img/briefs/misc/cambridge_analytica.png
 excerpt: "The many claims made as part of the recent Cambridge Analytica & Facebook scandal, reviewed"
 author: limor_gultchin
 editor: andrey_kurenkov

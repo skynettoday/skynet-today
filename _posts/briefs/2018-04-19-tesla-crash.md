@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Tesla's Lethal Autopilot Crash — A Failing of UI as Much as AI"
+image:
+  feature: assets/img/briefs/misc/tesla_crash.png
 excerpt: "The tragedy might have been avoided if the limitations of the Autopilot were communicated more clearly"
 author: joshua_morton
 editor: andrey_kurenkov

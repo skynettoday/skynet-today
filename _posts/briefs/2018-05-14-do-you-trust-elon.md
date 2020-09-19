@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "'Do You Trust This Computer’ Gets a Whole Lot Wrong About AI Risks"
+image:
+  feature: assets/img/briefs/misc/trust_computer.png
 excerpt: "A Chris Paine documentary about AI promoted by Elon Musk conflates real AI risks with imaginary ones"
 author: aidan_rocke
 editor: [andrey_kurenkov,limor_gultchin]
@@ -24,7 +26,7 @@ Prior to its release, it gained a large amount of attention when the space entre
 [^risks]: Present day real AI risks include technological unemployment, biased algorithms, unethical use of user data, algorithmic promotion of fake news, and military robots.
 
 <figure>
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">tweet.</p>&mdash; Elon Musk (@elonmusk) <a href="https://twitter.com/elonmusk/status/982119546420002817
+<blockquote class="twitter-tweet tw-align-center" data-lang="en"><p lang="en" dir="ltr">tweet.</p>&mdash; Elon Musk (@elonmusk) <a href="https://twitter.com/elonmusk/status/982119546420002817
 ">April 6, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </figure>
@@ -50,7 +52,7 @@ The AI research community, already tired of unrealistic coverage of recent AI pr
 * Denny Britz, a former Google Brain researcher:
 
 <figure>
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">tweet</p>&mdash; Denny Britz(@dennybritz) <a href="https://twitter.com/dennybritz/status/983240441620410369
+<blockquote class="twitter-tweet tw-align-center" data-lang="en"><p lang="en" dir="ltr">tweet</p>&mdash; Denny Britz(@dennybritz) <a href="https://twitter.com/dennybritz/status/983240441620410369
 ">April 6, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </figure>
@@ -58,14 +60,14 @@ The AI research community, already tired of unrealistic coverage of recent AI pr
 * Miles Brundage, AI Policy Research Fellow at Oxford's Future of Humanity Institute:
 
 <figure>
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">tweet</p>&mdash; Miles Brundage(@Miles_Brundage) <a href="https://twitter.com/Miles_Brundage/status/982336109941178369?ref_src=twsrc%5Etfw">April 6, 2018</a></blockquote>
+<blockquote class="twitter-tweet tw-align-center" data-lang="en"><p lang="en" dir="ltr">tweet</p>&mdash; Miles Brundage(@Miles_Brundage) <a href="https://twitter.com/Miles_Brundage/status/982336109941178369?ref_src=twsrc%5Etfw">April 6, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </figure>
 
 * Timnit Gebru, an AI researcher at Microsoft Research known for her work on AI ethics and algorithmic bias:
 
 <figure>
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">tweet.</p>&mdash; Timnit Gebru (@timnitGebru) <a href="https://twitter.com/timnitGebru/status/983924801621446659
+<blockquote class="twitter-tweet tw-align-center" data-lang="en"><p lang="en" dir="ltr">tweet.</p>&mdash; Timnit Gebru (@timnitGebru) <a href="https://twitter.com/timnitGebru/status/983924801621446659
 ">April 6, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </figure>
@@ -73,7 +75,7 @@ The AI research community, already tired of unrealistic coverage of recent AI pr
 * François Chollet, an AI researcher at Google (and lead developer of the Keras framework):
 
 <figure>
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">twitter.</p>&mdash; François Chollet (@fchollet) <a href="https://twitter.com/fchollet/status/983059353488965632
+<blockquote class="twitter-tweet tw-align-center" data-lang="en"><p lang="en" dir="ltr">twitter.</p>&mdash; François Chollet (@fchollet) <a href="https://twitter.com/fchollet/status/983059353488965632
 ">April 6, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </figure>

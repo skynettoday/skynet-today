@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Deepfakes - Is Seeing Still Believing?"
+image:
+  feature: assets/img/briefs/misc/gan_progress.png
 excerpt: "Has widespread misuse of AI arrived? Not quite yet..."
 author: joshua_morton
 editor: andrey_kurenkov
