@@ -3,9 +3,9 @@ title: "A 'Brief' History of Neural Nets and Deep Learning "
 author: [andrey_kurenkov]
 categories: [overviews]
 tags: [deep learning]
-excerpt: "A history"
+excerpt: "A story spanning half a century, of how we got to today's state of the art Deep Learning techniques."
 image: 
-  feature: assets/img/overviews/2019-2-22-a-brief-history-of-neural-nets-and-deep-learning/feature.png
+  feature: assets/img/overviews/2019-2-22-a-brief-history-of-neural-nets-and-deep-learning/main_small.jpg
 permalink: /overviews/ai-coverage-best-practices
 highlight: true
 sidebartoc: true
@@ -596,7 +596,7 @@ This was the turning point. A mounting wave of excitement about possible progres
     <figcaption>The citation counts for some of the key people we have seen develop deep learning. I believe I don't need to point out the exponential trends since 2012. From Google Scholar. </figcaption>    
 </figure>
 
-## Epilogue: state of the art
+# Epilogue: state of the art
 
 If this were a movie, the 2012 ImageNet competition would likely have been the climax, and now we would have a progression of text describing 'where are they now'. Yann LeCun - Facebook. Geoffrey Hinton - Google. Andrew Ng - Coursera, Google, Baidu. Bengio, Schmidhuber, and Hochreiter actually still in academia - but presumably with many more citations and/or grad students[^part4_19].  Though the ideas and achievements of deep learning are definitely exciting, while writing this I was inevitably also moved that these people, who worked in this field for decades (even as most abandoned it), are now rich, successful, and most of all better situated to do research than ever. All these peoples' ideas are still very much out in the open, and in fact basically all these companies are open sourcing their deep learning frameworks, like some sort of utopian vision of industry-led research. What a story.
 
