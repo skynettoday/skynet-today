@@ -1,9 +1,11 @@
 ---
 title: "Evil Software Du Jour: Google's Cocktail Party Algorithm"
+image:
+  feature: assets/img/briefs/misc/google_speech.png
 excerpt: "Recent privacy concerns over work from Google showcased how easy it is for media to immediately jump to unlikely worst-case outcomes"
 author: charlie_kilpatrick
 editor: [andrey_kurenkov, abi_see]
-tags: [Google,speech,vision,BigBiz]
+tags: [Google,computer vision]
 categories: [briefs]
 redirect_from: /content/news/google-speech-separation
 permalink: /briefs/google-speech-separation

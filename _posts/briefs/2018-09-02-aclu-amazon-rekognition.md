@@ -7,7 +7,7 @@ title: "Amazon Rekognition Mistook Congressmen for Criminals? A Closer Look"
 excerpt: "Examining ACLU’s claims of racial bias in face recognition technology as surveillance risk"
 author: sneha_jha
 editor: [andrey_kurenkov]
-tags: [surveillance,BigBiz,ethics]
+tags: [surveillance,Amazon,ethics,computer vision]
 categories: [briefs]
 permalink: /briefs/aclu-amazon-rekognition
 ---

@@ -1,9 +1,11 @@
 ---
 layout: post
 title: "The Crazy Coverage of Facebook's Unremarkable 'AI Invented Language'"
+image:
+  feature: assets/img/briefs/misc/invented_language.png
 excerpt: "Sometimes the narratives media conjures up just serve to make real life seem boring"
 author: andrey_kurenkov
-tags: [Facebook,BigBiz,chatbot,NLP,panic]
+tags: [Facebook,NLP,panic]
 categories: [briefs]
 redirect_from: /content/news/facebook-chatbot-language/
 permalink: /briefs/facebook-chatbot-language/

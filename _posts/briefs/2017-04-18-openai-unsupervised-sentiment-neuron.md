@@ -1,5 +1,7 @@
 ---
 title: "The Curious Case of OpenAI's Unsupervised Sentiment Neuron"
+image:
+  feature: assets/img/briefs/misc/sentiment.png
 excerpt: "A nifty thing happened unintentionally, and some people overreacted"
 author: andrey_kurenkov
 tags: [OpenAI,NLP,hype]

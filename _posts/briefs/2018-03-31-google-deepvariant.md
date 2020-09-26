@@ -1,10 +1,12 @@
 ---
 layout: post
 title: "Can a 'Google AI' Build Your Genome Sequence?"
+image:
+  feature: assets/img/briefs/misc/google_sequence.png
 excerpt: "A new AI-powered tool from Google promises more-accurate genome sequences, but its impact on genomics research remains to be seen"
 author: alex_constantino
 editor: andrey_kurenkov
-tags: [biology,Google,BigBiz,hype]
+tags: [medicine,Google,hype]
 categories: [briefs]
 redirect_from: /content/news/google-deepvariant/
 permalink: /briefs/google-deepvariant/

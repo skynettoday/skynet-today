@@ -6,7 +6,7 @@ image:
 title: "OpenAI's Dexterous Robotic Hand — Separating Progress from PR"
 excerpt: "The Rubik’s cube solving hand is representative of a true research contribution, but its many caveats do not merit the PR hype"
 author: [jacky_liang,andrey_kurenkov]
-tags: [OpenAI,robotics,hype]
+tags: [OpenAI,robotics,hype,RL]
 categories: [briefs]
 permalink: /briefs/openai-rubiks-cube
 ---
