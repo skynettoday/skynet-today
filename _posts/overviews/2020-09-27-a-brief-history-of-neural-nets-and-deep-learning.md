@@ -3,7 +3,7 @@ title: "A Brief History of Neural Nets and Deep Learning"
 author: [andrey_kurenkov]
 categories: [overviews]
 tags: [deep learning]
-excerpt: "A story spanning half a century, on how neural nets evolved from the earliest days of AI to now."
+excerpt: "The story of how neural nets evolved from the earliest days of AI to now."
 image: 
   feature: assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/main_wide.png
 permalink: /overviews/neural-net-history
@@ -494,7 +494,7 @@ Other new methods, notably Random Forests, also proved to be very effective and 
 
 > "Ask anyone in machine learning what kept neural network research alive and they will probably mention one or all of these three names: Geoffrey Hinton, fellow Canadian Yoshua Bengio and Yann LeCun, of Facebook and New York University."[^part4_1]
 
-# Part 3: The Dawn of Deep Learning (2000s-2010s)
+# Part 3: Deep Learning (2000s-2010s)
 In this last part of our history, we will get to the end of our story and see how deep learning emerged from the slump neural nets found themselves in by the late 90s, and the amazing state of the art results it has achieved since.
 
 ## The Deep Learning Conspiracy
