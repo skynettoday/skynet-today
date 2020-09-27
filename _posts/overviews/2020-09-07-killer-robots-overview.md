@@ -9,7 +9,7 @@ image:
   feature: assets/img/overviews/2020-09-07-killer-robots-overview/main_small.jpg
 permalink: /overviews/killer-robots
 sidebartoc: true
-highlight: true
+featured: true
 ---
 
 ## Key Takeaways
