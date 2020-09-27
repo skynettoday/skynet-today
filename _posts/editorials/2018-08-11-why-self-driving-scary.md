@@ -4,7 +4,7 @@ image:
   feature: assets/img/editorials/why-self-driving-scary/main.gif
   credit: https://gfycat.com/gifs/detail/RawSlimyGreatdane
 author: [jerry_kaplan]
-tags: [self-driving cars,perception,opinion]
+tags: [self-driving,opinion,panic]
 categories: [editorials]
 excerpt: "Even if autonomous cars are safer overall, the public will accept the new technology only when it fails in predictable and reasonable ways"
 permalink: /editorials/why-self-driving-scary

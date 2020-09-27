@@ -3,7 +3,7 @@ title: "Artificial General Intelligence is Here, and it's Useless"
 image:
     external: "https://images.unsplash.com/photo-1531747118685-ca8fa6e08806?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1242&q=80"
 author: [george_hosu]
-tags: [AGI]
+tags: [AGI,opinion]
 categories: [editorials]
 excerpt: "On why the potential or threat of 'artificial general intelligence' is most often overstated"
 ---

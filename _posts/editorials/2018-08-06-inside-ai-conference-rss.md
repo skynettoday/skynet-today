@@ -3,7 +3,7 @@ title: "Inside an AI Conference - Robotics Science and Systems"
 image:
   feature: assets/img/editorials/inside-ai-conference-rss/rss.jpeg
 author: [andrey_kurenkov]
-tags: [conference,overview]
+tags: [overview]
 categories: [editorials]
 excerpt: "What do AI researchers do at conferences? Check this out to find out!"
 permalink: /editorials/inside-ai-conference-rss

@@ -3,7 +3,6 @@ title: Why Skynet Today
 image:
   feature: assets/img/editorials/why-skynet-today/propaganda.png
 author: andrey_kurenkov
-tags: [meta]
 categories: [editorials]
 excerpt: "We are working on the Snopes for AI — here is why"
 redirect_from: /content/editorials/why-skynet-today

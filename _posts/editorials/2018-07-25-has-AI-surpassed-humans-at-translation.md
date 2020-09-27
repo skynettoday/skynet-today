@@ -5,7 +5,7 @@ image:
 notopimage: true
 author: [sharon_zhou]
 editor: [andrey_kurenkov,abi_see]
-tags: [NLP,translation,overview]
+tags: [NLP,overview]
 categories: [editorials]
 excerpt: "Neural network translation systems still have many significant issues which make them far from superior to human translators"
 permalink: /editorials/state_of_nmt

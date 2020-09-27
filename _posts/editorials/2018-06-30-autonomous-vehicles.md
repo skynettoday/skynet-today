@@ -5,7 +5,7 @@ image:
   credit: <a href="http://www.hybridcars.com/ford-leverages-its-past-and-present-toward-a-mobility-solutions-future/history-of-autonomy-timeline/">(source)</a>
 author: [apoorva_dornadula, henry_mei]
 editor: [andrey_kurenkov,alex_grant,will_scales]
-tags: [self-driving cars,computer vision,policy]
+tags: [self-driving,computer vision,policy,applications]
 categories: [editorials]
 excerpt: "Autonomous vehicle technology has made huge advances in the last couple of years — what's left to solve? A whole lot."
 permalink: /editorials/autonomous_vehicles

@@ -4,7 +4,7 @@ image:
   feature: assets/img/editorials/2018-06-01-ai-think-again/search_and_grasp.png
   credit: Aliekor at English Wikipedia
 author: jerry_kaplan
-tags: [trends,hype,opinion]
+tags: [hype,opinion]
 categories: [editorials]
 excerpt: "AI has a public relations problem, and AI researchers should do something about it"
 permalink: /editorials/ai-think-again

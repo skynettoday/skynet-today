@@ -4,7 +4,7 @@ image:
   feature: assets/img/editorials/is-alphago-zero-overrated/history.png
 author: andrey_kurenkov
 editor: joshua_morton
-tags: [hype,BigBiz,game,Google]
+tags: [hype,Google,RL]
 categories: [editorials]
 excerpt: "Why DeepMind's Go playing program is not about to solve all of AI"
 redirect_from: /content/editorials/is-alphago-zero-overrated
