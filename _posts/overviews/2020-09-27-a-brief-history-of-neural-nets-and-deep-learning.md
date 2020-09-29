@@ -657,7 +657,7 @@ BibTeX citation:
   title = {A Brief History of Neural Nets and Deep Learning},<br/>
   journal = {Skynet Today},<br/>
   year = {2020},<br/>
-  howpublished = {\url{<a href="https://skynettoday.com/overviews/nn-history/">https://skynettoday.com/overviews/neural-net-history</a> } },<br/>
+  howpublished = {\url{<a href="https://skynettoday.com/overviews/neural-net-history">https://skynettoday.com/overviews/neural-net-history</a> } },<br/>
 }</p>
 </blockquote>
 
