@@ -567,6 +567,27 @@ In closing, we highlight that fear mongering about AI taking everyone’s jobs, 
 Seeing recent AI advances in a broader, historical context reveals that this trend of automation has been around for a long time.
 And just as we have with technologies in the past, with smart policies, AI can improve everyone’s quality of life in the long run.
 
+<hr>
+**Citation**
+
+For attribution in academic contexts or books, please cite this work as
+
+> Jacky Liang, Ben Ramanauskas, Andrey Kurenkov, "Job Loss Due To AI — How Bad Is It Going To Be?", Skynet Today, 2019.
+
+BibTeX citation:
+
+<blockquote>
+<p>@article{liang2020aijobloss,<br/>
+  author = {Liang, Jacky and Ramanauskas, Ben and Kurenkov, Andrey},<br/>
+  title = {Job Loss Due To AI — How Bad Is It Going To Be?},<br/>
+  journal = {Skynet Today},<br/>
+  year = {2019},<br/>
+  howpublished = {\url{<a href="https://www.skynettoday.com/editorials/ai-automation-job-loss">https://www.skynettoday.com/editorials/ai-automation-job-loss</a> } },<br/>
+}</p>
+</blockquote>
+
+<hr>
+
 ## Links and Additional Readings
 
 In order of appearance:
