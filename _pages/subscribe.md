@@ -11,6 +11,8 @@ Catch our writing on [Twitter](https://twitter.com/skynet_today), [Facebook](htt
 
 <div class="bg-ghost p-4 p-md-5">
 
-{% include mailchimp-sign-up-big.html %}
+<iframe src="https://lastweekinai.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+
+{% comment %} {% include mailchimp-sign-up-big.html %} {% endcomment %}
 
 </div>

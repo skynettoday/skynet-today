@@ -57,9 +57,6 @@ As the multiple hype-debunking articles just above imply, this small aspect of t
 <blockquote class="twitter-tweet" data-lang="en" align="center"><p lang="en" dir="ltr">What f***ing trashy excuse of a journalist writes this sh***y sensationalist s***? DO YOU GUYS NOT HAVE EDITORS??<a href="https://t.co/fYXubWIRQN">https://t.co/fYXubWIRQN</a></p>&mdash; Edward Grefenstette (@egrefen) <a href="https://twitter.com/egrefen/status/891362804074033152">July 29, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-In fact, the coverage has gotten so out of hand that the researcher responsible for it was driven to write a long post addressing the nonsense:
-<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fdhruv.batra.dbatra%2Fposts%2F1943791229195215&width=500" align="center" width="500" height="380" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-
 And that right there is all that needs to be said.
 
 ## TLDR
