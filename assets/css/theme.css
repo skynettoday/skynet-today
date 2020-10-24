@@ -438,8 +438,8 @@ img {
 }
 .navbar-brand img {
 	margin-top:-4px;
-	margin-left:-8px;
-	width: 150px;
+	padding: 0 5% 0 0;
+	width: 85px;
 }
 .site-title .descr {
 	font-size:1.1rem;
@@ -1069,6 +1069,7 @@ a.social-icon img {
 	}
 	.navbar-brand img.logo {
 		width:40px;
+		padding: 0 1% 0 0;
 	}
 	.scrollednav .navbar-brand img {
 		height:auto;
@@ -1183,7 +1184,6 @@ embed,
 object,
 video {
     max-width: 100%;
-    padding: 0 10%;
 }
 
 img[align=left] {
