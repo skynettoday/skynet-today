@@ -12,6 +12,8 @@ permalink: /briefs/facebook-chatbot-language/
 ---
 A truly astounding exemplar of how coverage of AI goes horribly wrong.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6QiCyR3Xv3Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## What Happened
 The paper that originated all this terror has the fun seemingly un-scary title ["Deal or No Deal? End-to-End Learning for Negotiation Dialogues"](https://arxiv.org/abs/1706.05125) and was done by researchers from Facebook and the Georgia Institute of Technology. As the title implies, the problem being addressed is the creation of AI models for human-like negotation through natural language. To tackle this, the researchers first collected a brand new dataset of 5808 negotations between plain ol' humans with the data-collection powerhorse Mechanical Turk. 
 
