@@ -1,6 +1,6 @@
 andrey_kurenkov:
   name: Andrey Kurenkov
-  avatar: andrey_face.jpg
+  avatar: andrey_face.webp
   email: andreyk@stanford.com
   web: https://www.andreykurenkov.com
   disqus-shortname:
@@ -9,7 +9,7 @@ andrey_kurenkov:
 
 joshua_morton:
   name: Joshua Morton
-  avatar: josh_face.jpg
+  avatar: josh_face.webp
   email: joshua.morton13@gmail.com
   web: https://joshuamorton.github.io
   twitter: joshthejuggles
@@ -17,7 +17,7 @@ joshua_morton:
 
 alex_constantino:
   name: Alex Constantino
-  avatar: alex_face.jpg
+  avatar: alex_face.webp
   email: me@alexconstantino.com
   web: https://www.linkedin.com/in/alexconstantino/
   twitter: acconsta
@@ -25,7 +25,7 @@ alex_constantino:
   
 limor_gultchin:
   name: Limor Gultchin
-  avatar: limor_face.jpg
+  avatar: limor_face.webp
   email: limor.gultchin@gmail.com
   web: https://institute.global/contributors/limor-gultchin
   twitter: gultchin
@@ -33,7 +33,7 @@ limor_gultchin:
   
 ben_shih:
   name: Ben Shih
-  avatar: ben_face.png
+  avatar: ben_face.webp
   email: benjshih@gmail.com
   web: http://benshih.github.io/
   twitter: benjshih
@@ -41,7 +41,7 @@ ben_shih:
 
 viraat_aryabumi:
   name: Viraat Aryabumi
-  avatar: viraat_face.jpg
+  avatar: viraat_face.webp
   email: viraat94@gmail.com
   web: http://viraataryabumi.info
   twitter: viraataryabumi
@@ -49,7 +49,7 @@ viraat_aryabumi:
 
 aidan_rocke:
   name: Aidan Rocke
-  avatar: rocke_face.jpg
+  avatar: rocke_face.webp
   email: aidanrocke@gmail.com
   web: http://paulispace.com
   twitter: AidanRocke
@@ -57,155 +57,155 @@ aidan_rocke:
   
 sharon_zhou:
   name: Sharon Zhou
-  avatar: sharon_face.jpg
+  avatar: sharon_face.webp
   twitter: realsharonzhou
   email: sharonz@cs.stanford.edu
   web: http://sharonzhou.me/
   
 olaf_witkowski:
   name: Olaf Witkowski
-  avatar: olaf_face.png
+  avatar: olaf_face.webp
   twitter: okw
   web: https://olafwitkowski.com/
 
 julia_gong:
   name: Julia Gong
-  avatar: julia_face.jpg
+  avatar: julia_face.webp
   twitter: julia_gong
   web: https://www.linkedin.com/in/juliagong
 
 sneha_jha:
   name: Sneha Jha
-  avatar: sneha_face.png
+  avatar: sneha_face.webp
   web: https://research.nuance.com/author/sneha-jha/
 
 henry_mei:
   name: Henry Mei
-  avatar: henry_face.png
+  avatar: henry_face.webp
 
 charlie_kilpatrick:
   name: Charlie Kilpatrick
-  avatar: charlie_face.jpg
+  avatar: charlie_face.webp
 
 abi_see:
   name: Abigail See
-  avatar: abi_face.jpg
+  avatar: abi_face.webp
   twitter: abigail_e_see
   web: http://abigailsee.com
   
 jacky_liang:
   name: Jacky Liang
-  avatar: jacky_face.png
+  avatar: jacky_face.webp
   twitter: jackyliang42
   web: https://www.jacky.io/
   
 ben_ramanauskas:
   name: Ben Ramanauskas
-  avatar: ben_r_face.jpg
+  avatar: ben_r_face.webp
   twitter: BenRamanauskas
   
 jerry_kaplan:
   name: Jerry Kaplan
-  avatar: jerry_kaplan.jpg
+  avatar: jerry_kaplan.webp
   web: http://jerrykaplan.com/
   
 apoorva_dornadula:
   name: Apoorva Dornadula
   web: https://web.stanford.edu/~apoorvad/
-  avatar: apoorva_face.jpeg
+  avatar: apoorva_face.webp
   
 arnav_arora:
   name: Arnav Arora
-  avatar: arnav_face.jpg
+  avatar: arnav_face.webp
   twitter: keratin7 
   web: http://arnav.xyz/
 
 lana_sinapayen:
   name: Lana Sinapayen
-  avatar: lana_face.jpg
+  avatar: lana_face.webp
   twitter: sina_lana 
   web: https://itakoyak.wordpress.com/
   
 thomas_lux:
   name: Thomas C. H. Lux
-  avatar: tchlux-picture.jpg
+  avatar: tchlux-picture.webp
   email: tchlux@vt.edu
   web: //linkedin.com/in/thomas-ch-lux
   twitter: tchlux
 
 fabian_offert:
   name: Fabian Offert
-  avatar: fabian_face.jpg
+  avatar: fabian_face.webp
   email: fabian@theorize.ai
   web: https://theorize.ai
   twitter: haltingproblem
   
 scott_clark:
   name: Scott Clark
-  avatar: scott_face.jpg
+  avatar: scott_face.webp
   email: cscott8@vt.edu
   web: https://www.linkedin.com/in/scott-clark-791739125/
   
 george_hosu:
   name: George Hosu
-  avatar: george_face.jpg
+  avatar: george_face.webp
   email: george@cerebralab.com
   web: https://blog.cerebralab.com
   twitter: Cerebralab2 
   
 ellen_konig:
   name: Ellen König
-  avatar: ellen_face.jpeg
+  avatar: ellen_face.webp
   email: website@ellenkoenig.de
   web: https://www.ellenkoenig.de/
   twitter: ellen_koenig
 
 michael_jordan:
   name: Michael I. Jordan
-  avatar: michael_j_face.jpeg
+  avatar: michael_j_face.webp
   email:  jordan@cs.berkeley.edu 
   web: https://people.eecs.berkeley.edu/~jordan/
   
 matteo_pasquinelli:
   name: Matteo Pasquinelli
-  avatar: matteo_face.jpg
+  avatar: matteo_face.webp
   email:  mail@matteopasquinelli.org
   web: http://matteopasquinelli.com/
   twitter: mattpasquinelli
   
 daniel_bashir:
   name: Daniel Bashir
-  avatar: daniel_face.jpg
+  avatar: daniel_face.webp
   email:  dbashir@hmc.edu
   web: https://db7894.github.io/
   
 thomas_hornigold:
   name: Thomas Hornigold 
-  avatar: thomas_face.jpg
+  avatar: thomas_face.webp
   web: https://www.linkedin.com/in/thomas-hornigold-876057107/
   
 sarah_constantin:
   name: Sarah Constantin 
-  avatar: sarah_constantin.png
+  avatar: sarah_constantin.webp
   web: https://www.sarah-constantin.org/
   
 jessy_lin:  
   name: Jessy Lin
-  avatar: jessy_face.jpg
+  avatar: jessy_face.webp
   web: https://jessylin.com/
 
 janny_zhang:
   name: Janny Zhang
-  avatar: janny_face.jpg
+  avatar: janny_face.webp
   web: https://www.linkedin.com/in/jannyz/
   
 sathvik_nair:
   name: Sathvik Nair
-  avatar: sathvik_face.jpg
+  avatar: sathvik_face.webp
   web: https://sathvikn.github.io/
   
 bryan_mcmahon:
   name: Bryan McMahon
-  avatar: bryan_face.jpg
+  avatar: bryan_face.webp
   web: https://duke.academia.edu/BryanMcMahon
   twitter: BryanMcMahon12
