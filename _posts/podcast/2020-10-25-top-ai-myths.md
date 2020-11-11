@@ -1,5 +1,5 @@
 ---
-title: "Interview - AIMyths.org and the Top Myths About AI"
+title: "AIMyths.org and the Top Myths About AI"
 excerpt: "An interview with Daniel Leufer and Alexa Steinbrück about their project AIMyths.org."
 image: 
   feature: assets/img/podcast/2020-10-25-top-ai-myths/main.jpeg

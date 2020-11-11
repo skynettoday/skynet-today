@@ -1,5 +1,5 @@
 ---
-title: "Interview - OpenAI's “Scaling Laws for Autoregressive Generative Modeling”"
+title: "OpenAI's “Scaling Laws for Autoregressive Generative Modeling”"
 excerpt: "An interview with Tom Henighan about the recent paper “Scaling Laws for Autoregressive Generative Modeling”"
 image: 
   feature: assets/img/podcast/2020-11-7-scaling-laws-interview/main.png
