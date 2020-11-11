@@ -1,7 +1,7 @@
 ---
 title: "Job Loss Due To AI — How Bad Is It Going To Be?"
 image:
-  feature: assets/img/editorials/ai-automation-job-loss/main.png
+  feature: assets/img/editorials/ai-automation-job-loss/main.webp
 author: [jacky_liang,ben_ramanauskas,andrey_kurenkov]
 tags: [jobs,overview]
 categories: [editorials]
@@ -35,7 +35,7 @@ After all, recent advances in more intelligent robotics to perform physical labo
 While many expect recent AI technologies to affect society in dramatically different ways than technological developments in the past, evidence supports the contrary.
 
 <figure>
- <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/4_revolutions.png" alt="The four industrial revolutions."/>
+ <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/4_revolutions.webp" alt="The four industrial revolutions."/>
   <figcaption>
 AI is sometimes characterized as part of the ‘Fourth Industrial Revolution’.
 Today, most economists agree the prior industrial revolutions ultimately benefited society as a whole, even though they did result in some losing jobs to automation in the process.
@@ -93,7 +93,7 @@ With more efficient tools, machines, and better understanding of science, agricu
 Even more drastic trends can be observed in other countries, like China, where one-third of the country’s workforce shifted out of agriculture from 1990 to 2015[^mks1_0].
 
 <figure>
- <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/US_labor_sector.png" alt="US labor sector."/>
+ <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/US_labor_sector.webp" alt="US labor sector."/>
   <figcaption>
 Percentage of U.S. jobs in agriculture and manufacturing has dramatically declined in the last century, while other job sectors have grown.
 Figure by <a href="https://www.ncci.com/Articles/Pages/II_Insights_QEB_Impact-Automation-Employment-Q2-2017-Part1.aspx">NCCI</a>.
@@ -108,7 +108,7 @@ Together with the U.S.’s industrialization during the war and investment in in
 They helped workers displaced by agricultural automation to smoothly transition to new jobs in manufacturing, trade, and services, and many of these jobs were also created by technological advancements.
 
 <figure>
- <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/mckinsey_jobs_sector_changes.png" alt="mckinsey_jobs_sector_changes"/>
+ <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/mckinsey_jobs_sector_changes.webp" alt="mckinsey_jobs_sector_changes"/>
   <figcaption>
 Changing composition of jobs across sectors from 1850 to 2015 in the U.S.
 Figure by <a href="https://www.mckinsey.com/~/media/mckinsey/featured%20insights/future%20of%20organizations/what%20the%20future%20of%20work%20will%20mean%20for%20jobs%20skills%20and%20wages/mgi-jobs-lost-jobs-gained-report-december-6-2017.ashx">McKinsey</a> Exhibit E3.
@@ -171,7 +171,7 @@ In this article we do not consider “strong” or “generalized” AI, a type 
 Most AI researchers believe that [strong AI is unlikely to materialize in the near future,](https://www.theverge.com/2018/11/27/18114362/ai-artificial-general-intelligence-when-achieved-martin-ford-book) and even weak AI is likely to have outsized impacts on jobs and the economy.
 
 <figure>
- <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/hlmi.png" alt="Human-level machine intelligence graph."/>
+ <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/hlmi.webp" alt="Human-level machine intelligence graph."/>
   <figcaption>
     Probability of Human-Level Machine Intelligence (HLMI) over time.
     HLMI is defined as when “unaided machines can accomplish every task better and cheaper than human workers.”
@@ -188,7 +188,7 @@ pattern recognition and generation ([classifying images](https://medium.com/come
 Just see how machine-generated faces have improved over a span of 5 years:
 
 <figure>
- <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/face_generation_progress.jpg" alt="face_generation_progress"/>
+ <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/face_generation_progress.webp" alt="face_generation_progress"/>
   <figcaption>
     Progress of face-generation algorithms via Generative Adversarial Networks (GANs).
     Figure by <a href="https://twitter.com/goodfellow_ian/status/1084973596236144640?s=19">Ian Goodfellow</a>.
@@ -234,7 +234,7 @@ Lastly, like other jobs mentioned in this article, truck driving consists of man
 Even if truck driving can be fully automated, other tasks that truck drivers routinely perform such as customer service, loading and unloading cargo, and vehicle maintenace have much lower automation potential, so [it is unlikely that self-driving trucks will replace truck drivers alone](https://hbr.org/2019/09/automation-isnt-about-to-make-truckers-obsolete).
 
 <figure>
- <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/ata_truck_driver_shortage.png" alt="ata_truck_driver_shortage"/>
+ <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/ata_truck_driver_shortage.webp" alt="ata_truck_driver_shortage"/>
   <figcaption>
     Truck driver labor shortage projection in the U.S.
     Figure by <a href="https://www.trucking.org/ATA%20Docs/News%20and%20Information/Reports%20Trends%20and%20Statistics/10%206%2015%20ATAs%20Driver%20Shortage%20Report%202015.pdf">American Trucking Association</a>.
@@ -288,7 +288,7 @@ By filtering out jobs that involve such tasks, the Oxford study arrived at the n
 Note that **this is not an estimate of how many jobs will be lost to automation, just how many jobs can be theoretically automated.**
 
 <figure>
- <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/automatable_jobs.png" alt="automatable_jobs"/>
+ <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/automatable_jobs.webp" alt="automatable_jobs"/>
   <figcaption>
     How much time is automatable for different jobs.
     Figure by <a href="https://www.adb.org/sites/default/files/publication/411666/ado2018.pdf">Asian Development Bank</a>.
@@ -302,7 +302,7 @@ Like the bank tellers in the ATM example however, it is likely that the workers 
 Gartner estimates that by 2022, 20% of workers who perform nonroutine tasks will rely on AI to do the job (e.g. automatically generating reports, picking top emails to read)[^gartner_0].
 
 <figure>
- <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/economist_type_of_work.png" alt="economist_type_of_work"/>
+ <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/economist_type_of_work.webp" alt="economist_type_of_work"/>
   <figcaption>
     There has been more growth in workers performing non-routine, cognitive jobs than the other three types in recent decades.
     Figure by <a href="https://www.economist.com/special-report/2016/06/25/automation-and-anxiety">The Economist</a>.
@@ -315,7 +315,7 @@ Another study by the University of Mannheim gives an even lower estimate - only 
 These studies arrived at lower numbers than the Oxford one by taking a more granular approach, accounting for the variations in tasks across jobs within the same type of occupation.
 
 <figure>
- <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/mckinsey_jobs_displaced.png" alt="mckinsey_jobs_displaced"/>
+ <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/mckinsey_jobs_displaced.webp" alt="mckinsey_jobs_displaced"/>
   <figcaption>
     Midpoint estimate of percentage of automatable work hours.
     Figure by <a href="https://www.mckinsey.com/~/media/mckinsey/featured%20insights/future%20of%20organizations/what%20the%20future%20of%20work%20will%20mean%20for%20jobs%20skills%20and%20wages/mgi-jobs-lost-jobs-gained-report-december-6-2017.ashx">McKinsey</a>.
@@ -346,8 +346,8 @@ The same study also reports that information, agriculture, and retail sectors wi
 Workers in small, rural areas will also be [more affected by automation](https://www.brookings.edu/research/automation-and-artificial-intelligence-how-machines-affect-people-and-places/) than those in urban areas.
 
 <figure>
- <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/brookings_automation_by_state.png" alt="brookings_automation_by_state" width="45%"/>
- <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/brookings_automation_by_met_area.png" alt="brookings_automation_by_met_area" width="45%"/>
+ <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/brookings_automation_by_state.webp" alt="brookings_automation_by_state" width="45%"/>
+ <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/brookings_automation_by_met_area.webp" alt="brookings_automation_by_met_area" width="45%"/>
   <figcaption>
     Automation potential in the U.S. by state (left) and metropolitan area (right).
     Redder means higher potential.
@@ -363,7 +363,7 @@ Demand for these middle-income jobs and employment opportunities for those with 
 This plus other ways that automation concentrates wealth will [exacerbate the income and wealth inequality problem in advanced economies](https://www.weforum.org/agenda/2017/06/the-future-is-automated-but-what-does-that-really-mean-for-jobs), especially the U.S., where the benefits of automation increasingly flow to a smaller number of people who can afford good education and own the automation technologies.
 
 <figure>
- <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/mckinsey_jobs_by_edu_us.png" alt="mckinsey_jobs_by_edu_us"/>
+ <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/mckinsey_jobs_by_edu_us.webp" alt="mckinsey_jobs_by_edu_us"/>
   <figcaption>
     Projected net change in employment by education level by 2030 in the U.S.
     Figure by <a href="https://www.mckinsey.com/~/media/mckinsey/featured%20insights/future%20of%20organizations/what%20the%20future%20of%20work%20will%20mean%20for%20jobs%20skills%20and%20wages/mgi-jobs-lost-jobs-gained-report-december-6-2017.ashx">McKinsey</a> Exhibit E8.
@@ -409,7 +409,7 @@ Similar scaling effects can be observed in other jobs, especially technology-rel
 Gartner also estimates that by 2020, AI will create 2.3 million jobs and displace 1.8 million, yielding a net positive, albeit the jobs lost and gained will not be in the same industries[^gartner_1].
 
 <figure>
- <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/mckinsey_create_more_jobs.png" alt="mckinsey_create_more_jobs"/>
+ <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/mckinsey_create_more_jobs.webp" alt="mckinsey_create_more_jobs"/>
   <figcaption>
     PCs created more jobs than they destroyed.
     Figure by <a href="https://www.mckinsey.com/~/media/mckinsey/featured%20insights/future%20of%20organizations/what%20the%20future%20of%20work%20will%20mean%20for%20jobs%20skills%20and%20wages/mgi-jobs-lost-jobs-gained-report-december-6-2017.ashx">McKinsey</a> Exhibit E3.
@@ -441,7 +441,7 @@ Rising income and consumption, especially as large middle classes emerge in deve
 Job growth is also expected in newly developed industries, such as in renewable energies (which is expected to add 20 million new jobs by 2030)[^mks16].
 
 <figure>
- <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/mckinsey_jobs_of_the_future.png" alt="mckinsey_jobs_of_the_future"/>
+ <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/mckinsey_jobs_of_the_future.webp" alt="mckinsey_jobs_of_the_future"/>
   <figcaption>
     Projected future job changes by sector.
     Figure by <a href="https://www.mckinsey.com/~/media/mckinsey/featured%20insights/future%20of%20organizations/what%20the%20future%20of%20work%20will%20mean%20for%20jobs%20skills%20and%20wages/mgi-jobs-lost-jobs-gained-report-december-6-2017.ashx">McKinsey</a>.
@@ -457,7 +457,7 @@ Similar to how jobs displaced by automation varies across different communities,
 Sectors that are expected to grow and are less likely to be automated, like education and healthcare, currently employ more women than men, with women making up 79% of the workforce in healthcare and social assistance and 68% in education[^ncci1_4].
 
 <figure>
- <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/ncci_jobs_by_gender.png" alt="ncci_jobs_by_gender"/>
+ <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/ncci_jobs_by_gender.webp" alt="ncci_jobs_by_gender"/>
   <figcaption>
     Projected jobs lost and gained across sectors for female and male workers by 2024 in the U.S.
     Figure by <a href="https://www.ncci.com/Articles/Pages/II_Insights_QEB_Impact-Automation-Employment-Q3-2017-Part2.aspx">NCCI</a>.
@@ -476,7 +476,7 @@ As it took decades for productivity gained by automation to benefit the masses, 
 In fact, this period saw unprecedented social disruption, stagnant wages, uncomfortable adjustments to civic life, and greater environmental pollution for the people living through it.
 
 <figure>
- <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/engels_pause.png" alt="engels_pause"/>
+ <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/engels_pause.webp" alt="engels_pause"/>
   <figcaption>
     “Engel’s Pause” - rise in wage lagged behind rise in productivity during the British Industrial Revolution.
     Figure by <a href="http://www.nuff.ox.ac.uk/Users/Allen/engelspause.pdf">Robert C. Allen</a>.
@@ -509,7 +509,7 @@ Lifelong learning, agility and continued training and retraining are key.
 From the G.I. Bill and the high school education movement last century we know it is possible to train and upskill workers in mass, but proactive policies are definitely needed to make that happen.
 
 <figure>
- <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/oecd_automation_vs_training.png" alt="engels_pause"/>
+ <img src="{{ site.imgpath }}/editorials/ai-automation-job-loss/oecd_automation_vs_training.webp" alt="engels_pause"/>
   <figcaption>
     Workers in more automatable jobs are less likely to undertake job training.
     Figure by <a href="https://www.oecd-ilibrary.org/employment/automation-skills-use-and-training_2e2f4eea-en">OECD</a>.

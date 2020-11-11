@@ -5,7 +5,7 @@ categories: [overviews]
 tags: [deep learning]
 excerpt: "The story of how neural nets evolved from the earliest days of AI to now."
 image: 
-  feature: assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/main_wide.png
+  feature: assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/main_wide.webp
 permalink: /overviews/neural-net-history
 highlight: true
 sidebartoc: true
@@ -52,14 +52,14 @@ Okay okay, enough definitions. Point is - our line drawing exercise is a very si
 
 Why have all this prologue with linear regression, since the topic here is ostensibly neural nets? Well, in fact linear regression bears some resemblance to the first idea conceived specifically as a method to make machines learn: [Frank Rosenblatt's **Perceptron**](http://psycnet.apa.org/index.cfm?fa=buy.optionToBuy&id=1959-09865-001)[^part1_2]. 
 <figure>
-    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34998.jpg" alt="Perceptron"/>
-    <figcaption>A diagram showing how the Perceptron works. <a href="http://cse-wiki.unl.edu/wiki/images/0/0f/Perceptron.jpg">(Source)</a></figcaption>    
+    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34998.webp" alt="Perceptron"/>
+    <figcaption>A diagram showing how the Perceptron works. <a href="http://cse-wiki.unl.edu/wiki/images/0/0f/Perceptron.webp">(Source)</a></figcaption>    
 </figure>
 
 A psychologist, Rosenblatt conceived of the Percetron as a simplified mathematical model of how the neurons in our brains operate: it takes a set of binary inputs (nearby neurons), multiplies each input by a continuous valued weight (the synapse strength to each nearby neuron), and thresholds the sum of these weighted inputs to output a 1 if the sum is big enough and otherwise a 0 (in the same way neurons either fire or do not). Most of the inputs to a Perceptron are either some data or the output of another Perceptron, but an extra detail is that Perceptrons also have one special 'bias' input, which just has a value of 1 and basically ensures that more functions are computable with the same input by being able to offset the summed value. This model of the neuron built on the work of Warren McCulloch and Walter Pitts [Mcculoch-Pitts](http://www.minicomplexity.org/pubs/1943-mcculloch-pitts-bmb.pdf)[^part1_3], who showed that a neuron model that sums binary inputs and outputs a 1 if the sum exceeds a certain threshold value, and otherwise outputs a 0, can model the basic OR/AND/NOT functions. This, in the early days of AI, was a big deal - the predominant thought at the time was that making computers able to perform formal logical reasoning would essentially solve AI. 
 
 <figure>
-    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34832.jpg" alt="Perceptron 2"/> 
+    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34832.webp" alt="Perceptron 2"/> 
     <figcaption>Another diagram, showing the biological inspiration. The <b>activation function</b> is what people now call the non-linear function applied to the weighted input sum to produce the output of the artificial neuron - in the case of Rosenblatt's Perceptron, the function just a thresholding operation.  <a href="http://cs231n.github.io/neural-networks-1/">(Source)</a> </figcaption>    
 </figure>
 
@@ -89,7 +89,7 @@ Rosenblatt implemented the idea of the Perceptron in custom hardware (this being
 But wait, so far we've only seen how one Perceptron is able to learn to output a one or a zero - how can this be extended to work for classification tasks with many categories, such as human handwriting (in which there are many letters and digits as the categories)? This is impossible for one Perceptron, since it has only one output, but functions with multiple outputs can be learned by having multiple Perceptrons in a **layer**, such that all these Perceptrons receive the same input and each one is responsible for one output of the function. Indeed, neural nets (or, formally, 'Artificial Neural Networks' - ANNs) are nothing more than layers of Perceptrons - or neurons, or units, as they are usually called today - and at this stage there was just one layer - the **output layer**. So, a prototypical example of neural net use is to classify an image of a handwritten digit. The inputs are the pixels of the image , and there are 10 output neurons with each one corresponding to one of the 10 possible digit values. In this case only one of the 10 neurons output 1, the highest weighted sum is taken to be the correct output, and the rest output 0. 
 
 <figure>
-    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34466.jpg" alt="Neural net with an output layer."/> 
+    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34466.webp" alt="Neural net with an output layer."/> 
     <figcaption>A neural net with multiple outputs.</figcaption>    
 </figure>
 
@@ -116,7 +116,7 @@ Or, have a look at this TV segment from the time:
 This sort of talk no doubt irked other researchers in AI, many of whom were focusing on approaches based on manipulation of symbols with concrete rules that followed from the mathematical laws of logic. Marvin Minsky, founder of the MIT AI Lab, and Seymour Papert, director of the lab at the time, were some of the researchers who were skeptical of the hype and in 1969 published their skepticism in the form of rigorous analysis on of the limitations of Perceptrons in a seminal book aptly named [Perceptrons](https://mitpress.mit.edu/books/perceptrons)[^part1_7]. Interestingly, Minksy may have actually been the first researcher to implement a hardware neural net with 1951's [SNARC](https://en.wikipedia.org/wiki/Stochastic_neural_analog_reinforcement_calculator) (Stochastic Neural Analog Reinforcement Calculator) [^part1_SNARC], which preceded Rosenblatt's work by many years. But the lack of any trace of his work on this system and the critical nature of the analysis in *Perceptrons* suggests that he concluded this approach to AI was a dead end. The most widely discussed element of this analysis is the elucidation of the limits of a Perceptron - they could not, for instance, learn the simple boolean function XOR because it is not **linearly separable**. Though the history here is vague, this publication is widely believed to have helped usher in the first of the **AI Winters** - a period following a massive wave of hype for AI characterized by disillusionment that causes a freeze to funding and publications. 
 
 <figure>
-    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34466.jpg"/> 
+    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34466.webp"/> 
     <figcaption>Visualization of the limitations of Perceptrons. Finding a linear function on the inputs X,Y to correctly ouput + or - is equivalent to drawing a line on this 2D graph separating all + cases from - cases; clearly, for the third case this is impossible. </figcaption>    
 </figure>
 
@@ -125,7 +125,7 @@ This sort of talk no doubt irked other researchers in AI, many of whom were focu
 So, things were not good for neural nets. But why? The idea, after all, was to combine a bunch of simple mathematical neurons to do complicated things, not to use a single one. In other terms, instead of just having one **output layer**, to send an input to arbitrarily many neurons which are called a **hidden layer** because their output acts as input to another hidden layer or the output layer of neurons. Only the output layer's output is 'seen' - it is the answer of the neural net - but all the intermediate computations done by the hidden layer(s) can tackle vastly more complicated problems than just a single layer. 
 
 <figure>
-    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34833.jpg" alt="Hidden layers"/> 
+    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34833.webp" alt="Hidden layers"/> 
     <figcaption>Neural net with two hidden layers <a href="http://cs231n.github.io/neural-networks-1/">(Excellent Source)</a></figcaption>    
 </figure>
 
@@ -143,7 +143,7 @@ So, in intuitive speak a network can massage the data better with activation fun
 </p></blockquote>
 
 <figure>
-    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/35001.jpg" alt="Feature extraction"/> 
+    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/35001.webp" alt="Feature extraction"/> 
     <figcaption>Visualization of traditional handcrafted feature extraction. <a href="http://lear.inrialpes.fr/people/vandeweijer/color_descriptors.html">(Source)</a></figcaption>    
 </figure>
 
@@ -157,7 +157,7 @@ So, it is important to note Minsky and Papert's analysis of Perceptrons did not 
 The reason why this does not work for multiple layers should be intuitively clear: the example only specifies the correct output for the final output layer, so how in the world should we know how to adjust the weights of Perceptrons in layers before that? The answer, despite taking some time to derive, proved to be once again based on age-old calculus: the chain rule. The key realization was that if the neural net neurons were not quite Perceptrons, but were made to compute the output with an activation function that was still non-linear but also differentiable, as with Adaline, not only could the derivative be used to adjust the weight to minimize error, but the chain rule could also be used to compute the derivative for all the neurons in a prior layer and thus the way to adjust their weights would also be known. Or, more simply: we can use calculus to assign some of the blame for any training set mistakes in the output layer to each neuron in the previous hidden layer, and then we can further split up blame if there is another hidden layer, and so on - we **backpropagate** the error. And so, we can find how much the error changes if we change any weight in the neural net, including those in the hidden layers, and use an optimization technique (for a long time, typically **stochastic gradient descent**) to find the optimal weights to minimize the error.
 
 <figure>
-    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34948.png" alt="Backprop"/> 
+    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34948.webp" alt="Backprop"/> 
     <figcaption>The basic idea of backpropagation. <a href="http://devblogs.nvidia.com/parallelforall/inference-next-step-gpu-accelerated-deep-learning/">(Source)</a></figcaption>    
 </figure>
 
@@ -207,8 +207,8 @@ But, this is mathematics, where you could imagine having endless memory and comp
 > "Classical work in visual pattern recognition has demonstrated the advantage of extracting local features and combining them to form higher order features. Such knowledge can be easily built into the network by forcing the hidden units to combine only local sources of information. Distinctive features of an object can appear at various location on the input image. Therefore it seems judicious to have a set of feature detectors that can detect a particular instance of a feature anywhere on the input place. Since the *precise* location of a feature is not relevant to the classification, we can afford to lose some position information in the process. Nevertheless, *approximate* position information must be preserved, to allow the next levels to detect higher order, more complex features (Fukushima 1980; Mozer 1987)."
 
 <figure>
-    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/35003.jpg" alt="CNN"/> 
-    <figcaption>A visualization of how this neural net works. <a href="http://image.slidesharecdn.com/bp2slides-090922011749-phpapp02/95/the-back-propagation-learning-algorithm-10-728.jpg?cb=1253582278">(Source)</a></figcaption>    
+    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/35003.webp" alt="CNN"/> 
+    <figcaption>A visualization of how this neural net works. <a href="http://image.slidesharecdn.com/bp2slides-090922011749-phpapp02/95/the-back-propagation-learning-algorithm-10-728.webp?cb=1253582278">(Source)</a></figcaption>    
 </figure>
 
 Or, more concretely: the first hidden layer of the neural net was **convolutional** - instead of each neuron having a different weight for each pixel of the input image (40x60=2400 weights), the neurons only have a small set of weights (5x5=25) that were applied a whole bunch of small subsets of the image of the same size. So, for instance instead of having 4 different neurons learn to detect 45 degree lines in each of the 4 corners of the input image, a single neuron could learn to detect 45 degree lines on subsets of the image and do that everywhere within it. Layers past the first work in a similar way, but take in the 'local' features found in the previous hidden layer rather than pixel images, and so 'see' successively larger portions of the image since they are combining information about increasingly larger subsets of the image. Finally, the last two layers are just plain normal neural net layers that use the higher-order larger features generated by the convolutional layers to determine which digit the input image corresponds to. The method proposed in this 1989 paper went on to be the basis of nationally deployed check-reading systems, as demonstrated by LeCun in this gem of a video:
@@ -220,7 +220,7 @@ Or, more concretely: the first hidden layer of the neural net was **convolutiona
 The reason for why this is helpful is intuitively if not mathematically clear: without such constraints the network would have to learn the same simple things (such as detecting 45 degree lines, small circles, etc) a whole bunch of times for each portion of the image. But with the constraint there, only one neuron would need to learn each simple feature - and with far fewer weights overall, it could do so much faster! Moreover, since the pixel-exact locations of such features do not matter the neuron could basically skip neighboring subsets of the image - **subsampling**, now known as a type of **pooling** - when applying the weights, further reducing the training time. The addition of these two types of layers - convolutional and pooling layers - are the primary distinctions of **Convolutional Neural Nets** (**CNNs/ConvNets**) from plain old neural nets.
  
 <figure>
-    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34967.png" alt="CNN 2"/> 
+    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34967.webp" alt="CNN 2"/> 
     <figcaption>A nice visualization of CNN operation <a href="https://sites.google.com/site/5kk73gpu2013/assignment/cnn">(Source)</a></figcaption>    
 </figure>
 
@@ -243,21 +243,21 @@ Automating the rote and utterly uninteresting task of reading checks is a great 
 This is an **autoencoder** neural net, and is a method for learning compression - efficiently translating (encoding) data to a compact format and back to itself (auto). See, the output layer computes its outputs, which ideally are the same as the input to the neural net, using only the hidden layer's outputs. Since the hidden layer has fewer outputs than does the input layer, the output of the hidden layer is the compressed representation of the input data, which can be reconstructed with the output layer. 
 
 <figure>
-    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34939.png" alt="RBM"/> 
+    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34939.webp" alt="RBM"/> 
     <figcaption>A more explicit view of an autoencoder compression. <a href="http://stats.stackexchange.com/questions/114385/what-is-the-difference-between-convolutional-neural-networks-restricted-boltzma">(Source)</a></figcaption>    
 </figure>
 
 Notice a neat thing here: the only thing we need for training is some input data. This is in contrast to the requirement of supervised machine learning, which needs a training set of input-output pairs (**labeled data**) in order to approximate a function that can compute such outputs from such inputs. And indeed, autoencoders are not a form of supervised learning; they are a form of **unsupervised learning**, which only needs a set of input data (**unlabeled data**) in order to find some hidden structure within that data. In other words, unsupervised learning does not approximate a function so much as it derives one from the input data to another useful representation of that data. In this case, this representation is just a smaller one from which the original data can still be reconstructed, but it can also be used for finding groups of similar data (**clustering**) or other inference of **latent variables** (some aspect that is known to exist for the data but the value of which is not known).
 
 <figure>
-    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34886.png" alt="Clustering, from good ol' public domain wikipedia"/> 
+    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34886.webp" alt="Clustering, from good ol' public domain wikipedia"/> 
     <figcaption>Clustering, a very common unsupervised learning application. <a href="https://en.wikipedia.org/wiki/K-means_clustering">(Source)</a></figcaption>    
 </figure>
 
 There were other unsupervised applications of neural networks explored prior to and after the discovery of backpropagation, most notably Self Organizing Maps [^part2_6], which produce a low-dimensional representation of data good for visualization, and Adapative Resonance Theory[^part2_7], which can learn to classify arbitrary input data without being told correct classifications. If you think about it, it is intuitive that quite a lot can be learned from unlabeled data. Say you have a dataset of a bunch of images of handwritten digits, without labels of which digit each image corresponds to. Well, an image with some digit in that dataset most likely looks most like all the other images with that same digit, and so though a computer may not know which digit all those images correspond to, it should still be able to find that they all correspond to the same one. This, **pattern recognition**, is really what most of machine learning is all about, and arguably also is the basis for the great powers of the human brain. But, let us not digress from our exciting deep learning journey, and get back to autoencoders.
 
 <figure>
-    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34887.png" alt="SOM"/> 
+    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34887.webp" alt="SOM"/> 
     <figcaption>Self Organizing Maps - mapping a large vector of inputs into a grid of neuron outputs, where each output is a cluster. Nearby neurons represent similar clusters. <a href="http://lcdm.astro.illinois.edu/static/code/mlz/MLZ-1.0/doc/html/somz.html">(Source)</a></figcaption>    
 </figure>
 
@@ -280,7 +280,7 @@ So, the key to energy based models is recognizing all these algorithms are essen
 
 
 <figure>
-    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34928.png" alt="Simple bayesian network"/> 
+    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34928.webp" alt="Simple bayesian network"/> 
     <figcaption>A simple belief, or bayesian, network - a Boltzmann machine is basically this but with undirected/symmetric connections and trainable weights to learn the probabilities in a particular fashion. <a href="https://commons.wikimedia.org/wiki/File:SimpleBayesNet.svg">(Source)</a> 
      </figcaption>    
 </figure>
@@ -288,8 +288,8 @@ So, the key to energy based models is recognizing all these algorithms are essen
 Back to Boltzmann Machines. When such units are put together into a network, they form a graph, and so are a **graphical model** of data. Essentially, they can do something very similar to normal neural nets: some **hidden units** compute the probability of some **hidden variables** (the outputs - classifications or features for data) given known values of **visible units** that represent **visible variables** (the inputs - pixels of images, characters in text, etc.). In our classic example of classifying images of digits, the hidden variables are the actual digit values, and the visible variables are the pixels of the image; given an image of the digit '1' as input, the value of visible units is known and the hidden unit modeling the probability of the image representing a '1' should have a high output probability.
 
 <figure>
-    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34944.png" alt="An example Boltzmann machine"/> 
-    <figcaption>An example Boltzmann machine. Each line has an associated weight, as with a neural net. Notice there are no layers here - everything can sort of be connected to everything. We'll talk about this variation on neural net in a little bit... <a href="https://en.wikipedia.org/wiki/File:Boltzmannexamplev1.png">(Source)</a>
+    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34944.webp" alt="An example Boltzmann machine"/> 
+    <figcaption>An example Boltzmann machine. Each line has an associated weight, as with a neural net. Notice there are no layers here - everything can sort of be connected to everything. We'll talk about this variation on neural net in a little bit... <a href="https://en.wikipedia.org/wiki/File:Boltzmannexamplev1.webp">(Source)</a>
      </figcaption>    
 </figure>
 
@@ -317,7 +317,7 @@ Without delving into the full details of the algorithm, here are some highlights
 As with neural net, the algorithm can be done both in a supervised fashion (with known values for the hidden units) or in an unsupervised fashion. Though the algorithm was demonstrated to work (notably, with the same 'encoding' problem that autoencoder neural nets solve), it was soon apparent that it just did not work very well - Redford M. Neal's 1992 ["Connectionist learning of belief networks"](http://www.zabaras.com/Courses/BayesianComputing/Papers/1-s2.0-0004370292900656-main.pdf)[^part2_12] justified a need for a faster approach by stating that: "These capabilities would make the Boltzmann machine attractive in many applications, were it not that its learning procedure is generally seen as being painfully slow". And so Neal introduced a similar idea in the **belief net**, which is essentially like a Boltzmann machine with directed, forward connections (so that there are again layers, as with the the neural nets we have seen before, and unlike the Boltzmann machine image above). Without getting into mucky probability math, this change allowed the nets to be trained with a faster learning algorithm. We actually saw a 'belief net' just above with the sprinkler and rain variables, and the term was chosen precisely because this sort of probability-based modeling has a close relationship to ideas from the mathematical field of probability, in addition to its link to the field of Machine Learning. 
 
 <figure>
-    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34893.jpg" alt="belief nets"/> 
+    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34893.webp" alt="belief nets"/> 
     <figcaption>An explanation of belief nets. <a href="http://www.slideserve.com/Leo/restricted-boltzmann-machines-and-deep-belief-networks">(Source)</a></figcaption>    
 </figure>
 
@@ -362,7 +362,7 @@ Finally, belief nets could be trained somewhat fast! Though not quite as influen
 Having discovered the application of neural nets to unsupervised learning, let us also quickly see how they were used in the third branch of machine learning: **reinforcement learning**. This one requires the most mathy notation to explain formally, but also has a goal that is very easy to describe informally: learn to make good decisions. Given some theoretical agent (a little software program, for instance), the idea is to make that agent able to decide on an **action** based on its current **state**, with the reception of some **reward** for each action and the intent of getting the maximum **utility** in the long term. So, whereas supervised learning tells the learning algorithm exactly what it should learn to output, reinforcement learning provides 'rewards' as a by-product of making good decisions over time, and does not directly tell the algorithm the correct decisions to choose.  From the outset it was a very abstracted decision making model - there were a finite number of states, and a known set of actions with known rewards for each state. This made it easy to write very elegant equations for finding the optimal set of actions, but hard to apply to real problems -  problems with continuous states or hard-to-define rewards.
 
 <figure>
-    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34985.png" alt="RL"/> 
+    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34985.webp" alt="RL"/> 
     <figcaption>Reinforcement learning. <a href="http://www2.hawaii.edu/~chenx/ics699rl/grid/rl.html">(Source)</a></figcaption>    
 </figure>
 
@@ -384,7 +384,7 @@ As discussed in the paper, the neural net in this system learned to control the 
 These disparate applications in other fields are certainly cool, but of course the most research on reinforcement learning and neural nets was happening within AI and Machine Learning. And here, one of the most significant results in the history of reinforcement learning was achieved: a neural net that learned to be a world class backgammon player.  Dubbed [TD-Gammon](http://courses.cs.washington.edu/courses/cse590hk/01sp/Readings/tesauro95cacm.pdf), the neural net was trained using a standard reinforcement learning algorithm and was one of the first demonstrations of reinforcement learning being able to outperform humans on relatively complicated tasks [^part3_4]. And it was specifically a reinforcement learning approach that worked here, as the same research showed just using a neural net without reinforcement learning did not work nearly as well.
 
 <figure>
-    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34983.png" alt="TDGammon"/> 
+    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34983.webp" alt="TDGammon"/> 
     <figcaption>The neural net that learned to play expert-level Backgammon. <a href="https://webdocs.cs.ualberta.ca/~sutton/book/ebook/node108.html">(Source)</a></figcaption>    
 </figure>
 
@@ -423,8 +423,8 @@ is used to transform an input sequence eg speech spectra into an output sequence
 Well, it's not quite so simple. Notice the problem - if backpropagation relies on 'propagating' the error from the output layer backward, how do things work if the first layer connects back to the output layer? The error would go ahead and propagate from the first layer back to the output layer, and could just keep looping through the network, infinitely. The solution, independently derived by multiple groups, is **backpropagation through time**. Basically, the idea is to 'unroll' the recurrent neural network by treating each loop through the neural network as an input to another neural network, and looping only a limited number of times. 
 
 <figure>
-    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/35004.png" alt="The wonders of public domain images from Wikipedia!"/> 
-    <figcaption>The wonderfully intuitive backpropagation through time concept. <a href="https://upload.wikimedia.org/wikipedia/en/e/ee/Unfold_through_time.png">(Source)</a></figcaption>    
+    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/35004.webp" alt="The wonders of public domain images from Wikipedia!"/> 
+    <figcaption>The wonderfully intuitive backpropagation through time concept. <a href="https://upload.wikimedia.org/wikipedia/en/e/ee/Unfold_through_time.webp">(Source)</a></figcaption>    
 </figure>
 
 This fairly simple idea actually worked - it was possible to train recurrent neural nets. And indeed, multiple people explored the application of RNNs to speech recognition. But, here is a twist you should now be able to predict: this approach did not work very well. To find out why, let's meet another modern giant of Deep Learning: Yoshua Bengio. Starting work on speech recognition with neural nets around 1986, he co-wrote many papers on using ANNs and RNNs for speech recognition, and ended up working at the AT&T Bell Labs on the problem just as Yann LeCun was working with CNNs there. In fact, in 1995 they co-wrote the summary paper ["Convolutional Networks for Images, Speech, and Time-Series"](http://yann.lecun.com/exdb/publis/pdf/lecun-bengio-95a.pdf)[^part3_8], the first of many collaborations among them. But, before then Bengio wrote the 1993 ["A Connectionist Approach to Speech Recognition"](http://www.iro.umontreal.ca/~lisa/publications2/index.php/attachments/single/161)[^part3_9].  Here, he summarized the general failure of effectively teaching RNNs: 
@@ -438,7 +438,7 @@ long term dependencies eg for learning finite state machines, grammars, and othe
 Speaking of Bengio, his contributions with respect to neural nets go well beyond this work with CNNs and RNNs. In particular, this history would not be complete without covering his seminal paper 2003 "[A Neural Probabilistic Language Model](https://jmlr.org/papers/volume3/tmp/bengio03a.pdf)". As the title implies, this work had to do with using neural nets to do language modeling -- a fundamental task in the field of Natural Language Processing, which boils down to predicting what seeing some number of words and predicting what words come next (essentially, what autocomplete does). The task has by then been studied for a long time, with the classical approaches essentially being to count how often individual words and varios word combiations (otherwise known as [n-grams](https://en.wikipedia.org/wiki/N-gram)) happen in a bunch of text, and then using these counts to estimate the probability for any given word being the one to come next:
 
 <figure>
-    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/ngram_lm.PNG" alt="Language modeling"/> 
+    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/ngram_lm.webp" alt="Language modeling"/> 
     <figcaption>The wonderfully intuitive backpropagation through time concept. <a href="https://thegradient.pub/understanding-evaluation-metrics-for-language-models/">(Source)</a></figcaption>
 </figure>
 
@@ -447,14 +447,14 @@ While this approach was highly succesful, it was also inherently limited, since 
 So, how do we get computers to understand how similar different words are? After all, the meaning of words are quite subtle, and something simple like comparing words' definitions in terms of what words are in them is therefore not likely to work well. Well, it turns out that the subtlety of meaning can nicely be captured in a format that also easily allows for evaluating similarity: lists of numbers. Just as any (x,y) point in a 2D space has a known distance from any other point in that space, so does any point in a 100D space have known distances from all other points, and it could be said that closer points are more similar and farther points are less similar. Therefore, if we could map every word to an appropriate point in a many-dimensional space, such that similar words are mapped to nearby points, that should be quite useful for language modeling. Hinrich Schütze introduced this idea in his 1993 papers ["Word Space"](https://wordrepr.danieldk.eu/schuetze-1993.pdf), in which he showed how to compute "Word Vectors" with matrix processing over counts of phrase co-occurences, resulting in the ability to find the most similar words for any given query word:
 
 <figure>
-    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/wordspace.png" alt="Word vecs"/> 
+    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/wordspace.webp" alt="Word vecs"/> 
     <figcaption>Using word vectors to find the most similar words for some query words. <a href="https://wordrepr.danieldk.eu/schuetze-1993.pdf">(Source)</a></figcaption>
 </figure>
 
 So, where do neural nets enter this picture? Well, there are many ways one could get word vectors, and the above paper's approach was just one. What if instead, you used the word vectors as inputs to a neural net that was optimized to correctly do language modeling? And then both the vectors associated with the word's and the overall neural net's ability to correctly do language modeling can be jointly optimized using backpropagation from the appropriate error function. And that's where we get back to [A Neural Probabilistic Language Model](https://jmlr.org/papers/volume3/tmp/bengio03a.pdf), since that's what the paper essentially describes. 
 
 <figure>
-    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/neurallm.png" alt="Word vecs"/> 
+    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/neurallm.webp" alt="Word vecs"/> 
     <figcaption>The diagram of the neural net used for language modeling in this paper. <a href="https://jmlr.org/papers/volume3/tmp/bengio03a.pdf">(Source)</a></figcaption>
 </figure>
 
@@ -516,7 +516,7 @@ The funding was modest, but sufficient to enable a small group of researchers to
 > "Historically, this was very important in overcoming the belief that these deep neural networks were no good and could never be trained. And that was a very strong belief. A friend of mine sent a paper to ICML \[International Conference on Machine Learning\], not that long ago, and the referee said it should not accepted by ICML, because it was about neural networks and it was not appropriate for ICML. In fact if you look at ICML last year, there were no papers with 'neural' in the title accepted, so ICML should not accept papers about neural networks. That was only a few years ago. And one of the IEEE journals actually had an official policy of \[not accepting your papers\]. So, it was a strong belief."
 
 <figure>
-    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34953.png" alt="RBM"/> 
+    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34953.webp" alt="RBM"/> 
     <figcaption>A Restricted Boltzmann Machine. <a href="http://deeplearning.net/tutorial/rbm.html">(Source)</a></figcaption>    
 </figure>
 
@@ -528,15 +528,15 @@ So what was the clever way of initializing weights? The basic idea is to train e
 4. If classification is desired, add a small set of hidden units that correspond to the classification labels and do a variation on the wake-sleep algorithm to 'fine-tune' the weights. Such combinations of unsupervised and supervised learning are often called **semi-supervised** learning.
 
 <figure>
-    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34836.png" alt="From http://www.iro.umontreal.ca/~lisa/twiki/bin/view.cgi/Public/DeepVsShallowComparisonICML2007"/> 
+    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34836.webp" alt="From http://www.iro.umontreal.ca/~lisa/twiki/bin/view.cgi/Public/DeepVsShallowComparisonICML2007"/> 
     <figcaption>The layerwise pre-training that Hinton introduced. <a href="http://deeplearning.net/tutorial/rbm.html">(Source)</a></figcaption>    
 </figure>
 
 The paper concluded by showing that deep belief networks (DBNs) had state of the art performance on the standard MNIST character recognition dataset, significantly outperforming normal neural nets with only a few layers. Yoshua Bengio et al. followed up on this work in 2007 with ["Greedy Layer-Wise Training of Deep Networks"](http://papers.nips.cc/paper/3048-greedy-layer-wise-training-of-deep-networks.pdf)[^part4_4], in which they present a strong argument that deep machine learning methods (that is, methods with many processing steps, or equivalently with hierarchical feature representations of the data) are more efficient for difficult problems than shallow methods (which two-layer ANNs or support vector machines are examples of). 
 
 <figure>
-    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34966.png" alt="Autoencoder pre-supverised traning"/> 
-    <figcaption>Another view of unsupervised pre-training, using autoencoders instead of RBMs. <a href="https://commons.wikimedia.org/wiki/File:Stacked_Autoencoders.png?uselang=ru">(Source)</a></figcaption>    
+    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34966.webp" alt="Autoencoder pre-supverised traning"/> 
+    <figcaption>Another view of unsupervised pre-training, using autoencoders instead of RBMs. <a href="https://commons.wikimedia.org/wiki/File:Stacked_Autoencoders.webp?uselang=ru">(Source)</a></figcaption>    
 </figure>
 
 They also present reasons for why the addition of unsupervised pre-training works, and conclude that this not only initializes the weights in a more optimal way, but perhaps more importantly leads to more useful learned representations of the data. In fact, using RBMs is not that important - unsupervised pre-training of normal neural net layers using backpropagation with plain Autoencoders layers proved to also work well. Likewise, at the same time another approach called Sparse Coding also showed that unsupervised feature learning was a powerful approach for improving supervised learning performance.
@@ -556,8 +556,8 @@ So, algorithmic advancements were certainly made and led to increasing excitemen
 But, to tackle difficult tasks neural nets need lots of such data, getting large datasets is not trivial. While it may not seem as conceptually difficult as coming up with clever algorithms, it's still a lot of work, and having the insight to decide on the right inputs and outputs to enable new research it also important. So, it's crucial not to overlook this topic or take it for granted. We've already mentioned [The MNIST database of handwritten digits](http://yann.lecun.com/exdb/mnist/)  ("a classic machine learning task that had been the standard benchmark for algorithms for about a decade"), which was made by modifying data first released by the National Institute of Standards and Technology in 1995. Next, we'll look at the datasets that emerged in the 2000s and were crucial to the development of deep learning.
 
 <figure>
-    <img class="postimage" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/MnistExamples.png" alt="MNIST"/> 
-    <figcaption>The MNIST dataset. <a href="https://en.wikipedia.org/wiki/MNIST_database#/media/File:MnistExamples.png">(Source)</a></figcaption>    
+    <img class="postimage" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/MnistExamples.webp" alt="MNIST"/> 
+    <figcaption>The MNIST dataset. <a href="https://en.wikipedia.org/wiki/MNIST_database#/media/File:MnistExamples.webp">(Source)</a></figcaption>    
 </figure>
 
 But, there is only so much you can do with a dataset of hand-written digits. Computer Vision aims at enabling machines to understand images in ways analogous to humans, which of course includes recognizing what objects are present in a given image. So, in the 2000s researchers set out to create datasets that could be used to work on this problem. Starting in 2005, there was the annual [The PASCAL Visual Object Classes (VOC) Challenge](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.167.6629&rep=rep1&type=pdf). Then there were also [Caltech 101](http://www.vision.caltech.edu/Image_Datasets/Caltech101/) and [Caltech 256](http://www.vision.caltech.edu/Image_Datasets/Caltech256/) datasets, likewise influential for Computer Vision research. But for our topic of deep learning, there is undoubtedly a most important development to focus on: ImageNet. 
@@ -565,7 +565,7 @@ But, there is only so much you can do with a dataset of hand-written digits. Com
 As covered well in Quartz's [The data that transformed AI research — and possibly the world](https://qz.com/1034972/the-data-that-changed-the-direction-of-ai-research-and-possibly-the-world/), Professor Fei-Fei Li's idea of creating a dataset containing images for most of the concepts in the massive [WordNet](https://wordnet.princeton.edu/) database (which is like a giant dictionary of english words grouped by their meanings) required creating a dataset of unprecedented size. Fortunately, soon after the idea came about so did the option to crowdsource (split the work of labeling data to many people via the internet), and the project could go ahead. Still, it took years of work before Li and her students and collaborators released their dataset and [a paper](http://www.image-net.org/papers/imagenet_cvpr09.pdf) in 2009. By then, the dataset had 3.2 million images for 5247 concepts, still a long way away from the final goal of 50 million images but also orders of magnitude larger than the scale of prior datasets. 
 
 <figure>
-    <img class="postimage" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/imagenet.png" alt="Imagenet"/> 
+    <img class="postimage" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/imagenet.webp" alt="Imagenet"/> 
     <figcaption>Images from the ImageNet dataset. <a href="http://www.image-net.org/papers/imagenet_cvpr09.pdf">(Source)</a></figcaption>    
 </figure>
 
@@ -590,7 +590,7 @@ Besides the impressive effects of humble PhD interns on these gigantic companies
 Not to say the companies were doing this for charity. This was the beginning of all of them exploring how to commercialize the technology, and most of all Google. But it was perhaps not Hinton, but Andrew Ng who incited the company to become likely the world's biggest commercial adopter and proponent of the technology. In 2011, Ng [incidentally met](https://medium.com/backchannel/google-search-will-be-your-next-brain-5207c26e4523#.b3x9b7ods) with the legendary Googler Jeff Dean while visiting the company, and chatted about his efforts to train neural nets with Google's fantastic computational resources. This intrigued Dean, and together with Ng they formed Google Brain - an effort to build truly giant neural nets and explore what they could do. The work resulted in unsupervised neural net learning of an unprecedented scale - 16,000 CPU cores powering the learning of a whopping 1 billion weights (for comparison, Hinton's breakthrough 2006 DBN had about 1 million weights). The neural net was trained on Youtube videos, entirely without labels, and learned to recognize the most common objects in those videos - leading of course to the internet's collective glee over the net's discovery of cats:
 
 <figure>
-    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34978.jpg" alt="cat"/> 
+    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34978.webp" alt="cat"/> 
     <figcaption>Google's famous neural-net learned cat. This is the optimal input to one of the neurons. <a href="https://googleblog.blogspot.com/2012/06/using-large-scale-brain-simulations-for.html">(Source)</a></figcaption>    
 </figure>
 
@@ -604,7 +604,7 @@ While deep learning was making it into industry, the research community was hard
 2. It was not so much choosing random weights that was problematic, as choosing random weights without consideration for which layer the weights are for. The old vanishing gradient problem happens, basically, because backpropagation involves a sequence of multiplications that invariably result in smaller derivatives for earlier layers. That is, unless weights are chosen with difference scales according to the layer they are in - making this simple change results in significant improvements.
 
 <figure>
-    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34990.png" alt="ReLU"/> 
+    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34990.webp" alt="ReLU"/> 
     <figcaption>Different activation functions. The ReLU is the **rectified linear unit**. <a href="https://imiloainf.wordpress.com/2013/11/06/rectifier-nonlinearities/">(Source)</a></figcaption>    
 </figure>
 
@@ -627,7 +627,7 @@ So here we are. Deep learning. The culmination of decades of research, all leadi
 >         Lots of training data + Parallel Computation + Scalable, smart algorithms** 
                          
 <figure>
-    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34968.png" alt="Equation"/> 
+    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/34968.webp" alt="Equation"/> 
     <figcaption>I wish I was first to come up with this delightful equation, but it seems others came up with it before me. <a href="http://www.computervisionblog.com/2015/05/deep-learning-vs-big-data-who-owns-what.html">(Source)</a></figcaption>    
 </figure>
 
@@ -650,14 +650,14 @@ If this were a movie, the 2012 ImageNet competition would likely have been the c
 Since 2012, it's fair to say Deep Learning has revolutionized much of AI as a field. As we read at the start of all this, "2015 seems like the year when the full force of the tsunami hit the major Natural Language Processing (NLP) conferences." And so it was with Computer Vision, Robotics, Audio Processing, AI for Medicine, and so much more. To summarize all the ground breaking developments in this period would take its own lengthy sub-history, and has already been done nicely in the blog post ["The Decade of Deep Learning"](https://bmk.sh/2019/12/31/The-Decade-of-Deep-Learning/). Suffice it today, progress since 2012 was swift and ongoing, and has seen all the applications of neural nets we have seen so far (to reinforcement learning, language modeling, image classification, and much more) extended to leverage Deep Learning resulting in ground breaking accomplishments. 
 
 <figure>
-    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/imagenet_accuracy.PNG" alt="Imagenet accuracy over the years"/> 
+    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/imagenet_accuracy.webp" alt="Imagenet accuracy over the years"/> 
     <figcaption>Performance on the ImageNet Benchmark over the years. From the <a href="https://hai.stanford.edu/research/ai-index-2019">2019 AI Index Report</a>.</figcaption>
 </figure>
 
 With such progress came much excitement, and the field of AI rapidly grew:
 
 <figure>
-    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/conf_attendance.PNG" alt="Conference attendance."/> 
+    <img class="postimagesmall" src="/assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/conf_attendance.webp" alt="Conference attendance."/> 
     <figcaption>Attendance of major AI conference over the years. From the <a href="https://hai.stanford.edu/research/ai-index-2019">2019 AI Index Report</a>.</figcaption>
 </figure>
 
