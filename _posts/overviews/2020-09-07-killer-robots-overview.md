@@ -162,6 +162,27 @@ Credit: <a href="https://www.reuters.com/article/us-usa-arms-trump-exclusive/exc
 
 Countries readily agree that LAWS are likely to be a dangerous and destabilizing technology for any military to adopt, but no strong state is willing to preemptively tie its hands from developing a potentially transformative technology like AI to its fullest potential. The constricting logic of an arms race is slowly squeezing the chances of an international agreement to prevent the spread or use of LAWS and other automated systems. There is simply too much hard power (i.e., military power) up for grabs from weaving AI and robotics technologies into military operations for them to be constrained by the current international system. Despite the dangers and warnings emanating from experts and diplomats around the world, the global AI arms race is accelerating. Unfortunately, like U-boats in World War I or nuclear weapons in World War II, the international system is unlikely to restrain the unrestricted use of LAWS until after they commit atrocities.
 
+<br>
+<br>
+<hr>
+**Citation**
+
+For attribution in academic contexts or books, please cite this work as
+
+>  Bryan McMahon, "The Rise of “Killer Robots” and the Race to Restrain Them", Skynet Today, 2020.
+
+BibTeX citation:
+
+<blockquote>
+<p>@article{mcmahon2020killerrobots,<br/>
+  author = {McMahon, Bryan},<br/>
+  title = {The Rise of “Killer Robots” and the Race to Restrain Them},<br/>
+  journal = {Skynet Today},<br/>
+  year = {2020},<br/>
+  howpublished = {\url{<a href="https://www.skynettoday.com/overviews/killer-robots">https://www.skynettoday.com/overviews/killer-robots</a> } },<br/>
+}</p>
+</blockquote>
+
 [^1]: The original name for what’s commonly known as the AK-47. Cheap, easy to make, and reliable, the AK-47 [became the weapon of choice](https://theconversation.com/worlds-deadliest-inventor-mikhail-kalashnikov-and-his-ak-47-126253) of the Soviet Union, rebels, and terrorists everywhere with an estimated 100 million in circulation today.
 
 [^2]: Harvard Law School International Human Rights Clinic and Human Rights Watch. “Losing Humanity: The Case v vAgainst Killer Robots.” Human Rights Watch. 2012.

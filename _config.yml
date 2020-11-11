@@ -4,7 +4,7 @@ baseurl:
 name: Skynet Today
 title: Skynet Today
 description: Putting AI News In Perspective
-logo: /assets/img/logo.png
+logo: /assets/img/logo.webp
 imgpath: /assets/img
 locale: en_us
 lang: en
