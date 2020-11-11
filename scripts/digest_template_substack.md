@@ -1,10 +1,8 @@
-**To-do: Cut and paste this title to substack title**
-
 Last Week in AI #$digest_number$
 
-**To-do: Write substack subtitle**
+**To-do: Write excerpt**
 
-**To-do: Paste Image and Image Credits Here**
+**To-do: Add link to teaser image and image credits**
 
 $mini_briefs$
 
