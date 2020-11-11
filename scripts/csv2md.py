@@ -94,7 +94,7 @@ if __name__ == "__main__":
                 content += '#### {}\n'.format(c)
                 content += '\n'
                 for item in items:
-                    content += '* [{}]({}) - {}\n'.format(item['Name'], item['URL'], item['Excerpt'])
+                    content += '* [{}]({}) - "{}"\n'.format(item['Name'], item['URL'], item['Excerpt'])
                     content += '\n'
 
     # remove the last two empty lines
