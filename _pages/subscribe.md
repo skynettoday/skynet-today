@@ -11,8 +11,9 @@ Catch our writing on [Twitter](https://twitter.com/skynet_today), [Facebook](htt
 
 <div class="bg-ghost p-4 p-md-5">
 
-<iframe src="https://lastweekinai.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+ {% include mailchimp-sign-up-big.html %} 
 
-{% comment %} {% include mailchimp-sign-up-big.html %} {% endcomment %}
+Also, feel free to sign up to our separate 'Last Week in AI' newsletter:
+<iframe src="https://lastweekinai.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
 
 </div>
