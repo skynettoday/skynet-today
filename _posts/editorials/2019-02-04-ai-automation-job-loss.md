@@ -206,12 +206,11 @@ Today, the problems of navigating a car and deciphering handwriting are sufficie
 Some speculate that AI may become so advanced as to make human labor obsolete, much as the dawn of automobiles made horses largely obsolete as a means of transportation.
 The video below,“Humans Need Not Apply,” describes this fear that due to advances in AI, many humans will soon become unemployable through no fault of their own:
 
-<figure>
-<iframe width="560" height="315"
-src="https://www.youtube.com/embed/7Pq-S557XQU" frameborder="0"
-allow="accelerometer; autoplay; encrypted-media; gyroscope;
-picture-in-picture" allowfullscreen></iframe>
-</figure>
+<div class="youtube" data-embed="7Pq-S557XQU">
+  <!-- (2) the "play" button -->
+  <div class="play-button"></div>
+
+</div>
 
 While these concerns have some merit, most who express them extrapolate the impact of AI from newsworthy demos that are cherry-picked by the source companies or research groups.
 These technologies still require a lot of human input, and it’s very difficult to apply advances in games and pattern recognition to fully perform human jobs.
