@@ -1,7 +1,8 @@
 ---
 title: "Why We Find Self-Driving Cars So Scary"
 image:
-  feature: assets/img/editorials/why-self-driving-scary/main.gif
+  feature_thumb: assets/img/editorials/why-self-driving-scary/main_thumb.jpg
+  feature: assets/img/editorials/why-self-driving-scary/main.jpg
   credit: https://gfycat.com/gifs/detail/RawSlimyGreatdane
 author: [jerry_kaplan]
 tags: [self-driving,opinion,panic]

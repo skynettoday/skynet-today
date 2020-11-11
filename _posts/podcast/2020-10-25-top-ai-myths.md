@@ -4,6 +4,7 @@ excerpt: "An interview with Daniel Leufer and Alexa Steinbrück about their proj
 image: 
   feature: assets/img/podcast/2020-10-25-top-ai-myths/main.jpeg
 categories: [podcast]
+tags: [panic]
 permalink: /podcast/ai-top-myths-interview
 ---
 Take a listen to our interview with Daniel Leufer and Alexa Steinbrück about their project AIMyths.org:

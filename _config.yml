@@ -85,6 +85,9 @@ owner:
   web: //www.andreykurenkov.com
   disqus-shortname: skynet-today
   twitter: skynet_today
-
+  
+webrick:
+  headers:
+    Cache-Control: no-cache
 # Paginate
 paginate: 40

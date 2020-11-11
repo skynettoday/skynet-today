@@ -4,6 +4,7 @@ excerpt: "An interview with Tom Henighan about the recent paper “Scaling Laws 
 image: 
   feature: assets/img/podcast/2020-11-7-scaling-laws-interview/main.png
 categories: [podcast]
+tags: [OpenAI]
 permalink: /podcast/scaling-laws-interview
 ---
 Take a listen to our interview with Tom Henighan, a member of the technical staff at OpenAI working on the safety team, about the recent paper “Scaling Laws for Autoregressive Generative Modeling” that he co-authored with many others at OpenAI:

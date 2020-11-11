@@ -2,10 +2,11 @@
 title: "Retraining as a Response to Automation — Promising, but Only if Done Right"
 author: [daniel_bashir]
 editor: [jacky_liang]
-categories: [editorials]
+categories: [overviews]
 tags: [jobs,overview]
 excerpt: "Effective worker upskilling requires a broad approach that puts more value on human capital."
 image:
+  feature_thumb: assets/img/editorials/2020-02-11-upskilling/main_thumb.jpg
   feature: assets/img/editorials/2020-02-11-upskilling/main.jpg
   credit: <a href="https://www.youtube.com/watch?v=hhBSaVsMvgE">CNBC via YouTube</a>
 permalink: /overviews/upskilling

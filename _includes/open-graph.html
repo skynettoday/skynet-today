@@ -13,7 +13,11 @@
 {% if page.image.external %}
 <meta name="twitter:image" content="{{ page.image.external }}">
 {% else %}
-<meta name="twitter:image" content="{{ site.url }}/{{ page.image.feature }}">
+  {% if post.image.feature_thumb %}
+     <meta name="twitter:image" content="{{ site.url }}/{{ page.image.feature_thumb }}">
+  {% else %}
+     <meta name="twitter:image" content="{{ site.url }}/{{ page.image.feature }}">
+  {% endif %}
 {% endif %}
 
 <!-- Open Graph -->
@@ -27,5 +31,9 @@
 {% if page.image.external %}
 <meta property="og:image" content="{{ page.image.external }}">
 {% else %}
-<meta property="og:image" content="{{ site.url }}/{{ page.image.feature }}">
+  {% if post.image.feature_thumb %}
+     <meta property="og:image" content="{{ site.url }}/{{ page.image.feature_thumb }}">
+  {% else %}
+     <meta property="og:image" content="{{ site.url }}/{{ page.image.feature }}">
+  {% endif %}
 {% endif %}

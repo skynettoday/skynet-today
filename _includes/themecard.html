@@ -3,7 +3,11 @@
    {% if post.image.external %}
       <img src="{{ post.image.external }}" class="cardthumb" alt="{{ post.title }}">
    {% else %}
-      <img src="{{ site.baseurl }}/{{ post.image.feature }}" class="cardthumb" alt="{{ post.title }}">
+      {% if post.image.feature_thumb %}
+         <img src="{{ site.baseurl }}/{{ post.image.feature_thumb }}" class="cardthumb" alt="{{ post.title }}">
+      {% else %}
+         <img src="{{ site.baseurl }}/{{ post.image.feature }}" class="cardthumb" alt="{{ post.title }}">
+      {% endif %}
    {% endif %}
 </a>
 <div class="card-body">
