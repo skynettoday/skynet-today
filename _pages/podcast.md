@@ -38,6 +38,6 @@ Listen to our latest episodes:<br></font></p>
     </div>
 </div>
 
-our podcast theme is Deliberate Thought by Kevin MacLeod (incompetech.com).
+<p>Our podcast theme is Deliberate Thought by Kevin MacLeod (incompetech.com).</p>
 
 </div>

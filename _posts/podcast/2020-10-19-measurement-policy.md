@@ -4,8 +4,8 @@ excerpt: "An interview about the recent paper Measurement in AI Policy: Opportun
 image: 
   feature: assets/img/podcast/2020-10-19-measurement-policy/main.png
 categories: [podcast]
-tags: [policy]
-permalink: /podcast/scaling-laws-interview
+tags: [policy,interview]
+permalink: /podcast/measurement-ai-policy
 ---
 Take a listen to our interview with Jack Clark and Raymond Perrault about their recent paper "Measurement in AI Policy: Opportunities and Challenges":
 
