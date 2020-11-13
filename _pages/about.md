@@ -36,7 +36,7 @@ We also have several regular contributors:
 We have been fortunate to have many contributing authors, which you can see on our [authors page](/authors). We would also like to thank the [Stanford Human-Centered AI Institute](https://hai.stanford.edu/) for its support.
 
 ## How Can I Help
-[Subscribe](https://www.skynettoday.com/subscribe)! Spread the word! Check out our [newsletter](https://lastweekinai.substack.com/)! And if you have any ideas for improving the site, definitely let us know. If you want to contribute more actively, see our [call for collaborators and submissions](/join) or just click on the "Contribute" button below.
+[Subscribe](https://www.skynettoday.com/subscribe)! Spread the word! Check out our [newsletter](https://lastweekin.ai/)! And if you have any ideas for improving the site, definitely let us know. If you want to contribute more actively, see our [call for collaborators and submissions](/join) or just click on the "Contribute" button below.
 
 
 <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfSHTjBIrr7QVL3k1g51FCYYOwX5Nxnbr080-0rlUpeW7fLtA/viewform" class="mb-2 btn btn-success text-white border-0 rounded-0">Leave Feedback</a> <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLScDRqeP_jaI10g-AMy_CvqVhjgyi0xF783QKT0O10f3R-sw_g/viewform" class="mb-2 btn btn-dark bg-black text-white border-0 rounded-0">Contribute/Submit</a>

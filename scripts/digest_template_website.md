@@ -1,4 +1,5 @@
 ---
+layout: redirect
 title: "Last Week in AI #$digest_number$"
 excerpt: ""
 image: 
@@ -7,6 +8,7 @@ image:
 categories: [digests]
 permalink: /digests/the-$digest_number_english$
 sidebartoc: true
+redirect: https://lastweekin.ai/p/last-week-in-ai-$digest_number$
 ---
 
 $mini_briefs$

@@ -28,7 +28,7 @@ _CATEGRORIES = [
 if __name__ == "__main__":
     logging.getLogger().setLevel(logging.INFO)
     parser = argparse.ArgumentParser()
-    parser.add_argument('--template_file', '-tf', type=str, default='digest_template.md')
+    parser.add_argument('--template_file', '-tf', type=str, default='digest_template_website.md')
     parser.add_argument('--digest_number', '-n', type=int, required=True)
     parser.add_argument('--input_csv', '-i', type=str, required=True)
     parser.add_argument('--output_md', '-o', type=str, required=True)
