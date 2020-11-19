@@ -83,6 +83,7 @@ jQuery(document).ready(function($){
         }
       }
     });
+    
 
     // footnotes
     $.bigfoot();
@@ -138,7 +139,6 @@ jQuery(document).ready(function($){
     });//youtube lazy loading
        
  });   
-
 
 
  /*global jQuery */
