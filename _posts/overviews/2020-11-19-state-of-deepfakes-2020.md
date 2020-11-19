@@ -105,7 +105,7 @@ At the core of the concern about deepfakes is the fact that they make reenactmen
 When deepfakes first gained popularity in 2017, they were overwhelmingly used in internet forums to generate fake pornography of celebrities. Even in 2019, 96% of all publicly posted deepfakes were pornographic, according to a [survey](https://sensity.ai/mapping-the-deepfake-landscape/) done by the company [sensity](https://sensity.ai/about/). The targets of deepfakes (the people who have their faces swapped into deepfakes) are generally people who work in the entertainment industry.
 
 <figure>
-    <img class="postimagesmall" src="/assets/img/overviews/2020-11-20-state-of-deepfakes-2020/image13.webp"/> 
+    <img class="postimagesmaller" src="/assets/img/overviews/2020-11-20-state-of-deepfakes-2020/image13.webp"/> 
     <figcaption>Distribution of deepfake targets as of June 2020 from a total of 49,081 detected videos <a href="https://sensity.ai/deepfake-threat-intelligence-a-statistics-snapshot-from-june-2020/">(source)</a></figcaption>
 </figure>
 
@@ -185,7 +185,7 @@ Only a few cases have been uncovered so far of non-satirical deepfakes being use
 In addition to this deepfake of Tiwari, a decent portion of detected deepfakes are targeting India. Though, the overwhelming majority of detected deepfakes are targeting the US and UK. With the creation of deepfakes spreading all across the globe, deepfakes have the potential to influence far more than just US politics.
 
 <figure>
-    <img class="postimagesmall" src="/assets/img/overviews/2020-11-20-state-of-deepfakes-2020/image6.webp"/> 
+    <img class="postimagesmaller" src="/assets/img/overviews/2020-11-20-state-of-deepfakes-2020/image6.webp"/> 
     <figcaption>Distribution of detected deepfakes by targeted country <a href="https://sensity.ai/deepfake-threat-intelligence-a-statistics-snapshot-from-june-2020/">(source)</a></figcaption>
 </figure>
 
