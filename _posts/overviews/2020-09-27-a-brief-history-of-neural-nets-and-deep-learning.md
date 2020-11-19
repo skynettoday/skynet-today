@@ -7,7 +7,7 @@ excerpt: "The story of how neural nets evolved from the earliest days of AI to n
 image: 
   feature: assets/img/overviews/2020-09-27-a-brief-history-of-neural-nets-and-deep-learning/main_wide.webp
 permalink: /overviews/neural-net-history
-highlight: true
+feature: true
 sidebartoc: true
 ---
 
