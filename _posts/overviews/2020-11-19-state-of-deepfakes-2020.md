@@ -16,6 +16,8 @@ sidebartoc: true
 realization: our historical belief that video and audio are reliable records of reality is no
 longer tenable.” -[The State of DeepFakes 2019 Report](https://sensity.ai/mapping-the-deepfake-landscape/)
 
+## Introduction
+
 Media manipulation through images and videos has been around for decades. For example, during [WWII, Mousollini released a propaganda image](https://www.dailymail.co.uk/news/article-4984364/How-Hitler-Mussolini-Lenin-used-photo-editing.html) of himself on a horse with his horse handler edited out. The goal was to make himself seem more impressive and powerful [^1]. These types of tricks can have significant impacts given the scale of the audience, especially in the internet era. [DARPA has constructed an entire program](https://www.darpa.mil/program/media-forensics) to develop media forensics methods for detecting manipulated media [^2].
 
 <figure>
