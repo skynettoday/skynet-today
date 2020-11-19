@@ -245,7 +245,7 @@ My name is Eric Hofesmann. I received my master’s in Computer Science, special
 
 **Citation**
 
-This piece is an updated and expanded version of blog posts originally released in 2015 on www.andreykurenkov.com. Please cite this version.
+This piece is an updated and expanded version of the blog post [Have Deepfakes influenced the 2020 Election?](Have Deepfakes influenced the 2020 Election?).
 
 For attribution in academic contexts or books, please cite this work as
 
