@@ -3,7 +3,7 @@ title: "The State of Deepfakes in 2020"
 author: [eric_hofesmann]
 categories: [overviews]
 tags: [DeepFakes]
-excerpt: "On what DeepFakes are, how they are used, and how much they should concern you."
+excerpt: "On what Deepfakes are, how they are used, and how much they should concern you."
 image: 
   feature: assets/img/overviews/2020-11-20-state-of-deepfakes-2020/main.webp
   credit: Facebook
