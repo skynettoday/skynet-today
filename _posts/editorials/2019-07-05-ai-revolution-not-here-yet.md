@@ -7,7 +7,6 @@ categories: [editorials]
 tags: [AGI,opinion]
 excerpt: "On artificial intelligence as a phrase, a fast moving research field, and an emerging new discipline of engineering"
 permalink: /editorials/ai-revolution-not-here-yet
-featured: true
 ---
 _The following opinion piece originally appeared [on the Data Science Harvard Review](https://www.e-flux.com/journal/101/273221/three-thousand-years-of-algorithmic-rituals-the-emergence-of-ai-from-the-computation-of-space/), and has been replicated here with the author's permission._
 

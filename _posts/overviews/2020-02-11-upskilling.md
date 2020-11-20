@@ -12,7 +12,6 @@ image:
 permalink: /overviews/upskilling
 redirect_from:
   - /editorials/upskilling
-featured: true
 ---
 
 ## Background
