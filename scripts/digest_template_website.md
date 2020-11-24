@@ -8,7 +8,7 @@ image:
 categories: [digests]
 permalink: /digests/the-$digest_number_english$
 sidebartoc: true
-redirect: https://lastweekin.ai/p/last-week-in-ai-$digest_number$
+redirect: https://lastweekin.ai/p/$digest_number$
 ---
 
 $mini_briefs$
