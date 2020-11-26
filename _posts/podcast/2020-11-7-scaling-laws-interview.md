@@ -9,9 +9,7 @@ permalink: /podcast/scaling-laws
 ---
 Take a listen to our interview with Tom Henighan, a member of the technical staff at OpenAI working on the safety team, about the recent paper “Scaling Laws for Autoregressive Generative Modeling” that he co-authored with many others at OpenAI:
 
-<figure class="text-md-center">
 <div id="NauNsNsVT120FBnH8_uAvA"><script src="https://embed.trint.com/NauNsNsVT120FBnH8_uAvA/player.js"></script></div>
-</figure>
 
 Subscribe: <a href="https://feed.podbean.com/aitalk/feed.xml">RSS</a> |
 <a href="https://podcasts.apple.com/us/podcast/lets-talk-ai/id1502782720">iTunes</a> |

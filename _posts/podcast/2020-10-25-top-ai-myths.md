@@ -9,6 +9,8 @@ permalink: /podcast/top-ai-myths
 ---
 Take a listen to our interview with Daniel Leufer and Alexa Steinbrück about their project AIMyths.org:
 
+<div id="--rV4ueVSyiM4Ueq8CSLbA"><script src="https://embed.trint.com/--rV4ueVSyiM4Ueq8CSLbA/player.js"></script></div>
+
 <figure>
 <iframe title="The Top Myths About AI" src="https://www.podbean.com/media/player/mgs78-f04e78&?from=usersite&skin=1&fonts=Helvetica&auto=0&download=1&share=1&version=1&btn-skin=103" height="122" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player" ></iframe>
 </figure> 
