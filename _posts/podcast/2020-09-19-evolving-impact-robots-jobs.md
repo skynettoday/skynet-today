@@ -8,6 +8,8 @@ tags: [robotics,jobs,interview]
 permalink: /podcast/evolving-impact-robots-jobs
 ---
 Take a listen to our interview with Professors Jong Hyun Chung and Yong Suk Lee about their recent paper [The Evolving Impact of Robots on Jobs](https://web.stanford.edu/~yongslee/robojobs.pdf):
+<div id="6SJ_1IuJTpCW6nA6bwc_LQ"><script src="https://embed.trint.com/6SJ_1IuJTpCW6nA6bwc_LQ/player.js"></script></div>
+
 <figure>
 <iframe title="The Evolving Impact of Robots on Jobs" src="https://www.podbean.com/media/player/ragj5-ec3503&?from=usersite&skin=1&fonts=Helvetica&auto=0&download=1&share=1&version=1&btn-skin=103" height="122" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player"></iframe>
 </figure>

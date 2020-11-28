@@ -8,7 +8,7 @@ image:
   feature: assets/img/overviews/2020-11-20-state-of-deepfakes-2020/main.webp
   credit: Facebook
 permalink: /overviews/state-of-deepfakes-2020
-highlight: true
+feature: true
 sidebartoc: true
 ---
 
