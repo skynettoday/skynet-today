@@ -5,7 +5,7 @@ image:
   credit: GAN trained on 60,000 images from the MoMA (Museum of Modern Art), New York collection
 author: [fabian_offert]
 editor: [andrey_kurenkov]
-tags: [overview,applications]
+tags: [overview,art]
 categories: [editorials]
 excerpt: "AI art has a long history that is often overlooked"
 permalink: /editorials/ai-art-history

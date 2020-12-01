@@ -11,6 +11,10 @@ Take a listen to our interview with Tom Henighan, a member of the technical staf
 
 <div id="NauNsNsVT120FBnH8_uAvA"><script src="https://embed.trint.com/NauNsNsVT120FBnH8_uAvA/player.js"></script></div>
 
+<figure>
+<iframe title="OpenAI's "Scaling Laws for Autoregressive Generative Modeling"" src="https://www.podbean.com/media/player/qxpmm-f1a06e&?from=usersite&skin=1&fonts=Helvetica&auto=0&download=1&share=1&version=1&btn-skin=103" height="122" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player"></iframe>
+</figure>
+
 Subscribe: <a href="https://feed.podbean.com/aitalk/feed.xml">RSS</a> |
 <a href="https://podcasts.apple.com/us/podcast/lets-talk-ai/id1502782720">iTunes</a> |
 <a href="https://open.spotify.com/show/17HiNdxcoKJLLNibIAyUch">Spotify</a> |
