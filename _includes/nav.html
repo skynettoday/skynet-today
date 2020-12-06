@@ -39,7 +39,7 @@
         {% endfor %}
         {% else %}
         {% for category in categories_list %}
-        {% if category[0] != "digests" %}
+        {% if category[0] != "digests" and category[0] != "podcast" %}
         <a class="dropdown-item"  href="{{site.baseurl}}/categories/{{ category[0] | downcase }}">{{ category[0] | capitalize }} </a>
         {% endif %}
         {% endfor %}
@@ -65,7 +65,7 @@
 
       <li class="nav-item">
       <a class="nav-link" href="{{site.baseurl}}/contribute">Contribute</a>
-      </li>    
+      </li>     
 
       <li class="nav-item">
           <a class="nav-link" href="{{site.baseurl}}/search"><img alt="search" height="17" src="{{site.baseurl}}/assets/img/icons/search.svg"></a>
