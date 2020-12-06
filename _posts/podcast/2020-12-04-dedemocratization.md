@@ -1,6 +1,6 @@
 ---
-title: "Deep Learning and the Compute Divide in Artificial Intelligence Research with Nur Ahmed"
-excerpt: "An interview with Emil Wallner, the creator of mlart.co”"
+title: "Deep Learning and the Compute Divide in Artificial Intelligence Research"
+excerpt: "An interview with Nur Ahmed, co-author of The De-democratization of AI: Deep Learning and the Compute Divide in Artificial Intelligence Research"
 image: 
   feature: assets/img/podcast/2020-12-04-dedemocratization/main.png
 categories: [podcast]
