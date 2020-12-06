@@ -15,7 +15,11 @@
    {% unless page.url contains "categories" %}
    {% for category in post.categories %}
    <style>.{{category}}-color {color: #{{ site.[category] }};}</style>
+    {% if category != "podcast" %}
    <a class="text-uppercase {{category}}-color catstyle" href="{{site.baseurl}}/categories/{{ category | replace: " ","-" }}">{{ category }}</a>  
+    {% else %}
+   <a class="text-uppercase {{category}}-color catstyle" href="{{site.baseurl}}/{{ category | replace: " ","-" }}">{{ category }}</a>  
+    {% endif %}
    {% endfor %}
    {% endunless %}  
    

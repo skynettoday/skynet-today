@@ -12,7 +12,17 @@ layout: default
       
       <div class="mb-2rem post-head">        
       <div class="page-tags">
-     {% for category in page.categories %}<style>.{{category}}-color {color: #{{ site[category] }};}</style><span><a class="{{category}}-color text-uppercase font-weight-bold ls05" href="{{ site.baseurl }}/categories/{{ category | replace: " ","-"  }}" title="More posts in {{ category }}">{{ category }}</a></span>{% endfor %} / {% for tag in page.tags %}<span><a class="text-dark text-capitalize" href="{{ site.baseurl }}/tags#{{ tag | replace: " ","-" }}" title="Pages tagged {{ tag }}">{{ tag }}</a></span><span class="sep">, </span>{% endfor %}
+     {% for category in page.categories %}
+     <style>.{{category}}-color {color: #{{ site[category] }};}</style>
+         {% if category != "podcast" %}
+<span><a class="{{category}}-color text-uppercase font-weight-bold ls05" href="{{ site.baseurl }}/categories/{{ category | replace: " ","-"  }}" title="More posts in {{ category }}">{{ category }}</a>
+     </span> 
+    {% else %}
+<span><a class="{{category}}-color text-uppercase font-weight-bold ls05" href="{{ site.baseurl }}/{{ category | replace: " ","-"  }}" title="More posts in {{ category }}">{{ category }}</a>
+     </span> 
+    {% endif %}
+     
+     {% endfor %} / {% for tag in page.tags %}<span><a class="text-dark text-capitalize" href="{{ site.baseurl }}/tags#{{ tag | replace: " ","-" }}" title="Pages tagged {{ tag }}">{{ tag }}</a></span><span class="sep">, </span>{% endfor %}
          
       </div>
       <h1 class="display-5 font-weight-bold mb-3 mt-3 text-black">{{ page.title }}</h1>
