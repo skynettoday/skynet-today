@@ -8,7 +8,7 @@ image:
   feature: assets/img/editorials/2020-12-01-ai-definition/main.png
   credit: Google
 sidebartoc: true
-highlight: true 
+highlight: false 
 ---
 
 ## The Options
