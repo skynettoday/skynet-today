@@ -89,34 +89,34 @@
   <script src="{{site.baseurl}}/assets/js/bootstrap-toc.min.js"></script>
   
   {% if page.share %}
-  <script async type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5a80909f08e4bc00136bbf17&product=sticky-share-buttons"></script> 
+    <script async type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5a80909f08e4bc00136bbf17&product=sticky-share-buttons"></script> 
   {% endif %}
 
   {% if page.layout == 'post' %}
-  {% if site.owner.disqus-shortname and page.comments or site.comments %}
-  <script id="dsq-count-scr" src="//{{site.owner.disqus-shortname}}.disqus.com/count.js" async></script>
+    {% if site.owner.disqus-shortname and page.comments or site.comments %}
+        <script id="dsq-count-scr" src="//{{site.owner.disqus-shortname}}.disqus.com/count.js" async></script>
+    {% endif %}
+
+    {%- if page.title == "Search" -%}
+        {% include lunr-search-scripts.html %}
+    {%- endif -%}
   {% endif %}
 
-  {%- if page.title == "Search" -%}
-  {% include lunr-search-scripts.html %}
-  {%- endif -%}
-
   {% if site.mathjax == true %}
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   {% endif %}
   
   {% if page.url == "/" %}
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init();</script>
   {% endif %}
 
   <script src="{{site.baseurl}}/assets/js/theme.js"></script>
 
   {% if page.extra_js %}    
-  {% for extraJS in page.extra_js %}    
-  <script src="{{extraJS}}"></script>
-  {% endfor %}
+    {% for extraJS in page.extra_js %}    
+        <script src="{{extraJS}}"></script>
+    {% endfor %}
   {% endif %}
 
 
