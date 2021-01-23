@@ -96,12 +96,6 @@
   {% if site.owner.disqus-shortname and page.comments or site.comments %}
   <script id="dsq-count-scr" src="//{{site.owner.disqus-shortname}}.disqus.com/count.js" async></script>
   {% endif %}
-  
-  $(document).ready(function() {
-	  //Calls the tocify method on your HTML div.
-	  $("#toc").tocify();
-	});
-  {% endif %}
 
   {%- if page.title == "Search" -%}
   {% include lunr-search-scripts.html %}
