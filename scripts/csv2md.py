@@ -37,7 +37,7 @@ if __name__ == "__main__":
 
     n = args.digest_number
     p = inflect.engine()
-    n_english = p.number_to_words(p.ordinal(n))
+    n_english = p.number_to_words(p.ordinal(n)).replace(' ', '-')
     logging.info('Parsing for the {} digest'.format(n_english))
 
     logging.info('Will save result to {}'.format(args.output_md))
