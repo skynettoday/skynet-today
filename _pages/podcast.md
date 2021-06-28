@@ -27,7 +27,7 @@ Listen to our latest episodes:<br></font></p>
  scrolling="yes" allowfullscreen="" width="100%" height="400px" frameborder="0"></iframe>
  
 <p><font size="+1">Or check out some highlight episodes:</font></p> 
-    <div class="row mt-3 cardrecent">            
+    <div class="row mt-3 cardrecent">
             {% for post in site.posts %}
             {% if post.categories contains "podcast" %}
             <div class="col-md-6 mb-30">                    
