@@ -1,5 +1,5 @@
 ---
-title: "Jordan Harrod on being an AI Educator and researcher"
+title: "Jordan Harrod on being an AI researcher and educator"
 excerpt: "An interview with AI researcher Jordan Harrod, who is also a YouTuber who creates educationalal videos about AI"
 image: 
   feature: assets/img/podcast/2021-06-28-jordan-harrod/main.jpeg
