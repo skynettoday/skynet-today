@@ -84,12 +84,12 @@ if __name__ == "__main__":
     for c in _CATEGRORIES:
         items = articles_map[c]
         if len(items) > 0:
-            name, url, excerpt = item['Name'], item['URL'], item['Excerpt']
             if c == 'Top News':
                 top_news += f'### {c}'
                 top_news += '\n\n'
 
                 for item in items:
+                    name, url = item['Name'], item['URL']
                     top_news += f'#### [{name}]({url})'
                     top_news += '\n\n'
                     top_news += 'one paragraph summary'
@@ -98,6 +98,7 @@ if __name__ == "__main__":
                 content += f'#### {c}'
                 content += '\n\n'
                 for item in items:
+                    name, url, excerpt = item['Name'], item['URL'], item['Excerpt']
                     content += f'[{name}]({url})'
                     content += '\n\n'
                     content += f'"{excerpt}"'
