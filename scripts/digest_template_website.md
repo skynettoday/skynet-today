@@ -11,7 +11,7 @@ sidebartoc: true
 redirect: https://lastweekin.ai/p/$digest_number$
 ---
 
-$mini_briefs$
+$top_news$
 
 ### Podcast
 

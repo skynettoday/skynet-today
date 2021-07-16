@@ -16,10 +16,12 @@ except:
 
 
 _CATEGRORIES = [
-    'Mini Briefs',
-    'Advances & Business',
+    'Top News',
+    'Advances',
+    'Business',
     'Concerns & Hype',
-    'Analysis & Policy',
+    'Analysis',
+    'Policy',
     'Expert Opinions & Discussion within the field',
     'Explainers'
 ]
@@ -38,18 +40,18 @@ if __name__ == "__main__":
     n = args.digest_number
     p = inflect.engine()
     n_english = p.number_to_words(p.ordinal(n)).replace(' ', '-')
-    logging.info('Parsing for the {} digest'.format(n_english))
+    logging.info(f'Parsing for the {n_english} digest')
 
-    logging.info('Will save result to {}'.format(args.output_md))
+    logging.info(f'Will save result to {args.output_md}')
     if os.path.isfile(args.output_md):
         if not args.force_overwrite:
             raise ValueError('Cannot overwrite existing output file!')
 
-    logging.info('Loading template from {}'.format(args.template_file))
+    logging.info(f'Loading template from {args.template_file}')
     with open(args.template_file, 'r') as f:
         md_template = f.read()
 
-    logging.info('Reading {}'.format(args.input_csv))
+    logging.info(f'Reading {args.input_csv}')
     articles_map = {c : [] for c in _CATEGRORIES}
     csv = pd.read_csv(args.input_csv)
     for row_num, row in csv.iterrows():
@@ -61,7 +63,7 @@ if __name__ == "__main__":
             print()
 
             for i, c in enumerate(_CATEGRORIES):
-                print('{}) {}'.format(i, c))
+                print(f'{i}) {c}')
             while True:
                 try:
                     print()
@@ -77,32 +79,36 @@ if __name__ == "__main__":
         articles_map[c].append(row)
 
     logging.info('Populating content...')
-    mini_briefs = ''
+    top_news = ''
     content = ''
     for c in _CATEGRORIES:
         items = articles_map[c]
         if len(items) > 0:
-            if c == 'Mini Briefs':
-                mini_briefs += '### {}\n'.format(c)
-                mini_briefs += '\n'
+            name, url, excerpt = item['Name'], item['URL'], item['Excerpt']
+            if c == 'Top News':
+                top_news += f'### {c}'
+                top_news += '\n\n'
 
                 for item in items:
-                    mini_briefs += '#### [{}]({})\n'.format(item['Name'], item['URL'])
-                    mini_briefs += '\n'
-                    mini_briefs += 'one-two paragraph brief\n'
+                    top_news += f'#### [{name}]({url})'
+                    top_news += '\n\n'
+                    top_news += 'one paragraph summary'
+                    top_news += '\n\n'
             else:
-                content += '#### {}\n'.format(c)
-                content += '\n'
+                content += f'#### {c}'
+                content += '\n\n'
                 for item in items:
-                    content += '* [{}]({}) - "{}"\n'.format(item['Name'], item['URL'], item['Excerpt'])
-                    content += '\n'
+                    content += f'[{name}]({url})'
+                    content += '\n\n'
+                    content += f'"{excerpt}"'
+                    content += '\n\n'
 
     # remove the last two empty lines
     content = content[:-2]
 
     md = md_template.replace('$digest_number$', str(n)) \
                     .replace('$digest_number_english$', n_english) \
-                    .replace('$mini_briefs$', mini_briefs) \
+                    .replace('$top_news$', top_news) \
                     .replace('$content$', content)
 
     logging.info('Saving digest markdown...')
