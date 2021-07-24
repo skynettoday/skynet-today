@@ -19,10 +19,11 @@ _CATEGRORIES = [
     'Top News',
     'Advances',
     'Business',
-    'Concerns & Hype',
+    'Concerns',
+    'Hype',
     'Analysis',
     'Policy',
-    'Expert Opinions & Discussion within the field',
+    'Expert Opinions',
     'Explainers'
 ]
 
@@ -99,9 +100,7 @@ if __name__ == "__main__":
                 content += '\n\n'
                 for item in items:
                     name, url, excerpt = item['Name'], item['URL'], item['Excerpt']
-                    content += f'[{name}]({url})'
-                    content += '\n\n'
-                    content += f'"{excerpt}"'
+                    content += f'[{name}]({url}) - "{excerpt}"'
                     content += '\n\n'
 
     # remove the last two empty lines
