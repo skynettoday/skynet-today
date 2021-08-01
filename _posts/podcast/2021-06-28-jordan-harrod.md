@@ -1,14 +1,12 @@
 ---
 title: "Jordan Harrod on being an AI researcher and educator"
-excerpt: "An interview with AI researcher Jordan Harrod, who is also a YouTuber who creates educationalal videos about AI"
+excerpt: "An interview with AI researcher Jordan Harrod, who is also a YouTuber who creates educational videos about AI"
 image: 
   feature: assets/img/podcast/2021-06-28-jordan-harrod/main.jpeg
 categories: [podcast]
 tags: [interview]
 permalink: /podcast/jordan-harrod
 ---
-
-An interview with Jordan Harrod, a PhD Candidate in the Harvard-MIT Health Sciences and Technology program, a YouTuber who creates education videos about AI, and an advocate for evidence-based policy.
 
 <iframe title="Jordan Harrod on being an AI Educator and researcher" allowtransparency="true" style="border: none; overflow: scroll; -webkit-overflow-scrolling: touch; min-width: 100%; *width: 100%; width: 1px;" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=ht43r-1075eea-pb&from=pb6admin&share=1&download=0&rtl=0&fonts=Arial&skin=1&btn-skin=3" width="100%" height="150"></iframe>
 
@@ -21,3 +19,4 @@ Subscribe: <a href="https://feed.podbean.com/aitalk/feed.xml">RSS</a> |
 <a href="https://www.youtube.com/channel/UCKARTq-t5SPMzwtft8FWwnA">YouTube</a>
 
 
+<div id="loT4m9E1R6274eEOmqTLiQ"><script src="https://embed.trint.com/loT4m9E1R6274eEOmqTLiQ/player.js"></script></div>
