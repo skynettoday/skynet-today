@@ -62,9 +62,9 @@ When these datasets are not collected carefully, they can also cause bias in the
 As a result, the benefits of these performance improvements didn't accrue equally to everyone.
 
 <figure>
- <img src="{{ site.imgpath }}/briefs/wrongful-arrests/collage.png" alt="Faces, via [CNN](https://www.cnn.com/2019/04/19/tech/ai-facial-recognition/index.html)."/>
+ <img src="{{ site.imgpath }}/briefs/wrongful-arrests/collage.png" alt="Faces from the dataset for NVIDIA's StyleGAN, via [CNN](https://www.cnn.com/2019/04/19/tech/ai-facial-recognition/index.html)."/>
  <figcaption>
-    Faces, via <a href="https://www.cnn.com/2019/04/19/tech/ai-facial-recognition/index.html">CNN</a>
+    Faces from the dataset for NVIDIA's StyleGAN, via <a href="https://www.cnn.com/2019/04/19/tech/ai-facial-recognition/index.html">CNN</a>
  </figcaption>
 </figure>
 
