@@ -152,6 +152,10 @@ h2.lead {
 	margin-bottom:1.5rem;
 }
 
+.page-feature-image {
+        width: 100%;
+}
+
 .post-article .podcast_embed {
 	margin-bottom:0;
 }

@@ -10,6 +10,7 @@ tags: [bias,surveillance, facial recognition]
 categories: [briefs]
 permalink: /briefs/wrongful-arrests
 sidebartoc: true
+highlight: true
 ---
 
 ## Summary
@@ -31,7 +32,7 @@ algorithm-based
 ([NYT](https://www.nytimes.com/wirecutter/blog/how-facial-recognition-works/)).
 
 <figure>
- <img src="{{ site.imgpath }}/briefs/wrongful-arrests/bledsoe.png" alt="Woody Bledsoe, via [Wired](https://www.wired.com/story/secret-history-facial-recognition/)."/>
+ <img class="postimage_25" src="{{ site.imgpath }}/briefs/wrongful-arrests/bledsoe.png" alt="Woody Bledsoe, via [Wired](https://www.wired.com/story/secret-history-facial-recognition/)."/>
  <figcaption>
     Woody Bledsoe, via <a href="https://www.wired.com/story/secret-history-facial-recognition/">Wired</a>
  </figcaption>
@@ -96,7 +97,7 @@ A brief look at photos of Oliver and the culprit reveal a clear difference:
 > \"Oliver---who has an oval-shaped face and a tattoo above his left eyebrow---only vaguely resembles the actual suspect, who has no visible tattoos, a rounder face and darker skin, according to photo evidence.
 
 <figure>
- <img src="{{ site.imgpath }}/briefs/wrongful-arrests/detroit.jpg" alt="Michael Oliver via [Detroit Free Press](https://www.freep.com/story/news/local/michigan/detroit/2020/07/10/facial-recognition-detroit-michael-oliver-robert-williams/5392166002/)."/>
+ <img class="postimage_75" src="{{ site.imgpath }}/briefs/wrongful-arrests/detroit.jpg" alt="Michael Oliver via [Detroit Free Press](https://www.freep.com/story/news/local/michigan/detroit/2020/07/10/facial-recognition-detroit-michael-oliver-robert-williams/5392166002/)."/>
  <figcaption>
     Michael Oliver, via <a href="https://www.freep.com/story/news/local/michigan/detroit/2020/07/10/facial-recognition-detroit-michael-oliver-robert-williams/5392166002/">Detroit Free Press</a>
  </figcaption>
@@ -116,7 +117,7 @@ Despite the case being dismissed two weeks later, the arrest caused Mr. Williams
 > when he pulled into his driveway in a quiet subdivision in Farmington Hills, Mich., a police car pulled up behind, blocking him in. Two officers got out and handcuffed Mr. Williams on his front lawn, in front of his wife and two young daughters, who were distraught. The police drove Mr. Williams to a detention center. He had his mug shot, fingerprints and DNA taken, and was held overnight. ... 30 hours after being arrested, \[he was\] released on a \$1,000 personal bond. He waited outside in the rain for 30 minutes until his wife could pick him up. When he got home at 10 p.m., his five-year-old daughter was still awake. She said she was waiting for him because he had said, while being arrested, that he'd be right back.
 
 <figure>
- <img src="{{ site.imgpath }}/briefs/wrongful-arrests/williams.png" alt="Robert Williams, via [Washington Post](https://www.washingtonpost.com/technology/2021/04/13/facial-recognition-false-arrest-lawsuit/)."/>
+ <img class="postimage_75" src="{{ site.imgpath }}/briefs/wrongful-arrests/williams.png" alt="Robert Williams, via [Washington Post](https://www.washingtonpost.com/technology/2021/04/13/facial-recognition-false-arrest-lawsuit/)."/>
  <figcaption>
     Robert Williams, via <a href="https://www.washingtonpost.com/technology/2021/04/13/facial-recognition-false-arrest-lawsuit/">Washington Post</a>
  </figcaption>
@@ -179,7 +180,7 @@ The fact that Johnston only watched surveillance footage of the incident and was
 And, her choice might also reflect that he simply looked the *most *similar to the shoplifter among the 6 images. Furthermore, as the *New York Times* [article](https://www.nytimes.com/2020/06/24/technology/facial-recognition-arrest.html) points out, the police did not perform the full due diligence required to establish Williams as a probable suspect; they simply included his face in a lineup, rather than searching for other evidence that might have linked him to the shoplifting incident. Had they done so, this incident might never have occurred.
 
 <figure>
- <img src="{{ site.imgpath }}/briefs/wrongful-arrests/mugshots.webp" alt="Mugshots of Nijeer Parks, taken after his arrest. Via [nj.com](https://www.nj.com/middlesex/2020/12/he-spent-10-days-in-jail-after-facial-recognition-software-led-to-the-arrest-of-the-wrong-man-lawsuit-says.html) study."/>
+ <img class="postimage_75" src="{{ site.imgpath }}/briefs/wrongful-arrests/mugshots.webp" alt="Mugshots of Nijeer Parks, taken after his arrest. Via [nj.com](https://www.nj.com/middlesex/2020/12/he-spent-10-days-in-jail-after-facial-recognition-software-led-to-the-arrest-of-the-wrong-man-lawsuit-says.html) study."/>
  <figcaption>
     Mugshots of Nijeer Parks, taken after his arrest, via <a href="https://www.nj.com/middlesex/2020/12/he-spent-10-days-in-jail-after-facial-recognition-software-led-to-the-arrest-of-the-wrong-man-lawsuit-says.html">Nj.com</a>
  </figcaption>
@@ -190,7 +191,7 @@ In Oliver's case, a quick look at a photo of the culprit would have shown that h
 David Robinson, Oliver's lawyer says the detective in their case blew it: "He certainly was in possession of a photograph of the real crook but for some reason wasn't able to distinguish the difference between them."
 
 <figure>
- <img src="{{ site.imgpath }}/briefs/wrongful-arrests/oliver.png" alt="The culprit in Michael Oliver's case (left), and Michael Oliver (right), via [Detroit Free Press](https://www.freep.com/story/news/local/michigan/detroit/2020/07/10/facial-recognition-detroit-michael-oliver-robert-williams/5392166002/)."/>
+ <img class="postimage_75" src="{{ site.imgpath }}/briefs/wrongful-arrests/oliver.png" alt="The culprit in Michael Oliver's case (left), and Michael Oliver (right), via [Detroit Free Press](https://www.freep.com/story/news/local/michigan/detroit/2020/07/10/facial-recognition-detroit-michael-oliver-robert-williams/5392166002/)."/>
  <figcaption>
     The culprit in Michael Oliver's case (left), and Michael Oliver (right), via <a href="https://www.freep.com/story/news/local/michigan/detroit/2020/07/10/facial-recognition-detroit-michael-oliver-robert-williams/5392166002/">Detroit Free Press</a>
  </figcaption>
@@ -210,4 +211,4 @@ Among the different AI technologies adopted in our daily lives, facial recogniti
 Given the potential impacts of their use, it is vital that those developing and using facial recognition systems think very carefully about the limitations of those systems and how their use will affect people. 
 There is an important ongoing debate about whether facial recognition systems should be allowed in the first place; there is a good argument that they can provide some social good, but many claim that they are still too dangerous to be used at all.
 Regardless of this debate, facial recognition systems are already being used every day, and their misuse has already harmed multiple innocent people. 
-As adoption of this technology continues many more cases of this sort of harm are likely to happen, and so the shortcomings of these systems must be made clear to their users, and proper procedure must be put in place to mitigate potential for their misuse.
+As adoption of this technology continues many more cases of this sort of harm are likely to happen, and so the shortcomings of these systems must be made clear to their users, and proper procedures must be put in place to mitigate potential for their misuse.
