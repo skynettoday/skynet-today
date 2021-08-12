@@ -4,7 +4,7 @@ image:
   feature: assets/img/briefs/wrongful-arrests/cover.png
   credit: <a href="https://medium.datadriveninvestor.com/facial-recognition-and-bias-5bd963d83813">Mahesh Paolini-Subramanya via Medium</a>
 title: "Police Misuse of Facial Recognition - Three Wrongful Arrests and Counting"
-excerpt: "An Overview of How Multiple Individuals Have Already Been Harmed by Facial Recognition Algorithms, with More Likely to Follow."
+excerpt: "An overview of how multiple individuals have already been harmed by facial recognition algorithms, with more likely to follow."
 author: [daniel_bashir]
 tags: [bias,surveillance, facial recognition]
 categories: [briefs]
