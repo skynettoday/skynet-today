@@ -17,10 +17,10 @@ except:
 
 _CATEGRORIES = [
     'Top News',
-    'Advances',
+    'Research',
+    'Applications',
     'Business',
     'Concerns',
-    'Hype',
     'Analysis',
     'Policy',
     'Expert Opinions',
@@ -112,7 +112,7 @@ if __name__ == "__main__":
                     .replace('$content$', content)
 
     logging.info('Saving digest markdown...')
-    with open(args.output_md, 'w') as f:
-        f.write(md)
+    with open(args.output_md, 'wb') as f:
+        f.write(md.encode('utf-8'))
 
     logging.info('Done!')
