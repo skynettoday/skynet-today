@@ -10,7 +10,7 @@ tags: [bias,surveillance, facial recognition]
 categories: [briefs]
 permalink: /briefs/wrongful-arrests
 sidebartoc: true
-highlight: true
+highlight: false
 ---
 
 ## Summary
