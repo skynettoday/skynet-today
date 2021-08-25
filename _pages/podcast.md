@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Podcast
-excerpt: "The Let's Talk AI Podcast - weekly coverage of AI news and interviews."
+excerpt: "The Last Week in AI Podcast - weekly coverage of AI news and interviews."
 search_omit: true
 permalink: /podcast.html
 image:
@@ -13,7 +13,7 @@ display_title: false
 <div class="row justify-content-center text-left ">
 
 <div class="col-md-8">
-<h1 class="mb-3 text-black font-weight-bold text-md-center">Let's Talk AI Podcast</h1>
+<h1 class="mb-3 text-black font-weight-bold text-md-center">Last Week in AI Podcast</h1>
 
 <p><font size="+1">Check out our podcast with weekly coverage of AI news and interviews!<br>
 Subscribe: <a href="https://feed.podbean.com/aitalk/feed.xml">RSS</a> |
