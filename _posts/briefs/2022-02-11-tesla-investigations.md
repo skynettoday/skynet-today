@@ -38,7 +38,7 @@ We combed through all 12 crashes and summarized them in the table below.
 Each row is a crash, and the link on the date points to a news article on that incident.
 
 |Date|Place|Time|Vehicle Hit or Ran Into|Flashing Lights|Bright Objects|
-|--- |:----:  |:----: |:----:  |:----: |:----: |:----: |
+|:----: |:----:  |:----: |:----:  |:----: |:----: |:----: |
 |[01/22/2018](https://www.siliconvalley.com/2018/01/22/tesla-on-autopilot-slams-into-parked-fire-truck-on-freeway)|Culver City, CA|11AM|Parked Fire truck|Y|-|
 |[05/20/2018](https://www.latimes.com/local/lanow/la-me-ln-tesla-collision-20180529-story.html)|Laguna Beach, CA|11AM|Police SUV|Y|-|
 |[12/07/2019](https://www.ctinsider.com/news/article/Norwalk-crash-in-2019-one-of-11-that-prompted-16394014.php)|Norwalk, CT|4AM|Parked Cruiser + Disabled car (Chain Collision)|Y|Flares|
