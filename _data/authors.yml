@@ -212,21 +212,22 @@ bryan_mcmahon:
   
 eric_hofesmann:
   name: Eric Hofesmann
-  avatar: eric_face.jpg
+  avatar: eric_face.webp
   web: https://www.linkedin.com/public-profile/in/eric-hofesmann
   twitter: ehofesmann
 
 zero_gravitas:
   name: Zero Gravitas
-  avatar: zero_gravitas.jpg
+  avatar: zero_gravitas.webp
   twitter: lowgravitaszone
 
 akshit_mishra:
   name: Akshit Mishra
-  avatar: akshit_mishra.jpg
+  avatar: akshit_mishra.webp
   web: https://medium.com/@akshitmishra1995
   twitter: mangrukaka
 
 trisha_mittal:
   name: Trisha Mittal
-  avatar: trisha_mittal.jpg
+  avatar: trisha_mittal.webp
+  web: https://www.cs.umd.edu/~trisha/
