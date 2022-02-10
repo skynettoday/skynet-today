@@ -11,5 +11,5 @@ image:
 permalink: /editorials/robot-data
 redirect: https://lastweekin.ai/p/robot-data
 sidebartoc: true
-highlight: true
+highlight: false
 ---
