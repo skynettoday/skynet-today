@@ -1372,6 +1372,10 @@ figure figcaption {
   left: 0;
 }
 
+thead tr{
+    background-color: #ebebeb;
+}
 
-
-
+tbody tr:nth-child(even){
+    background-color: #ebebeb;
+}
