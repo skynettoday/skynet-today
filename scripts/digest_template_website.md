@@ -18,4 +18,4 @@ $content$
 
 <hr>
 
-That's all for this week! If you are not subscribed and liked this, feel free to subscribe below!
+Copyright © 2022 Skynet Today, All rights reserved.
