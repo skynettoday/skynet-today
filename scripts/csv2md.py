@@ -1,7 +1,6 @@
 import os
 import logging
 import argparse
-from collections import Counter
 
 import pandas as pd
 import inflect
@@ -24,7 +23,8 @@ _CATEGRORIES = [
     'Analysis',
     'Policy',
     'Expert Opinions',
-    'Explainers'
+    'Explainers',
+    'Fun'
 ]
 
 
@@ -34,7 +34,7 @@ if __name__ == "__main__":
     parser.add_argument('--template_file', '-tf', type=str, default='digest_template_website.md')
     parser.add_argument('--digest_number', '-n', type=int, required=True)
     parser.add_argument('--input_csv', '-i', type=str, required=True)
-    parser.add_argument('--output_md', '-o', type=str, required=True)
+    parser.add_argument('--output_md', '-o', type=str, required=False)
     parser.add_argument('--force_overwrite', '-f', action='store_true')
     args = parser.parse_args()
 
@@ -43,8 +43,12 @@ if __name__ == "__main__":
     n_english = p.number_to_words(p.ordinal(n)).replace(' ', '-')
     logging.info(f'Parsing for the {n_english} digest')
 
-    logging.info(f'Will save result to {args.output_md}')
-    if os.path.isfile(args.output_md):
+    output_md = args.output_md
+    if output_md is None:
+        output_md = f'{n}.md'
+
+    logging.info(f'Will save result to {output_md}')
+    if os.path.isfile(output_md):
         if not args.force_overwrite:
             raise ValueError('Cannot overwrite existing output file!')
 
@@ -54,13 +58,13 @@ if __name__ == "__main__":
 
     logging.info(f'Reading {args.input_csv}')
     articles_map = {c : [] for c in _CATEGRORIES}
-    csv = pd.read_csv(args.input_csv)
+    csv = pd.read_csv(args.input_csv, encoding='utf-8')
     for row_num, row in csv.iterrows():
         if 'Type' not in row or not row['Type'] or row['Type'] not in articles_map:
             print()
             print('To which category does this article belong?')
             print()
-            print(row['Name'])
+            print(row['Name'].encode('utf-8'))
             print()
 
             for i, c in enumerate(_CATEGRORIES):
@@ -112,7 +116,7 @@ if __name__ == "__main__":
                     .replace('$content$', content)
 
     logging.info('Saving digest markdown...')
-    with open(args.output_md, 'wb') as f:
+    with open(output_md, 'wb') as f:
         f.write(md.encode('utf-8'))
 
     logging.info('Done!')
