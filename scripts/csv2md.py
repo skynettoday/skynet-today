@@ -66,6 +66,8 @@ if __name__ == "__main__":
             print()
             print(row['Name'].encode('utf-8'))
             print()
+            print(row['Excerpt'].encode('utf-8'))
+            print()
 
             for i, c in enumerate(_CATEGRORIES):
                 print(f'{i}) {c}')
