@@ -33,7 +33,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--template_file', '-tf', type=str, default='digest_template_website.md')
     parser.add_argument('--digest_number', '-n', type=int, required=True)
-    parser.add_argument('--input_csv', '-i', type=str, required=True)
+    parser.add_argument('--input_csv', '-i', type=str, required=False, default='')
     parser.add_argument('--output_md', '-o', type=str, required=False)
     parser.add_argument('--force_overwrite', '-f', action='store_true')
     args = parser.parse_args()
@@ -56,9 +56,13 @@ if __name__ == "__main__":
     with open(args.template_file, 'r') as f:
         md_template = f.read()
 
-    logging.info(f'Reading {args.input_csv}')
+    input_csv = args.input_csv
+    if not input_csv:
+        input_csv = f'Last Week in AI News Planning - Past - {n}.csv'
+
+    logging.info(f'Reading {input_csv}')
     articles_map = {c : [] for c in _CATEGRORIES}
-    csv = pd.read_csv(args.input_csv, encoding='utf-8')
+    csv = pd.read_csv(input_csv, encoding='utf-8')
     for row_num, row in csv.iterrows():
         if 'Type' not in row or not row['Type'] or row['Type'] not in articles_map:
             print()
