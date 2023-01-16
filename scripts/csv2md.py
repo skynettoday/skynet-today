@@ -64,8 +64,11 @@ if __name__ == "__main__":
     articles_map = {c : [] for c in _CATEGRORIES}
     csv = pd.read_csv(input_csv, encoding='utf-8')
     for row_num, row in csv.iterrows():
-        if 'Type' not in row or not row['Type'] or row['Type'] not in articles_map:
+        has_type = 'Type' not in row or not row['Type'] or row['Type'] not in articles_map
+        has_content = row['Name'] and row['Excerpt']
+        if has_type and has_content:
             print()
+            print(row_num + 1, '/', len(csv))
             print('To which category does this article belong?')
             print()
             print(row['Name'].encode('utf-8'))
