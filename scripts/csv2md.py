@@ -78,7 +78,7 @@ if __name__ == "__main__":
     parser.add_argument('--input_csv', '-i', type=str, required=False, default='')
     parser.add_argument('--output_md', '-o', type=str, required=False)
     parser.add_argument('--force_overwrite', '-f', action='store_true')
-    parser.add_argument('--auto_article_type', '-a', action='store_true')
+    parser.add_argument('--manual_article_type', '-m', action='store_true')
     args = parser.parse_args()
 
     n = args.digest_number
@@ -115,7 +115,9 @@ if __name__ == "__main__":
             print()
             print(row_num + 1, '/', len(csv))
             
-            if args.auto_article_type:
+            if args.manual_article_type:
+                c = get_article_type_manual(row['Name'], row['URL'], row['Excerpt'])
+            else:
                 if not set_openai_key:
                     with open('secrets/openai_api_key.txt', 'r') as f:
                         openai.api_key = f.read().strip()
@@ -127,8 +129,7 @@ if __name__ == "__main__":
                 if c not in _CATEGRORIES:
                     print('Classified as:', c, 'which is not a valid category!')
                     c = get_article_type_manual(row['Name'], row['URL'], row['Excerpt'])
-            else:
-                c = get_article_type_manual(row['Name'], row['URL'], row['Excerpt'])
+                
         else:
             c = row['Type']
 
