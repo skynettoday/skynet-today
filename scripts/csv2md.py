@@ -40,8 +40,8 @@ Type:
     response = openai.Completion.create(
         prompt=prompt, 
         stop=['.', '\n'],
-        engine='curie:ft-jacky:article-type-2023-01-18-06-21-38',
-        max_tokens=3,
+        engine='curie:ft-jacky:article-type-2023-01-18-07-53-32',
+        max_tokens=10,
         temperature=0,
     )['choices'][0]['text'].strip()
 
@@ -112,20 +112,22 @@ if __name__ == "__main__":
         has_type = 'Type' not in row or not row['Type'] or row['Type'] not in articles_map
         has_content = row['Name'] and row['Excerpt']
         if has_type and has_content:
+            print()
+            print(row_num + 1, '/', len(csv))
+            
             if args.auto_article_type:
                 if not set_openai_key:
-                    with open('openai_api_key.txt', 'r') as f:
+                    with open('secrets/openai_api_key.txt', 'r') as f:
                         openai.api_key = f.read().strip()
+                    with open('secrets/openai_org.txt', 'r') as f:
+                        openai.organization = f.read().strip()
                     set_openai_key = True
+                
                 c = classify_article_type(row['Name'], row['URL'], row['Excerpt'])
                 if c not in _CATEGRORIES:
-                    print()
-                    print(row_num + 1, '/', len(csv))
                     print('Classified as:', c, 'which is not a valid category!')
                     c = get_article_type_manual(row['Name'], row['URL'], row['Excerpt'])
             else:
-                print()
-                print(row_num + 1, '/', len(csv))
                 c = get_article_type_manual(row['Name'], row['URL'], row['Excerpt'])
         else:
             c = row['Type']
