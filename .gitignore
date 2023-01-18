@@ -12,3 +12,4 @@ Gemfile.lock
 node_modules
 npm-debug.log*
 .vscode
+scripts/openai_api_key.txt

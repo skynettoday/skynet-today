@@ -4,6 +4,7 @@ import argparse
 
 import pandas as pd
 import inflect
+import openai
 
 try:
     import sys
@@ -28,6 +29,47 @@ _CATEGRORIES = [
 ]
 
 
+def classify_article_type(title, link, excerpt):
+    prompt = f'''
+Title: {title}
+Description: {excerpt}
+Link: {link}
+Type:
+'''.strip()
+    
+    response = openai.Completion.create(
+        prompt=prompt, 
+        stop=['.', '\n'],
+        engine='curie:ft-jacky:article-type-2023-01-18-06-21-38',
+        max_tokens=3,
+        temperature=0,
+    )['choices'][0]['text'].strip()
+
+    return response
+
+def get_article_type_manual(title, link, excerpt):
+    print('To which category does this article belong?')
+    print()
+    print(row['Name'].encode('utf-8'))
+    print()
+    print(row['Excerpt'].encode('utf-8'))
+    print()
+
+    for i, c in enumerate(_CATEGRORIES):
+        print(f'{i}) {c}')
+    while True:
+        try:
+            print()
+            c_idx = int(input('Category Number: '))
+            c = _CATEGRORIES[c_idx]
+            break
+        except:
+            print('Please enter a valid category!')
+    print()
+
+    return c
+
+
 if __name__ == "__main__":
     logging.getLogger().setLevel(logging.INFO)
     parser = argparse.ArgumentParser()
@@ -36,6 +78,7 @@ if __name__ == "__main__":
     parser.add_argument('--input_csv', '-i', type=str, required=False, default='')
     parser.add_argument('--output_md', '-o', type=str, required=False)
     parser.add_argument('--force_overwrite', '-f', action='store_true')
+    parser.add_argument('--auto_article_type', '-a', action='store_true')
     args = parser.parse_args()
 
     n = args.digest_number
@@ -60,6 +103,8 @@ if __name__ == "__main__":
     if not input_csv:
         input_csv = f'Last Week in AI News Planning - Past - {n}.csv'
 
+    set_openai_key = False
+
     logging.info(f'Reading {input_csv}')
     articles_map = {c : [] for c in _CATEGRORIES}
     csv = pd.read_csv(input_csv, encoding='utf-8')
@@ -67,26 +112,21 @@ if __name__ == "__main__":
         has_type = 'Type' not in row or not row['Type'] or row['Type'] not in articles_map
         has_content = row['Name'] and row['Excerpt']
         if has_type and has_content:
-            print()
-            print(row_num + 1, '/', len(csv))
-            print('To which category does this article belong?')
-            print()
-            print(row['Name'].encode('utf-8'))
-            print()
-            print(row['Excerpt'].encode('utf-8'))
-            print()
-
-            for i, c in enumerate(_CATEGRORIES):
-                print(f'{i}) {c}')
-            while True:
-                try:
+            if args.auto_article_type:
+                if not set_openai_key:
+                    with open('openai_api_key.txt', 'r') as f:
+                        openai.api_key = f.read().strip()
+                    set_openai_key = True
+                c = classify_article_type(row['Name'], row['URL'], row['Excerpt'])
+                if c not in _CATEGRORIES:
                     print()
-                    c_idx = int(input('Category Number: '))
-                    c = _CATEGRORIES[c_idx]
-                    break
-                except:
-                    print('Please enter a valid category!')
-            print()
+                    print(row_num + 1, '/', len(csv))
+                    print('Classified as:', c, 'which is not a valid category!')
+                    c = get_article_type_manual(row['Name'], row['URL'], row['Excerpt'])
+            else:
+                print()
+                print(row_num + 1, '/', len(csv))
+                c = get_article_type_manual(row['Name'], row['URL'], row['Excerpt'])
         else:
             c = row['Type']
 
