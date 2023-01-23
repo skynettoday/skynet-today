@@ -110,7 +110,7 @@ if __name__ == "__main__":
     logging.info(f'Making image folder {im_folder}')
     im_folder.mkdir(parents=True, exist_ok=True)
 
-    import IPython; IPython.embed(); exit()
+    #import IPython; IPython.embed(); exit()
 
     output_md = Path('../_posts/digests') / get_output_file_name(n)
 
