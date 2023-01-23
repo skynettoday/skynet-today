@@ -10,7 +10,7 @@ tags: [Elon Musk, self-driving]
 categories: [briefs]
 permalink: /briefs/tesla-investigations
 sidebartoc: true
-highlight: true
+highlight: false
 ---
 
 ## Summary

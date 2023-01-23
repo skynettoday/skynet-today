@@ -18,4 +18,4 @@ $content$
 
 <hr>
 
-Copyright © 2022 Skynet Today, All rights reserved.
+Copyright © 2023 Skynet Today, All rights reserved.

@@ -4,6 +4,10 @@ import argparse
 
 import pandas as pd
 import inflect
+import openai
+
+from pathlib import Path
+from datetime import datetime, timedelta
 
 try:
     import sys
@@ -28,14 +32,73 @@ _CATEGRORIES = [
 ]
 
 
+def classify_article_type(title, link, excerpt):
+    prompt = f'''
+Title: {title}
+Description: {excerpt}
+Link: {link}
+Type:
+'''.strip()
+    
+    response = openai.Completion.create(
+        prompt=prompt, 
+        stop=['.', '\n'],
+        engine='curie:ft-jacky:article-type-2023-01-18-07-53-32',
+        max_tokens=10,
+        temperature=0,
+    )['choices'][0]['text'].strip()
+
+    return response
+
+def get_article_type_manual(title, link, excerpt):
+    print('To which category does this article belong?')
+    print()
+    print(row['Name'].encode('utf-8'))
+    print()
+    print(row['Excerpt'].encode('utf-8'))
+    print()
+
+    for i, c in enumerate(_CATEGRORIES):
+        print(f'{i}) {c}')
+    while True:
+        try:
+            print()
+            c_idx = int(input('Category Number: '))
+            c = _CATEGRORIES[c_idx]
+            break
+        except:
+            print('Please enter a valid category!')
+    print()
+
+    return c
+
+
+def get_output_file_name(n):
+    # Get today's date
+    today = datetime.today()
+
+    # Calculate the number of days until the next Monday
+    days_until_next_monday = 7 - today.weekday()
+    if days_until_next_monday <= 0:
+        days_until_next_monday += 7
+
+    # Add the number of days until the next Monday to today's date
+    next_monday = today + timedelta(days=days_until_next_monday)
+
+    # Format the date as YYYY-MM-DD
+    formatted_date = next_monday.strftime("%Y-%m-%d")
+
+    return f'{formatted_date}-{n}.md'
+
+
 if __name__ == "__main__":
     logging.getLogger().setLevel(logging.INFO)
     parser = argparse.ArgumentParser()
     parser.add_argument('--template_file', '-tf', type=str, default='digest_template_website.md')
     parser.add_argument('--digest_number', '-n', type=int, required=True)
-    parser.add_argument('--input_csv', '-i', type=str, required=True)
-    parser.add_argument('--output_md', '-o', type=str, required=False)
+    parser.add_argument('--input_csv', '-i', type=str, required=False, default='')
     parser.add_argument('--force_overwrite', '-f', action='store_true')
+    parser.add_argument('--manual_article_type', '-m', action='store_true')
     args = parser.parse_args()
 
     n = args.digest_number
@@ -43,9 +106,13 @@ if __name__ == "__main__":
     n_english = p.number_to_words(p.ordinal(n)).replace(' ', '-')
     logging.info(f'Parsing for the {n_english} digest')
 
-    output_md = args.output_md
-    if output_md is None:
-        output_md = f'{n}.md'
+    im_folder = Path(f'../assets/img/digests/{n}')
+    logging.info(f'Making image folder {im_folder}')
+    im_folder.mkdir(parents=True, exist_ok=True)
+
+    import IPython; IPython.embed(); exit()
+
+    output_md = Path('../_posts/digests') / get_output_file_name(n)
 
     logging.info(f'Will save result to {output_md}')
     if os.path.isfile(output_md):
@@ -56,30 +123,37 @@ if __name__ == "__main__":
     with open(args.template_file, 'r') as f:
         md_template = f.read()
 
-    logging.info(f'Reading {args.input_csv}')
-    articles_map = {c : [] for c in _CATEGRORIES}
-    csv = pd.read_csv(args.input_csv, encoding='utf-8')
-    for row_num, row in csv.iterrows():
-        if 'Type' not in row or not row['Type'] or row['Type'] not in articles_map:
-            print()
-            print('To which category does this article belong?')
-            print()
-            print(row['Name'].encode('utf-8'))
-            print()
-            print(row['Excerpt'].encode('utf-8'))
-            print()
+    input_csv = args.input_csv
+    if not input_csv:
+        input_csv = f'Last Week in AI News Planning - Past - {n}.csv'
 
-            for i, c in enumerate(_CATEGRORIES):
-                print(f'{i}) {c}')
-            while True:
-                try:
-                    print()
-                    c_idx = int(input('Category Number: '))
-                    c = _CATEGRORIES[c_idx]
-                    break
-                except:
-                    print('Please enter a valid category!')
+    set_openai_key = False
+
+    logging.info(f'Reading {input_csv}')
+    articles_map = {c : [] for c in _CATEGRORIES}
+    csv = pd.read_csv(input_csv, encoding='utf-8')
+    for row_num, row in csv.iterrows():
+        has_type = 'Type' not in row or not row['Type'] or row['Type'] not in articles_map
+        has_content = row['Name'] and row['Excerpt']
+        if has_type and has_content:
             print()
+            print(row_num + 1, '/', len(csv))
+            
+            if args.manual_article_type:
+                c = get_article_type_manual(row['Name'], row['URL'], row['Excerpt'])
+            else:
+                if not set_openai_key:
+                    with open('secrets/openai_api_key.txt', 'r') as f:
+                        openai.api_key = f.read().strip()
+                    with open('secrets/openai_org.txt', 'r') as f:
+                        openai.organization = f.read().strip()
+                    set_openai_key = True
+                
+                c = classify_article_type(row['Name'], row['URL'], row['Excerpt'])
+                if c not in _CATEGRORIES:
+                    print('Classified as:', c, 'which is not a valid category!')
+                    c = get_article_type_manual(row['Name'], row['URL'], row['Excerpt'])
+                
         else:
             c = row['Type']
 
