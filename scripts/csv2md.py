@@ -50,6 +50,7 @@ Type:
 
     return response
 
+
 def get_article_type_manual(title, link, excerpt):
     print('To which category does this article belong?')
     print()
@@ -79,7 +80,7 @@ def get_output_file_name(n):
 
     # Calculate the number of days until the next Monday
     days_until_next_monday = 7 - today.weekday()
-    if days_until_next_monday <= 0:
+    if days_until_next_monday < 0:
         days_until_next_monday += 7
 
     # Add the number of days until the next Monday to today's date
@@ -109,8 +110,6 @@ if __name__ == "__main__":
     im_folder = Path(f'../assets/img/digests/{n}')
     logging.info(f'Making image folder {im_folder}')
     im_folder.mkdir(parents=True, exist_ok=True)
-
-    #import IPython; IPython.embed(); exit()
 
     output_md = Path('../_posts/digests') / get_output_file_name(n)
 
