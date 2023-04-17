@@ -7,7 +7,7 @@ import inflect
 import openai
 
 from pathlib import Path
-from datetime import datetime, timedelta
+from datetime import date, timedelta
 
 try:
     import sys
@@ -75,19 +75,14 @@ def get_article_type_manual(title, link, excerpt):
 
 
 def get_output_file_name(n):
-    # Get today's date
-    today = datetime.today()
+    today = date.today()
 
-    # Calculate the number of days until the next Monday
-    days_until_next_monday = 7 - today.weekday()
-    if days_until_next_monday < 0:
-        days_until_next_monday += 7
-
-    # Add the number of days until the next Monday to today's date
-    next_monday = today + timedelta(days=days_until_next_monday)
+    # Calculate the difference between today and the most recent Monday
+    days_to_monday = (today.weekday() - 0) % 7
+    closest_monday = today - timedelta(days=days_to_monday)
 
     # Format the date as YYYY-MM-DD
-    formatted_date = next_monday.strftime("%Y-%m-%d")
+    formatted_date = closest_monday.strftime("%Y-%m-%d")
 
     return f'{formatted_date}-{n}.md'
 
