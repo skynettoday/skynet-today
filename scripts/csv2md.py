@@ -5,6 +5,7 @@ import argparse
 import pandas as pd
 import inflect
 import openai
+import ray
 
 from pathlib import Path
 from datetime import date, timedelta
@@ -32,7 +33,7 @@ _CATEGRORIES = [
 ]
 
 
-def classify_article_type(title, link, excerpt):
+def classify_article_type_ft(title, link, excerpt):
     prompt = f'''
 Title: {title}
 Description: {excerpt}
@@ -49,6 +50,43 @@ Type:
     )['choices'][0]['text'].strip()
 
     return response
+
+
+@ray.remote(num_cpus=8)
+def classify_article_type(row):
+    prompt = f'''
+Title: {row['Name']}
+Description: {row['Excerpt']}
+Link: {row['URL']}
+'''.strip()
+
+    system_prompt = '''
+Your task is to classify articles about AI into one of the following types:
+Business: Anything related to product announcements, investments, funding, VCs, company updates, or market trends.
+Research: Scientific studies, research in AI, or applying AI to do science in various fields.
+Applications: Applying AI to do something.
+Concerns: Discussions and news about problems, harms, and any alarming things about AI, including govermnet investigations about AI.
+Policy: News, analysis, and opinions related to government policies.
+Analysis: Analyzes an existing topic about AI that's not the above topics (not news).
+Expert Opinions: Opinion pieces from experts and not factual reporting. If it's not clear the opinion piece is from a domain expert, then it should be in Analysis.
+Explainers: Explains a given topic in AI with the goal to educate the reader; tutorials, guides.
+Fun: Anything silly, fun, and doesn't belong to the other types.
+
+The user will provide the article title, link, and description. 
+After careful consideration, you will respond with ONLY the predicted article type, with no explanations, punctuation, formatting, or anything else.
+Please only respond with one of the above types (Business, Resesarch, Applications, Concerns, Policy, Analysis, Expert Opinions, Explainers, Fun).
+'''.strip()
+    messages = [
+        {'role': 'system', 'content': system_prompt},
+        {'role': 'user', 'content': prompt}
+    ]
+
+    return openai.ChatCompletion.create(
+        model='gpt-3.5-turbo', 
+        messages=messages,
+        max_tokens=10,
+        temperature=0
+    ).choices[0]['message']['content']
 
 
 def get_article_type_manual(title, link, excerpt):
@@ -94,7 +132,6 @@ if __name__ == "__main__":
     parser.add_argument('--digest_number', '-n', type=int, required=True)
     parser.add_argument('--input_csv', '-i', type=str, required=False, default='')
     parser.add_argument('--force_overwrite', '-f', action='store_true')
-    parser.add_argument('--manual_article_type', '-m', action='store_true')
     args = parser.parse_args()
 
     n = args.digest_number
@@ -121,33 +158,32 @@ if __name__ == "__main__":
     if not input_csv:
         input_csv = f'Last Week in AI News Planning - Past - {n}.csv'
 
-    set_openai_key = False
+    with open('secrets/openai_api_key.txt', 'r') as f:
+        openai.api_key = f.read().strip()
+    with open('secrets/openai_org.txt', 'r') as f:
+        openai.organization = f.read().strip()
+    ray.init()
 
     logging.info(f'Reading {input_csv}')
     articles_map = {c : [] for c in _CATEGRORIES}
     csv = pd.read_csv(input_csv, encoding='utf-8')
+
+    logging.info('Classifying articles...')
+    rows_to_classify = {}
     for row_num, row in csv.iterrows():
         has_type = 'Type' not in row or not row['Type'] or row['Type'] not in articles_map
         has_content = row['Name'] and row['Excerpt']
         if has_type and has_content:
-            print()
-            print(row_num + 1, '/', len(csv))
-            
-            if args.manual_article_type:
+            rows_to_classify[row_num] = row
+    article_types = ray.get([classify_article_type.remote(row) for row in rows_to_classify.values()])
+    article_types_map = {row_num: article_type for row_num, article_type in zip(rows_to_classify.keys(), article_types)}
+
+    for row_num, row in csv.iterrows():
+        if row_num in article_types_map:
+            c = article_types_map[row_num]
+            if c not in _CATEGRORIES:
+                print(f'Row {row_num} classified as:', c, 'which is not a valid category!')
                 c = get_article_type_manual(row['Name'], row['URL'], row['Excerpt'])
-            else:
-                if not set_openai_key:
-                    with open('secrets/openai_api_key.txt', 'r') as f:
-                        openai.api_key = f.read().strip()
-                    with open('secrets/openai_org.txt', 'r') as f:
-                        openai.organization = f.read().strip()
-                    set_openai_key = True
-                
-                c = classify_article_type(row['Name'], row['URL'], row['Excerpt'])
-                if c not in _CATEGRORIES:
-                    print('Classified as:', c, 'which is not a valid category!')
-                    c = get_article_type_manual(row['Name'], row['URL'], row['Excerpt'])
-                
         else:
             c = row['Type']
 
