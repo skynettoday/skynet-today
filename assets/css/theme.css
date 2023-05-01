@@ -1379,3 +1379,20 @@ thead tr{
 tbody tr:nth-child(even){
     background-color: #ebebeb;
 }
+
+td {
+  vertical-align: top;
+  font-size:1.0rem;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table,
+th,
+td {
+  padding: 10px;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
