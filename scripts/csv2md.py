@@ -33,11 +33,12 @@ _CATEGRORIES = [
 ]
 
 
-def classify_article_type_ft(title, link, excerpt):
+@ray.remote(num_cpus=8)
+def classify_article_type_ft(row):
     prompt = f'''
-Title: {title}
-Description: {excerpt}
-Link: {link}
+Title: {row['Name']}
+Description: {row['Excerpt']}
+Link: {row['URL']}
 Type:
 '''.strip()
     
