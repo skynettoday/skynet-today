@@ -5,10 +5,13 @@ import argparse
 import pandas as pd
 import inflect
 import openai
-import ray
 
 from pathlib import Path
 from datetime import date, timedelta
+from tqdm.auto import tqdm
+
+from tenacity import retry, stop_after_attempt, wait_random_exponential
+
 
 try:
     import sys
@@ -33,7 +36,6 @@ _CATEGRORIES = [
 ]
 
 
-@ray.remote(num_cpus=8)
 def classify_article_type_ft(row):
     prompt = f'''
 Title: {row['Name']}
@@ -53,7 +55,16 @@ Type:
     return response
 
 
-@ray.remote(num_cpus=8)
+@retry(wait=wait_random_exponential(min=1, max=20), stop=stop_after_attempt(6))
+def query_openai(messages):
+    return openai.ChatCompletion.create(
+        model='gpt-3.5-turbo', 
+        messages=messages,
+        max_tokens=10,
+        temperature=0
+    ).choices[0]['message']['content']
+
+
 def classify_article_type(row):
     prompt = f'''
 Title: {row['Name']}
@@ -77,17 +88,10 @@ The user will provide the article title, link, and description.
 After careful consideration, you will respond with ONLY the predicted article type, with no explanations, punctuation, formatting, or anything else.
 Please only respond with one of the above types (Business, Resesarch, Applications, Concerns, Policy, Analysis, Expert Opinions, Explainers, Fun).
 '''.strip()
-    messages = [
+    return query_openai([
         {'role': 'system', 'content': system_prompt},
         {'role': 'user', 'content': prompt}
-    ]
-
-    return openai.ChatCompletion.create(
-        model='gpt-3.5-turbo', 
-        messages=messages,
-        max_tokens=10,
-        temperature=0
-    ).choices[0]['message']['content']
+    ])
 
 
 def get_article_type_manual(title, link, excerpt):
@@ -161,9 +165,6 @@ if __name__ == "__main__":
 
     with open('secrets/openai_api_key.txt', 'r') as f:
         openai.api_key = f.read().strip()
-    with open('secrets/openai_org.txt', 'r') as f:
-        openai.organization = f.read().strip()
-    ray.init()
 
     logging.info(f'Reading {input_csv}')
     articles_map = {c : [] for c in _CATEGRORIES}
@@ -176,7 +177,7 @@ if __name__ == "__main__":
         has_content = row['Name'] and row['Excerpt']
         if has_type and has_content:
             rows_to_classify[row_num] = row
-    article_types = ray.get([classify_article_type.remote(row) for row in rows_to_classify.values()])
+    article_types = [classify_article_type(row) for row in tqdm(rows_to_classify.values())]
     article_types_map = {row_num: article_type for row_num, article_type in zip(rows_to_classify.keys(), article_types)}
 
     for row_num, row in csv.iterrows():

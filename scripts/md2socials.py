@@ -39,11 +39,9 @@ if __name__ == '__main__':
     with open(digest_md_path, 'r') as f:
         digest_md = f.read()
 
-    logging.info('Loading OpenAI API key and organization')
+    logging.info('Loading OpenAI API key')
     with open('secrets/openai_api_key.txt', 'r') as f:
         openai.api_key = f.read().strip()
-    with open('secrets/openai_org.txt', 'r') as f:
-        openai.organization = f.read().strip()
 
     logging.info('Generating socials...')
     messages = [
