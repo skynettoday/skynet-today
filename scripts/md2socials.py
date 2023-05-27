@@ -40,7 +40,7 @@ if __name__ == '__main__':
         digest_md = f.read()
 
     logging.info('Loading OpenAI API key')
-    with open('secrets/openai_api_key.txt', 'r') as f:
+    with open('secrets/openai_api_key_old.txt', 'r') as f:
         openai.api_key = f.read().strip()
 
     logging.info('Generating socials...')
