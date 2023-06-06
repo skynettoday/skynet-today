@@ -12,7 +12,6 @@ from tqdm.auto import tqdm
 
 from tenacity import retry, stop_after_attempt, wait_random_exponential
 
-
 try:
     import sys
     reload(sys)
@@ -34,7 +33,6 @@ _CATEGRORIES = [
     'Explainers',
     'Fun'
 ]
-
 
 def classify_article_type_ft(row):
     prompt = f'''
