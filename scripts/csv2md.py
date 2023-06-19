@@ -112,7 +112,7 @@ def clip_text_words(text, max_words=10000):
 def get_article_excerpt(row, article):
     system_prompt = '''
 Given the title, subtitle, and text of an article about AI, write a short one sentence summary of its content.
-DO NOT start with "The article" or "This article".
+The summary should NOT start with "The article", "This article", or something similar to that effect.
 '''.strip()
     
     prompt = f'''
@@ -166,19 +166,11 @@ def get_output_file_name(n):
 def get_article_summary(title, news_article):
     system_prompt = '''
 You are an expert writer and commentator. 
-The user will give you an article, and you will write a short summary and a thoughtful opinion/analysis.
-
+The user will give you an article, and you will write a short summary.
 The summary should be a paragraph long, contain key technical details, and be easy to understand. 
 The summary should highlight key words and concepts from the article without abstracting them away. 
 It should end with the key takeaway from the article.
-The summary does not have a prefix.
-
-The opinion/analysis should provide insightful commentary based on information outside of what's strictly in the article. 
-It should provide an interesting, sometimes critical take on the article's subject matter, and it should leave the reader some food for thought. 
-This should short and to the point.
-This paragraph should be prefixed with "Our Take: " in bold.
-
-Respond in markdown.'''.strip()
+'''.strip()
     
     user_prompt = f'''
 Title: {title}
@@ -218,7 +210,7 @@ Format your response as a valid JSON list of article indices, starting with the 
 if __name__ == "__main__":
     __spec__ = None
     parser = argparse.ArgumentParser()
-    parser.add_argument('--template_file', '-tf', type=str, default='digest_template_website.md')
+    parser.add_argument('--template_file', '-tf', type=str, default='digest_template.md')
     parser.add_argument('--digest_number', '-n', type=int, required=True)
     parser.add_argument('--input_csv', '-i', type=str, required=False, default='')
     parser.add_argument('--force_overwrite', '-f', action='store_true')
@@ -328,7 +320,7 @@ if __name__ == "__main__":
                 for r in tqdm(rank, leave=False):
                     article = articles[r]
                     title, url, excerpt = article['title'], article['url'], article['excerpt']
-                    content += f'[{title}]({url}) - "{excerpt}"'
+                    content += f'[{title}]({url}) - {excerpt}'
                     content += '\n\n'
 
     # remove the last two empty lines
