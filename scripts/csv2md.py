@@ -4,6 +4,7 @@ import argparse
 import pandas as pd
 import inflect
 import openai
+import json
 
 from newspaper import Article
 from pathlib import Path
@@ -12,7 +13,8 @@ from tqdm.auto import tqdm
 
 from tenacity import retry, stop_after_attempt, wait_random_exponential
 
-_CATEGORIES = [
+
+CATEGORIES = [
     'Top News',
     'Research',
     'Applications',
@@ -24,6 +26,7 @@ _CATEGORIES = [
     'Explainers',
     'Fun'
 ]
+
 
 def classify_article_type_ft(row):
     prompt = f'''
@@ -44,21 +47,26 @@ Type:
     return response
 
 
-@retry(wait=wait_random_exponential(min=1, max=20), stop=stop_after_attempt(10))
+@retry(wait=wait_random_exponential(min=1, max=10), stop=stop_after_attempt(10))
 def query_openai(messages, max_tokens=10):
     return openai.ChatCompletion.create(
-        model='gpt-3.5-turbo', 
+        model='gpt-3.5-turbo-16k', 
         messages=messages,
         max_tokens=max_tokens,
         temperature=0
     ).choices[0]['message']['content']
 
 
-def classify_article_type(row):
+def get_article_category(row, excerpt):
+    if row['Type'] in CATEGORIES:
+        return row['Type']
+
+    title, url = row['Name'], row['URL']
+
     prompt = f'''
-Title: {row['Name']}
-Description: {row['Excerpt']}
-Link: {row['URL']}
+Title: {title}
+Summary: {excerpt}
+Link: {url}
 '''.strip()
 
     system_prompt = '''
@@ -82,34 +90,42 @@ Please only respond with one of the above types (Business, Resesarch, Applicatio
         {'role': 'user', 'content': prompt}
     ])
 
-def summarize_article(row):
-    article = Article(row['URL'])
-    try: 
+
+def get_news_article(url):
+    try:
+        article = Article(url)
         article.download()
         article.parse()
-        authors = article.authors
-        text = article.text
-        words = text.split(" ")
-        if len(words) > 2000:
-            text = " ".join(words[:2000])
+        assert article.text
+        return article
     except:
-        return ":("
+        return None
+    
 
+def clip_text_words(text, max_words=10000):
+    words = text.split(" ")
+    if len(words) > max_words:
+        text = " ".join(words[:max_words])
+    return text
+
+
+def get_article_excerpt(row, article):
     system_prompt = '''
-Given the title, subtitle, and text of an article about AI, write a short (one or two sentence) summary of its content.
+Given the title, subtitle, and text of an article about AI, write a short one sentence summary of its content.
 DO NOT start with "The article" or "This article".
 '''.strip()
     
     prompt = f'''
 Title: {row['Name']}
 Subtitle: {row['Excerpt']}
-Text: {text}
+Text: {clip_text_words(article.text)}
 '''.strip()
     return query_openai([
         {'role': 'system', 'content': system_prompt},
         {'role': 'user', 'content': prompt}
     ],
     max_tokens = 100)
+
 
 def get_article_type_manual(title, link, excerpt):
     print('To which category does this article belong?')
@@ -119,13 +135,13 @@ def get_article_type_manual(title, link, excerpt):
     print(row['Excerpt'].encode('utf-8'))
     print()
 
-    for i, c in enumerate(_CATEGORIES):
+    for i, c in enumerate(CATEGORIES):
         print(f'{i}) {c}')
     while True:
         try:
             print()
             c_idx = int(input('Category Number: '))
-            c = _CATEGORIES[c_idx]
+            c = CATEGORIES[c_idx]
             break
         except:
             print('Please enter a valid category!')
@@ -147,7 +163,60 @@ def get_output_file_name(n):
     return f'{formatted_date}-{n}.md'
 
 
+def get_article_summary(title, news_article):
+    system_prompt = '''
+You are an expert writer and commentator. 
+The user will give you an article, and you will write a short summary and a thoughtful opinion/analysis.
+
+The summary should be a paragraph long, contain key technical details, and be easy to understand. 
+The summary should highlight key words and concepts from the article without abstracting them away. 
+It should end with the key takeaway from the article.
+The summary does not have a prefix.
+
+The opinion/analysis should provide insightful commentary based on information outside of what's strictly in the article. 
+It should provide an interesting, sometimes critical take on the article's subject matter, and it should leave the reader some food for thought. 
+This should short and to the point.
+This paragraph should be prefixed with "Our Take: " in bold.
+
+Respond in markdown.'''.strip()
+    
+    user_prompt = f'''
+Title: {title}
+{clip_text_words(news_article.text)}
+'''.strip()
+
+    messages = [
+        {'role': 'system', 'content': system_prompt},
+        {'role': 'user', 'content': user_prompt}
+    ]
+
+    return query_openai(messages, max_tokens=500)
+
+
+def rank_articles(articles):
+    system_prompt = '''
+You are an expert writer and commentator in AI.
+The user will give you a list of articles, and you will rank them in order of importance.
+The most important article should be ranked first, and the least important article should be ranked last.
+Article index, title, and excerpts are given.
+Format your response as a valid JSON list of article indices, starting with the character '[' and ending with the character ']'.
+'''.strip()
+    
+    user_prompt = '\n'.join([
+        f'{i} | Title: {a["title"]} | Excerpt: {a["excerpt"]}\n' 
+        for i, a in enumerate(articles)
+    ])
+
+    messages = [
+        {'role': 'system', 'content': system_prompt},
+        {'role': 'user', 'content': user_prompt}
+    ]
+
+    return json.loads(query_openai(messages, max_tokens=50))
+
+
 if __name__ == "__main__":
+    __spec__ = None
     parser = argparse.ArgumentParser()
     parser.add_argument('--template_file', '-tf', type=str, default='digest_template_website.md')
     parser.add_argument('--digest_number', '-n', type=int, required=True)
@@ -183,67 +252,83 @@ if __name__ == "__main__":
         openai.api_key = f.read().strip()
 
     print(f'Reading {input_csv}')
-    articles_map = {c : [] for c in _CATEGORIES}
     csv = pd.read_csv(input_csv, encoding='utf-8')
-    url_to_summary_map = {}
-
-    rows_to_classify = {}
-    for row_num, row in csv.iterrows():
+    rows_news_articles = []
+    for row_num, row in tqdm(csv.iterrows(), total=len(csv)):
         if 'arxiv' in row['URL']:
             continue
-        has_type = 'Type' not in row or not row['Type'] or row['Type'] not in articles_map
-        has_content = row['Name'] and row['Excerpt']
-        if has_type and has_content:
-            rows_to_classify[row_num] = row
-    
-    print('Classifying articles...')
-    article_types = [classify_article_type(row) for row in tqdm(rows_to_classify.values())]
-    article_types_map = {row_num: article_type for row_num, article_type in zip(rows_to_classify.keys(), article_types)}
-    
-    for row_num, row in csv.iterrows():
-        if 'arxiv' in row['URL']:
-            continue
-        if row_num in article_types_map:
-            c = article_types_map[row_num]
-            if c not in _CATEGORIES:
-                print(f'Row {row_num} classified as:', c, 'which is not a valid category!')
-                c = get_article_type_manual(row['Name'], row['URL'], row['Excerpt'])
-        else:
-            c = row['Type']
-        articles_map[c].append(row)
-            
-    
-    print('Summarizing articles...')
-    for row_num, row in tqdm(rows_to_classify.items()):
-        summary = summarize_article(row)
-        url_to_summary_map[row['URL']] = summary
-        
-        print()
-        print(row['Name'])
-        print(summary)
 
+        news_article = get_news_article(row['URL'])
+        if not news_article:
+            continue
+
+        rows_news_articles.append((row, news_article))
+
+    print('Getting article excerpts...')
+    excerpts = [
+        get_article_excerpt(row, news_article) 
+        for row, news_article in tqdm(rows_news_articles)
+    ]
+
+    print('Getting article categories...')
+    categories = [
+        get_article_category(row, excerpt)
+        for (row, _), excerpt in tqdm(zip(rows_news_articles, excerpts), total=len(rows_news_articles))
+    ]
+
+    articles_map = {c : [] for c in CATEGORIES}
+    for (row, news_article), excerpt, category in zip(rows_news_articles, excerpts, categories):
+        articles_map[category].append({
+            'url': row['URL'],
+            'title': row['Name'],
+            'excerpt': excerpt,
+            'category': category,
+            'news_article': news_article
+        })
+    
     print('Populating content...')
     top_news = ''
     content = ''
-    for c in _CATEGORIES:
-        items = articles_map[c]
-        if len(items) > 0:
+    for c in tqdm(CATEGORIES):
+        articles = articles_map[c]
+        if articles:
+            # place the first article w/ an image first
+            rank = rank_articles(articles)
+            for idx, r in enumerate(rank):
+                if articles[r]['news_article'].has_top_image():
+                    rank[0], rank[idx] = rank[idx], rank[0]
+                    break
+            
             if c == 'Top News':
                 top_news += f'### {c}'
                 top_news += '\n\n'
 
-                for item in items:
-                    name, url = item['Name'], item['URL']
-                    top_news += f'#### [{name}]({url})'
+                for r in tqdm(rank, leave=False):
+                    article = articles[r]
+                    title, url, news_article = article['title'], article['url'], article['news_article']
+                    summary = get_article_summary(title, news_article)
+                    
+                    top_news += f'#### [{title}]({url})'
+                    top_news += '\n'
+
+                    if news_article.has_top_image():
+                        top_news += f'![]({news_article.top_image})'
+
                     top_news += '\n\n'
-                    top_news += 'one paragraph summary'
+                    top_news += summary
                     top_news += '\n\n'
             else:
                 content += f'#### {c}'
+                
+                if articles[rank[0]]['news_article'].has_top_image():
+                    content += '\n'
+                    content += f'![]({articles[rank[0]]["news_article"].top_image})'
                 content += '\n\n'
-                for item in items:
-                    name, url, summary = item['Name'], item['URL'], url_to_summary_map[item['URL']]
-                    content += f'[{name}]({url}) - "{summary}"'
+                
+                for r in tqdm(rank, leave=False):
+                    article = articles[r]
+                    title, url, excerpt = article['title'], article['url'], article['excerpt']
+                    content += f'[{title}]({url}) - "{excerpt}"'
                     content += '\n\n'
 
     # remove the last two empty lines
