@@ -14,7 +14,7 @@ The posts should contain a catchy introduction, a list of the most interesting a
 The overall tone should be fun and engaging.
 The Twitter post should be within 128 characters.
 The LinkedIn post should be within 500 characters.
-Use emojis and hashtags.
+Use creative and fun emojis and hashtags.
 Respond in markdown format with Twitter and LinkedIn as section headers.
 '''
 
@@ -50,7 +50,7 @@ if __name__ == '__main__':
     ]
 
     socials = openai.ChatCompletion.create(
-        model='gpt-4', 
+        model='gpt-3.5-turbo-16k', 
         messages=messages,
         max_tokens=500,
         temperature=0

@@ -3,3 +3,4 @@ inflect
 openai
 tqdm
 tenacity
+newspaper3k
