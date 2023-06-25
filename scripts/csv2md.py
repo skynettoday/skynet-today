@@ -1,5 +1,6 @@
 import os
 import argparse
+import requests
 
 import pandas as pd
 import inflect
@@ -204,7 +205,7 @@ Format your response as a valid JSON list of article indices, starting with the 
         {'role': 'user', 'content': user_prompt}
     ]
 
-    return json.loads(query_openai(messages, max_tokens=50))
+    return json.loads(query_openai(messages, max_tokens=200))
 
 
 if __name__ == "__main__":
@@ -281,6 +282,7 @@ if __name__ == "__main__":
     print('Populating content...')
     top_news = ''
     content = ''
+    im_name = ''
     for c in tqdm(CATEGORIES):
         articles = articles_map[c]
         if articles:
@@ -306,6 +308,14 @@ if __name__ == "__main__":
                     if news_article.has_top_image():
                         top_news += f'![]({news_article.top_image})'
 
+                        if r == 0:
+                            im_response = requests.get(news_article.top_image)
+                            if im_response.status_code == 200:
+                                im_name = news_article.top_image.split("/")[-1]
+
+                                with open(im_folder / im_name, "wb") as f:
+                                    f.write(im_response.content)
+
                     top_news += '\n\n'
                     top_news += summary
                     top_news += '\n\n'
@@ -329,7 +339,8 @@ if __name__ == "__main__":
     md = md_template.replace('$digest_number$', str(n)) \
                     .replace('$digest_number_english$', n_english) \
                     .replace('$top_news$', top_news) \
-                    .replace('$content$', content)
+                    .replace('$content$', content) \
+                    .replace('$im_name$', im_name)
 
     print('Saving digest markdown...')
     with open(output_md, 'wb') as f:

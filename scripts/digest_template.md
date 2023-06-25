@@ -3,7 +3,7 @@ layout: redirect
 title: "Last Week in AI #$digest_number$"
 excerpt: ""
 image: 
-  feature: assets/img/digests/$digest_number$/main.png
+  feature: assets/img/digests/$digest_number$/$im_name$
   credit: <a href="<Image Source Link>"> <Author> / <Source Name> </a>
 categories: [digests]
 permalink: /digests/the-$digest_number_english$
