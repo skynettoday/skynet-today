@@ -5,7 +5,7 @@ categories: [editorials]
 tags: [art]
 excerpt: "Embracing Liminality: Music, Art, and Expression in the Age of Artificial Intelligence"
 image:
-  feature: assets/img/editorials/2023-06-30-ai-expressionism-ai-expresionism/image1.jpg
+  feature: assets/img/editorials/2023-06-30-ai-expressionism/image1.jpg
   credit: Tanbir Mahmud/Unslash
 permalink: /editorials/ai-expresionism
 sidebartoc: true
