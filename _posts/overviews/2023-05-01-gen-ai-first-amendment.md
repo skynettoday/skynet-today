@@ -10,7 +10,8 @@ categories: [overviews]
 tags: [overview,policy]
 permalink: /overviews/gen-ai-first-amendment
 sidebartoc: true
-highlight: true
+featured: true
+highlight: false
 ---
 
 # Overview
