@@ -113,7 +113,8 @@ def clip_text_words(text, max_words=10000):
 def get_article_excerpt(row, article):
     system_prompt = '''
 Given the title, subtitle, and text of an article about AI, write a short one sentence summary of its content.
-The summary should NOT start with "The article", "This article", or something similar to that effect.
+The summary should NOT start with or contain phrases like "The article", "This article", or anything similar.
+The summary should be exactly one sentence long.
 '''.strip()
     
     prompt = f'''
@@ -248,7 +249,7 @@ if __name__ == "__main__":
     csv = pd.read_csv(input_csv, encoding='utf-8')
     rows_news_articles = []
     for row_num, row in tqdm(csv.iterrows(), total=len(csv)):
-        if 'arxiv' in row['URL']:
+        if 'arxiv' in row['URL'] or 'youtube' in row['URL']:
             continue
 
         news_article = get_news_article(row['URL'])
