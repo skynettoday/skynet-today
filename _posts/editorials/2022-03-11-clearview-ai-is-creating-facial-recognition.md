@@ -1,7 +1,7 @@
 ---
 layout: redirect
 title: "A Summary of Concerns About Clearview AI's Facial Recognition Product"
-author: [andrey_kurenkov]
+author: [trisha_mittal]
 categories: [editorials]
 tags: [facial recognition]
 excerpt: "Is facial recognition an encroachment on individual freedom, or the next step to a technologically advanced society?"
