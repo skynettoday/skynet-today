@@ -49,9 +49,9 @@ Type:
 
 
 @retry(wait=wait_random_exponential(min=1, max=10), stop=stop_after_attempt(10))
-def query_openai(messages, max_tokens=10):
+def query_openai(messages, max_tokens=10, model='gpt-3.5-turbo-16k'):
     return openai.ChatCompletion.create(
-        model='gpt-3.5-turbo-16k', 
+        model=model, 
         messages=messages,
         max_tokens=max_tokens,
         temperature=0
@@ -115,6 +115,7 @@ def get_article_excerpt(row, article):
 Given the title, subtitle, and text of an article about AI, write a short one sentence summary of its content.
 The summary should NOT start with or contain phrases like "The article", "This article", or anything similar.
 The summary should be exactly one sentence long.
+DO NOT REPEAT THE TITLE in the summary. However, if the subtitle is a good summary, you can use it.
 '''.strip()
     
     prompt = f'''
@@ -184,7 +185,7 @@ Title: {title}
         {'role': 'user', 'content': user_prompt}
     ]
 
-    return query_openai(messages, max_tokens=500)
+    return query_openai(messages, max_tokens=2000)
 
 
 def rank_articles(articles):
