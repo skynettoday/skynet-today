@@ -29,25 +29,6 @@ CATEGORIES = [
 ]
 
 
-def classify_article_type_ft(row):
-    prompt = f'''
-Title: {row['Name']}
-Description: {row['Excerpt']}
-Link: {row['URL']}
-Type:
-'''.strip()
-    
-    response = openai.Completion.create(
-        prompt=prompt, 
-        stop=['.', '\n'],
-        engine='curie:ft-jacky:article-type-2023-01-18-07-53-32',
-        max_tokens=10,
-        temperature=0,
-    )['choices'][0]['text'].strip()
-
-    return response
-
-
 @retry(wait=wait_random_exponential(min=1, max=10), stop=stop_after_attempt(10))
 def query_openai(messages, max_tokens=10, model='gpt-3.5-turbo-16k'):
     return openai.ChatCompletion.create(
@@ -170,9 +151,10 @@ def get_article_summary(title, news_article):
     system_prompt = '''
 You are an expert writer and commentator. 
 The user will give you an article, and you will write a short summary.
-The summary should be a paragraph long, contain key technical details, and be easy to understand. 
+The summary should be one paragraph long, contain key technical details, and be easy to understand. 
 The summary should highlight key words and concepts from the article without abstracting them away. 
 It should end with the key takeaway from the article.
+DO NOT WRITE ANY SENTENCES THAT START WITH phrases like "This article" or "The key takeaway is".
 '''.strip()
     
     user_prompt = f'''
@@ -185,7 +167,7 @@ Title: {title}
         {'role': 'user', 'content': user_prompt}
     ]
 
-    return query_openai(messages, max_tokens=2000)
+    return query_openai(messages, max_tokens=2000, model='gpt-4')
 
 
 def rank_articles(articles):
