@@ -11,6 +11,7 @@ from newspaper import Article
 from pathlib import Path
 from datetime import date, timedelta
 from tqdm.auto import tqdm
+import re
 
 from tenacity import retry, stop_after_attempt, wait_random_exponential
 
@@ -138,8 +139,16 @@ def get_output_file_name(n):
     today = date.today()
 
     # Calculate the difference between today and the most recent Monday
-    days_to_monday = (today.weekday() - 0) % 7
-    closest_monday = today - timedelta(days=days_to_monday)
+    delta_to_monday = {
+        0: 0,
+        1: -1,
+        2: -2,
+        3: -3,
+        4: 3,
+        5: 2,
+        6: 1
+    }[today.weekday()]
+    closest_monday = today + timedelta(days=delta_to_monday)
 
     # Format the date as YYYY-MM-DD
     formatted_date = closest_monday.strftime("%Y-%m-%d")
@@ -153,8 +162,7 @@ You are an expert writer and commentator.
 The user will give you an article, and you will write a short summary.
 The summary should be one paragraph long, contain key technical details, and be easy to understand. 
 The summary should highlight key words and concepts from the article without abstracting them away. 
-It should end with the key takeaway from the article.
-DO NOT WRITE ANY SENTENCES THAT START WITH phrases like "This article" or "The key takeaway is".
+The reader should clearly understand the key points from the article after reading your summary.
 '''.strip()
     
     user_prompt = f'''
@@ -190,6 +198,14 @@ Format your response as a valid JSON list of article indices, starting with the 
     ]
 
     return json.loads(query_openai(messages, max_tokens=200))
+
+
+def arxiv_to_huggingface(url: str) -> str:
+    match = re.search(r"https://arxiv.org/abs/(\d+\.\d+)(?:v\d+)?", url)
+    if match:
+        return f"https://huggingface.co/papers/{match.group(1)}"
+    else:
+        return url
 
 
 if __name__ == "__main__":
@@ -232,7 +248,13 @@ if __name__ == "__main__":
     csv = pd.read_csv(input_csv, encoding='utf-8')
     rows_news_articles = []
     for row_num, row in tqdm(csv.iterrows(), total=len(csv)):
-        if 'arxiv' in row['URL'] or 'youtube' in row['URL']:
+        if 'arxiv' in row['URL']:
+            # remove "Title: " from arxiv titles
+            row['Name'] = row['Name'][7:]
+            # change url to hugging face
+            row['URL'] = arxiv_to_huggingface(row['URL'])
+
+        if 'youtube' in row['URL']:
             continue
 
         news_article = get_news_article(row['URL'])
