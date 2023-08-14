@@ -75,6 +75,9 @@ Please only respond with one of the above types (Business, Resesarch, Applicatio
 
 
 def get_news_article(url):
+    if 'arxiv' in url:
+        url = arxiv_to_huggingface(url)
+    
     try:
         article = Article(url)
         article.download()
@@ -249,10 +252,8 @@ if __name__ == "__main__":
     rows_news_articles = []
     for row_num, row in tqdm(csv.iterrows(), total=len(csv)):
         if 'arxiv' in row['URL']:
-            # remove "Title: " from arxiv titles
-            row['Name'] = row['Name'][7:]
-            # change url to hugging face
-            row['URL'] = arxiv_to_huggingface(row['URL'])
+            # remove "Title:" from arxiv titles
+            row['Name'] = row['Name'][6:]
 
         if 'youtube' in row['URL']:
             continue
