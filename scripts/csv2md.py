@@ -55,7 +55,7 @@ Link: {url}
     system_prompt = '''
 Your task is to classify articles about AI into one of the following types:
 Business: Anything related to product announcements, investments, funding, VCs, company updates, or market trends.
-Research: Scientific studies, research in AI, or applying AI to do science in various fields.
+Research: Scientific studies, research in AI, or applying AI to do science in various fields. All links from arxiv and huggingface belong to Research.
 Applications: Applying AI to do something.
 Concerns: Discussions and news about problems, harms, and any alarming things about AI, including govermnet investigations about AI.
 Policy: News, analysis, and opinions related to government policies.
