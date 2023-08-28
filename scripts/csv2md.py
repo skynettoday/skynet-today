@@ -211,6 +211,29 @@ def arxiv_to_huggingface(url: str) -> str:
         return url
 
 
+def get_newsletter_excerpt(top_news):
+    system_prompt = '''
+You are an expert news writer. The user will give you the title, URL, and summary of a few articles to be featured in a newsletter about AI. You will return a short, catchy, and accurate headline for the entire newsletter, based on the featured article titles. Feel free to use emojis. End the headline with ", and more!". Respond only with the headline with nothing else. Use emojis throughout the headline.
+
+Below are a few examples of such headlines. Please adhere to the style observed in these examples.
+
+Gen AI at peak of inflated expectations, NYT bans AI companies from scraping its data, FEC may limit AI political ads before 2024, Hollywood boosts Gen AI spend amid strikes, and more!
+
+OpenAI lawsuits, NASA to explore AI on spaceships, OpenAI vs. Microsoft, generated content flooding the Internet, and more!
+
+Victims of false facial regonition matches, White House launches AI-based security contest, Spotify launches AI DJ globally, bots solve captchas better than humans, and more
+'''.strip()
+    
+    user_prompt = top_news
+
+    messages = [
+        {'role': 'system', 'content': system_prompt},
+        {'role': 'user', 'content': user_prompt}
+    ]
+
+    return query_openai(messages, max_tokens=256, model='gpt-4')
+
+
 if __name__ == "__main__":
     __spec__ = None
     parser = argparse.ArgumentParser()
@@ -343,11 +366,14 @@ if __name__ == "__main__":
     # remove the last two empty lines
     content = content[:-2]
 
+    digest_excerpt = get_newsletter_excerpt(top_news)
+
     md = md_template.replace('$digest_number$', str(n)) \
                     .replace('$digest_number_english$', n_english) \
                     .replace('$top_news$', top_news) \
                     .replace('$content$', content) \
-                    .replace('$im_name$', im_name)
+                    .replace('$im_name$', im_name) \
+                    .replace('$digest_excerpt$', digest_excerpt)
 
     print('Saving digest markdown...')
     with open(output_md, 'wb') as f:
