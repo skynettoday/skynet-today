@@ -18,10 +18,10 @@ from tenacity import retry, stop_after_attempt, wait_random_exponential
 
 CATEGORIES = [
     'Top News',
-    'Research',
     'Applications',
     'Business',
     'Concerns',
+    'Research',
     'Analysis',
     'Policy',
     'Expert Opinions',
@@ -239,7 +239,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--template_file', '-tf', type=str, default='digest_template.md')
     parser.add_argument('--digest_number', '-n', type=int, required=True)
-    parser.add_argument('--input_csv', '-i', type=str, required=False, default='')
+    parser.add_argument('--input_csv', '-i', type=str, required=False, default='news.csv')
     parser.add_argument('--force_overwrite', '-f', action='store_true')
     args = parser.parse_args()
 
