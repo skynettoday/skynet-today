@@ -1,7 +1,7 @@
 ---
 layout: redirect
 title: "Last Week in AI #$digest_number$"
-excerpt: ""
+excerpt: "$digest_excerpt$"
 image: 
   feature: assets/img/digests/$digest_number$/$im_name$
   credit: <a href="<Image Source Link>"> <Author> / <Source Name> </a>

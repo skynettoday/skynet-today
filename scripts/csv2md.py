@@ -11,6 +11,7 @@ from newspaper import Article
 from pathlib import Path
 from datetime import date, timedelta
 from tqdm.auto import tqdm
+import re
 
 from tenacity import retry, stop_after_attempt, wait_random_exponential
 
@@ -29,29 +30,10 @@ CATEGORIES = [
 ]
 
 
-def classify_article_type_ft(row):
-    prompt = f'''
-Title: {row['Name']}
-Description: {row['Excerpt']}
-Link: {row['URL']}
-Type:
-'''.strip()
-    
-    response = openai.Completion.create(
-        prompt=prompt, 
-        stop=['.', '\n'],
-        engine='curie:ft-jacky:article-type-2023-01-18-07-53-32',
-        max_tokens=10,
-        temperature=0,
-    )['choices'][0]['text'].strip()
-
-    return response
-
-
 @retry(wait=wait_random_exponential(min=1, max=10), stop=stop_after_attempt(10))
-def query_openai(messages, max_tokens=10):
+def query_openai(messages, max_tokens=10, model='gpt-3.5-turbo-16k'):
     return openai.ChatCompletion.create(
-        model='gpt-3.5-turbo-16k', 
+        model=model, 
         messages=messages,
         max_tokens=max_tokens,
         temperature=0
@@ -73,7 +55,7 @@ Link: {url}
     system_prompt = '''
 Your task is to classify articles about AI into one of the following types:
 Business: Anything related to product announcements, investments, funding, VCs, company updates, or market trends.
-Research: Scientific studies, research in AI, or applying AI to do science in various fields.
+Research: Scientific studies, research in AI, or applying AI to do science in various fields. All links from arxiv and huggingface belong to Research.
 Applications: Applying AI to do something.
 Concerns: Discussions and news about problems, harms, and any alarming things about AI, including govermnet investigations about AI.
 Policy: News, analysis, and opinions related to government policies.
@@ -93,6 +75,9 @@ Please only respond with one of the above types (Business, Resesarch, Applicatio
 
 
 def get_news_article(url):
+    if 'arxiv' in url:
+        url = arxiv_to_huggingface(url)
+    
     try:
         article = Article(url)
         article.download()
@@ -113,7 +98,9 @@ def clip_text_words(text, max_words=10000):
 def get_article_excerpt(row, article):
     system_prompt = '''
 Given the title, subtitle, and text of an article about AI, write a short one sentence summary of its content.
-The summary should NOT start with "The article", "This article", or something similar to that effect.
+The summary should NOT start with or contain phrases like "The article", "This article", or anything similar.
+The summary should be exactly one sentence long.
+DO NOT REPEAT THE TITLE in the summary. However, if the subtitle is a good summary, you can use it.
 '''.strip()
     
     prompt = f'''
@@ -155,8 +142,16 @@ def get_output_file_name(n):
     today = date.today()
 
     # Calculate the difference between today and the most recent Monday
-    days_to_monday = (today.weekday() - 0) % 7
-    closest_monday = today - timedelta(days=days_to_monday)
+    delta_to_monday = {
+        0: 0,
+        1: -1,
+        2: -2,
+        3: -3,
+        4: 3,
+        5: 2,
+        6: 1
+    }[today.weekday()]
+    closest_monday = today + timedelta(days=delta_to_monday)
 
     # Format the date as YYYY-MM-DD
     formatted_date = closest_monday.strftime("%Y-%m-%d")
@@ -168,9 +163,9 @@ def get_article_summary(title, news_article):
     system_prompt = '''
 You are an expert writer and commentator. 
 The user will give you an article, and you will write a short summary.
-The summary should be a paragraph long, contain key technical details, and be easy to understand. 
+The summary should be one paragraph long, contain key technical details, and be easy to understand. 
 The summary should highlight key words and concepts from the article without abstracting them away. 
-It should end with the key takeaway from the article.
+The reader should clearly understand the key points from the article after reading your summary.
 '''.strip()
     
     user_prompt = f'''
@@ -183,7 +178,7 @@ Title: {title}
         {'role': 'user', 'content': user_prompt}
     ]
 
-    return query_openai(messages, max_tokens=500)
+    return query_openai(messages, max_tokens=2000, model='gpt-4')
 
 
 def rank_articles(articles):
@@ -206,6 +201,37 @@ Format your response as a valid JSON list of article indices, starting with the 
     ]
 
     return json.loads(query_openai(messages, max_tokens=200))
+
+
+def arxiv_to_huggingface(url: str) -> str:
+    match = re.search(r"https://arxiv.org/abs/(\d+\.\d+)(?:v\d+)?", url)
+    if match:
+        return f"https://huggingface.co/papers/{match.group(1)}"
+    else:
+        return url
+
+
+def get_newsletter_excerpt(top_news):
+    system_prompt = '''
+You are an expert news writer. The user will give you the title, URL, and summary of a few articles to be featured in a newsletter about AI. You will return a short, catchy, and accurate headline for the entire newsletter, based on the featured article titles. Feel free to use emojis. End the headline with ", and more!". Respond only with the headline with nothing else. Use emojis throughout the headline.
+
+Below are a few examples of such headlines. Please adhere to the style observed in these examples.
+
+Gen AI at peak of inflated expectations, NYT bans AI companies from scraping its data, FEC may limit AI political ads before 2024, Hollywood boosts Gen AI spend amid strikes, and more!
+
+OpenAI lawsuits, NASA to explore AI on spaceships, OpenAI vs. Microsoft, generated content flooding the Internet, and more!
+
+Victims of false facial regonition matches, White House launches AI-based security contest, Spotify launches AI DJ globally, bots solve captchas better than humans, and more
+'''.strip()
+    
+    user_prompt = top_news
+
+    messages = [
+        {'role': 'system', 'content': system_prompt},
+        {'role': 'user', 'content': user_prompt}
+    ]
+
+    return query_openai(messages, max_tokens=256, model='gpt-4')
 
 
 if __name__ == "__main__":
@@ -249,6 +275,10 @@ if __name__ == "__main__":
     rows_news_articles = []
     for row_num, row in tqdm(csv.iterrows(), total=len(csv)):
         if 'arxiv' in row['URL']:
+            # remove "Title:" from arxiv titles
+            row['Name'] = row['Name'][6:]
+
+        if 'youtube' in row['URL']:
             continue
 
         news_article = get_news_article(row['URL'])
@@ -336,11 +366,14 @@ if __name__ == "__main__":
     # remove the last two empty lines
     content = content[:-2]
 
+    digest_excerpt = get_newsletter_excerpt(top_news)
+
     md = md_template.replace('$digest_number$', str(n)) \
                     .replace('$digest_number_english$', n_english) \
                     .replace('$top_news$', top_news) \
                     .replace('$content$', content) \
-                    .replace('$im_name$', im_name)
+                    .replace('$im_name$', im_name) \
+                    .replace('$digest_excerpt$', digest_excerpt)
 
     print('Saving digest markdown...')
     with open(output_md, 'wb') as f:

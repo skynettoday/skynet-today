@@ -16,6 +16,8 @@ The Twitter post should be within 128 characters.
 The LinkedIn post should be within 500 characters.
 Use creative and fun emojis and hashtags.
 Respond in markdown format with Twitter and LinkedIn as section headers.
+Include a link to the newsletter at the end of each post.
+The newsletter link is in the "redirect" field of the markdown file.
 '''
 
 
@@ -50,7 +52,7 @@ if __name__ == '__main__':
     ]
 
     socials = openai.ChatCompletion.create(
-        model='gpt-3.5-turbo-16k', 
+        model='gpt-4', 
         messages=messages,
         max_tokens=500,
         temperature=0
