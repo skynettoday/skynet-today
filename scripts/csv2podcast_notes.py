@@ -1,4 +1,5 @@
 import os
+import re
 import logging
 import argparse
 
@@ -26,7 +27,7 @@ _CATEGORIES = [
 MAIN_STORY_COL = "Podcast pick (main story)"
 LIGHTING_STORY_COL = "Podcast pick (lighting round)"
 
-@retry(wait=wait_random_exponential(min=1, max=20), stop=stop_after_attempt(6))
+@retry(wait=wait_random_exponential(min=1, max=5), stop=stop_after_attempt(2))
 def query_openai(messages):
     return openai.ChatCompletion.create(
         model='gpt-3.5-turbo', 
@@ -62,16 +63,17 @@ Please only respond with one of the above types (Tools & Apps, Applications & Bu
     ])
 
 def summarize_article(row, lighting_round_story=False):
-    article = Article(row['URL'])
+    article = Article(arxiv_to_huggingface(row['URL']))
     try: 
         article.download()
         article.parse()
         authors = article.authors
         text = article.text
         words = text.split(" ")
-        if len(words) > 2000:
-            text = " ".join(words[:2000])
-    except:
+        if len(words) > 1000:
+            text = " ".join(words[:1000])
+    except Exception as e:
+        print(e)
         return ":("
 
     system_prompt = '''
@@ -94,30 +96,12 @@ Text: {text}
         {'role': 'user', 'content': prompt}
     ])
 
-
-def get_article_type_manual(title, link, excerpt):
-    print('To which category does this article belong?')
-    print()
-    print(row['Name'].encode('utf-8'))
-    print()
-    print(row['Excerpt'].encode('utf-8'))
-    print()
-
-    for i, c in enumerate(_CATEGRORIES):
-        print(f'{i}) {c}')
-    while True:
-        try:
-            print()
-            c_idx = int(input('Category Number: '))
-            c = _CATEGRORIES[c_idx]
-            break
-        except:
-            print('Please enter a valid category!')
-    print()
-
-    return c
-
-
+def arxiv_to_huggingface(url: str) -> str:
+    match = re.search(r"https://arxiv.org/abs/(\d+\.\d+)(?:v\d+)?", url)
+    if match:
+        return f"https://huggingface.co/papers/{match.group(1)}"
+    else:
+        return url
 
 if __name__ == "__main__":
     with open('secrets/openai_api_key.txt', 'r') as f:
@@ -125,17 +109,21 @@ if __name__ == "__main__":
 
     articles_map = {c : ([],[]) for c in _CATEGORIES}
     articles_map['other'] = ([],[])
-    with open("news.csv", 'r') as f:
-        num_picks = f.read().count(",X")
     csv = pd.read_csv('news.csv', encoding='utf-8')
-    
+    num_picks = 0
+    for row_num, row in tqdm(csv.iterrows()):
+        has_content = row['Name'] and row['Excerpt']
+        is_main_pick = str(row[MAIN_STORY_COL]).lower().strip()=='x'
+        is_lighting_pick = str(row[LIGHTING_STORY_COL]).lower().strip()=='x'
+        if (is_main_pick or is_lighting_pick):
+            num_picks+=1
     pbar = tqdm(total=num_picks)
     count = 0
     for row_num, row in tqdm(csv.iterrows()):
         has_content = row['Name'] and row['Excerpt']
-        is_main_pick = row[MAIN_STORY_COL]=='X'
-        is_lighting_pick = row[LIGHTING_STORY_COL]=='X'
-        if not has_content or not (is_main_pick or is_lighting_pick):
+        is_main_pick = str(row[MAIN_STORY_COL]).lower().strip()=='x'
+        is_lighting_pick = str(row[LIGHTING_STORY_COL]).lower().strip()=='x'
+        if not (is_main_pick or is_lighting_pick):
             continue
         category = classify_article_type(row)
         print('\nProcessing "%s"'%row['Name'])
@@ -184,7 +172,7 @@ if __name__ == "__main__":
                 content += '\n'
                 content += summary
                 content += "\n\n"
-        content +="\n###Lighting Round\n\n"
+        content +="\n### Lighting Round\n\n"
         if len(items[1]) > 0:
             for item in items[1]:
                 name, url, summary = item
