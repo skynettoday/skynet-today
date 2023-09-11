@@ -11,7 +11,7 @@ python csv2md.py -n=$digest_num
 
 # Push changes
 
-rm "Last Week in AI News Planning - Past - $digest_num.csv"
+rm "news.csv"
 
 git commit -am $digest_name
 git push --set-upstream origin $digest_name
