@@ -15,6 +15,7 @@ python csv2md.py -n=$digest_num
 
 rm *.csv
 
+git add *
 git commit -am $digest_name
 # git push --set-upstream origin $digest_name
 
