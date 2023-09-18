@@ -1,3 +1,5 @@
+set -e
+
 digest_num=$1
 digest_name=digest_$digest_num
 
@@ -11,7 +13,7 @@ python csv2md.py -n=$digest_num
 
 # Push changes
 
-rm "news.csv"
+rm "*news.csv"
 
 git commit -am $digest_name
 git push --set-upstream origin $digest_name
