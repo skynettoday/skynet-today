@@ -1,6 +1,7 @@
 import os
 import argparse
 import requests
+import multiprocessing
 
 import pandas as pd
 import inflect
@@ -18,10 +19,10 @@ from tenacity import retry, stop_after_attempt, wait_random_exponential
 
 CATEGORIES = [
     'Top News',
-    'Applications',
+    'Tools',
     'Business',
-    'Concerns',
     'Research',
+    'Concerns',
     'Analysis',
     'Policy',
     'Expert Opinions',
@@ -30,10 +31,26 @@ CATEGORIES = [
 ]
 
 
+def apply_map_batch(func, args_list):
+    pool = multiprocessing.Pool(os.cpu_count())
+    promises = [pool.apply_async(func, args) for args in args_list]
+
+    results = [None] * len(promises)
+    done_idxs = set()
+    pbar = tqdm(total=len(promises))
+    while len(done_idxs) < len(promises):
+        for idx, promise in enumerate(promises):
+            if idx not in done_idxs and promise.ready():
+                done_idxs.add(idx)
+                results[idx] = promise.get()
+                pbar.update(1)
+    return results
+
+
 @retry(wait=wait_random_exponential(min=1, max=10), stop=stop_after_attempt(10))
 def query_openai(messages, max_tokens=10, model='gpt-3.5-turbo-16k'):
     return openai.ChatCompletion.create(
-        model=model, 
+        model=model,
         messages=messages,
         max_tokens=max_tokens,
         temperature=0
@@ -54,9 +71,9 @@ Link: {url}
 
     system_prompt = '''
 Your task is to classify articles about AI into one of the following types:
-Business: Anything related to product announcements, investments, funding, VCs, company updates, or market trends.
+Business: Anything related to investments, funding, VCs, company updates, or market trends.
 Research: Scientific studies, research in AI, or applying AI to do science in various fields. All links from arxiv and huggingface belong to Research.
-Applications: Applying AI to do something.
+Tools: New feature releases, product announcements; new AI software, tools, and applications of AI.
 Concerns: Discussions and news about problems, harms, and any alarming things about AI, including govermnet investigations about AI.
 Policy: News, analysis, and opinions related to government policies.
 Analysis: Analyzes an existing topic about AI that's not the above topics (not news).
@@ -66,7 +83,7 @@ Fun: Anything silly, fun, and doesn't belong to the other types.
 
 The user will provide the article title, link, and description. 
 After careful consideration, you will respond with ONLY the predicted article type, with no explanations, punctuation, formatting, or anything else.
-Please only respond with one of the above types (Business, Resesarch, Applications, Concerns, Policy, Analysis, Expert Opinions, Explainers, Fun).
+Please only respond with one of the above types (Business, Resesarch, Tools, Concerns, Policy, Analysis, Expert Opinions, Explainers, Fun).
 '''.strip()
     return query_openai([
         {'role': 'system', 'content': system_prompt},
@@ -83,7 +100,11 @@ def get_news_article(url):
         article.download()
         article.parse()
         assert article.text
-        return article
+        return {
+            'text': article.text,
+            'top_image': article.top_image,
+            'has_top_image': article.has_top_image()
+        }
     except:
         return None
     
@@ -106,7 +127,7 @@ DO NOT REPEAT THE TITLE in the summary. However, if the subtitle is a good summa
     prompt = f'''
 Title: {row['Name']}
 Subtitle: {row['Excerpt']}
-Text: {clip_text_words(article.text)}
+Text: {clip_text_words(article["text"])}
 '''.strip()
     return query_openai([
         {'role': 'system', 'content': system_prompt},
@@ -170,7 +191,7 @@ The reader should clearly understand the key points from the article after readi
     
     user_prompt = f'''
 Title: {title}
-{clip_text_words(news_article.text)}
+{clip_text_words(news_article["text"])}
 '''.strip()
 
     messages = [
@@ -272,35 +293,43 @@ if __name__ == "__main__":
 
     print(f'Reading {input_csv}')
     csv = pd.read_csv(input_csv, encoding='utf-8')
-    rows_news_articles = []
-    for row_num, row in tqdm(csv.iterrows(), total=len(csv)):
+    rows = []
+    for row_num, row in csv.iterrows():
         if 'arxiv' in row['URL']:
             # remove "Title:" from arxiv titles
             row['Name'] = row['Name'][6:]
 
         if 'youtube' in row['URL']:
             continue
+        rows.append(row)
 
-        news_article = get_news_article(row['URL'])
-        if not news_article:
-            continue
-
-        rows_news_articles.append((row, news_article))
+    print('Getting news articles...')
+    news_articles = apply_map_batch(
+        get_news_article, [(row['URL'],) for row in rows]
+    )
+    rows = [row for row, news_article in zip(rows, news_articles) if news_article]
+    news_articles = [news_article for news_article in news_articles if news_article]
 
     print('Getting article excerpts...')
-    excerpts = [
-        get_article_excerpt(row, news_article) 
-        for row, news_article in tqdm(rows_news_articles)
-    ]
+    excerpts = apply_map_batch(
+        get_article_excerpt,
+        [
+            (row, news_article)
+            for row, news_article in zip(rows, news_articles)
+        ]
+    )
 
     print('Getting article categories...')
-    categories = [
-        get_article_category(row, excerpt)
-        for (row, _), excerpt in tqdm(zip(rows_news_articles, excerpts), total=len(rows_news_articles))
-    ]
+    categories = apply_map_batch(
+        get_article_category,
+        [
+            (row, excerpt)
+            for row, excerpt in zip(rows, excerpts)
+        ]
+    )
 
     articles_map = {c : [] for c in CATEGORIES}
-    for (row, news_article), excerpt, category in zip(rows_news_articles, excerpts, categories):
+    for row, news_article, excerpt, category in zip(rows, news_articles, excerpts, categories):
         articles_map[category].append({
             'url': row['URL'],
             'title': row['Name'],
@@ -319,7 +348,7 @@ if __name__ == "__main__":
             # place the first article w/ an image first
             rank = rank_articles(articles)
             for idx, r in enumerate(rank):
-                if articles[r]['news_article'].has_top_image():
+                if articles[r]['news_article']['has_top_image']:
                     rank[0], rank[idx] = rank[idx], rank[0]
                     break
             
@@ -327,21 +356,29 @@ if __name__ == "__main__":
                 top_news += f'### {c}'
                 top_news += '\n\n'
 
+                summaries = apply_map_batch(
+                    get_article_summary,
+                    [
+                        (article['title'], article['news_article'])
+                        for article in articles
+                    ]
+                )
+
                 for r in tqdm(rank, leave=False):
                     article = articles[r]
+                    summary = summaries[r]
                     title, url, news_article = article['title'], article['url'], article['news_article']
-                    summary = get_article_summary(title, news_article)
                     
                     top_news += f'#### [{title}]({url})'
                     top_news += '\n'
 
-                    if news_article.has_top_image():
-                        top_news += f'![]({news_article.top_image})'
+                    if news_article['has_top_image']:
+                        top_news += f'![]({news_article["top_image"]})'
 
                         if r == 0:
-                            im_response = requests.get(news_article.top_image)
+                            im_response = requests.get(news_article['top_image'])
                             if im_response.status_code == 200:
-                                im_name = news_article.top_image.split("/")[-1]
+                                im_name = news_article['top_image'].split("/")[-1]
 
                                 with open(im_folder / im_name, "wb") as f:
                                     f.write(im_response.content)
@@ -352,9 +389,9 @@ if __name__ == "__main__":
             else:
                 content += f'#### {c}'
                 
-                if articles[rank[0]]['news_article'].has_top_image():
+                if articles[rank[0]]['news_article']['has_top_image']:
                     content += '\n'
-                    content += f'![]({articles[rank[0]]["news_article"].top_image})'
+                    content += f'![]({articles[rank[0]]["news_article"]["top_image"]})'
                 content += '\n\n'
                 
                 for r in tqdm(rank, leave=False):
