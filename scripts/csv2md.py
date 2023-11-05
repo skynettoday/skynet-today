@@ -1,7 +1,7 @@
 import os
 import argparse
 import requests
-import multiprocessing
+from multiprocessing.dummy import Pool
 
 import pandas as pd
 import inflect
@@ -32,7 +32,7 @@ CATEGORIES = [
 
 
 def apply_map_batch(func, args_list):
-    pool = multiprocessing.Pool(os.cpu_count())
+    pool = Pool(os.cpu_count())
     promises = [pool.apply_async(func, args) for args in args_list]
 
     results = [None] * len(promises)
@@ -199,7 +199,7 @@ Title: {title}
         {'role': 'user', 'content': user_prompt}
     ]
 
-    return query_openai(messages, max_tokens=2000, model='gpt-4')
+    return query_openai(messages, max_tokens=2000, model='gpt-3.5-turbo-16k')
 
 
 def rank_articles(articles):
