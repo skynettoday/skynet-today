@@ -24,8 +24,15 @@ _CATEGORIES = [
     'Synthetic Media & Art'
 ]
 
-MAIN_STORY_COL = "Podcast pick (main story)"
-LIGHTING_STORY_COL = "Podcast pick (lighting round)"
+SECTION_CATEGORY_MAPPINGS = {
+    "Tools/Apps": 'Tools & Apps',
+    "Business/Applications":'Applications & Business',
+    "OSS/Projects": 'Projects & Open Source',
+    "Research/Advancements": 'Research & Advancements',
+    "Policy/Safety": 'Policy & Safety',
+    "Synthetic Media/Art": 'Synthetic Media & Art'}
+STORY_TYPE_COL = "Main Story or Lighting Round?"
+STORY_SECTION_COL = "Section"
 
 @retry(wait=wait_random_exponential(min=1, max=5), stop=stop_after_attempt(2))
 def query_openai(messages):
@@ -35,32 +42,6 @@ def query_openai(messages):
         max_tokens=1000,
         temperature=0
     ).choices[0]['message']['content']
-
-
-def classify_article_type(row):
-    prompt = f'''
-Title: {row['Name']}
-Description: {row['Excerpt']}
-Link: {row['URL']}
-'''.strip()
-
-    system_prompt = '''
-Your task is to classify articles about AI into one of the following types:
-Tools & Apps: Tools or applications that regular people can use for various purposes.
-Applications & Business: Applying AI to do something or anything related to product announcements, investments, funding, VCs, company updates, or market trends.
-Projects & Open Source: Misc projects that are not done by companies or academic labs, especially open source projects.
-Research & Advancements: Scientific studies, research in AI, or new results that advance IA.
-Policy & Safety: News, analysis, and opinions related to government policies or about AI risk/harm.
-Synthetic Media & Art: Things related to generative AI, deepfakes, or art and are not a better fit for the above categories.
-
-The user will provide the article title, link, and description. 
-After careful consideration, you will respond with ONLY the predicted article type, with no explanations, punctuation, formatting, or anything else.
-Please only respond with one of the above types (Tools & Apps, Applications & Business, Projects & Open Source,  Research & Advancements, Policy & Safety, Synthetic Media & Art).
-'''.strip()
-    return query_openai([
-        {'role': 'system', 'content': system_prompt},
-        {'role': 'user', 'content': prompt}
-    ])
 
 def summarize_article(row, lighting_round_story=False):
     article = Article(arxiv_to_huggingface(row['URL']))
@@ -88,7 +69,6 @@ Your task is to provide a bullet point summary of a news article about AI. Each 
     
     prompt = f'''
 Title: {row['Name']}
-Subtitle: {row['Excerpt']}
 Text: {text}
 '''.strip()
     return query_openai([
@@ -110,22 +90,12 @@ if __name__ == "__main__":
     articles_map = {c : ([],[]) for c in _CATEGORIES}
     articles_map['other'] = ([],[])
     csv = pd.read_csv('news.csv', encoding='utf-8')
-    num_picks = 0
-    for row_num, row in tqdm(csv.iterrows()):
-        has_content = row['Name'] and row['Excerpt']
-        is_main_pick = str(row[MAIN_STORY_COL]).lower().strip()=='x'
-        is_lighting_pick = str(row[LIGHTING_STORY_COL]).lower().strip()=='x'
-        if (is_main_pick or is_lighting_pick):
-            num_picks+=1
+    num_picks = len(csv)
     pbar = tqdm(total=num_picks)
-    count = 0
+
     for row_num, row in tqdm(csv.iterrows()):
-        has_content = row['Name'] and row['Excerpt']
-        is_main_pick = str(row[MAIN_STORY_COL]).lower().strip()=='x'
-        is_lighting_pick = str(row[LIGHTING_STORY_COL]).lower().strip()=='x'
-        if not (is_main_pick or is_lighting_pick):
-            continue
-        category = classify_article_type(row)
+        is_main_pick = row[STORY_TYPE_COL] == 'Main'
+        category = SECTION_CATEGORY_MAPPINGS[row[STORY_SECTION_COL]]
         print('\nProcessing "%s"'%row['Name'])
         if is_main_pick:
             print("Type: Main story")
@@ -133,9 +103,7 @@ if __name__ == "__main__":
             print("Type: Lighting round story")
         print("Link: %s"%row['URL'])
         print("Category: %s"%category)
-        if category not in _CATEGORIES:
-            category = 'other'
-        summary = summarize_article(row,is_lighting_pick)
+        summary = summarize_article(row,not is_main_pick)
         print('Summary:')
         print(summary)
         if is_main_pick:
@@ -143,7 +111,6 @@ if __name__ == "__main__":
         else:
             articles_map[category][1].append([row['Name'],row['URL'],summary])
         print("")
-        count+=1
         pbar.update(1)
     pbar.close()
         
