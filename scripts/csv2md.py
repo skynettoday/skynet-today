@@ -23,8 +23,8 @@ CATEGORIES = [
     'Business',
     'Research',
     'Concerns',
-    'Analysis',
     'Policy',
+    'Analysis',
     'Expert Opinions',
     'Explainers',
     'Fun'
