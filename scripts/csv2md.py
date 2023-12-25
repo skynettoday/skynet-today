@@ -5,8 +5,11 @@ from multiprocessing.dummy import Pool
 
 import pandas as pd
 import inflect
-import openai
 import json
+
+from openai import OpenAI
+with open('secrets/openai_api_key.txt', 'r') as f:
+    _OPENAI_CLIENT = OpenAI(api_key=f.read().strip())
 
 from newspaper import Article
 from pathlib import Path
@@ -48,13 +51,13 @@ def apply_map_batch(func, args_list):
 
 
 @retry(wait=wait_random_exponential(min=1, max=10), stop=stop_after_attempt(10))
-def query_openai(messages, max_tokens=10, model='gpt-3.5-turbo-16k'):
-    return openai.ChatCompletion.create(
+def query_openai(messages, max_tokens=10, model='gpt-3.5-turbo-1106'):
+    return _OPENAI_CLIENT.chat.completions.create(
         model=model,
         messages=messages,
         max_tokens=max_tokens,
         temperature=0
-    ).choices[0]['message']['content']
+    ).choices[0].message.content
 
 
 def get_article_category(row, excerpt):
@@ -199,7 +202,7 @@ Title: {title}
         {'role': 'user', 'content': user_prompt}
     ]
 
-    return query_openai(messages, max_tokens=2000, model='gpt-3.5-turbo-16k')
+    return query_openai(messages, max_tokens=2000, model='gpt-3.5-turbo-1106')
 
 
 def rank_articles(articles):
@@ -232,6 +235,14 @@ def arxiv_to_huggingface(url: str) -> str:
         return url
 
 
+def arxiv_to_html(url: str) -> str:
+    paper_id = url[url.find('abs/') + 4:].strip('/').strip()
+    if paper_id:
+        return f"https://browse.arxiv.org/html/{paper_id}"
+    else:
+        return url
+
+
 def get_newsletter_excerpt(top_news):
     system_prompt = '''
 You are an expert news writer. The user will give you the title, URL, and summary of a few articles to be featured in a newsletter about AI. You will return a short, catchy, and accurate headline for the entire newsletter, based on the featured article titles. Feel free to use emojis. End the headline with ", and more!". Respond only with the headline with nothing else. Use emojis throughout the headline.
@@ -255,7 +266,7 @@ Victims of false facial regonition matches, White House launches AI-based securi
     return query_openai(messages, max_tokens=256, model='gpt-4')
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":    
     __spec__ = None
     parser = argparse.ArgumentParser()
     parser.add_argument('--template_file', '-tf', type=str, default='digest_template.md')
@@ -287,9 +298,6 @@ if __name__ == "__main__":
     input_csv = args.input_csv
     if not input_csv:
         input_csv = f'Last Week in AI News Planning - Past - {n}.csv'
-
-    with open('secrets/openai_api_key.txt', 'r') as f:
-        openai.api_key = f.read().strip()
 
     print(f'Reading {input_csv}')
     csv = pd.read_csv(input_csv, encoding='utf-8')
