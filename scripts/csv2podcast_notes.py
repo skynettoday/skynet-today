@@ -37,14 +37,14 @@ STORY_SECTION_COL = "Section"
 @retry(wait=wait_random_exponential(min=1, max=5), stop=stop_after_attempt(2))
 def query_openai(messages):
     return openai.ChatCompletion.create(
-        model='gpt-3.5-turbo', 
+        model='gpt-4', 
         messages=messages,
         max_tokens=1000,
         temperature=0
     ).choices[0]['message']['content']
 
-def summarize_article(row, lighting_round_story=False):
-    article = Article(arxiv_to_huggingface(row['URL']))
+def summarize_article(url, lighting_round_story=False):
+    article = Article(arxiv_to_huggingface(url))
     try: 
         article.download()
         article.parse()
@@ -63,12 +63,12 @@ Your task is to provide a bullet point summary of a news article about AI. Each 
     if lighting_round_story:
         system_prompt + " This story will be in a lighting round, so summarize it in no more than 8 bullet points, but still make sure to cover all the important details."
     else:
-        system_prompt + " This will be covered as a main story, so produce a detailed summary with as many as 15 bullet points."
+        system_prompt + " This will be covered as a main story, so produce a detailed summary."
         
     system_prompt = system_prompt.strip()
     
     prompt = f'''
-Title: {row['Name']}
+Title: {article.title}
 Text: {text}
 '''.strip()
     return query_openai([
@@ -88,6 +88,7 @@ if __name__ == "__main__":
         openai.api_key = f.read().strip()
 
     articles_map = {c : ([],[]) for c in _CATEGORIES}
+    related_articles_map = {}
     articles_map['other'] = ([],[])
     csv = pd.read_csv('news.csv', encoding='utf-8')
     num_picks = len(csv)
@@ -103,13 +104,16 @@ if __name__ == "__main__":
             print("Type: Lighting round story")
         print("Link: %s"%row['URL'])
         print("Category: %s"%category)
-        summary = summarize_article(row,not is_main_pick)
+        try:
+            summary = summarize_article(row['URL'],not is_main_pick)
+        except:
+            summary = "Could not do it :("
         print('Summary:')
         print(summary)
         if is_main_pick:
-            articles_map[category][0].append([row['Name'],row['URL'],summary])
+            articles_map[category][0].append([row['Name'],row['URL'],summary,row['Related Articles']])
         else:
-            articles_map[category][1].append([row['Name'],row['URL'],summary])
+            articles_map[category][1].append([row['Name'],row['URL'],summary,row['Related Articles']])
         print("")
         pbar.update(1)
     pbar.close()
@@ -120,11 +124,11 @@ if __name__ == "__main__":
         content+="- "+c+"\n"
         items = articles_map[c]
         for item in items[0]:        
-            name, url, summary = item
+            name, url, summary, related_articles = item
             content += f'   - [{name}]({url})\n'
         content+="  - Lighting round\n"
         for item in items[1]: 
-            name, url, summary = item       
+            name, url, summary, related_articles= item       
             content += f'       - [{name}]({url})\n'
             
     content +="\n\n#Summaries\n\n"
@@ -134,18 +138,20 @@ if __name__ == "__main__":
         if len(items[0]) > 0:
             content += '\n\n'
             for item in items[0]:
-                name, url, summary = item
+                name, url, summary, related_articles = item
                 content += f'[{name}]({url})'
                 content += '\n'
                 content += summary
+                content += f"\n{related_articles}"
                 content += "\n\n"
         content +="\n### Lighting Round\n\n"
         if len(items[1]) > 0:
             for item in items[1]:
-                name, url, summary = item
+                name, url, summary, related_articles = item
                 content += f'[{name}]({url})'
                 content += '\n'
                 content += summary
+                content += f"\n{related_articles}"
                 content += "\n\n"
                 
     print(content)
