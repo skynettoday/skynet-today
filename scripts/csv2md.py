@@ -18,8 +18,10 @@ from tqdm.auto import tqdm
 import re
 
 from tenacity import retry, stop_after_attempt, wait_random_exponential
+from content_retrieval import get_arxiv_paper_contents, get_reuters_article_content
 
 
+# a05825917ad14bc38d6d4152b5fae19a
 CATEGORIES = [
     'Top News',
     'Tools',
@@ -65,6 +67,8 @@ def get_article_category(row, excerpt):
         return row['Type']
 
     title, url = row['Name'], row['URL']
+    if 'arxiv' in url:
+        return 'Research'
 
     prompt = f'''
 Title: {title}
@@ -86,29 +90,36 @@ Fun: Anything silly, fun, and doesn't belong to the other types.
 
 The user will provide the article title, link, and description. 
 After careful consideration, you will respond with ONLY the predicted article type, with no explanations, punctuation, formatting, or anything else.
-Please only respond with one of the above types (Business, Resesarch, Tools, Concerns, Policy, Analysis, Expert Opinions, Explainers, Fun).
+Only respond with one of the above types (Business, Research, Tools, Concerns, Policy, Analysis, Expert Opinions, Explainers, Fun).
 '''.strip()
     return query_openai([
         {'role': 'system', 'content': system_prompt},
-        {'role': 'user', 'content': prompt}
-    ])
+        {'role': 'user', 'content': prompt},
+    ], model='gpt-4')
 
 
 def get_news_article(url):
-    if 'arxiv' in url:
-        url = arxiv_to_huggingface(url)
-    
     try:
-        article = Article(url)
-        article.download()
-        article.parse()
-        assert article.text
-        return {
-            'text': article.text,
-            'top_image': article.top_image,
-            'has_top_image': article.has_top_image()
-        }
-    except:
+        if 'arxiv' in url:
+            url = arxiv_to_html(url)
+            text = get_arxiv_paper_contents(url)
+            return {
+                'text': text,
+                'top_image': None,
+                'has_top_image': False
+            }
+        else:
+            article = Article(url)
+            article.download()
+            article.parse()
+            assert article.text
+            return {
+                'text': article.text,
+                'top_image': article.top_image,
+                'has_top_image': article.has_top_image()
+            }
+    except Exception as e:
+        print('ERROR: not able to get text for URL '+url)
         return None
     
 
@@ -186,8 +197,8 @@ def get_output_file_name(n):
 def get_article_summary(title, news_article):
     system_prompt = '''
 You are an expert writer and commentator. 
-The user will give you an article, and you will write a short summary.
-The summary should be one paragraph long, contain key technical details, and be easy to understand. 
+The user will give you an article, and you will write a one paragraph summary.
+The summary should be one paragraph long, have at least four sentences, contain key technical details, and be easy to understand. 
 The summary should highlight key words and concepts from the article without abstracting them away. 
 The reader should clearly understand the key points from the article after reading your summary.
 '''.strip()
@@ -202,7 +213,7 @@ Title: {title}
         {'role': 'user', 'content': user_prompt}
     ]
 
-    return query_openai(messages, max_tokens=2000, model='gpt-3.5-turbo-1106')
+    return query_openai(messages, max_tokens=4000, model='gpt-4')
 
 
 def rank_articles(articles):
@@ -225,15 +236,6 @@ Format your response as a valid JSON list of article indices, starting with the 
     ]
 
     return json.loads(query_openai(messages, max_tokens=200))
-
-
-def arxiv_to_huggingface(url: str) -> str:
-    match = re.search(r"https://arxiv.org/abs/(\d+\.\d+)(?:v\d+)?", url)
-    if match:
-        return f"https://huggingface.co/papers/{match.group(1)}"
-    else:
-        return url
-
 
 def arxiv_to_html(url: str) -> str:
     paper_id = url[url.find('abs/') + 4:].strip('/').strip()
@@ -303,12 +305,16 @@ if __name__ == "__main__":
     csv = pd.read_csv(input_csv, encoding='utf-8')
     rows = []
     for row_num, row in csv.iterrows():
-        if 'arxiv' in row['URL']:
+        if 'arxiv' in row['URL'] and row['Name'].startswith('Title:'):
             # remove "Title:" from arxiv titles
             row['Name'] = row['Name'][6:]
 
         if 'youtube' in row['URL']:
             continue
+
+        if '?' in row['URL']:
+            row['URL'] = row['URL'].split("?")[0]
+
         rows.append(row)
 
     print('Getting news articles...')
@@ -376,7 +382,7 @@ if __name__ == "__main__":
                     article = articles[r]
                     summary = summaries[r]
                     title, url, news_article = article['title'], article['url'], article['news_article']
-                    
+
                     top_news += f'#### [{title}]({url})'
                     top_news += '\n'
 
