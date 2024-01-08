@@ -9,8 +9,8 @@ image:
   credit: Tanbir Mahmud/Unslash
 permalink: /editorials/ai-expresionism
 sidebartoc: true
-featured: false
-highlight: true
+featured: true
+highlight: false
 ---
 
 ## Overview
