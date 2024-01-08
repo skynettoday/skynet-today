@@ -142,7 +142,8 @@ if __name__ == "__main__":
                 content += f'[{name}]({url})'
                 content += '\n'
                 content += summary
-                content += f"\n{related_articles}"
+                if related_articles:
+                    content += f"\n{related_articles}"
                 content += "\n\n"
         content +="\n### Lighting Round\n\n"
         if len(items[1]) > 0:
@@ -151,7 +152,8 @@ if __name__ == "__main__":
                 content += f'[{name}]({url})'
                 content += '\n'
                 content += summary
-                content += f"\n{related_articles}"
+                if related_articles:
+                    content += f"\n{related_articles}"
                 content += "\n\n"
                 
     print(content)
