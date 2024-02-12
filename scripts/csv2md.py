@@ -213,7 +213,10 @@ Title: {title}
         {'role': 'user', 'content': user_prompt}
     ]
 
-    return query_openai(messages, max_tokens=4000, model='gpt-4')
+    try:
+        return query_openai(messages, max_tokens=4000, model='gpt-4')
+    except:
+        return None
 
 
 def rank_articles(articles):
@@ -381,6 +384,8 @@ if __name__ == "__main__":
                 for r in tqdm(rank, leave=False):
                     article = articles[r]
                     summary = summaries[r]
+                    if summary is None:
+                        continue
                     title, url, news_article = article['title'], article['url'], article['news_article']
 
                     top_news += f'#### [{title}]({url})'
