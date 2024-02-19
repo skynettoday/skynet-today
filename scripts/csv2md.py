@@ -15,10 +15,9 @@ from newspaper import Article
 from pathlib import Path
 from datetime import date, timedelta
 from tqdm.auto import tqdm
-import re
 
 from tenacity import retry, stop_after_attempt, wait_random_exponential
-from content_retrieval import get_arxiv_paper_contents, get_reuters_article_content
+from content_retrieval import get_arxiv_paper_contents
 
 
 # a05825917ad14bc38d6d4152b5fae19a
@@ -101,7 +100,6 @@ Only respond with one of the above types (Business, Research, Tools, Concerns, P
 def get_news_article(url):
     try:
         if 'arxiv' in url:
-            url = arxiv_to_html(url)
             text = get_arxiv_paper_contents(url)
             return {
                 'text': text,
@@ -120,6 +118,7 @@ def get_news_article(url):
             }
     except Exception as e:
         print('ERROR: not able to get text for URL '+url)
+        print(e)
         return None
     
 
@@ -240,13 +239,6 @@ Format your response as a valid JSON list of article indices, starting with the 
 
     return json.loads(query_openai(messages, max_tokens=200))
 
-def arxiv_to_html(url: str) -> str:
-    paper_id = url[url.find('abs/') + 4:].strip('/').strip()
-    if paper_id:
-        return f"https://browse.arxiv.org/html/{paper_id}"
-    else:
-        return url
-
 
 def get_newsletter_excerpt(top_news):
     system_prompt = '''
@@ -321,9 +313,7 @@ if __name__ == "__main__":
         rows.append(row)
 
     print('Getting news articles...')
-    news_articles = apply_map_batch(
-        get_news_article, [(row['URL'],) for row in rows]
-    )
+    news_articles = [get_news_article(row['URL']) for row in tqdm(rows)]
     rows = [row for row, news_article in zip(rows, news_articles) if news_article]
     news_articles = [news_article for news_article in news_articles if news_article]
 
