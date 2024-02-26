@@ -15,10 +15,9 @@ from newspaper import Article
 from pathlib import Path
 from datetime import date, timedelta
 from tqdm.auto import tqdm
-import re
 
 from tenacity import retry, stop_after_attempt, wait_random_exponential
-from content_retrieval import get_arxiv_paper_contents, get_reuters_article_content
+from content_retrieval import get_arxiv_paper_contents
 
 
 # a05825917ad14bc38d6d4152b5fae19a
@@ -119,6 +118,7 @@ def get_news_article(url):
             }
     except Exception as e:
         print('ERROR: not able to get text for URL '+url)
+        print(e)
         return None
     
 
@@ -212,7 +212,10 @@ Title: {title}
         {'role': 'user', 'content': user_prompt}
     ]
 
-    return query_openai(messages, max_tokens=4000, model='gpt-4')
+    try:
+        return query_openai(messages, max_tokens=4000, model='gpt-4')
+    except:
+        return None
 
 
 def rank_articles(articles):
@@ -310,9 +313,7 @@ if __name__ == "__main__":
         rows.append(row)
 
     print('Getting news articles...')
-    news_articles = apply_map_batch(
-        get_news_article, [(row['URL'],) for row in rows]
-    )
+    news_articles = [get_news_article(row['URL']) for row in tqdm(rows)]
     rows = [row for row, news_article in zip(rows, news_articles) if news_article]
     news_articles = [news_article for news_article in news_articles if news_article]
 
@@ -373,6 +374,8 @@ if __name__ == "__main__":
                 for r in tqdm(rank, leave=False):
                     article = articles[r]
                     summary = summaries[r]
+                    if summary is None:
+                        continue
                     title, url, news_article = article['title'], article['url'], article['news_article']
 
                     top_news += f'#### [{title}]({url})'

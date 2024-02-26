@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 from collections import OrderedDict
+import re
 
 def arxiv_to_html(url: str) -> str:
     paper_id = url[url.find('abs/') + 4:].strip('/').strip()
@@ -9,7 +10,14 @@ def arxiv_to_html(url: str) -> str:
     else:
         return url
 
-def get_arxiv_paper_contents(url):
+def arxiv_to_huggingface(url: str) -> str:
+    match = re.search(r"https://arxiv.org/abs/(\d+\.\d+)(?:v\d+)?", url)
+    if match:
+        return f"https://huggingface.co/papers/{match.group(1)}"
+    else:
+        return url
+
+def get_arxiv_paper_contents_html(url):
     url = arxiv_to_html(url)
     def remove_unwanted_tags(content, tags_to_remove):
         """ Removes specified tags from the content but keeps their text. """
@@ -32,16 +40,37 @@ def get_arxiv_paper_contents(url):
                 cleaned_element = remove_unwanted_tags(element, ['cite', 'a', 'span'])
                 extracted_text[current_section] += cleaned_element.get_text(separator='', strip=False) + '\n'
         return extracted_text
+    
+    html_url = arxiv_to_html(url)
 
-    response = requests.get(url)
+    response = requests.get(html_url)
     soup = BeautifulSoup(response.content, 'html.parser')
 
-    title = soup.title.string if soup.title else "Title not found"
+    title = soup.title.string
     section_texts = extract_text_by_section_ordered(soup)
-    abstract = section_texts.get('Abstract', 'Abstract not found')
-    introduction = section_texts.get('Introduction', 'Introduction not found')
+    abstract = section_texts.get('Abstract')
+    introduction = section_texts.get('Introduction')
+    if title and abstract and introduction:
+        return f"Title: {title}\n\nAbstract:\n{abstract}\n\nIntroduction:\n{introduction}"
+    return None
 
-    return f"Title: {title}\n\nAbstract:\n{abstract}\n\nIntroduction:\n{introduction}"
+
+def get_arxiv_paper_contents_huggingface(url):
+    hf_url = arxiv_to_huggingface(url)
+    response = requests.get(hf_url)
+    soup = BeautifulSoup(response.content, 'html.parser')
+
+    title = soup.h1.text
+    abstract = soup.p.text
+    return f'Title: {title}\n\nAbstract:\n{abstract}'
+
+
+def get_arxiv_paper_contents(url):
+    text = get_arxiv_paper_contents_html(url)
+    if text is None:
+        text = get_arxiv_paper_contents_huggingface(url)
+    return text        
+
 
 def get_reuters_article_content(url):
     """

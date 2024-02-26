@@ -14,3 +14,4 @@ npm-debug.log*
 .vscode
 scripts/secrets/
 *.ipynb_checkpoints/
+*.pyc
