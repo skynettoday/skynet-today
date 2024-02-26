@@ -2,7 +2,15 @@ import requests
 from bs4 import BeautifulSoup
 from collections import OrderedDict
 
+def arxiv_to_html(url: str) -> str:
+    paper_id = url[url.find('abs/') + 4:].strip('/').strip()
+    if paper_id:
+        return f"https://browse.arxiv.org/html/{paper_id}"
+    else:
+        return url
+
 def get_arxiv_paper_contents(url):
+    url = arxiv_to_html(url)
     def remove_unwanted_tags(content, tags_to_remove):
         """ Removes specified tags from the content but keeps their text. """
         for tag in tags_to_remove:
