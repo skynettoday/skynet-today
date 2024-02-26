@@ -13,7 +13,10 @@ from datetime import date, timedelta
 from tqdm.auto import tqdm
 
 from tenacity import retry, stop_after_attempt, wait_random_exponential
-
+from openai import OpenAI
+with open('secrets/openai_api_key.txt', 'r') as f:
+    _OPENAI_CLIENT = OpenAI(api_key=f.read().strip())
+from content_retrieval import get_arxiv_paper_contents, get_reuters_article_content
 
 _CATEGORIES = [
     'Tools & Apps',
@@ -21,7 +24,8 @@ _CATEGORIES = [
     'Projects & Open Source',
     'Research & Advancements',
     'Policy & Safety',
-    'Synthetic Media & Art'
+    'Synthetic Media & Art',
+    'Fun!'
 ]
 
 SECTION_CATEGORY_MAPPINGS = {
@@ -30,35 +34,31 @@ SECTION_CATEGORY_MAPPINGS = {
     "OSS/Projects": 'Projects & Open Source',
     "Research/Advancements": 'Research & Advancements',
     "Policy/Safety": 'Policy & Safety',
-    "Synthetic Media/Art": 'Synthetic Media & Art'}
+    "Synthetic Media/Art": 'Synthetic Media & Art',
+    "Fun!": 'Fun!'}
 STORY_TYPE_COL = "Main Story or Lighting Round?"
 STORY_SECTION_COL = "Section"
 
-@retry(wait=wait_random_exponential(min=1, max=5), stop=stop_after_attempt(2))
-def query_openai(messages):
-    return openai.ChatCompletion.create(
-        model='gpt-4', 
+@retry(wait=wait_random_exponential(min=1, max=10), stop=stop_after_attempt(10))
+def query_openai(messages, max_tokens=1000, model='gpt-4'):
+    return _OPENAI_CLIENT.chat.completions.create(
+        model=model,
         messages=messages,
-        max_tokens=1000,
+        max_tokens=max_tokens,
         temperature=0
-    ).choices[0]['message']['content']
+    ).choices[0].message.content
 
 def summarize_article(url, lighting_round_story=False):
-    article = Article(arxiv_to_huggingface(url))
-    try: 
-        article.download()
-        article.parse()
-        authors = article.authors
-        text = article.text
-        words = text.split(" ")
-        if len(words) > 1000:
-            text = " ".join(words[:1000])
-    except Exception as e:
-        print(e)
-        return ":("
+    article = Article(url)
+    article = Article(url)
+    article.download()
+    article.parse()
+    text = article.text
+    if 'arxiv' in url:
+        text = get_arxiv_paper_contents(url)
 
     system_prompt = '''
-Your task is to provide a bullet point summary of a news article about AI. Each bullet point should be no more than 2 sentences long. This summary will be used for the podcast Last Week in AI, in which the hosts summarize stories about AI in an accessible manner. We will provide the title of the article, the subtitle, and the text. Output the bullet points in markdown format.'''
+Your task is to provide a bullet point summary of a news article or research paper about AI. Each bullet point should be no more than 2 sentences long. This summary will be used for the podcast Last Week in AI, in which the hosts summarize stories about AI in an accessible manner. We will provide the title of the article, the subtitle, and the text. Output the bullet points in markdown format.'''
 
     if lighting_round_story:
         system_prompt + " This story will be in a lighting round, so summarize it in no more than 8 bullet points, but still make sure to cover all the important details."
@@ -75,13 +75,6 @@ Text: {text}
         {'role': 'system', 'content': system_prompt},
         {'role': 'user', 'content': prompt}
     ])
-
-def arxiv_to_huggingface(url: str) -> str:
-    match = re.search(r"https://arxiv.org/abs/(\d+\.\d+)(?:v\d+)?", url)
-    if match:
-        return f"https://huggingface.co/papers/{match.group(1)}"
-    else:
-        return url
 
 if __name__ == "__main__":
     with open('secrets/openai_api_key.txt', 'r') as f:
@@ -106,10 +99,12 @@ if __name__ == "__main__":
         print("Category: %s"%category)
         try:
             summary = summarize_article(row['URL'],not is_main_pick)
-        except:
-            summary = "Could not do it :("
+        except Exception as e:
+            print(e)
+            summary = "Error :("
         print('Summary:')
         print(summary)
+        row['Name'] = row['Name'].replace("Title:","")
         if is_main_pick:
             articles_map[category][0].append([row['Name'],row['URL'],summary,row['Related Articles']])
         else:
@@ -142,8 +137,6 @@ if __name__ == "__main__":
                 content += f'[{name}]({url})'
                 content += '\n'
                 content += summary
-                if related_articles:
-                    content += f"\n{related_articles}"
                 content += "\n\n"
         content +="\n### Lighting Round\n\n"
         if len(items[1]) > 0:
@@ -152,8 +145,6 @@ if __name__ == "__main__":
                 content += f'[{name}]({url})'
                 content += '\n'
                 content += summary
-                if related_articles:
-                    content += f"\n{related_articles}"
                 content += "\n\n"
                 
     print(content)

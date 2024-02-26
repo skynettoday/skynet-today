@@ -101,7 +101,6 @@ Only respond with one of the above types (Business, Research, Tools, Concerns, P
 def get_news_article(url):
     try:
         if 'arxiv' in url:
-            url = arxiv_to_html(url)
             text = get_arxiv_paper_contents(url)
             return {
                 'text': text,
@@ -236,13 +235,6 @@ Format your response as a valid JSON list of article indices, starting with the 
     ]
 
     return json.loads(query_openai(messages, max_tokens=200))
-
-def arxiv_to_html(url: str) -> str:
-    paper_id = url[url.find('abs/') + 4:].strip('/').strip()
-    if paper_id:
-        return f"https://browse.arxiv.org/html/{paper_id}"
-    else:
-        return url
 
 
 def get_newsletter_excerpt(top_news):
