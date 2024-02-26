@@ -17,7 +17,6 @@ def arxiv_to_huggingface(url: str) -> str:
     else:
         return url
 
-
 def get_arxiv_paper_contents_html(url):
     url = arxiv_to_html(url)
     def remove_unwanted_tags(content, tags_to_remove):
@@ -49,8 +48,13 @@ def get_arxiv_paper_contents_html(url):
 
     title = soup.title.string
     section_texts = extract_text_by_section_ordered(soup)
+<<<<<<< HEAD
     abstract = section_texts.get('Abstract', None)
     introduction = section_texts.get('Introduction', None)
+=======
+    abstract = section_texts.get('Abstract')
+    introduction = section_texts.get('Introduction')
+>>>>>>> master
     if title and abstract and introduction:
         return f"Title: {title}\n\nAbstract:\n{abstract}\n\nIntroduction:\n{introduction}"
     return None
