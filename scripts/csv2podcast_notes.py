@@ -58,12 +58,12 @@ def summarize_article(url, lighting_round_story=False):
         text = get_arxiv_paper_contents(url)
 
     system_prompt = '''
-Your task is to provide a bullet point summary of a news article or research paper about AI. Each bullet point should be no more than 2 sentences long. This summary will be used for the podcast Last Week in AI, in which the hosts summarize stories about AI in an accessible manner. We will provide the title of the article, the subtitle, and the text. Output the bullet points in markdown format.'''
+Your task is to provide a bullet point summary of a news article or research paper about AI. Each bullet point should be no more than 2 sentences long. This summary will be used for the podcast Last Week in AI, in which the hosts summarize stories about AI in an accessible manner. We will provide the title and text contents of the article. Output the bullet points in markdown format.'''
 
     if lighting_round_story:
-        system_prompt + " This story will be in a lighting round, so summarize it in no more than 8 bullet points, but still make sure to cover all the important details."
+        system_prompt + " This story will be in a lighting round, so summarize it in no more than 10 bullet points, but still make sure to cover all the important details."
     else:
-        system_prompt + " This will be covered as a main story, so produce a detailed summary."
+        system_prompt + " This will be covered as a main story, so produce a detailed summary covering all important details."
         
     system_prompt = system_prompt.strip()
     
