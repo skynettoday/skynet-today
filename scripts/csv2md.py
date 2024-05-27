@@ -268,7 +268,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--template_file', '-tf', type=str, default='digest_template.md')
     parser.add_argument('--digest_number', '-n', type=int, required=True)
-    parser.add_argument('--input_csv', '-i', type=str, required=False)
+    parser.add_argument('--input_csv', '-i', type=str, required=False, default='news.csv')
     parser.add_argument('--force_overwrite', '-f', action='store_true')
     args = parser.parse_args()
 
@@ -340,6 +340,7 @@ if __name__ == "__main__":
         articles_map[category].append({
             'url': row['URL'],
             'title': row['Name'],
+            'Related Articles': row['Related'],
             'excerpt': excerpt,
             'category': category,
             'news_article': news_article
@@ -371,11 +372,27 @@ if __name__ == "__main__":
                     ]
                 )
 
+
                 for r in tqdm(rank, leave=False):
                     article = articles[r]
                     summary = summaries[r]
                     if summary is None:
-                        continue
+                        summary = ''
+
+
+                    if article['Related Articles']:
+                        summary+='\n\nMore on this:'
+                        if type(article['Related Articles']) == float:
+                            continue
+                        for related_url in article['Related Articles'].split(','):
+                            try: 
+                                related_article = Article(related_url)
+                                related_article.download()
+                                related_article.parse()
+                                title = related_article.title
+                                summary+='\n * [{title}]({related_url})'
+                            except:
+                                continue
                     title, url, news_article = article['title'], article['url'], article['news_article']
 
                     top_news += f'#### [{title}]({url})'
