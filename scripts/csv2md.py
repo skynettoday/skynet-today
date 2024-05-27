@@ -390,7 +390,7 @@ if __name__ == "__main__":
                                 related_article.download()
                                 related_article.parse()
                                 title = related_article.title
-                                summary+='\n * [{title}]({related_url})'
+                                summary+=f'\n * [{title}]({related_url})'
                             except:
                                 continue
                     title, url, news_article = article['title'], article['url'], article['news_article']
