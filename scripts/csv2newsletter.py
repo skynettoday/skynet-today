@@ -236,8 +236,11 @@ Format your response as a valid JSON list of article indices, starting with the 
         {'role': 'system', 'content': system_prompt},
         {'role': 'user', 'content': user_prompt}
     ]
-
-    return json.loads(query_openai(messages, max_tokens=200))
+    output = query_openai(messages, max_tokens=400)
+    start = output.find('[')
+    end = output.find(']')
+    output = output[start:end+1]
+    return json.loads(output)
 
 
 def get_newsletter_excerpt(top_news):
