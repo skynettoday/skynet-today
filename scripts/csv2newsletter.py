@@ -63,6 +63,7 @@ def query_openai(messages, max_tokens=10, model='gpt-3.5-turbo-1106'):
 
 def get_article_category(row, excerpt):
     if row['Type'] in CATEGORIES:
+        print(row['Type'])
         return row['Type']
 
     title, url = row['Name'], row['URL']
@@ -130,6 +131,8 @@ def clip_text_words(text, max_words=10000):
 
 
 def get_article_excerpt(row, article):
+    if not article:
+        return row['Excerpt']
     system_prompt = '''
 Given the title, subtitle, and text of an article about AI, write a short one sentence summary of its content.
 The summary should NOT start with or contain phrases like "The article", "This article", or anything similar.
@@ -194,6 +197,8 @@ def get_output_file_name(n):
 
 
 def get_article_summary(title, news_article):
+    if not news_article:
+        return ':/'
     system_prompt = '''
 You are an expert writer and commentator. 
 The user will give you an article, and you will write a one paragraph summary.
@@ -317,8 +322,6 @@ if __name__ == "__main__":
 
     print('Getting news articles...')
     news_articles = [get_news_article(row['URL']) for row in tqdm(rows)]
-    rows = [row for row, news_article in zip(rows, news_articles) if news_article]
-    news_articles = [news_article for news_article in news_articles if news_article]
 
     print('Getting article excerpts...')
     excerpts = apply_map_batch(
