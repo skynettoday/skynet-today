@@ -388,17 +388,16 @@ if __name__ == "__main__":
 
                     if article['Related Articles']:
                         summary+='\n\nMore on this:'
-                        if type(article['Related Articles']) == float:
-                            continue
-                        for related_url in article['Related Articles'].split(','):
-                            try: 
-                                related_article = Article(related_url)
-                                related_article.download()
-                                related_article.parse()
-                                title = related_article.title
-                                summary+=f'\n * [{title}]({related_url})'
-                            except:
-                                continue
+                        if type(article['Related Articles']) == str:
+                            for related_url in article['Related Articles'].split(','):
+                                try: 
+                                    related_article = Article(related_url)
+                                    related_article.download()
+                                    related_article.parse()
+                                    title = related_article.title
+                                    summary+=f'\n * [{title}]({related_url})'
+                                except:
+                                    continue
                     title, url, news_article = article['title'], article['url'], article['news_article']
 
                     top_news += f'#### [{title}]({url})'
