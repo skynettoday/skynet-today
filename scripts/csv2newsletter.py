@@ -362,9 +362,12 @@ if __name__ == "__main__":
             # place the first article w/ an image first
             rank = rank_articles(articles)
             for idx, r in enumerate(rank):
-                if articles[r]['news_article']['has_top_image']:
-                    rank[0], rank[idx] = rank[idx], rank[0]
-                    break
+                try:
+                    if articles[r]['news_article']['has_top_image']:
+                        rank[0], rank[idx] = rank[idx], rank[0]
+                        break
+                except:
+                    continue
             
             if c == 'Top News':
                 top_news += f'### {c}'

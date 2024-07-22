@@ -45,8 +45,10 @@ def get_arxiv_paper_contents_html(url):
 
     response = requests.get(html_url)
     soup = BeautifulSoup(response.content, 'html.parser')
-
-    title = soup.title.string
+    try:
+        title = soup.title.string
+    except:
+        title = ''
     section_texts = extract_text_by_section_ordered(soup)
     abstract = section_texts.get('Abstract')
     introduction = section_texts.get('Introduction')
