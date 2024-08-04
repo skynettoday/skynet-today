@@ -2,6 +2,7 @@ import os
 import re
 import logging
 import argparse
+import requests
 
 import pandas as pd
 import inflect
@@ -48,7 +49,7 @@ def query_openai(messages, max_tokens=1000, model='gpt-4'):
         temperature=0
     ).choices[0].message.content
 
-def summarize_article(url, lighting_round_story=False):
+def summarize_article(url, lighting_round_story=False, save_image=False):
     article = Article(url)
     article = Article(url)
     article.download()
@@ -56,6 +57,13 @@ def summarize_article(url, lighting_round_story=False):
     text = article.text
     if 'arxiv' in url:
         text = get_arxiv_paper_contents(url)
+
+    if save_image and article.has_top_image():
+        im_response = requests.get(article.top_image)
+        if im_response.status_code == 200:
+            im_name = article.top_image.split("/")[-1]
+            with open(im_name, "wb") as f:
+                f.write(im_response.content)
 
     system_prompt = '''
 Your task is to provide a bullet point summary of a news article or research paper about AI. Each bullet point should be no more than 2 sentences long. This summary will be used for the podcast Last Week in AI, in which the hosts summarize stories about AI in an accessible manner. We will provide the title and text contents of the article. Output the bullet points in markdown format.'''
@@ -98,7 +106,7 @@ if __name__ == "__main__":
         print("Link: %s"%row['URL'])
         print("Category: %s"%category)
         try:
-            summary = summarize_article(row['URL'],not is_main_pick)
+            summary = summarize_article(row['URL'],not is_main_pick, is_main_pick)
         except Exception as e:
             print(e)
             summary = "Error :("
