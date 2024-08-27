@@ -62,7 +62,7 @@ def summarize_article(url, lighting_round_story=False, save_image=False):
         im_response = requests.get(article.top_image)
         if im_response.status_code == 200:
             im_name = article.top_image.split("/")[-1]
-            with open(im_name, "wb") as f:
+            with open("images/"+im_name, "wb") as f:
                 f.write(im_response.content)
 
     system_prompt = '''
