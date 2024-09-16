@@ -389,7 +389,7 @@ if __name__ == "__main__":
                         summary = ''
 
 
-                    if article['Related Articles']:
+                    if article['Related Articles'] and type(article['Related Articles']) == str:
                         summary+='\n\nMore on this:'
                         if type(article['Related Articles']) == str:
                             for related_url in article['Related Articles'].split(','):

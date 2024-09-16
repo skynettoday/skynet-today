@@ -71,7 +71,7 @@ Your task is to provide a bullet point summary of a news article or research pap
     if lighting_round_story:
         system_prompt + " This story will be in a lighting round, so summarize it in no more than 10 bullet points, but still make sure to cover all the important details."
     else:
-        system_prompt + " This will be covered as a main story, so produce a detailed summary covering all important details."
+        system_prompt + " This will be covered as a main story, so produce a detailed summary covering all important details. Include at least 10 bullet points."
         
     system_prompt = system_prompt.strip()
     
