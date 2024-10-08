@@ -137,7 +137,7 @@ def get_article_excerpt(row, article):
 Given the title, subtitle, and text of an article about AI, write a short one sentence summary of its content.
 The summary should NOT start with or contain phrases like "The article", "This article", or anything similar.
 The summary should be exactly one sentence long.
-DO NOT REPEAT THE TITLE in the summary. However, if the subtitle is a good summary, you can use it.
+The summary should avoid repeating information already provided in the title of the article.
 '''.strip()
     
     prompt = f'''
