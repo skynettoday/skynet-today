@@ -68,9 +68,12 @@ def get_arxiv_paper_contents_huggingface(url):
 
 
 def get_arxiv_paper_contents(url):
-    text = get_arxiv_paper_contents_html(url)
-    if text is None:
-        text = get_arxiv_paper_contents_huggingface(url)
+    try:
+        text = get_arxiv_paper_contents_html(url)
+        return text
+    except Exception as e:
+        pass
+    text = get_arxiv_paper_contents_huggingface(url)
     return text        
 
 
