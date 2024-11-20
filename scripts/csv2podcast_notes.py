@@ -41,7 +41,7 @@ STORY_TYPE_COL = "Main Story or Lighting Round?"
 STORY_SECTION_COL = "Section"
 
 @retry(wait=wait_random_exponential(min=1, max=10), stop=stop_after_attempt(10))
-def query_openai(messages, max_tokens=1000, model='gpt-4'):
+def query_openai(messages, max_tokens=1000, model='gpt-4o'):
     return _OPENAI_CLIENT.chat.completions.create(
         model=model,
         messages=messages,

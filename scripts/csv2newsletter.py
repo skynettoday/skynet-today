@@ -406,7 +406,8 @@ if __name__ == "__main__":
 
                     top_news += f'#### [{title}]({url})'
                     top_news += '\n'
-
+                    if not news_article:
+                        continue
                     if news_article['has_top_image']:
                         top_news += f'![]({news_article["top_image"]})'
 
