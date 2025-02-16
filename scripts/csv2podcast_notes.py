@@ -41,7 +41,7 @@ STORY_TYPE_COL = "Main Story or Lighting Round?"
 STORY_SECTION_COL = "Section"
 
 @retry(wait=wait_random_exponential(min=1, max=10), stop=stop_after_attempt(10))
-def query_openai(messages, max_tokens=1000, model='gpt-4o'):
+def query_openai(messages, max_tokens=4000, model='gpt-4o'):
     return _OPENAI_CLIENT.chat.completions.create(
         model=model,
         messages=messages,
@@ -66,13 +66,13 @@ def summarize_article(url, lighting_round_story=False, save_image=False):
                 f.write(im_response.content)
 
     system_prompt = '''
-Your task is to provide a bullet point summary of a news article or research paper about AI. Each bullet point should be no more than 2 sentences long. This summary will be used for the podcast Last Week in AI, in which the hosts summarize stories about AI in an accessible manner. We will provide the title and text contents of the article. Output the bullet points in markdown format.'''
+Your task is to provide a bullet point summary of a news article or research paper about AI. Each bullet point should be no more than 2 sentences long. This summary will be used for the podcast Last Week in AI, in which the hosts summarize stories about AI in an accessible manner. We will provide the title and text contents of the article. Output in markdown format.'''
 
     if lighting_round_story:
-        system_prompt + " This story will be in a lighting round, so summarize it in no more than 10 bullet points, but still make sure to cover all the important details."
+        system_prompt += " This story will be in a lighting round, so summarize it in no more than 10 bullet points, but still make sure to cover all the important details. Don't cover background or implications, just the details of the news."
     else:
-        system_prompt + " This will be covered as a main story, so produce a detailed summary covering all important details. Include at least 10 bullet points."
-        
+        system_prompt += " This will be covered as a main story, so produce a detailed summary covering all important details. Don't cover background or implications, just the details of the news. If you can, organize the output into header bullet points and use sub-bullet points if it makes sense. Don't use sections like '##' , just use nested sets of bullet points with the top level being short. Do not use bold text. Output at least 16 bullet points. "
+
     system_prompt = system_prompt.strip()
     
     prompt = f'''

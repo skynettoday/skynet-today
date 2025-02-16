@@ -6,7 +6,7 @@ import re
 def arxiv_to_html(url: str) -> str:
     paper_id = url[url.find('abs/') + 4:].strip('/').strip()
     if paper_id:
-        return f"https://browse.arxiv.org/html/{paper_id}"
+        return f"https://arxiv.org/html/{paper_id}"
     else:
         return url
 
@@ -18,7 +18,6 @@ def arxiv_to_huggingface(url: str) -> str:
         return url
 
 def get_arxiv_paper_contents_html(url):
-    url = arxiv_to_html(url)
     def remove_unwanted_tags(content, tags_to_remove):
         """ Removes specified tags from the content but keeps their text. """
         for tag in tags_to_remove:
@@ -40,9 +39,7 @@ def get_arxiv_paper_contents_html(url):
                 cleaned_element = remove_unwanted_tags(element, ['cite', 'a', 'span'])
                 extracted_text[current_section] += cleaned_element.get_text(separator='', strip=False) + '\n'
         return extracted_text
-    
     html_url = arxiv_to_html(url)
-
     response = requests.get(html_url)
     soup = BeautifulSoup(response.content, 'html.parser')
     try:
@@ -50,11 +47,17 @@ def get_arxiv_paper_contents_html(url):
     except:
         title = ''
     section_texts = extract_text_by_section_ordered(soup)
-    abstract = section_texts.get('Abstract')
     introduction = section_texts.get('Introduction')
-    if title and abstract and introduction:
-        return f"Title: {title}\n\nAbstract:\n{abstract}\n\nIntroduction:\n{introduction}"
-    return None
+    if not introduction:
+        return None
+    text = f"# Introduction:\n{introduction}"
+    if 'Approach' in section_texts:
+        text+=f"\n\n# Approach\n{section_texts.get('Approach')}"
+    if 'Experiment' in section_texts:
+        text+=f"\n\n# Experiment\n{section_texts.get('Experiment')}"
+    if 'Discussion' in section_texts:
+        text+=f"\n\n# Discussion\n{section_texts.get('Discussion')}"
+    return text
 
 
 def get_arxiv_paper_contents_huggingface(url):
@@ -68,12 +71,13 @@ def get_arxiv_paper_contents_huggingface(url):
 
 
 def get_arxiv_paper_contents(url):
+    text = None
     try:
         text = get_arxiv_paper_contents_html(url)
-        return text
     except Exception as e:
-        pass
-    text = get_arxiv_paper_contents_huggingface(url)
+        print(e)
+    if text is None:
+        text = get_arxiv_paper_contents_huggingface(url)
     return text        
 
 
