@@ -202,12 +202,13 @@ def get_article_summary(title, news_article):
     if not news_article:
         return ':/'
     system_prompt = '''
-You are an expert writer and commentator. 
-The user will give you an article, and you will write a one paragraph summary.
-The summary should be one paragraph long, have at least four sentences, contain key technical details, and be easy to understand. 
+You are an expert writer and commentator hired to write summaries of articles for the newsletter Last Week in AI. 
+I will give you an article with associated text, and you will write a concise summary.
+The summary should be at most two paragraphs long, with each paragraph having at least four sentences, contain key technical details, and be easy to understand. If it makes sense, you can also include a bullet point list.
 The summary should highlight key words and concepts from the article without abstracting them away. 
 The reader should clearly understand the key points from the article after reading your summary.
-'''.strip()
+Focus on the details of the concrete details of the story rather than context or implications. 
+The writing style should be succinct and direct.'''.strip()
     
     user_prompt = f'''
 Title: {title}
