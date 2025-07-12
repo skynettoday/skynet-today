@@ -19,8 +19,6 @@ from tqdm.auto import tqdm
 from tenacity import retry, stop_after_attempt, wait_random_exponential
 from content_retrieval import get_arxiv_paper_contents
 
-
-# a05825917ad14bc38d6d4152b5fae19a
 CATEGORIES = [
     'Top News',
     'Tools',
@@ -113,6 +111,7 @@ def get_news_article(url):
             article.parse()
             assert article.text
             return {
+                'title': article.title,
                 'text': article.text,
                 'top_image': article.top_image,
                 'has_top_image': article.has_top_image()
@@ -132,7 +131,7 @@ def clip_text_words(text, max_words=10000):
 
 def get_article_excerpt(row, article):
     if not article:
-        return row['Excerpt']
+        return None
     system_prompt = '''
 Given the title, subtitle, and text of an article about AI, write a short one sentence summary of its content.
 The summary should NOT start with or contain phrases like "The article", "This article", or anything similar.
@@ -144,7 +143,6 @@ For example, an article titled "OpenAI Releases SimpleQA: A New AI Benchmark tha
     
     prompt = f'''
 Title: {row['Name']}
-Subtitle: {row['Excerpt']}
 Text: {clip_text_words(article["text"])}
 '''.strip()
     return query_openai([
@@ -315,6 +313,10 @@ if __name__ == "__main__":
             # remove "Title:" from arxiv titles
             row['Name'] = row['Name'][6:]
 
+        if 'arxiv' in row['URL'] and row['Name'].startswith('[]'):
+            # remove "Title:" from arxiv titles
+            row['Name'] = row['Name'].split(']')[1]
+
         if 'youtube' in row['URL']:
             continue
 
@@ -348,7 +350,7 @@ if __name__ == "__main__":
     for row, news_article, excerpt, category in zip(rows, news_articles, excerpts, categories):
         articles_map[category].append({
             'url': row['URL'],
-            'title': row['Name'],
+            'title': news_article['title'] if news_article and 'title' in news_article else row['Name'],
             'Related Articles': row['Related'],
             'excerpt': excerpt,
             'category': category,
