@@ -141,10 +141,11 @@ Given the title, subtitle, and text of an article about AI, write a short one se
 * should not start with 'Summary: ' ; just output the content.
 * should avoid 'marketing hype' (terms like 'revolutionizes' , 'groundbreaking', 'advanced' etc.) -- stick to the facts
 * should work as a follow up sentence that follows the article title.
+* should try to vary the opening words to not be repetitive
 
 Examples:
-* 'Google is testing a vibe-coding app called Opal' -> 'It allows users to create and share mini web apps using text prompts and a visual workflow, aiming to make app development accessible to non-technical users.'
-* 'GitHub Goes After Vibe Coding Fans with the Public Preview of GitHub Spark' -> 'It allows users to create full-stack apps from natural language prompts, and is available to Copilot Pro+ subscribers for $39 a month.'
+* 'Google is testing a vibe-coding app called Opal' -> 'The app allows users to create and share mini web apps using text prompts and a visual workflow, aiming to make app development accessible to non-technical users.'
+* 'GitHub Goes After Vibe Coding Fans with the Public Preview of GitHub Spark' -> 'Spark allows users to create full-stack apps from natural language prompts, and is available to Copilot Pro+ subscribers for $39 a month.'
 '''.strip()
     
     prompt = f'''
