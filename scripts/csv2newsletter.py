@@ -279,6 +279,36 @@ Victims of false facial regonition matches, White House launches AI-based securi
     return query_openai(messages, max_tokens=256, model='gpt-4')
 
 
+def final_polish_newsletter(markdown_content):
+    system_prompt = '''
+You are an expert editor for the "Last Week in AI" newsletter. Your task is to polish the final newsletter content to ensure it's publication-ready.
+
+Please review the entire newsletter and make the following improvements:
+
+1. **Remove duplicate articles**: If the same article appears multiple times (same URL or very similar titles), keep only the best version and remove duplicates.
+
+2. **Vary sentence starters**: Look at all the article excerpt sentences and ensure they don't start with repetitive words/phrases. Rewrite excerpts to have more varied and engaging openings while maintaining the same factual content.
+
+3. **Overall polish**: 
+   - Ensure consistent formatting
+   - Fix any grammatical errors
+   - Improve flow and readability
+   - Make sure section transitions are smooth
+   - Ensure the tone is consistent throughout
+
+4. **Maintain accuracy**: Do not change any URLs, article titles, or factual content. Only improve the presentation and remove duplicates.
+
+Return the polished markdown content. Keep all the original structure and formatting intact, just improve the quality and remove any issues.
+'''.strip()
+    
+    messages = [
+        {'role': 'system', 'content': system_prompt},
+        {'role': 'user', 'content': markdown_content}
+    ]
+
+    return query_openai(messages, max_tokens=8000, model='gpt-4')
+
+
 if __name__ == "__main__":    
     __spec__ = None
     parser = argparse.ArgumentParser()
@@ -457,6 +487,9 @@ if __name__ == "__main__":
                     .replace('$content$', content) \
                     .replace('$im_name$', im_name) \
                     .replace('$digest_excerpt$', digest_excerpt)
+
+    print('Applying final polish to the newsletter...')
+    md = final_polish_newsletter(md)
 
     print('Saving digest markdown...')
     with open(output_md, 'wb') as f:
