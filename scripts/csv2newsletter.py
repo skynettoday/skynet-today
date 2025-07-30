@@ -138,6 +138,7 @@ Given the title, subtitle, and text of an article about AI, write a short one se
 **IMPORTANT** the summary:
 * should be exactly one sentence long.
 * should only have information not already provided in the title of the article.
+* should not start with 'Summary: ' ; just output the content.
 * should avoid 'marketing hype' (terms like 'revolutionizes' , 'groundbreaking', 'advanced' etc.) -- stick to the facts
 * should work as a follow up sentence that follows the article title.
 
@@ -441,7 +442,7 @@ if __name__ == "__main__":
                 for r in tqdm(rank, leave=False):
                     article = articles[r]
                     title, url, excerpt = article['title'], article['url'], article['excerpt']
-                    content += f'[{title}]({url}) - {excerpt}'
+                    content += f'[{title}]({url}). {excerpt}'
                     content += '\n\n'
 
     # remove the last two empty lines
