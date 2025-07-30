@@ -133,12 +133,17 @@ def get_article_excerpt(row, article):
     if not article:
         return None
     system_prompt = '''
-Given the title, subtitle, and text of an article about AI, write a short one sentence summary of its content.
-The summary should NOT start with or contain phrases like "The article", "This article", or anything similar.
-The summary should be exactly one sentence long.
-The summary should NOT repeat information already provided in the title of the article.
+Given the title, subtitle, and text of an article about AI, write a short one sentence summary of its content that works as a continuation of the title.
 
-For example, an article titled "OpenAI Releases SimpleQA: A New AI Benchmark that Measures the Factuality of Language Models" could have a summary of "SimpleQA focusing on short, fact-seeking questions with a single, indisputable answer, and designed to remain challenging for the latest AI models."
+**IMPORTANT** the summary:
+* should be exactly one sentence long.
+* should only have information not already provided in the title of the article.
+* should avoid 'marketing hype' (terms like 'revolutionizes' , 'groundbreaking', 'advanced' etc.) -- stick to the facts
+* should work as a follow up sentence that follows the article title.
+
+Examples:
+* 'Google is testing a vibe-coding app called Opal' -> 'It allows users to create and share mini web apps using text prompts and a visual workflow, aiming to make app development accessible to non-technical users.'
+* 'GitHub Goes After Vibe Coding Fans with the Public Preview of GitHub Spark' -> 'It allows users to create full-stack apps from natural language prompts, and is available to Copilot Pro+ subscribers for $39 a month.'
 '''.strip()
     
     prompt = f'''
