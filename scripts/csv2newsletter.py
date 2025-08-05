@@ -1,6 +1,7 @@
 import os
 import argparse
 import requests
+import re
 from multiprocessing.dummy import Pool
 
 import pandas as pd
@@ -93,7 +94,7 @@ Only respond with one of the above types (Business, Research, Tools, Concerns, P
     return query_openai([
         {'role': 'system', 'content': system_prompt},
         {'role': 'user', 'content': prompt},
-    ], model='gpt-4')
+    ], model='gpt-4o')
 
 
 def get_news_article(url):
@@ -299,6 +300,7 @@ Please review the entire newsletter and make the following improvements:
 4. **Maintain accuracy**: Do not change any URLs, article titles, or factual content. Only improve the presentation and remove duplicates.
 
 Return the polished markdown content. Keep all the original structure and formatting intact, just improve the quality and remove any issues.
+Just output the polished markdown content, with no additional explanations or comments.
 '''.strip()
     
     messages = [
@@ -306,7 +308,7 @@ Return the polished markdown content. Keep all the original structure and format
         {'role': 'user', 'content': markdown_content}
     ]
 
-    return query_openai(messages, max_tokens=8000, model='gpt-4')
+    return query_openai(messages, max_tokens=8000, model='gpt-4o')
 
 
 if __name__ == "__main__":    
@@ -353,6 +355,11 @@ if __name__ == "__main__":
         if 'arxiv' in row['URL'] and row['Name'].startswith('[]'):
             # remove "Title:" from arxiv titles
             row['Name'] = row['Name'].split(']')[1]
+
+        # Remove arXiv ID format like '[2507.18074] ' from the beginning of titles
+        if 'arxiv' in row['URL'] and ']' in row['Name']:
+            # Remove everything up to and including the first ']' and any following whitespace
+            row['Name'] = row['Name'].split(']', 1)[1].strip()
 
         if 'youtube' in row['URL']:
             continue
@@ -435,6 +442,8 @@ if __name__ == "__main__":
                         summary+='\n\nMore on this:'
                         for related_url in article['Related Articles'].split(','):
                             try: 
+                                if '?' in related_url:
+                                    related_url = related_url.split('?')[0]
                                 related_article = Article(related_url)
                                 related_article.download()
                                 related_article.parse()
