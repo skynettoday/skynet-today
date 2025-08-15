@@ -204,10 +204,34 @@ def get_output_file_name(n):
     return f'{formatted_date}-{n}.md'
 
 
-def get_article_summary(title, news_article):
+def get_article_summary(title, news_article, related_articles=None):
     if not news_article:
         return ':/'
-    system_prompt = '''
+    
+    # Determine if we have multiple articles to summarize
+    has_related = related_articles and len(related_articles) > 0
+    
+    if has_related:
+        system_prompt = '''
+You are an expert writer and commentator hired to write summaries of articles for the newsletter Last Week in AI. 
+I will give you a main article and related articles with their text, and you will write a concise summary that covers all the stories.
+The summary should be at most two paragraphs long, with each paragraph having at least four sentences, contain key technical details, and be easy to understand. If it makes sense, you can also include a bullet point list.
+The summary should highlight key words and concepts from all articles without abstracting them away. 
+The reader should clearly understand the key points from all the stories after reading your summary.
+Focus on the details of the concrete details of the stories rather than context or implications. 
+When multiple articles are provided, synthesize the information to give a comprehensive overview of the topic.
+The writing style should be succinct and direct.'''.strip()
+        
+        # Build user prompt with main article and related articles
+        user_prompt = f'Main Article:\nTitle: {title}\n{clip_text_words(news_article["text"])}\n\n'
+        
+        user_prompt += 'Related Articles:\n'
+        for i, related in enumerate(related_articles, 1):
+            user_prompt += f'Related Article {i}:\nTitle: {related["title"]}\n{clip_text_words(related["text"])}\n\n'
+        
+        user_prompt = user_prompt.strip()
+    else:
+        system_prompt = '''
 You are an expert writer and commentator hired to write summaries of articles for the newsletter Last Week in AI. 
 I will give you an article with associated text, and you will write a concise summary.
 The summary should be at most two paragraphs long, with each paragraph having at least four sentences, contain key technical details, and be easy to understand. If it makes sense, you can also include a bullet point list.
@@ -215,8 +239,8 @@ The summary should highlight key words and concepts from the article without abs
 The reader should clearly understand the key points from the article after reading your summary.
 Focus on the details of the concrete details of the story rather than context or implications. 
 The writing style should be succinct and direct.'''.strip()
-    
-    user_prompt = f'''
+        
+        user_prompt = f'''
 Title: {title}
 {clip_text_words(news_article["text"])}
 '''.strip()
@@ -422,39 +446,58 @@ if __name__ == "__main__":
                 top_news += f'### {c}'
                 top_news += '\n\n'
 
-                summaries = apply_map_batch(
-                    get_article_summary,
-                    [
-                        (article['title'], article['news_article'])
-                        for article in articles
-                    ]
-                )
-
-
-                for r in tqdm(rank, leave=False):
-                    article = articles[r]
-                    summary = summaries[r]
-                    if summary is None:
-                        summary = ''
-
-
+                # Process related articles first to get their content
+                processed_articles = []
+                for article in articles:
+                    related_articles_data = []
                     if article['Related Articles'] and type(article['Related Articles']) == str:
-                        summary+='\n\nMore on this:'
                         for related_url in article['Related Articles'].split(','):
                             try: 
                                 if '?' in related_url:
                                     related_url = related_url.split('?')[0]
-                                related_article = Article(related_url)
+                                related_article = Article(related_url.strip())
                                 related_article.download()
                                 related_article.parse()
-                                title = related_article.title
-                                summary+=f'\n * [{title}]({related_url})'
+                                related_articles_data.append({
+                                    'title': related_article.title,
+                                    'text': related_article.text,
+                                    'url': related_url.strip()
+                                })
                             except:
                                 continue
+                    
+                    processed_articles.append({
+                        **article,
+                        'related_articles_data': related_articles_data
+                    })
+
+                # Generate summaries with related articles
+                summaries = apply_map_batch(
+                    get_article_summary,
+                    [
+                        (article['title'], article['news_article'], article['related_articles_data'])
+                        for article in processed_articles
+                    ]
+                )
+
+                for r in tqdm(rank, leave=False):
+                    article = processed_articles[r]
+                    summary = summaries[r]
+                    if summary is None:
+                        summary = ''
+
                     title, url, news_article = article['title'], article['url'], article['news_article']
 
                     top_news += f'#### [{title}]({url})'
                     top_news += '\n'
+                    
+                    # Add related articles section at the top
+                    if article['related_articles_data']:
+                        top_news += 'Related:'
+                        for related in article['related_articles_data']:
+                            top_news += f'\n * [{related["title"]}]({related["url"]})'
+                        top_news += '\n\n'
+                    
                     if not news_article:
                         continue
                     if news_article['has_top_image']:
