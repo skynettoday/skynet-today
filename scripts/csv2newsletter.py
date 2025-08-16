@@ -51,16 +51,43 @@ def apply_map_batch(func, args_list):
 
 
 @retry(wait=wait_random_exponential(min=1, max=10), stop=stop_after_attempt(10))
-def query_openai(messages, max_tokens=10, model='gpt-4o'):
-    return _OPENAI_CLIENT.chat.completions.create(
-        model=model,
-        messages=messages,
-        max_tokens=max_tokens,
-        temperature=0
-    ).choices[0].message.content
+def query_openai(instructions, user_input, max_completion_tokens=100, model='gpt-5', debug_label=""):
+    # Debug logging
+    if debug_label:
+        print(f"\n=== {debug_label} ===")
+        if instructions:
+            print(f"INSTRUCTIONS: {instructions[:100]}...")
+        print(f"INPUT: {user_input[:200]}...")
+
+    try:
+        if instructions:
+            result = _OPENAI_CLIENT.responses.create(
+                model=model,
+                instructions=instructions,
+                input=user_input,
+                reasoning={"effort": "minimal"},
+            ).output_text
+        else:
+            result = _OPENAI_CLIENT.responses.create(
+                model=model,
+                input=user_input
+            ).output_text
+
+        if debug_label:
+            print(f"OUTPUT: '{result}'")
+            print("=" * 50)
+
+        return result
+    except Exception as e:
+        print(f"ERROR in query_openai ({debug_label}): {type(e).__name__}: {e}")
+        if hasattr(e, 'response'):
+            print(f"Response: {e.response}")
+        if hasattr(e, 'body'):
+            print(f"Body: {e.body}")
+        raise
 
 
-def get_article_category(row, excerpt):
+def get_article_category(row, article_text):
     if row['Type'] in CATEGORIES:
         print(row['Type'])
         return row['Type']
@@ -69,9 +96,12 @@ def get_article_category(row, excerpt):
     if 'arxiv' in url:
         return 'Research'
 
+    # Use first 500 characters of article text if available, otherwise just title and URL
+    text_preview = article_text[:500] if article_text else "No text available"
+    
     prompt = f'''
 Title: {title}
-Summary: {excerpt}
+Text Preview: {text_preview}
 Link: {url}
 '''.strip()
 
@@ -87,20 +117,25 @@ Expert Opinions: Opinion pieces from experts and not factual reporting. If it's 
 Explainers: Explains a given topic in AI with the goal to educate the reader; tutorials, guides.
 Fun: Anything silly, fun, and doesn't belong to the other types.
 
-The user will provide the article title, link, and description. 
+The user will provide the article title, link, and text preview. 
 After careful consideration, you will respond with ONLY the predicted article type, with no explanations, punctuation, formatting, or anything else.
 Only respond with one of the above types (Business, Research, Tools, Concerns, Policy, Analysis, Expert Opinions, Explainers, Fun).
 '''.strip()
-    return query_openai([
-        {'role': 'system', 'content': system_prompt},
-        {'role': 'user', 'content': prompt},
-    ], model='gpt-4o')
+    return query_openai(
+        system_prompt,
+        prompt,
+        model="gpt-5-mini-2025-08-07",
+        max_completion_tokens=50,
+        debug_label=f"CATEGORY for {title[:30]}"
+    )
 
 
 def get_news_article(url):
     try:
+        print(f"Fetching article: {url}")
         if 'arxiv' in url:
             text = get_arxiv_paper_contents(url)
+            print(f"✓ Successfully fetched arXiv paper")
             return {
                 'text': text,
                 'top_image': None,
@@ -110,7 +145,10 @@ def get_news_article(url):
             article = Article(url)
             article.download()
             article.parse()
-            assert article.text
+            if not article.text:
+                print(f"✗ No text found for article: {url}")
+                return None
+            print(f"✓ Successfully fetched article: {article.title[:50]}...")
             return {
                 'title': article.title,
                 'text': article.text,
@@ -118,10 +156,10 @@ def get_news_article(url):
                 'has_top_image': article.has_top_image()
             }
     except Exception as e:
-        print('ERROR: not able to get text for URL '+url)
-        print(e)
+        print(f'✗ ERROR: not able to get text for URL {url}')
+        print(f'  Exception: {e}')
         return None
-    
+
 
 def clip_text_words(text, max_words=10000):
     words = text.split(" ")
@@ -153,11 +191,13 @@ Examples:
 Title: {row['Name']}
 Text: {clip_text_words(article["text"])}
 '''.strip()
-    return query_openai([
-        {'role': 'system', 'content': system_prompt},
-        {'role': 'user', 'content': prompt}
-    ],
-    max_tokens = 100)
+    return query_openai(
+        system_prompt,
+        prompt,
+        model="gpt-5-mini-2025-08-07",
+        max_completion_tokens = 100,
+        debug_label=f"EXCERPT for {row['Name'][:30]}"
+    )
 
 
 def get_article_type_manual(title, link, excerpt):
@@ -245,15 +285,47 @@ Title: {title}
 {clip_text_words(news_article["text"])}
 '''.strip()
 
-    messages = [
-        {'role': 'system', 'content': system_prompt},
-        {'role': 'user', 'content': user_prompt}
-    ]
-
     try:
-        return query_openai(messages, max_tokens=4000, model='gpt-4')
-    except:
-        return None
+        result = query_openai(system_prompt, user_prompt, max_completion_tokens=4000, model='gpt-5', debug_label=f"SUMMARY for {title[:30]}")
+        
+        # Print input and output for debugging
+        print("=" * 80)
+        print(f"SUMMARY PROMPT FOR: {title}")
+        print("=" * 80)
+        print("SYSTEM PROMPT:")
+        print(system_prompt)
+        print("\n" + "-" * 40)
+        print("USER PROMPT:")
+        print(user_prompt[:2000] + "..." if len(user_prompt) > 2000 else user_prompt)
+        print("\n" + "-" * 40)
+        print("LLM RESPONSE:")
+        print(result)
+        print("=" * 80)
+        print()
+        
+        return result
+    except Exception as e:
+        print(f"Error generating summary for {title}")
+        print(f"Exception type: {type(e).__name__}")
+        print(f"Exception message: {str(e)}")
+        
+        # For RetryError from tenacity, try to get the underlying error
+        if hasattr(e, 'last_attempt') and e.last_attempt:
+            try:
+                underlying = e.last_attempt.exception()
+                print(f"Underlying exception: {type(underlying).__name__}: {str(underlying)}")
+                # For OpenAI errors, try to get more details
+                if hasattr(underlying, 'response') and underlying.response:
+                    print(f"HTTP Status: {underlying.response.status_code}")
+                    if hasattr(underlying.response, 'text'):
+                        print(f"Response text: {underlying.response.text}")
+                if hasattr(underlying, 'body'):
+                    print(f"Error body: {underlying.body}")
+            except Exception as inner_e:
+                print(f"Could not extract underlying error: {inner_e}")
+        
+        # Re-raise to let the caller handle it
+        raise
 
 
 def rank_articles(articles):
@@ -270,11 +342,7 @@ Format your response as a valid JSON list of article indices, starting with the 
         for i, a in enumerate(articles)
     ])
 
-    messages = [
-        {'role': 'system', 'content': system_prompt},
-        {'role': 'user', 'content': user_prompt}
-    ]
-    output = query_openai(messages, max_tokens=400)
+    output = query_openai(system_prompt, user_prompt, max_completion_tokens=400, model='gpt-5', debug_label=f"RANKING {len(articles)} articles")
     start = output.find('[')
     end = output.find(']')
     output = output[start:end+1]
@@ -296,12 +364,7 @@ Victims of false facial regonition matches, White House launches AI-based securi
     
     user_prompt = top_news
 
-    messages = [
-        {'role': 'system', 'content': system_prompt},
-        {'role': 'user', 'content': user_prompt}
-    ]
-
-    return query_openai(messages, max_tokens=256, model='gpt-4')
+    return query_openai(system_prompt, user_prompt, max_completion_tokens=256, model='gpt-5', debug_label="NEWSLETTER_EXCERPT")
 
 
 def final_polish_newsletter(markdown_content):
@@ -327,12 +390,7 @@ Return the polished markdown content. Keep all the original structure and format
 Just output the polished markdown content, with no additional explanations or comments.
 '''.strip()
     
-    messages = [
-        {'role': 'system', 'content': system_prompt},
-        {'role': 'user', 'content': markdown_content}
-    ]
-
-    return query_openai(messages, max_tokens=8000, model='gpt-4o')
+    return query_openai(system_prompt, markdown_content, max_completion_tokens=8000, model='gpt-5', debug_label="FINAL_POLISH")
 
 
 if __name__ == "__main__":    
@@ -396,6 +454,15 @@ if __name__ == "__main__":
     print('Getting news articles...')
     news_articles = [get_news_article(row['URL']) for row in tqdm(rows)]
 
+    print('Getting article categories...')
+    categories = apply_map_batch(
+        get_article_category,
+        [
+            (row, news_article['text'][:500] if news_article and 'text' in news_article else "")
+            for row, news_article in zip(rows, news_articles)
+        ]
+    )
+
     print('Getting article excerpts...')
     excerpts = apply_map_batch(
         get_article_excerpt,
@@ -405,17 +472,13 @@ if __name__ == "__main__":
         ]
     )
 
-    print('Getting article categories...')
-    categories = apply_map_batch(
-        get_article_category,
-        [
-            (row, excerpt)
-            for row, excerpt in zip(rows, excerpts)
-        ]
-    )
-
     articles_map = {c : [] for c in CATEGORIES}
     for row, news_article, excerpt, category in zip(rows, news_articles, excerpts, categories):
+        # Skip articles with empty or invalid categories
+        if not category or category.strip() == '' or category not in CATEGORIES:
+            print(f"  Warning: Skipping article '{news_article['title'] if news_article and 'title' in news_article else row['Name'][:50]}...' due to invalid category: '{category}'")
+            continue
+            
         articles_map[category].append({
             'url': row['URL'],
             'title': news_article['title'] if news_article and 'title' in news_article else row['Name'],
@@ -432,15 +495,19 @@ if __name__ == "__main__":
     for c in tqdm(CATEGORIES):
         articles = articles_map[c]
         if articles:
-            # place the first article w/ an image first
-            rank = rank_articles(articles)
-            for idx, r in enumerate(rank):
-                try:
-                    if articles[r]['news_article']['has_top_image']:
-                        rank[0], rank[idx] = rank[idx], rank[0]
-                        break
-                except:
-                    continue
+            # Skip ranking if there's only one article
+            if len(articles) == 1:
+                rank = [0]
+            else:
+                # place the first article w/ an image first
+                rank = rank_articles(articles)
+                for idx, r in enumerate(rank):
+                    try:
+                        if articles[r]['news_article']['has_top_image']:
+                            rank[0], rank[idx] = rank[idx], rank[0]
+                            break
+                    except:
+                        continue
             
             if c == 'Top News':
                 top_news += f'### {c}'
@@ -448,72 +515,125 @@ if __name__ == "__main__":
 
                 # Process related articles first to get their content
                 processed_articles = []
-                for article in articles:
+                for article_idx, article in enumerate(articles):
+                    print(f"Processing Top News article {article_idx + 1}/{len(articles)}: {article['title']}")
                     related_articles_data = []
-                    if article['Related Articles'] and type(article['Related Articles']) == str:
-                        for related_url in article['Related Articles'].split(','):
-                            try: 
-                                if '?' in related_url:
-                                    related_url = related_url.split('?')[0]
-                                related_article = Article(related_url.strip())
-                                related_article.download()
-                                related_article.parse()
-                                related_articles_data.append({
-                                    'title': related_article.title,
-                                    'text': related_article.text,
-                                    'url': related_url.strip()
-                                })
-                            except:
-                                continue
                     
+                    # Safely process related articles
+                    try:
+                        if article.get('Related Articles') and isinstance(article['Related Articles'], str):
+                            related_urls = [url.strip() for url in article['Related Articles'].split(',') if url.strip()]
+                            print(f"  Found {len(related_urls)} related articles")
+                            
+                            for related_idx, related_url in enumerate(related_urls):
+                                try: 
+                                    print(f"    Processing related article {related_idx + 1}/{len(related_urls)}: {related_url}")
+                                    if '?' in related_url:
+                                        clean_url = related_url.split('?')[0]
+                                    else:
+                                        clean_url = related_url
+                                    
+                                    related_article = Article(clean_url.strip())
+                                    related_article.download()
+                                    related_article.parse()
+                                    
+                                    if related_article.text and related_article.title:
+                                        related_articles_data.append({
+                                            'title': related_article.title,
+                                            'text': related_article.text,
+                                            'url': clean_url.strip()
+                                        })
+                                        print(f"    ✓ Successfully processed: {related_article.title[:50]}...")
+                                    else:
+                                        print(f"    ✗ No text or title found for: {clean_url}")
+                                except Exception as e:
+                                    print(f"    ✗ Error processing related article {related_url}: {str(e)[:100]}")
+                                    # Continue to next related article instead of failing completely
+                                    continue
+                        else:
+                            print("  No related articles found")
+                    except Exception as e:
+                        print(f"  ✗ Error processing related articles for main article: {str(e)[:100]}")
+                        # Even if related articles fail completely, continue with main article
+                        related_articles_data = []
+                    
+                    # Always append the article, even if related articles failed
                     processed_articles.append({
                         **article,
                         'related_articles_data': related_articles_data
                     })
+                    print(f"  Processed article with {len(related_articles_data)} related articles\n")
 
-                # Generate summaries with related articles
-                summaries = apply_map_batch(
-                    get_article_summary,
-                    [
-                        (article['title'], article['news_article'], article['related_articles_data'])
-                        for article in processed_articles
-                    ]
-                )
+                print("Generating summaries for Top News articles...")
+                # Generate summaries with related articles - with error handling
+                summaries = []
+                for article in processed_articles:
+                    try:
+                        summary = get_article_summary(article['title'], article['news_article'], article['related_articles_data'])
+                        summaries.append(summary)
+                    except Exception as e:
+                        print(f"✗ Error generating summary for {article['title']}: {type(e).__name__}: {str(e)}")
+                        # If it's a RetryError, try to get the underlying exception
+                        if hasattr(e, 'last_attempt') and hasattr(e.last_attempt, 'exception'):
+                            underlying_error = e.last_attempt.exception()
+                            print(f"  Underlying error: {type(underlying_error).__name__}: {str(underlying_error)}")
+                        # If it's a nested exception, try to extract more details
+                        if hasattr(e, '__cause__') and e.__cause__:
+                            print(f"  Caused by: {type(e.__cause__).__name__}: {str(e.__cause__)}")
+                        summaries.append(None)  # Add None so indices still match
 
+                print("Building Top News section...")
                 for r in tqdm(rank, leave=False):
-                    article = processed_articles[r]
-                    summary = summaries[r]
-                    if summary is None:
-                        summary = ''
+                    try:
+                        article = processed_articles[r]
+                        summary = summaries[r] if r < len(summaries) else None
+                        if summary is None:
+                            print(f"WARNING: No summary generated for article: {article['title']}")
+                            summary = ''
 
-                    title, url, news_article = article['title'], article['url'], article['news_article']
+                        title, url, news_article = article['title'], article['url'], article['news_article']
 
-                    top_news += f'#### [{title}]({url})'
-                    top_news += '\n'
-                    
-                    # Add related articles section at the top
-                    if article['related_articles_data']:
-                        top_news += 'Related:'
-                        for related in article['related_articles_data']:
-                            top_news += f'\n * [{related["title"]}]({related["url"]})'
+                        top_news += f'#### [{title}]({url})'
+                        top_news += '\n'
+                        
+                        # Add related articles section at the top
+                        if article.get('related_articles_data') and len(article['related_articles_data']) > 0:
+                            top_news += 'Related:'
+                            for related in article['related_articles_data']:
+                                if related.get('title') and related.get('url'):
+                                    top_news += f'\n * [{related["title"]}]({related["url"]})'
+                            top_news += '\n\n'
+                        
+                        if not news_article:
+                            print(f"WARNING: No news article data for: {title}")
+                            top_news += summary + '\n\n'
+                            continue
+                            
+                        if news_article.get('has_top_image', False) and news_article.get('top_image'):
+                            top_news += f'![]({news_article["top_image"]})'
+
+                            if r == 0:
+                                try:
+                                    im_response = requests.get(news_article['top_image'])
+                                    if im_response.status_code == 200:
+                                        im_name = news_article['top_image'].split("/")[-1]
+
+                                        with open(im_folder / im_name, "wb") as f:
+                                            f.write(im_response.content)
+                                        print(f"Saved image: {im_name}")
+                                except Exception as e:
+                                    print(f"Error saving image: {e}")
+
                         top_news += '\n\n'
-                    
-                    if not news_article:
+                        top_news += summary
+                        top_news += '\n\n'
+                        
+                    except Exception as e:
+                        print(f"✗ Error building markdown for article at rank {r}: {str(e)[:100]}")
+                        # Continue with next article instead of failing completely
                         continue
-                    if news_article['has_top_image']:
-                        top_news += f'![]({news_article["top_image"]})'
-
-                        if r == 0:
-                            im_response = requests.get(news_article['top_image'])
-                            if im_response.status_code == 200:
-                                im_name = news_article['top_image'].split("/")[-1]
-
-                                with open(im_folder / im_name, "wb") as f:
-                                    f.write(im_response.content)
-
-                    top_news += '\n\n'
-                    top_news += summary
-                    top_news += '\n\n'
+                    
+                print(f"Top News section completed with {len([s for s in summaries if s])} summaries")
             else:
                 content += f'#### {c}'
                 
@@ -541,7 +661,26 @@ if __name__ == "__main__":
                     .replace('$digest_excerpt$', digest_excerpt)
 
     print('Applying final polish to the newsletter...')
-    md = final_polish_newsletter(md)
+    
+    # Split the markdown into header (YAML front matter) and content
+    if md.startswith('---'):
+        # Find the end of the YAML front matter
+        parts = md.split('---', 2)
+        if len(parts) >= 3:
+            header = f"---{parts[1]}---"
+            content_to_polish = parts[2]
+            
+            # Polish only the content portion
+            polished_content = final_polish_newsletter(content_to_polish)
+            
+            # Recombine header and polished content
+            md = header + polished_content
+        else:
+            # Fallback: polish everything if parsing fails
+            md = final_polish_newsletter(md)
+    else:
+        # No YAML front matter, polish everything
+        md = final_polish_newsletter(md)
 
     print('Saving digest markdown...')
     with open(output_md, 'wb') as f:
