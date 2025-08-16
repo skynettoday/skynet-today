@@ -52,13 +52,6 @@ def apply_map_batch(func, args_list):
 
 @retry(wait=wait_random_exponential(min=1, max=10), stop=stop_after_attempt(10))
 def query_openai(instructions, user_input, max_completion_tokens=100, model='gpt-5', debug_label=""):
-    # Debug logging
-    if debug_label:
-        print(f"\n=== {debug_label} ===")
-        if instructions:
-            print(f"INSTRUCTIONS: {instructions[:100]}...")
-        print(f"INPUT: {user_input[:200]}...")
-
     try:
         if instructions:
             result = _OPENAI_CLIENT.responses.create(
@@ -73,10 +66,6 @@ def query_openai(instructions, user_input, max_completion_tokens=100, model='gpt
                 input=user_input
             ).output_text
 
-        if debug_label:
-            print(f"OUTPUT: '{result}'")
-            print("=" * 50)
-
         return result
     except Exception as e:
         print(f"ERROR in query_openai ({debug_label}): {type(e).__name__}: {e}")
@@ -89,7 +78,6 @@ def query_openai(instructions, user_input, max_completion_tokens=100, model='gpt
 
 def get_article_category(row, article_text):
     if row['Type'] in CATEGORIES:
-        print(row['Type'])
         return row['Type']
 
     title, url = row['Name'], row['URL']
@@ -132,10 +120,8 @@ Only respond with one of the above types (Business, Research, Tools, Concerns, P
 
 def get_news_article(url):
     try:
-        print(f"Fetching article: {url}")
         if 'arxiv' in url:
             text = get_arxiv_paper_contents(url)
-            print(f"✓ Successfully fetched arXiv paper")
             return {
                 'text': text,
                 'top_image': None,
@@ -146,9 +132,7 @@ def get_news_article(url):
             article.download()
             article.parse()
             if not article.text:
-                print(f"✗ No text found for article: {url}")
                 return None
-            print(f"✓ Successfully fetched article: {article.title[:50]}...")
             return {
                 'title': article.title,
                 'text': article.text,
@@ -156,8 +140,6 @@ def get_news_article(url):
                 'has_top_image': article.has_top_image()
             }
     except Exception as e:
-        print(f'✗ ERROR: not able to get text for URL {url}')
-        print(f'  Exception: {e}')
         return None
 
 
@@ -181,6 +163,7 @@ Given the title, subtitle, and text of an article about AI, write a short one se
 * should avoid 'marketing hype' (terms like 'revolutionizes' , 'groundbreaking', 'advanced' etc.) -- stick to the facts
 * should work as a follow up sentence that follows the article title.
 * should try to vary the opening words to not be repetitive
+* Should be concise and to the point rather than overly detailed.
 
 Examples:
 * 'Google is testing a vibe-coding app called Opal' -> 'The app allows users to create and share mini web apps using text prompts and a visual workflow, aiming to make app development accessible to non-technical users.'
@@ -287,22 +270,6 @@ Title: {title}
 
     try:
         result = query_openai(system_prompt, user_prompt, max_completion_tokens=4000, model='gpt-5', debug_label=f"SUMMARY for {title[:30]}")
-        
-        # Print input and output for debugging
-        print("=" * 80)
-        print(f"SUMMARY PROMPT FOR: {title}")
-        print("=" * 80)
-        print("SYSTEM PROMPT:")
-        print(system_prompt)
-        print("\n" + "-" * 40)
-        print("USER PROMPT:")
-        print(user_prompt[:2000] + "..." if len(user_prompt) > 2000 else user_prompt)
-        print("\n" + "-" * 40)
-        print("LLM RESPONSE:")
-        print(result)
-        print("=" * 80)
-        print()
-        
         return result
     except Exception as e:
         print(f"Error generating summary for {title}")
@@ -476,7 +443,6 @@ if __name__ == "__main__":
     for row, news_article, excerpt, category in zip(rows, news_articles, excerpts, categories):
         # Skip articles with empty or invalid categories
         if not category or category.strip() == '' or category not in CATEGORIES:
-            print(f"  Warning: Skipping article '{news_article['title'] if news_article and 'title' in news_article else row['Name'][:50]}...' due to invalid category: '{category}'")
             continue
             
         articles_map[category].append({
@@ -516,18 +482,15 @@ if __name__ == "__main__":
                 # Process related articles first to get their content
                 processed_articles = []
                 for article_idx, article in enumerate(articles):
-                    print(f"Processing Top News article {article_idx + 1}/{len(articles)}: {article['title']}")
                     related_articles_data = []
                     
                     # Safely process related articles
                     try:
                         if article.get('Related Articles') and isinstance(article['Related Articles'], str):
                             related_urls = [url.strip() for url in article['Related Articles'].split(',') if url.strip()]
-                            print(f"  Found {len(related_urls)} related articles")
                             
                             for related_idx, related_url in enumerate(related_urls):
                                 try: 
-                                    print(f"    Processing related article {related_idx + 1}/{len(related_urls)}: {related_url}")
                                     if '?' in related_url:
                                         clean_url = related_url.split('?')[0]
                                     else:
@@ -543,17 +506,10 @@ if __name__ == "__main__":
                                             'text': related_article.text,
                                             'url': clean_url.strip()
                                         })
-                                        print(f"    ✓ Successfully processed: {related_article.title[:50]}...")
-                                    else:
-                                        print(f"    ✗ No text or title found for: {clean_url}")
                                 except Exception as e:
-                                    print(f"    ✗ Error processing related article {related_url}: {str(e)[:100]}")
                                     # Continue to next related article instead of failing completely
                                     continue
-                        else:
-                            print("  No related articles found")
                     except Exception as e:
-                        print(f"  ✗ Error processing related articles for main article: {str(e)[:100]}")
                         # Even if related articles fail completely, continue with main article
                         related_articles_data = []
                     
@@ -562,9 +518,7 @@ if __name__ == "__main__":
                         **article,
                         'related_articles_data': related_articles_data
                     })
-                    print(f"  Processed article with {len(related_articles_data)} related articles\n")
 
-                print("Generating summaries for Top News articles...")
                 # Generate summaries with related articles - with error handling
                 summaries = []
                 for article in processed_articles:
@@ -572,23 +526,13 @@ if __name__ == "__main__":
                         summary = get_article_summary(article['title'], article['news_article'], article['related_articles_data'])
                         summaries.append(summary)
                     except Exception as e:
-                        print(f"✗ Error generating summary for {article['title']}: {type(e).__name__}: {str(e)}")
-                        # If it's a RetryError, try to get the underlying exception
-                        if hasattr(e, 'last_attempt') and hasattr(e.last_attempt, 'exception'):
-                            underlying_error = e.last_attempt.exception()
-                            print(f"  Underlying error: {type(underlying_error).__name__}: {str(underlying_error)}")
-                        # If it's a nested exception, try to extract more details
-                        if hasattr(e, '__cause__') and e.__cause__:
-                            print(f"  Caused by: {type(e.__cause__).__name__}: {str(e.__cause__)}")
                         summaries.append(None)  # Add None so indices still match
 
-                print("Building Top News section...")
                 for r in tqdm(rank, leave=False):
                     try:
                         article = processed_articles[r]
                         summary = summaries[r] if r < len(summaries) else None
                         if summary is None:
-                            print(f"WARNING: No summary generated for article: {article['title']}")
                             summary = ''
 
                         title, url, news_article = article['title'], article['url'], article['news_article']
@@ -605,7 +549,6 @@ if __name__ == "__main__":
                             top_news += '\n\n'
                         
                         if not news_article:
-                            print(f"WARNING: No news article data for: {title}")
                             top_news += summary + '\n\n'
                             continue
                             
@@ -620,20 +563,18 @@ if __name__ == "__main__":
 
                                         with open(im_folder / im_name, "wb") as f:
                                             f.write(im_response.content)
-                                        print(f"Saved image: {im_name}")
                                 except Exception as e:
-                                    print(f"Error saving image: {e}")
+                                    pass
 
                         top_news += '\n\n'
                         top_news += summary
                         top_news += '\n\n'
                         
                     except Exception as e:
-                        print(f"✗ Error building markdown for article at rank {r}: {str(e)[:100]}")
                         # Continue with next article instead of failing completely
                         continue
                     
-                print(f"Top News section completed with {len([s for s in summaries if s])} summaries")
+                print("Top News section completed")
             else:
                 content += f'#### {c}'
                 
