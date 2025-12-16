@@ -576,18 +576,21 @@ if __name__ == "__main__":
                     
                 print("Top News section completed")
             else:
-                content += f'#### {c}'
-                
-                if articles[rank[0]]['news_article']['has_top_image']:
-                    content += '\n'
-                    content += f'![]({articles[rank[0]]["news_article"]["top_image"]})'
-                content += '\n\n'
-                
-                for r in tqdm(rank, leave=False):
-                    article = articles[r]
-                    title, url, excerpt = article['title'], article['url'], article['excerpt']
-                    content += f'[{title}]({url}). {excerpt}'
+                try:
+                    content += f'#### {c}'
+                    
+                    if articles[rank[0]]['news_article']['has_top_image']:
+                        content += '\n'
+                        content += f'![]({articles[rank[0]]["news_article"]["top_image"]})'
                     content += '\n\n'
+                    
+                    for r in tqdm(rank, leave=False):
+                        article = articles[r]
+                        title, url, excerpt = article['title'], article['url'], article['excerpt']
+                        content += f'[{title}]({url}). {excerpt}'
+                        content += '\n\n'
+                except:
+                    pass
 
     # remove the last two empty lines
     content = content[:-2]
