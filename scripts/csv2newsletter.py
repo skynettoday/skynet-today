@@ -2,7 +2,7 @@ import os
 import argparse
 import requests
 import re
-from multiprocessing.dummy import Pool
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import pandas as pd
 import inflect
@@ -20,6 +20,15 @@ from tqdm.auto import tqdm
 from tenacity import retry, stop_after_attempt, wait_random_exponential
 from content_retrieval import get_arxiv_paper_contents
 
+# Constants for text limits
+MAX_ARTICLE_WORDS = 10000
+CATEGORY_TEXT_PREVIEW_LENGTH = 500
+EXCERPT_MAX_TOKENS = 100
+SUMMARY_MAX_TOKENS = 4000
+RANKING_MAX_TOKENS = 400
+NEWSLETTER_EXCERPT_MAX_TOKENS = 256
+FINAL_POLISH_MAX_TOKENS = 8000
+
 CATEGORIES = [
     'Top News',
     'Tools',
@@ -34,19 +43,26 @@ CATEGORIES = [
 ]
 
 
-def apply_map_batch(func, args_list):
-    pool = Pool(os.cpu_count())
-    promises = [pool.apply_async(func, args) for args in args_list]
+def clean_url(url):
+    """Remove query parameters from URL."""
+    if '?' in url:
+        return url.split('?')[0]
+    return url
 
-    results = [None] * len(promises)
-    done_idxs = set()
-    pbar = tqdm(total=len(promises))
-    while len(done_idxs) < len(promises):
-        for idx, promise in enumerate(promises):
-            if idx not in done_idxs and promise.ready():
-                done_idxs.add(idx)
-                results[idx] = promise.get()
+
+def apply_map_batch(func, args_list):
+    """Execute function calls in parallel using ThreadPoolExecutor."""
+    results = [None] * len(args_list)
+
+    with ThreadPoolExecutor(max_workers=os.cpu_count()) as executor:
+        future_to_idx = {executor.submit(func, *args): idx for idx, args in enumerate(args_list)}
+
+        with tqdm(total=len(args_list)) as pbar:
+            for future in as_completed(future_to_idx):
+                idx = future_to_idx[future]
+                results[idx] = future.result()
                 pbar.update(1)
+
     return results
 
 
@@ -84,8 +100,8 @@ def get_article_category(row, article_text):
     if 'arxiv' in url:
         return 'Research'
 
-    # Use first 500 characters of article text if available, otherwise just title and URL
-    text_preview = article_text[:500] if article_text else "No text available"
+    # Use first N characters of article text if available, otherwise just title and URL
+    text_preview = article_text[:CATEGORY_TEXT_PREVIEW_LENGTH] if article_text else "No text available"
     
     prompt = f'''
 Title: {title}
@@ -113,7 +129,7 @@ Only respond with one of the above types (Business, Research, Tools, Concerns, P
         system_prompt,
         prompt,
         model="gpt-5-mini-2025-08-07",
-        max_completion_tokens=50,
+        max_completion_tokens=EXCERPT_MAX_TOKENS,
         debug_label=f"CATEGORY for {title[:30]}"
     )
 
@@ -143,7 +159,8 @@ def get_news_article(url):
         return None
 
 
-def clip_text_words(text, max_words=10000):
+def clip_text_words(text, max_words=MAX_ARTICLE_WORDS):
+    """Clip text to maximum number of words."""
     words = text.split(" ")
     if len(words) > max_words:
         text = " ".join(words[:max_words])
@@ -178,35 +195,13 @@ Text: {clip_text_words(article["text"])}
         system_prompt,
         prompt,
         model="gpt-5-mini-2025-08-07",
-        max_completion_tokens = 100,
+        max_completion_tokens=EXCERPT_MAX_TOKENS,
         debug_label=f"EXCERPT for {row['Name'][:30]}"
     )
 
 
-def get_article_type_manual(title, link, excerpt):
-    print('To which category does this article belong?')
-    print()
-    print(row['Name'].encode('utf-8'))
-    print()
-    print(row['Excerpt'].encode('utf-8'))
-    print()
-
-    for i, c in enumerate(CATEGORIES):
-        print(f'{i}) {c}')
-    while True:
-        try:
-            print()
-            c_idx = int(input('Category Number: '))
-            c = CATEGORIES[c_idx]
-            break
-        except:
-            print('Please enter a valid category!')
-    print()
-
-    return c
-
-
-def get_output_file_name(n):
+def get_output_file_name(digest_number):
+    """Generate output filename based on closest Monday and digest number."""
     today = date.today()
 
     # Calculate the difference between today and the most recent Monday
@@ -224,7 +219,7 @@ def get_output_file_name(n):
     # Format the date as YYYY-MM-DD
     formatted_date = closest_monday.strftime("%Y-%m-%d")
 
-    return f'{formatted_date}-{n}.md'
+    return f'{formatted_date}-{digest_number}.md'
 
 
 def get_article_summary(title, news_article, related_articles=None):
@@ -269,7 +264,7 @@ Title: {title}
 '''.strip()
 
     try:
-        result = query_openai(system_prompt, user_prompt, max_completion_tokens=4000, model='gpt-5', debug_label=f"SUMMARY for {title[:30]}")
+        result = query_openai(system_prompt, user_prompt, max_completion_tokens=SUMMARY_MAX_TOKENS, model='gpt-5', debug_label=f"SUMMARY for {title[:30]}")
         return result
     except Exception as e:
         print(f"Error generating summary for {title}")
@@ -296,6 +291,7 @@ Title: {title}
 
 
 def rank_articles(articles):
+    """Rank articles by importance using AI (currently unused - keeping for backwards compatibility)."""
     system_prompt = '''
 You are an expert writer and commentator in AI.
 The user will give you a list of articles, and you will rank them in order of importance.
@@ -303,13 +299,13 @@ The most important article should be ranked first, and the least important artic
 Article index, title, and excerpts are given.
 Format your response as a valid JSON list of article indices, starting with the character '[' and ending with the character ']'.
 '''.strip()
-    
+
     user_prompt = '\n'.join([
-        f'{i} | Title: {a["title"]} | Excerpt: {a["excerpt"]}\n' 
-        for i, a in enumerate(articles)
+        f'{idx} | Title: {article["title"]} | Excerpt: {article["excerpt"]}\n'
+        for idx, article in enumerate(articles)
     ])
 
-    output = query_openai(system_prompt, user_prompt, max_completion_tokens=400, model='gpt-5', debug_label=f"RANKING {len(articles)} articles")
+    output = query_openai(system_prompt, user_prompt, max_completion_tokens=RANKING_MAX_TOKENS, model='gpt-5', debug_label=f"RANKING {len(articles)} articles")
     start = output.find('[')
     end = output.find(']')
     output = output[start:end+1]
@@ -331,7 +327,127 @@ Victims of false facial regonition matches, White House launches AI-based securi
     
     user_prompt = top_news
 
-    return query_openai(system_prompt, user_prompt, max_completion_tokens=256, model='gpt-5', debug_label="NEWSLETTER_EXCERPT")
+    return query_openai(system_prompt, user_prompt, max_completion_tokens=NEWSLETTER_EXCERPT_MAX_TOKENS, model='gpt-5', debug_label="NEWSLETTER_EXCERPT")
+
+
+def process_related_articles(related_articles_str):
+    """Process comma-separated related article URLs and fetch their content."""
+    related_articles_data = []
+
+    if not related_articles_str or not isinstance(related_articles_str, str):
+        return related_articles_data
+
+    related_urls = [url.strip() for url in related_articles_str.split(',') if url.strip()]
+
+    for related_url in related_urls:
+        try:
+            clean_related_url = clean_url(related_url.strip())
+            related_article = Article(clean_related_url)
+            related_article.download()
+            related_article.parse()
+
+            if related_article.text and related_article.title:
+                related_articles_data.append({
+                    'title': related_article.title,
+                    'text': related_article.text,
+                    'url': clean_related_url
+                })
+        except:
+            continue
+
+    return related_articles_data
+
+
+def build_top_news_section(articles, image_folder):
+    """Build the Top News section of the newsletter."""
+    parts = ['### Top News\n\n']
+    image_name = ''
+
+    # Use CSV order
+    rank = list(range(len(articles)))
+
+    # Process related articles first to get their content
+    processed_articles = []
+    for article in articles:
+        related_articles_data = process_related_articles(article.get('Related Articles'))
+        processed_articles.append({
+            **article,
+            'related_articles_data': related_articles_data
+        })
+
+    # Generate summaries with related articles
+    summaries = []
+    for article in processed_articles:
+        try:
+            summary = get_article_summary(article['title'], article['news_article'], article['related_articles_data'])
+            summaries.append(summary)
+        except:
+            summaries.append(None)
+
+    for rank_idx in tqdm(rank, leave=False):
+        try:
+            article = processed_articles[rank_idx]
+            summary = summaries[rank_idx] if rank_idx < len(summaries) else None
+            if summary is None:
+                summary = ''
+
+            title, url, news_article = article['title'], article['url'], article['news_article']
+
+            parts.append(f'#### [{title}]({url})\n')
+
+            # Add related articles section at the top
+            if article.get('related_articles_data') and len(article['related_articles_data']) > 0:
+                parts.append('Related:')
+                for related in article['related_articles_data']:
+                    if related.get('title') and related.get('url'):
+                        parts.append(f'\n * [{related["title"]}]({related["url"]})')
+                parts.append('\n\n')
+
+            if not news_article:
+                parts.append(summary + '\n\n')
+                continue
+
+            if news_article.get('has_top_image', False) and news_article.get('top_image'):
+                parts.append(f'![]({news_article["top_image"]})\n\n')
+
+                if rank_idx == 0:
+                    try:
+                        image_response = requests.get(news_article['top_image'])
+                        if image_response.status_code == 200:
+                            image_name = news_article['top_image'].split("/")[-1]
+                            with open(image_folder / image_name, "wb") as img_file:
+                                img_file.write(image_response.content)
+                    except:
+                        pass
+
+            parts.append(summary + '\n\n')
+        except:
+            continue
+
+    print("Top News section completed")
+    return ''.join(parts), image_name
+
+
+def build_other_category_section(category, articles):
+    """Build a section for non-Top News categories."""
+    parts = [f'#### {category}']
+
+    # Use CSV order
+    rank = list(range(len(articles)))
+
+    try:
+        if articles[rank[0]]['news_article']['has_top_image']:
+            parts.append(f'\n![]({articles[rank[0]]["news_article"]["top_image"]})')
+        parts.append('\n\n')
+
+        for rank_idx in tqdm(rank, leave=False):
+            article = articles[rank_idx]
+            title, url, excerpt = article['title'], article['url'], article['excerpt']
+            parts.append(f'[{title}]({url}). {excerpt}\n\n')
+    except:
+        pass
+
+    return ''.join(parts)
 
 
 def final_polish_newsletter(markdown_content):
@@ -357,10 +473,10 @@ Return the polished markdown content. Keep all the original structure and format
 Just output the polished markdown content, with no additional explanations or comments.
 '''.strip()
     
-    return query_openai(system_prompt, markdown_content, max_completion_tokens=8000, model='gpt-5', debug_label="FINAL_POLISH")
+    return query_openai(system_prompt, markdown_content, max_completion_tokens=FINAL_POLISH_MAX_TOKENS, model='gpt-5', debug_label="FINAL_POLISH")
 
 
-if __name__ == "__main__":    
+if __name__ == "__main__":
     __spec__ = None
     parser = argparse.ArgumentParser()
     parser.add_argument('--template_file', '-tf', type=str, default='digest_template.md')
@@ -369,16 +485,16 @@ if __name__ == "__main__":
     parser.add_argument('--force_overwrite', '-f', action='store_true')
     args = parser.parse_args()
 
-    n = args.digest_number
-    p = inflect.engine()
-    n_english = p.number_to_words(p.ordinal(n)).replace(' ', '-')
-    print(f'Parsing for the {n_english} digest')
+    digest_number = args.digest_number
+    inflect_engine = inflect.engine()
+    digest_number_english = inflect_engine.number_to_words(inflect_engine.ordinal(digest_number)).replace(' ', '-')
+    print(f'Parsing for the {digest_number_english} digest')
 
-    im_folder = Path(f'../assets/img/digests/{n}')
-    print(f'Making image folder {im_folder}')
-    im_folder.mkdir(parents=True, exist_ok=True)
+    image_folder = Path(f'../assets/img/digests/{digest_number}')
+    print(f'Making image folder {image_folder}')
+    image_folder.mkdir(parents=True, exist_ok=True)
 
-    output_md = Path('../_posts/digests') / get_output_file_name(n)
+    output_md = Path('../_posts/digests') / get_output_file_name(digest_number)
 
     print(f'Will save result to {output_md}')
     if os.path.isfile(output_md):
@@ -386,12 +502,12 @@ if __name__ == "__main__":
             raise ValueError('Cannot overwrite existing output file!')
 
     print(f'Loading template from {args.template_file}')
-    with open(args.template_file, 'r') as f:
-        md_template = f.read()
+    with open(args.template_file, 'r') as template_file:
+        md_template = template_file.read()
 
     input_csv = args.input_csv
     if not input_csv:
-        input_csv = f'Last Week in AI News Planning - Past - {n}.csv'
+        input_csv = f'Last Week in AI News Planning - Past - {digest_number}.csv'
 
     print(f'Reading {input_csv}')
     csv = pd.read_csv(input_csv, encoding='utf-8')
@@ -413,9 +529,7 @@ if __name__ == "__main__":
         if 'youtube' in row['URL']:
             continue
 
-        if '?' in row['URL']:
-            row['URL'] = row['URL'].split("?")[0]
-
+        row['URL'] = clean_url(row['URL'])
         rows.append(row)
 
     print('Getting news articles...')
@@ -439,12 +553,12 @@ if __name__ == "__main__":
         ]
     )
 
-    articles_map = {c : [] for c in CATEGORIES}
+    articles_map = {category: [] for category in CATEGORIES}
     for row, news_article, excerpt, category in zip(rows, news_articles, excerpts, categories):
         # Skip articles with empty or invalid categories
         if not category or category.strip() == '' or category not in CATEGORIES:
             continue
-            
+
         articles_map[category].append({
             'url': row['URL'],
             'title': news_article['title'] if news_article and 'title' in news_article else row['Name'],
@@ -455,153 +569,29 @@ if __name__ == "__main__":
         })
     
     print('Populating content...')
-    top_news = ''
-    content = ''
-    im_name = ''
-    for c in tqdm(CATEGORIES):
-        articles = articles_map[c]
+    top_news_parts = []
+    content_parts = []
+    image_name = ''
+
+    for category in tqdm(CATEGORIES):
+        articles = articles_map[category]
         if articles:
-            # Skip ranking if there's only one article
-            if len(articles) == 1:
-                rank = [0]
+            if category == 'Top News':
+                top_news_content, image_name = build_top_news_section(articles, image_folder)
+                top_news_parts.append(top_news_content)
             else:
-                # place the first article w/ an image first
-                rank = rank_articles(articles)
-                for idx, r in enumerate(rank):
-                    try:
-                        if articles[r]['news_article']['has_top_image']:
-                            rank[0], rank[idx] = rank[idx], rank[0]
-                            break
-                    except:
-                        continue
-            
-            if c == 'Top News':
-                top_news += f'### {c}'
-                top_news += '\n\n'
+                content_parts.append(build_other_category_section(category, articles))
 
-                # Process related articles first to get their content
-                processed_articles = []
-                for article_idx, article in enumerate(articles):
-                    related_articles_data = []
-                    
-                    # Safely process related articles
-                    try:
-                        if article.get('Related Articles') and isinstance(article['Related Articles'], str):
-                            related_urls = [url.strip() for url in article['Related Articles'].split(',') if url.strip()]
-                            
-                            for related_idx, related_url in enumerate(related_urls):
-                                try: 
-                                    if '?' in related_url:
-                                        clean_url = related_url.split('?')[0]
-                                    else:
-                                        clean_url = related_url
-                                    
-                                    related_article = Article(clean_url.strip())
-                                    related_article.download()
-                                    related_article.parse()
-                                    
-                                    if related_article.text and related_article.title:
-                                        related_articles_data.append({
-                                            'title': related_article.title,
-                                            'text': related_article.text,
-                                            'url': clean_url.strip()
-                                        })
-                                except Exception as e:
-                                    # Continue to next related article instead of failing completely
-                                    continue
-                    except Exception as e:
-                        # Even if related articles fail completely, continue with main article
-                        related_articles_data = []
-                    
-                    # Always append the article, even if related articles failed
-                    processed_articles.append({
-                        **article,
-                        'related_articles_data': related_articles_data
-                    })
-
-                # Generate summaries with related articles - with error handling
-                summaries = []
-                for article in processed_articles:
-                    try:
-                        summary = get_article_summary(article['title'], article['news_article'], article['related_articles_data'])
-                        summaries.append(summary)
-                    except Exception as e:
-                        summaries.append(None)  # Add None so indices still match
-
-                for r in tqdm(rank, leave=False):
-                    try:
-                        article = processed_articles[r]
-                        summary = summaries[r] if r < len(summaries) else None
-                        if summary is None:
-                            summary = ''
-
-                        title, url, news_article = article['title'], article['url'], article['news_article']
-
-                        top_news += f'#### [{title}]({url})'
-                        top_news += '\n'
-                        
-                        # Add related articles section at the top
-                        if article.get('related_articles_data') and len(article['related_articles_data']) > 0:
-                            top_news += 'Related:'
-                            for related in article['related_articles_data']:
-                                if related.get('title') and related.get('url'):
-                                    top_news += f'\n * [{related["title"]}]({related["url"]})'
-                            top_news += '\n\n'
-                        
-                        if not news_article:
-                            top_news += summary + '\n\n'
-                            continue
-                            
-                        if news_article.get('has_top_image', False) and news_article.get('top_image'):
-                            top_news += f'![]({news_article["top_image"]})'
-
-                            if r == 0:
-                                try:
-                                    im_response = requests.get(news_article['top_image'])
-                                    if im_response.status_code == 200:
-                                        im_name = news_article['top_image'].split("/")[-1]
-
-                                        with open(im_folder / im_name, "wb") as f:
-                                            f.write(im_response.content)
-                                except Exception as e:
-                                    pass
-
-                        top_news += '\n\n'
-                        top_news += summary
-                        top_news += '\n\n'
-                        
-                    except Exception as e:
-                        # Continue with next article instead of failing completely
-                        continue
-                    
-                print("Top News section completed")
-            else:
-                try:
-                    content += f'#### {c}'
-                    
-                    if articles[rank[0]]['news_article']['has_top_image']:
-                        content += '\n'
-                        content += f'![]({articles[rank[0]]["news_article"]["top_image"]})'
-                    content += '\n\n'
-                    
-                    for r in tqdm(rank, leave=False):
-                        article = articles[r]
-                        title, url, excerpt = article['title'], article['url'], article['excerpt']
-                        content += f'[{title}]({url}). {excerpt}'
-                        content += '\n\n'
-                except:
-                    pass
-
-    # remove the last two empty lines
-    content = content[:-2]
+    top_news = ''.join(top_news_parts)
+    content = ''.join(content_parts).rstrip('\n')
 
     digest_excerpt = get_newsletter_excerpt(top_news)
 
-    md = md_template.replace('$digest_number$', str(n)) \
-                    .replace('$digest_number_english$', n_english) \
+    md = md_template.replace('$digest_number$', str(digest_number)) \
+                    .replace('$digest_number_english$', digest_number_english) \
                     .replace('$top_news$', top_news) \
                     .replace('$content$', content) \
-                    .replace('$im_name$', im_name) \
+                    .replace('$im_name$', image_name) \
                     .replace('$digest_excerpt$', digest_excerpt)
 
     print('Applying final polish to the newsletter...')
@@ -627,7 +617,7 @@ if __name__ == "__main__":
         md = final_polish_newsletter(md)
 
     print('Saving digest markdown...')
-    with open(output_md, 'wb') as f:
-        f.write(md.encode('utf-8'))
+    with open(output_md, 'wb') as output_file:
+        output_file.write(md.encode('utf-8'))
 
     print('Done!')

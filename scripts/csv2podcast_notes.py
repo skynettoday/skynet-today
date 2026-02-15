@@ -1,12 +1,10 @@
 import os
 import re
-import logging
 import argparse
 import requests
 
 import pandas as pd
 import inflect
-import openai
 
 from newspaper import Article
 from pathlib import Path
@@ -18,6 +16,13 @@ from openai import OpenAI
 with open('secrets/openai_api_key.txt', 'r') as f:
     _OPENAI_CLIENT = OpenAI(api_key=f.read().strip())
 from content_retrieval import get_arxiv_paper_contents, get_reuters_article_content
+
+# Constants
+DEFAULT_MAX_TOKENS = 4000
+DEFAULT_MODEL = 'gpt-4o'
+IMAGE_FOLDER = 'images'
+OUTPUT_FILE = 'summaries.md'
+INPUT_CSV = 'news.csv'
 
 _CATEGORIES = [
     'Tools & Apps',
@@ -41,7 +46,8 @@ STORY_TYPE_COL = "Main Story or Lighting Round?"
 STORY_SECTION_COL = "Section"
 
 @retry(wait=wait_random_exponential(min=1, max=10), stop=stop_after_attempt(10))
-def query_openai(messages, max_tokens=4000, model='gpt-4o'):
+def query_openai(messages, max_tokens=DEFAULT_MAX_TOKENS, model=DEFAULT_MODEL):
+    """Query OpenAI API with retry logic."""
     return _OPENAI_CLIENT.chat.completions.create(
         model=model,
         messages=messages,
@@ -50,7 +56,7 @@ def query_openai(messages, max_tokens=4000, model='gpt-4o'):
     ).choices[0].message.content
 
 def summarize_article(url, lighting_round_story=False, save_image=False):
-    article = Article(url)
+    """Generate a bullet point summary of a news article or research paper."""
     article = Article(url)
     article.download()
     article.parse()
@@ -59,11 +65,14 @@ def summarize_article(url, lighting_round_story=False, save_image=False):
         text = get_arxiv_paper_contents(url)
 
     if save_image and article.has_top_image():
-        im_response = requests.get(article.top_image)
-        if im_response.status_code == 200:
-            im_name = article.top_image.split("/")[-1]
-            with open("images/"+im_name, "wb") as f:
-                f.write(im_response.content)
+        image_response = requests.get(article.top_image)
+        if image_response.status_code == 200:
+            image_name = article.top_image.split("/")[-1]
+            image_folder_path = Path(IMAGE_FOLDER)
+            image_folder_path.mkdir(parents=True, exist_ok=True)
+            image_path = image_folder_path / image_name
+            with open(image_path, "wb") as image_file:
+                image_file.write(image_response.content)
 
     system_prompt = '''
 Your task is to provide a bullet point summary of a news article or research paper about AI. Each bullet point should be no more than 2 sentences long. This summary will be used for the podcast Last Week in AI, in which the hosts summarize stories about AI in an accessible manner. We will provide the title and text contents of the article. Output in markdown format.'''
@@ -84,77 +93,120 @@ Text: {text}
         {'role': 'user', 'content': prompt}
     ])
 
+
+def build_outline(articles_map, categories):
+    """Build the outline section of the podcast notes."""
+    parts = ['Outline:\n']
+
+    for category in categories:
+        parts.append(f'- {category}\n')
+        main_stories, lighting_stories = articles_map[category]
+
+        for name, url, summary, related_articles in main_stories:
+            parts.append(f'   - [{name}]({url})\n')
+
+        parts.append('  - Lighting round\n')
+
+        for name, url, summary, related_articles in lighting_stories:
+            parts.append(f'       - [{name}]({url})\n')
+
+    return ''.join(parts)
+
+
+def build_summaries(articles_map, categories):
+    """Build the summaries section of the podcast notes."""
+    parts = ['\n\n#Summaries\n\n']
+
+    for category in categories:
+        main_stories, lighting_stories = articles_map[category]
+        parts.append(f'## {category}')
+
+        if len(main_stories) > 0:
+            parts.append('\n\n')
+            for name, url, summary, related_articles in main_stories:
+                parts.append(f'[{name}]({url})\n')
+                parts.append(summary)
+                parts.append('\n\n')
+
+        parts.append('\n### Lighting Round\n\n')
+
+        if len(lighting_stories) > 0:
+            for name, url, summary, related_articles in lighting_stories:
+                parts.append(f'[{name}]({url})\n')
+                parts.append(summary)
+                parts.append('\n\n')
+
+    return ''.join(parts)
+
+
+def process_csv_row(row):
+    """Process a single CSV row and return article data."""
+    is_main_story = row[STORY_TYPE_COL] == 'Main'
+    category = SECTION_CATEGORY_MAPPINGS[row[STORY_SECTION_COL]]
+
+    print(f'\nProcessing "{row["Name"]}"')
+    print(f'Type: {"Main story" if is_main_story else "Lighting round story"}')
+    print(f'Link: {row["URL"]}')
+    print(f'Category: {category}')
+
+    try:
+        summary = summarize_article(row['URL'], not is_main_story, is_main_story)
+    except Exception as e:
+        print(e)
+        summary = "Error :("
+
+    print('Summary:')
+    print(summary)
+
+    # Clean up title
+    cleaned_name = row['Name'].replace("Title:", "")
+
+    return {
+        'is_main': is_main_story,
+        'category': category,
+        'name': cleaned_name,
+        'url': row['URL'],
+        'summary': summary,
+        'related_articles': row['Related Articles']
+    }
+
+
 if __name__ == "__main__":
-    with open('secrets/openai_api_key.txt', 'r') as f:
-        openai.api_key = f.read().strip()
+    # Initialize articles map: {category: ([main_stories], [lighting_stories])}
+    articles_map = {category: ([], []) for category in _CATEGORIES}
+    articles_map['other'] = ([], [])
 
-    articles_map = {c : ([],[]) for c in _CATEGORIES}
-    related_articles_map = {}
-    articles_map['other'] = ([],[])
-    csv = pd.read_csv('news.csv', encoding='utf-8')
-    num_picks = len(csv)
-    pbar = tqdm(total=num_picks)
+    # Read and process CSV
+    csv_data = pd.read_csv(INPUT_CSV, encoding='utf-8')
 
-    for row_num, row in tqdm(csv.iterrows()):
-        is_main_pick = row[STORY_TYPE_COL] == 'Main'
-        category = SECTION_CATEGORY_MAPPINGS[row[STORY_SECTION_COL]]
-        print('\nProcessing "%s"'%row['Name'])
-        if is_main_pick:
-            print("Type: Main story")
+    print(f'Processing {len(csv_data)} articles...')
+    for row_num, row in tqdm(csv_data.iterrows(), total=len(csv_data)):
+        article_data = process_csv_row(row)
+
+        # Add to appropriate category and story type
+        category = article_data['category']
+        article_info = [
+            article_data['name'],
+            article_data['url'],
+            article_data['summary'],
+            article_data['related_articles']
+        ]
+
+        if article_data['is_main']:
+            articles_map[category][0].append(article_info)
         else:
-            print("Type: Lighting round story")
-        print("Link: %s"%row['URL'])
-        print("Category: %s"%category)
-        try:
-            summary = summarize_article(row['URL'],not is_main_pick, is_main_pick)
-        except Exception as e:
-            print(e)
-            summary = "Error :("
-        print('Summary:')
-        print(summary)
-        row['Name'] = row['Name'].replace("Title:","")
-        if is_main_pick:
-            articles_map[category][0].append([row['Name'],row['URL'],summary,row['Related Articles']])
-        else:
-            articles_map[category][1].append([row['Name'],row['URL'],summary,row['Related Articles']])
+            articles_map[category][1].append(article_info)
+
         print("")
-        pbar.update(1)
-    pbar.close()
-        
-    content = 'Outline:\n'
-    
-    for c in _CATEGORIES:
-        content+="- "+c+"\n"
-        items = articles_map[c]
-        for item in items[0]:        
-            name, url, summary, related_articles = item
-            content += f'   - [{name}]({url})\n'
-        content+="  - Lighting round\n"
-        for item in items[1]: 
-            name, url, summary, related_articles= item       
-            content += f'       - [{name}]({url})\n'
-            
-    content +="\n\n#Summaries\n\n"
-    for c in _CATEGORIES:
-        items = articles_map[c]
-        content += f'## {c}'
-        if len(items[0]) > 0:
-            content += '\n\n'
-            for item in items[0]:
-                name, url, summary, related_articles = item
-                content += f'[{name}]({url})'
-                content += '\n'
-                content += summary
-                content += "\n\n"
-        content +="\n### Lighting Round\n\n"
-        if len(items[1]) > 0:
-            for item in items[1]:
-                name, url, summary, related_articles = item
-                content += f'[{name}]({url})'
-                content += '\n'
-                content += summary
-                content += "\n\n"
-                
+
+    # Build content using helper functions
+    outline = build_outline(articles_map, _CATEGORIES)
+    summaries = build_summaries(articles_map, _CATEGORIES)
+    content = outline + summaries
+
+    # Output results
     print(content)
-    with open("summaries.md", 'wb') as f:
-        f.write(content.encode('utf-8'))
+    with open(OUTPUT_FILE, 'wb') as output_file:
+        output_file.write(content.encode('utf-8'))
+
+    print(f'\nPodcast notes saved to {OUTPUT_FILE}')
