@@ -28,8 +28,8 @@ _CATEGORIES = [
     'Tools & Apps',
     'Applications & Business',
     'Projects & Open Source',
-    'Research & Advancements',
     'Policy & Safety',
+    'Research & Advancements',
     'Synthetic Media & Art',
     'Fun!'
 ]
