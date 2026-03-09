@@ -93,8 +93,13 @@ def query_openai(instructions, user_input, max_completion_tokens=100, model='gpt
 
 
 def get_article_category(row, article_text):
-    if row['Type'] in CATEGORIES:
-        return row['Type']
+    type_val = row.get('Type') if hasattr(row, 'get') else None
+    if type_val and isinstance(type_val, str):
+        if type_val in CATEGORIES:
+            return type_val
+        if type_val.startswith('http'):
+            # Type column contains related article URLs — this is a Top News story
+            return 'Top News'
 
     title, url = row['Name'], row['URL']
     if 'arxiv' in url:
@@ -559,10 +564,15 @@ if __name__ == "__main__":
         if not category or category.strip() == '' or category not in CATEGORIES:
             continue
 
+        # For Top News items, related article URLs are stored in the Type column
+        type_val = row.get('Type') if hasattr(row, 'get') else None
+        related = (type_val if type_val and isinstance(type_val, str) and type_val.startswith('http')
+                   else row.get('Related'))
+
         articles_map[category].append({
             'url': row['URL'],
             'title': news_article['title'] if news_article and 'title' in news_article else row['Name'],
-            'Related Articles': row['Related'],
+            'Related Articles': related,
             'excerpt': excerpt,
             'category': category,
             'news_article': news_article
@@ -585,7 +595,7 @@ if __name__ == "__main__":
     top_news = ''.join(top_news_parts)
     content = ''.join(content_parts).rstrip('\n')
 
-    digest_excerpt = get_newsletter_excerpt(top_news)
+    digest_excerpt = get_newsletter_excerpt(top_news if top_news.strip() else content)
 
     md = md_template.replace('$digest_number$', str(digest_number)) \
                     .replace('$digest_number_english$', digest_number_english) \
