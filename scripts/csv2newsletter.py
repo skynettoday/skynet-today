@@ -440,17 +440,15 @@ def build_other_category_section(category, articles):
     # Use CSV order
     rank = list(range(len(articles)))
 
-    try:
-        if articles[rank[0]]['news_article']['has_top_image']:
-            parts.append(f'\n![]({articles[rank[0]]["news_article"]["top_image"]})')
-        parts.append('\n\n')
+    first_article = articles[rank[0]]
+    if first_article['news_article'] and first_article['news_article'].get('has_top_image'):
+        parts.append(f'\n![]({first_article["news_article"]["top_image"]})')
+    parts.append('\n\n')
 
-        for rank_idx in tqdm(rank, leave=False):
-            article = articles[rank_idx]
-            title, url, excerpt = article['title'], article['url'], article['excerpt']
-            parts.append(f'[{title}]({url}). {excerpt}\n\n')
-    except:
-        pass
+    for rank_idx in tqdm(rank, leave=False):
+        article = articles[rank_idx]
+        title, url, excerpt = article['title'], article['url'], article['excerpt']
+        parts.append(f'[{title}]({url}). {excerpt}\n\n')
 
     return ''.join(parts)
 
