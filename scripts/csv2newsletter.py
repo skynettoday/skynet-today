@@ -34,12 +34,12 @@ CATEGORIES = [
     'Tools',
     'Business',
     'Policy',
-    'Research',
     'Concerns',
     'Analysis',
     'Expert Opinions',
     'Explainers',
-    'Fun'
+    'Fun',
+    'Research'
 ]
 
 
