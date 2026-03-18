@@ -71,14 +71,32 @@ def get_arxiv_paper_contents_huggingface(url):
 
 
 def get_arxiv_paper_contents(url):
+    """Try to get arxiv paper text via HTML, then HuggingFace. Returns None if both fail."""
     text = None
     try:
         text = get_arxiv_paper_contents_html(url)
     except Exception as e:
-        print(e)
+        print(f'  HTML extraction failed: {e}')
     if text is None:
-        text = get_arxiv_paper_contents_huggingface(url)
-    return text        
+        try:
+            text = get_arxiv_paper_contents_huggingface(url)
+        except Exception as e:
+            print(f'  HuggingFace extraction failed: {e}')
+    return text
+
+
+def arxiv_to_pdf(url: str) -> str:
+    paper_id = url[url.find('abs/') + 4:].strip('/').strip()
+    if paper_id:
+        return f"https://arxiv.org/pdf/{paper_id}"
+    return url
+
+def get_arxiv_pdf_bytes(url: str) -> bytes:
+    """Download the PDF of an arxiv paper and return raw bytes."""
+    pdf_url = arxiv_to_pdf(url)
+    response = requests.get(pdf_url)
+    response.raise_for_status()
+    return response.content
 
 
 def get_reuters_article_content(url):
