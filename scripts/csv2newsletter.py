@@ -13,7 +13,7 @@ from pathlib import Path
 from datetime import date, timedelta
 from tqdm.auto import tqdm
 
-from llm_utils import query_llm_simple, web_fetch_article_text, MODEL_SONNET, MODEL_HAIKU
+from llm_utils import query_llm_simple, web_fetch_article_summary, MODEL_SONNET, MODEL_HAIKU
 from content_retrieval import get_arxiv_paper_contents
 
 # Constants for text limits
@@ -109,7 +109,7 @@ Only respond with one of the above types (Business, Research, Tools, Concerns, P
     )
 
 
-def get_news_article(url):
+def get_news_article(url, title=None):
     if 'arxiv' in url:
         text = get_arxiv_paper_contents(url)
         if text:
@@ -133,9 +133,9 @@ def get_news_article(url):
     except Exception as e:
         print(f'  newspaper download error for {url}: {e}')
 
-    # Fallback: use web_fetch to get article text
+    # Fallback: use web_fetch to get a detailed summary of the story
     try:
-        text = web_fetch_article_text(url)
+        text = web_fetch_article_summary(url, title=title)
         if text:
             return {
                 'text': text,
@@ -325,9 +325,9 @@ def process_related_articles(related_articles_str):
         except Exception as e:
             print(f'  newspaper failed for related article {clean_related_url}: {e}')
 
-        # Fallback: use web_fetch
+        # Fallback: use web_fetch to get a detailed summary
         try:
-            text = web_fetch_article_text(clean_related_url)
+            text = web_fetch_article_summary(clean_related_url)
             if text:
                 related_articles_data.append({
                     'title': clean_related_url,  # No title available from web_fetch
@@ -513,7 +513,7 @@ if __name__ == "__main__":
         rows.append(row)
 
     print('Getting news articles...')
-    news_articles = [get_news_article(row['URL']) for row in tqdm(rows)]
+    news_articles = [get_news_article(row['URL'], title=row['Name']) for row in tqdm(rows)]
 
     print('Getting article categories...')
     categories = apply_map_batch(

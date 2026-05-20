@@ -41,7 +41,7 @@ SECTION_CATEGORY_MAPPINGS = {
 STORY_TYPE_COL = "Main Story or Lighting Round?"
 STORY_SECTION_COL = "Section"
 
-def summarize_article(url, lighting_round_story=False, save_image=False):
+def summarize_article(url, title=None, lighting_round_story=False, save_image=False):
     """Generate a bullet point summary of a news article or research paper."""
     download_failed = False
     text = None
@@ -84,7 +84,7 @@ Your task is to provide a bullet point summary of a news article or research pap
     system_prompt = system_prompt.strip()
 
     if download_failed:
-        return web_fetch_summarize(url, system_prompt)
+        return web_fetch_summarize(url, system_prompt, title=title)
 
     if pdf_bytes is not None:
         # Send the PDF directly to Claude
@@ -165,7 +165,7 @@ def process_csv_row(row):
     print(f'Category: {category}')
 
     try:
-        summary = summarize_article(row['URL'], not is_main_story, is_main_story)
+        summary = summarize_article(row['URL'], title=row['Name'], lighting_round_story=not is_main_story, save_image=is_main_story)
     except Exception as e:
         print(e)
         summary = "Error :("
