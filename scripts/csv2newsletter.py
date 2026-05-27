@@ -579,28 +579,6 @@ if __name__ == "__main__":
                     .replace('$im_name$', image_name) \
                     .replace('$digest_excerpt$', digest_excerpt)
 
-    print('Applying final polish to the newsletter...')
-
-    # Split the markdown into header (YAML front matter) and content
-    if md.startswith('---'):
-        # Find the end of the YAML front matter
-        parts = md.split('---', 2)
-        if len(parts) >= 3:
-            header = f"---{parts[1]}---"
-            content_to_polish = parts[2]
-
-            # Polish only the content portion
-            polished_content = final_polish_newsletter(content_to_polish)
-
-            # Recombine header and polished content
-            md = header + polished_content
-        else:
-            # Fallback: polish everything if parsing fails
-            md = final_polish_newsletter(md)
-    else:
-        # No YAML front matter, polish everything
-        md = final_polish_newsletter(md)
-
     print('Saving digest markdown...')
     with open(output_md, 'wb') as output_file:
         output_file.write(md.encode('utf-8'))
