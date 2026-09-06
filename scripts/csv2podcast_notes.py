@@ -109,21 +109,68 @@ Your task is to provide a bullet point summary of a news article or research pap
     ])
 
 
+def indent_lines(text, spaces=4):
+    """Indent every non-empty line of text by the given number of spaces."""
+    pad = ' ' * spaces
+    return '\n'.join(pad + line if line.strip() else line for line in text.split('\n'))
+
+
+def process_related_articles(related_articles_str):
+    """Fetch and summarize related (sub-)stories from a comma-separated URL string.
+
+    Returns a list of {'title', 'url', 'summary'} dicts (empty if none).
+    """
+    related_data = []
+
+    if not related_articles_str or not isinstance(related_articles_str, str):
+        return related_data
+
+    related_urls = [url.strip() for url in related_articles_str.split(',') if url.strip()]
+
+    for related_url in related_urls:
+        # Try to recover a readable title for the outline; fall back to the URL.
+        title = related_url
+        try:
+            related_article = Article(related_url)
+            related_article.download()
+            related_article.parse()
+            if related_article.title:
+                title = related_article.title
+        except Exception as e:
+            print(f'  newspaper failed for related article {related_url}: {e}')
+
+        try:
+            summary = summarize_article(related_url, title=title, lighting_round_story=True)
+        except Exception as e:
+            print(f'  failed to summarize related article {related_url}: {e}')
+            summary = "Error :("
+
+        related_data.append({'title': title, 'url': related_url, 'summary': summary})
+
+    return related_data
+
+
 def build_outline(articles_map, categories):
     """Build the outline section of the podcast notes."""
     parts = ['Outline:\n']
+
+    def story_line(indent, name, url, related_articles):
+        line = f'{indent}- [{name}]({url})'
+        for related in related_articles:
+            line += f' + [{related["title"]}]({related["url"]})'
+        return line + '\n'
 
     for category in categories:
         parts.append(f'- {category}\n')
         main_stories, lighting_stories = articles_map[category]
 
         for name, url, summary, related_articles in main_stories:
-            parts.append(f'   - [{name}]({url})\n')
+            parts.append(story_line('   ', name, url, related_articles))
 
         parts.append('  - Lighting round\n')
 
         for name, url, summary, related_articles in lighting_stories:
-            parts.append(f'       - [{name}]({url})\n')
+            parts.append(story_line('       ', name, url, related_articles))
 
     return ''.join(parts)
 
@@ -132,6 +179,16 @@ def build_summaries(articles_map, categories):
     """Build the summaries section of the podcast notes."""
     parts = ['\n\n#Summaries\n\n']
 
+    def append_story(name, url, summary, related_articles):
+        parts.append(f'[{name}]({url})\n')
+        parts.append(summary)
+        parts.append('\n\n')
+        # Nest each related story as an indented substory of the main story.
+        for related in related_articles:
+            parts.append(f'  - Related substory: [{related["title"]}]({related["url"]})\n')
+            parts.append(indent_lines(related['summary'], spaces=4))
+            parts.append('\n\n')
+
     for category in categories:
         main_stories, lighting_stories = articles_map[category]
         parts.append(f'## {category}')
@@ -139,17 +196,13 @@ def build_summaries(articles_map, categories):
         if len(main_stories) > 0:
             parts.append('\n\n')
             for name, url, summary, related_articles in main_stories:
-                parts.append(f'[{name}]({url})\n')
-                parts.append(summary)
-                parts.append('\n\n')
+                append_story(name, url, summary, related_articles)
 
         parts.append('\n### Lighting Round\n\n')
 
         if len(lighting_stories) > 0:
             for name, url, summary, related_articles in lighting_stories:
-                parts.append(f'[{name}]({url})\n')
-                parts.append(summary)
-                parts.append('\n\n')
+                append_story(name, url, summary, related_articles)
 
     return ''.join(parts)
 
@@ -176,43 +229,19 @@ def process_csv_row(row):
     # Clean up title
     cleaned_name = row['Name'].replace("Title:", "")
 
+    # Fetch and summarize any related stories so they can be nested under this one.
+    related_articles = process_related_articles(row['Related Articles'])
+    if related_articles:
+        print(f'Found {len(related_articles)} related substor{"y" if len(related_articles) == 1 else "ies"}')
+
     return {
         'is_main': is_main_story,
         'category': category,
         'name': cleaned_name,
         'url': row['URL'],
         'summary': summary,
-        'related_articles': row['Related Articles']
+        'related_articles': related_articles
     }
-
-
-FINAL_POLISH_MAX_TOKENS = 16000
-
-def final_polish_podcast_notes(markdown_content):
-    system_prompt = '''
-You are an expert editor for the "Last Week in AI" podcast. Your task is to polish the final podcast show notes to ensure they're ready for the hosts to use.
-
-Please review the entire document and make the following improvements:
-
-1. **Remove duplicate stories**: If the same story appears multiple times (same URL or very similar content), keep only the best version and remove duplicates.
-
-2. **Vary bullet point starters**: Look at all the bullet points and ensure they don't start with repetitive words/phrases. Rewrite to have more varied and engaging openings while maintaining the same factual content.
-
-3. **Overall polish**:
-   - Ensure consistent formatting across all summaries
-   - Fix any grammatical errors
-   - Improve clarity and readability for spoken delivery
-   - Ensure bullet points are concise and easy to read aloud
-
-4. **Maintain accuracy**: Do not change any URLs, article titles, or factual content. Only improve the presentation and remove duplicates.
-
-Return the polished markdown content. Keep all the original structure and formatting intact, just improve the quality and remove any issues.
-Just output the polished markdown content, with no additional explanations or comments.'''.strip()
-
-    return query_llm([
-        {'role': 'system', 'content': system_prompt},
-        {'role': 'user', 'content': markdown_content}
-    ], max_tokens=FINAL_POLISH_MAX_TOKENS)
 
 
 if __name__ == "__main__":
@@ -246,11 +275,7 @@ if __name__ == "__main__":
     # Build content using helper functions
     outline = build_outline(articles_map, _CATEGORIES)
     summaries = build_summaries(articles_map, _CATEGORIES)
-
-    # Final polish pass (summaries only)
-    print('\nApplying final polish to podcast notes...')
-    polished_summaries = final_polish_podcast_notes(summaries)
-    content = outline + polished_summaries
+    content = outline + summaries
 
     # Output results
     print(content)

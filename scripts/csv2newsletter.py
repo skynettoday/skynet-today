@@ -23,7 +23,6 @@ EXCERPT_MAX_TOKENS = 100
 SUMMARY_MAX_TOKENS = 4000
 RANKING_MAX_TOKENS = 400
 NEWSLETTER_EXCERPT_MAX_TOKENS = 256
-FINAL_POLISH_MAX_TOKENS = 8000
 
 CATEGORIES = [
     'Top News',
@@ -222,12 +221,24 @@ def get_article_summary(title, news_article, related_articles=None):
         system_prompt = '''
 You are an expert writer and commentator hired to write summaries of articles for the newsletter Last Week in AI.
 I will give you a main article and related articles with their text, and you will write a concise summary that covers all the stories.
-The summary should be at most two paragraphs long, with each paragraph having at least four sentences, contain key technical details, and be easy to understand. If it makes sense, you can also include a bullet point list.
-The summary should highlight key words and concepts from all articles without abstracting them away.
+The summary should be at most two paragraphs, contain the key technical details, and be easy to understand. Use a bulleted list when the story is really several parallel announcements.
 The reader should clearly understand the key points from all the stories after reading your summary.
-Focus on the details of the concrete details of the stories rather than context or implications.
-When multiple articles are provided, synthesize the information to give a comprehensive overview of the topic.
-The writing style should be succinct and direct.'''.strip()
+Focus on the concrete details of the stories rather than context or implications.
+Synthesize across the articles rather than summarizing each in turn.
+
+Write in the newsletter's house style (scripts/STYLE_GUIDE.md is the full reference):
+* Keep every specific from the source — figures, dates, names, exact unrounded numbers. Do not
+  abstract them away, and do not add any fact the source does not state.
+* Do NOT use bold, italics or any markdown emphasis. Proper nouns carry themselves.
+* Mean sentence around 30 words, none over 45. One idea per sentence; split a sentence that
+  carries a mechanism, a number, a date and a quote all at once.
+* Connect paragraphs — causal, contrastive or topical. Avoid the "Framing clause: full independent
+  clause" construction; a full stop usually reads better.
+* Attribute every judgment or hedge to a named person or publication, or cut it. Never credit a
+  claim to an outlet that did not make it, and never present your own inference as reported.
+* No editorialising and no self-reference: no "the defining story", "what made this remarkable",
+  "as noted above".
+'''.strip()
 
         # Build user prompt with main article and related articles
         user_prompt = f'Main Article:\nTitle: {title}\n{clip_text_words(news_article["text"])}\n\n'
@@ -241,11 +252,23 @@ The writing style should be succinct and direct.'''.strip()
         system_prompt = '''
 You are an expert writer and commentator hired to write summaries of articles for the newsletter Last Week in AI.
 I will give you an article with associated text, and you will write a concise summary.
-The summary should be at most two paragraphs long, with each paragraph having at least four sentences, contain key technical details, and be easy to understand. If it makes sense, you can also include a bullet point list.
-The summary should highlight key words and concepts from the article without abstracting them away.
+The summary should be at most two paragraphs, contain the key technical details, and be easy to understand. Use a bulleted list when the story is really several parallel announcements.
 The reader should clearly understand the key points from the article after reading your summary.
-Focus on the details of the concrete details of the story rather than context or implications.
-The writing style should be succinct and direct.'''.strip()
+Focus on the concrete details of the story rather than context or implications.
+
+Write in the newsletter's house style (scripts/STYLE_GUIDE.md is the full reference):
+* Keep every specific from the source — figures, dates, names, exact unrounded numbers. Do not
+  abstract them away, and do not add any fact the source does not state.
+* Do NOT use bold, italics or any markdown emphasis. Proper nouns carry themselves.
+* Mean sentence around 30 words, none over 45. One idea per sentence; split a sentence that
+  carries a mechanism, a number, a date and a quote all at once.
+* Connect paragraphs — causal, contrastive or topical. Avoid the "Framing clause: full independent
+  clause" construction; a full stop usually reads better.
+* Attribute every judgment or hedge to a named person or publication, or cut it. Never credit a
+  claim to an outlet that did not make it, and never present your own inference as reported.
+* No editorialising and no self-reference: no "the defining story", "what made this remarkable",
+  "as noted above".
+'''.strip()
 
         user_prompt = f'''
 Title: {title}
@@ -428,32 +451,6 @@ def build_other_category_section(category, articles):
         parts.append(f'[{title}]({url}). {excerpt}\n\n')
 
     return ''.join(parts)
-
-
-def final_polish_newsletter(markdown_content):
-    system_prompt = '''
-You are an expert editor for the "Last Week in AI" newsletter. Your task is to polish the final newsletter content to ensure it's publication-ready.
-
-Please review the entire newsletter and make the following improvements:
-
-1. **Remove duplicate articles**: If the same article appears multiple times (same URL or very similar titles), keep only the best version and remove duplicates.
-
-2. **Vary sentence starters**: Look at all the article excerpt sentences and ensure they don't start with repetitive words/phrases. Rewrite excerpts to have more varied and engaging openings while maintaining the same factual content.
-
-3. **Overall polish**:
-   - Ensure consistent formatting
-   - Fix any grammatical errors
-   - Improve flow and readability
-   - Make sure section transitions are smooth
-   - Ensure the tone is consistent throughout
-
-4. **Maintain accuracy**: Do not change any URLs, article titles, or factual content. Only improve the presentation and remove duplicates.
-
-Return the polished markdown content. Keep all the original structure and formatting intact, just improve the quality and remove any issues.
-Just output the polished markdown content, with no additional explanations or comments.
-'''.strip()
-
-    return query_llm_simple(system_prompt, markdown_content, max_tokens=FINAL_POLISH_MAX_TOKENS, model=MODEL_SONNET, debug_label="FINAL_POLISH")
 
 
 if __name__ == "__main__":
