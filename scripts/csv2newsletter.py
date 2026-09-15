@@ -13,7 +13,8 @@ from pathlib import Path
 from datetime import date, timedelta
 from tqdm.auto import tqdm
 
-from llm_utils import query_llm_simple, web_fetch_article_summary, MODEL_SONNET, MODEL_HAIKU
+from llm_utils import query_llm_simple, web_fetch_article_summary, MODEL_OPUS, MODEL_SONNET, MODEL_HAIKU
+from verify_summary import verify_summary
 from content_retrieval import get_arxiv_paper_contents
 
 # Constants for text limits
@@ -36,6 +37,32 @@ CATEGORIES = [
     'Fun',
     'Research'
 ]
+
+
+def label_from_url(url):
+    """Readable label for a source whose title could not be fetched (paywalled/blocked).
+
+    Turns .../2026/09/09/newsom-signs-ai-safety-bills-backed-by-anthropic-openai-01069928
+    into "Newsom signs ai safety bills backed by anthropic openai" — better than printing
+    the bare URL as the link text.
+    """
+    slug = clean_url(url).rstrip('/').split('/')[-1]
+    slug = re.sub(r'\.(html?|php|aspx)$', '', slug)
+    slug = re.sub(r'[-_]?\d{5,}$', '', slug)           # trailing story IDs
+    words = [w for w in re.split(r'[-_]+', slug) if w and not w.isdigit()]
+    if len(words) < 2:
+        return clean_url(url)
+    caps = {'ai': 'AI', 'openai': 'OpenAI', 'us': 'US', 'eu': 'EU', 'uk': 'UK',
+            'gpt': 'GPT', 'llm': 'LLM', 'ceo': 'CEO', 'nyu': 'NYU', 'pypi': 'PyPI'}
+    words = [caps.get(w.lower(), w) for w in words]
+    label = ' '.join(words)
+    return label[:1].upper() + label[1:]
+
+
+def cell(row, key):
+    """Read a CSV cell as a stripped string. Blank cells arrive from pandas as NaN."""
+    val = row.get(key) if hasattr(row, 'get') else None
+    return val.strip() if isinstance(val, str) else ''
 
 
 def clean_url(url):
@@ -62,12 +89,16 @@ def apply_map_batch(func, args_list):
 
 
 def get_article_category(row, article_text):
-    type_val = row.get('Type') if hasattr(row, 'get') else None
-    if type_val and isinstance(type_val, str):
+    # Any non-empty mark in the 'Top News?' column (an 'x' by convention) makes it a headline story.
+    if cell(row, 'Top News?'):
+        return 'Top News'
+
+    # Legacy CSVs carried the category, or related URLs, in a 'Type' column.
+    type_val = cell(row, 'Type')
+    if type_val:
         if type_val in CATEGORIES:
             return type_val
         if type_val.startswith('http'):
-            # Type column contains related article URLs — this is a Top News story
             return 'Top News'
 
     title, url = row['Name'], row['URL']
@@ -221,14 +252,18 @@ def get_article_summary(title, news_article, related_articles=None):
         system_prompt = '''
 You are an expert writer and commentator hired to write summaries of articles for the newsletter Last Week in AI.
 I will give you a main article and related articles with their text, and you will write a concise summary that covers all the stories.
-The summary should be at most two paragraphs, contain the key technical details, and be easy to understand. Use a bulleted list when the story is really several parallel announcements.
+The summary should contain the key technical details, be easy to understand, and run roughly 200-400 words (less for a simple story). Write short paragraphs of about three sentences, never more than five; use as many as the story needs rather than packing it into one or two dense blocks. Use a bulleted list when the story is either several parallel announcements or a dated sequence of four or more beats; keep an orienting sentence above the bullets and the analysis below them.
 The reader should clearly understand the key points from all the stories after reading your summary.
 Focus on the concrete details of the stories rather than context or implications.
 Synthesize across the articles rather than summarizing each in turn.
 
 Write in the newsletter's house style (scripts/STYLE_GUIDE.md is the full reference):
-* Keep every specific from the source — figures, dates, names, exact unrounded numbers. Do not
-  abstract them away, and do not add any fact the source does not state.
+* Keep the specifics you use exact — figures, dates, names, unrounded numbers. Do not abstract
+  them into vagueness, and do not add any fact the source does not state. Exact is not exhaustive.
+* Stay on the headline event. Keep the background needed to follow it (a short recap of how a
+  dispute began is fine), but cut adjacent events — another incident, another report, reactions
+  to a different announcement — and secondary detail within the event: benchmark lists,
+  system-card findings, a minor figure's affiliation, the least consequential beat of a timeline.
 * Do NOT use bold, italics or any markdown emphasis. Proper nouns carry themselves.
 * Mean sentence around 30 words, none over 45. One idea per sentence; split a sentence that
   carries a mechanism, a number, a date and a quote all at once.
@@ -238,6 +273,16 @@ Write in the newsletter's house style (scripts/STYLE_GUIDE.md is the full refere
   claim to an outlet that did not make it, and never present your own inference as reported.
 * No editorialising and no self-reference: no "the defining story", "what made this remarkable",
   "as noted above".
+* Do not assert causation the source does not. If the source gives a sequence — X happened, then
+  Y happened — write the sequence. Do not write "Y after X" or "prompting Y" unless the source says
+  one caused the other. If a company denies a link, say so rather than asserting it.
+* Quote verbatim or do not use quotation marks. Never adjust wording inside quotes, and make sure
+  the words just outside the quote marks match what the speaker was actually responding to.
+* Use your own sentence structures. Do not track the source's phrasing clause by clause; figures
+  and names are facts and stay, but the sentences around them should be yours.
+* State what the source states, including which party said it. If two sources conflict on a date,
+  an affiliation, or a number, prefer the primary account — the researchers' own writeup, the
+  ruling, the company post — over secondary coverage of it.
 '''.strip()
 
         # Build user prompt with main article and related articles
@@ -252,13 +297,17 @@ Write in the newsletter's house style (scripts/STYLE_GUIDE.md is the full refere
         system_prompt = '''
 You are an expert writer and commentator hired to write summaries of articles for the newsletter Last Week in AI.
 I will give you an article with associated text, and you will write a concise summary.
-The summary should be at most two paragraphs, contain the key technical details, and be easy to understand. Use a bulleted list when the story is really several parallel announcements.
+The summary should contain the key technical details, be easy to understand, and run roughly 200-400 words (less for a simple story). Write short paragraphs of about three sentences, never more than five; use as many as the story needs rather than packing it into one or two dense blocks. Use a bulleted list when the story is either several parallel announcements or a dated sequence of four or more beats; keep an orienting sentence above the bullets and the analysis below them.
 The reader should clearly understand the key points from the article after reading your summary.
 Focus on the concrete details of the story rather than context or implications.
 
 Write in the newsletter's house style (scripts/STYLE_GUIDE.md is the full reference):
-* Keep every specific from the source — figures, dates, names, exact unrounded numbers. Do not
-  abstract them away, and do not add any fact the source does not state.
+* Keep the specifics you use exact — figures, dates, names, unrounded numbers. Do not abstract
+  them into vagueness, and do not add any fact the source does not state. Exact is not exhaustive.
+* Stay on the headline event. Keep the background needed to follow it (a short recap of how a
+  dispute began is fine), but cut adjacent events — another incident, another report, reactions
+  to a different announcement — and secondary detail within the event: benchmark lists,
+  system-card findings, a minor figure's affiliation, the least consequential beat of a timeline.
 * Do NOT use bold, italics or any markdown emphasis. Proper nouns carry themselves.
 * Mean sentence around 30 words, none over 45. One idea per sentence; split a sentence that
   carries a mechanism, a number, a date and a quote all at once.
@@ -268,6 +317,16 @@ Write in the newsletter's house style (scripts/STYLE_GUIDE.md is the full refere
   claim to an outlet that did not make it, and never present your own inference as reported.
 * No editorialising and no self-reference: no "the defining story", "what made this remarkable",
   "as noted above".
+* Do not assert causation the source does not. If the source gives a sequence — X happened, then
+  Y happened — write the sequence. Do not write "Y after X" or "prompting Y" unless the source says
+  one caused the other. If a company denies a link, say so rather than asserting it.
+* Quote verbatim or do not use quotation marks. Never adjust wording inside quotes, and make sure
+  the words just outside the quote marks match what the speaker was actually responding to.
+* Use your own sentence structures. Do not track the source's phrasing clause by clause; figures
+  and names are facts and stay, but the sentences around them should be yours.
+* State what the source states, including which party said it. If two sources conflict on a date,
+  an affiliation, or a number, prefer the primary account — the researchers' own writeup, the
+  ruling, the company post — over secondary coverage of it.
 '''.strip()
 
         user_prompt = f'''
@@ -276,7 +335,7 @@ Title: {title}
 '''.strip()
 
     try:
-        return query_llm_simple(system_prompt, user_prompt, max_tokens=SUMMARY_MAX_TOKENS, model=MODEL_SONNET, debug_label=f"SUMMARY for {title[:30]}")
+        return query_llm_simple(system_prompt, user_prompt, max_tokens=SUMMARY_MAX_TOKENS, model=MODEL_OPUS, debug_label=f"SUMMARY for {title[:30]}")
     except Exception as e:
         print(f"Error generating summary for {title}")
         print(f"Exception type: {type(e).__name__}")
@@ -322,8 +381,12 @@ Victims of false facial regonition matches, White House launches AI-based securi
     return query_llm_simple(system_prompt, top_news, max_tokens=NEWSLETTER_EXCERPT_MAX_TOKENS, model=MODEL_HAIKU, debug_label="NEWSLETTER_EXCERPT")
 
 
-def process_related_articles(related_articles_str):
-    """Process comma-separated related article URLs and fetch their content."""
+def process_related_articles(related_articles_str, need_text=True):
+    """Process comma-separated related article URLs and fetch their content.
+
+    need_text=False fetches titles only, for sections that link related stories but do not
+    summarize them. That skips the web_fetch fallback, which costs an LLM call per URL.
+    """
     related_articles_data = []
 
     if not related_articles_str or not isinstance(related_articles_str, str):
@@ -338,7 +401,7 @@ def process_related_articles(related_articles_str):
             related_article.download()
             related_article.parse()
 
-            if related_article.text and related_article.title:
+            if related_article.title and (related_article.text or not need_text):
                 related_articles_data.append({
                     'title': related_article.title,
                     'text': related_article.text,
@@ -348,12 +411,21 @@ def process_related_articles(related_articles_str):
         except Exception as e:
             print(f'  newspaper failed for related article {clean_related_url}: {e}')
 
+        if not need_text:
+            # Label-only: fall back to the bare URL rather than paying for an LLM fetch.
+            related_articles_data.append({
+                'title': label_from_url(clean_related_url),
+                'text': '',
+                'url': clean_related_url
+            })
+            continue
+
         # Fallback: use web_fetch to get a detailed summary
         try:
             text = web_fetch_article_summary(clean_related_url)
             if text:
                 related_articles_data.append({
-                    'title': clean_related_url,  # No title available from web_fetch
+                    'title': label_from_url(clean_related_url),
                     'text': text,
                     'url': clean_related_url
                 })
@@ -374,7 +446,7 @@ def build_top_news_section(articles, image_folder):
     # Process related articles first to get their content
     processed_articles = []
     for article in articles:
-        related_articles_data = process_related_articles(article.get('Related Articles'))
+        related_articles_data = process_related_articles(article.get('related_urls'))
         processed_articles.append({
             **article,
             'related_articles_data': related_articles_data
@@ -382,12 +454,27 @@ def build_top_news_section(articles, image_folder):
 
     # Generate summaries with related articles
     summaries = []
+    warnings = []
     for article in processed_articles:
         try:
             summary = get_article_summary(article['title'], article['news_article'], article['related_articles_data'])
             summaries.append(summary)
         except:
             summaries.append(None)
+            continue
+        # Deterministic fidelity checks against the source text we already have in hand.
+        sources = [(article['news_article'] or {}).get('text', '')]
+        sources += [r.get('text', '') for r in (article['related_articles_data'] or [])]
+        for w in verify_summary(summary, sources):
+            warnings.append(f"[{article['title'][:60]}] {w}")
+
+    if warnings:
+        print(f"\n  !! {len(warnings)} fidelity warnings — review before publishing:")
+        for w in warnings:
+            print(f"     {w}")
+        with open('summary_warnings.txt', 'w') as f:
+            f.write('\n'.join(warnings) + '\n')
+        print("     (also written to scripts/summary_warnings.txt)\n")
 
     for rank_idx in tqdm(rank, leave=False):
         try:
@@ -419,7 +506,7 @@ def build_top_news_section(articles, image_folder):
                     try:
                         image_response = requests.get(news_article['top_image'])
                         if image_response.status_code == 200:
-                            image_name = news_article['top_image'].split("/")[-1]
+                            image_name = clean_url(news_article['top_image']).split("/")[-1]
                             with open(image_folder / image_name, "wb") as img_file:
                                 img_file.write(image_response.content)
                     except:
@@ -445,10 +532,25 @@ def build_other_category_section(category, articles):
         parts.append(f'\n![]({first_article["news_article"]["top_image"]})')
     parts.append('\n\n')
 
+    # Titles only — these stories are linked, not summarized, so skip the costly text fetch.
+    related_lists = apply_map_batch(
+        process_related_articles,
+        [(article.get('related_urls'), False) for article in articles]
+    )
+
     for rank_idx in tqdm(rank, leave=False):
         article = articles[rank_idx]
         title, url, excerpt = article['title'], article['url'], article['excerpt']
-        parts.append(f'[{title}]({url}). {excerpt}\n\n')
+        parts.append(f'[{title}]({url}). {excerpt}')
+
+        related = related_lists[rank_idx]
+        if related:
+            # Two trailing spaces force a <br> inside the SAME paragraph, so the related line
+            # sits tight under its story instead of becoming a sibling <p> with an equal
+            # 1.5rem gap above and below — which would read as unattached to either item.
+            links = ', '.join(f'[{r["title"]}]({r["url"]})' for r in related)
+            parts.append(f'  \nRelated: {links}')
+        parts.append('\n\n')
 
     return ''.join(parts)
 
@@ -536,15 +638,15 @@ if __name__ == "__main__":
         if not category or category.strip() == '' or category not in CATEGORIES:
             continue
 
-        # For Top News items, related article URLs are stored in the Type column
-        type_val = row.get('Type') if hasattr(row, 'get') else None
-        related = (type_val if type_val and isinstance(type_val, str) and type_val.startswith('http')
-                   else row.get('Related'))
+        # Related URLs live in the 'Related' column; legacy CSVs stashed them in 'Type'.
+        related = cell(row, 'Related')
+        if not related and cell(row, 'Type').startswith('http'):
+            related = cell(row, 'Type')
 
         articles_map[category].append({
             'url': row['URL'],
             'title': news_article['title'] if news_article and 'title' in news_article else row['Name'],
-            'Related Articles': related,
+            'related_urls': related,
             'excerpt': excerpt,
             'category': category,
             'news_article': news_article
