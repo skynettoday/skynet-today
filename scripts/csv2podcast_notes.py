@@ -66,7 +66,7 @@ def summarize_article(url, title=None, lighting_round_story=False, save_image=Fa
     if not download_failed and save_image and article.has_top_image():
         image_response = requests.get(article.top_image)
         if image_response.status_code == 200:
-            image_name = article.top_image.split("/")[-1]
+            image_name = article.top_image.split('?')[0].split('/')[-1]
             image_folder_path = Path(IMAGE_FOLDER)
             image_folder_path.mkdir(parents=True, exist_ok=True)
             image_path = image_folder_path / image_name
@@ -74,7 +74,7 @@ def summarize_article(url, title=None, lighting_round_story=False, save_image=Fa
                 image_file.write(image_response.content)
 
     system_prompt = '''
-Your task is to provide a bullet point summary of a news article or research paper about AI. Each bullet point should be no more than 2 sentences long. This summary will be used for the podcast Last Week in AI, in which the hosts summarize stories about AI in an accessible manner. We will provide the title and text contents of the article. Output in markdown format.'''
+Your task is to provide a bullet point summary of a news article or research paper about AI. Each bullet point should be no more than 2 sentences long. This summary will be used for the podcast Last Week in AI, in which the hosts summarize stories about AI in an accessible manner. We will provide the title and text contents of the article. Output in markdown format, and respond with the bullet points only: no title, no heading and no preamble.'''
 
     if lighting_round_story:
         system_prompt += " This story will be in a lighting round, so summarize it in no more than 10 bullet points, but still make sure to cover all the important details. Don't cover background or implications, just the details of the news."
@@ -107,6 +107,14 @@ Your task is to provide a bullet point summary of a news article or research pap
         {'role': 'system', 'content': system_prompt},
         {'role': 'user', 'content': user_content}
     ])
+
+
+def strip_leading_heading(summary):
+    """Drop a title line the model sometimes puts above its bullets."""
+    lines = (summary or '').lstrip().split('\n')
+    while lines and (not lines[0].strip() or lines[0].lstrip().startswith('#')):
+        lines.pop(0)
+    return '\n'.join(lines).strip()
 
 
 def indent_lines(text, spaces=4):
@@ -177,16 +185,16 @@ def build_outline(articles_map, categories):
 
 def build_summaries(articles_map, categories):
     """Build the summaries section of the podcast notes."""
-    parts = ['\n\n#Summaries\n\n']
+    parts = ['\n\n# Summaries\n\n']
 
     def append_story(name, url, summary, related_articles):
-        parts.append(f'[{name}]({url})\n')
-        parts.append(summary)
+        parts.append(f'#### [{name}]({url})\n\n')
+        parts.append(strip_leading_heading(summary))
         parts.append('\n\n')
         # Nest each related story as an indented substory of the main story.
         for related in related_articles:
             parts.append(f'  - Related substory: [{related["title"]}]({related["url"]})\n')
-            parts.append(indent_lines(related['summary'], spaces=4))
+            parts.append(indent_lines(strip_leading_heading(related['summary']), spaces=4))
             parts.append('\n\n')
 
     for category in categories:

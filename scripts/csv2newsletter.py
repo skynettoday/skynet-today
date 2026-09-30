@@ -23,7 +23,11 @@ CATEGORY_TEXT_PREVIEW_LENGTH = 500
 EXCERPT_MAX_TOKENS = 100
 SUMMARY_MAX_TOKENS = 4000
 RANKING_MAX_TOKENS = 400
+HEADLINE_MAX_TOKENS = 64
 NEWSLETTER_EXCERPT_MAX_TOKENS = 256
+
+# Non-breaking spaces indent the 'Related:' line under its story; plain spaces collapse.
+RELATED_INDENT = '&nbsp;' * 4
 
 CATEGORIES = [
     'Top News',
@@ -59,10 +63,73 @@ def label_from_url(url):
     return label[:1].upper() + label[1:]
 
 
+# Publishers append their own name to the page <title>: "Headline - Bloomberg".
+OUTLET_NAMES = {
+    'newyorktimes', 'wallstreetjournal', 'washingtonpost', 'financialtimes',
+    'businessinsider', 'theinformation', 'associatedpress', 'apnews', 'technologyreview',
+    'mittechnologyreview', 'scientificamerican', 'arstechnica', 'ieeespectrum',
+    'newscientist', 'theatlantic', 'newyorker', 'losangelestimes', 'bbcnews',
+    'nbcnews', 'cbsnews', 'abcnews', 'foxnews', 'nikkeiasia', 'southchinamorningpost',
+    'quartz',
+}
+
+# Words that would be left dangling if a trailing outlet name were stripped: "... says Anthropic".
+TRAILING_STOPWORDS = {
+    'by', 'at', 'from', 'for', 'of', 'with', 'and', 'to', 'in', 'on', 'says', 'said', 'told', 'via',
+}
+
+# Sections publishers slot in front of their name: "Headline - Business - Reuters".
+SECTION_NAMES = {
+    'business', 'tech', 'technology', 'world', 'politics', 'markets', 'opinion',
+    'analysis', 'media', 'news', 'science', 'health', 'money', 'video', 'exclusive',
+}
+
+
+def clean_title(title, url=''):
+    """Drop the outlet name publishers append to page titles ("... - Bloomberg").
+
+    The trailing segment is stripped only when it names the outlet, checked against the
+    site's own domain. Most outlets need no entry in OUTLET_NAMES, which covers the ones
+    whose name does not resemble their domain (nytimes.com, "The New York Times").
+    """
+    if not title:
+        return title
+    domain = re.sub(r'^(www|amp)\.', '', url.split('//')[-1].split('/')[0]).split('.')[0].lower()
+    for round_num in range(2):  # some titles carry a section too: "Headline - Tech - Reuters"
+        match = re.search(r'\s+[-|–—]\s+([^-|–—]{2,40})$', title)
+        if not match:
+            break
+        tail = re.sub(r'[^a-z0-9]', '', match.group(1).lower())
+        bare = tail[3:] if tail.startswith('the') else tail
+        like_domain = domain and len(bare) > 2 and (bare in domain or domain in bare)
+        # A section name only counts on the second pass, once the outlet itself is gone.
+        is_outlet = tail in OUTLET_NAMES or bare in OUTLET_NAMES or like_domain
+        if len(match.group(1).split()) <= 5 and (is_outlet or (round_num and tail in SECTION_NAMES)):
+            title = title[:match.start()].rstrip()
+        else:
+            break
+
+    # Some titles lose the separator on the way into the sheet: "... frontier labs Anthropic".
+    words = title.split()
+    if (len(words) > 3 and domain and re.sub(r'[^a-z0-9]', '', words[-1].lower()) == domain
+            and words[-2].lower() not in TRAILING_STOPWORDS):
+        title = ' '.join(words[:-1])
+
+    return title.rstrip(' -|–—')
+
+
 def cell(row, key):
     """Read a CSV cell as a stripped string. Blank cells arrive from pandas as NaN."""
     val = row.get(key) if hasattr(row, 'get') else None
     return val.strip() if isinstance(val, str) else ''
+
+
+def legacy_related(row):
+    """Related URLs from the old one-cell 'Related' column, before they became their own rows."""
+    urls = cell(row, 'Related')
+    if not urls and cell(row, 'Type').startswith('http'):
+        urls = cell(row, 'Type')
+    return [{'name': '', 'url': url.strip()} for url in urls.split(',') if url.strip()]
 
 
 def clean_url(url):
@@ -155,7 +222,7 @@ def get_news_article(url, title=None):
         article.parse()
         if article.text:
             return {
-                'title': article.title,
+                'title': clean_title(article.title, url),
                 'text': article.text,
                 'top_image': article.top_image,
                 'has_top_image': article.has_top_image()
@@ -343,6 +410,43 @@ Title: {title}
         raise
 
 
+def get_story_headline(summary, fallback_title):
+    '''Write the Top News heading from the story summary, not the lead article's title.
+
+    A Top News entry usually covers several articles, so the lead article's headline
+    describes only part of it. Falls back to that headline if the call fails.
+    '''
+    if not summary:
+        return fallback_title
+
+    system_prompt = '''
+You are an expert news editor for the AI newsletter Last Week in AI.
+The user gives you the summary of one story. Return a headline for it and nothing else.
+
+* One line, at most 12 words, with no trailing period.
+* Say what happened, using the specific names from the summary.
+* Sentence case: capitalize the first word and proper nouns only.
+* No emojis, no clickbait, no questions, no "label: clause" construction.
+* Cover the story as a whole. If it has several strands, lead with the weightiest.
+* Use only what the summary states. Do not add a fact, a number or a judgment.
+
+Examples of the style:
+OpenAI says an unreleased model resolved the Navier-Stokes problem
+Anthropic's CEO lays out a plan to pace the frontier
+Anthropic's threat report details bioweapon research and state spyware
+'''.strip()
+
+    try:
+        headline = query_llm_simple(system_prompt, summary, max_tokens=HEADLINE_MAX_TOKENS,
+                                    model=MODEL_SONNET,
+                                    debug_label=f"HEADLINE for {fallback_title[:30]}")
+        headline = headline.strip().strip('"').rstrip('.')
+        return headline or fallback_title
+    except Exception as e:
+        print(f'  headline generation failed for {fallback_title[:40]}: {e}')
+        return fallback_title
+
+
 def rank_articles(articles):
     """Rank articles by importance using AI (currently unused - keeping for backwards compatibility)."""
     system_prompt = '''
@@ -381,56 +485,42 @@ Victims of false facial regonition matches, White House launches AI-based securi
     return query_llm_simple(system_prompt, top_news, max_tokens=NEWSLETTER_EXCERPT_MAX_TOKENS, model=MODEL_HAIKU, debug_label="NEWSLETTER_EXCERPT")
 
 
-def process_related_articles(related_articles_str, need_text=True):
-    """Process comma-separated related article URLs and fetch their content.
+def process_related_articles(related_rows, need_text=True):
+    """Fetch the related stories listed under a CSV row.
 
-    need_text=False fetches titles only, for sections that link related stories but do not
-    summarize them. That skips the web_fetch fallback, which costs an LLM call per URL.
+    related_rows are {'name', 'url'} dicts taken from the rows whose Name starts with '- '.
+    The CSV name is the link text, which beats a scraped title: paywalled outlets block
+    scraping, and the name in the sheet has already been checked by a human.
+
+    need_text=False skips fetching altogether, for sections that link related stories
+    without summarizing them.
     """
     related_articles_data = []
 
-    if not related_articles_str or not isinstance(related_articles_str, str):
-        return related_articles_data
-
-    related_urls = [url.strip() for url in related_articles_str.split(',') if url.strip()]
-
-    for related_url in related_urls:
-        clean_related_url = clean_url(related_url.strip())
-        try:
-            related_article = Article(clean_related_url)
-            related_article.download()
-            related_article.parse()
-
-            if related_article.title and (related_article.text or not need_text):
-                related_articles_data.append({
-                    'title': related_article.title,
-                    'text': related_article.text,
-                    'url': clean_related_url
-                })
-                continue
-        except Exception as e:
-            print(f'  newspaper failed for related article {clean_related_url}: {e}')
-
-        if not need_text:
-            # Label-only: fall back to the bare URL rather than paying for an LLM fetch.
-            related_articles_data.append({
-                'title': label_from_url(clean_related_url),
-                'text': '',
-                'url': clean_related_url
-            })
+    for related in related_rows or []:
+        url = clean_url((related.get('url') or '').strip())
+        if not url:
             continue
+        title = clean_title((related.get('name') or '').strip(), url) or label_from_url(url)
 
-        # Fallback: use web_fetch to get a detailed summary
-        try:
-            text = web_fetch_article_summary(clean_related_url)
-            if text:
-                related_articles_data.append({
-                    'title': label_from_url(clean_related_url),
-                    'text': text,
-                    'url': clean_related_url
-                })
-        except Exception as e:
-            print(f'  web_fetch fallback also failed for related article {clean_related_url}: {e}')
+        text = ''
+        if need_text:
+            try:
+                article = Article(url)
+                article.download()
+                article.parse()
+                text = article.text or ''
+            except Exception as e:
+                print(f'  newspaper failed for related article {url}: {e}')
+
+            if not text:
+                # Fallback: use web_fetch to get a detailed summary
+                try:
+                    text = web_fetch_article_summary(url, title=title) or ''
+                except Exception as e:
+                    print(f'  web_fetch fallback also failed for related article {url}: {e}')
+
+        related_articles_data.append({'title': title, 'text': text, 'url': url})
 
     return related_articles_data
 
@@ -446,7 +536,7 @@ def build_top_news_section(articles, image_folder):
     # Process related articles first to get their content
     processed_articles = []
     for article in articles:
-        related_articles_data = process_related_articles(article.get('related_urls'))
+        related_articles_data = process_related_articles(article.get('related_rows'))
         processed_articles.append({
             **article,
             'related_articles_data': related_articles_data
@@ -476,6 +566,12 @@ def build_top_news_section(articles, image_folder):
             f.write('\n'.join(warnings) + '\n')
         print("     (also written to scripts/summary_warnings.txt)\n")
 
+    # Headings describe the story, so they are written from the summary, not the lead article.
+    headlines = apply_map_batch(
+        get_story_headline,
+        [(summary, article['title']) for summary, article in zip(summaries, processed_articles)]
+    )
+
     for rank_idx in tqdm(rank, leave=False):
         try:
             article = processed_articles[rank_idx]
@@ -485,15 +581,15 @@ def build_top_news_section(articles, image_folder):
 
             title, url, news_article = article['title'], article['url'], article['news_article']
 
-            parts.append(f'#### [{title}]({url})\n')
+            parts.append(f'#### {headlines[rank_idx]}\n')
 
-            # Add related articles section at the top
-            if article.get('related_articles_data') and len(article['related_articles_data']) > 0:
-                parts.append('Related:')
-                for related in article['related_articles_data']:
-                    if related.get('title') and related.get('url'):
-                        parts.append(f'\n * [{related["title"]}]({related["url"]})')
-                parts.append('\n\n')
+            # Every article the summary draws on, the lead one first.
+            parts.append('Sources:')
+            parts.append(f'\n * [{title}]({url})')
+            for related in article.get('related_articles_data') or []:
+                if related.get('title') and related.get('url'):
+                    parts.append(f'\n * [{related["title"]}]({related["url"]})')
+            parts.append('\n\n')
 
             if not news_article:
                 parts.append(summary + '\n\n')
@@ -535,7 +631,7 @@ def build_other_category_section(category, articles):
     # Titles only — these stories are linked, not summarized, so skip the costly text fetch.
     related_lists = apply_map_batch(
         process_related_articles,
-        [(article.get('related_urls'), False) for article in articles]
+        [(article.get('related_rows'), False) for article in articles]
     )
 
     for rank_idx in tqdm(rank, leave=False):
@@ -549,10 +645,53 @@ def build_other_category_section(category, articles):
             # sits tight under its story instead of becoming a sibling <p> with an equal
             # 1.5rem gap above and below — which would read as unattached to either item.
             links = ', '.join(f'[{r["title"]}]({r["url"]})' for r in related)
-            parts.append(f'  \nRelated: {links}')
+            parts.append(f'  \n{RELATED_INDENT}Related: {links}')
         parts.append('\n\n')
 
     return ''.join(parts)
+
+
+def load_rows(input_csv):
+    """Read the planning CSV into story rows plus the related rows hanging under each.
+
+    A row whose Name starts with '- ' is a related story belonging to the row above it,
+    so it never becomes a story of its own. Returns (rows, related_rows), where
+    related_rows[i] holds the {'name', 'url'} dicts for rows[i].
+    """
+    csv = pd.read_csv(input_csv, encoding='utf-8')
+    rows, related_rows = [], []
+
+    for row_num, row in csv.iterrows():
+        if 'arxiv' in row['URL'] and row['Name'].startswith('Title:'):
+            # remove "Title:" from arxiv titles
+            row['Name'] = row['Name'][6:]
+
+        if 'arxiv' in row['URL'] and row['Name'].startswith('[]'):
+            # remove "Title:" from arxiv titles
+            row['Name'] = row['Name'].split(']')[1]
+
+        # Remove arXiv ID format like '[2507.18074] ' from the beginning of titles
+        if 'arxiv' in row['URL'] and ']' in row['Name']:
+            # Remove everything up to and including the first ']' and any following whitespace
+            row['Name'] = row['Name'].split(']', 1)[1].strip()
+
+        if 'youtube' in row['URL']:
+            continue
+
+        row['URL'] = clean_url(row['URL'])
+
+        name = cell(row, 'Name')
+        if name.startswith('- '):
+            if not rows:
+                print(f'  ignoring related row with no story above it: {name[:60]}')
+                continue
+            related_rows[-1].append({'name': name[2:].strip(), 'url': row['URL']})
+            continue
+
+        rows.append(row)
+        related_rows.append(legacy_related(row))
+
+    return rows, related_rows
 
 
 if __name__ == "__main__":
@@ -589,27 +728,7 @@ if __name__ == "__main__":
         input_csv = f'Last Week in AI News Planning - Past - {digest_number}.csv'
 
     print(f'Reading {input_csv}')
-    csv = pd.read_csv(input_csv, encoding='utf-8')
-    rows = []
-    for row_num, row in csv.iterrows():
-        if 'arxiv' in row['URL'] and row['Name'].startswith('Title:'):
-            # remove "Title:" from arxiv titles
-            row['Name'] = row['Name'][6:]
-
-        if 'arxiv' in row['URL'] and row['Name'].startswith('[]'):
-            # remove "Title:" from arxiv titles
-            row['Name'] = row['Name'].split(']')[1]
-
-        # Remove arXiv ID format like '[2507.18074] ' from the beginning of titles
-        if 'arxiv' in row['URL'] and ']' in row['Name']:
-            # Remove everything up to and including the first ']' and any following whitespace
-            row['Name'] = row['Name'].split(']', 1)[1].strip()
-
-        if 'youtube' in row['URL']:
-            continue
-
-        row['URL'] = clean_url(row['URL'])
-        rows.append(row)
+    rows, related_rows = load_rows(input_csv)
 
     print('Getting news articles...')
     news_articles = [get_news_article(row['URL'], title=row['Name']) for row in tqdm(rows)]
@@ -633,20 +752,17 @@ if __name__ == "__main__":
     )
 
     articles_map = {category: [] for category in CATEGORIES}
-    for row, news_article, excerpt, category in zip(rows, news_articles, excerpts, categories):
+    for row, related, news_article, excerpt, category in zip(
+            rows, related_rows, news_articles, excerpts, categories):
         # Skip articles with empty or invalid categories
         if not category or category.strip() == '' or category not in CATEGORIES:
             continue
 
-        # Related URLs live in the 'Related' column; legacy CSVs stashed them in 'Type'.
-        related = cell(row, 'Related')
-        if not related and cell(row, 'Type').startswith('http'):
-            related = cell(row, 'Type')
-
         articles_map[category].append({
             'url': row['URL'],
-            'title': news_article['title'] if news_article and 'title' in news_article else row['Name'],
-            'related_urls': related,
+            # The CSV name is human-checked, so it wins; a scraped title only fills a blank cell.
+            'title': clean_title(cell(row, 'Name') or (news_article or {}).get('title', ''), row['URL']),
+            'related_rows': related,
             'excerpt': excerpt,
             'category': category,
             'news_article': news_article
