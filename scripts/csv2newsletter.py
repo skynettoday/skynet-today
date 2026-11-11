@@ -23,7 +23,7 @@ CATEGORY_TEXT_PREVIEW_LENGTH = 500
 EXCERPT_MAX_TOKENS = 100
 SUMMARY_MAX_TOKENS = 4000
 RANKING_MAX_TOKENS = 400
-HEADLINE_MAX_TOKENS = 64
+HEADLINE_MAX_TOKENS = 1000   # the model thinks before answering; a tight cap truncates the headline
 NEWSLETTER_EXCERPT_MAX_TOKENS = 256
 
 # Non-breaking spaces indent the 'Related:' line under its story; plain spaces collapse.
@@ -83,6 +83,23 @@ SECTION_NAMES = {
     'business', 'tech', 'technology', 'world', 'politics', 'markets', 'opinion',
     'analysis', 'media', 'news', 'science', 'health', 'money', 'video', 'exclusive',
 }
+
+
+DISPLAY_NAMES = {
+    'techcrunch': 'TechCrunch', 'theverge': 'The Verge', 'nytimes': 'The New York Times',
+    'wired': 'WIRED', 'cnbc': 'CNBC', 'bloomberg': 'Bloomberg', 'reuters': 'Reuters',
+    'politico': 'POLITICO', 'axios': 'Axios', 'arstechnica': 'Ars Technica', 'wsj': 'WSJ',
+    'theguardian': 'The Guardian', 'qz': 'Quartz', 'siliconangle': 'SiliconANGLE',
+    'marktechpost': 'MarkTechPost', 'venturebeat': 'VentureBeat', 'engadget': 'Engadget',
+    'theregister': 'The Register', 'gizmodo': 'Gizmodo', 'nbcnews': 'NBC News',
+    'openai': 'OpenAI', 'anthropic': 'Anthropic', 'arxiv': 'arXiv',
+}
+
+
+def outlet_name(url):
+    """Display name for the site an image came from, for the feature image credit."""
+    domain = re.sub(r'^(www|amp)\.', '', url.split('//')[-1].split('/')[0]).split('.')[0].lower()
+    return DISPLAY_NAMES.get(domain, domain.capitalize())
 
 
 def clean_title(title, url=''):
@@ -253,6 +270,25 @@ def clip_text_words(text, max_words=MAX_ARTICLE_WORDS):
     return text
 
 
+REFUSAL_MARKERS = (
+    "i'm unable", "i am unable", "i cannot", "i can't", "i'm sorry", "i apologize",
+    "unable to complete", "no text was provided", "the article text is not",
+    "appears to be empty", "cannot access", "does not contain",
+)
+
+
+def is_refusal(text):
+    """True when the model wrote about the fetch instead of the story.
+
+    A paywalled page can return a stub as its 'text', and the model then answers with an
+    apology, which previously went straight into the digest as the story's excerpt.
+    """
+    if not text or len(text.split()) < 4:
+        return True
+    head = text.strip().lower()[:160]
+    return any(marker in head for marker in REFUSAL_MARKERS)
+
+
 def get_article_excerpt(row, article):
     if not article:
         return None
@@ -277,13 +313,30 @@ Examples:
 Title: {row['Name']}
 Text: {clip_text_words(article["text"])}
 '''.strip()
-    return query_llm_simple(
+    excerpt = query_llm_simple(
         system_prompt,
         prompt,
         model=MODEL_HAIKU,
         max_tokens=EXCERPT_MAX_TOKENS,
         debug_label=f"EXCERPT for {row['Name'][:30]}"
     )
+    if not is_refusal(excerpt):
+        return excerpt
+
+    # The model answered about the fetch rather than the story — usually a paywalled page
+    # whose "text" is a stub. Retry once on a web_fetch summary of the same URL.
+    print(f'  excerpt refusal for {row["Name"][:50]}, retrying via web_fetch')
+    try:
+        text = web_fetch_article_summary(row['URL'], title=cell(row, 'Name'))
+    except Exception as e:
+        print(f'  web_fetch retry failed: {e}')
+        return None
+    if not text:
+        return None
+    retry = query_llm_simple(system_prompt, f'Title: {row["Name"]}\nText: {clip_text_words(text)}',
+                             model=MODEL_HAIKU, max_tokens=EXCERPT_MAX_TOKENS,
+                             debug_label=f"EXCERPT RETRY for {row['Name'][:30]}")
+    return None if is_refusal(retry) else retry
 
 
 def get_output_file_name(digest_number):
@@ -529,6 +582,7 @@ def build_top_news_section(articles, image_folder):
     """Build the Top News section of the newsletter."""
     parts = ['### Top News\n\n']
     image_name = ''
+    image_credit = ''
 
     # Use CSV order
     rank = list(range(len(articles)))
@@ -603,6 +657,7 @@ def build_top_news_section(articles, image_folder):
                         image_response = requests.get(news_article['top_image'])
                         if image_response.status_code == 200:
                             image_name = clean_url(news_article['top_image']).split("/")[-1]
+                            image_credit = f'<a href="{url}">{outlet_name(url)}</a>'
                             with open(image_folder / image_name, "wb") as img_file:
                                 img_file.write(image_response.content)
                     except:
@@ -613,7 +668,7 @@ def build_top_news_section(articles, image_folder):
             continue
 
     print("Top News section completed")
-    return ''.join(parts), image_name
+    return ''.join(parts), image_name, image_credit
 
 
 def build_other_category_section(category, articles):
@@ -662,6 +717,12 @@ def load_rows(input_csv):
     rows, related_rows = [], []
 
     for row_num, row in csv.iterrows():
+        # Strip the related-row marker first: the arXiv cleanups below cut everything up to
+        # the first ']', which would swallow a leading '- ' and promote the row to a story.
+        is_related = cell(row, 'Name').startswith('- ')
+        if is_related:
+            row['Name'] = cell(row, 'Name')[2:].strip()
+
         if 'arxiv' in row['URL'] and row['Name'].startswith('Title:'):
             # remove "Title:" from arxiv titles
             row['Name'] = row['Name'][6:]
@@ -681,11 +742,11 @@ def load_rows(input_csv):
         row['URL'] = clean_url(row['URL'])
 
         name = cell(row, 'Name')
-        if name.startswith('- '):
+        if is_related:
             if not rows:
                 print(f'  ignoring related row with no story above it: {name[:60]}')
                 continue
-            related_rows[-1].append({'name': name[2:].strip(), 'url': row['URL']})
+            related_rows[-1].append({'name': name, 'url': row['URL']})
             continue
 
         rows.append(row)
@@ -772,12 +833,13 @@ if __name__ == "__main__":
     top_news_parts = []
     content_parts = []
     image_name = ''
+    image_credit = ''
 
     for category in tqdm(CATEGORIES):
         articles = articles_map[category]
         if articles:
             if category == 'Top News':
-                top_news_content, image_name = build_top_news_section(articles, image_folder)
+                top_news_content, image_name, image_credit = build_top_news_section(articles, image_folder)
                 top_news_parts.append(top_news_content)
             else:
                 content_parts.append(build_other_category_section(category, articles))
@@ -792,6 +854,7 @@ if __name__ == "__main__":
                     .replace('$top_news$', top_news) \
                     .replace('$content$', content) \
                     .replace('$im_name$', image_name) \
+                    .replace('$im_credit$', image_credit) \
                     .replace('$digest_excerpt$', digest_excerpt)
 
     print('Saving digest markdown...')

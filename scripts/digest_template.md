@@ -4,7 +4,7 @@ title: "Last Week in AI #$digest_number$"
 excerpt: "$digest_excerpt$"
 image: 
   feature: assets/img/digests/$digest_number$/$im_name$
-  credit: <a href="<Image Source Link>"> <Author> / <Source Name> </a>
+  credit: $im_credit$
 categories: [digests]
 permalink: /digests/the-$digest_number_english$
 sidebartoc: true
