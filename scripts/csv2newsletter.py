@@ -85,7 +85,19 @@ SECTION_NAMES = {
 }
 
 
+# Subdomains that name a section rather than the outlet: finance.yahoo.com is Yahoo Finance,
+# not "Finance". A full host in DISPLAY_NAMES wins over the domain it resolves to.
+GENERIC_SUBDOMAINS = {'finance', 'news', 'blog', 'edition', 'stories', 'm'}
+
 DISPLAY_NAMES = {
+    'finance.yahoo.com': 'Yahoo Finance', 'news.microsoft.com': 'Microsoft',
+    'npr': 'NPR', 'aljazeera': 'Al Jazeera', 'nvidianews': 'NVIDIA', 'neowin': 'Neowin',
+    'startupfortune': 'Startup Fortune', 'therundown': 'The Rundown AI',
+    '9to5google': '9to5Google', '9to5mac': '9to5Mac', 'deepmind': 'Google DeepMind',
+    'washingtonpost': 'The Washington Post', 'thehill': 'The Hill', 'cnn': 'CNN',
+    'cbsnews': 'CBS News', 'technologyreview': 'MIT Technology Review',
+    'theinformation': 'The Information', 'ft': 'Financial Times', 'unite': 'Unite.AI',
+    'goodfire': 'Goodfire', 'huggingface': 'Hugging Face',
     'techcrunch': 'TechCrunch', 'theverge': 'The Verge', 'nytimes': 'The New York Times',
     'wired': 'WIRED', 'cnbc': 'CNBC', 'bloomberg': 'Bloomberg', 'reuters': 'Reuters',
     'politico': 'POLITICO', 'axios': 'Axios', 'arstechnica': 'Ars Technica', 'wsj': 'WSJ',
@@ -96,10 +108,64 @@ DISPLAY_NAMES = {
 }
 
 
+# Default share images outlets serve for stories that have no art of their own.
+JUNK_IMAGE_MARKERS = ('facebook-default', 'default-wide', 'default-social', 'og-default',
+                      'twitter-default', 'placeholder', 'logo')
+
+
+def usable_image(top_image):
+    """Whether a scraped top image is the story's own art rather than a stock default."""
+    if not top_image:
+        return False
+    name = clean_url(top_image).split('/')[-1].lower()
+    return bool(name) and not any(marker in name for marker in JUNK_IMAGE_MARKERS)
+
+
+# Some CDNs reject the default requests user agent, and some put a whole encoded URL in the
+# last path segment, which is no use as a filename in the repo.
+IMAGE_FETCH_HEADERS = {'User-Agent': 'Mozilla/5.0 (compatible; newsletter-image-fetcher)'}
+
+
+def image_filename(top_image):
+    """A repo-safe filename for a scraped image URL."""
+    name = clean_url(top_image).split('/')[-1]
+    ext = next((e for e in ('.jpeg', '.jpg', '.png', '.webp', '.gif') if e in name.lower()), '.jpg')
+    stem = re.sub(r'[^A-Za-z0-9_-]+', '-', name.rsplit('.', 1)[0])[:60].strip('-').lower()
+    return (stem or 'feature') + ext
+
+
+def fetch_feature_image(processed_articles, image_folder):
+    """Download the feature image from the first Top News lead that has usable art.
+
+    The first story's lead is preferred, but paywalled outlets block scraping and their
+    article then carries no image at all, so the later leads are tried in order.
+    """
+    for article in processed_articles:
+        top_image = (article.get('news_article') or {}).get('top_image')
+        if not usable_image(top_image):
+            continue
+        try:
+            response = requests.get(top_image, timeout=30, headers=IMAGE_FETCH_HEADERS)
+            if response.status_code != 200:
+                print(f'  feature image returned HTTP {response.status_code}: {top_image[:60]}')
+                continue
+            image_name = image_filename(top_image)
+            with open(image_folder / image_name, 'wb') as img_file:
+                img_file.write(response.content)
+            return image_name, f'<a href="{article["url"]}">{outlet_name(article["url"])}</a>'
+        except Exception as e:
+            print(f'  feature image fetch failed for {top_image[:60]}: {e}')
+
+    print('  WARNING: no Top News lead article had a usable feature image')
+    return '', ''
+
+
 def outlet_name(url):
     """Display name for the site an image came from, for the feature image credit."""
-    domain = re.sub(r'^(www|amp)\.', '', url.split('//')[-1].split('/')[0]).split('.')[0].lower()
-    return DISPLAY_NAMES.get(domain, domain.capitalize())
+    host = re.sub(r'^(www|amp)\.', '', url.split('//')[-1].split('/')[0]).lower()
+    labels = [l for l in host.split('.') if l]
+    domain = next((l for l in labels if l not in GENERIC_SUBDOMAINS), labels[0] if labels else '')
+    return DISPLAY_NAMES.get(host) or DISPLAY_NAMES.get(domain) or domain.capitalize()
 
 
 def clean_title(title, url=''):
@@ -111,14 +177,24 @@ def clean_title(title, url=''):
     """
     if not title:
         return title
-    domain = re.sub(r'^(www|amp)\.', '', url.split('//')[-1].split('/')[0]).split('.')[0].lower()
+    host = re.sub(r'^(www|amp)\.', '', url.split('//')[-1].split('/')[0]).lower()
+    domain = host.split('.')[0]
+    # Some outlets carry the TLD in their name ("The Rundown AI" at therundown.ai), so the
+    # whole host, punctuation removed, is a candidate too.
+    domains = {d for d in (domain, re.sub(r'[^a-z0-9]', '', host)) if d}
+
+    # Publishers also prefix a label: "Exclusive | SEC Is Probing Nvidia".
+    lead = re.match(r'^([^-|\u2013\u2014]{2,20})\s+[-|\u2013\u2014]\s+(?=\S)', title)
+    if lead and re.sub(r'[^a-z0-9]', '', lead.group(1).lower()) in SECTION_NAMES:
+        title = title[lead.end():]
+
     for round_num in range(2):  # some titles carry a section too: "Headline - Tech - Reuters"
         match = re.search(r'\s+[-|–—]\s+([^-|–—]{2,40})$', title)
         if not match:
             break
         tail = re.sub(r'[^a-z0-9]', '', match.group(1).lower())
         bare = tail[3:] if tail.startswith('the') else tail
-        like_domain = domain and len(bare) > 2 and (bare in domain or domain in bare)
+        like_domain = len(bare) > 2 and any(bare in d or d in bare for d in domains)
         # A section name only counts on the second pass, once the outlet itself is gone.
         is_outlet = tail in OUTLET_NAMES or bare in OUTLET_NAMES or like_domain
         if len(match.group(1).split()) <= 5 and (is_outlet or (round_num and tail in SECTION_NAMES)):
@@ -132,7 +208,7 @@ def clean_title(title, url=''):
             and words[-2].lower() not in TRAILING_STOPWORDS):
         title = ' '.join(words[:-1])
 
-    return title.rstrip(' -|–—')
+    return title.rstrip(' -|–—:')
 
 
 def cell(row, key):
@@ -380,10 +456,12 @@ Synthesize across the articles rather than summarizing each in turn.
 Write in the newsletter's house style (scripts/STYLE_GUIDE.md is the full reference):
 * Keep the specifics you use exact — figures, dates, names, unrounded numbers. Do not abstract
   them into vagueness, and do not add any fact the source does not state. Exact is not exhaustive.
-* Stay on the headline event. Keep the background needed to follow it (a short recap of how a
-  dispute began is fine), but cut adjacent events — another incident, another report, reactions
-  to a different announcement — and secondary detail within the event: benchmark lists,
-  system-card findings, a minor figure's affiliation, the least consequential beat of a timeline.
+* Stay on the headline event. The articles given to you define what the story is: when they
+  describe several parallel announcements, every one of them belongs in the summary, even though
+  one article is the main one. Keep the background needed to follow the story (a short recap of
+  how a dispute began is fine), but cut events none of the articles cover, and cut secondary
+  detail within an event: benchmark lists, system-card findings, a minor figure's affiliation,
+  the least consequential beat of a timeline.
 * Do NOT use bold, italics or any markdown emphasis. Proper nouns carry themselves.
 * Mean sentence around 30 words, none over 45. One idea per sentence; split a sentence that
   carries a mechanism, a number, a date and a quote all at once.
@@ -474,30 +552,44 @@ def get_story_headline(summary, fallback_title):
 
     system_prompt = '''
 You are an expert news editor for the AI newsletter Last Week in AI.
-The user gives you the summary of one story. Return a headline for it and nothing else.
+The user gives you the summary of one story, which usually draws on several articles.
+Return a headline for it and nothing else.
 
 * One line, at most 12 words, with no trailing period.
+* Write our own headline for the story as a whole. Never reuse or lightly reword the
+  headline of any single article it draws on, and never write a heading that fits only
+  the first strand of the summary.
+* When the story spans several events, say what connects them instead of listing them,
+  but only name a connection the summary itself states. Do not infer what a product or
+  model is for from one detail about it: a flagship model that claims a security result
+  is still a flagship model.
 * Say what happened, using the specific names from the summary.
 * Sentence case: capitalize the first word and proper nouns only.
 * No emojis, no clickbait, no questions, no "label: clause" construction.
-* Cover the story as a whole. If it has several strands, lead with the weightiest.
 * Use only what the summary states. Do not add a fact, a number or a judgment.
 
 Examples of the style:
 OpenAI says an unreleased model resolved the Navier-Stokes problem
 Anthropic's CEO lays out a plan to pace the frontier
-Anthropic's threat report details bioweapon research and state spyware
+Self-driving permits expand even as crash reports pile up
+Open-weight releases accelerate while their licenses grow more restrictive
 '''.strip()
 
-    try:
-        headline = query_llm_simple(system_prompt, summary, max_tokens=HEADLINE_MAX_TOKENS,
-                                    model=MODEL_SONNET,
-                                    debug_label=f"HEADLINE for {fallback_title[:30]}")
-        headline = headline.strip().strip('"').rstrip('.')
-        return headline or fallback_title
-    except Exception as e:
-        print(f'  headline generation failed for {fallback_title[:40]}: {e}')
-        return fallback_title
+    # The fallback is one article's headline, which is what we do not want, so try twice.
+    for attempt in range(2):
+        try:
+            headline = query_llm_simple(system_prompt, summary, max_tokens=HEADLINE_MAX_TOKENS,
+                                        model=MODEL_SONNET,
+                                        debug_label=f"HEADLINE for {fallback_title[:30]}")
+            headline = headline.strip().strip('"').rstrip('.')
+            if headline:
+                return headline
+            print(f'  empty headline on attempt {attempt + 1} for {fallback_title[:40]}')
+        except Exception as e:
+            print(f'  headline generation failed for {fallback_title[:40]}: {e}')
+
+    print(f'  WARNING: using the lead article title as the heading: "{fallback_title[:70]}"')
+    return fallback_title
 
 
 def rank_articles(articles):
@@ -649,23 +741,14 @@ def build_top_news_section(articles, image_folder):
                 parts.append(summary + '\n\n')
                 continue
 
-            if news_article.get('has_top_image', False) and news_article.get('top_image'):
+            if news_article.get('has_top_image', False) and usable_image(news_article.get('top_image')):
                 parts.append(f'![]({news_article["top_image"]})\n\n')
-
-                if rank_idx == 0:
-                    try:
-                        image_response = requests.get(news_article['top_image'])
-                        if image_response.status_code == 200:
-                            image_name = clean_url(news_article['top_image']).split("/")[-1]
-                            image_credit = f'<a href="{url}">{outlet_name(url)}</a>'
-                            with open(image_folder / image_name, "wb") as img_file:
-                                img_file.write(image_response.content)
-                    except:
-                        pass
 
             parts.append(summary + '\n\n')
         except:
             continue
+
+    image_name, image_credit = fetch_feature_image(processed_articles, image_folder)
 
     print("Top News section completed")
     return ''.join(parts), image_name, image_credit
